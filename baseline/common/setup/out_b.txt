@@ -1,0 +1,7 @@
+== rebuilding the measurement program with the fixed code
+[0/2] Re-checking globbed directories...
+[1/3] Building CXX object CMakeFiles/libmlvc_example.dir/main.cpp.o
+[2/3] Linking CXX executable libmlvc_example
+fixed-version check (must be 13): 13
+usage: duplex_bench <prepare|alone-enc|alone-dec|turns|duplex> [options]
+Next: ./s

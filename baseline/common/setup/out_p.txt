@@ -1,0 +1,13 @@
+== preparing the Mac  Tue Nov 10 20:47:57 +04 2026
+Spotlight indexing: paused
+Keep-awake: on
+Now drawing from 'AC Power'
+Battery Power:  powermode            1 AC Power:  powermode            0 
+ok  /Users/shamsalani/Downloads/duplexnvc-baseline/harness/build/ninja-release/libmlvc_example
+ok  /Users/shamsalani/Downloads/duplexnvc-baseline/libmlvc/install/mac-arm64-ninja-release/bin/mlvc
+ok  /Users/shamsalani/Downloads/duplexnvc-baseline/.venv/bin/python3
+ok  /Users/shamsalani/Downloads/duplexnvc-baseline/tools/analyze_run.py
+ok  /Users/shamsalani/Downloads/duplexnvc-baseline/bundles/mlvc
+
+Check by hand: charger in, Wi-Fi + Bluetooth OFF, brightness MAX,
+auto-brightness + True Tone off, all other apps closed. Time Machine: leave as is.

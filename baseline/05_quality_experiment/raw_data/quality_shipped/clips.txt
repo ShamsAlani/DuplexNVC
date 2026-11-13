@@ -1,0 +1,4 @@
+0380a3 /Users/shamsalani/Downloads/duplexnvc-baseline/runs/quality_shipped/0380a3.nv12
+6587ae /Users/shamsalani/Downloads/duplexnvc-baseline/runs/quality_shipped/6587ae.nv12
+6c9c96 /Users/shamsalani/Downloads/duplexnvc-baseline/runs/quality_shipped/6c9c96.nv12
+9c02f6 /Users/shamsalani/Downloads/duplexnvc-baseline/runs/quality_shipped/9c02f6.nv12

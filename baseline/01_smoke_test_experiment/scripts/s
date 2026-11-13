@@ -1,0 +1,29 @@
+#!/bin/bash
+D=$(cd "$(dirname "$0")" && pwd); . "$D/v"
+exec > >(tee "$D/out_s.txt") 2>&1
+echo "== SMOKE TEST (not data)  $(date)"
+mkdir -p "$WORK/data/nv12" "$WORK/runs/smoke"
+if [ ! -f "$CLIP" ]; then
+  gunzip -c "$WORK/libmlvc/data/test_data/clips/VCD_s1_0380a3_960x540_30fps.nv12.gz" > "$CLIP"
+fi
+ls -l "$CLIP"
+echo "(expect 233280000 bytes)"
+if [ ! -f "$INC/incoming.aus" ]; then
+  mkdir -p "$INC"
+  "$BENCH" prepare --input "$CLIP" --size 960x540 --qp 22 --bundles "$WORK/bundles/mlvc-s" --out-dir "$INC" 2> "$INC/prepare.log"
+fi
+echo "== prepare log"; cat "$INC/prepare.log"
+cd "$WORK/runs/smoke"
+for m in turns alone-enc alone-dec duplex; do
+  echo "== $m (10 s)"
+  "$BENCH" $m $P1 --fps 0 --seconds 10 --warmup-frames 30 --out-dir S_$m 2> S_$m.log
+  cat S_$m.log
+done
+echo "== turns paced 30 fps (10 s)"
+"$BENCH" turns $P1 --fps 30 --seconds 10 --warmup-frames 30 --out-dir S_turns30 2> S_turns30.log
+cat S_turns30.log
+"$PY" "$TOOLS/analyze_run.py" timing S_turns S_alone-enc S_alone-dec S_duplex S_turns30
+"$PY" "$TOOLS/analyze_run.py" compare --alone-enc S_alone-enc --alone-dec S_alone-dec --turns S_turns --duplex S_duplex
+echo
+echo "CHECK: no FAILED; resolved=NPU; alone ~5 ms; duplex ~8-9 ms; turns 30 fps late 0%."
+echo "Saved to $D/out_s.txt. Check it before running ./e"

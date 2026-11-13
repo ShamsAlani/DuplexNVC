@@ -1,0 +1,15 @@
+# large or generated media (recreated by the scripts)
+*.nv12
+*.yuv
+*.mp4
+*.tar
+*.mlvc
+*.aus
+# Python / macOS / LaTeX by-products
+__pycache__/
+*.pyc
+.DS_Store
+*.aux
+*.log.bak
+*.out
+*.synctex.gz

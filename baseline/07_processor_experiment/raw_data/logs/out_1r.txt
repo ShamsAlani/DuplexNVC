@@ -1,0 +1,41 @@
+== Step 1 table -> /Users/shamsalani/Downloads/duplexnvc-baseline/phase2/step1/step1_table.csv
+
+model       mode     net  unit runs  call ms   net ms      p99      fps    late%    NE mW   GPU mW   CPU mW
+mlvc_360p   unpaced  enc  npu     5    5.85    5.57    5.96  170.80                                
+mlvc_360p   unpaced  enc  gpu     5   13.34   13.06   13.47   74.97                                
+mlvc_360p   unpaced  enc  cpu     5   20.00   19.71   20.38   50.00                                
+mlvc_360p   unpaced  dec  npu     5    5.94    5.66    6.27  168.45                                
+mlvc_360p   unpaced  dec  gpu     5   13.16   12.89   13.45   75.97                                
+mlvc_360p   unpaced  dec  cpu     5   20.68   20.42   21.03   48.36                                
+mlvc_360p   paced30  enc  npu     3   12.36   11.79   13.43   30.01    0.00  488.23    0.18  388.73
+mlvc_360p   paced30  enc  gpu     3   15.11   14.47   16.13   30.01    0.00    0.00 4620.99  455.45
+mlvc_360p   paced30  dec  npu     3   12.53   11.92   13.74   30.01    0.00  505.19    0.20  387.32
+mlvc_360p   paced30  dec  gpu     3   14.90   14.28   15.96   30.01    0.00    0.00 3206.41  446.71
+mlvcs_540p  unpaced  enc  npu     3    4.84    4.54    4.96  206.53                                
+mlvcs_540p  unpaced  enc  gpu     3   10.36   10.08   10.52   96.50                                
+mlvcs_540p  unpaced  enc  cpu     3   19.73   19.43   20.28   50.69                                
+mlvcs_540p  unpaced  dec  npu     3    4.91    4.59    5.37  203.48                                
+mlvcs_540p  unpaced  dec  gpu     3   10.65   10.34   11.10   93.85                                
+mlvcs_540p  unpaced  dec  cpu     3   20.95   20.65   21.44   47.73                                
+mlvcs_540p  paced30  enc  npu     3   10.61    9.92   11.74   30.01    0.00  373.08    0.34  436.67
+mlvcs_540p  paced30  enc  gpu     3   12.48   11.76   13.47   30.01    0.00    0.00 3273.04  495.14
+mlvcs_540p  paced30  dec  npu     3   10.66    9.89   11.74   30.01    0.00  395.49    0.19  438.17
+mlvcs_540p  paced30  dec  gpu     3   12.63   11.92   13.55   30.01    0.00    0.00 3175.11  488.60
+
+== slowdown ratios vs NE (g = t(GPU)/t(NE), c = t(CPU)/t(NE)), call time / network time
+  mlvc_360p   unpaced  enc: g = 2.28 / 2.35   c = 3.42 / 3.54
+  mlvc_360p   unpaced  dec: g = 2.22 / 2.28   c = 3.48 / 3.61
+  mlvc_360p   paced30  enc: g = 1.22 / 1.23
+  mlvc_360p   paced30  dec: g = 1.19 / 1.20
+  mlvcs_540p  unpaced  enc: g = 2.14 / 2.22   c = 4.07 / 4.28
+  mlvcs_540p  unpaced  dec: g = 2.17 / 2.25   c = 4.26 / 4.50
+  mlvcs_540p  paced30  enc: g = 1.18 / 1.19
+  mlvcs_540p  paced30  dec: g = 1.18 / 1.21
+
+== D5 rules (plan Step 1)
+  360p enc: GPU paced call 15.1 ms -> well under 33.3 ms
+  360p enc: g (unpaced) = 2.28 -> <= 3x: keep GPU placements at all resolutions; 720p NE->GPU needs g <= 1.10
+  360p enc: CPU call 20.0 ms -> CPU can stay in the timing table
+  360p dec: GPU paced call 14.9 ms -> well under 33.3 ms
+  360p dec: g (unpaced) = 2.22 -> <= 3x: keep GPU placements at all resolutions; 720p NE->GPU needs g <= 1.10
+  360p dec: CPU call 20.7 ms -> CPU can stay in the timing table

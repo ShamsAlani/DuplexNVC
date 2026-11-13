@@ -1,0 +1,5 @@
+#!/bin/bash
+# PHASE 2 STEP 2 results: NE speed per bundle vs survey Table 11 (M3 Pro), multi-size vs single, memory
+D=$(cd "$(dirname "$0")" && pwd); . "$D/v"; . "$D/s2cfg"
+exec > >(tee "$D/out_2r.txt") 2>&1
+"$PY" "$D/step2_sum.py" "$S2" "$TOOLS"

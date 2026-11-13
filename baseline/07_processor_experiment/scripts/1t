@@ -1,0 +1,21 @@
+#!/bin/bash
+# PHASE 2 STEP 1, part 3: where does each network run? MLComputePlan per operation (macOS 14.4+), no sudo, ~5 min
+D=$(cd "$(dirname "$0")" && pwd); . "$D/v"
+exec > >(tee "$D/out_1t.txt") 2>&1
+T="$WORK/phase2/step1/trace"; mkdir -p "$T"
+echo "== MLComputePlan trace  $(date)"; sw_vers | tr '\n' ' '; echo
+swiftc -O -parse-as-library "$D/mlplan.swift" -o "$TOOLS/mlplan" || { echo "BUILD FAILED"; exit 1; }
+for B in mlvc mlvc-s; do
+  for tarf in "$WORK/bundles/$B"/*.tar; do
+    name=$(basename "$tarf" .tar); X="$T/$name"; rm -rf "$X"; mkdir -p "$X"
+    echo "-- $name: contents"; tar -tf "$tarf" | head -40
+    tar -xf "$tarf" -C "$X"
+    for z in $(find "$X" -name "*.tar" -o -name "*.zip"); do
+      mkdir -p "$z.d"; case "$z" in *.zip) unzip -q "$z" -d "$z.d";; *) tar -xf "$z" -C "$z.d";; esac
+    done
+    models=$(find "$X" \( -name "*.mlpackage" -o -name "*.mlmodelc" -o -name "*.mlmodel" \) -prune -print | sort)
+    [ -z "$models" ] && echo "   no Core ML model found inside; check out_1t.txt"
+    for m in $models; do "$TOOLS/mlplan" "$m" "$name/$(basename "$m")"; done
+  done
+done
+echo "== done  $(date)"

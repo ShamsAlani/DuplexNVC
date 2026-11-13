@@ -1,0 +1,5 @@
+#!/bin/bash
+# PHASE 2 STEP 1 results: table per network x unit, g ratios, power cross-check, D5 suggestion
+D=$(cd "$(dirname "$0")" && pwd); . "$D/v"
+exec > >(tee "$D/out_1r.txt") 2>&1
+"$PY" "$D/step1_sum.py" "$WORK/phase2/step1" "$TOOLS"

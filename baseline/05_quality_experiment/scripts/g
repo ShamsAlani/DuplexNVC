@@ -1,0 +1,36 @@
+#!/bin/bash
+# After the 360p download: unpack, fixed calibration/evaluation split, R-D + face quality on the EVALUATION clips
+D=$(cd "$(dirname "$0")" && pwd); . "$D/v"
+exec > >(tee "$D/out_g.txt") 2>&1
+echo "== unpack + split  $(date)"
+cd "$VCD360"
+have=$(ls 640x360_30fps/s1/*.yuv 2>/dev/null | wc -l)
+if [ "$have" -lt 40 ]; then tar -xf 640x360_30fps.tar || { echo "UNPACK FAILED"; exit 1; }; fi
+echo "s1 clips: $(ls 640x360_30fps/s1/*.yuv | wc -l)"
+"$PY" - "$VCD360/640x360_30fps/s1" "$WORK/data/split.json" <<'PY'
+import sys, pathlib, random, json
+ids = sorted(p.name.split("_")[0] for p in pathlib.Path(sys.argv[1]).glob("*_640x360_30fps.yuv"))
+lib = ["0380a3", "6587ae", "6c9c96", "9c02f6"]          # shipped with libmlvc -> calibration only
+forced = [i for i in ids if i[:6] in lib]
+rest = [i for i in ids if i not in forced]
+random.Random(694).shuffle(rest)
+half = len(ids) // 2
+cal = forced + rest[: half - len(forced)]; ev = sorted(rest[half - len(forced):])
+json.dump({"seed": 694, "rule": "libmlvc clips forced to calibration; rest shuffled with seed 694",
+           "calibration": sorted(cal), "evaluation": ev}, open(sys.argv[2], "w"), indent=1)
+print(len(cal), "calibration /", len(ev), "evaluation ->", sys.argv[2])
+PY
+echo "== face boxes tool"
+[ -x "$TOOLS/facebox" ] || swiftc -O "$TOOLS/facebox.swift" -o "$TOOLS/facebox" || echo "facebox build FAILED (face metrics will be skipped)"
+G="$WORK/runs/quality_eval"; mkdir -p "$G"; cd "$G"
+: > clips.txt
+for id in $("$PY" -c "import json;print(' '.join(json.load(open('$WORK/data/split.json'))['evaluation']))"); do
+  y="$VCD360/640x360_30fps/s1/${id}_640x360_30fps.yuv"
+  ffmpeg -v error -y -f rawvideo -pix_fmt yuv420p -s 640x360 -i "$y" -f rawvideo -pix_fmt nv12 "$G/${id:0:6}.nv12"
+  mp4="$VCD1080/mp4/th/${id}_1920x1080_30.mp4"
+  [ -s "$mp4" ] && echo "${id:0:6} $G/${id:0:6}.nv12 $mp4" >> clips.txt || echo "${id:0:6} $G/${id:0:6}.nv12" >> clips.txt
+done
+echo "evaluation clips: $(wc -l < clips.txt)"
+"$PY" "$D/rd.py" clips.txt rd_eval.csv
+rm -f "$G"/*.nv12
+echo "== done  $(date)"

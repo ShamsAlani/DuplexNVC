@@ -1,0 +1,16 @@
+#!/bin/bash
+# Correctness (E5): decode B*'s saved outgoing stream on NE twice, GPU, CPU; failures + drift
+D=$(cd "$(dirname "$0")" && pwd); . "$D/v"
+exec > >(tee "$D/out_c.txt") 2>&1
+R="$WORK/runs/bl_bstar/T_duplex30_r1"; cd "$R" || exit 1
+echo "== correctness of $R/outgoing.mlvc  $(date)"
+echo "encoded frames: $(grep -c '^E,' frames.csv)"
+for cu in npu npu2 gpu cpu; do
+  u=${cu%2}
+  "$MLVC" decode --model-bundles-dir "$WORK/bundles/mlvc" --compute-unit $u --input outgoing.mlvc --output dec_$cu.nv12 > dec_$cu.log 2>&1 && st=ok || st=FAILED
+  echo "decode on $cu: $st, frames $(( $(stat -f%z dec_$cu.nv12 2>/dev/null || echo 0) / 345600 ))"
+done
+cmp -s dec_npu.nv12 dec_npu2.nv12 && echo "NE decode deterministic: yes" || echo "NE decode deterministic: NO"
+echo "-- drift NE vs GPU"; "$PY" "$TOOLS/quality_tools.py" drift dec_npu.nv12 dec_gpu.nv12 640x360 --iframe-period 64
+echo "-- drift NE vs CPU"; "$PY" "$TOOLS/quality_tools.py" drift dec_npu.nv12 dec_cpu.nv12 640x360 --iframe-period 64
+rm -f dec_npu2.nv12 dec_gpu.nv12 dec_cpu.nv12

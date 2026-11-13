@@ -1,0 +1,5 @@
+processor,run_mW,idle_mW,mJ_per_pair_median,mJ_min,mJ_max,J_per_minute
+neural_engine,1903.12,0.0,63.42,62.46,63.61,114.19
+cpu,415.2,358.06,1.9,1.77,2.87,3.43
+gpu,0.04,0.03,0.0,-0.0,0.01,0.0
+total,2318.37,358.09,65.32,64.24,66.34,117.62

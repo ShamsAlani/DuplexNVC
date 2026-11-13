@@ -1,0 +1,19 @@
+# settings shared by all scripts (do not run this file directly)
+WORK=~/Downloads/duplexnvc-baseline
+TOOLS=$WORK/tools
+BENCH=$WORK/harness/build/ninja-release/libmlvc_example
+MLVC=$WORK/libmlvc/install/mac-arm64-ninja-release/bin/mlvc
+PY=$WORK/.venv/bin/python3
+CLIPS=$WORK/libmlvc/data/test_data/clips
+# Phase-1 check setting (MLVC-S 540p), used by ./s ./e ./r
+CLIP=$WORK/data/nv12/p1_540p.nv12
+INC=$WORK/data/incoming/p1-mlvc-s-540p
+P1="--input $CLIP --size 960x540 --qp 22 --bundles $WORK/bundles/mlvc-s --incoming $INC/incoming.aus --iframe-period 64"
+# BASELINE B*: full MLVC (PSNR), 360p, NE, QP 26, I-frame every 64
+CAM=$WORK/data/nv12/bl_camera_640x360.nv12
+INCSRC=$WORK/data/nv12/bl_incoming_src_640x360.nv12
+BINC=$WORK/data/incoming/mlvc-640x360-qp26
+BL="--input $CAM --size 640x360 --qp 26 --bundles $WORK/bundles/mlvc --incoming $BINC/incoming.aus --iframe-period 64"
+# data locations (VCD)
+VCD360=~/mlvc/data/VCD/yuv
+VCD1080=$WORK/data/vcd_1080p

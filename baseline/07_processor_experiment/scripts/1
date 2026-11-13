@@ -1,0 +1,49 @@
+#!/bin/bash
+# PHASE 2 STEP 1: each network alone on NE, GPU and CPU (the gate for placements, decision D5)
+#   unpaced: full MLVC 360p 5 interleaved rounds, MLVC-S 540p 3 rounds; CPU runs 20 s, others 60 s; 60 s rest
+#   paced 30 fps: NE and GPU, 3 x 60 s per network, powermetrics on every paced run (cross-check of where it ran)
+# Quiet Mac: charger in, Wi-Fi + Bluetooth off, brightness MAX, apps closed. ~2 h 20 min. Password once at start.
+D=$(cd "$(dirname "$0")" && pwd); . "$D/v"
+exec > >(tee "$D/out_1.txt") 2>&1
+S1="$WORK/phase2/step1"; mkdir -p "$S1"
+echo "== PHASE 2 STEP 1 START  $(date)"; sw_vers | tr '\n' ' '; echo; pmset -g batt | head -1
+cat "$WORK/LIBMLVC_COMMIT.txt" 2>/dev/null
+sudo -v || exit 1
+( while true; do sudo -n true 2>/dev/null; sleep 50; done ) & KEEP=$!
+n=0; N=72
+run () {  # run <folder> <mode> <settings> <cu> <fps> <seconds>
+  local dir=$1 mode=$2 set=$3 cu=$4 fps=$5 sec=$6 wu=64 cuflag
+  [ "$cu" = cpu ] && wu=10
+  [ "$mode" = alone-enc ] && cuflag="--enc-cu $cu" || cuflag="--dec-cu $cu"
+  n=$((n+1)); echo "[$n/$N] $(date +%H:%M:%S) $(basename "$(dirname "$dir")")/$(basename "$dir")"
+  "$BENCH" $mode $set $cuflag --fps $fps --seconds $sec --warmup-frames $wu --out-dir "$dir" 2> "$dir.log"
+  grep -oE "requested=[a-z]+ resolved=[a-z]+|FAILED|rror.*" "$dir.log" | sort -u | tr '\n' ' '; echo
+}
+for M in mlvc_360p mlvcs_540p; do
+  if [ $M = mlvc_360p ]; then SET="$BL"; RN="1 2 3 4 5"; else SET="$P1"; RN="1 2 3"; fi
+  mkdir -p "$S1/$M"
+  echo "== $M unpaced"
+  for r in $RN; do
+    for cu in npu gpu cpu; do
+      for m in alone-enc alone-dec; do
+        sec=60; [ $cu = cpu ] && sec=20
+        run "$S1/$M/U_${m}_${cu}_r$r" $m "$SET" $cu 0 $sec; sleep 60
+      done
+    done
+  done
+  echo "== $M paced 30 fps (with powermetrics)"
+  for r in 1 2 3; do
+    for cu in npu gpu; do
+      for m in alone-enc alone-dec; do
+        dir="$S1/$M/P_${m}_${cu}_r$r"; mkdir -p "$dir"
+        sudo powermetrics --samplers cpu_power,gpu_power -i 100 -n 700 -o "$dir/power.txt" >/dev/null 2>&1 &
+        PM=$!; sleep 3
+        run "$dir" $m "$SET" $cu 30 60
+        wait $PM; sleep 40
+      done
+    done
+  done
+done
+kill $KEEP 2>/dev/null
+echo "== PHASE 2 STEP 1 END  $(date)"
+"$D/1r"

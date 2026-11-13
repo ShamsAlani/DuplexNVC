@@ -1,0 +1,21 @@
+== correctness of /Users/shamsalani/Downloads/duplexnvc-baseline/runs/bl_bstar/T_duplex30_r1/outgoing.mlvc  Tue Nov 10 22:55:15 +04 2026
+encoded frames: 1802
+decode on npu: ok, frames 1802
+decode on npu2: ok, frames 1802
+decode on gpu: ok, frames 1802
+decode on cpu: ok, frames 1802
+NE decode deterministic: yes
+-- drift NE vs GPU
+frames compared 1802; bit-identical 0; Y-PSNR between decodes: mean 52.13 dB, min 38.46 dB
+  frames  0- 0 after an I-frame: mean  60.58 dB  min  59.58 dB
+  frames  1-15 after an I-frame: mean  57.63 dB  min  51.90 dB
+  frames 16-31 after an I-frame: mean  52.86 dB  min  42.73 dB
+  frames 32-47 after an I-frame: mean  49.93 dB  min  39.52 dB
+  frames 48-63 after an I-frame: mean  47.80 dB  min  38.46 dB
+-- drift NE vs CPU
+frames compared 1802; bit-identical 0; Y-PSNR between decodes: mean 48.78 dB, min 39.51 dB
+  frames  0- 0 after an I-frame: mean  52.64 dB  min  51.39 dB
+  frames  1-15 after an I-frame: mean  51.74 dB  min  48.92 dB
+  frames 16-31 after an I-frame: mean  49.63 dB  min  44.70 dB
+  frames 32-47 after an I-frame: mean  47.57 dB  min  40.42 dB
+  frames 48-63 after an I-frame: mean  46.07 dB  min  39.51 dB

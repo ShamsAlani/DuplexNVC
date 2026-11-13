@@ -1,0 +1,72 @@
+== EXPERIMENT E3a START  Tue Nov 10 17:53:06 +04 2026
+ProductName:		macOS ProductVersion:		26.6.2 BuildVersion:		25G83 
+Now drawing from 'AC Power'
+Battery Power:  powermode            1 AC Power:  powermode            0 
+eb5d60a
+[1/23] 17:53:07 round 1: turns (60 s run + 60 s rest)
+2026-11-10 17:53:07.055 [T#26160664][ INFO][manager.cpp:216]: Initializing MlvcManager from bundles dir: compute_unit=npu, enable_model_cache=1, session_preload_mode=at-init, versions=[v0.1] 2026-11-10 17:53:07.055 [T#26160664][ INFO][engine.mm:630]: CoreML initialized: compute_unit=npu, os_ver=26, os_build=25G83, env_hash=2aeaf3ba 2026-11-10 17:53:07.805 [T#26160664][ INFO][manager.cpp:571]: MLVC Manager initialized with 1 bundle(s) manager: requested=npu resolved=npu encoder first-frame (init) ms: 10.8283 decoder first-frame (init) ms: 8.17454 
+[2/23] 17:55:08 round 1: alone-enc (60 s run + 60 s rest)
+2026-11-10 17:55:08.157 [T#26161753][ INFO][manager.cpp:216]: Initializing MlvcManager from bundles dir: compute_unit=npu, enable_model_cache=1, session_preload_mode=at-init, versions=[v0.1] 2026-11-10 17:55:08.157 [T#26161753][ INFO][engine.mm:630]: CoreML initialized: compute_unit=npu, os_ver=26, os_build=25G83, env_hash=2aeaf3ba 2026-11-10 17:55:08.918 [T#26161753][ INFO][manager.cpp:571]: MLVC Manager initialized with 1 bundle(s) manager: requested=npu resolved=npu encoder first-frame (init) ms: 12.4138 
+[3/23] 17:57:09 round 1: alone-dec (60 s run + 60 s rest)
+2026-11-10 17:57:09.223 [T#26162426][ INFO][manager.cpp:216]: Initializing MlvcManager from bundles dir: compute_unit=npu, enable_model_cache=1, session_preload_mode=at-init, versions=[v0.1] 2026-11-10 17:57:09.224 [T#26162426][ INFO][engine.mm:630]: CoreML initialized: compute_unit=npu, os_ver=26, os_build=25G83, env_hash=2aeaf3ba 2026-11-10 17:57:10.011 [T#26162426][ INFO][manager.cpp:571]: MLVC Manager initialized with 1 bundle(s) manager: requested=npu resolved=npu decoder first-frame (init) ms: 11.6047 
+[4/23] 17:59:10 round 1: duplex (60 s run + 60 s rest)
+2026-11-10 17:59:10.332 [T#26163258][ INFO][manager.cpp:216]: Initializing MlvcManager from bundles dir: compute_unit=npu, enable_model_cache=1, session_preload_mode=at-init, versions=[v0.1] 2026-11-10 17:59:10.332 [T#26163258][ INFO][engine.mm:630]: CoreML initialized: compute_unit=npu, os_ver=26, os_build=25G83, env_hash=2aeaf3ba 2026-11-10 17:59:11.102 [T#26163258][ INFO][manager.cpp:571]: MLVC Manager initialized with 1 bundle(s) manager: requested=npu resolved=npu encoder first-frame (init) ms: 12.8108 decoder first-frame (init) ms: 8.99804 
+[5/23] 18:01:11 round 2: turns (60 s run + 60 s rest)
+2026-11-10 18:01:11.498 [T#26163863][ INFO][manager.cpp:216]: Initializing MlvcManager from bundles dir: compute_unit=npu, enable_model_cache=1, session_preload_mode=at-init, versions=[v0.1] 2026-11-10 18:01:11.498 [T#26163863][ INFO][engine.mm:630]: CoreML initialized: compute_unit=npu, os_ver=26, os_build=25G83, env_hash=2aeaf3ba 2026-11-10 18:01:12.272 [T#26163863][ INFO][manager.cpp:571]: MLVC Manager initialized with 1 bundle(s) manager: requested=npu resolved=npu encoder first-frame (init) ms: 12.2251 decoder first-frame (init) ms: 9.42142 
+[6/23] 18:03:12 round 2: alone-enc (60 s run + 60 s rest)
+2026-11-10 18:03:12.626 [T#26164440][ INFO][manager.cpp:216]: Initializing MlvcManager from bundles dir: compute_unit=npu, enable_model_cache=1, session_preload_mode=at-init, versions=[v0.1] 2026-11-10 18:03:12.627 [T#26164440][ INFO][engine.mm:630]: CoreML initialized: compute_unit=npu, os_ver=26, os_build=25G83, env_hash=2aeaf3ba 2026-11-10 18:03:13.402 [T#26164440][ INFO][manager.cpp:571]: MLVC Manager initialized with 1 bundle(s) manager: requested=npu resolved=npu encoder first-frame (init) ms: 13.2753 
+[7/23] 18:05:13 round 2: alone-dec (60 s run + 60 s rest)
+2026-11-10 18:05:13.711 [T#26165051][ INFO][manager.cpp:216]: Initializing MlvcManager from bundles dir: compute_unit=npu, enable_model_cache=1, session_preload_mode=at-init, versions=[v0.1] 2026-11-10 18:05:13.712 [T#26165051][ INFO][engine.mm:630]: CoreML initialized: compute_unit=npu, os_ver=26, os_build=25G83, env_hash=2aeaf3ba 2026-11-10 18:05:14.502 [T#26165051][ INFO][manager.cpp:571]: MLVC Manager initialized with 1 bundle(s) manager: requested=npu resolved=npu decoder first-frame (init) ms: 12.8995 
+[8/23] 18:07:14 round 2: duplex (60 s run + 60 s rest)
+2026-11-10 18:07:14.832 [T#26165719][ INFO][manager.cpp:216]: Initializing MlvcManager from bundles dir: compute_unit=npu, enable_model_cache=1, session_preload_mode=at-init, versions=[v0.1] 2026-11-10 18:07:14.832 [T#26165719][ INFO][engine.mm:630]: CoreML initialized: compute_unit=npu, os_ver=26, os_build=25G83, env_hash=2aeaf3ba 2026-11-10 18:07:15.609 [T#26165719][ INFO][manager.cpp:571]: MLVC Manager initialized with 1 bundle(s) manager: requested=npu resolved=npu encoder first-frame (init) ms: 11.7406 decoder first-frame (init) ms: 9.51008 
+[9/23] 18:09:15 round 3: turns (60 s run + 60 s rest)
+2026-11-10 18:09:15.987 [T#26166397][ INFO][manager.cpp:216]: Initializing MlvcManager from bundles dir: compute_unit=npu, enable_model_cache=1, session_preload_mode=at-init, versions=[v0.1] 2026-11-10 18:09:15.987 [T#26166397][ INFO][engine.mm:630]: CoreML initialized: compute_unit=npu, os_ver=26, os_build=25G83, env_hash=2aeaf3ba 2026-11-10 18:09:16.766 [T#26166397][ INFO][manager.cpp:571]: MLVC Manager initialized with 1 bundle(s) manager: requested=npu resolved=npu encoder first-frame (init) ms: 12.739 decoder first-frame (init) ms: 9.13917 
+[10/23] 18:11:17 round 3: alone-enc (60 s run + 60 s rest)
+2026-11-10 18:11:17.114 [T#26167020][ INFO][manager.cpp:216]: Initializing MlvcManager from bundles dir: compute_unit=npu, enable_model_cache=1, session_preload_mode=at-init, versions=[v0.1] 2026-11-10 18:11:17.114 [T#26167020][ INFO][engine.mm:630]: CoreML initialized: compute_unit=npu, os_ver=26, os_build=25G83, env_hash=2aeaf3ba 2026-11-10 18:11:17.895 [T#26167020][ INFO][manager.cpp:571]: MLVC Manager initialized with 1 bundle(s) manager: requested=npu resolved=npu encoder first-frame (init) ms: 10.5766 
+[11/23] 18:13:18 round 3: alone-dec (60 s run + 60 s rest)
+2026-11-10 18:13:18.198 [T#26167664][ INFO][manager.cpp:216]: Initializing MlvcManager from bundles dir: compute_unit=npu, enable_model_cache=1, session_preload_mode=at-init, versions=[v0.1] 2026-11-10 18:13:18.199 [T#26167664][ INFO][engine.mm:630]: CoreML initialized: compute_unit=npu, os_ver=26, os_build=25G83, env_hash=2aeaf3ba 2026-11-10 18:13:18.993 [T#26167664][ INFO][manager.cpp:571]: MLVC Manager initialized with 1 bundle(s) manager: requested=npu resolved=npu decoder first-frame (init) ms: 12.9277 
+[12/23] 18:15:19 round 3: duplex (60 s run + 60 s rest)
+2026-11-10 18:15:19.325 [T#26168365][ INFO][manager.cpp:216]: Initializing MlvcManager from bundles dir: compute_unit=npu, enable_model_cache=1, session_preload_mode=at-init, versions=[v0.1] 2026-11-10 18:15:19.326 [T#26168365][ INFO][engine.mm:630]: CoreML initialized: compute_unit=npu, os_ver=26, os_build=25G83, env_hash=2aeaf3ba 2026-11-10 18:15:20.106 [T#26168365][ INFO][manager.cpp:571]: MLVC Manager initialized with 1 bundle(s) manager: requested=npu resolved=npu encoder first-frame (init) ms: 11.0557 decoder first-frame (init) ms: 9.73704 
+[13/23] 18:17:20 round 4: turns (60 s run + 60 s rest)
+2026-11-10 18:17:20.498 [T#26169052][ INFO][manager.cpp:216]: Initializing MlvcManager from bundles dir: compute_unit=npu, enable_model_cache=1, session_preload_mode=at-init, versions=[v0.1] 2026-11-10 18:17:20.499 [T#26169052][ INFO][engine.mm:630]: CoreML initialized: compute_unit=npu, os_ver=26, os_build=25G83, env_hash=2aeaf3ba 2026-11-10 18:17:21.281 [T#26169052][ INFO][manager.cpp:571]: MLVC Manager initialized with 1 bundle(s) manager: requested=npu resolved=npu encoder first-frame (init) ms: 13.3497 decoder first-frame (init) ms: 9.24387 
+[14/23] 18:19:21 round 4: alone-enc (60 s run + 60 s rest)
+2026-11-10 18:19:21.648 [T#26169700][ INFO][manager.cpp:216]: Initializing MlvcManager from bundles dir: compute_unit=npu, enable_model_cache=1, session_preload_mode=at-init, versions=[v0.1] 2026-11-10 18:19:21.648 [T#26169700][ INFO][engine.mm:630]: CoreML initialized: compute_unit=npu, os_ver=26, os_build=25G83, env_hash=2aeaf3ba 2026-11-10 18:19:22.428 [T#26169700][ INFO][manager.cpp:571]: MLVC Manager initialized with 1 bundle(s) manager: requested=npu resolved=npu encoder first-frame (init) ms: 12.5675 
+[15/23] 18:21:22 round 4: alone-dec (60 s run + 60 s rest)
+2026-11-10 18:21:22.732 [T#26170317][ INFO][manager.cpp:216]: Initializing MlvcManager from bundles dir: compute_unit=npu, enable_model_cache=1, session_preload_mode=at-init, versions=[v0.1] 2026-11-10 18:21:22.732 [T#26170317][ INFO][engine.mm:630]: CoreML initialized: compute_unit=npu, os_ver=26, os_build=25G83, env_hash=2aeaf3ba 2026-11-10 18:21:23.527 [T#26170317][ INFO][manager.cpp:571]: MLVC Manager initialized with 1 bundle(s) manager: requested=npu resolved=npu decoder first-frame (init) ms: 12.4261 
+[16/23] 18:23:23 round 4: duplex (60 s run + 60 s rest)
+2026-11-10 18:23:23.853 [T#26170929][ INFO][manager.cpp:216]: Initializing MlvcManager from bundles dir: compute_unit=npu, enable_model_cache=1, session_preload_mode=at-init, versions=[v0.1] 2026-11-10 18:23:23.853 [T#26170929][ INFO][engine.mm:630]: CoreML initialized: compute_unit=npu, os_ver=26, os_build=25G83, env_hash=2aeaf3ba 2026-11-10 18:23:24.634 [T#26170929][ INFO][manager.cpp:571]: MLVC Manager initialized with 1 bundle(s) manager: requested=npu resolved=npu encoder first-frame (init) ms: 10.5707 decoder first-frame (init) ms: 10.3881 
+[17/23] 18:25:24 round 5: turns (60 s run + 60 s rest)
+2026-11-10 18:25:25.027 [T#26171516][ INFO][manager.cpp:216]: Initializing MlvcManager from bundles dir: compute_unit=npu, enable_model_cache=1, session_preload_mode=at-init, versions=[v0.1] 2026-11-10 18:25:25.028 [T#26171516][ INFO][engine.mm:630]: CoreML initialized: compute_unit=npu, os_ver=26, os_build=25G83, env_hash=2aeaf3ba 2026-11-10 18:25:25.809 [T#26171516][ INFO][manager.cpp:571]: MLVC Manager initialized with 1 bundle(s) manager: requested=npu resolved=npu encoder first-frame (init) ms: 12.5204 decoder first-frame (init) ms: 9.02271 
+[18/23] 18:27:26 round 5: alone-enc (60 s run + 60 s rest)
+2026-11-10 18:27:26.177 [T#26172168][ INFO][manager.cpp:216]: Initializing MlvcManager from bundles dir: compute_unit=npu, enable_model_cache=1, session_preload_mode=at-init, versions=[v0.1] 2026-11-10 18:27:26.177 [T#26172168][ INFO][engine.mm:630]: CoreML initialized: compute_unit=npu, os_ver=26, os_build=25G83, env_hash=2aeaf3ba 2026-11-10 18:27:26.960 [T#26172168][ INFO][manager.cpp:571]: MLVC Manager initialized with 1 bundle(s) manager: requested=npu resolved=npu encoder first-frame (init) ms: 12.3937 
+[19/23] 18:29:27 round 5: alone-dec (60 s run + 60 s rest)
+2026-11-10 18:29:27.272 [T#26172868][ INFO][manager.cpp:216]: Initializing MlvcManager from bundles dir: compute_unit=npu, enable_model_cache=1, session_preload_mode=at-init, versions=[v0.1] 2026-11-10 18:29:27.273 [T#26172868][ INFO][engine.mm:630]: CoreML initialized: compute_unit=npu, os_ver=26, os_build=25G83, env_hash=2aeaf3ba 2026-11-10 18:29:28.072 [T#26172868][ INFO][manager.cpp:571]: MLVC Manager initialized with 1 bundle(s) manager: requested=npu resolved=npu decoder first-frame (init) ms: 11.7577 
+[20/23] 18:31:28 round 5: duplex (60 s run + 60 s rest)
+2026-11-10 18:31:28.397 [T#26173494][ INFO][manager.cpp:216]: Initializing MlvcManager from bundles dir: compute_unit=npu, enable_model_cache=1, session_preload_mode=at-init, versions=[v0.1] 2026-11-10 18:31:28.397 [T#26173494][ INFO][engine.mm:630]: CoreML initialized: compute_unit=npu, os_ver=26, os_build=25G83, env_hash=2aeaf3ba 2026-11-10 18:31:29.173 [T#26173494][ INFO][manager.cpp:571]: MLVC Manager initialized with 1 bundle(s) manager: requested=npu resolved=npu encoder first-frame (init) ms: 11.2312 decoder first-frame (init) ms: 9.61633 
+[21/23] 18:33:29 turns paced 30 fps, run 1
+[22/23] 18:35:30 turns paced 30 fps, run 2
+[23/23] 18:37:31 turns paced 30 fps, run 3
+== EXPERIMENT E3a END  Tue Nov 10 18:39:32 +04 2026
+== E3a results  Tue Nov 10 18:39:33 +04 2026
+
+== T_turns30_r1  mode=turns size=960x540 qp=22 enc=npu dec=npu fps=30 deadline=33.3333333333333 ms
+  send: 30.0 fps | service mean 10.69 ms p95 11.40 p99 11.54 | latency p95 18.02 p99 18.90 | late+dropped 0.00% | infer 9.90 / call 10.68 ms | fails 0 | 485 kbps
+  recv: 30.0 fps | service mean 8.68 ms p95 9.31 p99 9.49 | latency p95 27.14 p99 28.18 | late+dropped 0.00% | infer 7.90 / call 8.68 ms | fails 0 | 486 kbps
+
+rounds used: 5
+metric                                   median      min      max   Phase 1
+t_enc alone call ms                        4.84     4.84     4.86   5.0
+t_dec alone call ms                        4.91     4.91     4.92   5.0
+t_enc alone network ms                     4.54     4.54     4.57   
+t_dec alone network ms                     4.58     4.58     4.59   
+sum alone ms (= old estimate)              9.75     9.75     9.78   10.0 (estimate)
+T_turns ms (measured)                      9.79     9.79     9.80   
+switching cost ms (T_turns - sum)          0.04     0.02     0.04   
+T_shared ms                                8.53     8.53     8.53   8.7
+fps per direction, shared                117.22   117.22   117.23   115.5
+S = T_turns / T_shared                     1.15     1.15     1.15   ~1.15 (estimate)
+kappa enc (call)                           1.76     1.75     1.76   
+kappa dec (call)                           1.74     1.73     1.74   
+kappa enc (network)                        1.74     1.73     1.74   ~1.8
+kappa dec (network)                        1.71     1.71     1.71   ~1.8
+Saved to /Users/shamsalani/Downloads/d/out_r.txt.

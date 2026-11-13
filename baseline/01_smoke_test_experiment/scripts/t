@@ -1,0 +1,21 @@
+#!/bin/bash
+D=$(cd "$(dirname "$0")" && pwd); . "$D/v"
+exec > >(tee "$D/out_t.txt") 2>&1
+R="$WORK/runs/bl_smoke"; mkdir -p "$R"; cd "$R"
+echo "== BASELINE SMOKE TEST (not data)  $(date)"
+for m in turns alone-enc alone-dec duplex; do
+  echo "== $m unpaced (10 s)"
+  "$BENCH" $m $BL --fps 0 --seconds 10 --warmup-frames 30 --out-dir S_$m 2> S_$m.log
+  grep -E "resolved|init|FAILED|rror" S_$m.log
+done
+for m in duplex turns; do
+  echo "== $m paced 30 fps (10 s)"
+  "$BENCH" $m $BL --fps 30 --seconds 10 --warmup-frames 30 --out-dir S_${m}30 2> S_${m}30.log
+  grep -E "resolved|init|FAILED|rror" S_${m}30.log
+done
+echo "== libmlvc CLI cross-check (10 s)"
+mkdir -p S_cli; "$MLVC" benchmark --model-bundles-dir "$WORK/bundles/mlvc" --num-encoders 1 --num-decoders 1 --input "$CAM:640x360" --qp 26 --iframe-period 64 --duration-seconds 10 --output-dir S_cli > S_cli.log 2>&1
+grep -iE "total:|fps" S_cli.log | tail -6
+"$PY" "$D/sum.py" "$R" S
+echo "CHECK: no FAILED; resolved=npu; all runs end; duplex 30 fps late ~0%."
+echo "Saved to $D/out_t.txt. Check it before running ./x"

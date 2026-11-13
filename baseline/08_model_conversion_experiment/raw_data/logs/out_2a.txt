@@ -1,0 +1,87 @@
+== STEP 2a START  Fri Nov 13 00:34:29 +04 2026
+ProductName:		macOS ProductVersion:		26.6.2 BuildVersion:		25G83 
+/dev/disk3s5   926Gi   299Gi   605Gi    34%    1.2M  6.3G    0%   /System/Volumes/Data
+-- checksum (must be 1b86b757...ca896):
+1b86b757ddb115342293efb57719d6216c6ee2e459ae796ec41723b5c05ca896  /Users/shamsalani/mlvc/job-outputs/pretrained/mlvc-s-psnr-v1.ckpt
+   test clip 960x540: 222M  (300 frames)
+   test clip 1280x720: 396M  (300 frames)
+   test clip 1920x1080: 890M  (300 frames)
+== convert mlvc_540p: dmc61sbr_reglu, sizes 960x544  (00:34:29)
+   ok: 36M /Users/shamsalani/Downloads/duplexnvc-baseline/bundles/mlvc_540p/dmc61sbr_reglu-psnr_v1-coreml-apple-v0.1.tar
+== convert mlvc_720p: dmc61sbr_reglu, sizes 1280x720  (00:35:00)
+   ok: 37M /Users/shamsalani/Downloads/duplexnvc-baseline/bundles/mlvc_720p/dmc61sbr_reglu-psnr_v1-coreml-apple-v0.1.tar
+== convert mlvc_1080p: dmc61sbr_reglu, sizes 1920x1088  (00:35:47)
+   ok: 41M /Users/shamsalani/Downloads/duplexnvc-baseline/bundles/mlvc_1080p/dmc61sbr_reglu-psnr_v1-coreml-apple-v0.1.tar
+== convert mlvcs_540p: dmc61sbr_mini_reglu, sizes 960x544  (00:37:15)
+   ok: 11M /Users/shamsalani/Downloads/duplexnvc-baseline/bundles/mlvcs_540p/dmc61sbr_mini_reglu-psnr_v1-coreml-apple-v0.1.tar
+== convert mlvcs_720p: dmc61sbr_mini_reglu, sizes 1280x720  (00:37:33)
+   ok: 12M /Users/shamsalani/Downloads/duplexnvc-baseline/bundles/mlvcs_720p/dmc61sbr_mini_reglu-psnr_v1-coreml-apple-v0.1.tar
+== convert mlvcs_1080p: dmc61sbr_mini_reglu, sizes 1920x1088  (00:37:57)
+   ok: 13M /Users/shamsalani/Downloads/duplexnvc-baseline/bundles/mlvcs_1080p/dmc61sbr_mini_reglu-psnr_v1-coreml-apple-v0.1.tar
+== convert mlvc_multi: dmc61sbr_reglu, sizes 640x368 960x544 1280x720  (00:38:39)
+   ok: 41M /Users/shamsalani/Downloads/duplexnvc-baseline/bundles/mlvc_multi/dmc61sbr_reglu-psnr_v1-coreml-apple-v0.1.tar
+== where each network runs (MLComputePlan)
+mlvc_1080p/1920x1088/MLVCDecoder | cpuAndNeuralEngine | 316 ops | NE 313 ops 100.0% cost | GPU 0 ops 0.0% cost | CPU 3 ops 0.0% cost
+mlvc_1080p/1920x1088/MLVCDecoder | cpuAndGPU | 316 ops | NE 0 ops 0.0% cost | GPU 316 ops 100.0% cost | CPU 0 ops 0.0% cost
+mlvc_1080p/1920x1088/MLVCDecoder | cpuOnly | 316 ops | NE 0 ops 0.0% cost | GPU 0 ops 0.0% cost | CPU 316 ops 100.0% cost
+mlvc_1080p/1920x1088/MLVCEncoder | cpuAndNeuralEngine | 371 ops | NE 368 ops 100.0% cost | GPU 0 ops 0.0% cost | CPU 3 ops 0.0% cost
+mlvc_1080p/1920x1088/MLVCEncoder | cpuAndGPU | 371 ops | NE 0 ops 0.0% cost | GPU 371 ops 100.0% cost | CPU 0 ops 0.0% cost
+mlvc_1080p/1920x1088/MLVCEncoder | cpuOnly | 371 ops | NE 0 ops 0.0% cost | GPU 0 ops 0.0% cost | CPU 371 ops 100.0% cost
+mlvc_540p/960x544/MLVCDecoder | cpuAndNeuralEngine | 317 ops | NE 314 ops 100.0% cost | GPU 0 ops 0.0% cost | CPU 3 ops 0.0% cost
+mlvc_540p/960x544/MLVCDecoder | cpuAndGPU | 317 ops | NE 0 ops 0.0% cost | GPU 317 ops 100.0% cost | CPU 0 ops 0.0% cost
+mlvc_540p/960x544/MLVCDecoder | cpuOnly | 317 ops | NE 0 ops 0.0% cost | GPU 0 ops 0.0% cost | CPU 317 ops 100.0% cost
+mlvc_540p/960x544/MLVCEncoder | cpuAndNeuralEngine | 374 ops | NE 371 ops 100.0% cost | GPU 0 ops 0.0% cost | CPU 3 ops 0.0% cost
+mlvc_540p/960x544/MLVCEncoder | cpuAndGPU | 374 ops | NE 0 ops 0.0% cost | GPU 374 ops 100.0% cost | CPU 0 ops 0.0% cost
+mlvc_540p/960x544/MLVCEncoder | cpuOnly | 374 ops | NE 0 ops 0.0% cost | GPU 0 ops 0.0% cost | CPU 374 ops 100.0% cost
+mlvc_720p/1280x720/MLVCDecoder | cpuAndNeuralEngine | 316 ops | NE 313 ops 100.0% cost | GPU 0 ops 0.0% cost | CPU 3 ops 0.0% cost
+mlvc_720p/1280x720/MLVCDecoder | cpuAndGPU | 316 ops | NE 0 ops 0.0% cost | GPU 316 ops 100.0% cost | CPU 0 ops 0.0% cost
+mlvc_720p/1280x720/MLVCDecoder | cpuOnly | 316 ops | NE 0 ops 0.0% cost | GPU 0 ops 0.0% cost | CPU 316 ops 100.0% cost
+mlvc_720p/1280x720/MLVCEncoder | cpuAndNeuralEngine | 371 ops | NE 368 ops 100.0% cost | GPU 0 ops 0.0% cost | CPU 3 ops 0.0% cost
+mlvc_720p/1280x720/MLVCEncoder | cpuAndGPU | 371 ops | NE 0 ops 0.0% cost | GPU 371 ops 100.0% cost | CPU 0 ops 0.0% cost
+mlvc_720p/1280x720/MLVCEncoder | cpuOnly | 371 ops | NE 0 ops 0.0% cost | GPU 0 ops 0.0% cost | CPU 371 ops 100.0% cost
+mlvc_multi/1280x720/MLVCDecoder | cpuAndNeuralEngine | 316 ops | NE 313 ops 100.0% cost | GPU 0 ops 0.0% cost | CPU 3 ops 0.0% cost
+mlvc_multi/1280x720/MLVCDecoder | cpuAndGPU | 316 ops | NE 0 ops 0.0% cost | GPU 316 ops 100.0% cost | CPU 0 ops 0.0% cost
+mlvc_multi/1280x720/MLVCDecoder | cpuOnly | 316 ops | NE 0 ops 0.0% cost | GPU 0 ops 0.0% cost | CPU 316 ops 100.0% cost
+mlvc_multi/1280x720/MLVCEncoder | cpuAndNeuralEngine | 371 ops | NE 368 ops 100.0% cost | GPU 0 ops 0.0% cost | CPU 3 ops 0.0% cost
+mlvc_multi/1280x720/MLVCEncoder | cpuAndGPU | 371 ops | NE 0 ops 0.0% cost | GPU 371 ops 100.0% cost | CPU 0 ops 0.0% cost
+mlvc_multi/1280x720/MLVCEncoder | cpuOnly | 371 ops | NE 0 ops 0.0% cost | GPU 0 ops 0.0% cost | CPU 371 ops 100.0% cost
+mlvc_multi/640x368/MLVCDecoder | cpuAndNeuralEngine | 316 ops | NE 313 ops 100.0% cost | GPU 0 ops 0.0% cost | CPU 3 ops 0.0% cost
+mlvc_multi/640x368/MLVCDecoder | cpuAndGPU | 316 ops | NE 0 ops 0.0% cost | GPU 316 ops 100.0% cost | CPU 0 ops 0.0% cost
+mlvc_multi/640x368/MLVCDecoder | cpuOnly | 316 ops | NE 0 ops 0.0% cost | GPU 0 ops 0.0% cost | CPU 316 ops 100.0% cost
+mlvc_multi/640x368/MLVCEncoder | cpuAndNeuralEngine | 371 ops | NE 368 ops 100.0% cost | GPU 0 ops 0.0% cost | CPU 3 ops 0.0% cost
+mlvc_multi/640x368/MLVCEncoder | cpuAndGPU | 371 ops | NE 0 ops 0.0% cost | GPU 371 ops 100.0% cost | CPU 0 ops 0.0% cost
+mlvc_multi/640x368/MLVCEncoder | cpuOnly | 371 ops | NE 0 ops 0.0% cost | GPU 0 ops 0.0% cost | CPU 371 ops 100.0% cost
+mlvc_multi/960x544/MLVCDecoder | cpuAndNeuralEngine | 317 ops | NE 314 ops 100.0% cost | GPU 0 ops 0.0% cost | CPU 3 ops 0.0% cost
+mlvc_multi/960x544/MLVCDecoder | cpuAndGPU | 317 ops | NE 0 ops 0.0% cost | GPU 317 ops 100.0% cost | CPU 0 ops 0.0% cost
+mlvc_multi/960x544/MLVCDecoder | cpuOnly | 317 ops | NE 0 ops 0.0% cost | GPU 0 ops 0.0% cost | CPU 317 ops 100.0% cost
+mlvc_multi/960x544/MLVCEncoder | cpuAndNeuralEngine | 374 ops | NE 371 ops 100.0% cost | GPU 0 ops 0.0% cost | CPU 3 ops 0.0% cost
+mlvc_multi/960x544/MLVCEncoder | cpuAndGPU | 374 ops | NE 0 ops 0.0% cost | GPU 374 ops 100.0% cost | CPU 0 ops 0.0% cost
+mlvc_multi/960x544/MLVCEncoder | cpuOnly | 374 ops | NE 0 ops 0.0% cost | GPU 0 ops 0.0% cost | CPU 374 ops 100.0% cost
+mlvcs_1080p/1920x1088/MLVCDecoder | cpuAndNeuralEngine | 217 ops | NE 214 ops 100.0% cost | GPU 0 ops 0.0% cost | CPU 3 ops 0.0% cost
+mlvcs_1080p/1920x1088/MLVCDecoder | cpuAndGPU | 217 ops | NE 0 ops 0.0% cost | GPU 217 ops 100.0% cost | CPU 0 ops 0.0% cost
+mlvcs_1080p/1920x1088/MLVCDecoder | cpuOnly | 217 ops | NE 0 ops 0.0% cost | GPU 0 ops 0.0% cost | CPU 217 ops 100.0% cost
+mlvcs_1080p/1920x1088/MLVCEncoder | cpuAndNeuralEngine | 221 ops | NE 218 ops 100.0% cost | GPU 0 ops 0.0% cost | CPU 3 ops 0.0% cost
+mlvcs_1080p/1920x1088/MLVCEncoder | cpuAndGPU | 221 ops | NE 0 ops 0.0% cost | GPU 221 ops 100.0% cost | CPU 0 ops 0.0% cost
+mlvcs_1080p/1920x1088/MLVCEncoder | cpuOnly | 221 ops | NE 0 ops 0.0% cost | GPU 0 ops 0.0% cost | CPU 221 ops 100.0% cost
+mlvcs_540p/960x544/MLVCDecoder | cpuAndNeuralEngine | 218 ops | NE 215 ops 100.0% cost | GPU 0 ops 0.0% cost | CPU 3 ops 0.0% cost
+mlvcs_540p/960x544/MLVCDecoder | cpuAndGPU | 218 ops | NE 0 ops 0.0% cost | GPU 218 ops 100.0% cost | CPU 0 ops 0.0% cost
+mlvcs_540p/960x544/MLVCDecoder | cpuOnly | 218 ops | NE 0 ops 0.0% cost | GPU 0 ops 0.0% cost | CPU 218 ops 100.0% cost
+mlvcs_540p/960x544/MLVCEncoder | cpuAndNeuralEngine | 224 ops | NE 221 ops 100.0% cost | GPU 0 ops 0.0% cost | CPU 3 ops 0.0% cost
+mlvcs_540p/960x544/MLVCEncoder | cpuAndGPU | 224 ops | NE 0 ops 0.0% cost | GPU 224 ops 100.0% cost | CPU 0 ops 0.0% cost
+mlvcs_540p/960x544/MLVCEncoder | cpuOnly | 224 ops | NE 0 ops 0.0% cost | GPU 0 ops 0.0% cost | CPU 224 ops 100.0% cost
+mlvcs_720p/1280x720/MLVCDecoder | cpuAndNeuralEngine | 218 ops | NE 215 ops 100.0% cost | GPU 0 ops 0.0% cost | CPU 3 ops 0.0% cost
+mlvcs_720p/1280x720/MLVCDecoder | cpuAndGPU | 218 ops | NE 0 ops 0.0% cost | GPU 218 ops 100.0% cost | CPU 0 ops 0.0% cost
+mlvcs_720p/1280x720/MLVCDecoder | cpuOnly | 218 ops | NE 0 ops 0.0% cost | GPU 0 ops 0.0% cost | CPU 218 ops 100.0% cost
+mlvcs_720p/1280x720/MLVCEncoder | cpuAndNeuralEngine | 224 ops | NE 221 ops 100.0% cost | GPU 0 ops 0.0% cost | CPU 3 ops 0.0% cost
+mlvcs_720p/1280x720/MLVCEncoder | cpuAndGPU | 224 ops | NE 0 ops 0.0% cost | GPU 224 ops 100.0% cost | CPU 0 ops 0.0% cost
+mlvcs_720p/1280x720/MLVCEncoder | cpuOnly | 224 ops | NE 0 ops 0.0% cost | GPU 0 ops 0.0% cost | CPU 224 ops 100.0% cost
+== STEP 2a END  Fri Nov 13 00:40:38 +04 2026
+-rw-r--r--  1 shamsalani  staff    13M Nov 10 16:37 /Users/shamsalani/Downloads/duplexnvc-baseline/bundles/mlvc-s/dmc61sbr_mini_reglu-perceptual_v1-coreml-apple-v0.1.tar
+-rw-r--r--  1 shamsalani  staff    35M Nov 10 19:19 /Users/shamsalani/Downloads/duplexnvc-baseline/bundles/mlvc/dmc61sbr_reglu-psnr_v1-coreml-apple-v0.1.tar
+-rw-r--r--  1 shamsalani  staff    41M Nov 13 00:37 /Users/shamsalani/Downloads/duplexnvc-baseline/bundles/mlvc_1080p/dmc61sbr_reglu-psnr_v1-coreml-apple-v0.1.tar
+-rw-r--r--  1 shamsalani  staff    36M Nov 13 00:35 /Users/shamsalani/Downloads/duplexnvc-baseline/bundles/mlvc_540p/dmc61sbr_reglu-psnr_v1-coreml-apple-v0.1.tar
+-rw-r--r--  1 shamsalani  staff    37M Nov 13 00:35 /Users/shamsalani/Downloads/duplexnvc-baseline/bundles/mlvc_720p/dmc61sbr_reglu-psnr_v1-coreml-apple-v0.1.tar
+-rw-r--r--  1 shamsalani  staff    41M Nov 13 00:40 /Users/shamsalani/Downloads/duplexnvc-baseline/bundles/mlvc_multi/dmc61sbr_reglu-psnr_v1-coreml-apple-v0.1.tar
+-rw-r--r--  1 shamsalani  staff    13M Nov 13 00:38 /Users/shamsalani/Downloads/duplexnvc-baseline/bundles/mlvcs_1080p/dmc61sbr_mini_reglu-psnr_v1-coreml-apple-v0.1.tar
+-rw-r--r--  1 shamsalani  staff    11M Nov 13 00:37 /Users/shamsalani/Downloads/duplexnvc-baseline/bundles/mlvcs_540p/dmc61sbr_mini_reglu-psnr_v1-coreml-apple-v0.1.tar
+-rw-r--r--  1 shamsalani  staff    12M Nov 13 00:37 /Users/shamsalani/Downloads/duplexnvc-baseline/bundles/mlvcs_720p/dmc61sbr_mini_reglu-psnr_v1-coreml-apple-v0.1.tar

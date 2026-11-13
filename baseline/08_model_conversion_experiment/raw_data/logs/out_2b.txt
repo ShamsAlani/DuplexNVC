@@ -1,0 +1,44 @@
+== STEP 2b START  Fri Nov 13 00:42:33 +04 2026
+/dev/disk3s5   926Gi   304Gi   597Gi    34%    1.2M  6.3G    0%   /System/Volumes/Data
+-- streams 540p
+   /Users/shamsalani/Downloads/duplexnvc-baseline/data/nv12/cam_540p.nv12: 600 frames (must be 600)
+   /Users/shamsalani/Downloads/duplexnvc-baseline/data/nv12/incsrc_540p.nv12: 600 frames (must be 600)
+-- streams 720p
+   /Users/shamsalani/Downloads/duplexnvc-baseline/data/nv12/cam_720p.nv12: 600 frames (must be 600)
+   /Users/shamsalani/Downloads/duplexnvc-baseline/data/nv12/incsrc_720p.nv12: 600 frames (must be 600)
+-- streams 1080p
+   /Users/shamsalani/Downloads/duplexnvc-baseline/data/nv12/cam_1080p.nv12: 600 frames (must be 600)
+   /Users/shamsalani/Downloads/duplexnvc-baseline/data/nv12/incsrc_1080p.nv12: 600 frames (must be 600)
+-- prepare incoming mlvc_540p (960x540, QP 26, encoder on NE)
+2026-11-13 00:42:37.517 [T#26726691][ INFO][bundle.cpp:211]: Found model bundle: dmc61sbr_reglu-psnr_v1-coreml-apple-v0.1.tar
+manager: requested=npu resolved=npu
+wrote 600 access units to /Users/shamsalani/Downloads/duplexnvc-baseline/data/incoming/mlvc_540p-qp26/incoming.{aus,mlvc}
+   bitrate 539 kbps; frames 600: PSNR-Y 36.480 dB, PSNR-YUV(6:1:1) 38.900 dB
+-- prepare incoming mlvc_720p (1280x720, QP 26, encoder on NE)
+2026-11-13 00:43:26.973 [T#26728249][ INFO][bundle.cpp:211]: Found model bundle: dmc61sbr_reglu-psnr_v1-coreml-apple-v0.1.tar
+manager: requested=npu resolved=npu
+wrote 600 access units to /Users/shamsalani/Downloads/duplexnvc-baseline/data/incoming/mlvc_720p-qp26/incoming.{aus,mlvc}
+   bitrate 794 kbps; frames 600: PSNR-Y 37.759 dB, PSNR-YUV(6:1:1) 40.060 dB
+-- prepare incoming mlvc_1080p (1920x1080, QP 26, encoder on NE)
+2026-11-13 00:44:46.997 [T#26730257][ INFO][bundle.cpp:211]: Found model bundle: dmc61sbr_reglu-psnr_v1-coreml-apple-v0.1.tar
+manager: requested=npu resolved=npu
+wrote 600 access units to /Users/shamsalani/Downloads/duplexnvc-baseline/data/incoming/mlvc_1080p-qp26/incoming.{aus,mlvc}
+   bitrate 1438 kbps; frames 600: PSNR-Y 38.899 dB, PSNR-YUV(6:1:1) 41.049 dB
+-- prepare incoming mlvcs_540p (960x540, QP 26, encoder on NE)
+2026-11-13 00:47:27.364 [T#26736118][ INFO][bundle.cpp:211]: Found model bundle: dmc61sbr_mini_reglu-psnr_v1-coreml-apple-v0.1.tar
+manager: requested=npu resolved=npu
+wrote 600 access units to /Users/shamsalani/Downloads/duplexnvc-baseline/data/incoming/mlvcs_540p-qp26/incoming.{aus,mlvc}
+   bitrate 561 kbps; frames 600: PSNR-Y 35.592 dB, PSNR-YUV(6:1:1) 38.156 dB
+-- prepare incoming mlvcs_720p (1280x720, QP 26, encoder on NE)
+2026-11-13 00:47:53.469 [T#26737019][ INFO][bundle.cpp:211]: Found model bundle: dmc61sbr_mini_reglu-psnr_v1-coreml-apple-v0.1.tar
+manager: requested=npu resolved=npu
+wrote 600 access units to /Users/shamsalani/Downloads/duplexnvc-baseline/data/incoming/mlvcs_720p-qp26/incoming.{aus,mlvc}
+   bitrate 847 kbps; frames 600: PSNR-Y 37.068 dB, PSNR-YUV(6:1:1) 39.513 dB
+-- prepare incoming mlvcs_1080p (1920x1080, QP 26, encoder on NE)
+2026-11-13 00:48:30.735 [T#26738350][ INFO][bundle.cpp:211]: Found model bundle: dmc61sbr_mini_reglu-psnr_v1-coreml-apple-v0.1.tar
+manager: requested=npu resolved=npu
+wrote 600 access units to /Users/shamsalani/Downloads/duplexnvc-baseline/data/incoming/mlvcs_1080p-qp26/incoming.{aus,mlvc}
+   bitrate 1538 kbps; frames 600: PSNR-Y 38.429 dB, PSNR-YUV(6:1:1) 40.727 dB
+== STEP 2b END  Fri Nov 13 00:50:05 +04 2026
+6.6G	/Users/shamsalani/Downloads/duplexnvc-baseline/data/nv12
+ 30M	/Users/shamsalani/Downloads/duplexnvc-baseline/data/incoming

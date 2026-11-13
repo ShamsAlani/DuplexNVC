@@ -1,0 +1,16 @@
+t0_epoch_ms=1794321331691.99
+mode=turns
+size=960x540
+qp=22
+iframe_period=64
+fps=30
+deadline_ms=33.3333333333333
+seconds=60
+enc_cu=npu
+dec_cu=npu
+warmup_frames=64
+bundles=/Users/shamsalani/Downloads/duplexnvc-baseline/bundles/mlvc-s
+input=/Users/shamsalani/Downloads/duplexnvc-baseline/data/nv12/p1_540p.nv12
+incoming=/Users/shamsalani/Downloads/duplexnvc-baseline/data/incoming/p1-mlvc-s-540p/incoming.aus
+encoder_dropped=0
+decoder_failures=0

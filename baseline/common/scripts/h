@@ -1,0 +1,12 @@
+#!/bin/bash
+cat <<'X'
+DuplexNVC core baseline: run from ~/Downloads/d (see README.md for one-time setup)
+ one-time: ./b  rebuild the measurement program (after setup steps 1-6 in README)
+ Phase-1 check (MLVC-S 540p):    ./s smoke test   ./e E3a (~45 min)   ./r E3a summary
+ Baseline streams + smoke test:  ./m make 360p camera/incoming streams   ./t smoke test
+ Data + quality (Wi-Fi ON):      ./f 1080p references   ./q BD-rate vs HEVC   ./g R-D + face quality
+ QUIET MAC (Wi-Fi + Bluetooth off, brightness MAX, auto-brightness/True Tone off, apps closed, charger in):
+   ./p prepare   ./w energy E7 (~15 min, password at start)   ./x B* timing E1-E4 (~65 min)
+ Afterwards:  ./c correctness E5   ./y B* summary   ./u undo preparation   ./z collect raw results
+Every script writes out_<letter>.txt next to it.
+X

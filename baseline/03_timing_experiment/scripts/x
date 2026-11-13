@@ -1,0 +1,36 @@
+#!/bin/bash
+D=$(cd "$(dirname "$0")" && pwd); . "$D/v"
+exec > >(tee "$D/out_x4.txt") 2>&1
+R="$WORK/runs/bl_bstar"
+if [ -d "$R" ]; then mv "$R" "${R}_old_$(date +%H%M%S)"; fi
+mkdir -p "$R"; cd "$R"
+echo "== EXPERIMENT B* (E1-E4) START  $(date)"
+sw_vers | tr '\n' ' '; echo; pmset -g batt | head -1; cat "$WORK/LIBMLVC_COMMIT.txt" 2>/dev/null
+ls -l "$WORK/bundles/mlvc"
+n=0; N=31
+run () { n=$((n+1)); echo "[$n/$N] $(date +%H:%M:%S) $*"; }
+for r in 1 2 3 4 5; do
+  for m in turns alone-enc alone-dec duplex; do
+    run "round $r: $m unpaced (60 s + 60 s rest)"
+    "$BENCH" $m $BL --fps 0 --seconds 60 --out-dir T_${m}_r$r 2> T_${m}_r$r.log
+    grep -E "resolved|FAILED|rror" T_${m}_r$r.log | tr '\n' ' '; echo
+    sleep 60
+  done
+done
+for r in 1 2 3 4 5; do
+  run "B* duplex paced 30 fps, run $r"
+  "$BENCH" duplex $BL --fps 30 --seconds 60 --out-dir T_duplex30_r$r 2> T_duplex30_r$r.log
+  grep -E "FAILED|rror" T_duplex30_r$r.log; sleep 60
+done
+for r in 1 2 3; do
+  run "turns paced 30 fps, run $r"
+  "$BENCH" turns $BL --fps 30 --seconds 60 --out-dir T_turns30_r$r 2> T_turns30_r$r.log
+  sleep 60
+done
+for r in 1 2 3; do
+  run "libmlvc CLI cross-check, run $r"
+  mkdir -p T_cli_r$r; "$MLVC" benchmark --model-bundles-dir "$WORK/bundles/mlvc" --num-encoders 1 --num-decoders 1 --input "$CAM:640x360" --qp 26 --iframe-period 64 --duration-seconds 60 --output-dir T_cli_r$r > T_cli_r$r.log 2>&1
+  sleep 60
+done
+echo "== EXPERIMENT B* END  $(date)"
+"$D/y"

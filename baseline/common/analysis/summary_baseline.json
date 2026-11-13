@@ -1,0 +1,12 @@
+{
+ "E1_t_enc_ms": 5.858,
+ "E1_t_dec_ms": 5.938,
+ "T_turns_ms": 11.809,
+ "T_shared_ms": 10.68,
+ "S": 1.106,
+ "S_max": 1.987,
+ "kappa_enc": 1.823,
+ "kappa_dec": 1.799,
+ "E3a_S": 1.148,
+ "energy_mJ_per_pair": 65.323
+}

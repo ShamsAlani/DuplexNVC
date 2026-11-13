@@ -1,0 +1,18 @@
+libmlvc 0.1.0 (eb5d60a, HEAD)
+Platform: Apple Mac16,8, macOS 26.6
+  CPU: Apple M4 Pro (M4, arm64, fp16, dotprod)
+Creating manager...
+Manager: coreml/npu, model_cache, session_preload at-init
+  v0.1: 640x368, max_fps=120, max_temporal=2, max_ltr=8
+Dataset: VCD-640x360-s1-3s, 3 clips, 640x360, 30 fps, scenarios: s1
+Encoder: v0.1, 640x360, iframe=64, temporal=1, ltr=(internal, start=0, period=0, slots=4, recovery=0)
+Validation: QP: 16 24 32 40, limit: 1000, anchor: intel_hw_hevc_lp.json
+Running validation tests...
+
++----------+-------+-------------+-------------+-------------+-------------+-------+-------+-------+-------+
+|          |       |           kbps            |           PSNR            |             BD-rate           |
++----------+-------+-------------+-------------+-------------+-------------+-------+-------+-------+-------+
+| Scenario | Clips |   Anchor    |    Test     |   Anchor    |    Test     |   Y   |   U   |   V   |  YUV  |
++----------+-------+-------------+-------------+-------------+-------------+-------+-------+-------+-------+
+| s1       |     3 |     82-1205 |      50-507 |   32.1-44.1 |   33.2-40.8 | -31.2 | -73.1 | -72.2 | -41.0 |
++----------+-------+-------------+-------------+-------------+-------------+-------+-------+-------+-------+

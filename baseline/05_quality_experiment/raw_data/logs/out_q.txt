@@ -1,0 +1,47 @@
+== mlvc validate: full MLVC 360p vs Intel HW HEVC anchor (libmlvc test set)  Tue Nov 10 19:49:41 +04 2026
+libmlvc 0.1.0 (eb5d60a, HEAD)
+Platform: Apple Mac16,8, macOS 26.6
+  CPU: Apple M4 Pro (M4, arm64, fp16, dotprod)
+Creating manager...
+Manager: coreml/npu, model_cache, session_preload at-init
+  v0.1: 640x368, max_fps=120, max_temporal=2, max_ltr=8
+Dataset: VCD-640x360-s1-3s, 3 clips, 640x360, 30 fps, scenarios: s1
+Encoder: v0.1, 640x360, iframe=64, temporal=1, ltr=(internal, start=0, period=0, slots=4, recovery=0)
+Validation: QP: 16 24 32 40, limit: 1000, anchor: intel_hw_hevc_lp.json
+Running validation tests...
++----------+-------+-------------+-------------+-------------+-------------+-------+-------+-------+-------+
+|          |       |           kbps            |           PSNR            |             BD-rate           |
++----------+-------+-------------+-------------+-------------+-------------+-------+-------+-------+-------+
+| Scenario | Clips |   Anchor    |    Test     |   Anchor    |    Test     |   Y   |   U   |   V   |  YUV  |
++----------+-------+-------------+-------------+-------------+-------------+-------+-------+-------+-------+
+| s1       |     3 |     82-1205 |      50-507 |   32.1-44.1 |   33.2-40.8 | -31.2 | -73.1 | -72.2 | -41.0 |
++----------+-------+-------------+-------------+-------------+-------------+-------+-------+-------+-------+
+== R-D on the 4 shipped clips (calibration set)
+/Users/shamsalani/Downloads/duplexnvc-baseline/.venv/lib/python3.13/site-packages/torchvision/models/_utils.py:207: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/Users/shamsalani/Downloads/duplexnvc-baseline/.venv/lib/python3.13/site-packages/torchvision/models/_utils.py:222: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=AlexNet_Weights.IMAGENET1K_V1`. You can also use `weights=AlexNet_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+Downloading: "https://download.pytorch.org/models/alexnet-owt-7be5be79.pth" to /Users/shamsalani/.cache/torch/hub/checkpoints/alexnet-owt-7be5be79.pth
+LPIPS unavailable: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1028)>
+   0380a3 qp16:   176.9 kbps  PSNR-Y 44.12  YUV 46.04
+   0380a3 qp24:    96.6 kbps  PSNR-Y 42.08  YUV 44.28
+   0380a3 qp32:    45.3 kbps  PSNR-Y 38.87  YUV 41.48
+   0380a3 qp40:    21.5 kbps  PSNR-Y 35.05  YUV 38.09
+   6587ae qp16:   352.5 kbps  PSNR-Y 42.47  YUV 43.65
+   6587ae qp24:   187.4 kbps  PSNR-Y 40.41  YUV 41.91
+   6587ae qp32:    81.8 kbps  PSNR-Y 36.98  YUV 39.00
+   6587ae qp40:    35.7 kbps  PSNR-Y 33.09  YUV 35.59
+   6c9c96 qp16:   666.7 kbps  PSNR-Y 38.79  YUV 40.57
+   6c9c96 qp24:   331.8 kbps  PSNR-Y 36.83  YUV 38.87
+   6c9c96 qp32:   128.0 kbps  PSNR-Y 33.66  YUV 36.10
+   6c9c96 qp40:    48.9 kbps  PSNR-Y 30.20  YUV 32.98
+   9c02f6 qp16:   538.8 kbps  PSNR-Y 35.67  YUV 38.06
+   9c02f6 qp24:   331.7 kbps  PSNR-Y 34.51  YUV 37.04
+   9c02f6 qp32:   164.5 kbps  PSNR-Y 31.80  YUV 34.67
+   9c02f6 qp40:    68.2 kbps  PSNR-Y 27.57  YUV 30.90
+
+== mean over clips per QP (4 clips) -> rd_shipped.csv
+   QP 16:   433.7 kbps  PSNR-Y 40.26  PSNR-YUV 42.08  display PSNR-Y nan  face PSNR-Y nan  face LPIPS nan
+   QP 24:   236.9 kbps  PSNR-Y 38.46  PSNR-YUV 40.53  display PSNR-Y nan  face PSNR-Y nan  face LPIPS nan
+   QP 32:   104.9 kbps  PSNR-Y 35.33  PSNR-YUV 37.81  display PSNR-Y nan  face PSNR-Y nan  face LPIPS nan
+   QP 40:    43.6 kbps  PSNR-Y 31.48  PSNR-YUV 34.39  display PSNR-Y nan  face PSNR-Y nan  face LPIPS nan

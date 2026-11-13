@@ -1,0 +1,16 @@
+t0_epoch_ms=1794334543554.32
+mode=duplex
+size=640x360
+qp=26
+iframe_period=64
+fps=30
+deadline_ms=33.3333333333333
+seconds=60
+enc_cu=npu
+dec_cu=npu
+warmup_frames=64
+bundles=/Users/shamsalani/Downloads/duplexnvc-baseline/bundles/mlvc
+input=/Users/shamsalani/Downloads/duplexnvc-baseline/data/nv12/bl_camera_640x360.nv12
+incoming=/Users/shamsalani/Downloads/duplexnvc-baseline/data/incoming/mlvc-640x360-qp26/incoming.aus
+encoder_dropped=0
+decoder_failures=0

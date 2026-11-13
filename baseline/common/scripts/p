@@ -1,0 +1,14 @@
+#!/bin/bash
+D=$(cd "$(dirname "$0")" && pwd); . "$D/v"
+exec > >(tee "$D/out_p.txt") 2>&1
+echo "== preparing the Mac"
+sudo mdutil -a -i off >/dev/null && echo "Spotlight indexing: paused"
+sudo tmutil disable && echo "Time Machine: paused"
+pkill caffeinate 2>/dev/null; nohup caffeinate -dimsu >/dev/null 2>&1 &
+echo "Keep-awake: on"
+pmset -g batt | head -1
+pmset -g custom | grep -iE "power:|powermode"
+for f in "$BENCH" "$MLVC" "$PY" "$TOOLS/analyze_run.py"; do [ -e "$f" ] && echo "ok  $f" || echo "MISSING  $f"; done
+echo
+echo "Now: plug in the charger, quit every other app (keep Terminal), brightness MAX (auto-brightness and True Tone off), Wi-Fi and Bluetooth off."
+echo "Expect 'AC Power' above and no MISSING lines. Next: ./s"

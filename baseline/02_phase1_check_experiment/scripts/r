@@ -1,0 +1,45 @@
+#!/bin/bash
+D=$(cd "$(dirname "$0")" && pwd); . "$D/v"
+exec > >(tee "$D/out_r.txt") 2>&1
+R="$WORK/runs/e3a"; cd "$R" || exit 1
+echo "== E3a results  $(date)"
+"$PY" "$TOOLS/analyze_run.py" timing T_turns30_r* 2>/dev/null
+"$PY" - "$R" "$TOOLS" <<'PY'
+import sys, statistics as st
+sys.path.insert(0, sys.argv[2]); import analyze_run as A
+base = sys.argv[1]
+def s(run, d):
+    m, rows = A.load(f"{base}/{run}"); return A.direction_summary(m, rows, d)
+res = []
+for r in range(1, 6):
+    try:
+        ae, ad = s(f"T_alone-enc_r{r}", "E"), s(f"T_alone-dec_r{r}", "D")
+        te, td = s(f"T_turns_r{r}", "E"), s(f"T_turns_r{r}", "D")
+        de, dd = s(f"T_duplex_r{r}", "E"), s(f"T_duplex_r{r}", "D")
+    except (FileNotFoundError, TypeError):
+        print(f"round {r}: incomplete, skipped"); continue
+    tt = max(te["frame_time_ms_mean"], td["frame_time_ms_mean"])
+    ts = max(de["frame_time_ms_mean"], dd["frame_time_ms_mean"])
+    res.append({
+        "t_enc alone call ms": ae["call_ms_mean"], "t_dec alone call ms": ad["call_ms_mean"],
+        "t_enc alone network ms": ae["infer_ms_mean"], "t_dec alone network ms": ad["infer_ms_mean"],
+        "sum alone ms (= old estimate)": ae["call_ms_mean"] + ad["call_ms_mean"],
+        "T_turns ms (measured)": tt,
+        "switching cost ms (T_turns - sum)": tt - ae["call_ms_mean"] - ad["call_ms_mean"],
+        "T_shared ms": ts, "fps per direction, shared": 1000 / ts,
+        "S = T_turns / T_shared": tt / ts,
+        "kappa enc (call)": de["call_ms_mean"] / ae["call_ms_mean"],
+        "kappa dec (call)": dd["call_ms_mean"] / ad["call_ms_mean"],
+        "kappa enc (network)": de["infer_ms_mean"] / ae["infer_ms_mean"],
+        "kappa dec (network)": dd["infer_ms_mean"] / ad["infer_ms_mean"],
+    })
+p1 = {"t_enc alone call ms": "5.0", "t_dec alone call ms": "5.0", "sum alone ms (= old estimate)": "10.0 (estimate)",
+      "T_shared ms": "8.7", "fps per direction, shared": "115.5", "S = T_turns / T_shared": "~1.15 (estimate)",
+      "kappa enc (network)": "~1.8", "kappa dec (network)": "~1.8"}
+print(f"\nrounds used: {len(res)}")
+print(f"{'metric':38s} {'median':>8s} {'min':>8s} {'max':>8s}   Phase 1")
+for k in (res[0].keys() if res else []):
+    v = [x[k] for x in res]
+    print(f"{k:38s} {st.median(v):8.2f} {min(v):8.2f} {max(v):8.2f}   {p1.get(k, '')}")
+PY
+echo "Saved to $D/out_r.txt."

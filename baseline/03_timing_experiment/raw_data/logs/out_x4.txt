@@ -1,0 +1,150 @@
+== EXPERIMENT B* (E1-E4) START  Tue Nov 10 21:29:32 +04 2026
+ProductName:		macOS ProductVersion:		26.6.2 BuildVersion:		25G83 
+Now drawing from 'AC Power'
+eb5d60a
+total 72360
+-rw-r--r--  1 shamsalani  staff  37048320 Nov 10 19:19 dmc61sbr_reglu-psnr_v1-coreml-apple-v0.1.tar
+[1/31] 21:29:32 round 1: turns unpaced (60 s + 60 s rest)
+manager: requested=npu resolved=npu 
+[2/31] 21:31:33 round 1: alone-enc unpaced (60 s + 60 s rest)
+manager: requested=npu resolved=npu 
+[3/31] 21:33:33 round 1: alone-dec unpaced (60 s + 60 s rest)
+manager: requested=npu resolved=npu 
+[4/31] 21:35:34 round 1: duplex unpaced (60 s + 60 s rest)
+manager: requested=npu resolved=npu 
+[5/31] 21:37:34 round 2: turns unpaced (60 s + 60 s rest)
+manager: requested=npu resolved=npu 
+[6/31] 21:39:35 round 2: alone-enc unpaced (60 s + 60 s rest)
+manager: requested=npu resolved=npu 
+[7/31] 21:41:35 round 2: alone-dec unpaced (60 s + 60 s rest)
+manager: requested=npu resolved=npu 
+[8/31] 21:43:35 round 2: duplex unpaced (60 s + 60 s rest)
+manager: requested=npu resolved=npu 
+[9/31] 21:45:36 round 3: turns unpaced (60 s + 60 s rest)
+manager: requested=npu resolved=npu 
+[10/31] 21:47:36 round 3: alone-enc unpaced (60 s + 60 s rest)
+manager: requested=npu resolved=npu 
+[11/31] 21:49:37 round 3: alone-dec unpaced (60 s + 60 s rest)
+manager: requested=npu resolved=npu 
+[12/31] 21:51:37 round 3: duplex unpaced (60 s + 60 s rest)
+manager: requested=npu resolved=npu 
+[13/31] 21:53:38 round 4: turns unpaced (60 s + 60 s rest)
+manager: requested=npu resolved=npu 
+[14/31] 21:55:38 round 4: alone-enc unpaced (60 s + 60 s rest)
+manager: requested=npu resolved=npu 
+[15/31] 21:57:39 round 4: alone-dec unpaced (60 s + 60 s rest)
+manager: requested=npu resolved=npu 
+[16/31] 21:59:39 round 4: duplex unpaced (60 s + 60 s rest)
+manager: requested=npu resolved=npu 
+[17/31] 22:01:39 round 5: turns unpaced (60 s + 60 s rest)
+manager: requested=npu resolved=npu 
+[18/31] 22:03:40 round 5: alone-enc unpaced (60 s + 60 s rest)
+manager: requested=npu resolved=npu 
+[19/31] 22:05:40 round 5: alone-dec unpaced (60 s + 60 s rest)
+manager: requested=npu resolved=npu 
+[20/31] 22:07:41 round 5: duplex unpaced (60 s + 60 s rest)
+manager: requested=npu resolved=npu 
+[21/31] 22:09:41 B* duplex paced 30 fps, run 1
+[22/31] 22:11:42 B* duplex paced 30 fps, run 2
+[23/31] 22:13:42 B* duplex paced 30 fps, run 3
+[24/31] 22:15:43 B* duplex paced 30 fps, run 4
+[25/31] 22:17:43 B* duplex paced 30 fps, run 5
+[26/31] 22:19:44 turns paced 30 fps, run 1
+[27/31] 22:21:44 turns paced 30 fps, run 2
+[28/31] 22:23:45 turns paced 30 fps, run 3
+[29/31] 22:25:45 libmlvc CLI cross-check, run 1
+[30/31] 22:27:46 libmlvc CLI cross-check, run 2
+[31/31] 22:29:47 libmlvc CLI cross-check, run 3
+== EXPERIMENT B* END  Tue Nov 10 22:31:48 +04 2026
+== B* results (full MLVC, 360p, NE)  Tue Nov 10 22:31:48 +04 2026
+
+== UNPACED (E1 alone, E3 turns, E4 duplex): rounds used 5
+  metric                                      median       min       max   MLVC paper, M3 Pro 360p
+  encode alone, call ms                         5.86      5.85      5.91   7.72 (129.5 fps)
+  decode alone, call ms                         5.94      5.92      5.94   8.14 (122.9 fps)
+  encode alone, network ms                      5.57      5.57      5.63   
+  decode alone, network ms                      5.66      5.64      5.66   
+  encode alone fps                            170.68    169.06    170.79   
+  decode alone fps                            168.41    168.36    168.87   
+  sum alone ms                                 11.80     11.79     11.84   15.86 (estimate)
+  T_turns ms (measured)                        11.81     11.81     11.81   
+  switching cost ms                             0.01     -0.02      0.02   
+  T_shared ms (duplex, NE)                     10.68     10.68     10.68   
+  fps per direction, shared                    93.63     93.63     93.64   
+  S = T_turns / T_shared                        1.11      1.11      1.11   
+  ceiling (t_enc+t_dec)/max                     1.99      1.99      2.00   
+  kappa enc (call)                              1.82      1.81      1.82   
+  kappa dec (call)                              1.80      1.80      1.80   
+  kappa enc (network)                           1.86      1.85      1.87   
+  kappa dec (network)                           1.84      1.84      1.84   
+
+== B* = DUPLEX PACED 30 fps (the baseline): runs 5
+  metric                                      median       min       max
+  send: fps                                    30.01     30.01     30.01   
+  send: late+dropped %                          0.00      0.00      0.00   
+  send: dropped frames                          0.00      0.00      0.00   
+  send: service mean ms                        12.44     12.39     12.47   
+  send: service p99 ms                         20.03     19.69     20.36   
+  send: due->done p95 ms                       27.88     27.06     28.01   
+  send: due->done p99 ms                       29.27     29.12     29.33   
+  send: network ms                             11.83     11.78     11.86   
+  send: call ms                                12.44     12.39     12.47   
+  send: failures                                0.00      0.00      0.00   
+  send: kbps                                  120.46    120.46    120.46   
+  send: run1 start delay mean 5.79 ms p95 10.00 | I-frames 27 mean 12.15 ms | P-frames mean 12.43 ms
+  recv: fps                                    30.01     30.00     30.01   
+  recv: late+dropped %                          0.00      0.00      0.00   
+  recv: dropped frames                          0.00      0.00      0.00   
+  recv: service mean ms                        13.32     13.22     13.40   
+  recv: service p99 ms                         20.91     20.86     20.97   
+  recv: due->done p95 ms                       28.02     27.47     28.27   
+  recv: due->done p99 ms                       28.93     28.66     29.16   
+  recv: network ms                             12.72     12.63     12.81   
+  recv: call ms                                13.32     13.22     13.40   
+  recv: failures                                0.00      0.00      0.00   
+  recv: kbps                                  287.08    287.08    287.08   
+  recv: run1 start delay mean 5.08 ms p95 10.00 | I-frames 30 mean 13.76 ms | P-frames mean 13.31 ms
+
+== TURNS PACED 30 fps: runs 3
+  metric                                      median       min       max
+  send: fps                                    30.01     30.01     30.01   
+  send: late+dropped %                          0.00      0.00      0.00   
+  send: dropped frames                          0.00      0.00      0.00   
+  send: service mean ms                        10.66     10.66     10.67   
+  send: service p99 ms                         13.15     13.14     13.17   
+  send: due->done p95 ms                       20.17     20.12     20.26   
+  send: due->done p99 ms                       21.30     21.23     21.31   
+  send: network ms                             10.08     10.07     10.08   
+  send: call ms                                10.66     10.65     10.66   
+  send: failures                                0.00      0.00      0.00   
+  send: kbps                                  120.46    120.46    120.46   
+  send: run1 start delay mean 3.84 ms p95 7.50 | I-frames 27 mean 10.71 ms | P-frames mean 10.66 ms
+  recv: fps                                    30.01     30.00     30.01   
+  recv: late+dropped %                          0.00      0.00      0.00   
+  recv: dropped frames                          0.00      0.00      0.00   
+  recv: service mean ms                         8.44      8.44      8.45   
+  recv: service p99 ms                          9.99      9.91     10.00   
+  recv: due->done p95 ms                       29.81     29.67     29.92   
+  recv: due->done p99 ms                       31.06     31.04     31.06   
+  recv: network ms                              7.89      7.88      7.90   
+  recv: call ms                                 8.44      8.44      8.45   
+  recv: failures                                0.00      0.00      0.00   
+  recv: kbps                                  287.08    287.08    287.08   
+  recv: run1 start delay mean 14.50 ms p95 20.10 | I-frames 30 mean 9.42 ms | P-frames mean 8.43 ms
+== libmlvc CLI cross-check (last summary lines per run)
+-- /Users/shamsalani/Downloads/duplexnvc-baseline/runs/bl_bstar/T_cli_r1.log
+| Stream    | Count     | Reconf     | Preproc    | ScaleDec   | Entropy    | Inference  | Total      | FPS    | First  |
+| encoder_0 |    1/5618 |    1.1/0.0 |  0.02/0.00 |  0.04/0.00 |  0.19/0.01 |   10.4/0.1 |   10.7/0.0 |   93.6 |    7.5 |
+| Stream    | Count     | Reconf     | Postproc   | ScaleDec   | Entropy    | Inference  | Total      | FPS    | First  |
+| decoder_0 |    1/5617 |    0.7/0.0 |  0.06/0.01 |  0.03/0.00 |  0.15/0.01 |   10.4/0.0 |   10.7/0.0 |   93.6 |   12.6 |
+-- /Users/shamsalani/Downloads/duplexnvc-baseline/runs/bl_bstar/T_cli_r2.log
+| Stream    | Count     | Reconf     | Preproc    | ScaleDec   | Entropy    | Inference  | Total      | FPS    | First  |
+| encoder_0 |    1/5619 |    1.0/0.0 |  0.02/0.00 |  0.04/0.00 |  0.19/0.01 |   10.4/0.1 |   10.7/0.0 |   93.6 |    7.4 |
+| Stream    | Count     | Reconf     | Postproc   | ScaleDec   | Entropy    | Inference  | Total      | FPS    | First  |
+| decoder_0 |    1/5618 |    0.7/0.0 |  0.06/0.01 |  0.03/0.00 |  0.15/0.01 |   10.4/0.0 |   10.7/0.0 |   93.6 |   12.5 |
+-- /Users/shamsalani/Downloads/duplexnvc-baseline/runs/bl_bstar/T_cli_r3.log
+| Stream    | Count     | Reconf     | Preproc    | ScaleDec   | Entropy    | Inference  | Total      | FPS    | First  |
+| encoder_0 |    1/5618 |    1.0/0.0 |  0.02/0.00 |  0.04/0.00 |  0.19/0.01 |   10.4/0.1 |   10.7/0.0 |   93.6 |    7.7 |
+| Stream    | Count     | Reconf     | Postproc   | ScaleDec   | Entropy    | Inference  | Total      | FPS    | First  |
+| decoder_0 |    1/5618 |    0.7/0.0 |  0.06/0.01 |  0.03/0.00 |  0.15/0.01 |   10.4/0.0 |   10.7/0.0 |   93.6 |   12.9 |
+Saved to /Users/shamsalani/Downloads/d/out_y.txt.

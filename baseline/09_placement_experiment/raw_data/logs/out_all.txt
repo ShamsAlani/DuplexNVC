@@ -1,0 +1,1391 @@
+
+== OVERNIGHT START  Fri Nov 13 01:07:29 +04 2026   rest=60s
+ProductName:		macOS ProductVersion:		26.6.2 BuildVersion:		25G83 
+Now drawing from 'AC Power'
+eb5d60a
+== PART A: NE alone (3 rounds) for all bundles + peak memory
+[1] 01:07:30 +0min  step2/sanity/mlvc_360p/U_alone-enc_npu_r1
+requested=npu resolved=npu 
+[2] 01:09:30 +2min  step2/sanity/mlvc_360p/U_alone-dec_npu_r1
+requested=npu resolved=npu 
+[3] 01:11:31 +4min  step2/sanity/mlvc_multi/U_alone-enc_npu_r1
+requested=npu resolved=npu 
+[4] 01:14:24 +6min  step2/sanity/mlvc_multi/U_alone-dec_npu_r1
+requested=npu resolved=npu 
+[5] 01:16:25 +8min  step2/sanity/mlvc_540p/U_alone-enc_npu_r1
+requested=npu resolved=npu 
+[6] 01:18:25 +10min  step2/sanity/mlvc_540p/U_alone-dec_npu_r1
+requested=npu resolved=npu 
+[7] 01:20:26 +12min  step2/sanity/mlvc_720p/U_alone-enc_npu_r1
+requested=npu resolved=npu 
+[8] 01:22:26 +14min  step2/sanity/mlvc_720p/U_alone-dec_npu_r1
+requested=npu resolved=npu 
+[9] 01:24:27 +16min  step2/sanity/mlvc_1080p/U_alone-enc_npu_r1
+requested=npu resolved=npu 
+[10] 01:26:28 +18min  step2/sanity/mlvc_1080p/U_alone-dec_npu_r1
+requested=npu resolved=npu 
+[11] 01:28:28 +20min  step2/sanity/mlvcs_540p/U_alone-enc_npu_r1
+requested=npu resolved=npu 
+[12] 01:30:29 +22min  step2/sanity/mlvcs_540p/U_alone-dec_npu_r1
+requested=npu resolved=npu 
+[13] 01:32:29 +24min  step2/sanity/mlvcs_720p/U_alone-enc_npu_r1
+requested=npu resolved=npu 
+[14] 01:34:30 +27min  step2/sanity/mlvcs_720p/U_alone-dec_npu_r1
+requested=npu resolved=npu 
+[15] 01:36:30 +29min  step2/sanity/mlvcs_1080p/U_alone-enc_npu_r1
+requested=npu resolved=npu 
+[16] 01:38:31 +31min  step2/sanity/mlvcs_1080p/U_alone-dec_npu_r1
+requested=npu resolved=npu 
+[17] 01:40:31 +33min  step2/sanity/mlvc_360p/U_alone-enc_npu_r2
+requested=npu resolved=npu 
+[18] 01:42:32 +35min  step2/sanity/mlvc_360p/U_alone-dec_npu_r2
+requested=npu resolved=npu 
+[19] 01:44:32 +37min  step2/sanity/mlvc_multi/U_alone-enc_npu_r2
+requested=npu resolved=npu 
+[20] 01:46:33 +39min  step2/sanity/mlvc_multi/U_alone-dec_npu_r2
+requested=npu resolved=npu 
+[21] 01:48:34 +41min  step2/sanity/mlvc_540p/U_alone-enc_npu_r2
+requested=npu resolved=npu 
+[22] 01:50:35 +43min  step2/sanity/mlvc_540p/U_alone-dec_npu_r2
+requested=npu resolved=npu 
+[23] 01:52:35 +45min  step2/sanity/mlvc_720p/U_alone-enc_npu_r2
+requested=npu resolved=npu 
+[24] 01:54:36 +47min  step2/sanity/mlvc_720p/U_alone-dec_npu_r2
+requested=npu resolved=npu 
+[25] 01:56:36 +49min  step2/sanity/mlvc_1080p/U_alone-enc_npu_r2
+requested=npu resolved=npu 
+[26] 01:58:37 +51min  step2/sanity/mlvc_1080p/U_alone-dec_npu_r2
+requested=npu resolved=npu 
+[27] 02:00:38 +53min  step2/sanity/mlvcs_540p/U_alone-enc_npu_r2
+requested=npu resolved=npu 
+[28] 02:02:38 +55min  step2/sanity/mlvcs_540p/U_alone-dec_npu_r2
+requested=npu resolved=npu 
+[29] 02:04:38 +57min  step2/sanity/mlvcs_720p/U_alone-enc_npu_r2
+requested=npu resolved=npu 
+[30] 02:06:39 +59min  step2/sanity/mlvcs_720p/U_alone-dec_npu_r2
+requested=npu resolved=npu 
+[31] 02:08:39 +61min  step2/sanity/mlvcs_1080p/U_alone-enc_npu_r2
+requested=npu resolved=npu 
+[32] 02:10:40 +63min  step2/sanity/mlvcs_1080p/U_alone-dec_npu_r2
+requested=npu resolved=npu 
+[33] 02:12:40 +65min  step2/sanity/mlvc_360p/U_alone-enc_npu_r3
+requested=npu resolved=npu 
+[34] 02:14:41 +67min  step2/sanity/mlvc_360p/U_alone-dec_npu_r3
+requested=npu resolved=npu 
+[35] 02:16:41 +69min  step2/sanity/mlvc_multi/U_alone-enc_npu_r3
+requested=npu resolved=npu 
+[36] 02:18:42 +71min  step2/sanity/mlvc_multi/U_alone-dec_npu_r3
+requested=npu resolved=npu 
+[37] 02:20:43 +73min  step2/sanity/mlvc_540p/U_alone-enc_npu_r3
+requested=npu resolved=npu 
+[38] 02:22:44 +75min  step2/sanity/mlvc_540p/U_alone-dec_npu_r3
+requested=npu resolved=npu 
+[39] 02:24:44 +77min  step2/sanity/mlvc_720p/U_alone-enc_npu_r3
+requested=npu resolved=npu 
+[40] 02:26:45 +79min  step2/sanity/mlvc_720p/U_alone-dec_npu_r3
+requested=npu resolved=npu 
+[41] 02:28:45 +81min  step2/sanity/mlvc_1080p/U_alone-enc_npu_r3
+requested=npu resolved=npu 
+[42] 02:30:46 +83min  step2/sanity/mlvc_1080p/U_alone-dec_npu_r3
+requested=npu resolved=npu 
+[43] 02:32:47 +85min  step2/sanity/mlvcs_540p/U_alone-enc_npu_r3
+requested=npu resolved=npu 
+[44] 02:34:47 +87min  step2/sanity/mlvcs_540p/U_alone-dec_npu_r3
+requested=npu resolved=npu 
+[45] 02:36:48 +89min  step2/sanity/mlvcs_720p/U_alone-enc_npu_r3
+requested=npu resolved=npu 
+[46] 02:38:48 +91min  step2/sanity/mlvcs_720p/U_alone-dec_npu_r3
+requested=npu resolved=npu 
+[47] 02:40:49 +93min  step2/sanity/mlvcs_1080p/U_alone-enc_npu_r3
+requested=npu resolved=npu 
+[48] 02:42:49 +95min  step2/sanity/mlvcs_1080p/U_alone-dec_npu_r3
+requested=npu resolved=npu 
+   02:44:50 memory mlvc_360p duplex npu/npu
+   314065688  peak memory footprint
+   02:45:40 memory mlvc_360p duplex gpu/gpu
+   510264184  peak memory footprint
+   02:46:31 memory mlvc_multi duplex npu/npu
+   321159984  peak memory footprint
+   02:47:22 memory mlvc_multi duplex gpu/gpu
+   720700472  peak memory footprint
+   02:48:15 memory mlvc_540p duplex npu/npu
+   602276848  peak memory footprint
+   02:49:06 memory mlvc_540p duplex gpu/gpu
+   825492560  peak memory footprint
+   02:49:57 memory mlvc_720p duplex npu/npu
+   997426400  peak memory footprint
+   02:50:48 memory mlvc_720p duplex gpu/gpu
+   1281918320  peak memory footprint
+   02:51:39 memory mlvc_1080p duplex npu/npu
+   2193705456  peak memory footprint
+   02:52:30 memory mlvc_1080p duplex gpu/gpu
+   2568309400  peak memory footprint
+   02:53:21 memory mlvcs_540p duplex npu/npu
+   552977320  peak memory footprint
+   02:54:12 memory mlvcs_540p duplex gpu/gpu
+   733643784  peak memory footprint
+   02:55:02 memory mlvcs_720p duplex npu/npu
+   941802672  peak memory footprint
+   02:55:53 memory mlvcs_720p duplex gpu/gpu
+   1183581456  peak memory footprint
+   02:56:44 memory mlvcs_1080p duplex npu/npu
+   2087225768  peak memory footprint
+   02:57:35 memory mlvcs_1080p duplex gpu/gpu
+   2389969416  peak memory footprint
+setting       enc ms  dec ms  (min-max enc) enc net dec net  M3 enc  M3 dec  M4/M3 turns fps mem NE MB mem GPU MB  note
+mlvc_360p       5.86    5.94   5.85-5.89       5.57    5.66    7.72    8.14   0.74     84.79       300        487  
+mlvc_multi      5.86    5.94   5.86-5.90       5.58    5.66    7.72    8.14   0.74     84.75       306        687  
+mlvc_540p      11.83   11.82  11.82-11.84     11.23   11.25   15.22   16.05   0.76     42.27       574        787  
+mlvc_720p      22.23   22.17  22.23-22.27     21.22   21.21   29.59   30.21   0.74     22.52       951       1223  
+mlvc_1080p     46.36   47.56  46.34-46.36     44.11   45.50   64.10   65.79   0.72     10.65      2092       2449  
+mlvcs_540p      4.83    4.92   4.83-4.83       4.54    4.58    6.58    7.27   0.70    102.53       527        700  
+mlvcs_720p      8.25    8.48   8.25-8.25       7.77    7.95   11.93   13.61   0.66     59.75       898       1129  
+mlvcs_1080p    18.01   18.42  18.01-18.01     16.97   17.30   25.32   28.90   0.67     27.45      1991       2279  
+
+-> /Users/shamsalani/Downloads/duplexnvc-baseline/phase2/step2/step2_table.csv
+
+multi-size bundle at 360p vs single-size: enc 5.86 vs 5.86 ms, dec 5.94 vs 5.94 ms -> keep single-size bundles
+== PART B: GPU and CPU alone (3 rounds) for all 7 pairs
+[49] 02:58:27 +110min  step4/alone/mlvc_360p/U_alone-enc_gpu_r1
+requested=gpu resolved=gpu 
+[50] 03:00:28 +112min  step4/alone/mlvc_360p/U_alone-dec_gpu_r1
+requested=gpu resolved=gpu 
+[51] 03:02:28 +114min  step4/alone/mlvc_360p/U_alone-enc_cpu_r1
+requested=cpu resolved=cpu 
+[52] 03:03:49 +116min  step4/alone/mlvc_360p/U_alone-dec_cpu_r1
+requested=cpu resolved=cpu 
+[53] 03:05:09 +117min  step4/alone/mlvc_540p/U_alone-enc_gpu_r1
+requested=gpu resolved=gpu 
+[54] 03:07:10 +119min  step4/alone/mlvc_540p/U_alone-dec_gpu_r1
+requested=gpu resolved=gpu 
+[55] 03:09:10 +121min  step4/alone/mlvc_540p/U_alone-enc_cpu_r1
+requested=cpu resolved=cpu 
+[56] 03:10:31 +123min  step4/alone/mlvc_540p/U_alone-dec_cpu_r1
+requested=cpu resolved=cpu 
+[57] 03:11:52 +124min  step4/alone/mlvc_720p/U_alone-enc_gpu_r1
+requested=gpu resolved=gpu 
+[58] 03:13:52 +126min  step4/alone/mlvc_720p/U_alone-dec_gpu_r1
+requested=gpu resolved=gpu 
+[59] 03:15:53 +128min  step4/alone/mlvc_720p/U_alone-enc_cpu_r1
+requested=cpu resolved=cpu 
+[60] 03:17:14 +129min  step4/alone/mlvc_720p/U_alone-dec_cpu_r1
+requested=cpu resolved=cpu 
+[61] 03:18:35 +131min  step4/alone/mlvc_1080p/U_alone-enc_gpu_r1
+requested=gpu resolved=gpu 
+[62] 03:20:36 +133min  step4/alone/mlvc_1080p/U_alone-dec_gpu_r1
+requested=gpu resolved=gpu 
+[63] 03:22:37 +135min  step4/alone/mlvc_1080p/U_alone-enc_cpu_r1
+requested=cpu resolved=cpu 
+[64] 03:23:58 +136min  step4/alone/mlvc_1080p/U_alone-dec_cpu_r1
+requested=cpu resolved=cpu 
+[65] 03:25:19 +137min  step4/alone/mlvcs_540p/U_alone-enc_gpu_r1
+requested=gpu resolved=gpu 
+[66] 03:27:20 +139min  step4/alone/mlvcs_540p/U_alone-dec_gpu_r1
+requested=gpu resolved=gpu 
+[67] 03:29:20 +141min  step4/alone/mlvcs_540p/U_alone-enc_cpu_r1
+requested=cpu resolved=cpu 
+[68] 03:30:41 +143min  step4/alone/mlvcs_540p/U_alone-dec_cpu_r1
+requested=cpu resolved=cpu 
+[69] 03:32:01 +144min  step4/alone/mlvcs_720p/U_alone-enc_gpu_r1
+requested=gpu resolved=gpu 
+[70] 03:34:02 +146min  step4/alone/mlvcs_720p/U_alone-dec_gpu_r1
+requested=gpu resolved=gpu 
+[71] 03:36:03 +148min  step4/alone/mlvcs_720p/U_alone-enc_cpu_r1
+requested=cpu resolved=cpu 
+[72] 03:37:23 +149min  step4/alone/mlvcs_720p/U_alone-dec_cpu_r1
+requested=cpu resolved=cpu 
+[73] 03:38:44 +151min  step4/alone/mlvcs_1080p/U_alone-enc_gpu_r1
+requested=gpu resolved=gpu 
+[74] 03:40:45 +153min  step4/alone/mlvcs_1080p/U_alone-dec_gpu_r1
+requested=gpu resolved=gpu 
+[75] 03:42:45 +155min  step4/alone/mlvcs_1080p/U_alone-enc_cpu_r1
+requested=cpu resolved=cpu 
+[76] 03:44:06 +156min  step4/alone/mlvcs_1080p/U_alone-dec_cpu_r1
+requested=cpu resolved=cpu 
+[77] 03:45:27 +157min  step4/alone/mlvc_360p/U_alone-enc_gpu_r2
+requested=gpu resolved=gpu 
+[78] 03:47:27 +159min  step4/alone/mlvc_360p/U_alone-dec_gpu_r2
+requested=gpu resolved=gpu 
+[79] 03:49:28 +161min  step4/alone/mlvc_360p/U_alone-enc_cpu_r2
+requested=cpu resolved=cpu 
+[80] 03:50:48 +163min  step4/alone/mlvc_360p/U_alone-dec_cpu_r2
+requested=cpu resolved=cpu 
+[81] 03:52:09 +164min  step4/alone/mlvc_540p/U_alone-enc_gpu_r2
+requested=gpu resolved=gpu 
+[82] 03:54:10 +166min  step4/alone/mlvc_540p/U_alone-dec_gpu_r2
+requested=gpu resolved=gpu 
+[83] 03:56:10 +168min  step4/alone/mlvc_540p/U_alone-enc_cpu_r2
+requested=cpu resolved=cpu 
+[84] 03:57:31 +170min  step4/alone/mlvc_540p/U_alone-dec_cpu_r2
+requested=cpu resolved=cpu 
+[85] 03:58:51 +171min  step4/alone/mlvc_720p/U_alone-enc_gpu_r2
+requested=gpu resolved=gpu 
+[86] 04:00:52 +173min  step4/alone/mlvc_720p/U_alone-dec_gpu_r2
+requested=gpu resolved=gpu 
+[87] 04:02:53 +175min  step4/alone/mlvc_720p/U_alone-enc_cpu_r2
+requested=cpu resolved=cpu 
+[88] 04:04:14 +176min  step4/alone/mlvc_720p/U_alone-dec_cpu_r2
+requested=cpu resolved=cpu 
+[89] 04:05:34 +178min  step4/alone/mlvc_1080p/U_alone-enc_gpu_r2
+requested=gpu resolved=gpu 
+[90] 04:07:35 +180min  step4/alone/mlvc_1080p/U_alone-dec_gpu_r2
+requested=gpu resolved=gpu 
+[91] 04:09:36 +182min  step4/alone/mlvc_1080p/U_alone-enc_cpu_r2
+requested=cpu resolved=cpu 
+[92] 04:10:57 +183min  step4/alone/mlvc_1080p/U_alone-dec_cpu_r2
+requested=cpu resolved=cpu 
+[93] 04:12:18 +184min  step4/alone/mlvcs_540p/U_alone-enc_gpu_r2
+requested=gpu resolved=gpu 
+[94] 04:14:19 +186min  step4/alone/mlvcs_540p/U_alone-dec_gpu_r2
+requested=gpu resolved=gpu 
+[95] 04:16:19 +188min  step4/alone/mlvcs_540p/U_alone-enc_cpu_r2
+requested=cpu resolved=cpu 
+[96] 04:17:40 +190min  step4/alone/mlvcs_540p/U_alone-dec_cpu_r2
+requested=cpu resolved=cpu 
+[97] 04:19:00 +191min  step4/alone/mlvcs_720p/U_alone-enc_gpu_r2
+requested=gpu resolved=gpu 
+[98] 04:21:01 +193min  step4/alone/mlvcs_720p/U_alone-dec_gpu_r2
+requested=gpu resolved=gpu 
+[99] 04:23:01 +195min  step4/alone/mlvcs_720p/U_alone-enc_cpu_r2
+requested=cpu resolved=cpu 
+[100] 04:24:22 +196min  step4/alone/mlvcs_720p/U_alone-dec_cpu_r2
+requested=cpu resolved=cpu 
+[101] 04:25:43 +198min  step4/alone/mlvcs_1080p/U_alone-enc_gpu_r2
+requested=gpu resolved=gpu 
+[102] 04:27:43 +200min  step4/alone/mlvcs_1080p/U_alone-dec_gpu_r2
+requested=gpu resolved=gpu 
+[103] 04:29:44 +202min  step4/alone/mlvcs_1080p/U_alone-enc_cpu_r2
+requested=cpu resolved=cpu 
+[104] 04:31:05 +203min  step4/alone/mlvcs_1080p/U_alone-dec_cpu_r2
+requested=cpu resolved=cpu 
+[105] 04:32:26 +204min  step4/alone/mlvc_360p/U_alone-enc_gpu_r3
+requested=gpu resolved=gpu 
+[106] 04:34:26 +206min  step4/alone/mlvc_360p/U_alone-dec_gpu_r3
+requested=gpu resolved=gpu 
+[107] 04:36:27 +208min  step4/alone/mlvc_360p/U_alone-enc_cpu_r3
+requested=cpu resolved=cpu 
+[108] 04:37:47 +210min  step4/alone/mlvc_360p/U_alone-dec_cpu_r3
+requested=cpu resolved=cpu 
+[109] 04:39:08 +211min  step4/alone/mlvc_540p/U_alone-enc_gpu_r3
+requested=gpu resolved=gpu 
+[110] 04:41:08 +213min  step4/alone/mlvc_540p/U_alone-dec_gpu_r3
+requested=gpu resolved=gpu 
+[111] 04:43:09 +215min  step4/alone/mlvc_540p/U_alone-enc_cpu_r3
+requested=cpu resolved=cpu 
+[112] 04:44:29 +216min  step4/alone/mlvc_540p/U_alone-dec_cpu_r3
+requested=cpu resolved=cpu 
+[113] 04:45:50 +218min  step4/alone/mlvc_720p/U_alone-enc_gpu_r3
+requested=gpu resolved=gpu 
+[114] 04:47:51 +220min  step4/alone/mlvc_720p/U_alone-dec_gpu_r3
+requested=gpu resolved=gpu 
+[115] 04:49:51 +222min  step4/alone/mlvc_720p/U_alone-enc_cpu_r3
+requested=cpu resolved=cpu 
+[116] 04:51:12 +223min  step4/alone/mlvc_720p/U_alone-dec_cpu_r3
+requested=cpu resolved=cpu 
+[117] 04:52:33 +225min  step4/alone/mlvc_1080p/U_alone-enc_gpu_r3
+requested=gpu resolved=gpu 
+[118] 04:54:34 +227min  step4/alone/mlvc_1080p/U_alone-dec_gpu_r3
+requested=gpu resolved=gpu 
+[119] 04:56:35 +229min  step4/alone/mlvc_1080p/U_alone-enc_cpu_r3
+requested=cpu resolved=cpu 
+[120] 04:57:56 +230min  step4/alone/mlvc_1080p/U_alone-dec_cpu_r3
+requested=cpu resolved=cpu 
+[121] 04:59:17 +231min  step4/alone/mlvcs_540p/U_alone-enc_gpu_r3
+requested=gpu resolved=gpu 
+[122] 05:01:18 +233min  step4/alone/mlvcs_540p/U_alone-dec_gpu_r3
+requested=gpu resolved=gpu 
+[123] 05:03:18 +235min  step4/alone/mlvcs_540p/U_alone-enc_cpu_r3
+requested=cpu resolved=cpu 
+[124] 05:04:39 +237min  step4/alone/mlvcs_540p/U_alone-dec_cpu_r3
+requested=cpu resolved=cpu 
+[125] 05:05:59 +238min  step4/alone/mlvcs_720p/U_alone-enc_gpu_r3
+requested=gpu resolved=gpu 
+[126] 05:08:00 +240min  step4/alone/mlvcs_720p/U_alone-dec_gpu_r3
+requested=gpu resolved=gpu 
+[127] 05:10:00 +242min  step4/alone/mlvcs_720p/U_alone-enc_cpu_r3
+requested=cpu resolved=cpu 
+[128] 05:11:21 +243min  step4/alone/mlvcs_720p/U_alone-dec_cpu_r3
+requested=cpu resolved=cpu 
+[129] 05:12:41 +245min  step4/alone/mlvcs_1080p/U_alone-enc_gpu_r3
+requested=gpu resolved=gpu 
+[130] 05:14:42 +247min  step4/alone/mlvcs_1080p/U_alone-dec_gpu_r3
+requested=gpu resolved=gpu 
+[131] 05:16:43 +249min  step4/alone/mlvcs_1080p/U_alone-enc_cpu_r3
+requested=cpu resolved=cpu 
+[132] 05:18:04 +250min  step4/alone/mlvcs_1080p/U_alone-dec_cpu_r3
+requested=cpu resolved=cpu 
+== PART C: placements, batch order of the plan
+   05:19:24 idle 120 s (b1_mlvc_720p)
+-- mlvc_720p  enc npu  dec npu   (batch b1_mlvc_720p)
+[133] 05:21:54 +254min  step4/mlvc_720p_npu-npu/U_turns_r1
+requested=npu resolved=npu 
+[134] 05:23:55 +256min  step4/mlvc_720p_npu-npu/U_duplex_r1
+requested=npu resolved=npu 
+[135] 05:25:55 +258min  step4/mlvc_720p_npu-npu/U_turns_r2
+requested=npu resolved=npu 
+[136] 05:27:56 +260min  step4/mlvc_720p_npu-npu/U_duplex_r2
+requested=npu resolved=npu 
+[137] 05:29:56 +262min  step4/mlvc_720p_npu-npu/U_turns_r3
+requested=npu resolved=npu 
+[138] 05:31:57 +264min  step4/mlvc_720p_npu-npu/U_duplex_r3
+requested=npu resolved=npu 
+[139] 05:34:01 +266min  step4/mlvc_720p_npu-npu/P30_r1
+requested=npu resolved=npu 
+[140] 05:36:27 +268min  step4/mlvc_720p_npu-npu/P30_r2
+requested=npu resolved=npu 
+[141] 05:38:53 +271min  step4/mlvc_720p_npu-npu/P30_r3
+requested=npu resolved=npu 
+[142] 05:41:19 +273min  step4/mlvc_720p_npu-npu/P30_r4
+requested=npu resolved=npu 
+[143] 05:43:45 +276min  step4/mlvc_720p_npu-npu/P30_r5
+requested=npu resolved=npu 
+   median late/dropped worst direction: 100.00 %
+   fails 30 fps -> 15 fps runs
+[144] 05:46:09 +278min  step4/mlvc_720p_npu-npu/P15_r1
+requested=npu resolved=npu 
+[145] 05:48:10 +280min  step4/mlvc_720p_npu-npu/P15_r2
+requested=npu resolved=npu 
+[146] 05:50:10 +282min  step4/mlvc_720p_npu-npu/P15_r3
+requested=npu resolved=npu 
+-- mlvc_720p  enc npu  dec gpu   (batch b1_mlvc_720p)
+[147] 05:52:11 +284min  step4/mlvc_720p_npu-gpu/U_turns_r1
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[148] 05:54:12 +286min  step4/mlvc_720p_npu-gpu/U_duplex_r1
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[149] 05:56:13 +288min  step4/mlvc_720p_npu-gpu/U_turns_r2
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[150] 05:58:14 +290min  step4/mlvc_720p_npu-gpu/U_duplex_r2
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[151] 06:00:15 +292min  step4/mlvc_720p_npu-gpu/U_turns_r3
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[152] 06:02:16 +294min  step4/mlvc_720p_npu-gpu/U_duplex_r3
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[153] 06:04:20 +296min  step4/mlvc_720p_npu-gpu/P30_r1
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[154] 06:06:46 +299min  step4/mlvc_720p_npu-gpu/P30_r2
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[155] 06:09:10 +301min  step4/mlvc_720p_npu-gpu/P30_r3
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[156] 06:11:34 +304min  step4/mlvc_720p_npu-gpu/P30_r4
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[157] 06:13:58 +306min  step4/mlvc_720p_npu-gpu/P30_r5
+requested=gpu resolved=gpu requested=npu resolved=npu 
+   median late/dropped worst direction: 100.00 %
+   fails 30 fps -> 15 fps runs
+[158] 06:16:20 +308min  step4/mlvc_720p_npu-gpu/P15_r1
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[159] 06:18:21 +310min  step4/mlvc_720p_npu-gpu/P15_r2
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[160] 06:20:22 +312min  step4/mlvc_720p_npu-gpu/P15_r3
+requested=gpu resolved=gpu requested=npu resolved=npu 
+-- mlvc_720p  enc gpu  dec npu   (batch b1_mlvc_720p)
+[161] 06:22:23 +314min  step4/mlvc_720p_gpu-npu/U_turns_r1
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[162] 06:24:24 +316min  step4/mlvc_720p_gpu-npu/U_duplex_r1
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[163] 06:26:25 +318min  step4/mlvc_720p_gpu-npu/U_turns_r2
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[164] 06:28:25 +320min  step4/mlvc_720p_gpu-npu/U_duplex_r2
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[165] 06:30:26 +322min  step4/mlvc_720p_gpu-npu/U_turns_r3
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[166] 06:32:27 +324min  step4/mlvc_720p_gpu-npu/U_duplex_r3
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[167] 06:34:31 +327min  step4/mlvc_720p_gpu-npu/P30_r1
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[168] 06:36:56 +329min  step4/mlvc_720p_gpu-npu/P30_r2
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[169] 06:39:20 +331min  step4/mlvc_720p_gpu-npu/P30_r3
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[170] 06:41:44 +334min  step4/mlvc_720p_gpu-npu/P30_r4
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[171] 06:44:08 +336min  step4/mlvc_720p_gpu-npu/P30_r5
+requested=gpu resolved=gpu requested=npu resolved=npu 
+   median late/dropped worst direction: 100.00 %
+   fails 30 fps -> 15 fps runs
+[172] 06:46:30 +339min  step4/mlvc_720p_gpu-npu/P15_r1
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[173] 06:48:31 +341min  step4/mlvc_720p_gpu-npu/P15_r2
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[174] 06:50:32 +343min  step4/mlvc_720p_gpu-npu/P15_r3
+requested=gpu resolved=gpu requested=npu resolved=npu 
+-- mlvc_720p  enc gpu  dec gpu   (batch b1_mlvc_720p)
+[175] 06:52:33 +345min  step4/mlvc_720p_gpu-gpu/U_turns_r1
+requested=gpu resolved=gpu 
+[176] 06:54:34 +347min  step4/mlvc_720p_gpu-gpu/U_duplex_r1
+requested=gpu resolved=gpu 
+[177] 06:56:34 +349min  step4/mlvc_720p_gpu-gpu/U_turns_r2
+requested=gpu resolved=gpu 
+[178] 06:58:35 +351min  step4/mlvc_720p_gpu-gpu/U_duplex_r2
+requested=gpu resolved=gpu 
+[179] 07:00:36 +353min  step4/mlvc_720p_gpu-gpu/U_turns_r3
+requested=gpu resolved=gpu 
+[180] 07:02:37 +355min  step4/mlvc_720p_gpu-gpu/U_duplex_r3
+requested=gpu resolved=gpu 
+[181] 07:04:41 +357min  step4/mlvc_720p_gpu-gpu/P30_r1
+requested=gpu resolved=gpu 
+[182] 07:07:32 +360min  step4/mlvc_720p_gpu-gpu/P30_r2
+requested=gpu resolved=gpu 
+[183] 07:10:22 +362min  step4/mlvc_720p_gpu-gpu/P30_r3
+requested=gpu resolved=gpu 
+[184] 07:13:13 +365min  step4/mlvc_720p_gpu-gpu/P30_r4
+requested=gpu resolved=gpu 
+[185] 07:16:03 +368min  step4/mlvc_720p_gpu-gpu/P30_r5
+requested=gpu resolved=gpu 
+   median late/dropped worst direction: 100.00 %
+   fails 30 fps -> 15 fps runs
+[186] 07:18:50 +371min  step4/mlvc_720p_gpu-gpu/P15_r1
+requested=gpu resolved=gpu 
+[187] 07:20:56 +373min  step4/mlvc_720p_gpu-gpu/P15_r2
+requested=gpu resolved=gpu 
+[188] 07:23:03 +375min  step4/mlvc_720p_gpu-gpu/P15_r3
+requested=gpu resolved=gpu 
+   CPU alone-enc: 76.1 ms
+   CPU alone-dec: 75.8 ms
+   CPU does not fit for mlvc_720p -> no CPU placements (D5)
+   07:25:10 idle 120 s (b2_mlvc_540p)
+-- mlvc_540p  enc npu  dec npu   (batch b2_mlvc_540p)
+[189] 07:27:40 +380min  step4/mlvc_540p_npu-npu/U_turns_r1
+requested=npu resolved=npu 
+[190] 07:29:40 +382min  step4/mlvc_540p_npu-npu/U_duplex_r1
+requested=npu resolved=npu 
+[191] 07:31:41 +384min  step4/mlvc_540p_npu-npu/U_turns_r2
+requested=npu resolved=npu 
+[192] 07:33:41 +386min  step4/mlvc_540p_npu-npu/U_duplex_r2
+requested=npu resolved=npu 
+[193] 07:35:42 +388min  step4/mlvc_540p_npu-npu/U_turns_r3
+requested=npu resolved=npu 
+[194] 07:37:43 +390min  step4/mlvc_540p_npu-npu/U_duplex_r3
+requested=npu resolved=npu 
+[195] 07:39:46 +392min  step4/mlvc_540p_npu-npu/P30_r1
+requested=npu resolved=npu 
+[196] 07:42:13 +394min  step4/mlvc_540p_npu-npu/P30_r2
+requested=npu resolved=npu 
+[197] 07:44:41 +397min  step4/mlvc_540p_npu-npu/P30_r3
+requested=npu resolved=npu 
+[198] 07:47:08 +399min  step4/mlvc_540p_npu-npu/P30_r4
+requested=npu resolved=npu 
+[199] 07:49:35 +402min  step4/mlvc_540p_npu-npu/P30_r5
+requested=npu resolved=npu 
+   median late/dropped worst direction: 5.99 %
+   fails 30 fps -> 15 fps runs
+[200] 07:52:00 +404min  step4/mlvc_540p_npu-npu/P15_r1
+requested=npu resolved=npu 
+[201] 07:54:00 +406min  step4/mlvc_540p_npu-npu/P15_r2
+requested=npu resolved=npu 
+[202] 07:56:01 +408min  step4/mlvc_540p_npu-npu/P15_r3
+requested=npu resolved=npu 
+-- mlvc_540p  enc npu  dec gpu   (batch b2_mlvc_540p)
+[203] 07:58:01 +410min  step4/mlvc_540p_npu-gpu/U_turns_r1
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[204] 08:00:02 +412min  step4/mlvc_540p_npu-gpu/U_duplex_r1
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[205] 08:02:03 +414min  step4/mlvc_540p_npu-gpu/U_turns_r2
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[206] 08:04:04 +416min  step4/mlvc_540p_npu-gpu/U_duplex_r2
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[207] 08:06:04 +418min  step4/mlvc_540p_npu-gpu/U_turns_r3
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[208] 08:08:05 +420min  step4/mlvc_540p_npu-gpu/U_duplex_r3
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[209] 08:10:09 +422min  step4/mlvc_540p_npu-gpu/P30_r1
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[210] 08:12:35 +425min  step4/mlvc_540p_npu-gpu/P30_r2
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[211] 08:15:01 +427min  step4/mlvc_540p_npu-gpu/P30_r3
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[212] 08:17:27 +429min  step4/mlvc_540p_npu-gpu/P30_r4
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[213] 08:19:53 +432min  step4/mlvc_540p_npu-gpu/P30_r5
+requested=gpu resolved=gpu requested=npu resolved=npu 
+   median late/dropped worst direction: 0.00 %
+-- mlvc_540p  enc gpu  dec npu   (batch b2_mlvc_540p)
+[214] 08:22:16 +434min  step4/mlvc_540p_gpu-npu/U_turns_r1
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[215] 08:24:16 +436min  step4/mlvc_540p_gpu-npu/U_duplex_r1
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[216] 08:26:17 +438min  step4/mlvc_540p_gpu-npu/U_turns_r2
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[217] 08:28:18 +440min  step4/mlvc_540p_gpu-npu/U_duplex_r2
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[218] 08:30:19 +442min  step4/mlvc_540p_gpu-npu/U_turns_r3
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[219] 08:32:20 +444min  step4/mlvc_540p_gpu-npu/U_duplex_r3
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[220] 08:34:24 +446min  step4/mlvc_540p_gpu-npu/P30_r1
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[221] 08:36:49 +449min  step4/mlvc_540p_gpu-npu/P30_r2
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[222] 08:39:15 +451min  step4/mlvc_540p_gpu-npu/P30_r3
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[223] 08:41:41 +454min  step4/mlvc_540p_gpu-npu/P30_r4
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[224] 08:44:07 +456min  step4/mlvc_540p_gpu-npu/P30_r5
+requested=gpu resolved=gpu requested=npu resolved=npu 
+   median late/dropped worst direction: 0.12 %
+-- mlvc_540p  enc gpu  dec gpu   (batch b2_mlvc_540p)
+[225] 08:46:29 +458min  step4/mlvc_540p_gpu-gpu/U_turns_r1
+requested=gpu resolved=gpu 
+[226] 08:48:30 +461min  step4/mlvc_540p_gpu-gpu/U_duplex_r1
+requested=gpu resolved=gpu 
+[227] 08:50:31 +463min  step4/mlvc_540p_gpu-gpu/U_turns_r2
+requested=gpu resolved=gpu 
+[228] 08:52:31 +465min  step4/mlvc_540p_gpu-gpu/U_duplex_r2
+requested=gpu resolved=gpu 
+[229] 08:54:32 +467min  step4/mlvc_540p_gpu-gpu/U_turns_r3
+requested=gpu resolved=gpu 
+[230] 08:56:33 +469min  step4/mlvc_540p_gpu-gpu/U_duplex_r3
+requested=gpu resolved=gpu 
+[231] 08:58:37 +471min  step4/mlvc_540p_gpu-gpu/P30_r1
+requested=gpu resolved=gpu 
+[232] 09:01:00 +473min  step4/mlvc_540p_gpu-gpu/P30_r2
+requested=gpu resolved=gpu 
+[233] 09:03:23 +475min  step4/mlvc_540p_gpu-gpu/P30_r3
+requested=gpu resolved=gpu 
+[234] 09:05:47 +478min  step4/mlvc_540p_gpu-gpu/P30_r4
+requested=gpu resolved=gpu 
+[235] 09:08:10 +480min  step4/mlvc_540p_gpu-gpu/P30_r5
+requested=gpu resolved=gpu 
+   median late/dropped worst direction: 100.00 %
+   fails 30 fps -> 15 fps runs
+[236] 09:10:31 +483min  step4/mlvc_540p_gpu-gpu/P15_r1
+requested=gpu resolved=gpu 
+[237] 09:12:32 +485min  step4/mlvc_540p_gpu-gpu/P15_r2
+requested=gpu resolved=gpu 
+[238] 09:14:32 +487min  step4/mlvc_540p_gpu-gpu/P15_r3
+requested=gpu resolved=gpu 
+   CPU alone-enc: 47.4 ms
+   CPU alone-dec: 47.7 ms
+   CPU does not fit for mlvc_540p -> no CPU placements (D5)
+   09:16:33 idle 120 s (b3_mlvcs_hi)
+-- mlvcs_720p  enc npu  dec npu   (batch b3_mlvcs_hi)
+[239] 09:19:03 +491min  step4/mlvcs_720p_npu-npu/U_turns_r1
+requested=npu resolved=npu 
+[240] 09:21:03 +493min  step4/mlvcs_720p_npu-npu/U_duplex_r1
+requested=npu resolved=npu 
+[241] 09:23:04 +495min  step4/mlvcs_720p_npu-npu/U_turns_r2
+requested=npu resolved=npu 
+[242] 09:25:04 +497min  step4/mlvcs_720p_npu-npu/U_duplex_r2
+requested=npu resolved=npu 
+[243] 09:27:05 +499min  step4/mlvcs_720p_npu-npu/U_turns_r3
+requested=npu resolved=npu 
+[244] 09:29:06 +501min  step4/mlvcs_720p_npu-npu/U_duplex_r3
+requested=npu resolved=npu 
+[245] 09:31:09 +503min  step4/mlvcs_720p_npu-npu/P30_r1
+requested=npu resolved=npu 
+[246] 09:33:37 +506min  step4/mlvcs_720p_npu-npu/P30_r2
+requested=npu resolved=npu 
+[247] 09:36:04 +508min  step4/mlvcs_720p_npu-npu/P30_r3
+requested=npu resolved=npu 
+[248] 09:38:32 +511min  step4/mlvcs_720p_npu-npu/P30_r4
+requested=npu resolved=npu 
+[249] 09:41:00 +513min  step4/mlvcs_720p_npu-npu/P30_r5
+requested=npu resolved=npu 
+   median late/dropped worst direction: 3.28 %
+   fails 30 fps -> 15 fps runs
+[250] 09:43:24 +515min  step4/mlvcs_720p_npu-npu/P15_r1
+requested=npu resolved=npu 
+[251] 09:45:25 +517min  step4/mlvcs_720p_npu-npu/P15_r2
+requested=npu resolved=npu 
+[252] 09:47:25 +519min  step4/mlvcs_720p_npu-npu/P15_r3
+requested=npu resolved=npu 
+-- mlvcs_720p  enc npu  dec gpu   (batch b3_mlvcs_hi)
+[253] 09:49:26 +521min  step4/mlvcs_720p_npu-gpu/U_turns_r1
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[254] 09:51:27 +523min  step4/mlvcs_720p_npu-gpu/U_duplex_r1
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[255] 09:53:28 +525min  step4/mlvcs_720p_npu-gpu/U_turns_r2
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[256] 09:55:28 +527min  step4/mlvcs_720p_npu-gpu/U_duplex_r2
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[257] 09:57:29 +529min  step4/mlvcs_720p_npu-gpu/U_turns_r3
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[258] 09:59:30 +532min  step4/mlvcs_720p_npu-gpu/U_duplex_r3
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[259] 10:01:34 +534min  step4/mlvcs_720p_npu-gpu/P30_r1
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[260] 10:04:00 +536min  step4/mlvcs_720p_npu-gpu/P30_r2
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[261] 10:06:27 +538min  step4/mlvcs_720p_npu-gpu/P30_r3
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[262] 10:08:54 +541min  step4/mlvcs_720p_npu-gpu/P30_r4
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[263] 10:11:20 +543min  step4/mlvcs_720p_npu-gpu/P30_r5
+requested=gpu resolved=gpu requested=npu resolved=npu 
+   median late/dropped worst direction: 0.06 %
+-- mlvcs_720p  enc gpu  dec npu   (batch b3_mlvcs_hi)
+[264] 10:13:44 +546min  step4/mlvcs_720p_gpu-npu/U_turns_r1
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[265] 10:15:45 +548min  step4/mlvcs_720p_gpu-npu/U_duplex_r1
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[266] 10:17:46 +550min  step4/mlvcs_720p_gpu-npu/U_turns_r2
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[267] 10:19:46 +552min  step4/mlvcs_720p_gpu-npu/U_duplex_r2
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[268] 10:21:47 +554min  step4/mlvcs_720p_gpu-npu/U_turns_r3
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[269] 10:23:48 +556min  step4/mlvcs_720p_gpu-npu/U_duplex_r3
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[270] 10:25:52 +558min  step4/mlvcs_720p_gpu-npu/P30_r1
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[271] 10:28:19 +560min  step4/mlvcs_720p_gpu-npu/P30_r2
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[272] 10:30:45 +563min  step4/mlvcs_720p_gpu-npu/P30_r3
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[273] 10:33:12 +565min  step4/mlvcs_720p_gpu-npu/P30_r4
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[274] 10:35:39 +568min  step4/mlvcs_720p_gpu-npu/P30_r5
+requested=gpu resolved=gpu requested=npu resolved=npu 
+   median late/dropped worst direction: 0.06 %
+-- mlvcs_720p  enc gpu  dec gpu   (batch b3_mlvcs_hi)
+[275] 10:38:03 +570min  step4/mlvcs_720p_gpu-gpu/U_turns_r1
+requested=gpu resolved=gpu 
+[276] 10:40:03 +572min  step4/mlvcs_720p_gpu-gpu/U_duplex_r1
+requested=gpu resolved=gpu 
+[277] 10:42:04 +574min  step4/mlvcs_720p_gpu-gpu/U_turns_r2
+requested=gpu resolved=gpu 
+[278] 10:44:05 +576min  step4/mlvcs_720p_gpu-gpu/U_duplex_r2
+requested=gpu resolved=gpu 
+[279] 10:46:05 +578min  step4/mlvcs_720p_gpu-gpu/U_turns_r3
+requested=gpu resolved=gpu 
+[280] 10:48:06 +580min  step4/mlvcs_720p_gpu-gpu/U_duplex_r3
+requested=gpu resolved=gpu 
+[281] 10:50:10 +582min  step4/mlvcs_720p_gpu-gpu/P30_r1
+requested=gpu resolved=gpu 
+[282] 10:52:34 +585min  step4/mlvcs_720p_gpu-gpu/P30_r2
+requested=gpu resolved=gpu 
+[283] 10:54:58 +587min  step4/mlvcs_720p_gpu-gpu/P30_r3
+requested=gpu resolved=gpu 
+[284] 10:57:22 +589min  step4/mlvcs_720p_gpu-gpu/P30_r4
+requested=gpu resolved=gpu 
+[285] 10:59:46 +592min  step4/mlvcs_720p_gpu-gpu/P30_r5
+requested=gpu resolved=gpu 
+   median late/dropped worst direction: 0.06 %
+   CPU alone-enc: 32.9 ms
+   CPU alone-dec: 33.7 ms
+   CPU does not fit for mlvcs_720p -> no CPU placements (D5)
+-- mlvcs_1080p  enc npu  dec npu   (batch b3_mlvcs_hi)
+[286] 11:02:08 +594min  step4/mlvcs_1080p_npu-npu/U_turns_r1
+requested=npu resolved=npu 
+[287] 11:04:08 +596min  step4/mlvcs_1080p_npu-npu/U_duplex_r1
+requested=npu resolved=npu 
+[288] 11:06:09 +598min  step4/mlvcs_1080p_npu-npu/U_turns_r2
+requested=npu resolved=npu 
+[289] 11:08:10 +600min  step4/mlvcs_1080p_npu-npu/U_duplex_r2
+requested=npu resolved=npu 
+[290] 11:10:11 +602min  step4/mlvcs_1080p_npu-npu/U_turns_r3
+requested=npu resolved=npu 
+[291] 11:12:12 +604min  step4/mlvcs_1080p_npu-npu/U_duplex_r3
+requested=npu resolved=npu 
+[292] 11:14:15 +606min  step4/mlvcs_1080p_npu-npu/P30_r1
+requested=npu resolved=npu 
+[293] 11:16:42 +609min  step4/mlvcs_1080p_npu-npu/P30_r2
+requested=npu resolved=npu 
+[294] 11:19:08 +611min  step4/mlvcs_1080p_npu-npu/P30_r3
+requested=npu resolved=npu 
+[295] 11:21:35 +614min  step4/mlvcs_1080p_npu-npu/P30_r4
+requested=npu resolved=npu 
+[296] 11:24:01 +616min  step4/mlvcs_1080p_npu-npu/P30_r5
+requested=npu resolved=npu 
+   median late/dropped worst direction: 100.00 %
+   fails 30 fps -> 15 fps runs
+[297] 11:26:25 +618min  step4/mlvcs_1080p_npu-npu/P15_r1
+requested=npu resolved=npu 
+[298] 11:28:26 +620min  step4/mlvcs_1080p_npu-npu/P15_r2
+requested=npu resolved=npu 
+[299] 11:30:27 +622min  step4/mlvcs_1080p_npu-npu/P15_r3
+requested=npu resolved=npu 
+-- mlvcs_1080p  enc npu  dec gpu   (batch b3_mlvcs_hi)
+[300] 11:32:28 +624min  step4/mlvcs_1080p_npu-gpu/U_turns_r1
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[301] 11:34:29 +626min  step4/mlvcs_1080p_npu-gpu/U_duplex_r1
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[302] 11:36:30 +629min  step4/mlvcs_1080p_npu-gpu/U_turns_r2
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[303] 11:38:31 +631min  step4/mlvcs_1080p_npu-gpu/U_duplex_r2
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[304] 11:40:32 +633min  step4/mlvcs_1080p_npu-gpu/U_turns_r3
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[305] 11:42:33 +635min  step4/mlvcs_1080p_npu-gpu/U_duplex_r3
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[306] 11:44:37 +637min  step4/mlvcs_1080p_npu-gpu/P30_r1
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[307] 11:47:01 +639min  step4/mlvcs_1080p_npu-gpu/P30_r2
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[308] 11:49:24 +641min  step4/mlvcs_1080p_npu-gpu/P30_r3
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[309] 11:51:48 +644min  step4/mlvcs_1080p_npu-gpu/P30_r4
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[310] 11:54:12 +646min  step4/mlvcs_1080p_npu-gpu/P30_r5
+requested=gpu resolved=gpu requested=npu resolved=npu 
+   median late/dropped worst direction: 100.00 %
+   fails 30 fps -> 15 fps runs
+[311] 11:56:33 +649min  step4/mlvcs_1080p_npu-gpu/P15_r1
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[312] 11:58:34 +651min  step4/mlvcs_1080p_npu-gpu/P15_r2
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[313] 12:00:35 +653min  step4/mlvcs_1080p_npu-gpu/P15_r3
+requested=gpu resolved=gpu requested=npu resolved=npu 
+-- mlvcs_1080p  enc gpu  dec npu   (batch b3_mlvcs_hi)
+[314] 12:02:36 +655min  step4/mlvcs_1080p_gpu-npu/U_turns_r1
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[315] 12:04:37 +657min  step4/mlvcs_1080p_gpu-npu/U_duplex_r1
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[316] 12:06:38 +659min  step4/mlvcs_1080p_gpu-npu/U_turns_r2
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[317] 12:08:39 +661min  step4/mlvcs_1080p_gpu-npu/U_duplex_r2
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[318] 12:10:40 +663min  step4/mlvcs_1080p_gpu-npu/U_turns_r3
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[319] 12:12:41 +665min  step4/mlvcs_1080p_gpu-npu/U_duplex_r3
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[320] 12:14:45 +667min  step4/mlvcs_1080p_gpu-npu/P30_r1
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[321] 12:17:10 +669min  step4/mlvcs_1080p_gpu-npu/P30_r2
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[322] 12:19:34 +672min  step4/mlvcs_1080p_gpu-npu/P30_r3
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[323] 12:21:58 +674min  step4/mlvcs_1080p_gpu-npu/P30_r4
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[324] 12:24:22 +676min  step4/mlvcs_1080p_gpu-npu/P30_r5
+requested=gpu resolved=gpu requested=npu resolved=npu 
+   median late/dropped worst direction: 100.00 %
+   fails 30 fps -> 15 fps runs
+[325] 12:26:44 +679min  step4/mlvcs_1080p_gpu-npu/P15_r1
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[326] 12:28:45 +681min  step4/mlvcs_1080p_gpu-npu/P15_r2
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[327] 12:30:46 +683min  step4/mlvcs_1080p_gpu-npu/P15_r3
+requested=gpu resolved=gpu requested=npu resolved=npu 
+-- mlvcs_1080p  enc gpu  dec gpu   (batch b3_mlvcs_hi)
+[328] 12:32:47 +685min  step4/mlvcs_1080p_gpu-gpu/U_turns_r1
+requested=gpu resolved=gpu 
+[329] 12:34:48 +687min  step4/mlvcs_1080p_gpu-gpu/U_duplex_r1
+requested=gpu resolved=gpu 
+[330] 12:36:49 +689min  step4/mlvcs_1080p_gpu-gpu/U_turns_r2
+requested=gpu resolved=gpu 
+[331] 12:38:50 +691min  step4/mlvcs_1080p_gpu-gpu/U_duplex_r2
+requested=gpu resolved=gpu 
+[332] 12:40:51 +693min  step4/mlvcs_1080p_gpu-gpu/U_turns_r3
+requested=gpu resolved=gpu 
+[333] 12:42:52 +695min  step4/mlvcs_1080p_gpu-gpu/U_duplex_r3
+requested=gpu resolved=gpu 
+[334] 12:44:56 +697min  step4/mlvcs_1080p_gpu-gpu/P30_r1
+requested=gpu resolved=gpu 
+[335] 12:47:34 +700min  step4/mlvcs_1080p_gpu-gpu/P30_r2
+requested=gpu resolved=gpu 
+[336] 12:50:11 +702min  step4/mlvcs_1080p_gpu-gpu/P30_r3
+requested=gpu resolved=gpu 
+[337] 12:52:48 +705min  step4/mlvcs_1080p_gpu-gpu/P30_r4
+requested=gpu resolved=gpu 
+[338] 12:55:26 +707min  step4/mlvcs_1080p_gpu-gpu/P30_r5
+requested=gpu resolved=gpu 
+   median late/dropped worst direction: 100.00 %
+   fails 30 fps -> 15 fps runs
+[339] 12:58:00 +710min  step4/mlvcs_1080p_gpu-gpu/P15_r1
+requested=gpu resolved=gpu 
+[340] 13:00:01 +712min  step4/mlvcs_1080p_gpu-gpu/P15_r2
+requested=gpu resolved=gpu 
+[341] 13:02:02 +714min  step4/mlvcs_1080p_gpu-gpu/P15_r3
+requested=gpu resolved=gpu 
+   CPU alone-enc: 71.6 ms
+   CPU alone-dec: 74.3 ms
+   CPU does not fit for mlvcs_1080p -> no CPU placements (D5)
+   13:04:04 idle 120 s (b4_mlvc_360p)
+-- mlvc_360p npu/npu = B* (Phase 2 report), not repeated
+-- mlvc_360p  enc npu  dec gpu   (batch b4_mlvc_360p)
+[342] 13:06:33 +719min  step4/mlvc_360p_npu-gpu/U_turns_r1
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[343] 13:08:34 +721min  step4/mlvc_360p_npu-gpu/U_duplex_r1
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[344] 13:10:35 +723min  step4/mlvc_360p_npu-gpu/U_turns_r2
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[345] 13:12:35 +725min  step4/mlvc_360p_npu-gpu/U_duplex_r2
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[346] 13:14:36 +727min  step4/mlvc_360p_npu-gpu/U_turns_r3
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[347] 13:16:37 +729min  step4/mlvc_360p_npu-gpu/U_duplex_r3
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[348] 13:18:41 +731min  step4/mlvc_360p_npu-gpu/P30_r1
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[349] 13:21:07 +733min  step4/mlvc_360p_npu-gpu/P30_r2
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[350] 13:23:34 +736min  step4/mlvc_360p_npu-gpu/P30_r3
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[351] 13:26:01 +738min  step4/mlvc_360p_npu-gpu/P30_r4
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[352] 13:28:27 +740min  step4/mlvc_360p_npu-gpu/P30_r5
+requested=gpu resolved=gpu requested=npu resolved=npu 
+   median late/dropped worst direction: 0.00 %
+-- mlvc_360p  enc gpu  dec npu   (batch b4_mlvc_360p)
+[353] 13:30:51 +743min  step4/mlvc_360p_gpu-npu/U_turns_r1
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[354] 13:32:52 +745min  step4/mlvc_360p_gpu-npu/U_duplex_r1
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[355] 13:34:53 +747min  step4/mlvc_360p_gpu-npu/U_turns_r2
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[356] 13:36:53 +749min  step4/mlvc_360p_gpu-npu/U_duplex_r2
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[357] 13:38:54 +751min  step4/mlvc_360p_gpu-npu/U_turns_r3
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[358] 13:40:55 +753min  step4/mlvc_360p_gpu-npu/U_duplex_r3
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[359] 13:42:58 +755min  step4/mlvc_360p_gpu-npu/P30_r1
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[360] 13:45:25 +757min  step4/mlvc_360p_gpu-npu/P30_r2
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[361] 13:47:52 +760min  step4/mlvc_360p_gpu-npu/P30_r3
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[362] 13:50:18 +762min  step4/mlvc_360p_gpu-npu/P30_r4
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[363] 13:52:45 +765min  step4/mlvc_360p_gpu-npu/P30_r5
+requested=gpu resolved=gpu requested=npu resolved=npu 
+   median late/dropped worst direction: 0.06 %
+-- mlvc_360p  enc gpu  dec gpu   (batch b4_mlvc_360p)
+[364] 13:55:09 +767min  step4/mlvc_360p_gpu-gpu/U_turns_r1
+requested=gpu resolved=gpu 
+[365] 13:57:09 +769min  step4/mlvc_360p_gpu-gpu/U_duplex_r1
+requested=gpu resolved=gpu 
+[366] 13:59:10 +771min  step4/mlvc_360p_gpu-gpu/U_turns_r2
+requested=gpu resolved=gpu 
+[367] 14:01:11 +773min  step4/mlvc_360p_gpu-gpu/U_duplex_r2
+requested=gpu resolved=gpu 
+[368] 14:03:11 +775min  step4/mlvc_360p_gpu-gpu/U_turns_r3
+requested=gpu resolved=gpu 
+[369] 14:05:12 +777min  step4/mlvc_360p_gpu-gpu/U_duplex_r3
+requested=gpu resolved=gpu 
+[370] 14:07:15 +779min  step4/mlvc_360p_gpu-gpu/P30_r1
+requested=gpu resolved=gpu 
+[371] 14:09:42 +782min  step4/mlvc_360p_gpu-gpu/P30_r2
+requested=gpu resolved=gpu 
+[372] 14:12:08 +784min  step4/mlvc_360p_gpu-gpu/P30_r3
+requested=gpu resolved=gpu 
+[373] 14:14:34 +787min  step4/mlvc_360p_gpu-gpu/P30_r4
+requested=gpu resolved=gpu 
+[374] 14:17:01 +789min  step4/mlvc_360p_gpu-gpu/P30_r5
+requested=gpu resolved=gpu 
+   median late/dropped worst direction: 0.00 %
+   CPU alone-enc: 19.8 ms
+   CPU alone-dec: 20.7 ms
+   CPU fits for mlvc_360p -> CPU placements included
+-- mlvc_360p  enc npu  dec cpu   (batch b4_mlvc_360p)
+[375] 14:19:24 +791min  step4/mlvc_360p_npu-cpu/U_turns_r1
+requested=cpu resolved=cpu requested=npu resolved=npu 
+[376] 14:21:25 +793min  step4/mlvc_360p_npu-cpu/U_duplex_r1
+requested=cpu resolved=cpu requested=npu resolved=npu 
+[377] 14:23:26 +795min  step4/mlvc_360p_npu-cpu/U_turns_r2
+requested=cpu resolved=cpu requested=npu resolved=npu 
+[378] 14:25:26 +797min  step4/mlvc_360p_npu-cpu/U_duplex_r2
+requested=cpu resolved=cpu requested=npu resolved=npu 
+[379] 14:27:27 +799min  step4/mlvc_360p_npu-cpu/U_turns_r3
+requested=cpu resolved=cpu requested=npu resolved=npu 
+[380] 14:29:28 +801min  step4/mlvc_360p_npu-cpu/U_duplex_r3
+requested=cpu resolved=cpu requested=npu resolved=npu 
+[381] 14:31:31 +804min  step4/mlvc_360p_npu-cpu/P30_r1
+requested=cpu resolved=cpu requested=npu resolved=npu 
+[382] 14:33:56 +806min  step4/mlvc_360p_npu-cpu/P30_r2
+requested=cpu resolved=cpu requested=npu resolved=npu 
+[383] 14:36:20 +808min  step4/mlvc_360p_npu-cpu/P30_r3
+requested=cpu resolved=cpu requested=npu resolved=npu 
+[384] 14:38:45 +811min  step4/mlvc_360p_npu-cpu/P30_r4
+requested=cpu resolved=cpu requested=npu resolved=npu 
+[385] 14:41:09 +813min  step4/mlvc_360p_npu-cpu/P30_r5
+requested=cpu resolved=cpu requested=npu resolved=npu 
+   median late/dropped worst direction: 0.00 %
+-- mlvc_360p  enc cpu  dec npu   (batch b4_mlvc_360p)
+[386] 14:43:30 +816min  step4/mlvc_360p_cpu-npu/U_turns_r1
+requested=cpu resolved=cpu requested=npu resolved=npu 
+[387] 14:45:31 +818min  step4/mlvc_360p_cpu-npu/U_duplex_r1
+requested=cpu resolved=cpu requested=npu resolved=npu 
+[388] 14:47:31 +820min  step4/mlvc_360p_cpu-npu/U_turns_r2
+requested=cpu resolved=cpu requested=npu resolved=npu 
+[389] 14:49:32 +822min  step4/mlvc_360p_cpu-npu/U_duplex_r2
+requested=cpu resolved=cpu requested=npu resolved=npu 
+[390] 14:51:33 +824min  step4/mlvc_360p_cpu-npu/U_turns_r3
+requested=cpu resolved=cpu requested=npu resolved=npu 
+[391] 14:53:33 +826min  step4/mlvc_360p_cpu-npu/U_duplex_r3
+requested=cpu resolved=cpu requested=npu resolved=npu 
+[392] 14:55:37 +828min  step4/mlvc_360p_cpu-npu/P30_r1
+requested=cpu resolved=cpu requested=npu resolved=npu 
+[393] 14:58:01 +830min  step4/mlvc_360p_cpu-npu/P30_r2
+requested=cpu resolved=cpu requested=npu resolved=npu 
+[394] 15:00:26 +832min  step4/mlvc_360p_cpu-npu/P30_r3
+requested=cpu resolved=cpu requested=npu resolved=npu 
+[395] 15:02:51 +835min  step4/mlvc_360p_cpu-npu/P30_r4
+requested=cpu resolved=cpu requested=npu resolved=npu 
+[396] 15:05:15 +837min  step4/mlvc_360p_cpu-npu/P30_r5
+requested=cpu resolved=cpu requested=npu resolved=npu 
+   median late/dropped worst direction: 0.00 %
+-- mlvc_360p  enc gpu  dec cpu   (batch b4_mlvc_360p)
+[397] 15:07:37 +840min  step4/mlvc_360p_gpu-cpu/U_turns_r1
+requested=cpu resolved=cpu requested=gpu resolved=gpu 
+[398] 15:09:38 +842min  step4/mlvc_360p_gpu-cpu/U_duplex_r1
+requested=cpu resolved=cpu requested=gpu resolved=gpu 
+[399] 15:11:38 +844min  step4/mlvc_360p_gpu-cpu/U_turns_r2
+requested=cpu resolved=cpu requested=gpu resolved=gpu 
+[400] 15:13:39 +846min  step4/mlvc_360p_gpu-cpu/U_duplex_r2
+requested=cpu resolved=cpu requested=gpu resolved=gpu 
+[401] 15:15:40 +848min  step4/mlvc_360p_gpu-cpu/U_turns_r3
+requested=cpu resolved=cpu requested=gpu resolved=gpu 
+[402] 15:17:41 +850min  step4/mlvc_360p_gpu-cpu/U_duplex_r3
+requested=cpu resolved=cpu requested=gpu resolved=gpu 
+[403] 15:19:44 +852min  step4/mlvc_360p_gpu-cpu/P30_r1
+requested=cpu resolved=cpu requested=gpu resolved=gpu 
+[404] 15:22:09 +854min  step4/mlvc_360p_gpu-cpu/P30_r2
+requested=cpu resolved=cpu requested=gpu resolved=gpu 
+[405] 15:24:34 +857min  step4/mlvc_360p_gpu-cpu/P30_r3
+requested=cpu resolved=cpu requested=gpu resolved=gpu 
+[406] 15:26:58 +859min  step4/mlvc_360p_gpu-cpu/P30_r4
+requested=cpu resolved=cpu requested=gpu resolved=gpu 
+[407] 15:29:23 +861min  step4/mlvc_360p_gpu-cpu/P30_r5
+requested=cpu resolved=cpu requested=gpu resolved=gpu 
+   median late/dropped worst direction: 0.00 %
+-- mlvc_360p  enc cpu  dec gpu   (batch b4_mlvc_360p)
+[408] 15:31:44 +864min  step4/mlvc_360p_cpu-gpu/U_turns_r1
+requested=cpu resolved=cpu requested=gpu resolved=gpu 
+[409] 15:33:45 +866min  step4/mlvc_360p_cpu-gpu/U_duplex_r1
+requested=cpu resolved=cpu requested=gpu resolved=gpu 
+[410] 15:35:46 +868min  step4/mlvc_360p_cpu-gpu/U_turns_r2
+requested=cpu resolved=cpu requested=gpu resolved=gpu 
+[411] 15:37:47 +870min  step4/mlvc_360p_cpu-gpu/U_duplex_r2
+requested=cpu resolved=cpu requested=gpu resolved=gpu 
+[412] 15:39:47 +872min  step4/mlvc_360p_cpu-gpu/U_turns_r3
+requested=cpu resolved=cpu requested=gpu resolved=gpu 
+[413] 15:41:48 +874min  step4/mlvc_360p_cpu-gpu/U_duplex_r3
+requested=cpu resolved=cpu requested=gpu resolved=gpu 
+[414] 15:43:52 +876min  step4/mlvc_360p_cpu-gpu/P30_r1
+requested=cpu resolved=cpu requested=gpu resolved=gpu 
+[415] 15:46:16 +878min  step4/mlvc_360p_cpu-gpu/P30_r2
+requested=cpu resolved=cpu requested=gpu resolved=gpu 
+[416] 15:48:41 +881min  step4/mlvc_360p_cpu-gpu/P30_r3
+requested=cpu resolved=cpu requested=gpu resolved=gpu 
+[417] 15:51:06 +883min  step4/mlvc_360p_cpu-gpu/P30_r4
+requested=cpu resolved=cpu requested=gpu resolved=gpu 
+[418] 15:53:30 +886min  step4/mlvc_360p_cpu-gpu/P30_r5
+requested=cpu resolved=cpu requested=gpu resolved=gpu 
+   median late/dropped worst direction: 0.00 %
+-- mlvc_360p  enc cpu  dec cpu   (batch b4_mlvc_360p)
+[419] 15:55:52 +888min  step4/mlvc_360p_cpu-cpu/U_turns_r1
+requested=cpu resolved=cpu 
+[420] 15:57:52 +890min  step4/mlvc_360p_cpu-cpu/U_duplex_r1
+requested=cpu resolved=cpu 
+[421] 15:59:53 +892min  step4/mlvc_360p_cpu-cpu/U_turns_r2
+requested=cpu resolved=cpu 
+[422] 16:01:53 +894min  step4/mlvc_360p_cpu-cpu/U_duplex_r2
+requested=cpu resolved=cpu 
+[423] 16:03:54 +896min  step4/mlvc_360p_cpu-cpu/U_turns_r3
+requested=cpu resolved=cpu 
+[424] 16:05:54 +898min  step4/mlvc_360p_cpu-cpu/U_duplex_r3
+requested=cpu resolved=cpu 
+[425] 16:07:58 +900min  step4/mlvc_360p_cpu-cpu/P30_r1
+requested=cpu resolved=cpu 
+[426] 16:10:23 +902min  step4/mlvc_360p_cpu-cpu/P30_r2
+requested=cpu resolved=cpu 
+[427] 16:12:48 +905min  step4/mlvc_360p_cpu-cpu/P30_r3
+requested=cpu resolved=cpu 
+[428] 16:15:13 +907min  step4/mlvc_360p_cpu-cpu/P30_r4
+requested=cpu resolved=cpu 
+[429] 16:17:37 +910min  step4/mlvc_360p_cpu-cpu/P30_r5
+requested=cpu resolved=cpu 
+   median late/dropped worst direction: 0.00 %
+   16:19:59 idle 120 s (b5_mlvc_1080p)
+-- mlvc_1080p  enc npu  dec npu   (batch b5_mlvc_1080p)
+[430] 16:22:29 +914min  step4/mlvc_1080p_npu-npu/U_turns_r1
+requested=npu resolved=npu 
+[431] 16:24:30 +917min  step4/mlvc_1080p_npu-npu/U_duplex_r1
+requested=npu resolved=npu 
+[432] 16:26:31 +919min  step4/mlvc_1080p_npu-npu/U_turns_r2
+requested=npu resolved=npu 
+[433] 16:28:32 +921min  step4/mlvc_1080p_npu-npu/U_duplex_r2
+requested=npu resolved=npu 
+[434] 16:30:33 +923min  step4/mlvc_1080p_npu-npu/U_turns_r3
+requested=npu resolved=npu 
+[435] 16:32:34 +925min  step4/mlvc_1080p_npu-npu/U_duplex_r3
+requested=npu resolved=npu 
+[436] 16:34:38 +927min  step4/mlvc_1080p_npu-npu/P30_r1
+requested=npu resolved=npu 
+[437] 16:37:34 +930min  step4/mlvc_1080p_npu-npu/P30_r2
+requested=npu resolved=npu 
+[438] 16:40:31 +933min  step4/mlvc_1080p_npu-npu/P30_r3
+requested=npu resolved=npu 
+[439] 16:43:28 +935min  step4/mlvc_1080p_npu-npu/P30_r4
+requested=npu resolved=npu 
+[440] 16:46:25 +938min  step4/mlvc_1080p_npu-npu/P30_r5
+requested=npu resolved=npu 
+   median late/dropped worst direction: 100.00 %
+   fails 30 fps -> 15 fps runs
+[441] 16:49:19 +941min  step4/mlvc_1080p_npu-npu/P15_r1
+requested=npu resolved=npu 
+[442] 16:51:30 +944min  step4/mlvc_1080p_npu-npu/P15_r2
+requested=npu resolved=npu 
+[443] 16:53:41 +946min  step4/mlvc_1080p_npu-npu/P15_r3
+requested=npu resolved=npu 
+-- mlvc_1080p  enc npu  dec gpu   (batch b5_mlvc_1080p)
+[444] 16:55:52 +948min  step4/mlvc_1080p_npu-gpu/U_turns_r1
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[445] 16:57:54 +950min  step4/mlvc_1080p_npu-gpu/U_duplex_r1
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[446] 16:59:55 +952min  step4/mlvc_1080p_npu-gpu/U_turns_r2
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[447] 17:01:56 +954min  step4/mlvc_1080p_npu-gpu/U_duplex_r2
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[448] 17:03:58 +956min  step4/mlvc_1080p_npu-gpu/U_turns_r3
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[449] 17:05:59 +958min  step4/mlvc_1080p_npu-gpu/U_duplex_r3
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[450] 17:08:04 +960min  step4/mlvc_1080p_npu-gpu/P30_r1
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[451] 17:12:15 +964min  step4/mlvc_1080p_npu-gpu/P30_r2
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[452] 17:16:19 +968min  step4/mlvc_1080p_npu-gpu/P30_r3
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[453] 17:20:22 +972min  step4/mlvc_1080p_npu-gpu/P30_r4
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[454] 17:24:26 +976min  step4/mlvc_1080p_npu-gpu/P30_r5
+requested=gpu resolved=gpu requested=npu resolved=npu 
+   median late/dropped worst direction: 100.00 %
+   fails 30 fps -> 15 fps runs
+[455] 17:28:26 +980min  step4/mlvc_1080p_npu-gpu/P15_r1
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[456] 17:30:56 +983min  step4/mlvc_1080p_npu-gpu/P15_r2
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[457] 17:33:25 +985min  step4/mlvc_1080p_npu-gpu/P15_r3
+requested=gpu resolved=gpu requested=npu resolved=npu 
+-- mlvc_1080p  enc gpu  dec npu   (batch b5_mlvc_1080p)
+[458] 17:35:54 +988min  step4/mlvc_1080p_gpu-npu/U_turns_r1
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[459] 17:37:55 +990min  step4/mlvc_1080p_gpu-npu/U_duplex_r1
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[460] 17:39:57 +992min  step4/mlvc_1080p_gpu-npu/U_turns_r2
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[461] 17:41:58 +994min  step4/mlvc_1080p_gpu-npu/U_duplex_r2
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[462] 17:43:59 +996min  step4/mlvc_1080p_gpu-npu/U_turns_r3
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[463] 17:46:01 +998min  step4/mlvc_1080p_gpu-npu/U_duplex_r3
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[464] 17:48:05 +1000min  step4/mlvc_1080p_gpu-npu/P30_r1
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[465] 17:50:39 +1003min  step4/mlvc_1080p_gpu-npu/P30_r2
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[466] 17:53:12 +1005min  step4/mlvc_1080p_gpu-npu/P30_r3
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[467] 17:55:47 +1008min  step4/mlvc_1080p_gpu-npu/P30_r4
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[468] 17:58:20 +1010min  step4/mlvc_1080p_gpu-npu/P30_r5
+requested=gpu resolved=gpu requested=npu resolved=npu 
+   median late/dropped worst direction: 100.00 %
+   fails 30 fps -> 15 fps runs
+[469] 18:00:53 +1013min  step4/mlvc_1080p_gpu-npu/P15_r1
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[470] 18:02:54 +1015min  step4/mlvc_1080p_gpu-npu/P15_r2
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[471] 18:04:56 +1017min  step4/mlvc_1080p_gpu-npu/P15_r3
+requested=gpu resolved=gpu requested=npu resolved=npu 
+-- mlvc_1080p  enc gpu  dec gpu   (batch b5_mlvc_1080p)
+[472] 18:06:57 +1019min  step4/mlvc_1080p_gpu-gpu/U_turns_r1
+requested=gpu resolved=gpu 
+[473] 18:08:58 +1021min  step4/mlvc_1080p_gpu-gpu/U_duplex_r1
+requested=gpu resolved=gpu 
+[474] 18:11:00 +1023min  step4/mlvc_1080p_gpu-gpu/U_turns_r2
+requested=gpu resolved=gpu 
+[475] 18:13:01 +1025min  step4/mlvc_1080p_gpu-gpu/U_duplex_r2
+requested=gpu resolved=gpu 
+[476] 18:15:02 +1027min  step4/mlvc_1080p_gpu-gpu/U_turns_r3
+requested=gpu resolved=gpu 
+[477] 18:17:04 +1029min  step4/mlvc_1080p_gpu-gpu/U_duplex_r3
+requested=gpu resolved=gpu 
+[478] 18:19:08 +1031min  step4/mlvc_1080p_gpu-gpu/P30_r1
+requested=gpu resolved=gpu 
+[479] 18:23:46 +1036min  step4/mlvc_1080p_gpu-gpu/P30_r2
+requested=gpu resolved=gpu 
+[480] 18:28:17 +1040min  step4/mlvc_1080p_gpu-gpu/P30_r3
+requested=gpu resolved=gpu 
+[481] 18:32:50 +1045min  step4/mlvc_1080p_gpu-gpu/P30_r4
+requested=gpu resolved=gpu 
+[482] 18:37:24 +1049min  step4/mlvc_1080p_gpu-gpu/P30_r5
+requested=gpu resolved=gpu 
+   median late/dropped worst direction: 100.00 %
+   fails 30 fps -> 15 fps runs
+[483] 18:41:56 +1054min  step4/mlvc_1080p_gpu-gpu/P15_r1
+requested=gpu resolved=gpu 
+[484] 18:44:53 +1057min  step4/mlvc_1080p_gpu-gpu/P15_r2
+requested=gpu resolved=gpu 
+[485] 18:47:49 +1060min  step4/mlvc_1080p_gpu-gpu/P15_r3
+requested=gpu resolved=gpu 
+   CPU alone-enc: 173.0 ms
+   CPU alone-dec: 174.5 ms
+   CPU does not fit for mlvc_1080p -> no CPU placements (D5)
+   18:50:47 idle 120 s (b6_mlvcs_540p)
+-- mlvcs_540p  enc npu  dec npu   (batch b6_mlvcs_540p)
+[486] 18:53:16 +1065min  step4/mlvcs_540p_npu-npu/U_turns_r1
+requested=npu resolved=npu 
+[487] 18:55:17 +1067min  step4/mlvcs_540p_npu-npu/U_duplex_r1
+requested=npu resolved=npu 
+[488] 18:57:17 +1069min  step4/mlvcs_540p_npu-npu/U_turns_r2
+requested=npu resolved=npu 
+[489] 18:59:18 +1071min  step4/mlvcs_540p_npu-npu/U_duplex_r2
+requested=npu resolved=npu 
+[490] 19:01:18 +1073min  step4/mlvcs_540p_npu-npu/U_turns_r3
+requested=npu resolved=npu 
+[491] 19:03:19 +1075min  step4/mlvcs_540p_npu-npu/U_duplex_r3
+requested=npu resolved=npu 
+[492] 19:05:22 +1077min  step4/mlvcs_540p_npu-npu/P30_r1
+requested=npu resolved=npu 
+[493] 19:07:50 +1080min  step4/mlvcs_540p_npu-npu/P30_r2
+requested=npu resolved=npu 
+[494] 19:10:17 +1082min  step4/mlvcs_540p_npu-npu/P30_r3
+requested=npu resolved=npu 
+[495] 19:12:44 +1085min  step4/mlvcs_540p_npu-npu/P30_r4
+requested=npu resolved=npu 
+[496] 19:15:11 +1087min  step4/mlvcs_540p_npu-npu/P30_r5
+requested=npu resolved=npu 
+   median late/dropped worst direction: 0.00 %
+-- mlvcs_540p  enc npu  dec gpu   (batch b6_mlvcs_540p)
+[497] 19:17:36 +1090min  step4/mlvcs_540p_npu-gpu/U_turns_r1
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[498] 19:19:36 +1092min  step4/mlvcs_540p_npu-gpu/U_duplex_r1
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[499] 19:21:37 +1094min  step4/mlvcs_540p_npu-gpu/U_turns_r2
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[500] 19:23:38 +1096min  step4/mlvcs_540p_npu-gpu/U_duplex_r2
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[501] 19:25:38 +1098min  step4/mlvcs_540p_npu-gpu/U_turns_r3
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[502] 19:27:39 +1100min  step4/mlvcs_540p_npu-gpu/U_duplex_r3
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[503] 19:29:43 +1102min  step4/mlvcs_540p_npu-gpu/P30_r1
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[504] 19:32:10 +1104min  step4/mlvcs_540p_npu-gpu/P30_r2
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[505] 19:34:37 +1107min  step4/mlvcs_540p_npu-gpu/P30_r3
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[506] 19:37:04 +1109min  step4/mlvcs_540p_npu-gpu/P30_r4
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[507] 19:39:31 +1112min  step4/mlvcs_540p_npu-gpu/P30_r5
+requested=gpu resolved=gpu requested=npu resolved=npu 
+   median late/dropped worst direction: 0.00 %
+-- mlvcs_540p  enc gpu  dec npu   (batch b6_mlvcs_540p)
+[508] 19:41:55 +1114min  step4/mlvcs_540p_gpu-npu/U_turns_r1
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[509] 19:43:56 +1116min  step4/mlvcs_540p_gpu-npu/U_duplex_r1
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[510] 19:45:56 +1118min  step4/mlvcs_540p_gpu-npu/U_turns_r2
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[511] 19:47:57 +1120min  step4/mlvcs_540p_gpu-npu/U_duplex_r2
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[512] 19:49:58 +1122min  step4/mlvcs_540p_gpu-npu/U_turns_r3
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[513] 19:51:58 +1124min  step4/mlvcs_540p_gpu-npu/U_duplex_r3
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[514] 19:54:02 +1126min  step4/mlvcs_540p_gpu-npu/P30_r1
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[515] 19:56:29 +1128min  step4/mlvcs_540p_gpu-npu/P30_r2
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[516] 19:58:56 +1131min  step4/mlvcs_540p_gpu-npu/P30_r3
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[517] 20:01:23 +1133min  step4/mlvcs_540p_gpu-npu/P30_r4
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[518] 20:03:50 +1136min  step4/mlvcs_540p_gpu-npu/P30_r5
+requested=gpu resolved=gpu requested=npu resolved=npu 
+   median late/dropped worst direction: 0.00 %
+-- mlvcs_540p  enc gpu  dec gpu   (batch b6_mlvcs_540p)
+[519] 20:06:14 +1138min  step4/mlvcs_540p_gpu-gpu/U_turns_r1
+requested=gpu resolved=gpu 
+[520] 20:08:15 +1140min  step4/mlvcs_540p_gpu-gpu/U_duplex_r1
+requested=gpu resolved=gpu 
+[521] 20:10:15 +1142min  step4/mlvcs_540p_gpu-gpu/U_turns_r2
+requested=gpu resolved=gpu 
+[522] 20:12:16 +1144min  step4/mlvcs_540p_gpu-gpu/U_duplex_r2
+requested=gpu resolved=gpu 
+[523] 20:14:16 +1146min  step4/mlvcs_540p_gpu-gpu/U_turns_r3
+requested=gpu resolved=gpu 
+[524] 20:16:17 +1148min  step4/mlvcs_540p_gpu-gpu/U_duplex_r3
+requested=gpu resolved=gpu 
+[525] 20:18:20 +1150min  step4/mlvcs_540p_gpu-gpu/P30_r1
+requested=gpu resolved=gpu 
+[526] 20:20:47 +1153min  step4/mlvcs_540p_gpu-gpu/P30_r2
+requested=gpu resolved=gpu 
+[527] 20:23:13 +1155min  step4/mlvcs_540p_gpu-gpu/P30_r3
+requested=gpu resolved=gpu 
+[528] 20:25:40 +1158min  step4/mlvcs_540p_gpu-gpu/P30_r4
+requested=gpu resolved=gpu 
+[529] 20:28:07 +1160min  step4/mlvcs_540p_gpu-gpu/P30_r5
+requested=gpu resolved=gpu 
+   median late/dropped worst direction: 0.00 %
+   CPU alone-enc: 19.7 ms
+   CPU alone-dec: 21.3 ms
+   CPU fits for mlvcs_540p -> CPU placements included
+-- mlvcs_540p  enc npu  dec cpu   (batch b6_mlvcs_540p)
+[530] 20:30:31 +1163min  step4/mlvcs_540p_npu-cpu/U_turns_r1
+requested=cpu resolved=cpu requested=npu resolved=npu 
+[531] 20:32:32 +1165min  step4/mlvcs_540p_npu-cpu/U_duplex_r1
+requested=cpu resolved=cpu requested=npu resolved=npu 
+[532] 20:34:32 +1167min  step4/mlvcs_540p_npu-cpu/U_turns_r2
+requested=cpu resolved=cpu requested=npu resolved=npu 
+[533] 20:36:33 +1169min  step4/mlvcs_540p_npu-cpu/U_duplex_r2
+requested=cpu resolved=cpu requested=npu resolved=npu 
+[534] 20:38:34 +1171min  step4/mlvcs_540p_npu-cpu/U_turns_r3
+requested=cpu resolved=cpu requested=npu resolved=npu 
+[535] 20:40:34 +1173min  step4/mlvcs_540p_npu-cpu/U_duplex_r3
+requested=cpu resolved=cpu requested=npu resolved=npu 
+[536] 20:42:38 +1175min  step4/mlvcs_540p_npu-cpu/P30_r1
+requested=cpu resolved=cpu requested=npu resolved=npu 
+[537] 20:45:03 +1177min  step4/mlvcs_540p_npu-cpu/P30_r2
+requested=cpu resolved=cpu requested=npu resolved=npu 
+[538] 20:47:27 +1179min  step4/mlvcs_540p_npu-cpu/P30_r3
+requested=cpu resolved=cpu requested=npu resolved=npu 
+[539] 20:49:52 +1182min  step4/mlvcs_540p_npu-cpu/P30_r4
+requested=cpu resolved=cpu requested=npu resolved=npu 
+[540] 20:52:17 +1184min  step4/mlvcs_540p_npu-cpu/P30_r5
+requested=cpu resolved=cpu requested=npu resolved=npu 
+   median late/dropped worst direction: 0.00 %
+-- mlvcs_540p  enc cpu  dec npu   (batch b6_mlvcs_540p)
+[541] 20:54:38 +1187min  step4/mlvcs_540p_cpu-npu/U_turns_r1
+requested=cpu resolved=cpu requested=npu resolved=npu 
+[542] 20:56:39 +1189min  step4/mlvcs_540p_cpu-npu/U_duplex_r1
+requested=cpu resolved=cpu requested=npu resolved=npu 
+[543] 20:58:40 +1191min  step4/mlvcs_540p_cpu-npu/U_turns_r2
+requested=cpu resolved=cpu requested=npu resolved=npu 
+[544] 21:00:40 +1193min  step4/mlvcs_540p_cpu-npu/U_duplex_r2
+requested=cpu resolved=cpu requested=npu resolved=npu 
+[545] 21:02:41 +1195min  step4/mlvcs_540p_cpu-npu/U_turns_r3
+requested=cpu resolved=cpu requested=npu resolved=npu 
+[546] 21:04:41 +1197min  step4/mlvcs_540p_cpu-npu/U_duplex_r3
+requested=cpu resolved=cpu requested=npu resolved=npu 
+[547] 21:06:45 +1199min  step4/mlvcs_540p_cpu-npu/P30_r1
+requested=cpu resolved=cpu requested=npu resolved=npu 
+[548] 21:09:10 +1201min  step4/mlvcs_540p_cpu-npu/P30_r2
+requested=cpu resolved=cpu requested=npu resolved=npu 
+[549] 21:11:34 +1204min  step4/mlvcs_540p_cpu-npu/P30_r3
+requested=cpu resolved=cpu requested=npu resolved=npu 
+[550] 21:13:59 +1206min  step4/mlvcs_540p_cpu-npu/P30_r4
+requested=cpu resolved=cpu requested=npu resolved=npu 
+[551] 21:16:24 +1208min  step4/mlvcs_540p_cpu-npu/P30_r5
+requested=cpu resolved=cpu requested=npu resolved=npu 
+   median late/dropped worst direction: 0.00 %
+-- mlvcs_540p  enc gpu  dec cpu   (batch b6_mlvcs_540p)
+[552] 21:18:46 +1211min  step4/mlvcs_540p_gpu-cpu/U_turns_r1
+requested=cpu resolved=cpu requested=gpu resolved=gpu 
+[553] 21:20:46 +1213min  step4/mlvcs_540p_gpu-cpu/U_duplex_r1
+requested=cpu resolved=cpu requested=gpu resolved=gpu 
+[554] 21:22:47 +1215min  step4/mlvcs_540p_gpu-cpu/U_turns_r2
+requested=cpu resolved=cpu requested=gpu resolved=gpu 
+[555] 21:24:48 +1217min  step4/mlvcs_540p_gpu-cpu/U_duplex_r2
+requested=cpu resolved=cpu requested=gpu resolved=gpu 
+[556] 21:26:48 +1219min  step4/mlvcs_540p_gpu-cpu/U_turns_r3
+requested=cpu resolved=cpu requested=gpu resolved=gpu 
+[557] 21:28:49 +1221min  step4/mlvcs_540p_gpu-cpu/U_duplex_r3
+requested=cpu resolved=cpu requested=gpu resolved=gpu 
+[558] 21:30:53 +1223min  step4/mlvcs_540p_gpu-cpu/P30_r1
+requested=cpu resolved=cpu requested=gpu resolved=gpu 
+[559] 21:33:17 +1225min  step4/mlvcs_540p_gpu-cpu/P30_r2
+requested=cpu resolved=cpu requested=gpu resolved=gpu 
+[560] 21:35:42 +1228min  step4/mlvcs_540p_gpu-cpu/P30_r3
+requested=cpu resolved=cpu requested=gpu resolved=gpu 
+[561] 21:38:07 +1230min  step4/mlvcs_540p_gpu-cpu/P30_r4
+requested=cpu resolved=cpu requested=gpu resolved=gpu 
+[562] 21:40:31 +1233min  step4/mlvcs_540p_gpu-cpu/P30_r5
+requested=cpu resolved=cpu requested=gpu resolved=gpu 
+   median late/dropped worst direction: 0.00 %
+-- mlvcs_540p  enc cpu  dec gpu   (batch b6_mlvcs_540p)
+[563] 21:42:53 +1235min  step4/mlvcs_540p_cpu-gpu/U_turns_r1
+requested=cpu resolved=cpu requested=gpu resolved=gpu 
+[564] 21:44:54 +1237min  step4/mlvcs_540p_cpu-gpu/U_duplex_r1
+requested=cpu resolved=cpu requested=gpu resolved=gpu 
+[565] 21:46:54 +1239min  step4/mlvcs_540p_cpu-gpu/U_turns_r2
+requested=cpu resolved=cpu requested=gpu resolved=gpu 
+[566] 21:48:55 +1241min  step4/mlvcs_540p_cpu-gpu/U_duplex_r2
+requested=cpu resolved=cpu requested=gpu resolved=gpu 
+[567] 21:50:56 +1243min  step4/mlvcs_540p_cpu-gpu/U_turns_r3
+requested=cpu resolved=cpu requested=gpu resolved=gpu 
+[568] 21:52:56 +1245min  step4/mlvcs_540p_cpu-gpu/U_duplex_r3
+requested=cpu resolved=cpu requested=gpu resolved=gpu 
+[569] 21:55:00 +1247min  step4/mlvcs_540p_cpu-gpu/P30_r1
+requested=cpu resolved=cpu requested=gpu resolved=gpu 
+[570] 21:57:25 +1249min  step4/mlvcs_540p_cpu-gpu/P30_r2
+requested=cpu resolved=cpu requested=gpu resolved=gpu 
+[571] 21:59:50 +1252min  step4/mlvcs_540p_cpu-gpu/P30_r3
+requested=cpu resolved=cpu requested=gpu resolved=gpu 
+[572] 22:02:14 +1254min  step4/mlvcs_540p_cpu-gpu/P30_r4
+requested=cpu resolved=cpu requested=gpu resolved=gpu 
+[573] 22:04:39 +1257min  step4/mlvcs_540p_cpu-gpu/P30_r5
+requested=cpu resolved=cpu requested=gpu resolved=gpu 
+   median late/dropped worst direction: 0.00 %
+-- mlvcs_540p  enc cpu  dec cpu   (batch b6_mlvcs_540p)
+[574] 22:07:01 +1259min  step4/mlvcs_540p_cpu-cpu/U_turns_r1
+requested=cpu resolved=cpu 
+[575] 22:09:01 +1261min  step4/mlvcs_540p_cpu-cpu/U_duplex_r1
+requested=cpu resolved=cpu 
+[576] 22:11:02 +1263min  step4/mlvcs_540p_cpu-cpu/U_turns_r2
+requested=cpu resolved=cpu 
+[577] 22:13:02 +1265min  step4/mlvcs_540p_cpu-cpu/U_duplex_r2
+requested=cpu resolved=cpu 
+[578] 22:15:03 +1267min  step4/mlvcs_540p_cpu-cpu/U_turns_r3
+requested=cpu resolved=cpu 
+[579] 22:17:03 +1269min  step4/mlvcs_540p_cpu-cpu/U_duplex_r3
+requested=cpu resolved=cpu 
+[580] 22:19:07 +1271min  step4/mlvcs_540p_cpu-cpu/P30_r1
+requested=cpu resolved=cpu 
+[581] 22:21:32 +1274min  step4/mlvcs_540p_cpu-cpu/P30_r2
+requested=cpu resolved=cpu 
+[582] 22:23:57 +1276min  step4/mlvcs_540p_cpu-cpu/P30_r3
+requested=cpu resolved=cpu 
+[583] 22:26:22 +1278min  step4/mlvcs_540p_cpu-cpu/P30_r4
+requested=cpu resolved=cpu 
+[584] 22:28:47 +1281min  step4/mlvcs_540p_cpu-cpu/P30_r5
+requested=cpu resolved=cpu 
+   median late/dropped worst direction: 0.00 %
+== OVERNIGHT END  Fri Nov 13 22:31:09 +04 2026  (1283 min)
+== table of feasible settings -> /Users/shamsalani/Downloads/duplexnvc-baseline/phase2/step4/table_feasible.csv
+
+model  res   enc  dec   t_enc  t_dec  T_trn  T_shr     S  S_NE   fps30 s/r      L% s/r     p99 s/r mJ/pair    NE/GPU/CPU mJ    kbps s/r  feasible
+mlvc   720p  gpu  gpu   43.22  44.07  86.79  80.92  1.07  0.55  12.4/ 16.7 100.0/100.0 117.8/46168.0  3890.9   0.0/3830.4/59.8   419/  801  infeasible  (15 fps: L 100.0/100.0)
+mlvc   720p  gpu  npu   43.22  22.17  65.62  45.11  1.45  0.99  22.4/ 30.0 100.0/  0.0  78.6/ 27.6  1242.4 240.1/977.0/25.1   342/  801  15 fps only  (15 fps: L  0.0/ 0.0)
+mlvc   720p  npu  gpu   22.23  44.07  66.32  45.86  1.45  0.97  30.0/ 22.2   0.0/100.0  26.3/20181.0  1257.9 179.6/1055.1/23.0   310/  801  15 fps only  (15 fps: L  0.0/ 0.0)
+mlvc   720p  npu  npu   22.23  22.17  44.63  41.33  1.08  1.08  24.2/ 26.4 100.0/100.0  74.4/11642.0   404.8 397.8/  0.0/ 6.6   337/  801  15 fps only  (15 fps: L  0.1/ 0.0)
+mlvc   540p  gpu  gpu   25.84  26.21  52.18  46.15  1.13  0.52  21.7/ 24.5 100.0/100.0  80.3/16326.4  1503.3   0.0/1473.4/29.9   242/  544  15 fps only  (15 fps: L  0.0/ 0.0)
+mlvc   540p  gpu  npu   25.84  11.82  38.27  27.61  1.39  0.86  30.0/ 30.0   0.1/  0.0  31.1/ 25.4   635.1  75.5/545.1/ 8.9   215/  544  30 fps
+mlvc   540p  npu  gpu   11.83  26.21  38.65  28.03  1.38  0.85  30.0/ 30.0   0.0/  0.0  24.2/ 31.3   672.0  79.0/584.6/ 8.6   217/  544  30 fps
+mlvc   540p  npu  npu   11.83  11.82  23.79  21.66  1.10  1.10  30.0/ 30.0   6.0/  1.2  35.2/ 33.9   184.2 181.1/  0.0/ 3.1   217/  544  15 fps only  (15 fps: L  0.0/ 0.0)
+mlvcs  720p  gpu  gpu   16.60  17.49  34.00  29.84  1.14  0.57  30.0/ 30.0   0.1/  0.1  32.6/ 32.4   835.1   0.0/815.2/19.8   378/  852  30 fps
+mlvcs  720p  gpu  npu   16.60   8.48  25.69  17.17  1.50  0.98  30.0/ 30.0   0.1/  0.0  25.8/ 24.3   333.4  37.8/290.4/ 5.1   378/  852  30 fps
+mlvcs  720p  npu  gpu    8.25  17.49  26.26  19.47  1.35  0.87  30.0/ 30.0   0.0/  0.1  23.7/ 26.4   383.1  35.5/342.4/ 5.3   378/  852  30 fps
+mlvcs  720p  npu  npu    8.25   8.48  16.87  15.08  1.12  1.12  30.0/ 30.0   3.3/  0.5  34.5/ 32.7   108.9 107.0/ -0.0/ 1.9   378/  852  15 fps only  (15 fps: L  0.0/ 0.0)
+mlvcs  1080p gpu  gpu   35.06  37.36  72.01  65.97  1.09  0.55  15.3/ 19.0 100.0/100.0  99.5/33350.5  2872.8   0.0/2824.4/48.4   928/ 1544  infeasible  (15 fps: L 74.1/58.5)
+mlvcs  1080p gpu  npu   35.06  18.42  53.61  36.63  1.46  1.00  27.6/ 30.0 100.0/  0.0  69.8/ 25.5   991.0 164.7/801.6/24.5   753/ 1544  15 fps only  (15 fps: L  0.0/ 0.0)
+mlvcs  1080p npu  gpu   18.01  37.36  55.41  39.18  1.41  0.93  30.0/ 26.1   0.0/100.0  23.8/8656.5  1047.4 143.5/878.6/24.4   730/ 1544  15 fps only  (15 fps: L  0.0/ 0.0)
+mlvcs  1080p npu  npu   18.01  18.42  36.52  32.88  1.11  1.11  30.0/ 30.0   0.0/100.0  26.8/ 42.3   291.6 285.3/ -0.0/ 6.3   730/ 1544  15 fps only  (15 fps: L  0.0/ 0.0)
+mlvc   360p  cpu  cpu   19.78  20.74  40.45  27.39  1.48  0.43  30.0/ 30.0   0.0/  0.0  30.0/ 30.1   246.5   0.0/  0.0/246.5   119/  285  30 fps
+mlvc   360p  cpu  gpu   19.78  13.18  34.15  20.48  1.67  0.58  30.0/ 30.0   0.0/  0.0  26.0/ 21.7   290.1   0.0/164.6/125.5   119/  285  30 fps
+mlvc   360p  cpu  npu   19.78   5.94  26.20  21.07  1.24  0.56  30.0/ 30.0   0.0/  0.0  25.3/ 16.3   167.5  47.2/  0.0/120.3   119/  285  30 fps
+mlvc   360p  gpu  cpu   13.33  20.74  34.57  20.97  1.65  0.56  30.0/ 30.0   0.0/  0.0  21.8/ 25.9   287.5   0.0/159.1/129.0   118/  285  30 fps
+mlvc   360p  gpu  gpu   13.33  13.18  26.51  22.20  1.19  0.53  30.0/ 30.0   0.0/  0.0  29.7/ 28.9   431.6   0.0/423.5/ 8.2   119/  287  30 fps
+mlvc   360p  gpu  npu   13.33   5.94  19.80  14.61  1.36  0.81  30.0/ 30.0   0.1/  0.0  23.8/ 21.1   253.4  25.7/222.7/ 5.0   119/  287  30 fps
+mlvc   360p  npu  cpu    5.86  20.74  26.42  21.45  1.23  0.55  30.0/ 30.0   0.0/  0.0  16.3/ 25.6   170.6  45.9/  0.0/124.6   119/  285  30 fps
+mlvc   360p  npu  gpu    5.86  13.18  19.65  14.44  1.36  0.82  30.0/ 30.0   0.0/  0.0  21.0/ 23.5   212.3  24.8/183.0/ 4.6   120/  287  30 fps
+mlvc   1080p gpu  gpu   93.73  97.13 190.15 181.39  1.05  0.52   5.6/  8.4 100.0/100.0 215.8/148657.6 17620.0   0.0/17407.1/214.8  1063/ 1450  infeasible  (15 fps: L 100.0/100.0)
+mlvc   1080p gpu  npu   93.73  47.56 148.91  98.03  1.52  0.96  10.3/ 19.8 100.0/100.0 130.2/29737.0  3779.8 1073.6/2630.0/78.3   848/ 1450  infeasible  (15 fps: L 100.0/ 0.0)
+mlvc   1080p npu  gpu   46.36  97.13 147.13 100.28  1.47  0.94  20.5/  9.8 100.0/100.0  83.6/117987.9  4519.5 800.3/3655.8/71.1   677/ 1450  infeasible  (15 fps: L  0.0/100.0)
+mlvc   1080p npu  npu   46.36  47.56  94.04  87.20  1.08  1.08  11.4/ 15.7 100.0/100.0 120.3/52759.1  1562.9 1479.6/ -0.0/83.3   821/ 1450  infeasible  (15 fps: L 100.0/100.0)
+mlvcs  540p  cpu  cpu   19.73  21.31  41.74  27.66  1.51  0.35  30.0/ 30.0   0.0/  0.0  29.1/ 29.7   234.7   0.0/  0.0/234.7   247/  561  30 fps
+mlvcs  540p  cpu  gpu   19.73  10.68  30.93  19.87  1.56  0.49  30.0/ 30.0   0.0/  0.0  26.0/ 20.9   288.9   0.0/172.2/116.8   247/  561  30 fps
+mlvcs  540p  cpu  npu   19.73   4.92  24.56  20.91  1.17  0.47  30.0/ 30.0   0.0/  0.0  25.4/ 15.4   150.8  38.3/  0.0/112.5   247/  561  30 fps
+mlvcs  540p  gpu  cpu   10.34  21.31  32.07  21.19  1.51  0.46  30.0/ 30.0   0.0/  0.0  20.3/ 26.3   276.4   0.0/151.3/126.0   247/  561  30 fps
+mlvcs  540p  gpu  gpu   10.34  10.68  21.02  17.23  1.22  0.57  30.0/ 30.0   0.0/  0.0  26.2/ 26.0   340.0   0.0/334.4/ 5.7   250/  564  30 fps
+mlvcs  540p  gpu  npu   10.34   4.92  15.84  11.57  1.37  0.85  30.0/ 30.0   0.0/  0.0  22.3/ 19.8   126.4  19.9/103.1/ 3.6   250/  564  30 fps
+mlvcs  540p  npu  cpu    4.83  21.31  26.14  22.16  1.18  0.44  30.0/ 30.0   0.0/  0.0  15.2/ 26.2   159.2  36.1/  0.0/123.1   247/  561  30 fps
+mlvcs  540p  npu  gpu    4.83  10.68  16.09  11.98  1.34  0.82  30.0/ 30.0   0.0/  0.0  19.7/ 22.4   125.2  18.8/103.0/ 3.6   250/  564  30 fps
+mlvcs  540p  npu  npu    4.83   4.92   9.79   8.53  1.15  1.15  30.0/ 30.0   0.0/  0.0  26.9/ 26.1    45.0  43.2/ -0.0/ 1.8   250/  564  30 fps
+
+== 720p question: speedup over taking turns on the NE, S = T_turns(NE) / T per placement
+   mlvc   gpu/gpu: unpaced S = 0.55 (needed ~1.80 for 30 fps from 16.7)  -> infeasible
+   mlvc   gpu/npu: unpaced S = 0.99 (needed ~1.80 for 30 fps from 16.7)  -> 15 fps only
+   mlvc   npu/gpu: unpaced S = 0.97 (needed ~1.80 for 30 fps from 16.7)  -> 15 fps only
+   mlvc   npu/npu: unpaced S = 1.08 (needed ~1.80 for 30 fps from 16.7)  -> 15 fps only
+   mlvcs  gpu/gpu: unpaced S = 0.57 (needed ~1.80 for 30 fps from 16.7)  -> 30 fps
+   mlvcs  gpu/npu: unpaced S = 0.98 (needed ~1.80 for 30 fps from 16.7)  -> 30 fps
+   mlvcs  npu/gpu: unpaced S = 0.87 (needed ~1.80 for 30 fps from 16.7)  -> 30 fps
+   mlvcs  npu/npu: unpaced S = 1.12 (needed ~1.80 for 30 fps from 16.7)  -> 15 fps only
+
+== feasibility count: infeasible: 6, 15 fps only: 9, 30 fps: 22

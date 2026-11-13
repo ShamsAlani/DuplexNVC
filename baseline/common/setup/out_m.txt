@@ -1,0 +1,14 @@
+== making baseline streams (360p)  Tue Nov 10 19:30:41 +04 2026
+-rw-r--r--  1 shamsalani  staff  207360000 Nov 10 19:30 /Users/shamsalani/Downloads/duplexnvc-baseline/data/nv12/bl_camera_640x360.nv12
+-rw-r--r--  1 shamsalani  staff  207360000 Nov 10 19:30 /Users/shamsalani/Downloads/duplexnvc-baseline/data/nv12/bl_incoming_src_640x360.nv12
+(expect 207360000 bytes each = 600 frames)
+2026-11-10 19:30:42.266 [T#26222549][ INFO][bundle.cpp:211]: Found model bundle: dmc61sbr_reglu-psnr_v1-coreml-apple-v0.1.tar
+manager: requested=npu resolved=npu
+model v0.1 default iframe_period=64 -> using 64
+2026-11-10 19:30:42.394 [T#26222549][ INFO][codec.cpp:469]: [Enc#0] Configuring encoder: version=v0.1, size=640x360, iframe_period=64, num_temporal_layers=1, ltr_mode=internal, ltr_start_idx=0, ltr_period=0, ltr_num_slots=4, ltr_recovery_period=0
+wrote 600 access units to /Users/shamsalani/Downloads/duplexnvc-baseline/data/incoming/mlvc-640x360-qp26/incoming.{aus,mlvc}
+2026-11-10 19:30:46.004 [T#26222549][ INFO][codec.cpp:206]: [Enc#0] ~Encoder total: 6.01/0.23/5.80/10.63 (n=600), reconfigure: 3.20/0.00 (n=1), preprocess: 0.02/0.00, inference: 5.70/0.13, scale_decoder: 0.04/0.00, entropy_coding: 0.23/0.02, interval: 6.00/0.14 (mean/std/min/max)
+Decoding...
+Decoding completed.
+frames 600: PSNR-Y 34.983 dB, PSNR-YUV(6:1:1) 37.356 dB
+Next: ./t

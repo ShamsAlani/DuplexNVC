@@ -1,0 +1,12 @@
+#!/bin/bash
+# Collect the raw results of every experiment into ~/Downloads/DuplexNVC_raw_results.zip
+# (per-frame CSVs, run summaries, power logs, quality CSVs, split, logs). Large video files are left out.
+D=$(cd "$(dirname "$0")" && pwd); . "$D/v"
+OUT=~/Downloads/DuplexNVC_raw_results.zip
+cd "$WORK" || exit 1
+rm -f "$OUT"
+zip -r -q "$OUT" runs data/split.json LIBMLVC_COMMIT.txt data/incoming/*/prepare.log \
+    -x "*.nv12" "*.yuv" "*.mp4" "*.tar" "*/__pycache__/*"
+cd "$D" && zip -q "$OUT" out_*.txt
+echo "wrote $OUT ($(du -h "$OUT" | cut -f1))"
+unzip -l "$OUT" | tail -1

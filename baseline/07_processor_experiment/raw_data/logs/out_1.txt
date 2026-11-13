@@ -1,0 +1,197 @@
+== PHASE 2 STEP 1 START  Thu Nov 12 21:55:26 +04 2026
+ProductName:		macOS ProductVersion:		26.6.2 BuildVersion:		25G83 
+Now drawing from 'AC Power'
+eb5d60a
+== mlvc_360p unpaced
+[1/72] 21:55:26 mlvc_360p/U_alone-enc_npu_r1
+requested=npu resolved=npu 
+[2/72] 21:57:27 mlvc_360p/U_alone-dec_npu_r1
+requested=npu resolved=npu 
+[3/72] 21:59:27 mlvc_360p/U_alone-enc_gpu_r1
+requested=gpu resolved=gpu 
+[4/72] 22:01:28 mlvc_360p/U_alone-dec_gpu_r1
+requested=gpu resolved=gpu 
+[5/72] 22:03:28 mlvc_360p/U_alone-enc_cpu_r1
+requested=cpu resolved=cpu 
+[6/72] 22:04:49 mlvc_360p/U_alone-dec_cpu_r1
+requested=cpu resolved=cpu 
+[7/72] 22:06:10 mlvc_360p/U_alone-enc_npu_r2
+requested=npu resolved=npu 
+[8/72] 22:08:10 mlvc_360p/U_alone-dec_npu_r2
+requested=npu resolved=npu 
+[9/72] 22:10:10 mlvc_360p/U_alone-enc_gpu_r2
+requested=gpu resolved=gpu 
+[10/72] 22:12:11 mlvc_360p/U_alone-dec_gpu_r2
+requested=gpu resolved=gpu 
+[11/72] 22:14:12 mlvc_360p/U_alone-enc_cpu_r2
+requested=cpu resolved=cpu 
+[12/72] 22:15:32 mlvc_360p/U_alone-dec_cpu_r2
+requested=cpu resolved=cpu 
+[13/72] 22:16:52 mlvc_360p/U_alone-enc_npu_r3
+requested=npu resolved=npu 
+[14/72] 22:18:53 mlvc_360p/U_alone-dec_npu_r3
+requested=npu resolved=npu 
+[15/72] 22:20:53 mlvc_360p/U_alone-enc_gpu_r3
+requested=gpu resolved=gpu 
+[16/72] 22:22:54 mlvc_360p/U_alone-dec_gpu_r3
+requested=gpu resolved=gpu 
+[17/72] 22:24:54 mlvc_360p/U_alone-enc_cpu_r3
+requested=cpu resolved=cpu 
+[18/72] 22:26:15 mlvc_360p/U_alone-dec_cpu_r3
+requested=cpu resolved=cpu 
+[19/72] 22:27:35 mlvc_360p/U_alone-enc_npu_r4
+requested=npu resolved=npu 
+[20/72] 22:29:36 mlvc_360p/U_alone-dec_npu_r4
+requested=npu resolved=npu 
+[21/72] 22:31:36 mlvc_360p/U_alone-enc_gpu_r4
+requested=gpu resolved=gpu 
+[22/72] 22:33:37 mlvc_360p/U_alone-dec_gpu_r4
+requested=gpu resolved=gpu 
+[23/72] 22:35:37 mlvc_360p/U_alone-enc_cpu_r4
+requested=cpu resolved=cpu 
+[24/72] 22:36:58 mlvc_360p/U_alone-dec_cpu_r4
+requested=cpu resolved=cpu 
+[25/72] 22:38:18 mlvc_360p/U_alone-enc_npu_r5
+requested=npu resolved=npu 
+[26/72] 22:40:19 mlvc_360p/U_alone-dec_npu_r5
+requested=npu resolved=npu 
+[27/72] 22:42:19 mlvc_360p/U_alone-enc_gpu_r5
+requested=gpu resolved=gpu 
+[28/72] 22:44:20 mlvc_360p/U_alone-dec_gpu_r5
+requested=gpu resolved=gpu 
+[29/72] 22:46:20 mlvc_360p/U_alone-enc_cpu_r5
+requested=cpu resolved=cpu 
+[30/72] 22:47:41 mlvc_360p/U_alone-dec_cpu_r5
+requested=cpu resolved=cpu 
+== mlvc_360p paced 30 fps (with powermetrics)
+[31/72] 22:49:04 mlvc_360p/P_alone-enc_npu_r1
+requested=npu resolved=npu 
+[32/72] 22:51:12 mlvc_360p/P_alone-dec_npu_r1
+requested=npu resolved=npu 
+[33/72] 22:53:19 mlvc_360p/P_alone-enc_gpu_r1
+requested=gpu resolved=gpu 
+[34/72] 22:55:26 mlvc_360p/P_alone-dec_gpu_r1
+requested=gpu resolved=gpu 
+[35/72] 22:57:33 mlvc_360p/P_alone-enc_npu_r2
+requested=npu resolved=npu 
+[36/72] 22:59:40 mlvc_360p/P_alone-dec_npu_r2
+requested=npu resolved=npu 
+[37/72] 23:01:47 mlvc_360p/P_alone-enc_gpu_r2
+requested=gpu resolved=gpu 
+[38/72] 23:03:53 mlvc_360p/P_alone-dec_gpu_r2
+requested=gpu resolved=gpu 
+[39/72] 23:06:01 mlvc_360p/P_alone-enc_npu_r3
+requested=npu resolved=npu 
+[40/72] 23:08:08 mlvc_360p/P_alone-dec_npu_r3
+requested=npu resolved=npu 
+[41/72] 23:10:16 mlvc_360p/P_alone-enc_gpu_r3
+requested=gpu resolved=gpu 
+[42/72] 23:12:23 mlvc_360p/P_alone-dec_gpu_r3
+requested=gpu resolved=gpu 
+== mlvcs_540p unpaced
+[43/72] 23:14:27 mlvcs_540p/U_alone-enc_npu_r1
+requested=npu resolved=npu 
+[44/72] 23:16:28 mlvcs_540p/U_alone-dec_npu_r1
+requested=npu resolved=npu 
+[45/72] 23:18:29 mlvcs_540p/U_alone-enc_gpu_r1
+requested=gpu resolved=gpu 
+[46/72] 23:20:32 mlvcs_540p/U_alone-dec_gpu_r1
+requested=gpu resolved=gpu 
+[47/72] 23:22:33 mlvcs_540p/U_alone-enc_cpu_r1
+requested=cpu resolved=cpu 
+[48/72] 23:23:56 mlvcs_540p/U_alone-dec_cpu_r1
+requested=cpu resolved=cpu 
+[49/72] 23:25:17 mlvcs_540p/U_alone-enc_npu_r2
+requested=npu resolved=npu 
+[50/72] 23:27:19 mlvcs_540p/U_alone-dec_npu_r2
+requested=npu resolved=npu 
+[51/72] 23:29:20 mlvcs_540p/U_alone-enc_gpu_r2
+requested=gpu resolved=gpu 
+[52/72] 23:31:21 mlvcs_540p/U_alone-dec_gpu_r2
+requested=gpu resolved=gpu 
+[53/72] 23:33:22 mlvcs_540p/U_alone-enc_cpu_r2
+requested=cpu resolved=cpu 
+[54/72] 23:34:44 mlvcs_540p/U_alone-dec_cpu_r2
+requested=cpu resolved=cpu 
+[55/72] 23:36:05 mlvcs_540p/U_alone-enc_npu_r3
+requested=npu resolved=npu 
+[56/72] 23:38:06 mlvcs_540p/U_alone-dec_npu_r3
+requested=npu resolved=npu 
+[57/72] 23:40:07 mlvcs_540p/U_alone-enc_gpu_r3
+requested=gpu resolved=gpu 
+[58/72] 23:42:08 mlvcs_540p/U_alone-dec_gpu_r3
+requested=gpu resolved=gpu 
+[59/72] 23:44:10 mlvcs_540p/U_alone-enc_cpu_r3
+requested=cpu resolved=cpu 
+[60/72] 23:45:31 mlvcs_540p/U_alone-dec_cpu_r3
+requested=cpu resolved=cpu 
+== mlvcs_540p paced 30 fps (with powermetrics)
+[61/72] 23:46:55 mlvcs_540p/P_alone-enc_npu_r1
+requested=npu resolved=npu 
+[62/72] 23:49:02 mlvcs_540p/P_alone-dec_npu_r1
+requested=npu resolved=npu 
+[63/72] 23:51:10 mlvcs_540p/P_alone-enc_gpu_r1
+requested=gpu resolved=gpu 
+[64/72] 23:53:17 mlvcs_540p/P_alone-dec_gpu_r1
+requested=gpu resolved=gpu 
+[65/72] 23:55:24 mlvcs_540p/P_alone-enc_npu_r2
+requested=npu resolved=npu 
+[66/72] 23:57:32 mlvcs_540p/P_alone-dec_npu_r2
+requested=npu resolved=npu 
+[67/72] 23:59:39 mlvcs_540p/P_alone-enc_gpu_r2
+requested=gpu resolved=gpu 
+[68/72] 00:01:47 mlvcs_540p/P_alone-dec_gpu_r2
+requested=gpu resolved=gpu 
+[69/72] 00:03:54 mlvcs_540p/P_alone-enc_npu_r3
+requested=npu resolved=npu 
+[70/72] 00:06:01 mlvcs_540p/P_alone-dec_npu_r3
+requested=npu resolved=npu 
+[71/72] 00:08:09 mlvcs_540p/P_alone-enc_gpu_r3
+requested=gpu resolved=gpu 
+[72/72] 00:10:16 mlvcs_540p/P_alone-dec_gpu_r3
+requested=gpu resolved=gpu 
+== PHASE 2 STEP 1 END  Fri Nov 13 00:12:20 +04 2026
+./1: line 49: 62796 Terminated: 15          ( while true; do
+    sudo -n true 2> /dev/null; sleep 50;
+done )
+== Step 1 table -> /Users/shamsalani/Downloads/duplexnvc-baseline/phase2/step1/step1_table.csv
+
+model       mode     net  unit runs  call ms   net ms      p99      fps    late%    NE mW   GPU mW   CPU mW
+mlvc_360p   unpaced  enc  npu     5    5.85    5.57    5.96  170.80                                
+mlvc_360p   unpaced  enc  gpu     5   13.34   13.06   13.47   74.97                                
+mlvc_360p   unpaced  enc  cpu     5   20.00   19.71   20.38   50.00                                
+mlvc_360p   unpaced  dec  npu     5    5.94    5.66    6.27  168.45                                
+mlvc_360p   unpaced  dec  gpu     5   13.16   12.89   13.45   75.97                                
+mlvc_360p   unpaced  dec  cpu     5   20.68   20.42   21.03   48.36                                
+mlvc_360p   paced30  enc  npu     3   12.36   11.79   13.43   30.01    0.00  488.23    0.18  388.73
+mlvc_360p   paced30  enc  gpu     3   15.11   14.47   16.13   30.01    0.00    0.00 4620.99  455.45
+mlvc_360p   paced30  dec  npu     3   12.53   11.92   13.74   30.01    0.00  505.19    0.20  387.32
+mlvc_360p   paced30  dec  gpu     3   14.90   14.28   15.96   30.01    0.00    0.00 3206.41  446.71
+mlvcs_540p  unpaced  enc  npu     3    4.84    4.54    4.96  206.53                                
+mlvcs_540p  unpaced  enc  gpu     3   10.36   10.08   10.52   96.50                                
+mlvcs_540p  unpaced  enc  cpu     3   19.73   19.43   20.28   50.69                                
+mlvcs_540p  unpaced  dec  npu     3    4.91    4.59    5.37  203.48                                
+mlvcs_540p  unpaced  dec  gpu     3   10.65   10.34   11.10   93.85                                
+mlvcs_540p  unpaced  dec  cpu     3   20.95   20.65   21.44   47.73                                
+mlvcs_540p  paced30  enc  npu     3   10.61    9.92   11.74   30.01    0.00  373.08    0.34  436.67
+mlvcs_540p  paced30  enc  gpu     3   12.48   11.76   13.47   30.01    0.00    0.00 3273.04  495.14
+mlvcs_540p  paced30  dec  npu     3   10.66    9.89   11.74   30.01    0.00  395.49    0.19  438.17
+mlvcs_540p  paced30  dec  gpu     3   12.63   11.92   13.55   30.01    0.00    0.00 3175.11  488.60
+
+== slowdown ratios vs NE (g = t(GPU)/t(NE), c = t(CPU)/t(NE)), call time / network time
+  mlvc_360p   unpaced  enc: g = 2.28 / 2.35   c = 3.42 / 3.54
+  mlvc_360p   unpaced  dec: g = 2.22 / 2.28   c = 3.48 / 3.61
+  mlvc_360p   paced30  enc: g = 1.22 / 1.23
+  mlvc_360p   paced30  dec: g = 1.19 / 1.20
+  mlvcs_540p  unpaced  enc: g = 2.14 / 2.22   c = 4.07 / 4.28
+  mlvcs_540p  unpaced  dec: g = 2.17 / 2.25   c = 4.26 / 4.50
+  mlvcs_540p  paced30  enc: g = 1.18 / 1.19
+  mlvcs_540p  paced30  dec: g = 1.18 / 1.21
+
+== D5 rules (plan Step 1)
+  360p enc: GPU paced call 15.1 ms -> well under 33.3 ms
+  360p enc: g (unpaced) = 2.28 -> <= 3x: keep GPU placements at all resolutions; 720p NE->GPU needs g <= 1.10
+  360p enc: CPU call 20.0 ms -> CPU can stay in the timing table
+  360p dec: GPU paced call 14.9 ms -> well under 33.3 ms
+  360p dec: g (unpaced) = 2.22 -> <= 3x: keep GPU placements at all resolutions; 720p NE->GPU needs g <= 1.10
+  360p dec: CPU call 20.7 ms -> CPU can stay in the timing table

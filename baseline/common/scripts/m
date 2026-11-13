@@ -1,0 +1,16 @@
+#!/bin/bash
+D=$(cd "$(dirname "$0")" && pwd); . "$D/v"
+exec > >(tee "$D/out_m.txt") 2>&1
+echo "== making baseline streams (360p)  $(date)"
+mkdir -p "$WORK/data/nv12" "$BINC"
+# camera = clips 0380a3 + 6587ae ; incoming = clips 6c9c96 + 9c02f6 (different people, never the same content)
+gunzip -c "$CLIPS/VCD_s1_0380a3_640x360_30fps.nv12.gz" "$CLIPS/VCD_s1_6587ae_640x360_30fps.nv12.gz" > "$CAM"
+gunzip -c "$CLIPS/VCD_s1_6c9c96_640x360_30fps.nv12.gz" "$CLIPS/VCD_s1_9c02f6_640x360_30fps.nv12.gz" > "$INCSRC"
+ls -l "$CAM" "$INCSRC"
+echo "(expect 207360000 bytes each = 600 frames)"
+"$BENCH" prepare --input "$INCSRC" --size 640x360 --qp 26 --bundles "$WORK/bundles/mlvc" --enc-cu npu --out-dir "$BINC" 2> "$BINC/prepare.log"
+grep -E "Found model bundle|resolved|iframe_period|wrote|~Encoder total|FAILED|rror" "$BINC/prepare.log"
+"$MLVC" decode --model-bundles-dir "$WORK/bundles/mlvc" --input "$BINC/incoming.mlvc" --output /tmp/bl_inc_check.nv12 2>&1 | tail -2
+"$PY" "$TOOLS/quality_tools.py" psnr /tmp/bl_inc_check.nv12 "$INCSRC" 640x360
+rm -f /tmp/bl_inc_check.nv12
+echo "Next: ./t"

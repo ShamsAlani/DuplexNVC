@@ -1,0 +1,139 @@
+#!/bin/bash
+# OVERNIGHT RUN: Phase 2 Step 2c (NE sanity + memory) and Step 4 (table of feasible settings), unattended and RESUMABLE.
+#   Part A  NE alone, 3 rounds, all 8 bundles (= Step 2c sanity; reused as the NE-alone rows of Step 4) + peak memory
+#   Part B  GPU and CPU alone, 3 rounds, all 7 model/resolution pairs (CPU runs 20 s)
+#   Part C  every placement, in the plan's batch order: unpaced turns + duplex (3 rounds), paced duplex 30 fps 5 x 60 s
+#           with powermetrics; if late/dropped >= 1 % in a direction: paced duplex 15 fps 3 x 60 s. Idle power before each batch.
+#   Placements (D5): NE/GPU everywhere; CPU placements only where every network alone on the CPU is < 33.3 ms.
+#   Thermal state + Low Power Mode logged every second for the whole night (thermal.csv).
+# QUIET MAC: charger, Wi-Fi + Bluetooth off, brightness MAX (auto-brightness + True Tone off), apps closed. Run ./p first.
+# Interrupt any time with Ctrl-C; run ./all again later and it continues where it stopped (finished runs are skipped).
+# REST=30 ./all  uses 30 s instead of 60 s rest between runs (shorter night, deviates from the B* protocol; noted in out_all.txt).
+D=$(cd "$(dirname "$0")" && pwd); . "$D/v"; . "$D/s2cfg"
+S4="$WORK/phase2/step4"; mkdir -p "$S4" "$S2"
+exec > >(tee -a "$D/out_all.txt") 2>&1
+REST=${REST:-60}
+echo; echo "== OVERNIGHT START  $(date)   rest=${REST}s"; sw_vers | tr '\n' ' '; echo; pmset -g batt | head -1
+cat "$WORK/LIBMLVC_COMMIT.txt" 2>/dev/null
+sudo -v || exit 1
+( while true; do sudo -n true 2>/dev/null; sleep 50; done ) & KEEP=$!
+[ -x "$TOOLS/thermal_log" ] || swiftc -O "$D/thermal_log.swift" -o "$TOOLS/thermal_log"
+"$TOOLS/thermal_log" >> "$S4/thermal.csv" & THERM=$!
+trap 'kill $KEEP $THERM 2>/dev/null; echo "== stopped $(date) - run ./all again to continue"; exit 1' INT TERM
+PAIRS="mlvc_360p mlvc_540p mlvc_720p mlvc_1080p mlvcs_540p mlvcs_720p mlvcs_1080p"
+T0=$(date +%s); n=0
+done_run () { [ -s "$1/frames.csv" ] && [ -s "$1/run.txt" ]; }
+bench () {  # bench <outdir> <setting> <mode> <enc_cu> <dec_cu> <fps> <seconds> [extra...]
+  local O=$1 s=$2 mode=$3 ec=$4 dc=$5 fps=$6 sec=$7; shift 7
+  n=$((n+1))
+  if done_run "$O"; then echo "   skip (done) ${O#$WORK/phase2/}"; return 1; fi
+  cfg $s; mkdir -p "$(dirname "$O")"; local wu=64; [ "$ec" = cpu ] || [ "$dc" = cpu ] && wu=10
+  [ "$fps" = 15 ] && extra="--deadline-ms 66.7" || extra=""
+  echo "[$n] $(date +%H:%M:%S) +$(( ($(date +%s)-T0)/60 ))min  ${O#$WORK/phase2/}"
+  "$BENCH" $mode --input "$(camf $s)" --size $VSIZE --qp 26 --iframe-period 64 --bundles "$(bund $s)" --incoming "$(incf $s)" \
+     --enc-cu $ec --dec-cu $dc --fps $fps --seconds $sec --warmup-frames $wu $extra "$@" --out-dir "$O" 2> "$O.log"
+  pmset -g therm 2>/dev/null | grep -iE "speed_limit|warning" | tr -s ' \n' ' ' > "$O.therm"
+  grep -oE "requested=[a-z]+ resolved=[a-z]+|FAILED|rror[^.]*" "$O.log" | sort -u | tr '\n' ' '; echo
+  return 0
+}
+late_any () {  # late_any <dir pattern> -> exit 0 if median late/dropped >= 1 % in either direction
+  "$PY" - "$TOOLS" "$@" <<'PY'
+import sys, glob, statistics as st; sys.path.insert(0, sys.argv[1]); import analyze_run as A
+runs = sorted(glob.glob(sys.argv[2])); worst = 0
+for d in ("E", "D"):
+    v = []
+    for r in runs:
+        try:
+            m, fr = A.load(r); s = A.direction_summary(m, fr, d)
+            if s: v.append(s["late_or_dropped_pct"])
+        except Exception: pass
+    if v: worst = max(worst, st.median(v))
+print(f"   median late/dropped worst direction: {worst:.2f} %"); sys.exit(0 if worst >= 1.0 else 1)
+PY
+}
+cpu_fits () {  # cpu_fits <setting> -> exit 0 if encoder AND decoder alone on CPU are < 33.3 ms (median)
+  "$PY" - "$TOOLS" "$S4/alone/$1" <<'PY'
+import sys, glob, statistics as st; sys.path.insert(0, sys.argv[1]); import analyze_run as A
+ok = True
+for net, d in (("alone-enc", "E"), ("alone-dec", "D")):
+    v = []
+    for r in glob.glob(f"{sys.argv[2]}/U_{net}_cpu_r*"):
+        try:
+            m, fr = A.load(r); s = A.direction_summary(m, fr, d)
+            if s: v.append(s["call_ms_mean"])
+        except Exception: pass
+    if not v or st.median(v) >= 1000 / 30: ok = False
+    print(f"   CPU {net}: {st.median(v):.1f} ms" if v else f"   CPU {net}: no data")
+sys.exit(0 if ok else 1)
+PY
+}
+rest () { sleep $REST; }
+
+echo "== PART A: NE alone (3 rounds) for all bundles + peak memory"
+for r in 1 2 3; do for s in mlvc_360p mlvc_multi $NEW; do for m in alone-enc alone-dec; do
+  bench "$S2/sanity/$s/U_${m}_npu_r$r" $s $m npu npu 0 60 && rest
+done; done; done
+for s in mlvc_360p mlvc_multi $NEW; do for cu in npu gpu; do
+  O="$S2/memory/${s}_$cu"
+  if grep -q "peak memory footprint" "$O.log" 2>/dev/null; then echo "   skip (done) memory $s $cu"; continue; fi
+  cfg $s; mkdir -p "$(dirname "$O")"; echo "   $(date +%H:%M:%S) memory $s duplex $cu/$cu"
+  /usr/bin/time -l "$BENCH" duplex --input "$(camf $s)" --size $VSIZE --qp 26 --iframe-period 64 --bundles "$(bund $s)" \
+     --incoming "$(incf $s)" --enc-cu $cu --dec-cu $cu --fps 0 --seconds 20 --warmup-frames 10 --out-dir "$O" 2> "$O.log"
+  grep -E "peak memory footprint" "$O.log" | sed 's/^ */   /'; sleep 30
+done; done
+"$D/2r"
+
+echo "== PART B: GPU and CPU alone (3 rounds) for all 7 pairs"
+for r in 1 2 3; do for s in $PAIRS; do for cu in gpu cpu; do for m in alone-enc alone-dec; do
+  sec=60; [ $cu = cpu ] && sec=20
+  [ $m = alone-enc ] && { ec=$cu; dc=npu; } || { ec=npu; dc=$cu; }
+  bench "$S4/alone/$s/U_${m}_${cu}_r$r" $s $m $ec $dc 0 $sec && rest
+done; done; done; done
+# NE alone for Step 4 = Part A runs (link them in so the table finds everything under step4/alone)
+for s in $PAIRS; do for r in 1 2 3; do for m in alone-enc alone-dec; do
+  [ -e "$S4/alone/$s/U_${m}_npu_r$r" ] || ln -s "$S2/sanity/$s/U_${m}_npu_r$r" "$S4/alone/$s/U_${m}_npu_r$r"
+done; done; done
+
+echo "== PART C: placements, batch order of the plan"
+idle () {  # 120 s idle power before a batch
+  local I="$S4/idle/$1"; [ -s "$I/power.txt" ] && return; mkdir -p "$I"
+  echo "   $(date +%H:%M:%S) idle 120 s ($1)"; sudo powermetrics --samplers cpu_power,gpu_power -i 100 -n 1200 -o "$I/power.txt" >/dev/null 2>&1
+}
+placement () {  # placement <setting> <enc_cu> <dec_cu> <batch>
+  local s=$1 ec=$2 dc=$3 b=$4 P="$S4/$1_$2-$3"
+  echo "-- $s  enc $ec  dec $dc   (batch $b)"
+  for r in 1 2 3; do for m in turns duplex; do bench "$P/U_${m}_r$r" $s $m $ec $dc 0 60 && rest; done; done
+  for r in 1 2 3 4 5; do
+    O="$P/P30_r$r"
+    if done_run "$O"; then n=$((n+1)); echo "   skip (done) ${O#$WORK/phase2/}"; continue; fi
+    mkdir -p "$O"; sudo powermetrics --samplers cpu_power,gpu_power -i 100 -n 700 -o "$O/power.txt" >/dev/null 2>&1 & PM=$!
+    sleep 3; bench "$O" $s duplex $ec $dc 30 60; wait $PM; rest
+  done
+  if late_any "$P/P30_r*"; then
+    echo "   fails 30 fps -> 15 fps runs"
+    for r in 1 2 3; do bench "$P/P15_r$r" $s duplex $ec $dc 15 60 && rest; done
+  fi
+  echo "$b" > "$P/batch.txt"
+}
+batch () {  # batch <name> <settings...>
+  local b=$1; shift; idle "$b"
+  for s in "$@"; do
+    for p in npu-npu npu-gpu gpu-npu gpu-gpu; do
+      [ "$s-$p" = "mlvc_360p-npu-npu" ] && { echo "-- mlvc_360p npu/npu = B* (Phase 2 report), not repeated"; continue; }
+      placement $s ${p%-*} ${p#*-} $b
+    done
+    if cpu_fits $s; then
+      echo "   CPU fits for $s -> CPU placements included"
+      for p in npu-cpu cpu-npu gpu-cpu cpu-gpu cpu-cpu; do placement $s ${p%-*} ${p#*-} $b; done
+    else echo "   CPU does not fit for $s -> no CPU placements (D5)"; fi
+  done
+}
+batch b1_mlvc_720p   mlvc_720p
+batch b2_mlvc_540p   mlvc_540p
+batch b3_mlvcs_hi    mlvcs_720p mlvcs_1080p
+batch b4_mlvc_360p   mlvc_360p
+batch b5_mlvc_1080p  mlvc_1080p
+batch b6_mlvcs_540p  mlvcs_540p
+kill $KEEP $THERM 2>/dev/null
+echo "== OVERNIGHT END  $(date)  ($(( ($(date +%s)-T0)/60 )) min)"
+"$D/4r"

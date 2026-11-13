@@ -1,0 +1,7 @@
+run,stream,frames,inference_ms,total_ms,fps
+T_cli_r1,encoder_0,5618,10.4,10.7,93.6
+T_cli_r1,decoder_0,5617,10.4,10.7,93.6
+T_cli_r2,encoder_0,5619,10.4,10.7,93.6
+T_cli_r2,decoder_0,5618,10.4,10.7,93.6
+T_cli_r3,encoder_0,5618,10.4,10.7,93.6
+T_cli_r3,decoder_0,5618,10.4,10.7,93.6

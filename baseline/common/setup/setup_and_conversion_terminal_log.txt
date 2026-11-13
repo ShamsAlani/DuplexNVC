@@ -1,0 +1,792 @@
+Last login: Tue Nov 10 18:40:07 on ttys001
+shamsalani@Shams ~ % caffeinate -dims &
+df -h ~
+[1] 52160
+Filesystem      Size    Used   Avail Capacity iused ifree %iused  Mounted on
+/dev/disk3s5   926Gi   282Gi   622Gi    32%    1.2M  6.5G    0%   /System/Volumes/Data
+shamsalani@Shams ~ % cd ~/Downloads/duplexnvc-baseline/mlvc-tools/video
+uv run convert.py bundle --model-version dmc61sbr_reglu --weights-path ~/mlvc/job-outputs/pretrained/mlvc-psnr-v1.ckpt --weights-version psnr_v1 --model-input-sizes 640x368 --mlvc-version v0.1 --model-type coreml --target-device apple 2>&1 | tee ~/Downloads/d/out_x.txt
+Torch version 2.10.0 has not been tested with coremltools. You may run into unexpected errors. Torch 2.7.0 is the most recent version that has been tested.
+Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.10.0).
+W1110 19:13:55.192000 52165 torch/distributed/elastic/multiprocessing/redirects.py:29] NOTE: Redirects are currently not supported in Windows or MacOs.
+Loaded psnr_v1 weights from /Users/shamsalani/mlvc/job-outputs/pretrained/mlvc-psnr-v1.ckpt for: 
+ -> conversion._full_model._dmc61sb_model.TraceableMLVC
+ -> conversion._full_model._base_model.BaseFullModel
+ -> src.models.dmc_6.dmc_61sb.DMC
+ -> src.models.common_model.CompressionModel
+ -> torch.nn.modules.module.Module
+ -> builtins.object
+Converting model for input size 640x368...
+Exporting model type: coreml, target device: apple, precision: fp16, image layout: nchw, feature layout: nchw
+Traceback (most recent call last):
+  File "/Users/shamsalani/Downloads/duplexnvc-baseline/mlvc-tools/video/convert.py", line 958, in <module>
+    _bundle(job_outputs_dir=job_outputs_dir, test_data_dir=test_data_dir, **args)
+  File "/Users/shamsalani/Downloads/duplexnvc-baseline/mlvc-tools/video/convert.py", line 885, in _bundle
+    model_path = exporter.run()
+                 ^^^^^^^^^^^^^^
+  File "/Users/shamsalani/Downloads/duplexnvc-baseline/mlvc-tools/video/conversion/_exporter/_base_exporter.py", line 146, in run
+    loop_results = conversion_loop.run(q_index=q_index, output_model_data=True)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/shamsalani/Downloads/duplexnvc-baseline/mlvc-tools/video/conversion/_frame_loop.py", line 113, in run
+    yuv420_frames = read_video_frames(
+                    ^^^^^^^^^^^^^^^^^^
+  File "/Users/shamsalani/Downloads/duplexnvc-baseline/mlvc-tools/video/conversion/utils.py", line 78, in read_video_frames
+    reader = YUVReader(src_path=str(video_path), height=image_height, width=image_width)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/shamsalani/Downloads/duplexnvc-baseline/mlvc-tools/video/src/utils/video_reader.py", line 160, in __init__
+    self.file = open(src_path, "rb")
+                ^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/shamsalani/mlvc/data/VCD/yuv/640x360_30fps/s1/0380a333cb0fef69001fb4260e2a705f_640x360_30fps.yuv'
+shamsalani@Shams video % mkdir -p ~/mlvc/data/VCD/yuv/640x360_30fps/s1
+gunzip -c ~/Downloads/duplexnvc-baseline/libmlvc/data/test_data/clips/VCD_s1_0380a3_640x360_30fps.nv12.gz > /tmp/c360.nv12
+ffmpeg -v error -f rawvideo -pix_fmt nv12 -s 640x360 -i /tmp/c360.nv12 -f rawvideo -pix_fmt yuv420p ~/mlvc/data/VCD/yuv/640x360_30fps/s1/0380a333cb0fef69001fb4260e2a705f_640x360_30fps.yuv
+ls -l ~/mlvc/data/VCD/yuv/640x360_30fps/s1/
+total 202504
+-rw-r--r--  1 shamsalani  staff  103680000 Nov 10 19:16 0380a333cb0fef69001fb4260e2a705f_640x360_30fps.yuv
+shamsalani@Shams video % cd ~/Downloads/duplexnvc-baseline/mlvc-tools/video
+uv run convert.py bundle --model-version dmc61sbr_reglu --weights-path ~/mlvc/job-outputs/pretrained/mlvc-psnr-v1.ckpt --weights-version psnr_v1 --model-input-sizes 640x368 --mlvc-version v0.1 --model-type coreml --target-device apple 2>&1 | tee ~/Downloads/d/out_x.txt
+Torch version 2.10.0 has not been tested with coremltools. You may run into unexpected errors. Torch 2.7.0 is the most recent version that has been tested.
+Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.10.0).
+W1110 19:17:43.176000 52199 torch/distributed/elastic/multiprocessing/redirects.py:29] NOTE: Redirects are currently not supported in Windows or MacOs.
+Loaded psnr_v1 weights from /Users/shamsalani/mlvc/job-outputs/pretrained/mlvc-psnr-v1.ckpt for: 
+ -> conversion._full_model._dmc61sb_model.TraceableMLVC
+ -> conversion._full_model._base_model.BaseFullModel
+ -> src.models.dmc_6.dmc_61sb.DMC
+ -> src.models.common_model.CompressionModel
+ -> torch.nn.modules.module.Module
+ -> builtins.object
+Converting model for input size 640x368...
+Exporting model type: coreml, target device: apple, precision: fp16, image layout: nchw, feature layout: nchw
+Deleting existing model at /Users/shamsalani/Downloads/duplexnvc-baseline/mlvc-tools/video/output/models/dmc61sbr_reglu-psnr_v1/coreml-apple/640x368
+100%|██████████| 48/48 [00:05<00:00,  8.57it/s]
+100%|██████████| 48/48 [00:05<00:00,  8.34it/s]
+/Users/shamsalani/Downloads/duplexnvc-baseline/mlvc-tools/video/src/utils/onnx_compat.py:12: TracerWarning: Converting a tensor to a Python number might cause the trace to be incorrect. We can't record the data flow of Python values, so this value will be treated as a constant in the future. This means that the trace might not generalize to other inputs!
+  v = v.item()
+/Users/shamsalani/Downloads/duplexnvc-baseline/mlvc-tools/video/src/models/common_model.py:528: TracerWarning: Converting a tensor to a Python integer might cause the trace to be incorrect. We can't record the data flow of Python values, so this value will be treated as a constant in the future. This means that the trace might not generalize to other inputs!
+  batch, channel, height, width = int(batch), int(channel), int(height), int(width)
+/Users/shamsalani/Downloads/duplexnvc-baseline/mlvc-tools/video/src/models/common_model.py:310: TracerWarning: Converting a tensor to a Python boolean might cause the trace to be incorrect. We can't record the data flow of Python values, so this value will be treated as a constant in the future. This means that the trace might not generalize to other inputs!
+  assert x.shape[1] % chunks == 0
+Tuple detected at graph output. This will be flattened in the converted model.
+Exporting MLVCEncoder...
+MLVCEncoder traced successfully
+Converting PyTorch Frontend ==> MIL Ops: 100%|█████████▉| 1088/1090 [00:00<00:00, 10879.21 Converting PyTorch Frontend ==> MIL Ops: 100%|█████████▉| 1088/1090 [00:00<00:00, 10857.39 ops/s]
+Running MIL frontend_pytorch pipeline: 100%|██████████| 5/5 [00:00<00:00, 143.69 passes/s]
+Running MIL default pipeline: 100%|██████████| 99/99 [00:01<00:00, 79.30 passes/s] 
+Found pixel_shuffle op (1, 1024, 23, 40) (upscale_factor=2, num_splits=2)
+Running MIL backend_mlprogram pipeline: 100%|██████████| 12/12 [00:00<00:00, 127.66 passes/s]
+Tuple detected at graph output. This will be flattened in the converted model.
+Saved CoreML model to /Users/shamsalani/Downloads/duplexnvc-baseline/mlvc-tools/video/output/models/dmc61sbr_reglu-psnr_v1/coreml-apple/640x368/MLVCEncoder.mlpackage
+Exporting MLVCDecoder...
+MLVCDecoder traced successfully
+Converting PyTorch Frontend ==> MIL Ops: 100%|█████████▉| 931/933 [00:00<00:00, 10387.71 ops/s]
+Running MIL frontend_pytorch pipeline: 100%|██████████| 5/5 [00:00<00:00, 164.07 passes/s]
+Running MIL default pipeline: 100%|██████████| 99/99 [00:01<00:00, 90.18 passes/s] 
+Found pixel_shuffle op (1, 1024, 23, 40) (upscale_factor=2, num_splits=2)
+Running MIL backend_mlprogram pipeline: 100%|██████████| 12/12 [00:00<00:00, 148.80 passes/s]
+Saved CoreML model to /Users/shamsalani/Downloads/duplexnvc-baseline/mlvc-tools/video/output/models/dmc61sbr_reglu-psnr_v1/coreml-apple/640x368/MLVCDecoder.mlpackage
+Saving metadata to /Users/shamsalani/Downloads/duplexnvc-baseline/mlvc-tools/video/output/models/dmc61sbr_reglu-psnr_v1/coreml-apple/640x368/metadata.json
+Bundling 1 models...
+Running MIL frontend_milinternal pipeline: 0 passes [00:00, ? passes/s]
+Running MIL default pipeline: 100%|██████████| 92/92 [00:00<00:00, 106.50 passes/s]
+Running MIL backend_mlprogram pipeline:  92%|█████████▏| 11/12 [00:00<00:00, 108.87 passes/Running MIL backend_mlprogram pipeline: 100%|██████████| 12/12 [00:00<00:00, 108.32 passes/s]
+Archive created: /Users/shamsalani/Downloads/duplexnvc-baseline/mlvc-tools/video/output/model_bundles/dmc61sbr_reglu-psnr_v1-coreml-apple-v0.1/bundled_model.mlpackage.tar
+Saving metadata to /Users/shamsalani/Downloads/duplexnvc-baseline/mlvc-tools/video/output/model_bundles/dmc61sbr_reglu-psnr_v1-coreml-apple-v0.1/bundle_manifest.json
+Archive created: /Users/shamsalani/Downloads/duplexnvc-baseline/mlvc-tools/video/output/model_bundles/dmc61sbr_reglu-psnr_v1-coreml-apple-v0.1.tar
+shamsalani@Shams video % W=~/Downloads/duplexnvc-baseline
+B=$W/harness/build/ninja-release/libmlvc_example
+M=$W/libmlvc/install/mac-arm64-ninja-release/bin/mlvc
+mkdir -p $W/bundles/mlvc
+cp $W/mlvc-tools/video/output/model_bundles/dmc61sbr_reglu-psnr_v1-coreml-apple-v0.1.tar $W/bundles/mlvc/
+ls -lh $W/bundles/mlvc
+cp /tmp/c360.nv12 $W/data/nv12/c0380a3_360p.nv12
+$B prepare --input $W/data/nv12/c0380a3_360p.nv12 --size 640x360 --qp 22 --bundles $W/bundles/mlvc --out-dir /tmp/t360 2>&1 | grep -E "Found model bundle|resolved|iframe_period|wrote|Encoder total|FAILED|rror"
+$M decode --model-bundles-dir $W/bundles/mlvc --input /tmp/t360/incoming.mlvc --output /tmp/t360/dec.nv12 2>&1 | tail -3
+$W/.venv/bin/python3 $W/tools/quality_tools.py psnr /tmp/t360/dec.nv12 $W/data/nv12/c0380a3_360p.nv12 640x360
+total 72360
+-rw-r--r--  1 shamsalani  staff    35M Nov 10 19:19 dmc61sbr_reglu-psnr_v1-coreml-apple-v0.1.tar
+2026-11-10 19:19:02.373 [T#26215084][ INFO][bundle.cpp:211]: Found model bundle: dmc61sbr_reglu-psnr_v1-coreml-apple-v0.1.tar
+manager: requested=npu resolved=npu
+model v0.1 default iframe_period=64 -> using 64
+2026-11-10 19:19:12.669 [T#26215084][ INFO][codec.cpp:469]: [Enc#0] Configuring encoder: version=v0.1, size=640x360, iframe_period=64, num_temporal_layers=1, ltr_mode=internal, ltr_start_idx=0, ltr_period=0, ltr_num_slots=4, ltr_recovery_period=0
+2026-11-10 19:19:13.455 [T#26215084][ INFO][codec.cpp:143]: [Enc#0] Encoder total: 6.14/0.41/5.84/10.61 (n=128), reconfigure: 3.22/0.00 (n=1), preprocess: 0.03/0.01, inference: 5.80/0.14, scale_decoder: 0.04/0.00, entropy_coding: 0.23/0.01, interval: 6.11/0.11 (mean/std/min/max)
+2026-11-10 19:19:14.235 [T#26215084][ INFO][codec.cpp:143]: [Enc#0] Encoder total: 6.10/0.10/5.85/6.23 (n=128), reconfigure: n/a, preprocess: 0.03/0.00, inference: 5.79/0.10, scale_decoder: 0.04/0.00, entropy_coding: 0.23/0.01, interval: 6.10/0.10 (mean/std/min/max)
+wrote 300 access units to /tmp/t360/incoming.{aus,mlvc}
+2026-11-10 19:19:14.504 [T#26215084][ INFO][codec.cpp:206]: [Enc#0] ~Encoder total: 6.11/0.28/5.84/10.61 (n=300), reconfigure: 3.22/0.00 (n=1), preprocess: 0.03/0.01, inference: 5.79/0.12, scale_decoder: 0.04/0.00, entropy_coding: 0.23/0.01, interval: 6.10/0.11 (mean/std/min/max)
+  v0.1: 640x368, max_fps=120, max_temporal=2, max_ltr=8
+Decoding...
+Decoding completed.
+frames 300: PSNR-Y 42.911 dB, PSNR-YUV(6:1:1) 44.999 dB
+shamsalani@Shams video % bash ~/Downloads/d3.sh
+cd ~/Downloads/d
+./m
+Installed baseline scripts.
+Run from ~/Downloads/d.   BASELINE (full MLVC, 360p, Neural Engine):
+  ./p   prepare the Mac (password once)            -> out_p.txt
+  ./m   make the baseline video streams (~1 min)    -> out_m.txt
+  ./t   smoke test of the baseline, ~3 min, NOT data -> out_t.txt   (check)
+  ./x   EXPERIMENT B* (E1-E4), ~65 min, real data   -> out_x4.txt
+  ./y   results of B* (also runs at end of ./x)     -> out_y.txt    (check)
+  ./u   undo the Mac preparation when finished
+Older (MLVC-S 540p check, done): ./s ./e ./r
+Before ./t and ./x: charger in, Wi-Fi + Bluetooth off, brightness MAX,
+auto-brightness + True Tone off, all apps closed except Terminal.
+== making baseline streams (360p)  Tue Nov 10 19:30:41 +04 2026
+-rw-r--r--  1 shamsalani  staff  207360000 Nov 10 19:30 /Users/shamsalani/Downloads/duplexnvc-baseline/data/nv12/bl_camera_640x360.nv12
+-rw-r--r--  1 shamsalani  staff  207360000 Nov 10 19:30 /Users/shamsalani/Downloads/duplexnvc-baseline/data/nv12/bl_incoming_src_640x360.nv12
+(expect 207360000 bytes each = 600 frames)
+2026-11-10 19:30:42.266 [T#26222549][ INFO][bundle.cpp:211]: Found model bundle: dmc61sbr_reglu-psnr_v1-coreml-apple-v0.1.tar
+manager: requested=npu resolved=npu
+model v0.1 default iframe_period=64 -> using 64
+2026-11-10 19:30:42.394 [T#26222549][ INFO][codec.cpp:469]: [Enc#0] Configuring encoder: version=v0.1, size=640x360, iframe_period=64, num_temporal_layers=1, ltr_mode=internal, ltr_start_idx=0, ltr_period=0, ltr_num_slots=4, ltr_recovery_period=0
+wrote 600 access units to /Users/shamsalani/Downloads/duplexnvc-baseline/data/incoming/mlvc-640x360-qp26/incoming.{aus,mlvc}
+2026-11-10 19:30:46.004 [T#26222549][ INFO][codec.cpp:206]: [Enc#0] ~Encoder total: 6.01/0.23/5.80/10.63 (n=600), reconfigure: 3.20/0.00 (n=1), preprocess: 0.02/0.00, inference: 5.70/0.13, scale_decoder: 0.04/0.00, entropy_coding: 0.23/0.02, interval: 6.00/0.14 (mean/std/min/max)
+Decoding...
+Decoding completed.
+frames 600: PSNR-Y 34.983 dB, PSNR-YUV(6:1:1) 37.356 dB
+Next: ./t
+shamsalani@Shams d % ./t
+== BASELINE SMOKE TEST (not data)  Tue Nov 10 19:31:01 +04 2026
+== turns unpaced (10 s)
+2026-11-10 19:31:01.697 [T#26223064][ INFO][manager.cpp:216]: Initializing MlvcManager from bundles dir: compute_unit=npu, enable_model_cache=1, session_preload_mode=at-init, versions=[v0.1]
+2026-11-10 19:31:01.697 [T#26223064][ INFO][engine.mm:630]: CoreML initialized: compute_unit=npu, os_ver=26, os_build=25G83, env_hash=2aeaf3ba
+2026-11-10 19:31:01.817 [T#26223064][ INFO][manager.cpp:571]: MLVC Manager initialized with 1 bundle(s)
+manager: requested=npu resolved=npu
+encoder first-frame (init) ms: 14.3655
+decoder first-frame (init) ms: 10.1672
+== alone-enc unpaced (10 s)
+2026-11-10 19:31:12.119 [T#26223343][ INFO][manager.cpp:216]: Initializing MlvcManager from bundles dir: compute_unit=npu, enable_model_cache=1, session_preload_mode=at-init, versions=[v0.1]
+2026-11-10 19:31:12.120 [T#26223343][ INFO][engine.mm:630]: CoreML initialized: compute_unit=npu, os_ver=26, os_build=25G83, env_hash=2aeaf3ba
+2026-11-10 19:31:12.231 [T#26223343][ INFO][manager.cpp:571]: MLVC Manager initialized with 1 bundle(s)
+manager: requested=npu resolved=npu
+encoder first-frame (init) ms: 15.8575
+== alone-dec unpaced (10 s)
+2026-11-10 19:31:22.473 [T#26223548][ INFO][manager.cpp:216]: Initializing MlvcManager from bundles dir: compute_unit=npu, enable_model_cache=1, session_preload_mode=at-init, versions=[v0.1]
+2026-11-10 19:31:22.474 [T#26223548][ INFO][engine.mm:630]: CoreML initialized: compute_unit=npu, os_ver=26, os_build=25G83, env_hash=2aeaf3ba
+2026-11-10 19:31:22.578 [T#26223548][ INFO][manager.cpp:571]: MLVC Manager initialized with 1 bundle(s)
+manager: requested=npu resolved=npu
+decoder first-frame (init) ms: 10.083
+== duplex unpaced (10 s)
+2026-11-10 19:31:32.852 [T#26223753][ INFO][manager.cpp:216]: Initializing MlvcManager from bundles dir: compute_unit=npu, enable_model_cache=1, session_preload_mode=at-init, versions=[v0.1]
+2026-11-10 19:31:32.852 [T#26223753][ INFO][engine.mm:630]: CoreML initialized: compute_unit=npu, os_ver=26, os_build=25G83, env_hash=2aeaf3ba
+2026-11-10 19:31:32.963 [T#26223753][ INFO][manager.cpp:571]: MLVC Manager initialized with 1 bundle(s)
+manager: requested=npu resolved=npu
+encoder first-frame (init) ms: 10.7076
+decoder first-frame (init) ms: 8.58621
+== duplex paced 30 fps (10 s)
+2026-11-10 19:31:43.279 [T#26224003][ INFO][manager.cpp:216]: Initializing MlvcManager from bundles dir: compute_unit=npu, enable_model_cache=1, session_preload_mode=at-init, versions=[v0.1]
+2026-11-10 19:31:43.279 [T#26224003][ INFO][engine.mm:630]: CoreML initialized: compute_unit=npu, os_ver=26, os_build=25G83, env_hash=2aeaf3ba
+2026-11-10 19:31:43.388 [T#26224003][ INFO][manager.cpp:571]: MLVC Manager initialized with 1 bundle(s)
+manager: requested=npu resolved=npu
+encoder first-frame (init) ms: 10.4723
+decoder first-frame (init) ms: 7.95179
+== turns paced 30 fps (10 s)
+2026-11-10 19:31:53.732 [T#26224177][ INFO][manager.cpp:216]: Initializing MlvcManager from bundles dir: compute_unit=npu, enable_model_cache=1, session_preload_mode=at-init, versions=[v0.1]
+2026-11-10 19:31:53.733 [T#26224177][ INFO][engine.mm:630]: CoreML initialized: compute_unit=npu, os_ver=26, os_build=25G83, env_hash=2aeaf3ba
+2026-11-10 19:31:53.841 [T#26224177][ INFO][manager.cpp:571]: MLVC Manager initialized with 1 bundle(s)
+manager: requested=npu resolved=npu
+encoder first-frame (init) ms: 15.0096
+decoder first-frame (init) ms: 7.90325
+== libmlvc CLI cross-check (10 s)
+  v0.1: 640x368, max_fps=120, max_temporal=2, max_ltr=8
+| Stream    | Count     | Reconf     | Preproc    | ScaleDec   | Entropy    | Inference  | Total      | FPS    | First  |
+| Stream    | Count     | Reconf     | Postproc   | ScaleDec   | Entropy    | Inference  | Total      | FPS    | First  |
+
+== UNPACED (E1 alone, E3 turns, E4 duplex): rounds used 1
+  metric                                      median       min       max   MLVC paper, M3 Pro 360p
+  encode alone, call ms                         5.90      5.90      5.90   7.72 (129.5 fps)
+  decode alone, call ms                         5.96      5.96      5.96   8.14 (122.9 fps)
+  encode alone, network ms                      5.61      5.61      5.61   
+  decode alone, network ms                      5.68      5.68      5.68   
+  encode alone fps                            169.46    169.46    169.46   
+  decode alone fps                            167.74    167.74    167.74   
+  sum alone ms                                 11.86     11.86     11.86   15.86 (estimate)
+  T_turns ms (measured)                        11.86     11.86     11.86   
+  switching cost ms                             0.00      0.00      0.00   
+  T_shared ms (duplex, NE)                     10.68     10.68     10.68   
+  fps per direction, shared                    93.60     93.60     93.60   
+  S = T_turns / T_shared                        1.11      1.11      1.11   
+  ceiling (t_enc+t_dec)/max                     1.99      1.99      1.99   
+  kappa enc (call)                              1.81      1.81      1.81   
+  kappa dec (call)                              1.79      1.79      1.79   
+  kappa enc (network)                           1.79      1.79      1.79   
+  kappa dec (network)                           1.76      1.76      1.76   
+
+== B* = DUPLEX PACED 30 fps (the baseline): runs 2
+  metric                                      median       min       max
+  send: fps                                    30.07     30.07     30.07   
+  send: late+dropped %                          0.37      0.37      0.37   
+  send: dropped frames                          0.00      0.00      0.00   
+  send: service mean ms                        13.80     13.80     13.80   
+  send: service p99 ms                         21.50     21.50     21.50   
+  send: due->done p95 ms                       24.19     24.19     24.19   
+  send: due->done p99 ms                       26.73     26.73     26.73   
+  send: network ms                             13.00     13.00     13.00   
+  send: call ms                                13.80     13.80     13.80   
+  send: failures                                0.00      0.00      0.00   
+  send: kbps                                   79.78     79.78     79.78   
+  send: run1 start delay mean 2.91 ms p95 5.18 | I-frames 4 mean 10.47 ms | P-frames mean 13.85 ms
+  recv: fps                                    30.05     30.05     30.05   
+  recv: late+dropped %                          0.00      0.00      0.00   
+  recv: dropped frames                          0.00      0.00      0.00   
+  recv: service mean ms                        14.19     14.19     14.19   
+  recv: service p99 ms                         22.09     22.09     22.09   
+  recv: due->done p95 ms                       23.41     23.41     23.41   
+  recv: due->done p99 ms                       25.18     25.18     25.18   
+  recv: network ms                             13.30     13.30     13.30   
+  recv: call ms                                14.18     14.18     14.18   
+  recv: failures                                0.00      0.00      0.00   
+  recv: kbps                                  275.60    275.60    275.60   
+  recv: run1 start delay mean 2.97 ms p95 5.04 | I-frames 4 mean 12.76 ms | P-frames mean 14.21 ms
+
+== TURNS PACED 30 fps: runs 2
+  metric                                      median       min       max
+  send: fps                                    30.07     30.07     30.07   
+  send: late+dropped %                          0.00      0.00      0.00   
+  send: dropped frames                          0.00      0.00      0.00   
+  send: service mean ms                        10.84     10.84     10.84   
+  send: service p99 ms                         15.88     15.88     15.88   
+  send: due->done p95 ms                       17.15     17.15     17.15   
+  send: due->done p99 ms                       18.69     18.69     18.69   
+  send: network ms                             10.11     10.11     10.11   
+  send: call ms                                10.83     10.83     10.83   
+  send: failures                                0.00      0.00      0.00   
+  send: kbps                                   79.78     79.78     79.78   
+  send: run1 start delay mean 2.02 ms p95 3.51 | I-frames 4 mean 11.27 ms | P-frames mean 10.83 ms
+  recv: fps                                    30.05     30.05     30.05   
+  recv: late+dropped %                          0.00      0.00      0.00   
+  recv: dropped frames                          0.00      0.00      0.00   
+  recv: service mean ms                         9.25      9.25      9.25   
+  recv: service p99 ms                         12.67     12.67     12.67   
+  recv: due->done p95 ms                       28.10     28.10     28.10   
+  recv: due->done p99 ms                       31.10     31.10     31.10   
+  recv: network ms                              8.53      8.53      8.53   
+  recv: call ms                                 9.25      9.25      9.25   
+  recv: failures                                0.00      0.00      0.00   
+  recv: kbps                                  275.60    275.60    275.60   
+  recv: run1 start delay mean 12.86 ms p95 17.15 | I-frames 4 mean 9.94 ms | P-frames mean 9.24 ms
+CHECK: no FAILED; resolved=npu; all runs end; duplex 30 fps late ~0%.
+Saved to /Users/shamsalani/Downloads/d/out_t.txt. Check it before running ./x
+shamsalani@Shams d %    bash ~/Downloads/d4.sh
+   cd ~/Downloads/d
+   ./q
+Installed.
+Run from ~/Downloads/d.   Tonight's order (full MLVC, 360p, Neural Engine):
+ WHILE the 360p download runs (Wi-Fi on, normal Mac is fine):
+  ./f   download the 40 talking-head clips at 1080p (new Terminal window) -> out_f.txt
+  ./q   quality now: BD-rate vs HEVC anchor + R-D on shipped clips (~5 min) -> out_q.txt
+ AFTER the 360p download reaches 100%:
+  ./g   unpack, calibration/evaluation split, R-D + face quality on evaluation clips (~20 min) -> out_g.txt
+ QUIET MAC (Wi-Fi + Bluetooth off, brightness MAX, auto-brightness/True Tone off, all apps closed, charger in):
+  ./p   prepare the Mac (password)
+  ./w ; ./x    energy (~15 min, type password at start) then B* timing (~65 min) -> out_w.txt, out_x4.txt
+ THEN (normal Mac again):
+  ./c   correctness of B*'s outgoing stream (~5 min) -> out_c.txt
+  ./y   B* results summary -> out_y.txt
+  ./u   undo the Mac preparation
+ Outputs: out_q.txt out_g.txt out_w.txt out_x4.txt out_y.txt out_c.txt
+== mlvc validate: full MLVC 360p vs Intel HW HEVC anchor (libmlvc test set)  Tue Nov 10 19:49:41 +04 2026
+libmlvc 0.1.0 (eb5d60a, HEAD)
+Platform: Apple Mac16,8, macOS 26.6
+  CPU: Apple M4 Pro (M4, arm64, fp16, dotprod)
+Creating manager...
+Manager: coreml/npu, model_cache, session_preload at-init
+  v0.1: 640x368, max_fps=120, max_temporal=2, max_ltr=8
+Dataset: VCD-640x360-s1-3s, 3 clips, 640x360, 30 fps, scenarios: s1
+Encoder: v0.1, 640x360, iframe=64, temporal=1, ltr=(internal, start=0, period=0, slots=4, recovery=0)
+Validation: QP: 16 24 32 40, limit: 1000, anchor: intel_hw_hevc_lp.json
+Running validation tests...
++----------+-------+-------------+-------------+-------------+-------------+-------+-------+-------+-------+
+|          |       |           kbps            |           PSNR            |             BD-rate           |
++----------+-------+-------------+-------------+-------------+-------------+-------+-------+-------+-------+
+| Scenario | Clips |   Anchor    |    Test     |   Anchor    |    Test     |   Y   |   U   |   V   |  YUV  |
++----------+-------+-------------+-------------+-------------+-------------+-------+-------+-------+-------+
+| s1       |     3 |     82-1205 |      50-507 |   32.1-44.1 |   33.2-40.8 | -31.2 | -73.1 | -72.2 | -41.0 |
++----------+-------+-------------+-------------+-------------+-------------+-------+-------+-------+-------+
+== R-D on the 4 shipped clips (calibration set)
+/Users/shamsalani/Downloads/duplexnvc-baseline/.venv/lib/python3.13/site-packages/torchvision/models/_utils.py:207: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/Users/shamsalani/Downloads/duplexnvc-baseline/.venv/lib/python3.13/site-packages/torchvision/models/_utils.py:222: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=AlexNet_Weights.IMAGENET1K_V1`. You can also use `weights=AlexNet_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+Downloading: "https://download.pytorch.org/models/alexnet-owt-7be5be79.pth" to /Users/shamsalani/.cache/torch/hub/checkpoints/alexnet-owt-7be5be79.pth
+LPIPS unavailable: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1028)>
+   0380a3 qp16:   176.9 kbps  PSNR-Y 44.12  YUV 46.04
+   0380a3 qp24:    96.6 kbps  PSNR-Y 42.08  YUV 44.28
+   0380a3 qp32:    45.3 kbps  PSNR-Y 38.87  YUV 41.48
+   0380a3 qp40:    21.5 kbps  PSNR-Y 35.05  YUV 38.09
+   6587ae qp16:   352.5 kbps  PSNR-Y 42.47  YUV 43.65
+   6587ae qp24:   187.4 kbps  PSNR-Y 40.41  YUV 41.91
+   6587ae qp32:    81.8 kbps  PSNR-Y 36.98  YUV 39.00
+   6587ae qp40:    35.7 kbps  PSNR-Y 33.09  YUV 35.59
+   6c9c96 qp16:   666.7 kbps  PSNR-Y 38.79  YUV 40.57
+   6c9c96 qp24:   331.8 kbps  PSNR-Y 36.83  YUV 38.87
+   6c9c96 qp32:   128.0 kbps  PSNR-Y 33.66  YUV 36.10
+   6c9c96 qp40:    48.9 kbps  PSNR-Y 30.20  YUV 32.98
+   9c02f6 qp16:   538.8 kbps  PSNR-Y 35.67  YUV 38.06
+   9c02f6 qp24:   331.7 kbps  PSNR-Y 34.51  YUV 37.04
+   9c02f6 qp32:   164.5 kbps  PSNR-Y 31.80  YUV 34.67
+   9c02f6 qp40:    68.2 kbps  PSNR-Y 27.57  YUV 30.90
+
+== mean over clips per QP (4 clips) -> rd_shipped.csv
+   QP 16:   433.7 kbps  PSNR-Y 40.26  PSNR-YUV 42.08  display PSNR-Y nan  face PSNR-Y nan  face LPIPS nan
+   QP 24:   236.9 kbps  PSNR-Y 38.46  PSNR-YUV 40.53  display PSNR-Y nan  face PSNR-Y nan  face LPIPS nan
+   QP 32:   104.9 kbps  PSNR-Y 35.33  PSNR-YUV 37.81  display PSNR-Y nan  face PSNR-Y nan  face LPIPS nan
+   QP 40:    43.6 kbps  PSNR-Y 31.48  PSNR-YUV 34.39  display PSNR-Y nan  face PSNR-Y nan  face LPIPS nan
+shamsalani@Shams d % mkdir -p ~/.cache/torch/hub/checkpoints
+curl -L -o ~/.cache/torch/hub/checkpoints/alexnet-owt-7be5be79.pth https://download.pytorch.org/models/alexnet-owt-7be5be79.pth
+~/Downloads/duplexnvc-baseline/.venv/bin/python3 -c "import lpips; lpips.LPIPS(net='alex', verbose=False); print('LPIPS OK')"
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  233M  100  233M    0     0  5779k      0  0:00:41  0:00:41 --:--:-- 6165k
+/Users/shamsalani/Downloads/duplexnvc-baseline/.venv/lib/python3.13/site-packages/torchvision/models/_utils.py:207: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/Users/shamsalani/Downloads/duplexnvc-baseline/.venv/lib/python3.13/site-packages/torchvision/models/_utils.py:222: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=AlexNet_Weights.IMAGENET1K_V1`. You can also use `weights=AlexNet_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+LPIPS OK
+shamsalani@Shams d %    cd ~/Downloads/d
+   ./f
+Cloning into 'VCD'...
+== downloading       40 clips  Tue Nov 10 20:11:05 +04 2026
+[1] ok 54e9f7b6a15b07e90b4836eb6ffb58ae_1920x1080_30.mp4 14M
+[2] ok 2326ac1d3e069fbd86e2ca79082e19f9_1920x1080_30.mp4 7.9M
+[3] ok fbdfa436d72b83ff284396579bcd6da5_1920x1080_30.mp4 10M
+[4] ok 8bff85c461e9f6ae39f3900d581b1d05_1920x1080_30.mp4 7.2M
+[5] ok 0380a333cb0fef69001fb4260e2a705f_1920x1080_30.mp4 5.3M
+[6] ok 2242e0be13a37cf78b00aaeafa54d4a7_1920x1080_30.mp4 7.2M
+[7] ok b2d792ec647785467e9ce5c539cad809_1920x1080_30.mp4 12M
+[8] ok b8893c5cf8e69c5eb6753acdcae51541_1920x1080_30.mp4 12M
+[9] ok 08ee5edb9729f2ef9f23f013430ebad2_1920x1080_30.mp4 10M
+[10] ok 99b38ea07fccf7d4027ce0e35ec21181_1920x1080_30.mp4 13M
+[11] ok dd1651d8337aecac8d0b3287fa0c5285_1920x1080_30.mp4 7.4M
+[12] ok 6aa9cf0f933312468ec70baa0fad27f5_1920x1080_30.mp4 7.5M
+[13] ok 9c02f633262ef15f81eab1f2fa06faa5_1920x1080_30.mp4 14M
+[14] ok 38a41875b10cf12852ac9a06b2f9c7af_1920x1080_30.mp4 7.6M
+[15] ok a1762072616a88919fdf54e6326d17d1_1920x1080_30.mp4 7.6M
+[16] ok db623c6fff8ffffa6615170d6f8cbfd7_1920x1080_30.mp4 6.3M
+[17] ok b91038928c3d8a33b44a562c37f27e58_1920x1080_30.mp4 9.4M
+[18] ok 4d8ffedc816b405fe0187bd03392664f_1920x1080_30.mp4 21M
+[19] ok cd6bc13b091fd0d37fefe47edca9f168_1920x1080_30.mp4 7.7M
+[20] ok c336480c9cb3ec3e6c50f55f63fafb23_1920x1080_30.mp4 11M
+[21] ok ea352e3eae0d94f12627e51e23d350df_1920x1080_30.mp4 8.2M
+[22] ok 78236e192c1171c149c14253a66ea628_1920x1080_30.mp4 11M
+[23] ok 45bb89b65ecb56a7f098af5756560291_1920x1080_30.mp4 7.9M
+[24] ok 3d747f8336ca66bbbb444639d99dd3ce_1920x1080_30.mp4 17M
+[25] ok 6587aeba8bb9bc97c0fc640ee664c444_1920x1080_30.mp4 10M
+[26] ok 682502c09dd305b812e43baf6e7fabdf_1920x1080_30.mp4 8.2M
+[27] ok 6c9c96d33030b3b3879c691760492b14_1920x1080_30.mp4 14M
+[28] ok 31ce85afe440564f525a418ec16340bc_1920x1080_30.mp4 9.5M
+[29] ok fda953f258d38f3368f4c8fdc774756e_1920x1080_30.mp4 12M
+[30] ok 70e80388aae75b945e5000eb7ade4a6a_1920x1080_30.mp4 7.6M
+[31] ok 6eb39ddc093d9032d1db38558ad15ac0_1920x1080_30.mp4 9.7M
+[32] ok 92d3da54d22e81729747f7eb610af4f2_1920x1080_30.mp4 13M
+[33] ok 1e88301e03cf356b45d2287c6283de17_1920x1080_30.mp4 19M
+[34] ok c52d750d3ffb17573cc3a380f53d4e80_1920x1080_30.mp4 16M
+[35] ok 104c931a5ea4b6b0b9dc2240a109a3d0_1920x1080_30.mp4 11M
+[36] ok a4c13cd1bf0ab8178f3755c4b03f7321_1920x1080_30.mp4 9.6M
+[37] ok 73f23227c86d85dbf74c0a0314a38f10_1920x1080_30.mp4 8.5M
+[38] ok 7408b858ea4081111751af6f51870032_1920x1080_30.mp4 8.3M
+[39] ok 4d5d7cd504e346a619d38b19b3ec221b_1920x1080_30.mp4 18M
+[40] ok 40fe4d76c9719ecf2b00286ffe6c2bf6_1920x1080_30.mp4 14M
+== done  Tue Nov 10 20:16:51 +04 2026
+      40
+450M	/Users/shamsalani/Downloads/duplexnvc-baseline/data/vcd_1080p/mp4
+shamsalani@Shams d % cd ~/mlvc/data/VCD/yuv
+tar -tvf 640x360_30fps.tar 2>/dev/null | grep "/s1/" | wc -l
+tar -tvf 640x360_30fps.tar 2>/dev/null | head -3
+tar -tvf 640x360_30fps.tar 2>/dev/null | tail -2
+      42
+drwxrwxrwx  0 0      0           0 Feb 13  2025 640x360_30fps/
+drwxrwxrwx  0 0      0           0 Apr  8  2025 640x360_30fps/s1/
+-rw-rw-rw-  0 0      0   103680000 Feb 12  2025 640x360_30fps/s1/0380a333cb0fef69001fb4260e2a705f_640x360_30fps.yuv
+drwxrwxrwx  0 0      0           0 Feb 12  2025 640x360_30fps/s3/
+-rw-rw-rw-  0 0      0   103680000 Feb 12  2025 640x360_30fps/s3/0445f83f20f1d756053c55404993db4a_640x360_30fps.yuv
+shamsalani@Shams yuv % tar -xf 640x360_30fps.tar 640x360_30fps/s1 2>&1 | tail -2
+ls 640x360_30fps/s1/*.yuv | wc -l
+ls -l 640x360_30fps/s1/*.yuv | awk '{print $5}' | sort | uniq -c
+tar: Truncated input file (needed 103680000 bytes, only 63673856 available)
+tar: Error exit delayed from previous errors.
+      40
+  40 103680000
+shamsalani@Shams yuv % cd ~/mlvc/data/VCD/yuv
+tar -xf 640x360_30fps.tar 640x360_30fps/s1 2>&1 | tail -2
+ls 640x360_30fps/s1/*.yuv | wc -l
+ls -l 640x360_30fps/s1/*.yuv | awk '{print $5}' | sort | uniq -c
+tar: Truncated input file (needed 103680000 bytes, only 62076928 available)
+tar: Error exit delayed from previous errors.
+      40
+  40 103680000
+shamsalani@Shams yuv % cd ~/mlvc/data/VCD/yuv
+tar -xf 640x360_30fps.tar 640x360_30fps/s1 2>&1 | tail -2
+ls 640x360_30fps/s1/*.yuv | wc -l
+ls -l 640x360_30fps/s1/*.yuv | awk '{print $5}' | sort | uniq -c
+tar: Truncated input file (needed 103680000 bytes, only 62076928 available)
+tar: Error exit delayed from previous errors.
+      40
+  40 103680000
+shamsalani@Shams yuv % cd ~/Downloads/d
+./g
+== unpack + split  Tue Nov 10 20:35:19 +04 2026
+s1 clips:       40
+20 calibration / 20 evaluation -> /Users/shamsalani/Downloads/duplexnvc-baseline/data/split.json
+== face boxes tool
+evaluation clips:       20
+/Users/shamsalani/Downloads/duplexnvc-baseline/.venv/lib/python3.13/site-packages/torchvision/models/_utils.py:207: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/Users/shamsalani/Downloads/duplexnvc-baseline/.venv/lib/python3.13/site-packages/torchvision/models/_utils.py:222: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=AlexNet_Weights.IMAGENET1K_V1`. You can also use `weights=AlexNet_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+   08ee5e qp16:   339.2 kbps  PSNR-Y 41.73  YUV 42.72  | display PSNR-Y 34.27  face PSNR-Y 39.27  LPIPS 0.172  faces 30
+   08ee5e qp24:   188.4 kbps  PSNR-Y 40.07  YUV 41.34  | display PSNR-Y 33.78  face PSNR-Y 38.10  LPIPS 0.200  faces 30
+   08ee5e qp32:    88.9 kbps  PSNR-Y 36.70  YUV 38.51  | display PSNR-Y 32.34  face PSNR-Y 35.60  LPIPS 0.250  faces 30
+   08ee5e qp40:    36.9 kbps  PSNR-Y 32.10  YUV 34.52  | display PSNR-Y 29.44  face PSNR-Y 31.99  LPIPS 0.333  faces 30
+   104c93 qp16:   393.9 kbps  PSNR-Y 41.56  YUV 42.60  | display PSNR-Y 34.09  face PSNR-Y 34.71  LPIPS 0.169  faces 36
+   104c93 qp24:   220.2 kbps  PSNR-Y 39.59  YUV 40.88  | display PSNR-Y 33.48  face PSNR-Y 33.41  LPIPS 0.191  faces 36
+   104c93 qp32:   100.7 kbps  PSNR-Y 36.04  YUV 37.76  | display PSNR-Y 31.90  face PSNR-Y 30.87  LPIPS 0.253  faces 36
+   104c93 qp40:    42.9 kbps  PSNR-Y 31.69  YUV 33.85  | display PSNR-Y 29.10  face PSNR-Y 27.63  LPIPS 0.351  faces 36
+   1e8830 qp16:   520.4 kbps  PSNR-Y 36.83  YUV 38.09  | display PSNR-Y 25.33  face PSNR-Y 30.27  LPIPS 0.284  faces 30
+   1e8830 qp24:   309.4 kbps  PSNR-Y 35.76  YUV 37.19  | display PSNR-Y 25.21  face PSNR-Y 29.77  LPIPS 0.310  faces 30
+   1e8830 qp32:   155.6 kbps  PSNR-Y 33.29  YUV 35.08  | display PSNR-Y 24.78  face PSNR-Y 28.64  LPIPS 0.364  faces 30
+   1e8830 qp40:    67.7 kbps  PSNR-Y 29.12  YUV 31.45  | display PSNR-Y 23.55  face PSNR-Y 26.80  LPIPS 0.443  faces 30
+   38a418 qp16:   312.9 kbps  PSNR-Y 42.20  YUV 42.97  | display PSNR-Y 34.05  face PSNR-Y 30.75  LPIPS 0.259  faces 30
+   38a418 qp24:   181.6 kbps  PSNR-Y 40.32  YUV 41.35  | display PSNR-Y 33.56  face PSNR-Y 30.12  LPIPS 0.280  faces 30
+   38a418 qp32:    88.4 kbps  PSNR-Y 36.93  YUV 38.39  | display PSNR-Y 32.23  face PSNR-Y 28.66  LPIPS 0.323  faces 30
+   38a418 qp40:    40.1 kbps  PSNR-Y 32.53  YUV 34.47  | display PSNR-Y 29.61  face PSNR-Y 26.07  LPIPS 0.417  faces 30
+   40fe4d qp16:   683.5 kbps  PSNR-Y 38.46  YUV 39.32  | display PSNR-Y 33.52  face PSNR-Y 36.04  LPIPS 0.302  faces 30
+   40fe4d qp24:   356.8 kbps  PSNR-Y 36.93  YUV 38.02  | display PSNR-Y 32.81  face PSNR-Y 34.85  LPIPS 0.321  faces 30
+   40fe4d qp32:   155.3 kbps  PSNR-Y 33.91  YUV 35.44  | display PSNR-Y 31.00  face PSNR-Y 32.37  LPIPS 0.357  faces 30
+   40fe4d qp40:    67.8 kbps  PSNR-Y 29.69  YUV 31.80  | display PSNR-Y 27.82  face PSNR-Y 28.97  LPIPS 0.425  faces 30
+   45bb89 qp16:   280.0 kbps  PSNR-Y 41.99  YUV 43.51  | display PSNR-Y 34.32  face PSNR-Y 39.36  LPIPS 0.160  faces 30
+   45bb89 qp24:   154.4 kbps  PSNR-Y 40.24  YUV 42.02  | display PSNR-Y 33.81  face PSNR-Y 37.66  LPIPS 0.168  faces 30
+   45bb89 qp32:    72.8 kbps  PSNR-Y 36.95  YUV 39.25  | display PSNR-Y 32.45  face PSNR-Y 34.54  LPIPS 0.191  faces 30
+   45bb89 qp40:    34.8 kbps  PSNR-Y 32.83  YUV 35.67  | display PSNR-Y 29.95  face PSNR-Y 30.58  LPIPS 0.242  faces 30
+   4d8ffe qp16:   813.2 kbps  PSNR-Y 33.97  YUV 36.61  | display PSNR-Y 25.56  face PSNR-Y 34.47  LPIPS 0.209  faces 30
+   4d8ffe qp24:   418.4 kbps  PSNR-Y 32.91  YUV 35.64  | display PSNR-Y 25.32  face PSNR-Y 33.46  LPIPS 0.232  faces 30
+   4d8ffe qp32:   169.8 kbps  PSNR-Y 30.53  YUV 33.52  | display PSNR-Y 24.58  face PSNR-Y 31.42  LPIPS 0.287  faces 30
+   4d8ffe qp40:    55.3 kbps  PSNR-Y 26.92  YUV 30.21  | display PSNR-Y 22.93  face PSNR-Y 28.70  LPIPS 0.386  faces 30
+   6aa9cf qp16:   241.0 kbps  PSNR-Y 44.45  YUV 45.28  | display PSNR-Y 40.98  face PSNR-Y 39.97  LPIPS 0.138  faces 29
+   6aa9cf qp24:   131.4 kbps  PSNR-Y 42.29  YUV 43.43  | display PSNR-Y 39.58  face PSNR-Y 38.44  LPIPS 0.155  faces 29
+   6aa9cf qp32:    63.5 kbps  PSNR-Y 38.80  YUV 40.41  | display PSNR-Y 36.85  face PSNR-Y 35.53  LPIPS 0.201  faces 29
+   6aa9cf qp40:    31.4 kbps  PSNR-Y 34.71  YUV 36.83  | display PSNR-Y 33.14  face PSNR-Y 31.91  LPIPS 0.265  faces 29
+   6eb39d qp16:   546.2 kbps  PSNR-Y 41.03  YUV 42.36  | display PSNR-Y 38.31  face PSNR-Y 40.89  LPIPS 0.144  faces 29
+   6eb39d qp24:   278.0 kbps  PSNR-Y 38.64  YUV 40.37  | display PSNR-Y 36.49  face PSNR-Y 38.85  LPIPS 0.165  faces 29
+   6eb39d qp32:   113.5 kbps  PSNR-Y 35.06  YUV 37.40  | display PSNR-Y 33.46  face PSNR-Y 35.52  LPIPS 0.205  faces 29
+   6eb39d qp40:    42.1 kbps  PSNR-Y 30.96  YUV 33.90  | display PSNR-Y 29.61  face PSNR-Y 31.48  LPIPS 0.271  faces 29
+   73f232 qp16:   449.0 kbps  PSNR-Y 42.15  YUV 42.81  | display PSNR-Y 35.71  face PSNR-Y 33.67  LPIPS 0.231  faces 30
+   73f232 qp24:   238.1 kbps  PSNR-Y 39.88  YUV 40.86  | display PSNR-Y 34.89  face PSNR-Y 32.14  LPIPS 0.250  faces 30
+   73f232 qp32:   106.9 kbps  PSNR-Y 36.20  YUV 37.62  | display PSNR-Y 32.94  face PSNR-Y 29.29  LPIPS 0.288  faces 30
+   73f232 qp40:    45.4 kbps  PSNR-Y 31.83  YUV 33.65  | display PSNR-Y 29.78  face PSNR-Y 25.79  LPIPS 0.372  faces 30
+   99b38e qp16:   181.6 kbps  PSNR-Y 44.52  YUV 45.14  | display PSNR-Y 40.87  face PSNR-Y 39.25  LPIPS 0.188  faces 30
+   99b38e qp24:    94.4 kbps  PSNR-Y 42.59  YUV 43.54  | display PSNR-Y 39.63  face PSNR-Y 37.65  LPIPS 0.219  faces 30
+   99b38e qp32:    43.5 kbps  PSNR-Y 39.20  YUV 40.70  | display PSNR-Y 37.05  face PSNR-Y 34.85  LPIPS 0.290  faces 30
+   99b38e qp40:    20.8 kbps  PSNR-Y 35.38  YUV 37.39  | display PSNR-Y 33.74  face PSNR-Y 31.56  LPIPS 0.382  faces 30
+   a17620 qp16:   239.8 kbps  PSNR-Y 42.92  YUV 43.70  | display PSNR-Y 35.77  face PSNR-Y 34.37  LPIPS 0.218  faces 30
+   a17620 qp24:   136.1 kbps  PSNR-Y 41.24  YUV 42.26  | display PSNR-Y 35.23  face PSNR-Y 33.45  LPIPS 0.246  faces 30
+   a17620 qp32:    65.6 kbps  PSNR-Y 37.97  YUV 39.44  | display PSNR-Y 33.71  face PSNR-Y 31.50  LPIPS 0.300  faces 30
+   a17620 qp40:    29.9 kbps  PSNR-Y 33.75  YUV 35.73  | display PSNR-Y 31.00  face PSNR-Y 28.76  LPIPS 0.393  faces 30
+   b2d792 qp16:   256.2 kbps  PSNR-Y 42.31  YUV 43.70  | display PSNR-Y 37.86  face PSNR-Y 34.96  LPIPS 0.250  faces 30
+   b2d792 qp24:   130.9 kbps  PSNR-Y 40.52  YUV 42.09  | display PSNR-Y 36.93  face PSNR-Y 33.91  LPIPS 0.270  faces 30
+   b2d792 qp32:    57.2 kbps  PSNR-Y 37.57  YUV 39.43  | display PSNR-Y 35.05  face PSNR-Y 31.88  LPIPS 0.313  faces 30
+   b2d792 qp40:    26.3 kbps  PSNR-Y 34.09  YUV 36.21  | display PSNR-Y 32.33  face PSNR-Y 28.84  LPIPS 0.392  faces 30
+   b8893c qp16:   313.5 kbps  PSNR-Y 42.67  YUV 43.17  | display PSNR-Y 38.58  face PSNR-Y 37.01  LPIPS 0.333  faces 30
+   b8893c qp24:   144.8 kbps  PSNR-Y 41.02  YUV 41.83  | display PSNR-Y 37.61  face PSNR-Y 35.90  LPIPS 0.349  faces 30
+   b8893c qp32:    62.7 kbps  PSNR-Y 37.93  YUV 39.31  | display PSNR-Y 35.48  face PSNR-Y 33.52  LPIPS 0.383  faces 30
+   b8893c qp40:    28.5 kbps  PSNR-Y 33.83  YUV 35.92  | display PSNR-Y 32.09  face PSNR-Y 30.23  LPIPS 0.457  faces 30
+   b91038 qp16:   308.5 kbps  PSNR-Y 40.21  YUV 41.51  | display PSNR-Y 34.27  face PSNR-Y 31.49  LPIPS 0.209  faces 30
+   b91038 qp24:   176.3 kbps  PSNR-Y 38.79  YUV 40.34  | display PSNR-Y 33.69  face PSNR-Y 30.68  LPIPS 0.227  faces 30
+   b91038 qp32:    81.2 kbps  PSNR-Y 35.71  YUV 37.78  | display PSNR-Y 32.07  face PSNR-Y 28.93  LPIPS 0.272  faces 30
+   b91038 qp40:    34.8 kbps  PSNR-Y 31.46  YUV 34.14  | display PSNR-Y 29.09  face PSNR-Y 25.88  LPIPS 0.393  faces 30
+   c33648 qp16:   417.3 kbps  PSNR-Y 41.47  YUV 42.27  | display PSNR-Y 35.09  face PSNR-Y 35.64  LPIPS 0.229  faces 30
+   c33648 qp24:   200.7 kbps  PSNR-Y 39.85  YUV 40.86  | display PSNR-Y 34.48  face PSNR-Y 34.58  LPIPS 0.252  faces 30
+   c33648 qp32:    82.6 kbps  PSNR-Y 36.88  YUV 38.28  | display PSNR-Y 33.03  face PSNR-Y 32.42  LPIPS 0.301  faces 30
+   c33648 qp40:    36.4 kbps  PSNR-Y 33.03  YUV 34.88  | display PSNR-Y 30.46  face PSNR-Y 29.24  LPIPS 0.398  faces 30
+   c52d75 qp16:   355.2 kbps  PSNR-Y 40.02  YUV 41.43  | display PSNR-Y 31.17  face PSNR-Y 31.90  LPIPS 0.306  faces 30
+   c52d75 qp24:   175.9 kbps  PSNR-Y 38.41  YUV 40.10  | display PSNR-Y 30.80  face PSNR-Y 31.19  LPIPS 0.328  faces 30
+   c52d75 qp32:    77.2 kbps  PSNR-Y 35.42  YUV 37.61  | display PSNR-Y 29.84  face PSNR-Y 29.52  LPIPS 0.377  faces 30
+   c52d75 qp40:    34.1 kbps  PSNR-Y 31.62  YUV 34.39  | display PSNR-Y 27.97  face PSNR-Y 27.07  LPIPS 0.433  faces 30
+   cd6bc1 qp16:   424.4 kbps  PSNR-Y 39.72  YUV 40.82  | display PSNR-Y 32.49  face PSNR-Y 30.72  LPIPS 0.260  faces 30
+   cd6bc1 qp24:   228.0 kbps  PSNR-Y 38.18  YUV 39.49  | display PSNR-Y 32.00  face PSNR-Y 30.17  LPIPS 0.275  faces 30
+   cd6bc1 qp32:   107.4 kbps  PSNR-Y 35.17  YUV 36.88  | display PSNR-Y 30.68  face PSNR-Y 28.90  LPIPS 0.305  faces 30
+   cd6bc1 qp40:    50.4 kbps  PSNR-Y 30.78  YUV 32.98  | display PSNR-Y 27.95  face PSNR-Y 26.79  LPIPS 0.357  faces 30
+   db623c qp16:   256.2 kbps  PSNR-Y 39.63  YUV 40.80  | display PSNR-Y 32.34  face PSNR-Y 32.20  LPIPS 0.280  faces 30
+   db623c qp24:   159.5 kbps  PSNR-Y 38.51  YUV 39.85  | display PSNR-Y 32.01  face PSNR-Y 31.38  LPIPS 0.308  faces 30
+   db623c qp32:    81.7 kbps  PSNR-Y 35.94  YUV 37.64  | display PSNR-Y 30.98  face PSNR-Y 29.70  LPIPS 0.357  faces 30
+   db623c qp40:    36.5 kbps  PSNR-Y 31.84  YUV 34.10  | display PSNR-Y 28.69  face PSNR-Y 27.32  LPIPS 0.419  faces 30
+   fda953 qp16:   498.9 kbps  PSNR-Y 40.98  YUV 42.85  | display PSNR-Y 36.29  face PSNR-Y 38.70  LPIPS 0.129  faces 30
+   fda953 qp24:   234.4 kbps  PSNR-Y 38.75  YUV 40.98  | display PSNR-Y 35.09  face PSNR-Y 36.83  LPIPS 0.156  faces 30
+   fda953 qp32:    84.4 kbps  PSNR-Y 35.07  YUV 37.88  | display PSNR-Y 32.60  face PSNR-Y 33.54  LPIPS 0.224  faces 30
+   fda953 qp40:    32.4 kbps  PSNR-Y 31.27  YUV 34.53  | display PSNR-Y 29.43  face PSNR-Y 29.66  LPIPS 0.335  faces 30
+
+== mean over clips per QP (20 clips) -> rd_eval.csv
+   QP 16:   391.5 kbps  PSNR-Y 40.94  PSNR-YUV 42.08  display PSNR-Y 34.54  face PSNR-Y 35.28  face LPIPS 0.223
+   QP 24:   207.9 kbps  PSNR-Y 39.23  PSNR-YUV 40.62  display PSNR-Y 33.82  face PSNR-Y 34.13  face LPIPS 0.245
+   QP 32:    92.9 kbps  PSNR-Y 36.06  PSNR-YUV 37.92  display PSNR-Y 32.15  face PSNR-Y 31.86  face LPIPS 0.292
+   QP 40:    39.7 kbps  PSNR-Y 31.97  PSNR-YUV 34.33  display PSNR-Y 29.38  face PSNR-Y 28.76  face LPIPS 0.373
+== done  Tue Nov 10 20:42:23 +04 2026
+shamsalani@Shams d %    cd ~/Downloads/d
+   ./p
+   ./w ; ./x
+== preparing the Mac  Tue Nov 10 20:47:57 +04 2026
+Password:
+Spotlight indexing: paused
+[1]  + terminated  caffeinate -dims
+Keep-awake: on
+Now drawing from 'AC Power'
+Battery Power:  powermode            1 AC Power:  powermode            0 
+ok  /Users/shamsalani/Downloads/duplexnvc-baseline/harness/build/ninja-release/libmlvc_example
+ok  /Users/shamsalani/Downloads/duplexnvc-baseline/libmlvc/install/mac-arm64-ninja-release/bin/mlvc
+ok  /Users/shamsalani/Downloads/duplexnvc-baseline/.venv/bin/python3
+ok  /Users/shamsalani/Downloads/duplexnvc-baseline/tools/analyze_run.py
+ok  /Users/shamsalani/Downloads/duplexnvc-baseline/bundles/mlvc
+
+Check by hand: charger in, Wi-Fi + Bluetooth OFF, brightness MAX,
+auto-brightness + True Tone off, all other apps closed. Time Machine: leave as is.
+== ENERGY (AC) START  Tue Nov 10 20:48:03 +04 2026
+Now drawing from 'AC Power'
+[idle] 120 s, do not touch the laptop
+[1/5] 20:50:32 B* duplex 30 fps + power log
+^C== EXPERIMENT B* (E1-E4) START  Tue Nov 10 21:29:32 +04 2026
+ProductName:		macOS ProductVersion:		26.6.2 BuildVersion:		25G83 
+Now drawing from 'AC Power'
+eb5d60a
+total 72360
+-rw-r--r--  1 shamsalani  staff  37048320 Nov 10 19:19 dmc61sbr_reglu-psnr_v1-coreml-apple-v0.1.tar
+[1/31] 21:29:32 round 1: turns unpaced (60 s + 60 s rest)
+manager: requested=npu resolved=npu 
+[2/31] 21:31:33 round 1: alone-enc unpaced (60 s + 60 s rest)
+manager: requested=npu resolved=npu 
+[3/31] 21:33:33 round 1: alone-dec unpaced (60 s + 60 s rest)
+manager: requested=npu resolved=npu 
+[4/31] 21:35:34 round 1: duplex unpaced (60 s + 60 s rest)
+manager: requested=npu resolved=npu 
+[5/31] 21:37:34 round 2: turns unpaced (60 s + 60 s rest)
+manager: requested=npu resolved=npu 
+[6/31] 21:39:35 round 2: alone-enc unpaced (60 s + 60 s rest)
+manager: requested=npu resolved=npu 
+[7/31] 21:41:35 round 2: alone-dec unpaced (60 s + 60 s rest)
+manager: requested=npu resolved=npu 
+[8/31] 21:43:35 round 2: duplex unpaced (60 s + 60 s rest)
+manager: requested=npu resolved=npu 
+[9/31] 21:45:36 round 3: turns unpaced (60 s + 60 s rest)
+manager: requested=npu resolved=npu 
+[10/31] 21:47:36 round 3: alone-enc unpaced (60 s + 60 s rest)
+manager: requested=npu resolved=npu 
+[11/31] 21:49:37 round 3: alone-dec unpaced (60 s + 60 s rest)
+manager: requested=npu resolved=npu 
+[12/31] 21:51:37 round 3: duplex unpaced (60 s + 60 s rest)
+manager: requested=npu resolved=npu 
+[13/31] 21:53:38 round 4: turns unpaced (60 s + 60 s rest)
+manager: requested=npu resolved=npu 
+[14/31] 21:55:38 round 4: alone-enc unpaced (60 s + 60 s rest)
+manager: requested=npu resolved=npu 
+[15/31] 21:57:39 round 4: alone-dec unpaced (60 s + 60 s rest)
+manager: requested=npu resolved=npu 
+[16/31] 21:59:39 round 4: duplex unpaced (60 s + 60 s rest)
+manager: requested=npu resolved=npu 
+[17/31] 22:01:39 round 5: turns unpaced (60 s + 60 s rest)
+manager: requested=npu resolved=npu 
+[18/31] 22:03:40 round 5: alone-enc unpaced (60 s + 60 s rest)
+manager: requested=npu resolved=npu 
+[19/31] 22:05:40 round 5: alone-dec unpaced (60 s + 60 s rest)
+manager: requested=npu resolved=npu 
+[20/31] 22:07:41 round 5: duplex unpaced (60 s + 60 s rest)
+manager: requested=npu resolved=npu 
+[21/31] 22:09:41 B* duplex paced 30 fps, run 1
+[22/31] 22:11:42 B* duplex paced 30 fps, run 2
+[23/31] 22:13:42 B* duplex paced 30 fps, run 3
+[24/31] 22:15:43 B* duplex paced 30 fps, run 4
+[25/31] 22:17:43 B* duplex paced 30 fps, run 5
+[26/31] 22:19:44 turns paced 30 fps, run 1
+[27/31] 22:21:44 turns paced 30 fps, run 2
+[28/31] 22:23:45 turns paced 30 fps, run 3
+[29/31] 22:25:45 libmlvc CLI cross-check, run 1
+[30/31] 22:27:46 libmlvc CLI cross-check, run 2
+[31/31] 22:29:47 libmlvc CLI cross-check, run 3
+== EXPERIMENT B* END  Tue Nov 10 22:31:48 +04 2026
+== B* results (full MLVC, 360p, NE)  Tue Nov 10 22:31:48 +04 2026
+
+== UNPACED (E1 alone, E3 turns, E4 duplex): rounds used 5
+  metric                                      median       min       max   MLVC paper, M3 Pro 360p
+  encode alone, call ms                         5.86      5.85      5.91   7.72 (129.5 fps)
+  decode alone, call ms                         5.94      5.92      5.94   8.14 (122.9 fps)
+  encode alone, network ms                      5.57      5.57      5.63   
+  decode alone, network ms                      5.66      5.64      5.66   
+  encode alone fps                            170.68    169.06    170.79   
+  decode alone fps                            168.41    168.36    168.87   
+  sum alone ms                                 11.80     11.79     11.84   15.86 (estimate)
+  T_turns ms (measured)                        11.81     11.81     11.81   
+  switching cost ms                             0.01     -0.02      0.02   
+  T_shared ms (duplex, NE)                     10.68     10.68     10.68   
+  fps per direction, shared                    93.63     93.63     93.64   
+  S = T_turns / T_shared                        1.11      1.11      1.11   
+  ceiling (t_enc+t_dec)/max                     1.99      1.99      2.00   
+  kappa enc (call)                              1.82      1.81      1.82   
+  kappa dec (call)                              1.80      1.80      1.80   
+  kappa enc (network)                           1.86      1.85      1.87   
+  kappa dec (network)                           1.84      1.84      1.84   
+
+== B* = DUPLEX PACED 30 fps (the baseline): runs 5
+  metric                                      median       min       max
+  send: fps                                    30.01     30.01     30.01   
+  send: late+dropped %                          0.00      0.00      0.00   
+  send: dropped frames                          0.00      0.00      0.00   
+  send: service mean ms                        12.44     12.39     12.47   
+  send: service p99 ms                         20.03     19.69     20.36   
+  send: due->done p95 ms                       27.88     27.06     28.01   
+  send: due->done p99 ms                       29.27     29.12     29.33   
+  send: network ms                             11.83     11.78     11.86   
+  send: call ms                                12.44     12.39     12.47   
+  send: failures                                0.00      0.00      0.00   
+  send: kbps                                  120.46    120.46    120.46   
+  send: run1 start delay mean 5.79 ms p95 10.00 | I-frames 27 mean 12.15 ms | P-frames mean 12.43 ms
+  recv: fps                                    30.01     30.00     30.01   
+  recv: late+dropped %                          0.00      0.00      0.00   
+  recv: dropped frames                          0.00      0.00      0.00   
+  recv: service mean ms                        13.32     13.22     13.40   
+  recv: service p99 ms                         20.91     20.86     20.97   
+  recv: due->done p95 ms                       28.02     27.47     28.27   
+  recv: due->done p99 ms                       28.93     28.66     29.16   
+  recv: network ms                             12.72     12.63     12.81   
+  recv: call ms                                13.32     13.22     13.40   
+  recv: failures                                0.00      0.00      0.00   
+  recv: kbps                                  287.08    287.08    287.08   
+  recv: run1 start delay mean 5.08 ms p95 10.00 | I-frames 30 mean 13.76 ms | P-frames mean 13.31 ms
+
+== TURNS PACED 30 fps: runs 3
+  metric                                      median       min       max
+  send: fps                                    30.01     30.01     30.01   
+  send: late+dropped %                          0.00      0.00      0.00   
+  send: dropped frames                          0.00      0.00      0.00   
+  send: service mean ms                        10.66     10.66     10.67   
+  send: service p99 ms                         13.15     13.14     13.17   
+  send: due->done p95 ms                       20.17     20.12     20.26   
+  send: due->done p99 ms                       21.30     21.23     21.31   
+  send: network ms                             10.08     10.07     10.08   
+  send: call ms                                10.66     10.65     10.66   
+  send: failures                                0.00      0.00      0.00   
+  send: kbps                                  120.46    120.46    120.46   
+  send: run1 start delay mean 3.84 ms p95 7.50 | I-frames 27 mean 10.71 ms | P-frames mean 10.66 ms
+  recv: fps                                    30.01     30.00     30.01   
+  recv: late+dropped %                          0.00      0.00      0.00   
+  recv: dropped frames                          0.00      0.00      0.00   
+  recv: service mean ms                         8.44      8.44      8.45   
+  recv: service p99 ms                          9.99      9.91     10.00   
+  recv: due->done p95 ms                       29.81     29.67     29.92   
+  recv: due->done p99 ms                       31.06     31.04     31.06   
+  recv: network ms                              7.89      7.88      7.90   
+  recv: call ms                                 8.44      8.44      8.45   
+  recv: failures                                0.00      0.00      0.00   
+  recv: kbps                                  287.08    287.08    287.08   
+  recv: run1 start delay mean 14.50 ms p95 20.10 | I-frames 30 mean 9.42 ms | P-frames mean 8.43 ms
+== libmlvc CLI cross-check (last summary lines per run)
+-- /Users/shamsalani/Downloads/duplexnvc-baseline/runs/bl_bstar/T_cli_r1.log
+| Stream    | Count     | Reconf     | Preproc    | ScaleDec   | Entropy    | Inference  | Total      | FPS    | First  |
+| encoder_0 |    1/5618 |    1.1/0.0 |  0.02/0.00 |  0.04/0.00 |  0.19/0.01 |   10.4/0.1 |   10.7/0.0 |   93.6 |    7.5 |
+| Stream    | Count     | Reconf     | Postproc   | ScaleDec   | Entropy    | Inference  | Total      | FPS    | First  |
+| decoder_0 |    1/5617 |    0.7/0.0 |  0.06/0.01 |  0.03/0.00 |  0.15/0.01 |   10.4/0.0 |   10.7/0.0 |   93.6 |   12.6 |
+-- /Users/shamsalani/Downloads/duplexnvc-baseline/runs/bl_bstar/T_cli_r2.log
+| Stream    | Count     | Reconf     | Preproc    | ScaleDec   | Entropy    | Inference  | Total      | FPS    | First  |
+| encoder_0 |    1/5619 |    1.0/0.0 |  0.02/0.00 |  0.04/0.00 |  0.19/0.01 |   10.4/0.1 |   10.7/0.0 |   93.6 |    7.4 |
+| Stream    | Count     | Reconf     | Postproc   | ScaleDec   | Entropy    | Inference  | Total      | FPS    | First  |
+| decoder_0 |    1/5618 |    0.7/0.0 |  0.06/0.01 |  0.03/0.00 |  0.15/0.01 |   10.4/0.0 |   10.7/0.0 |   93.6 |   12.5 |
+-- /Users/shamsalani/Downloads/duplexnvc-baseline/runs/bl_bstar/T_cli_r3.log
+| Stream    | Count     | Reconf     | Preproc    | ScaleDec   | Entropy    | Inference  | Total      | FPS    | First  |
+| encoder_0 |    1/5618 |    1.0/0.0 |  0.02/0.00 |  0.04/0.00 |  0.19/0.01 |   10.4/0.1 |   10.7/0.0 |   93.6 |    7.7 |
+| Stream    | Count     | Reconf     | Postproc   | ScaleDec   | Entropy    | Inference  | Total      | FPS    | First  |
+| decoder_0 |    1/5618 |    0.7/0.0 |  0.06/0.01 |  0.03/0.00 |  0.15/0.01 |   10.4/0.0 |   10.7/0.0 |   93.6 |   12.9 |
+Saved to /Users/shamsalani/Downloads/d/out_y.txt.
+shamsalani@Shams d % pkill -f "d/w"     
+shamsalani@Shams d % pkill -f -f "sleep 50"
+./w: line 8: 55981 Terminated: 15          sleep 50
+shamsalani@Shams d % sed -i '' 's/wait; sleep 60/wait $!; sleep 60/' w
+shamsalani@Shams d % grep -n 'wait' w
+18:  wait $!; sleep 60
+shamsalani@Shams d % ./w
+== ENERGY (AC) START  Tue Nov 10 22:39:15 +04 2026
+Now drawing from 'AC Power'
+[idle] 120 s, do not touch the laptop
+[1/5] 22:41:44 B* duplex 30 fps + power log
+[2/5] 22:44:23 B* duplex 30 fps + power log
+[3/5] 22:47:03 B* duplex 30 fps + power log
+[4/5] 22:49:43 B* duplex 30 fps + power log
+[5/5] 22:52:23 B* duplex 30 fps + power log
+== ENERGY END  Tue Nov 10 22:55:03 +04 2026
+./w: line 22: 56011 Terminated: 15          ( while true; do
+    sudo -n true 2> /dev/null; sleep 50;
+done )
+idle samples with ANE line: 1200
+-- run 1
+samples in window: 455 (56.0 s); frames (pairs) in steady window: 1737
+  cpu       run      411 mW  idle     358 mW  ->     1.8 mJ per frame pair,    3.2 J/min
+  gpu       run        0 mW  idle       0 mW  ->     0.0 mJ per frame pair,    0.0 J/min
+  ane       run     1874 mW  idle       0 mW  ->    62.5 mJ per frame pair,  112.4 J/min
+  combined  run     2285 mW  idle     358 mW  ->    64.2 mJ per frame pair,  115.6 J/min
+-- run 2
+samples in window: 453 (56.0 s); frames (pairs) in steady window: 1737
+  cpu       run      444 mW  idle     358 mW  ->     2.9 mJ per frame pair,    5.2 J/min
+  gpu       run        0 mW  idle       0 mW  ->    -0.0 mJ per frame pair,   -0.0 J/min
+  ane       run     1905 mW  idle       0 mW  ->    63.5 mJ per frame pair,  114.3 J/min
+  combined  run     2349 mW  idle     358 mW  ->    66.3 mJ per frame pair,  119.4 J/min
+-- run 3
+samples in window: 453 (56.1 s); frames (pairs) in steady window: 1737
+  cpu       run      417 mW  idle     358 mW  ->     2.0 mJ per frame pair,    3.6 J/min
+  gpu       run        0 mW  idle       0 mW  ->     0.0 mJ per frame pair,    0.0 J/min
+  ane       run     1898 mW  idle       0 mW  ->    63.2 mJ per frame pair,  113.9 J/min
+  combined  run     2316 mW  idle     358 mW  ->    65.2 mJ per frame pair,  117.4 J/min
+-- run 4
+samples in window: 452 (55.9 s); frames (pairs) in steady window: 1737
+  cpu       run      414 mW  idle     358 mW  ->     1.9 mJ per frame pair,    3.3 J/min
+  gpu       run        0 mW  idle       0 mW  ->    -0.0 mJ per frame pair,   -0.0 J/min
+  ane       run     1909 mW  idle       0 mW  ->    63.6 mJ per frame pair,  114.5 J/min
+  combined  run     2322 mW  idle     358 mW  ->    65.5 mJ per frame pair,  117.9 J/min
+-- run 5
+samples in window: 453 (56.1 s); frames (pairs) in steady window: 1737
+  cpu       run      415 mW  idle     358 mW  ->     1.9 mJ per frame pair,    3.4 J/min
+  gpu       run        0 mW  idle       0 mW  ->     0.0 mJ per frame pair,    0.0 J/min
+  ane       run     1903 mW  idle       0 mW  ->    63.4 mJ per frame pair,  114.2 J/min
+  combined  run     2318 mW  idle     358 mW  ->    65.3 mJ per frame pair,  117.6 J/min
+
+== energy summary, 5 runs (median / min / max)
+  ane      run_mW                  1903.1    1874.1    1908.7
+  ane      idle_mW                    0.0       0.0       0.0
+  ane      dynamic_mJ_per_pair       63.4      62.5      63.6
+  ane      dynamic_J_per_min        114.2     112.4     114.5
+  cpu      run_mW                   415.2     411.3     444.3
+  cpu      idle_mW                  358.1     358.1     358.1
+  cpu      dynamic_mJ_per_pair        1.9       1.8       2.9
+  cpu      dynamic_J_per_min          3.4       3.2       5.2
+  gpu      run_mW                     0.0       0.0       0.3
+  gpu      idle_mW                    0.0       0.0       0.0
+  gpu      dynamic_mJ_per_pair        0.0      -0.0       0.0
+  gpu      dynamic_J_per_min          0.0      -0.0       0.0
+  combined run_mW                  2318.4    2285.5    2348.8
+  combined idle_mW                  358.1     358.1     358.1
+  combined dynamic_mJ_per_pair       65.3      64.2      66.3
+  combined dynamic_J_per_min        117.6     115.6     119.4
+shamsalani@Shams d % ./c
+== correctness of /Users/shamsalani/Downloads/duplexnvc-baseline/runs/bl_bstar/T_duplex30_r1/outgoing.mlvc  Tue Nov 10 22:55:15 +04 2026
+encoded frames: 1802
+decode on npu: ok, frames 1802
+decode on npu2: ok, frames 1802
+decode on gpu: ok, frames 1802
+decode on cpu: ok, frames 1802
+NE decode deterministic: yes
+-- drift NE vs GPU
+frames compared 1802; bit-identical 0; Y-PSNR between decodes: mean 52.13 dB, min 38.46 dB
+  frames  0- 0 after an I-frame: mean  60.58 dB  min  59.58 dB
+  frames  1-15 after an I-frame: mean  57.63 dB  min  51.90 dB
+  frames 16-31 after an I-frame: mean  52.86 dB  min  42.73 dB
+  frames 32-47 after an I-frame: mean  49.93 dB  min  39.52 dB
+  frames 48-63 after an I-frame: mean  47.80 dB  min  38.46 dB
+-- drift NE vs CPU
+frames compared 1802; bit-identical 0; Y-PSNR between decodes: mean 48.78 dB, min 39.51 dB
+  frames  0- 0 after an I-frame: mean  52.64 dB  min  51.39 dB
+  frames  1-15 after an I-frame: mean  51.74 dB  min  48.92 dB
+  frames 16-31 after an I-frame: mean  49.63 dB  min  44.70 dB
+  frames 32-47 after an I-frame: mean  47.57 dB  min  40.42 dB
+  frames 48-63 after an I-frame: mean  46.07 dB  min  39.51 dB
+shamsalani@Shams d % ./u
+Spotlight indexing: back on
+tmutil: enable requires Full Disk Access privileges.
+To allow this operation, select Full Disk Access in the Privacy
+tab of the Security & Privacy preference pane, and add Terminal
+to the list of applications which are allowed Full Disk Access.
+Keep-awake: off
+shamsalani@Shams d % 

@@ -1,0 +1,15 @@
+#!/bin/bash
+# Download the 40 talking-head (s1/th) clips at 1080p MP4 (display-scale reference for face metrics)
+D=$(cd "$(dirname "$0")" && pwd); . "$D/v"
+exec > >(tee "$D/out_f.txt") 2>&1
+mkdir -p "$VCD1080"; cd "$VCD1080"
+[ -d VCD ] || git clone --depth 1 https://github.com/microsoft/VCD.git
+grep "^mp4/th/" VCD/download/mp4_list.txt > th_list.txt
+echo "== downloading $(wc -l < th_list.txt) clips  $(date)"
+n=0
+while read p; do
+  n=$((n+1)); out="$VCD1080/$p"; mkdir -p "$(dirname "$out")"
+  if [ -s "$out" ]; then echo "[$n] have $(basename "$p")"; continue; fi
+  curl -sS -L --retry 5 -C - -o "$out" "https://vcdpublic.blob.core.windows.net/vcd1/$p" && echo "[$n] ok $(basename "$p") $(ls -lh "$out" | awk '{print $5}')"
+done < th_list.txt
+echo "== done  $(date)"; ls "$VCD1080/mp4/th" | wc -l; du -sh "$VCD1080/mp4"

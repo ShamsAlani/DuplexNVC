@@ -1,0 +1,23 @@
+#!/bin/bash
+D=$(cd "$(dirname "$0")" && pwd); . "$D/v"
+exec > >(tee "$D/out_e.txt") 2>&1
+R="$WORK/runs/e3a"; mkdir -p "$R"; cd "$R"
+echo "== EXPERIMENT E3a START  $(date)"
+sw_vers | tr '\n' ' '; echo; pmset -g batt | head -1; pmset -g custom | grep -iE "power:|powermode" | tr '\n' ' '; echo
+cat "$WORK/LIBMLVC_COMMIT.txt" 2>/dev/null
+n=0
+for r in 1 2 3 4 5; do
+  for m in turns alone-enc alone-dec duplex; do
+    n=$((n+1)); echo "[$n/23] $(date +%H:%M:%S) round $r: $m (60 s run + 60 s rest)"
+    "$BENCH" $m $P1 --fps 0 --seconds 60 --out-dir T_${m}_r$r 2> T_${m}_r$r.log
+    grep -iE "resolved|FAILED|init" T_${m}_r$r.log | tr '\n' ' '; echo
+    sleep 60
+  done
+done
+for r in 1 2 3; do
+  n=$((n+1)); echo "[$n/23] $(date +%H:%M:%S) turns paced 30 fps, run $r"
+  "$BENCH" turns $P1 --fps 30 --seconds 60 --out-dir T_turns30_r$r 2> T_turns30_r$r.log
+  sleep 60
+done
+echo "== EXPERIMENT E3a END  $(date)"
+"$D/r"

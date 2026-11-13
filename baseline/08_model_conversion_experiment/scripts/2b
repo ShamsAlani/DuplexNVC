@@ -1,0 +1,30 @@
+#!/bin/bash
+# PHASE 2 STEP 2b: camera + incoming streams at 540p/720p/1080p (same clip pairs as B*, Lanczos from 1080p MP4),
+# incoming prepared at QP 26 on the NE for each new setting, decode check. No quiet Mac needed. ~15 min, ~7 GB disk
+D=$(cd "$(dirname "$0")" && pwd); . "$D/v"; . "$D/s2cfg"
+exec > >(tee "$D/out_2b.txt") 2>&1
+mkdir -p "$NV" "$INCD"; echo "== STEP 2b START  $(date)"; df -h "$WORK" | tail -1
+mk () {  # mk <out.nv12> <WxH> <ids...>
+  local out=$1 wh=$2; shift 2
+  [ -s "$out" ] && { echo "   exists: $out"; return; }
+  for id in "$@"; do
+    ffmpeg -v error -i "$MP4/${id}_1920x1080_30.mp4" -frames:v 300 -vf "scale=${wh/x/:}:flags=lanczos" -pix_fmt nv12 -f rawvideo -
+  done > "$out"
+  local W=${wh%x*} H=${wh#*x}; local n=$(( $(stat -f %z "$out") / (W*H*3/2) ))
+  echo "   $out: $n frames (must be 600)"
+}
+for wh in 960x540:540p 1280x720:720p 1920x1080:1080p; do
+  echo "-- streams ${wh#*:}"
+  mk "$NV/cam_${wh#*:}.nv12" ${wh%:*} $CAMIDS
+  mk "$NV/incsrc_${wh#*:}.nv12" ${wh%:*} $INCIDS
+done
+for s in $NEW; do
+  cfg $s; B=$(bund $s); O="$INCD/$s-qp26"; mkdir -p "$O"
+  echo "-- prepare incoming $s ($VSIZE, QP 26, encoder on NE)"
+  "$BENCH" prepare --input "$NV/incsrc_$RES.nv12" --size $VSIZE --qp 26 --iframe-period 64 --bundles "$B" --enc-cu npu --out-dir "$O" 2> "$O/prepare.log"
+  grep -E "Found model bundle|resolved|wrote|FAILED|rror" "$O/prepare.log" | sort -u | head -5
+  "$MLVC" decode --model-bundles-dir "$B" --input "$O/incoming.mlvc" --output /tmp/s2_check.nv12 > "$O/decode_check.log" 2>&1 || echo "   DECODE FAILED"
+  echo "   bitrate $(( $(stat -f %z "$O/incoming.mlvc") * 8 * 30 / 600 / 1000 )) kbps; $("$PY" "$TOOLS/quality_tools.py" psnr /tmp/s2_check.nv12 "$NV/incsrc_$RES.nv12" $VSIZE | tail -1)"
+  rm -f /tmp/s2_check.nv12
+done
+echo "== STEP 2b END  $(date)"; du -sh "$NV" "$INCD"

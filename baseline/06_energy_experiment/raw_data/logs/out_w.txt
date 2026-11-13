@@ -1,0 +1,61 @@
+== ENERGY (AC) START  Tue Nov 10 22:39:15 +04 2026
+Now drawing from 'AC Power'
+[idle] 120 s, do not touch the laptop
+[1/5] 22:41:44 B* duplex 30 fps + power log
+[2/5] 22:44:23 B* duplex 30 fps + power log
+[3/5] 22:47:03 B* duplex 30 fps + power log
+[4/5] 22:49:43 B* duplex 30 fps + power log
+[5/5] 22:52:23 B* duplex 30 fps + power log
+== ENERGY END  Tue Nov 10 22:55:03 +04 2026
+./w: line 22: 56011 Terminated: 15          ( while true; do
+    sudo -n true 2> /dev/null; sleep 50;
+done )
+idle samples with ANE line: 1200
+-- run 1
+samples in window: 455 (56.0 s); frames (pairs) in steady window: 1737
+  cpu       run      411 mW  idle     358 mW  ->     1.8 mJ per frame pair,    3.2 J/min
+  gpu       run        0 mW  idle       0 mW  ->     0.0 mJ per frame pair,    0.0 J/min
+  ane       run     1874 mW  idle       0 mW  ->    62.5 mJ per frame pair,  112.4 J/min
+  combined  run     2285 mW  idle     358 mW  ->    64.2 mJ per frame pair,  115.6 J/min
+-- run 2
+samples in window: 453 (56.0 s); frames (pairs) in steady window: 1737
+  cpu       run      444 mW  idle     358 mW  ->     2.9 mJ per frame pair,    5.2 J/min
+  gpu       run        0 mW  idle       0 mW  ->    -0.0 mJ per frame pair,   -0.0 J/min
+  ane       run     1905 mW  idle       0 mW  ->    63.5 mJ per frame pair,  114.3 J/min
+  combined  run     2349 mW  idle     358 mW  ->    66.3 mJ per frame pair,  119.4 J/min
+-- run 3
+samples in window: 453 (56.1 s); frames (pairs) in steady window: 1737
+  cpu       run      417 mW  idle     358 mW  ->     2.0 mJ per frame pair,    3.6 J/min
+  gpu       run        0 mW  idle       0 mW  ->     0.0 mJ per frame pair,    0.0 J/min
+  ane       run     1898 mW  idle       0 mW  ->    63.2 mJ per frame pair,  113.9 J/min
+  combined  run     2316 mW  idle     358 mW  ->    65.2 mJ per frame pair,  117.4 J/min
+-- run 4
+samples in window: 452 (55.9 s); frames (pairs) in steady window: 1737
+  cpu       run      414 mW  idle     358 mW  ->     1.9 mJ per frame pair,    3.3 J/min
+  gpu       run        0 mW  idle       0 mW  ->    -0.0 mJ per frame pair,   -0.0 J/min
+  ane       run     1909 mW  idle       0 mW  ->    63.6 mJ per frame pair,  114.5 J/min
+  combined  run     2322 mW  idle     358 mW  ->    65.5 mJ per frame pair,  117.9 J/min
+-- run 5
+samples in window: 453 (56.1 s); frames (pairs) in steady window: 1737
+  cpu       run      415 mW  idle     358 mW  ->     1.9 mJ per frame pair,    3.4 J/min
+  gpu       run        0 mW  idle       0 mW  ->     0.0 mJ per frame pair,    0.0 J/min
+  ane       run     1903 mW  idle       0 mW  ->    63.4 mJ per frame pair,  114.2 J/min
+  combined  run     2318 mW  idle     358 mW  ->    65.3 mJ per frame pair,  117.6 J/min
+
+== energy summary, 5 runs (median / min / max)
+  ane      run_mW                  1903.1    1874.1    1908.7
+  ane      idle_mW                    0.0       0.0       0.0
+  ane      dynamic_mJ_per_pair       63.4      62.5      63.6
+  ane      dynamic_J_per_min        114.2     112.4     114.5
+  cpu      run_mW                   415.2     411.3     444.3
+  cpu      idle_mW                  358.1     358.1     358.1
+  cpu      dynamic_mJ_per_pair        1.9       1.8       2.9
+  cpu      dynamic_J_per_min          3.4       3.2       5.2
+  gpu      run_mW                     0.0       0.0       0.3
+  gpu      idle_mW                    0.0       0.0       0.0
+  gpu      dynamic_mJ_per_pair        0.0      -0.0       0.0
+  gpu      dynamic_J_per_min          0.0      -0.0       0.0
+  combined run_mW                  2318.4    2285.5    2348.8
+  combined idle_mW                  358.1     358.1     358.1
+  combined dynamic_mJ_per_pair       65.3      64.2      66.3
+  combined dynamic_J_per_min        117.6     115.6     119.4

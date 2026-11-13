@@ -1,0 +1,22 @@
+libmlvc 0.1.0 (eb5d60a, HEAD)
+Platform: Apple Mac16,8, macOS 26.6
+  CPU: Apple M4 Pro (M4, arm64, fp16, dotprod)
+Reading benchmark input frames...
+Creating manager...
+Manager: coreml/npu, model_cache, session_preload at-init
+  v0.1: 640x368, max_fps=120, max_temporal=2, max_ltr=8
+Pre-encoding decoder input frames (qp=26)...
+  128 access units pre-encoded.
+Running benchmarks...
+Encoders (ms, mean/std, count=reconfigurations/frames, First=first frame incl. setup):
++-----------+-----------+------------+------------+------------+------------+------------+------------+--------+--------+
+| Stream    | Count     | Reconf     | Preproc    | ScaleDec   | Entropy    | Inference  | Total      | FPS    | First  |
++-----------+-----------+------------+------------+------------+------------+------------+------------+--------+--------+
+| encoder_0 |    1/5618 |    1.0/0.0 |  0.02/0.00 |  0.04/0.00 |  0.19/0.01 |   10.4/0.1 |   10.7/0.0 |   93.6 |    7.7 |
++-----------+-----------+------------+------------+------------+------------+------------+------------+--------+--------+
+Decoders (ms, mean/std, count=reconfigurations/frames, First=first frame incl. setup):
++-----------+-----------+------------+------------+------------+------------+------------+------------+--------+--------+
+| Stream    | Count     | Reconf     | Postproc   | ScaleDec   | Entropy    | Inference  | Total      | FPS    | First  |
++-----------+-----------+------------+------------+------------+------------+------------+------------+--------+--------+
+| decoder_0 |    1/5618 |    0.7/0.0 |  0.06/0.01 |  0.03/0.00 |  0.15/0.01 |   10.4/0.0 |   10.7/0.0 |   93.6 |   12.9 |
++-----------+-----------+------------+------------+------------+------------+------------+------------+--------+--------+

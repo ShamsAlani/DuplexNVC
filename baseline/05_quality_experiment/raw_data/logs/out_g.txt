@@ -1,0 +1,96 @@
+== unpack + split  Tue Nov 10 20:35:19 +04 2026
+s1 clips:       40
+20 calibration / 20 evaluation -> /Users/shamsalani/Downloads/duplexnvc-baseline/data/split.json
+== face boxes tool
+evaluation clips:       20
+/Users/shamsalani/Downloads/duplexnvc-baseline/.venv/lib/python3.13/site-packages/torchvision/models/_utils.py:207: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/Users/shamsalani/Downloads/duplexnvc-baseline/.venv/lib/python3.13/site-packages/torchvision/models/_utils.py:222: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=AlexNet_Weights.IMAGENET1K_V1`. You can also use `weights=AlexNet_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+   08ee5e qp16:   339.2 kbps  PSNR-Y 41.73  YUV 42.72  | display PSNR-Y 34.27  face PSNR-Y 39.27  LPIPS 0.172  faces 30
+   08ee5e qp24:   188.4 kbps  PSNR-Y 40.07  YUV 41.34  | display PSNR-Y 33.78  face PSNR-Y 38.10  LPIPS 0.200  faces 30
+   08ee5e qp32:    88.9 kbps  PSNR-Y 36.70  YUV 38.51  | display PSNR-Y 32.34  face PSNR-Y 35.60  LPIPS 0.250  faces 30
+   08ee5e qp40:    36.9 kbps  PSNR-Y 32.10  YUV 34.52  | display PSNR-Y 29.44  face PSNR-Y 31.99  LPIPS 0.333  faces 30
+   104c93 qp16:   393.9 kbps  PSNR-Y 41.56  YUV 42.60  | display PSNR-Y 34.09  face PSNR-Y 34.71  LPIPS 0.169  faces 36
+   104c93 qp24:   220.2 kbps  PSNR-Y 39.59  YUV 40.88  | display PSNR-Y 33.48  face PSNR-Y 33.41  LPIPS 0.191  faces 36
+   104c93 qp32:   100.7 kbps  PSNR-Y 36.04  YUV 37.76  | display PSNR-Y 31.90  face PSNR-Y 30.87  LPIPS 0.253  faces 36
+   104c93 qp40:    42.9 kbps  PSNR-Y 31.69  YUV 33.85  | display PSNR-Y 29.10  face PSNR-Y 27.63  LPIPS 0.351  faces 36
+   1e8830 qp16:   520.4 kbps  PSNR-Y 36.83  YUV 38.09  | display PSNR-Y 25.33  face PSNR-Y 30.27  LPIPS 0.284  faces 30
+   1e8830 qp24:   309.4 kbps  PSNR-Y 35.76  YUV 37.19  | display PSNR-Y 25.21  face PSNR-Y 29.77  LPIPS 0.310  faces 30
+   1e8830 qp32:   155.6 kbps  PSNR-Y 33.29  YUV 35.08  | display PSNR-Y 24.78  face PSNR-Y 28.64  LPIPS 0.364  faces 30
+   1e8830 qp40:    67.7 kbps  PSNR-Y 29.12  YUV 31.45  | display PSNR-Y 23.55  face PSNR-Y 26.80  LPIPS 0.443  faces 30
+   38a418 qp16:   312.9 kbps  PSNR-Y 42.20  YUV 42.97  | display PSNR-Y 34.05  face PSNR-Y 30.75  LPIPS 0.259  faces 30
+   38a418 qp24:   181.6 kbps  PSNR-Y 40.32  YUV 41.35  | display PSNR-Y 33.56  face PSNR-Y 30.12  LPIPS 0.280  faces 30
+   38a418 qp32:    88.4 kbps  PSNR-Y 36.93  YUV 38.39  | display PSNR-Y 32.23  face PSNR-Y 28.66  LPIPS 0.323  faces 30
+   38a418 qp40:    40.1 kbps  PSNR-Y 32.53  YUV 34.47  | display PSNR-Y 29.61  face PSNR-Y 26.07  LPIPS 0.417  faces 30
+   40fe4d qp16:   683.5 kbps  PSNR-Y 38.46  YUV 39.32  | display PSNR-Y 33.52  face PSNR-Y 36.04  LPIPS 0.302  faces 30
+   40fe4d qp24:   356.8 kbps  PSNR-Y 36.93  YUV 38.02  | display PSNR-Y 32.81  face PSNR-Y 34.85  LPIPS 0.321  faces 30
+   40fe4d qp32:   155.3 kbps  PSNR-Y 33.91  YUV 35.44  | display PSNR-Y 31.00  face PSNR-Y 32.37  LPIPS 0.357  faces 30
+   40fe4d qp40:    67.8 kbps  PSNR-Y 29.69  YUV 31.80  | display PSNR-Y 27.82  face PSNR-Y 28.97  LPIPS 0.425  faces 30
+   45bb89 qp16:   280.0 kbps  PSNR-Y 41.99  YUV 43.51  | display PSNR-Y 34.32  face PSNR-Y 39.36  LPIPS 0.160  faces 30
+   45bb89 qp24:   154.4 kbps  PSNR-Y 40.24  YUV 42.02  | display PSNR-Y 33.81  face PSNR-Y 37.66  LPIPS 0.168  faces 30
+   45bb89 qp32:    72.8 kbps  PSNR-Y 36.95  YUV 39.25  | display PSNR-Y 32.45  face PSNR-Y 34.54  LPIPS 0.191  faces 30
+   45bb89 qp40:    34.8 kbps  PSNR-Y 32.83  YUV 35.67  | display PSNR-Y 29.95  face PSNR-Y 30.58  LPIPS 0.242  faces 30
+   4d8ffe qp16:   813.2 kbps  PSNR-Y 33.97  YUV 36.61  | display PSNR-Y 25.56  face PSNR-Y 34.47  LPIPS 0.209  faces 30
+   4d8ffe qp24:   418.4 kbps  PSNR-Y 32.91  YUV 35.64  | display PSNR-Y 25.32  face PSNR-Y 33.46  LPIPS 0.232  faces 30
+   4d8ffe qp32:   169.8 kbps  PSNR-Y 30.53  YUV 33.52  | display PSNR-Y 24.58  face PSNR-Y 31.42  LPIPS 0.287  faces 30
+   4d8ffe qp40:    55.3 kbps  PSNR-Y 26.92  YUV 30.21  | display PSNR-Y 22.93  face PSNR-Y 28.70  LPIPS 0.386  faces 30
+   6aa9cf qp16:   241.0 kbps  PSNR-Y 44.45  YUV 45.28  | display PSNR-Y 40.98  face PSNR-Y 39.97  LPIPS 0.138  faces 29
+   6aa9cf qp24:   131.4 kbps  PSNR-Y 42.29  YUV 43.43  | display PSNR-Y 39.58  face PSNR-Y 38.44  LPIPS 0.155  faces 29
+   6aa9cf qp32:    63.5 kbps  PSNR-Y 38.80  YUV 40.41  | display PSNR-Y 36.85  face PSNR-Y 35.53  LPIPS 0.201  faces 29
+   6aa9cf qp40:    31.4 kbps  PSNR-Y 34.71  YUV 36.83  | display PSNR-Y 33.14  face PSNR-Y 31.91  LPIPS 0.265  faces 29
+   6eb39d qp16:   546.2 kbps  PSNR-Y 41.03  YUV 42.36  | display PSNR-Y 38.31  face PSNR-Y 40.89  LPIPS 0.144  faces 29
+   6eb39d qp24:   278.0 kbps  PSNR-Y 38.64  YUV 40.37  | display PSNR-Y 36.49  face PSNR-Y 38.85  LPIPS 0.165  faces 29
+   6eb39d qp32:   113.5 kbps  PSNR-Y 35.06  YUV 37.40  | display PSNR-Y 33.46  face PSNR-Y 35.52  LPIPS 0.205  faces 29
+   6eb39d qp40:    42.1 kbps  PSNR-Y 30.96  YUV 33.90  | display PSNR-Y 29.61  face PSNR-Y 31.48  LPIPS 0.271  faces 29
+   73f232 qp16:   449.0 kbps  PSNR-Y 42.15  YUV 42.81  | display PSNR-Y 35.71  face PSNR-Y 33.67  LPIPS 0.231  faces 30
+   73f232 qp24:   238.1 kbps  PSNR-Y 39.88  YUV 40.86  | display PSNR-Y 34.89  face PSNR-Y 32.14  LPIPS 0.250  faces 30
+   73f232 qp32:   106.9 kbps  PSNR-Y 36.20  YUV 37.62  | display PSNR-Y 32.94  face PSNR-Y 29.29  LPIPS 0.288  faces 30
+   73f232 qp40:    45.4 kbps  PSNR-Y 31.83  YUV 33.65  | display PSNR-Y 29.78  face PSNR-Y 25.79  LPIPS 0.372  faces 30
+   99b38e qp16:   181.6 kbps  PSNR-Y 44.52  YUV 45.14  | display PSNR-Y 40.87  face PSNR-Y 39.25  LPIPS 0.188  faces 30
+   99b38e qp24:    94.4 kbps  PSNR-Y 42.59  YUV 43.54  | display PSNR-Y 39.63  face PSNR-Y 37.65  LPIPS 0.219  faces 30
+   99b38e qp32:    43.5 kbps  PSNR-Y 39.20  YUV 40.70  | display PSNR-Y 37.05  face PSNR-Y 34.85  LPIPS 0.290  faces 30
+   99b38e qp40:    20.8 kbps  PSNR-Y 35.38  YUV 37.39  | display PSNR-Y 33.74  face PSNR-Y 31.56  LPIPS 0.382  faces 30
+   a17620 qp16:   239.8 kbps  PSNR-Y 42.92  YUV 43.70  | display PSNR-Y 35.77  face PSNR-Y 34.37  LPIPS 0.218  faces 30
+   a17620 qp24:   136.1 kbps  PSNR-Y 41.24  YUV 42.26  | display PSNR-Y 35.23  face PSNR-Y 33.45  LPIPS 0.246  faces 30
+   a17620 qp32:    65.6 kbps  PSNR-Y 37.97  YUV 39.44  | display PSNR-Y 33.71  face PSNR-Y 31.50  LPIPS 0.300  faces 30
+   a17620 qp40:    29.9 kbps  PSNR-Y 33.75  YUV 35.73  | display PSNR-Y 31.00  face PSNR-Y 28.76  LPIPS 0.393  faces 30
+   b2d792 qp16:   256.2 kbps  PSNR-Y 42.31  YUV 43.70  | display PSNR-Y 37.86  face PSNR-Y 34.96  LPIPS 0.250  faces 30
+   b2d792 qp24:   130.9 kbps  PSNR-Y 40.52  YUV 42.09  | display PSNR-Y 36.93  face PSNR-Y 33.91  LPIPS 0.270  faces 30
+   b2d792 qp32:    57.2 kbps  PSNR-Y 37.57  YUV 39.43  | display PSNR-Y 35.05  face PSNR-Y 31.88  LPIPS 0.313  faces 30
+   b2d792 qp40:    26.3 kbps  PSNR-Y 34.09  YUV 36.21  | display PSNR-Y 32.33  face PSNR-Y 28.84  LPIPS 0.392  faces 30
+   b8893c qp16:   313.5 kbps  PSNR-Y 42.67  YUV 43.17  | display PSNR-Y 38.58  face PSNR-Y 37.01  LPIPS 0.333  faces 30
+   b8893c qp24:   144.8 kbps  PSNR-Y 41.02  YUV 41.83  | display PSNR-Y 37.61  face PSNR-Y 35.90  LPIPS 0.349  faces 30
+   b8893c qp32:    62.7 kbps  PSNR-Y 37.93  YUV 39.31  | display PSNR-Y 35.48  face PSNR-Y 33.52  LPIPS 0.383  faces 30
+   b8893c qp40:    28.5 kbps  PSNR-Y 33.83  YUV 35.92  | display PSNR-Y 32.09  face PSNR-Y 30.23  LPIPS 0.457  faces 30
+   b91038 qp16:   308.5 kbps  PSNR-Y 40.21  YUV 41.51  | display PSNR-Y 34.27  face PSNR-Y 31.49  LPIPS 0.209  faces 30
+   b91038 qp24:   176.3 kbps  PSNR-Y 38.79  YUV 40.34  | display PSNR-Y 33.69  face PSNR-Y 30.68  LPIPS 0.227  faces 30
+   b91038 qp32:    81.2 kbps  PSNR-Y 35.71  YUV 37.78  | display PSNR-Y 32.07  face PSNR-Y 28.93  LPIPS 0.272  faces 30
+   b91038 qp40:    34.8 kbps  PSNR-Y 31.46  YUV 34.14  | display PSNR-Y 29.09  face PSNR-Y 25.88  LPIPS 0.393  faces 30
+   c33648 qp16:   417.3 kbps  PSNR-Y 41.47  YUV 42.27  | display PSNR-Y 35.09  face PSNR-Y 35.64  LPIPS 0.229  faces 30
+   c33648 qp24:   200.7 kbps  PSNR-Y 39.85  YUV 40.86  | display PSNR-Y 34.48  face PSNR-Y 34.58  LPIPS 0.252  faces 30
+   c33648 qp32:    82.6 kbps  PSNR-Y 36.88  YUV 38.28  | display PSNR-Y 33.03  face PSNR-Y 32.42  LPIPS 0.301  faces 30
+   c33648 qp40:    36.4 kbps  PSNR-Y 33.03  YUV 34.88  | display PSNR-Y 30.46  face PSNR-Y 29.24  LPIPS 0.398  faces 30
+   c52d75 qp16:   355.2 kbps  PSNR-Y 40.02  YUV 41.43  | display PSNR-Y 31.17  face PSNR-Y 31.90  LPIPS 0.306  faces 30
+   c52d75 qp24:   175.9 kbps  PSNR-Y 38.41  YUV 40.10  | display PSNR-Y 30.80  face PSNR-Y 31.19  LPIPS 0.328  faces 30
+   c52d75 qp32:    77.2 kbps  PSNR-Y 35.42  YUV 37.61  | display PSNR-Y 29.84  face PSNR-Y 29.52  LPIPS 0.377  faces 30
+   c52d75 qp40:    34.1 kbps  PSNR-Y 31.62  YUV 34.39  | display PSNR-Y 27.97  face PSNR-Y 27.07  LPIPS 0.433  faces 30
+   cd6bc1 qp16:   424.4 kbps  PSNR-Y 39.72  YUV 40.82  | display PSNR-Y 32.49  face PSNR-Y 30.72  LPIPS 0.260  faces 30
+   cd6bc1 qp24:   228.0 kbps  PSNR-Y 38.18  YUV 39.49  | display PSNR-Y 32.00  face PSNR-Y 30.17  LPIPS 0.275  faces 30
+   cd6bc1 qp32:   107.4 kbps  PSNR-Y 35.17  YUV 36.88  | display PSNR-Y 30.68  face PSNR-Y 28.90  LPIPS 0.305  faces 30
+   cd6bc1 qp40:    50.4 kbps  PSNR-Y 30.78  YUV 32.98  | display PSNR-Y 27.95  face PSNR-Y 26.79  LPIPS 0.357  faces 30
+   db623c qp16:   256.2 kbps  PSNR-Y 39.63  YUV 40.80  | display PSNR-Y 32.34  face PSNR-Y 32.20  LPIPS 0.280  faces 30
+   db623c qp24:   159.5 kbps  PSNR-Y 38.51  YUV 39.85  | display PSNR-Y 32.01  face PSNR-Y 31.38  LPIPS 0.308  faces 30
+   db623c qp32:    81.7 kbps  PSNR-Y 35.94  YUV 37.64  | display PSNR-Y 30.98  face PSNR-Y 29.70  LPIPS 0.357  faces 30
+   db623c qp40:    36.5 kbps  PSNR-Y 31.84  YUV 34.10  | display PSNR-Y 28.69  face PSNR-Y 27.32  LPIPS 0.419  faces 30
+   fda953 qp16:   498.9 kbps  PSNR-Y 40.98  YUV 42.85  | display PSNR-Y 36.29  face PSNR-Y 38.70  LPIPS 0.129  faces 30
+   fda953 qp24:   234.4 kbps  PSNR-Y 38.75  YUV 40.98  | display PSNR-Y 35.09  face PSNR-Y 36.83  LPIPS 0.156  faces 30
+   fda953 qp32:    84.4 kbps  PSNR-Y 35.07  YUV 37.88  | display PSNR-Y 32.60  face PSNR-Y 33.54  LPIPS 0.224  faces 30
+   fda953 qp40:    32.4 kbps  PSNR-Y 31.27  YUV 34.53  | display PSNR-Y 29.43  face PSNR-Y 29.66  LPIPS 0.335  faces 30
+
+== mean over clips per QP (20 clips) -> rd_eval.csv
+   QP 16:   391.5 kbps  PSNR-Y 40.94  PSNR-YUV 42.08  display PSNR-Y 34.54  face PSNR-Y 35.28  face LPIPS 0.223
+   QP 24:   207.9 kbps  PSNR-Y 39.23  PSNR-YUV 40.62  display PSNR-Y 33.82  face PSNR-Y 34.13  face LPIPS 0.245
+   QP 32:    92.9 kbps  PSNR-Y 36.06  PSNR-YUV 37.92  display PSNR-Y 32.15  face PSNR-Y 31.86  face LPIPS 0.292
+   QP 40:    39.7 kbps  PSNR-Y 31.97  PSNR-YUV 34.33  display PSNR-Y 29.38  face PSNR-Y 28.76  face LPIPS 0.373
+== done  Tue Nov 10 20:42:23 +04 2026

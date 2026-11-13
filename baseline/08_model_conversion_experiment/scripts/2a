@@ -1,0 +1,50 @@
+#!/bin/bash
+# PHASE 2 STEP 2a: convert the 6 new bundles (+1 multi-size test) and trace each network. Wi-Fi ON (one download). ~30-45 min
+D=$(cd "$(dirname "$0")" && pwd); . "$D/v"; . "$D/s2cfg"
+exec > >(tee "$D/out_2a.txt") 2>&1
+mkdir -p "$S2"; echo "== STEP 2a START  $(date)"; sw_vers | tr '\n' ' '; echo; df -h "$WORK" | tail -1
+# 1. MLVC-S PSNR checkpoint
+if [ ! -s "$CK_MLVCS" ]; then
+  echo "-- downloading mlvc-s-psnr-v1.ckpt"
+  curl -C - -L --fail -o "$CK_MLVCS" https://mlvideopub.blob.core.windows.net/mlvc/models/mlvc-s-psnr-v1.ckpt || { echo "DOWNLOAD FAILED (Wi-Fi on?)"; exit 1; }
+fi
+echo "-- checksum (must be 1b86b757...ca896):"; shasum -a 256 "$CK_MLVCS"
+# 2. converter test clips at 540p/720p/1080p (Lanczos from the 1080p MP4, as MLVC does)
+ID=0380a333cb0fef69001fb4260e2a705f
+for wh in 960x540 1280x720 1920x1080; do
+  d=~/mlvc/data/VCD/yuv/${wh}_30fps/s1; f="$d/${ID}_${wh}_30fps.yuv"; mkdir -p "$d"
+  [ -s "$MP4/${ID}_1920x1080_30.mp4" ] || { echo "MISSING $MP4/${ID}_1920x1080_30.mp4"; exit 1; }
+  [ -s "$f" ] || ffmpeg -v error -i "$MP4/${ID}_1920x1080_30.mp4" -vf "scale=${wh/x/:}:flags=lanczos" -pix_fmt yuv420p -f rawvideo "$f"
+  # the converter names the 1080p clip ..._1920x1080_30.yuv (no "fps"); provide both names
+  [ "$wh" = 1920x1080 ] && ln -sf "$f" "$d/${ID}_1920x1080_30.yuv"
+  echo "   test clip $wh: $(ls -lh "$f" | awk '{print $5}')  ($(( $(stat -f %z "$f") / (${wh%x*} * ${wh#*x} * 3 / 2) )) frames)"
+done
+# 3. conversions
+cd "$WORK/mlvc-tools/video" || exit 1
+conv () {  # conv <name> <model> <ckpt> <sizes...>
+  local name=$1 model=$2 ckpt=$3; shift 3; local sizes="$*"
+  echo "== convert $name: $model, sizes $sizes  ($(date +%H:%M:%S))"
+  uv run convert.py bundle --model-version $model --weights-path "$ckpt" --weights-version psnr_v1 \
+     --model-input-sizes $sizes --mlvc-version v0.1 --model-type coreml --target-device apple > "$S2/convert_$name.log" 2>&1
+  local tarf="output/model_bundles/${model}-psnr_v1-coreml-apple-v0.1.tar"
+  if ! grep -q "Archive created: .*${model}-psnr_v1-coreml-apple-v0.1.tar" "$S2/convert_$name.log"; then
+    echo "   FAILED - last lines of $S2/convert_$name.log:"; tail -12 "$S2/convert_$name.log"; return
+  fi
+  mkdir -p "$WORK/bundles/$name"; rm -f "$WORK/bundles/$name"/*.tar; cp "$tarf" "$WORK/bundles/$name/"
+  for s in $sizes; do mkdir -p "$S2/models/$name/$s"; cp -R "output/models/${model}-psnr_v1/coreml-apple/$s/"*.mlpackage "$S2/models/$name/$s/" 2>/dev/null; done
+  echo "   ok: $(ls -lh "$WORK/bundles/$name"/*.tar | awk '{print $5, $9}')"
+}
+conv mlvc_540p   dmc61sbr_reglu      "$CK_MLVC"  960x544
+conv mlvc_720p   dmc61sbr_reglu      "$CK_MLVC"  1280x720
+conv mlvc_1080p  dmc61sbr_reglu      "$CK_MLVC"  1920x1088
+conv mlvcs_540p  dmc61sbr_mini_reglu "$CK_MLVCS" 960x544
+conv mlvcs_720p  dmc61sbr_mini_reglu "$CK_MLVCS" 1280x720
+conv mlvcs_1080p dmc61sbr_mini_reglu "$CK_MLVCS" 1920x1088
+conv mlvc_multi  dmc61sbr_reglu      "$CK_MLVC"  640x368 960x544 1280x720
+# 4. per-network trace (encoder and decoder separately)
+echo "== where each network runs (MLComputePlan)"
+[ -x "$TOOLS/mlplan" ] || swiftc -O -parse-as-library "$D/mlplan.swift" -o "$TOOLS/mlplan"
+for p in $(find "$S2/models" -name "*.mlpackage" -prune | sort); do
+  rel=${p#$S2/models/}; "$TOOLS/mlplan" "$p" "${rel%.mlpackage}" | grep -v "^$"
+done
+echo "== STEP 2a END  $(date)"; ls -lh "$WORK"/bundles/*/*.tar

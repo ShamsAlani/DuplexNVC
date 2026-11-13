@@ -1,0 +1,18 @@
+#!/bin/bash
+# Quality NOW (no quiet Mac needed): BD-rate vs libmlvc's HEVC anchor + R-D on the 4 shipped 360p clips
+D=$(cd "$(dirname "$0")" && pwd); . "$D/v"
+exec > >(tee "$D/out_q.txt") 2>&1
+Q="$WORK/runs/quality_shipped"; mkdir -p "$Q"; cd "$Q"
+echo "== mlvc validate: full MLVC 360p vs Intel HW HEVC anchor (libmlvc test set)  $(date)"
+"$MLVC" validate --model-bundles-dir "$WORK/bundles/mlvc" \
+  --dataset-path "$WORK/libmlvc/data/test_data/datasets/VCD-640x360-s1-3s/test_config.json" \
+  --anchor-path "$WORK/libmlvc/data/test_data/datasets/VCD-640x360-s1-3s/intel_hw_hevc_lp.json" \
+  --qp-list 16 24 32 40 > validate.log 2>&1
+grep -viE "INFO|^\s*$" validate.log | tail -40
+echo "== R-D on the 4 shipped clips (calibration set)"
+: > clips.txt
+for id in 0380a3 6587ae 6c9c96 9c02f6; do
+  gunzip -c "$CLIPS/VCD_s1_${id}_640x360_30fps.nv12.gz" > "$Q/$id.nv12"; echo "$id $Q/$id.nv12" >> clips.txt
+done
+"$PY" "$D/rd.py" clips.txt rd_shipped.csv
+rm -f "$Q"/*.nv12

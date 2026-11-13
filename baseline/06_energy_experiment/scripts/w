@@ -1,0 +1,32 @@
+#!/bin/bash
+# Energy of B* on AC (E7): 120 s idle, then 5 x 60 s duplex paced 30 fps, powermetrics every 100 ms
+D=$(cd "$(dirname "$0")" && pwd); . "$D/v"
+exec > >(tee "$D/out_w.txt") 2>&1
+E="$WORK/runs/bl_energy"; [ -d "$E" ] && mv "$E" "${E}_old_$(date +%H%M%S)"; mkdir -p "$E"; cd "$E"
+echo "== ENERGY (AC) START  $(date)"; pmset -g batt | head -1
+sudo -v || exit 1
+( while true; do sudo -n true 2>/dev/null; sleep 50; done ) & KEEP=$!
+SAMP="cpu_power,gpu_power"
+echo "[idle] 120 s, do not touch the laptop"
+mkdir -p idle; sudo powermetrics --samplers $SAMP -i 100 -n 1200 -o idle/power.txt >/dev/null 2>&1
+for r in 1 2 3 4 5; do
+  echo "[$r/5] $(date +%H:%M:%S) B* duplex 30 fps + power log"
+  mkdir -p W_r$r
+  sudo powermetrics --samplers $SAMP -i 100 -n 800 -o W_r$r/power.txt >/dev/null 2>&1 &
+  sleep 5
+  "$BENCH" duplex $BL --fps 30 --seconds 60 --out-dir W_r$r 2> W_r$r.log
+  wait $!; sleep 60
+done
+kill $KEEP 2>/dev/null
+echo "== ENERGY END  $(date)"
+grep -c "ANE Power" idle/power.txt | sed 's/^/idle samples with ANE line: /'
+for r in 1 2 3 4 5; do echo "-- run $r"; "$PY" "$TOOLS/analyze_run.py" power W_r$r --pm W_r$r/power.txt --idle-pm idle/power.txt --json W_r$r/energy.json; done
+"$PY" - "$E" <<'PY'
+import json, glob, statistics as st, sys
+rs = [json.load(open(f)) for f in sorted(glob.glob(sys.argv[1] + "/W_r*/energy.json"))]
+print(f"\n== energy summary, {len(rs)} runs (median / min / max)")
+for k in ("ane", "cpu", "gpu", "combined"):
+    for m in ("run_mW", "idle_mW", "dynamic_mJ_per_pair", "dynamic_J_per_min"):
+        v = [r[k][m] for r in rs if k in r]
+        if v: print(f"  {k:8s} {m:20s} {st.median(v):9.1f} {min(v):9.1f} {max(v):9.1f}")
+PY
