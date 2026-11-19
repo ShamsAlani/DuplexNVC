@@ -1,14 +1,15 @@
 # Reproducing everything
 
-All measurements are in [`baseline/`](baseline/), in nine experiment folders. The complete guide — tools, downloads, builds, quiet mode, the run order of every script, expected values and known problems — is **[`baseline/REPRODUCE.md`](baseline/REPRODUCE.md)**.
+All measurements are in [`baseline/`](baseline/), in ten experiment folders. The complete guide — tools, downloads, builds, quiet mode, the run order of every script, expected values and known problems — is **[`baseline/REPRODUCE.md`](baseline/REPRODUCE.md)**.
 
 ## In short
 
 ```bash
 # one-time setup: see baseline/REPRODUCE.md §1–2, then install every script:
 mkdir -p ~/Downloads/d
-find <repo>/baseline -path '*/scripts/*' -type f ! -name README.md -exec cp {} ~/Downloads/d/ \;
-cp <repo>/baseline/common/code/{mlplan.swift,thermal_log.swift} ~/Downloads/d/ && chmod +x ~/Downloads/d/*
+find <repo>/baseline -path '*/scripts/*' ! -path '*/10_quality_per_setting_experiment/*' -type f ! -name README.md -exec cp {} ~/Downloads/d/ \;
+mkdir -p ~/Downloads/d/4b && cp <repo>/baseline/10_quality_per_setting_experiment/scripts/* ~/Downloads/d/4b/
+cp <repo>/baseline/common/code/{mlplan.swift,thermal_log.swift} ~/Downloads/d/ && chmod +x ~/Downloads/d/* ~/Downloads/d/4b/*
 cd ~/Downloads/d
 
 ./s; ./m; ./t                  # 01 smoke tests, streams
@@ -22,6 +23,9 @@ cd ~/Downloads/d
 ./p
 ./all; ./4r                    # 09 placement experiment (21.4 h, resumable)
 ./u
+cd 4b && ./all                 # 10 Part A: quality per setting (3 h, any conditions, resumable)
+cd .. && ./p && cd 4b && ./en  # 10 Part B: energy at every QP (7.7 h, quiet, resumable)
+cd .. && ./u
 ```
 
 ## Quiet mode (all timed runs)
@@ -36,6 +40,7 @@ python3 recompute_all.py      # tables of experiments 01–06
 python3 make_figures.py       # figures of 03–06
 python3 make_tables_x3.py     # tables of experiment 09
 ```
+Experiment 10's tables and figures are rebuilt on the Mac by its `scripts/ana.py`.
 
 ## Expected agreement
 

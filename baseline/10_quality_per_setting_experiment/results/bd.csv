@@ -1,0 +1,50 @@
+ref,test,comparison,metric,bd_rate_pct,bd_quality
+mlvc_360p_npu-npu,mlvc_540p_npu-npu,vs B*,psnr_y_display,-27.6756,1.1743
+mlvc_360p_npu-npu,mlvc_540p_npu-npu,vs B*,face_psnr_y,-7.6789,0.3613
+mlvc_360p_npu-npu,mlvc_540p_npu-npu,vs B*,face_lpips,-31.8813,-0.0301
+mlvc_360p_npu-npu,mlvc_540p_gpu-npu,vs B*,psnr_y_display,-25.909,1.0792
+mlvc_360p_npu-npu,mlvc_540p_gpu-npu,vs B*,face_psnr_y,-4.9536,0.2477
+mlvc_360p_npu-npu,mlvc_540p_gpu-npu,vs B*,face_lpips,-32.6373,-0.0307
+mlvc_360p_npu-npu,mlvcs_540p_npu-npu,vs B*,psnr_y_display,-4.3279,0.4776
+mlvc_360p_npu-npu,mlvcs_540p_npu-npu,vs B*,face_psnr_y,15.6865,-0.3245
+mlvc_360p_npu-npu,mlvcs_540p_npu-npu,vs B*,face_lpips,-11.7976,-0.0148
+mlvc_360p_npu-npu,mlvc_720p_npu-npu,vs B*,psnr_y_display,-43.978,1.912
+mlvc_360p_npu-npu,mlvc_720p_npu-npu,vs B*,face_psnr_y,-13.1519,0.6048
+mlvc_360p_npu-npu,mlvc_720p_npu-npu,vs B*,face_lpips,-47.1403,-0.0434
+mlvc_360p_npu-npu,mlvcs_720p_npu-npu,vs B*,psnr_y_display,-18.1397,1.0864
+mlvc_360p_npu-npu,mlvcs_720p_npu-npu,vs B*,face_psnr_y,15.4085,-0.2303
+mlvc_360p_npu-npu,mlvcs_720p_npu-npu,vs B*,face_lpips,-26.5567,-0.0277
+mlvc_360p_npu-npu,mlvcs_720p_gpu-npu,vs B*,psnr_y_display,-16.3782,1.0065
+mlvc_360p_npu-npu,mlvcs_720p_gpu-npu,vs B*,face_psnr_y,17.6782,-0.3053
+mlvc_360p_npu-npu,mlvcs_720p_gpu-npu,vs B*,face_lpips,-25.7263,-0.0273
+mlvc_360p_npu-npu,mlvc_1080p_npu-npu,vs B*,psnr_y_display,,2.2116
+mlvc_360p_npu-npu,mlvc_1080p_npu-npu,vs B*,face_psnr_y,-9.2131,0.4435
+mlvc_360p_npu-npu,mlvc_1080p_npu-npu,vs B*,face_lpips,,-0.04
+mlvc_360p_npu-npu,mlvcs_1080p_npu-npu,vs B*,psnr_y_display,-31.0741,1.3194
+mlvc_360p_npu-npu,mlvcs_1080p_npu-npu,vs B*,face_psnr_y,23.0062,-0.3933
+mlvc_360p_npu-npu,mlvcs_1080p_npu-npu,vs B*,face_lpips,-35.9098,-0.0279
+mlvc_540p_npu-npu,mlvcs_540p_npu-npu,"MLVC-S vs full, same res",psnr_y_display,28.3586,-0.6631
+mlvc_540p_npu-npu,mlvcs_540p_npu-npu,"MLVC-S vs full, same res",face_psnr_y,23.4538,-0.6444
+mlvc_540p_npu-npu,mlvcs_540p_npu-npu,"MLVC-S vs full, same res",face_lpips,23.0268,0.0135
+mlvc_540p_npu-npu,mlvcs_540p_npu-npu,"MLVC-S vs full, same res",psnr_y,28.4478,-0.9278
+mlvc_540p_npu-npu,mlvcs_540p_npu-npu,"MLVC-S vs full, same res",psnr_yuv,27.2225,-0.7686
+mlvc_720p_npu-npu,mlvcs_720p_npu-npu,"MLVC-S vs full, same res",psnr_y_display,31.7386,-0.7367
+mlvc_720p_npu-npu,mlvcs_720p_npu-npu,"MLVC-S vs full, same res",face_psnr_y,27.6577,-0.7355
+mlvc_720p_npu-npu,mlvcs_720p_npu-npu,"MLVC-S vs full, same res",face_lpips,23.071,0.0123
+mlvc_720p_npu-npu,mlvcs_720p_npu-npu,"MLVC-S vs full, same res",psnr_y,31.2384,-0.9
+mlvc_720p_npu-npu,mlvcs_720p_npu-npu,"MLVC-S vs full, same res",psnr_yuv,28.6597,-0.7242
+mlvc_1080p_npu-npu,mlvcs_1080p_npu-npu,"MLVC-S vs full, same res",psnr_y_display,30.2881,-0.7275
+mlvc_1080p_npu-npu,mlvcs_1080p_npu-npu,"MLVC-S vs full, same res",face_psnr_y,26.7892,-0.6862
+mlvc_1080p_npu-npu,mlvcs_1080p_npu-npu,"MLVC-S vs full, same res",face_lpips,16.9856,0.008
+mlvc_1080p_npu-npu,mlvcs_1080p_npu-npu,"MLVC-S vs full, same res",psnr_y,28.6916,-0.7066
+mlvc_1080p_npu-npu,mlvcs_1080p_npu-npu,"MLVC-S vs full, same res",psnr_yuv,24.1879,-0.5396
+mlvc_540p_npu-npu,mlvc_540p_gpu-npu,GPU vs NE encoder,psnr_y_display,4.1552,-0.1071
+mlvc_540p_npu-npu,mlvc_540p_gpu-npu,GPU vs NE encoder,face_psnr_y,4.4474,-0.1303
+mlvc_540p_npu-npu,mlvc_540p_gpu-npu,GPU vs NE encoder,face_lpips,-0.9622,-0.0006
+mlvc_540p_npu-npu,mlvc_540p_gpu-npu,GPU vs NE encoder,psnr_y,4.3999,-0.1605
+mlvc_540p_npu-npu,mlvc_540p_gpu-npu,GPU vs NE encoder,psnr_yuv,3.7406,-0.1178
+mlvcs_720p_npu-npu,mlvcs_720p_gpu-npu,GPU vs NE encoder,psnr_y_display,3.5669,-0.0968
+mlvcs_720p_npu-npu,mlvcs_720p_gpu-npu,GPU vs NE encoder,face_psnr_y,3.5794,-0.1099
+mlvcs_720p_npu-npu,mlvcs_720p_gpu-npu,GPU vs NE encoder,face_lpips,0.4605,0.0003
+mlvcs_720p_npu-npu,mlvcs_720p_gpu-npu,GPU vs NE encoder,psnr_y,3.9788,-0.1327
+mlvcs_720p_npu-npu,mlvcs_720p_gpu-npu,GPU vs NE encoder,psnr_yuv,3.5498,-0.1035

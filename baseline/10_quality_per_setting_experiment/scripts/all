@@ -1,0 +1,49 @@
+#!/bin/bash
+# 4b: the whole quality experiment in one unattended run (start it and go to sleep).
+#   1. pre-flight checks (stops at once if something is missing, so a failure shows up in the first minute)
+#   2. quality runs: 20 evaluation clips x 9 configurations x QP 16/24/26/32/40 = 900 runs (q.py),
+#      up to 3 passes so that any failed run is retried automatically
+#   3. analysis: R-D means, BD-rate, equal-bitrate table, energy-quality Pareto, figures (ana.py)
+# Resumable: Ctrl-C or a crash loses at most the run in progress; ./all again continues where it stopped.
+# Normal Mac, no quiet mode. Keep the charger in and the lid OPEN (caffeinate keeps it awake, not with the lid shut).
+# Results: ~/Downloads/duplexnvc-baseline/phase2/4b/   Log: out_all.txt next to this script.
+D=$(cd "$(dirname "$0")" && pwd); . "$D/../v"
+exec > >(tee -a "$D/out_all.txt") 2>&1
+O="$WORK/phase2/4b"; mkdir -p "$O"
+echo; echo "== 4b START  $(date)"
+sw_vers | tr '\n' ' '; echo; echo "libmlvc $(cat "$WORK/LIBMLVC_COMMIT.txt" 2>/dev/null)"; pmset -g batt | head -1
+{ date; sw_vers; echo "libmlvc $(cat "$WORK/LIBMLVC_COMMIT.txt" 2>/dev/null)"; } > "$O/run.txt"
+
+echo "== pre-flight"
+bad=0
+chk () { [ -e "$1" ] && echo "   ok  $1" || { echo "   MISSING  $1"; bad=1; }; }
+for f in "$BENCH" "$MLVC" "$PY" "$TOOLS/facebox" "$WORK/data/split.json" "$WORK/phase2/step4/table_feasible.csv" \
+         "$WORK/bundles/mlvc" "$WORK"/bundles/{mlvc,mlvcs}_{540p,720p,1080p}; do chk "$f"; done
+n=$("$PY" -c "import json,os;e=json.load(open('$WORK/data/split.json'))['evaluation'];print(sum(os.path.exists('$WORK/data/vcd_1080p/mp4/th/%s_1920x1080_30.mp4'%i) for i in e))")
+echo "   evaluation MP4s present: $n of 20"; [ "$n" = 20 ] || bad=1
+command -v ffmpeg >/dev/null && echo "   ok  ffmpeg" || { echo "   MISSING ffmpeg"; bad=1; }
+"$PY" -c "import matplotlib" 2>/dev/null || { echo "   installing matplotlib into the venv"; "$PY" -m pip install -q matplotlib; }
+"$PY" - <<'P' || bad=1
+import cv2, numpy, scipy, torch, lpips, matplotlib
+lpips.LPIPS(net="alex", verbose=False)
+print("   ok  python: cv2", cv2.__version__, "torch", torch.__version__, "lpips AlexNet loaded, matplotlib", matplotlib.__version__)
+P
+free=$(df -g "$WORK" | tail -1 | awk '{print $4}'); echo "   free disk: ${free} GB (need ~10)"; [ "$free" -ge 10 ] || bad=1
+[ $bad = 0 ] || { echo "== PRE-FLIGHT FAILED: nothing was run. Fix the items above and run ./all again."; exit 1; }
+
+for pass in 1 2 3; do
+  echo; echo "== quality pass $pass  $(date)"
+  caffeinate -ims "$PY" -u "$D/q.py"
+  left=$("$PY" -c "
+import csv,os
+p='$O/q.csv'; n=sum(1 for _ in csv.DictReader(open(p))) if os.path.exists(p) else 0
+print(900-n)")
+  echo "== after pass $pass: $left of 900 runs missing"
+  [ "$left" -le 0 ] && break
+done
+
+echo; echo "== analysis  $(date)"
+"$PY" "$D/ana.py"
+cp "$D/out_all.txt" "$O/results/" 2>/dev/null
+echo; echo "== 4b END  $(date)"
+echo "Collect: ~/Downloads/d/4b/out_all.txt and the folder ~/Downloads/duplexnvc-baseline/phase2/4b/results (zip it)"

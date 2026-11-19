@@ -1,0 +1,178 @@
+STEP 4b: quality per setting (20 evaluation clips, QP 16/24/26/32/40)
+
+== coverage (expect 20 clips per configuration and QP)
+   Full MLVC 360p             clips per QP [20, 20, 20, 20, 20]  short decodes 0  encoder resolved ['npu']
+   Full MLVC 540p             clips per QP [20, 20, 20, 20, 20]  short decodes 0  encoder resolved ['npu']
+   Full MLVC 540p (GPU enc)   clips per QP [20, 20, 20, 20, 20]  short decodes 0  encoder resolved ['gpu']
+   MLVC-S 540p                clips per QP [20, 20, 20, 20, 20]  short decodes 0  encoder resolved ['npu']
+   Full MLVC 720p             clips per QP [20, 20, 20, 20, 20]  short decodes 0  encoder resolved ['npu']
+   MLVC-S 720p                clips per QP [20, 20, 20, 20, 20]  short decodes 0  encoder resolved ['npu']
+   MLVC-S 720p (GPU enc)      clips per QP [20, 20, 20, 20, 20]  short decodes 0  encoder resolved ['gpu']
+   Full MLVC 1080p            clips per QP [20, 20, 20, 20, 20]  short decodes 0  encoder resolved ['npu']
+   MLVC-S 1080p               clips per QP [20, 20, 20, 20, 20]  short decodes 0  encoder resolved ['npu']
+
+== mean over clips (kbps / coded Y / display Y / face Y / face LPIPS)
+   Full MLVC 360p
+      QP 16:   384.1 kbps  41.05  34.55  35.28  0.224
+      QP 24:   205.5 kbps  39.31  33.82  34.12  0.246
+      QP 26:   170.3 kbps  38.64  33.51  33.67  0.254
+      QP 32:    92.5 kbps  36.12  32.16  31.86  0.292
+      QP 40:    39.7 kbps  32.00  29.38  28.77  0.373
+   Full MLVC 540p
+      QP 16:   783.6 kbps  42.31  37.69  37.81  0.152
+      QP 24:   389.0 kbps  40.59  36.71  36.42  0.176
+      QP 26:   315.3 kbps  39.96  36.32  35.91  0.186
+      QP 32:   165.6 kbps  37.54  34.66  33.92  0.225
+      QP 40:    70.9 kbps  33.53  31.48  30.66  0.301
+   Full MLVC 540p (GPU enc)
+      QP 16:   779.5 kbps  42.01  37.52  37.59  0.152
+      QP 24:   386.1 kbps  40.35  36.56  36.24  0.176
+      QP 26:   312.6 kbps  39.74  36.17  35.72  0.186
+      QP 32:   163.8 kbps  37.38  34.54  33.77  0.225
+      QP 40:    70.2 kbps  33.44  31.40  30.58  0.302
+   MLVC-S 540p
+      QP 16:   842.9 kbps  41.56  37.26  37.42  0.157
+      QP 24:   415.4 kbps  39.91  36.27  36.04  0.183
+      QP 26:   334.5 kbps  39.26  35.85  35.49  0.194
+      QP 32:   170.2 kbps  36.72  34.04  33.34  0.238
+      QP 40:    73.6 kbps  32.66  30.72  29.88  0.322
+   Full MLVC 720p
+      QP 16:  1304.2 kbps  43.09  39.71  39.45  0.118
+      QP 24:   606.1 kbps  41.38  38.52  37.89  0.143
+      QP 26:   480.2 kbps  40.79  38.08  37.34  0.152
+      QP 32:   238.0 kbps  38.54  36.31  35.27  0.191
+      QP 40:   100.1 kbps  34.74  33.02  31.93  0.261
+   MLVC-S 720p
+      QP 16:  1416.3 kbps  42.57  39.32  39.09  0.120
+      QP 24:   665.5 kbps  40.86  38.12  37.52  0.147
+      QP 26:   523.3 kbps  40.23  37.64  36.92  0.158
+      QP 32:   251.8 kbps  37.78  35.67  34.66  0.201
+      QP 40:   108.2 kbps  33.85  32.20  31.12  0.279
+   MLVC-S 720p (GPU enc)
+      QP 16:  1412.2 kbps  42.35  39.18  38.91  0.120
+      QP 24:   663.5 kbps  40.70  38.00  37.37  0.148
+      QP 26:   522.0 kbps  40.08  37.54  36.80  0.158
+      QP 32:   251.3 kbps  37.66  35.57  34.57  0.201
+      QP 40:   108.1 kbps  33.80  32.15  31.08  0.280
+   Full MLVC 1080p
+      QP 16:  2825.2 kbps  43.64  42.26  41.37  0.092
+      QP 24:  1276.0 kbps  41.94  40.58  39.53  0.120
+      QP 26:   989.3 kbps  41.40  40.05  38.95  0.129
+      QP 32:   446.7 kbps  39.47  38.14  36.87  0.164
+      QP 40:   180.9 kbps  36.15  34.86  33.60  0.223
+   MLVC-S 1080p
+      QP 16:  3032.7 kbps  43.33  41.84  41.01  0.093
+      QP 24:  1420.1 kbps  41.60  40.21  39.20  0.122
+      QP 26:  1087.0 kbps  41.01  39.63  38.57  0.132
+      QP 32:   462.7 kbps  38.82  37.49  36.27  0.170
+      QP 40:   191.4 kbps  35.25  33.96  32.79  0.237
+
+== BD-rate vs B* (negative = fewer bits for the same quality; '-' = curves do not overlap)
+                               display Y     face Y  face LPIPS   BD-quality: display dB / face dB / LPIPS
+   Full MLVC 540p                 -27.7%      -7.7%      -31.9%   +1.17 / +0.36 / -0.030
+   Full MLVC 540p (GPU enc)       -25.9%      -5.0%      -32.6%   +1.08 / +0.25 / -0.031
+   MLVC-S 540p                     -4.3%     +15.7%      -11.8%   +0.48 / -0.32 / -0.015
+   Full MLVC 720p                 -44.0%     -13.2%      -47.1%   +1.91 / +0.60 / -0.043
+   MLVC-S 720p                    -18.1%     +15.4%      -26.6%   +1.09 / -0.23 / -0.028
+   MLVC-S 720p (GPU enc)          -16.4%     +17.7%      -25.7%   +1.01 / -0.31 / -0.027
+   Full MLVC 1080p                  -         -9.2%        -      +2.21 / +0.44 / -0.040
+   MLVC-S 1080p                   -31.1%     +23.0%      -35.9%   +1.32 / -0.39 / -0.028
+
+== at equal bitrate (interpolated along each curve, blank outside its range): display Y / face LPIPS
+                                        100           150           200           287           400           600           800
+   Full MLVC 360p              32.36/0.286  33.26/0.261  33.78/0.247  34.26/0.233             -             -             -
+   Full MLVC 540p              32.91/0.267  34.35/0.233  35.21/0.212  36.11/0.191  36.76/0.175  37.37/0.160             -
+   Full MLVC 540p (GPU enc)    32.85/0.266  34.27/0.232  35.10/0.212  35.99/0.191  36.62/0.175  37.22/0.160             -
+   MLVC-S 540p                 32.07/0.287  33.62/0.248  34.53/0.226  35.50/0.202  36.21/0.185  36.85/0.168  37.20/0.159
+   Full MLVC 720p                         -  34.72/0.225  35.76/0.203  36.85/0.179  37.68/0.161  38.50/0.143  38.99/0.133
+   MLVC-S 720p                            -  33.70/0.245  34.87/0.219  36.08/0.192  37.00/0.172  37.92/0.151  38.44/0.140
+   MLVC-S 720p (GPU enc)                  -  33.64/0.246  34.78/0.219  35.99/0.192  36.91/0.172  37.82/0.152  38.32/0.140
+   Full MLVC 1080p                        -             -  35.29/0.216  36.69/0.190  37.81/0.170  38.92/0.150  39.58/0.138
+   MLVC-S 1080p                           -             -  34.17/0.233  35.76/0.202  37.01/0.179  38.22/0.157  38.92/0.144
+
+== energy vs quality at QP 26 (best placement per setting; energy = X3 mJ per frame pair, idle subtracted)
+   mlvcs_540p   npu-npu  30 fps          45.0 mJ    334.5 kbps  display 35.85  face 35.49 / 0.194  Pareto(LPIPS) all=Y 30fps=Y
+   mlvc_360p    npu-npu  30 fps          65.3 mJ    170.3 kbps  display 33.51  face 33.67 / 0.254  Pareto(LPIPS) all=- 30fps=-
+   mlvcs_1080p  npu-npu  15 fps only    291.6 mJ   1087.0 kbps  display 39.63  face 38.57 / 0.132  Pareto(LPIPS) all=Y 30fps=-
+   mlvcs_720p   gpu-npu  30 fps         333.4 mJ    522.0 kbps  display 37.54  face 36.80 / 0.158  Pareto(LPIPS) all=- 30fps=Y
+   mlvc_720p    npu-npu  15 fps only    404.8 mJ    480.2 kbps  display 38.08  face 37.34 / 0.152  Pareto(LPIPS) all=- 30fps=-
+   mlvc_540p    gpu-npu  30 fps         635.1 mJ    312.6 kbps  display 36.17  face 35.72 / 0.186  Pareto(LPIPS) all=- 30fps=-
+   mlvc_1080p   npu-npu  infeasible    1562.9 mJ    989.3 kbps  display 40.05  face 38.95 / 0.129  Pareto(LPIPS) all=Y 30fps=-
+
+== Q1: MLVC-S 540p (NE-NE) vs B* (full MLVC 360p NE-NE) at screen size
+   QP 26: B* 170 kbps, display 33.51, face 33.67 dB / LPIPS 0.254, 65.3 mJ
+          S540 335 kbps, display 35.85, face 35.49 dB / LPIPS 0.194, 45.0 mJ
+   BD vs B* on display PSNR-Y (dB): rate -4.3 %, quality +0.478
+   BD vs B* on face PSNR-Y (dB): rate +15.7 %, quality -0.324
+   BD vs B* on face LPIPS (lower is better): rate -11.8 %, quality -0.015
+   at 200 kbps: display 33.78 -> 34.53 dB, face LPIPS 0.247 -> 0.226
+   at 287 kbps: display 34.26 -> 35.50 dB, face LPIPS 0.233 -> 0.202
+
+== Q2: full MLVC 540p (best placement) vs MLVC-S 540p and vs B*
+   vs mlvcs_540p: energy x14.1 (45.0 -> 635.1 mJ), kbps x0.93, display +0.32 dB, face +0.23 dB, LPIPS -0.008
+   vs mlvc_360p: energy x9.7 (65.3 -> 635.1 mJ), kbps x1.84, display +2.66 dB, face +2.05 dB, LPIPS -0.068
+   BD-rate MLVC-S 540p vs full 540p on display PSNR-Y (dB): +28.4 %
+   BD-rate MLVC-S 540p vs full 540p on face LPIPS (lower is better): +23.0 %
+
+== encoder on GPU vs NE (same setting, same clips, decoder on NE)
+   mlvc_540p QP 16: coded PSNR-Y -0.300 dB (max |0.998|), bitrate -0.69 % (max |1.80|), 20 clips
+   mlvc_540p QP 24: coded PSNR-Y -0.236 dB (max |1.230|), bitrate -0.94 % (max |1.94|), 20 clips
+   mlvc_540p QP 26: coded PSNR-Y -0.216 dB (max |1.048|), bitrate -1.04 % (max |2.35|), 20 clips
+   mlvc_540p QP 32: coded PSNR-Y -0.166 dB (max |0.750|), bitrate -1.29 % (max |3.13|), 20 clips
+   mlvc_540p QP 40: coded PSNR-Y -0.090 dB (max |0.207|), bitrate -1.26 % (max |3.29|), 20 clips
+   mlvcs_720p QP 16: coded PSNR-Y -0.220 dB (max |0.659|), bitrate -0.28 % (max |0.44|), 20 clips
+   mlvcs_720p QP 24: coded PSNR-Y -0.166 dB (max |0.794|), bitrate -0.28 % (max |0.53|), 20 clips
+   mlvcs_720p QP 26: coded PSNR-Y -0.151 dB (max |0.667|), bitrate -0.24 % (max |0.80|), 20 clips
+   mlvcs_720p QP 32: coded PSNR-Y -0.123 dB (max |0.566|), bitrate -0.19 % (max |0.58|), 20 clips
+   mlvcs_720p QP 40: coded PSNR-Y -0.050 dB (max |0.189|), bitrate -0.05 % (max |0.75|), 20 clips
+
+== 360p cross-check: this step (Lanczos from 1080p MP4) minus E6 (VCD 360p YUV), same 20 clips
+   QP 16: kbps -7.4, coded Y +0.113, display Y +0.006, face Y +0.001, LPIPS +0.0008  (20 clips)
+   QP 24: kbps -2.3, coded Y +0.082, display Y -0.001, face Y -0.002, LPIPS +0.0006  (20 clips)
+   QP 32: kbps -0.4, coded Y +0.053, display Y +0.004, face Y +0.002, LPIPS -0.0003  (20 clips)
+   QP 40: kbps -0.0, coded Y +0.028, display Y -0.002, face Y +0.002, LPIPS +0.0003  (20 clips)
+
+== energy per frame pair vs QP (best placement, paced 30 fps, idle subtracted; median of runs)
+                              QP 16     QP 24     QP 26     QP 32     QP 40   QP16/QP40
+   mlvc_360p_npu-npu           63.6      63.4      63.3      63.1      62.9       1.01
+   mlvcs_540p_npu-npu          43.7      43.3      43.3      43.1      42.9       1.02
+   mlvc_540p_gpu-npu          625.7     672.0     670.2     614.6     592.0       1.06
+   mlvcs_720p_gpu-npu         315.1     375.7     356.3     335.9     323.3       0.97
+   mlvc_720p_npu-npu          407.2     405.4     405.2     404.0     402.5       1.01
+   mlvcs_1080p_npu-npu        295.0     293.0     292.6     291.3     290.2       1.02
+   mlvc_1080p_npu-npu        1574.5    1564.9    1563.6    1556.8    1551.0       1.02
+
+== energy vs quality at EQUAL BITRATE (energy and quality interpolated along each setting's QP curve)
+   at 170 kbps:
+      mlvcs_540p   npu-npu  30 fps          43.1 mJ  display 34.03  face 33.33 / 0.238  Pareto(LPIPS) all=Y 30fps=Y
+      mlvc_360p    npu-npu  30 fps          63.3 mJ  display 33.51  face 33.67 / 0.255  Pareto(LPIPS) all=- 30fps=-
+      mlvcs_720p   gpu-npu  30 fps         328.9 mJ  display 34.16  face 33.08 / 0.234  Pareto(LPIPS) all=Y 30fps=Y
+      mlvc_720p    npu-npu  15 fps only    403.4 mJ  display 35.19  face 34.08 / 0.215  Pareto(LPIPS) all=Y 30fps=-
+      mlvc_540p    gpu-npu  30 fps         616.5 mJ  display 34.65  face 33.89 / 0.223  Pareto(LPIPS) all=- 30fps=Y
+   at 287 kbps:
+      mlvcs_540p   npu-npu  30 fps          43.2 mJ  display 35.50  face 35.05 / 0.202  Pareto(LPIPS) all=Y 30fps=Y
+      mlvc_360p    npu-npu  30 fps          63.5 mJ  display 34.26  face 34.80 / 0.233  Pareto(LPIPS) all=- 30fps=-
+      mlvcs_1080p  npu-npu  15 fps only    290.7 mJ  display 35.76  face 34.54 / 0.202  Pareto(LPIPS) all=Y 30fps=-
+      mlvcs_720p   gpu-npu  30 fps         338.5 mJ  display 35.99  face 35.02 / 0.192  Pareto(LPIPS) all=Y 30fps=Y
+      mlvc_720p    npu-npu  15 fps only    404.3 mJ  display 36.85  face 35.87 / 0.179  Pareto(LPIPS) all=Y 30fps=-
+      mlvc_540p    gpu-npu  30 fps         667.1 mJ  display 35.99  face 35.49 / 0.191  Pareto(LPIPS) all=- 30fps=Y
+      mlvc_1080p   npu-npu  infeasible    1553.7 mJ  display 36.69  face 35.40 / 0.190  Pareto(LPIPS) all=- 30fps=-
+   at 400 kbps:
+      mlvcs_540p   npu-npu  30 fps          43.3 mJ  display 36.21  face 35.95 / 0.185  Pareto(LPIPS) all=Y 30fps=Y
+      mlvcs_1080p  npu-npu  15 fps only    291.1 mJ  display 37.01  face 35.78 / 0.179  Pareto(LPIPS) all=Y 30fps=-
+      mlvcs_720p   gpu-npu  30 fps         346.5 mJ  display 36.91  face 36.06 / 0.172  Pareto(LPIPS) all=Y 30fps=Y
+      mlvc_720p    npu-npu  15 fps only    404.9 mJ  display 37.68  face 36.85 / 0.161  Pareto(LPIPS) all=Y 30fps=-
+      mlvc_540p    gpu-npu  30 fps         671.8 mJ  display 36.62  face 36.32 / 0.175  Pareto(LPIPS) all=- 30fps=-
+      mlvc_1080p   npu-npu  infeasible    1556.0 mJ  display 37.81  face 36.53 / 0.170  Pareto(LPIPS) all=- 30fps=-
+   at 600 kbps:
+      mlvcs_540p   npu-npu  30 fps          43.5 mJ  display 36.85  face 36.82 / 0.168  Pareto(LPIPS) all=Y 30fps=Y
+      mlvcs_1080p  npu-npu  15 fps only    291.7 mJ  display 38.22  face 37.04 / 0.157  Pareto(LPIPS) all=Y 30fps=-
+      mlvcs_720p   gpu-npu  30 fps         369.4 mJ  display 37.82  face 37.14 / 0.152  Pareto(LPIPS) all=Y 30fps=Y
+      mlvc_720p    npu-npu  15 fps only    405.4 mJ  display 38.50  face 37.87 / 0.143  Pareto(LPIPS) all=Y 30fps=-
+      mlvc_540p    gpu-npu  30 fps         652.8 mJ  display 37.22  face 37.15 / 0.160  Pareto(LPIPS) all=- 30fps=-
+      mlvc_1080p   npu-npu  infeasible    1559.3 mJ  display 38.92  face 37.70 / 0.150  Pareto(LPIPS) all=- 30fps=-
+   at 1000 kbps:
+      mlvcs_1080p  npu-npu  15 fps only    292.4 mJ  display 39.44  face 38.36 / 0.136  Pareto(LPIPS) all=Y 30fps=-
+      mlvcs_720p   gpu-npu  30 fps         362.1 mJ  display 38.69  face 38.24 / 0.132  Pareto(LPIPS) all=Y 30fps=Y
+      mlvc_720p    npu-npu  15 fps only    406.4 mJ  display 39.33  face 38.94 / 0.126  Pareto(LPIPS) all=Y 30fps=-
+      mlvc_1080p   npu-npu  infeasible    1563.7 mJ  display 40.07  face 38.98 / 0.129  Pareto(LPIPS) all=- 30fps=-

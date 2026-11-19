@@ -1,0 +1,662 @@
+
+== 4b ENERGY START  Thu Nov 19 01:20:19 +04 2026   runs=5 rest=60s
+ProductName:		macOS ProductVersion:		26.6.2 BuildVersion:		25G83 
+Now drawing from 'AC Power'
+libmlvc eb5d60a
+== pre-flight
+   ok  /Users/shamsalani/Downloads/duplexnvc-baseline/harness/build/ninja-release/libmlvc_example
+   ok  /Users/shamsalani/Downloads/duplexnvc-baseline/.venv/bin/python3
+   ok  /Users/shamsalani/Downloads/duplexnvc-baseline/tools/analyze_run.py
+   ok  /Users/shamsalani/Downloads/duplexnvc-baseline/tools/thermal_log
+   ok  /Users/shamsalani/Downloads/duplexnvc-baseline/data/nv12/bl_camera_640x360.nv12
+   ok  /Users/shamsalani/Downloads/duplexnvc-baseline/data/nv12/bl_incoming_src_640x360.nv12
+   ok  /Users/shamsalani/Downloads/duplexnvc-baseline/data/nv12/cam_540p.nv12
+   ok  /Users/shamsalani/Downloads/duplexnvc-baseline/data/nv12/cam_720p.nv12
+   ok  /Users/shamsalani/Downloads/duplexnvc-baseline/data/nv12/cam_1080p.nv12
+   ok  /Users/shamsalani/Downloads/duplexnvc-baseline/data/nv12/incsrc_540p.nv12
+   ok  /Users/shamsalani/Downloads/duplexnvc-baseline/data/nv12/incsrc_720p.nv12
+   ok  /Users/shamsalani/Downloads/duplexnvc-baseline/data/nv12/incsrc_1080p.nv12
+   ok  /Users/shamsalani/Downloads/duplexnvc-baseline/bundles/mlvc
+   ok  /Users/shamsalani/Downloads/duplexnvc-baseline/bundles/mlvc_540p
+   ok  /Users/shamsalani/Downloads/duplexnvc-baseline/bundles/mlvc_720p
+   ok  /Users/shamsalani/Downloads/duplexnvc-baseline/bundles/mlvc_1080p
+   ok  /Users/shamsalani/Downloads/duplexnvc-baseline/bundles/mlvcs_540p
+   ok  /Users/shamsalani/Downloads/duplexnvc-baseline/bundles/mlvcs_720p
+   ok  /Users/shamsalani/Downloads/duplexnvc-baseline/bundles/mlvcs_1080p
+   ok  /Users/shamsalani/Downloads/duplexnvc-baseline/phase2/4b/q.csv
+== incoming streams at each QP (encoder on the NE)
+   mlvc_360p QP 16: 620 kbps
+   mlvc_360p QP 24: 344 kbps
+   mlvc_360p QP 26: 284 kbps
+   mlvc_360p QP 32: 153 kbps
+   mlvc_360p QP 40: 61 kbps
+   mlvcs_540p QP 16: 1171 kbps
+   mlvcs_540p QP 24: 673 kbps
+   mlvcs_540p QP 26: 561 kbps
+   mlvcs_540p QP 32: 300 kbps
+   mlvcs_540p QP 40: 128 kbps
+   mlvc_540p QP 16: 1207 kbps
+   mlvc_540p QP 24: 655 kbps
+   mlvc_540p QP 26: 539 kbps
+   mlvc_540p QP 32: 286 kbps
+   mlvc_540p QP 40: 117 kbps
+   mlvcs_720p QP 16: 1836 kbps
+   mlvcs_720p QP 24: 1024 kbps
+   mlvcs_720p QP 26: 847 kbps
+   mlvcs_720p QP 32: 451 kbps
+   mlvcs_720p QP 40: 196 kbps
+   mlvc_720p QP 16: 1858 kbps
+   mlvc_720p QP 24: 971 kbps
+   mlvc_720p QP 26: 794 kbps
+   mlvc_720p QP 32: 416 kbps
+   mlvc_720p QP 40: 169 kbps
+   mlvcs_1080p QP 16: 3718 kbps
+   mlvcs_1080p QP 24: 1893 kbps
+   mlvcs_1080p QP 26: 1538 kbps
+   mlvcs_1080p QP 32: 799 kbps
+   mlvcs_1080p QP 40: 346 kbps
+   mlvc_1080p QP 16: 3657 kbps
+   mlvc_1080p QP 24: 1786 kbps
+   mlvc_1080p QP 26: 1438 kbps
+   mlvc_1080p QP 32: 739 kbps
+   mlvc_1080p QP 40: 306 kbps
+   01:26:28 idle 120 s (mlvc_360p)
+-- mlvc_360p  enc npu  dec npu
+[1/175] 01:28:56 +8min  mlvc_360p_npu-npu/qp16_r1
+requested=npu resolved=npu 
+[2/175] 01:31:22 +10min  mlvc_360p_npu-npu/qp24_r1
+requested=npu resolved=npu 
+[3/175] 01:33:48 +13min  mlvc_360p_npu-npu/qp26_r1
+requested=npu resolved=npu 
+[4/175] 01:36:15 +15min  mlvc_360p_npu-npu/qp32_r1
+requested=npu resolved=npu 
+[5/175] 01:38:42 +18min  mlvc_360p_npu-npu/qp40_r1
+requested=npu resolved=npu 
+[6/175] 01:41:08 +20min  mlvc_360p_npu-npu/qp24_r2
+requested=npu resolved=npu 
+[7/175] 01:43:35 +23min  mlvc_360p_npu-npu/qp26_r2
+requested=npu resolved=npu 
+[8/175] 01:46:02 +25min  mlvc_360p_npu-npu/qp32_r2
+requested=npu resolved=npu 
+[9/175] 01:48:29 +28min  mlvc_360p_npu-npu/qp40_r2
+requested=npu resolved=npu 
+[10/175] 01:50:55 +30min  mlvc_360p_npu-npu/qp16_r2
+requested=npu resolved=npu 
+[11/175] 01:53:22 +32min  mlvc_360p_npu-npu/qp26_r3
+requested=npu resolved=npu 
+[12/175] 01:55:49 +35min  mlvc_360p_npu-npu/qp32_r3
+requested=npu resolved=npu 
+[13/175] 01:58:15 +37min  mlvc_360p_npu-npu/qp40_r3
+requested=npu resolved=npu 
+[14/175] 02:00:42 +40min  mlvc_360p_npu-npu/qp16_r3
+requested=npu resolved=npu 
+[15/175] 02:03:09 +42min  mlvc_360p_npu-npu/qp24_r3
+requested=npu resolved=npu 
+[16/175] 02:05:35 +45min  mlvc_360p_npu-npu/qp32_r4
+requested=npu resolved=npu 
+[17/175] 02:08:02 +47min  mlvc_360p_npu-npu/qp40_r4
+requested=npu resolved=npu 
+[18/175] 02:10:29 +50min  mlvc_360p_npu-npu/qp16_r4
+requested=npu resolved=npu 
+[19/175] 02:12:55 +52min  mlvc_360p_npu-npu/qp24_r4
+requested=npu resolved=npu 
+[20/175] 02:15:22 +54min  mlvc_360p_npu-npu/qp26_r4
+requested=npu resolved=npu 
+[21/175] 02:17:49 +57min  mlvc_360p_npu-npu/qp40_r5
+requested=npu resolved=npu 
+[22/175] 02:20:15 +59min  mlvc_360p_npu-npu/qp16_r5
+requested=npu resolved=npu 
+[23/175] 02:22:42 +62min  mlvc_360p_npu-npu/qp24_r5
+requested=npu resolved=npu 
+[24/175] 02:25:09 +64min  mlvc_360p_npu-npu/qp26_r5
+requested=npu resolved=npu 
+[25/175] 02:27:35 +67min  mlvc_360p_npu-npu/qp32_r5
+requested=npu resolved=npu 
+   02:30:02 idle 120 s (mlvcs_540p)
+-- mlvcs_540p  enc npu  dec npu
+[26/175] 02:32:30 +72min  mlvcs_540p_npu-npu/qp16_r1
+requested=npu resolved=npu 
+[27/175] 02:34:57 +74min  mlvcs_540p_npu-npu/qp24_r1
+requested=npu resolved=npu 
+[28/175] 02:37:23 +76min  mlvcs_540p_npu-npu/qp26_r1
+requested=npu resolved=npu 
+[29/175] 02:39:50 +79min  mlvcs_540p_npu-npu/qp32_r1
+requested=npu resolved=npu 
+[30/175] 02:42:17 +81min  mlvcs_540p_npu-npu/qp40_r1
+requested=npu resolved=npu 
+[31/175] 02:44:43 +84min  mlvcs_540p_npu-npu/qp24_r2
+requested=npu resolved=npu 
+[32/175] 02:47:10 +86min  mlvcs_540p_npu-npu/qp26_r2
+requested=npu resolved=npu 
+[33/175] 02:49:36 +89min  mlvcs_540p_npu-npu/qp32_r2
+requested=npu resolved=npu 
+[34/175] 02:52:03 +91min  mlvcs_540p_npu-npu/qp40_r2
+requested=npu resolved=npu 
+[35/175] 02:54:29 +94min  mlvcs_540p_npu-npu/qp16_r2
+requested=npu resolved=npu 
+[36/175] 02:56:56 +96min  mlvcs_540p_npu-npu/qp26_r3
+requested=npu resolved=npu 
+[37/175] 02:59:23 +98min  mlvcs_540p_npu-npu/qp32_r3
+requested=npu resolved=npu 
+[38/175] 03:01:49 +101min  mlvcs_540p_npu-npu/qp40_r3
+requested=npu resolved=npu 
+[39/175] 03:04:16 +103min  mlvcs_540p_npu-npu/qp16_r3
+requested=npu resolved=npu 
+[40/175] 03:06:42 +106min  mlvcs_540p_npu-npu/qp24_r3
+requested=npu resolved=npu 
+[41/175] 03:09:09 +108min  mlvcs_540p_npu-npu/qp32_r4
+requested=npu resolved=npu 
+[42/175] 03:11:35 +111min  mlvcs_540p_npu-npu/qp40_r4
+requested=npu resolved=npu 
+[43/175] 03:14:02 +113min  mlvcs_540p_npu-npu/qp16_r4
+requested=npu resolved=npu 
+[44/175] 03:16:29 +116min  mlvcs_540p_npu-npu/qp24_r4
+requested=npu resolved=npu 
+[45/175] 03:18:55 +118min  mlvcs_540p_npu-npu/qp26_r4
+requested=npu resolved=npu 
+[46/175] 03:21:22 +120min  mlvcs_540p_npu-npu/qp40_r5
+requested=npu resolved=npu 
+[47/175] 03:23:48 +123min  mlvcs_540p_npu-npu/qp16_r5
+requested=npu resolved=npu 
+[48/175] 03:26:15 +125min  mlvcs_540p_npu-npu/qp24_r5
+requested=npu resolved=npu 
+[49/175] 03:28:41 +128min  mlvcs_540p_npu-npu/qp26_r5
+requested=npu resolved=npu 
+[50/175] 03:31:08 +130min  mlvcs_540p_npu-npu/qp32_r5
+requested=npu resolved=npu 
+   03:33:34 idle 120 s (mlvc_540p)
+-- mlvc_540p  enc gpu  dec npu
+[51/175] 03:36:03 +135min  mlvc_540p_gpu-npu/qp16_r1
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[52/175] 03:38:28 +138min  mlvc_540p_gpu-npu/qp24_r1
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[53/175] 03:40:54 +140min  mlvc_540p_gpu-npu/qp26_r1
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[54/175] 03:43:20 +142min  mlvc_540p_gpu-npu/qp32_r1
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[55/175] 03:45:45 +145min  mlvc_540p_gpu-npu/qp40_r1
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[56/175] 03:48:11 +147min  mlvc_540p_gpu-npu/qp24_r2
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[57/175] 03:50:37 +150min  mlvc_540p_gpu-npu/qp26_r2
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[58/175] 03:53:02 +152min  mlvc_540p_gpu-npu/qp32_r2
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[59/175] 03:55:28 +155min  mlvc_540p_gpu-npu/qp40_r2
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[60/175] 03:57:53 +157min  mlvc_540p_gpu-npu/qp16_r2
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[61/175] 04:00:19 +159min  mlvc_540p_gpu-npu/qp26_r3
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[62/175] 04:02:45 +162min  mlvc_540p_gpu-npu/qp32_r3
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[63/175] 04:05:10 +164min  mlvc_540p_gpu-npu/qp40_r3
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[64/175] 04:07:36 +167min  mlvc_540p_gpu-npu/qp16_r3
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[65/175] 04:10:02 +169min  mlvc_540p_gpu-npu/qp24_r3
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[66/175] 04:12:27 +172min  mlvc_540p_gpu-npu/qp32_r4
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[67/175] 04:14:53 +174min  mlvc_540p_gpu-npu/qp40_r4
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[68/175] 04:17:19 +176min  mlvc_540p_gpu-npu/qp16_r4
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[69/175] 04:19:44 +179min  mlvc_540p_gpu-npu/qp24_r4
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[70/175] 04:22:10 +181min  mlvc_540p_gpu-npu/qp26_r4
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[71/175] 04:24:35 +184min  mlvc_540p_gpu-npu/qp40_r5
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[72/175] 04:27:01 +186min  mlvc_540p_gpu-npu/qp16_r5
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[73/175] 04:29:27 +189min  mlvc_540p_gpu-npu/qp24_r5
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[74/175] 04:31:52 +191min  mlvc_540p_gpu-npu/qp26_r5
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[75/175] 04:34:18 +193min  mlvc_540p_gpu-npu/qp32_r5
+requested=gpu resolved=gpu requested=npu resolved=npu 
+   04:36:44 idle 120 s (mlvcs_720p)
+-- mlvcs_720p  enc gpu  dec npu
+[76/175] 04:39:12 +198min  mlvcs_720p_gpu-npu/qp16_r1
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[77/175] 04:41:39 +201min  mlvcs_720p_gpu-npu/qp24_r1
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[78/175] 04:44:05 +203min  mlvcs_720p_gpu-npu/qp26_r1
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[79/175] 04:46:32 +206min  mlvcs_720p_gpu-npu/qp32_r1
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[80/175] 04:48:58 +208min  mlvcs_720p_gpu-npu/qp40_r1
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[81/175] 04:51:25 +211min  mlvcs_720p_gpu-npu/qp24_r2
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[82/175] 04:53:51 +213min  mlvcs_720p_gpu-npu/qp26_r2
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[83/175] 04:56:18 +215min  mlvcs_720p_gpu-npu/qp32_r2
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[84/175] 04:58:44 +218min  mlvcs_720p_gpu-npu/qp40_r2
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[85/175] 05:01:10 +220min  mlvcs_720p_gpu-npu/qp16_r2
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[86/175] 05:03:37 +223min  mlvcs_720p_gpu-npu/qp26_r3
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[87/175] 05:06:03 +225min  mlvcs_720p_gpu-npu/qp32_r3
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[88/175] 05:08:30 +228min  mlvcs_720p_gpu-npu/qp40_r3
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[89/175] 05:10:56 +230min  mlvcs_720p_gpu-npu/qp16_r3
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[90/175] 05:13:23 +232min  mlvcs_720p_gpu-npu/qp24_r3
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[91/175] 05:15:49 +235min  mlvcs_720p_gpu-npu/qp32_r4
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[92/175] 05:18:16 +237min  mlvcs_720p_gpu-npu/qp40_r4
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[93/175] 05:20:42 +240min  mlvcs_720p_gpu-npu/qp16_r4
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[94/175] 05:23:09 +242min  mlvcs_720p_gpu-npu/qp24_r4
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[95/175] 05:25:35 +245min  mlvcs_720p_gpu-npu/qp26_r4
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[96/175] 05:28:02 +247min  mlvcs_720p_gpu-npu/qp40_r5
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[97/175] 05:30:28 +250min  mlvcs_720p_gpu-npu/qp16_r5
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[98/175] 05:32:55 +252min  mlvcs_720p_gpu-npu/qp24_r5
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[99/175] 05:35:21 +254min  mlvcs_720p_gpu-npu/qp26_r5
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[100/175] 05:37:48 +257min  mlvcs_720p_gpu-npu/qp32_r5
+requested=gpu resolved=gpu requested=npu resolved=npu 
+   05:40:14 idle 120 s (mlvc_720p)
+-- mlvc_720p  enc npu  dec npu
+[101/175] 05:42:43 +262min  mlvc_720p_npu-npu/qp16_r1
+requested=npu resolved=npu 
+[102/175] 05:45:09 +264min  mlvc_720p_npu-npu/qp24_r1
+requested=npu resolved=npu 
+[103/175] 05:47:34 +267min  mlvc_720p_npu-npu/qp26_r1
+requested=npu resolved=npu 
+[104/175] 05:50:01 +269min  mlvc_720p_npu-npu/qp32_r1
+requested=npu resolved=npu 
+[105/175] 05:52:27 +272min  mlvc_720p_npu-npu/qp40_r1
+requested=npu resolved=npu 
+[106/175] 05:54:53 +274min  mlvc_720p_npu-npu/qp24_r2
+requested=npu resolved=npu 
+[107/175] 05:57:20 +276min  mlvc_720p_npu-npu/qp26_r2
+requested=npu resolved=npu 
+[108/175] 05:59:46 +279min  mlvc_720p_npu-npu/qp32_r2
+requested=npu resolved=npu 
+[109/175] 06:02:11 +281min  mlvc_720p_npu-npu/qp40_r2
+requested=npu resolved=npu 
+[110/175] 06:04:37 +284min  mlvc_720p_npu-npu/qp16_r2
+requested=npu resolved=npu 
+[111/175] 06:07:04 +286min  mlvc_720p_npu-npu/qp26_r3
+requested=npu resolved=npu 
+[112/175] 06:09:30 +289min  mlvc_720p_npu-npu/qp32_r3
+requested=npu resolved=npu 
+[113/175] 06:11:57 +291min  mlvc_720p_npu-npu/qp40_r3
+requested=npu resolved=npu 
+[114/175] 06:14:23 +293min  mlvc_720p_npu-npu/qp16_r3
+requested=npu resolved=npu 
+[115/175] 06:16:50 +296min  mlvc_720p_npu-npu/qp24_r3
+requested=npu resolved=npu 
+[116/175] 06:19:16 +298min  mlvc_720p_npu-npu/qp32_r4
+requested=npu resolved=npu 
+[117/175] 06:21:43 +301min  mlvc_720p_npu-npu/qp40_r4
+requested=npu resolved=npu 
+[118/175] 06:24:09 +303min  mlvc_720p_npu-npu/qp16_r4
+requested=npu resolved=npu 
+[119/175] 06:26:34 +306min  mlvc_720p_npu-npu/qp24_r4
+requested=npu resolved=npu 
+[120/175] 06:29:01 +308min  mlvc_720p_npu-npu/qp26_r4
+requested=npu resolved=npu 
+[121/175] 06:31:27 +311min  mlvc_720p_npu-npu/qp40_r5
+requested=npu resolved=npu 
+[122/175] 06:33:53 +313min  mlvc_720p_npu-npu/qp16_r5
+requested=npu resolved=npu 
+[123/175] 06:36:19 +315min  mlvc_720p_npu-npu/qp24_r5
+requested=npu resolved=npu 
+[124/175] 06:38:46 +318min  mlvc_720p_npu-npu/qp26_r5
+requested=npu resolved=npu 
+[125/175] 06:41:10 +320min  mlvc_720p_npu-npu/qp32_r5
+requested=npu resolved=npu 
+   06:43:36 idle 120 s (mlvcs_1080p)
+-- mlvcs_1080p  enc npu  dec npu
+[126/175] 06:46:04 +325min  mlvcs_1080p_npu-npu/qp16_r1
+requested=npu resolved=npu 
+[127/175] 06:48:30 +328min  mlvcs_1080p_npu-npu/qp24_r1
+requested=npu resolved=npu 
+[128/175] 06:50:57 +330min  mlvcs_1080p_npu-npu/qp26_r1
+requested=npu resolved=npu 
+[129/175] 06:53:23 +332min  mlvcs_1080p_npu-npu/qp32_r1
+requested=npu resolved=npu 
+[130/175] 06:55:50 +335min  mlvcs_1080p_npu-npu/qp40_r1
+requested=npu resolved=npu 
+[131/175] 06:58:16 +337min  mlvcs_1080p_npu-npu/qp24_r2
+requested=npu resolved=npu 
+[132/175] 07:00:42 +340min  mlvcs_1080p_npu-npu/qp26_r2
+requested=npu resolved=npu 
+[133/175] 07:03:09 +342min  mlvcs_1080p_npu-npu/qp32_r2
+requested=npu resolved=npu 
+[134/175] 07:05:35 +345min  mlvcs_1080p_npu-npu/qp40_r2
+requested=npu resolved=npu 
+[135/175] 07:08:02 +347min  mlvcs_1080p_npu-npu/qp16_r2
+requested=npu resolved=npu 
+[136/175] 07:10:28 +350min  mlvcs_1080p_npu-npu/qp26_r3
+requested=npu resolved=npu 
+[137/175] 07:12:55 +352min  mlvcs_1080p_npu-npu/qp32_r3
+requested=npu resolved=npu 
+[138/175] 07:15:21 +354min  mlvcs_1080p_npu-npu/qp40_r3
+requested=npu resolved=npu 
+[139/175] 07:17:48 +357min  mlvcs_1080p_npu-npu/qp16_r3
+requested=npu resolved=npu 
+[140/175] 07:20:14 +359min  mlvcs_1080p_npu-npu/qp24_r3
+requested=npu resolved=npu 
+[141/175] 07:22:41 +362min  mlvcs_1080p_npu-npu/qp32_r4
+requested=npu resolved=npu 
+[142/175] 07:25:08 +364min  mlvcs_1080p_npu-npu/qp40_r4
+requested=npu resolved=npu 
+[143/175] 07:27:34 +367min  mlvcs_1080p_npu-npu/qp16_r4
+requested=npu resolved=npu 
+[144/175] 07:30:01 +369min  mlvcs_1080p_npu-npu/qp24_r4
+requested=npu resolved=npu 
+[145/175] 07:32:27 +372min  mlvcs_1080p_npu-npu/qp26_r4
+requested=npu resolved=npu 
+[146/175] 07:34:54 +374min  mlvcs_1080p_npu-npu/qp40_r5
+requested=npu resolved=npu 
+[147/175] 07:37:20 +376min  mlvcs_1080p_npu-npu/qp16_r5
+requested=npu resolved=npu 
+[148/175] 07:39:47 +379min  mlvcs_1080p_npu-npu/qp24_r5
+requested=npu resolved=npu 
+[149/175] 07:42:13 +381min  mlvcs_1080p_npu-npu/qp26_r5
+requested=npu resolved=npu 
+[150/175] 07:44:40 +384min  mlvcs_1080p_npu-npu/qp32_r5
+requested=npu resolved=npu 
+   07:47:07 idle 120 s (mlvc_1080p)
+-- mlvc_1080p  enc npu  dec npu
+[151/175] 07:49:36 +389min  mlvc_1080p_npu-npu/qp16_r1
+requested=npu resolved=npu 
+[152/175] 07:52:33 +392min  mlvc_1080p_npu-npu/qp24_r1
+requested=npu resolved=npu 
+[153/175] 07:55:31 +395min  mlvc_1080p_npu-npu/qp26_r1
+requested=npu resolved=npu 
+[154/175] 07:58:27 +398min  mlvc_1080p_npu-npu/qp32_r1
+requested=npu resolved=npu 
+[155/175] 08:01:24 +400min  mlvc_1080p_npu-npu/qp40_r1
+requested=npu resolved=npu 
+[156/175] 08:04:21 +403min  mlvc_1080p_npu-npu/qp24_r2
+requested=npu resolved=npu 
+[157/175] 08:07:18 +406min  mlvc_1080p_npu-npu/qp26_r2
+requested=npu resolved=npu 
+[158/175] 08:10:15 +409min  mlvc_1080p_npu-npu/qp32_r2
+requested=npu resolved=npu 
+[159/175] 08:13:12 +412min  mlvc_1080p_npu-npu/qp40_r2
+requested=npu resolved=npu 
+[160/175] 08:16:08 +415min  mlvc_1080p_npu-npu/qp16_r2
+requested=npu resolved=npu 
+[161/175] 08:19:06 +418min  mlvc_1080p_npu-npu/qp26_r3
+requested=npu resolved=npu 
+[162/175] 08:22:03 +421min  mlvc_1080p_npu-npu/qp32_r3
+requested=npu resolved=npu 
+[163/175] 08:24:59 +424min  mlvc_1080p_npu-npu/qp40_r3
+requested=npu resolved=npu 
+[164/175] 08:27:56 +427min  mlvc_1080p_npu-npu/qp16_r3
+requested=npu resolved=npu 
+[165/175] 08:30:53 +430min  mlvc_1080p_npu-npu/qp24_r3
+requested=npu resolved=npu 
+[166/175] 08:33:50 +433min  mlvc_1080p_npu-npu/qp32_r4
+requested=npu resolved=npu 
+[167/175] 08:36:47 +436min  mlvc_1080p_npu-npu/qp40_r4
+requested=npu resolved=npu 
+[168/175] 08:39:44 +439min  mlvc_1080p_npu-npu/qp16_r4
+requested=npu resolved=npu 
+[169/175] 08:42:41 +442min  mlvc_1080p_npu-npu/qp24_r4
+requested=npu resolved=npu 
+[170/175] 08:45:38 +445min  mlvc_1080p_npu-npu/qp26_r4
+requested=npu resolved=npu 
+[171/175] 08:48:35 +448min  mlvc_1080p_npu-npu/qp40_r5
+requested=npu resolved=npu 
+[172/175] 08:51:32 +451min  mlvc_1080p_npu-npu/qp16_r5
+requested=npu resolved=npu 
+[173/175] 08:54:29 +454min  mlvc_1080p_npu-npu/qp24_r5
+requested=npu resolved=npu 
+[174/175] 08:57:26 +457min  mlvc_1080p_npu-npu/qp26_r5
+requested=npu resolved=npu 
+[175/175] 09:00:23 +459min  mlvc_1080p_npu-npu/qp32_r5
+requested=npu resolved=npu 
+== 4b ENERGY END  Thu Nov 19 09:03:20 +04 2026  (462 min)
+
+== energy table
+mJ per frame pair (median of runs, min-max), late share send/recv %, camera kbps; QP 26 vs X3
+   mlvc_360p_npu-npu
+      QP 16:    63.6 mJ (63.2-63.8, 5 runs)  NE/GPU/CPU 62.0/-0.0/1.5  L 0.00/0.00 %  270 kbps
+      QP 24:    63.4 mJ (63.3-63.5, 5 runs)  NE/GPU/CPU 62.0/0.0/1.5  L 0.00/0.00 %  145 kbps
+      QP 26:    63.3 mJ (63.1-63.6, 5 runs)  NE/GPU/CPU 61.9/-0.0/1.4  L 0.00/0.00 %  120 kbps   X3 65.3 mJ (-3.1 %)
+      QP 32:    63.1 mJ (63.1-63.3, 5 runs)  NE/GPU/CPU 61.8/-0.0/1.4  L 0.00/0.00 %  65 kbps
+      QP 40:    62.9 mJ (62.7-64.8, 5 runs)  NE/GPU/CPU 61.4/0.0/1.4  L 0.00/0.00 %  29 kbps
+      QP 16 / QP 40 energy ratio: 1.01
+   mlvcs_540p_npu-npu
+      QP 16:    43.7 mJ (43.6-43.8, 5 runs)  NE/GPU/CPU 42.0/-0.0/1.6  L 0.00/0.00 %  578 kbps
+      QP 24:    43.3 mJ (43.2-43.4, 5 runs)  NE/GPU/CPU 41.9/-0.0/1.4  L 0.00/0.00 %  305 kbps
+      QP 26:    43.3 mJ (43.1-43.4, 5 runs)  NE/GPU/CPU 41.8/-0.0/1.4  L 0.00/0.00 %  250 kbps   X3 45.0 mJ (-3.7 %)
+      QP 32:    43.1 mJ (43.0-43.2, 5 runs)  NE/GPU/CPU 41.7/-0.0/1.4  L 0.00/0.00 %  129 kbps
+      QP 40:    42.8 mJ (42.8-43.1, 5 runs)  NE/GPU/CPU 41.5/-0.0/1.3  L 0.00/0.00 %  56 kbps
+      QP 16 / QP 40 energy ratio: 1.02
+   mlvc_540p_gpu-npu
+      QP 16:   625.7 mJ (535.4-677.2, 5 runs)  NE/GPU/CPU 73.5/542.4/8.9  L 0.06/0.00 %  498 kbps
+      QP 24:   672.0 mJ (536.1-680.9, 5 runs)  NE/GPU/CPU 74.1/590.5/8.6  L 0.00/0.00 %  260 kbps
+      QP 26:   670.2 mJ (536.3-681.2, 5 runs)  NE/GPU/CPU 74.1/587.6/8.6  L 0.06/0.00 %  215 kbps   X3 635.1 mJ (+5.5 %)
+      QP 32:   614.6 mJ (538.0-682.5, 5 runs)  NE/GPU/CPU 74.8/533.1/8.4  L 0.12/0.00 %  116 kbps
+      QP 40:   592.0 mJ (549.7-682.6, 5 runs)  NE/GPU/CPU 73.8/510.6/8.3  L 0.00/0.00 %  52 kbps
+      QP 16 / QP 40 energy ratio: 1.06
+   mlvcs_720p_gpu-npu
+      QP 16:   315.1 mJ (306.6-375.5, 5 runs)  NE/GPU/CPU 37.6/272.8/4.6  L 0.00/0.00 %  906 kbps
+      QP 24:   375.7 mJ (313.6-394.9, 5 runs)  NE/GPU/CPU 37.6/333.8/4.3  L 0.00/0.00 %  465 kbps
+      QP 26:   356.3 mJ (325.1-392.3, 5 runs)  NE/GPU/CPU 37.6/314.4/4.2  L 0.06/0.00 %  378 kbps   X3 333.4 mJ (+6.9 %)
+      QP 32:   335.9 mJ (313.7-359.3, 5 runs)  NE/GPU/CPU 37.5/294.5/4.1  L 0.06/0.00 %  191 kbps
+      QP 40:   323.3 mJ (311.9-382.1, 5 runs)  NE/GPU/CPU 37.3/281.9/4.1  L 0.00/0.00 %  85 kbps
+      QP 16 / QP 40 energy ratio: 0.97
+   mlvc_720p_npu-npu
+      QP 16:   407.2 mJ (405.9-418.9, 5 runs)  NE/GPU/CPU 399.6/-0.0/7.6  L 100.00/100.00 %  814 kbps
+      QP 24:   405.4 mJ (404.6-415.4, 5 runs)  NE/GPU/CPU 398.5/-0.0/6.9  L 100.00/100.00 %  412 kbps
+      QP 26:   405.2 mJ (404.9-419.4, 5 runs)  NE/GPU/CPU 398.4/-0.0/6.8  L 100.00/100.00 %  336 kbps   X3 404.8 mJ (+0.1 %)
+      QP 32:   404.0 mJ (402.6-416.9, 5 runs)  NE/GPU/CPU 396.8/-0.0/6.7  L 100.00/100.00 %  179 kbps
+      QP 40:   402.5 mJ (401.6-407.6, 5 runs)  NE/GPU/CPU 396.0/-0.0/6.4  L 100.00/100.00 %  80 kbps
+      QP 16 / QP 40 energy ratio: 1.01
+   mlvcs_1080p_npu-npu
+      QP 16:   295.0 mJ (293.8-295.1, 5 runs)  NE/GPU/CPU 287.4/0.0/7.6  L 0.00/100.00 %  1851 kbps
+      QP 24:   293.0 mJ (292.4-293.1, 5 runs)  NE/GPU/CPU 286.4/0.0/6.6  L 0.00/100.00 %  912 kbps
+      QP 26:   292.6 mJ (292.3-292.7, 5 runs)  NE/GPU/CPU 286.1/0.0/6.4  L 0.00/100.00 %  730 kbps   X3 291.6 mJ (+0.3 %)
+      QP 32:   291.3 mJ (291.2-292.2, 5 runs)  NE/GPU/CPU 285.4/0.0/6.0  L 0.00/100.00 %  356 kbps
+      QP 40:   290.2 mJ (289.9-290.3, 5 runs)  NE/GPU/CPU 284.3/0.0/5.8  L 0.00/100.00 %  161 kbps
+      QP 16 / QP 40 energy ratio: 1.02
+   mlvc_1080p_npu-npu
+      QP 16:  1574.5 mJ (1573.6-1575.7, 5 runs)  NE/GPU/CPU 1487.3/-0.0/87.6  L 100.00/100.00 %  2006 kbps
+      QP 24:  1564.9 mJ (1564.8-1566.0, 5 runs)  NE/GPU/CPU 1481.0/-0.0/84.1  L 100.00/100.00 %  1005 kbps
+      QP 26:  1563.6 mJ (1562.8-1565.5, 5 runs)  NE/GPU/CPU 1479.6/-0.0/83.9  L 100.00/100.00 %  820 kbps   X3 1562.9 mJ (+0.0 %)
+      QP 32:  1556.8 mJ (1555.9-1556.9, 5 runs)  NE/GPU/CPU 1475.0/-0.0/81.9  L 100.00/100.00 %  436 kbps
+      QP 40:  1551.0 mJ (1550.0-1553.7, 5 runs)  NE/GPU/CPU 1469.7/-0.0/81.1  L 100.00/100.00 %  198 kbps
+      QP 16 / QP 40 energy ratio: 1.02
+-> /Users/shamsalani/Downloads/duplexnvc-baseline/phase2/4b/energy/energy_qp.csv
+
+== analysis with energy per QP
+STEP 4b: quality per setting (20 evaluation clips, QP 16/24/26/32/40)
+
+== coverage (expect 20 clips per configuration and QP)
+   Full MLVC 360p             clips per QP [20, 20, 20, 20, 20]  short decodes 0  encoder resolved ['npu']
+   Full MLVC 540p             clips per QP [20, 20, 20, 20, 20]  short decodes 0  encoder resolved ['npu']
+   Full MLVC 540p (GPU enc)   clips per QP [20, 20, 20, 20, 20]  short decodes 0  encoder resolved ['gpu']
+   MLVC-S 540p                clips per QP [20, 20, 20, 20, 20]  short decodes 0  encoder resolved ['npu']
+   Full MLVC 720p             clips per QP [20, 20, 20, 20, 20]  short decodes 0  encoder resolved ['npu']
+   MLVC-S 720p                clips per QP [20, 20, 20, 20, 20]  short decodes 0  encoder resolved ['npu']
+   MLVC-S 720p (GPU enc)      clips per QP [20, 20, 20, 20, 20]  short decodes 0  encoder resolved ['gpu']
+   Full MLVC 1080p            clips per QP [20, 20, 20, 20, 20]  short decodes 0  encoder resolved ['npu']
+   MLVC-S 1080p               clips per QP [20, 20, 20, 20, 20]  short decodes 0  encoder resolved ['npu']
+
+== mean over clips (kbps / coded Y / display Y / face Y / face LPIPS)
+   Full MLVC 360p
+      QP 16:   384.1 kbps  41.05  34.55  35.28  0.224
+      QP 24:   205.5 kbps  39.31  33.82  34.12  0.246
+      QP 26:   170.3 kbps  38.64  33.51  33.67  0.254
+      QP 32:    92.5 kbps  36.12  32.16  31.86  0.292
+      QP 40:    39.7 kbps  32.00  29.38  28.77  0.373
+   Full MLVC 540p
+      QP 16:   783.6 kbps  42.31  37.69  37.81  0.152
+      QP 24:   389.0 kbps  40.59  36.71  36.42  0.176
+      QP 26:   315.3 kbps  39.96  36.32  35.91  0.186
+      QP 32:   165.6 kbps  37.54  34.66  33.92  0.225
+      QP 40:    70.9 kbps  33.53  31.48  30.66  0.301
+   Full MLVC 540p (GPU enc)
+      QP 16:   779.5 kbps  42.01  37.52  37.59  0.152
+      QP 24:   386.1 kbps  40.35  36.56  36.24  0.176
+      QP 26:   312.6 kbps  39.74  36.17  35.72  0.186
+      QP 32:   163.8 kbps  37.38  34.54  33.77  0.225
+      QP 40:    70.2 kbps  33.44  31.40  30.58  0.302
+   MLVC-S 540p
+      QP 16:   842.9 kbps  41.56  37.26  37.42  0.157
+      QP 24:   415.4 kbps  39.91  36.27  36.04  0.183
+      QP 26:   334.5 kbps  39.26  35.85  35.49  0.194
+      QP 32:   170.2 kbps  36.72  34.04  33.34  0.238
+      QP 40:    73.6 kbps  32.66  30.72  29.88  0.322
+   Full MLVC 720p
+      QP 16:  1304.2 kbps  43.09  39.71  39.45  0.118
+      QP 24:   606.1 kbps  41.38  38.52  37.89  0.143
+      QP 26:   480.2 kbps  40.79  38.08  37.34  0.152
+      QP 32:   238.0 kbps  38.54  36.31  35.27  0.191
+      QP 40:   100.1 kbps  34.74  33.02  31.93  0.261
+   MLVC-S 720p
+      QP 16:  1416.3 kbps  42.57  39.32  39.09  0.120
+      QP 24:   665.5 kbps  40.86  38.12  37.52  0.147
+      QP 26:   523.3 kbps  40.23  37.64  36.92  0.158
+      QP 32:   251.8 kbps  37.78  35.67  34.66  0.201
+      QP 40:   108.2 kbps  33.85  32.20  31.12  0.279
+   MLVC-S 720p (GPU enc)
+      QP 16:  1412.2 kbps  42.35  39.18  38.91  0.120
+      QP 24:   663.5 kbps  40.70  38.00  37.37  0.148
+      QP 26:   522.0 kbps  40.08  37.54  36.80  0.158
+      QP 32:   251.3 kbps  37.66  35.57  34.57  0.201
+      QP 40:   108.1 kbps  33.80  32.15  31.08  0.280
+   Full MLVC 1080p
+      QP 16:  2825.2 kbps  43.64  42.26  41.37  0.092
+      QP 24:  1276.0 kbps  41.94  40.58  39.53  0.120
+      QP 26:   989.3 kbps  41.40  40.05  38.95  0.129
+      QP 32:   446.7 kbps  39.47  38.14  36.87  0.164
+      QP 40:   180.9 kbps  36.15  34.86  33.60  0.223
+   MLVC-S 1080p
+      QP 16:  3032.7 kbps  43.33  41.84  41.01  0.093
+      QP 24:  1420.1 kbps  41.60  40.21  39.20  0.122
+      QP 26:  1087.0 kbps  41.01  39.63  38.57  0.132
+      QP 32:   462.7 kbps  38.82  37.49  36.27  0.170
+      QP 40:   191.4 kbps  35.25  33.96  32.79  0.237
+
+== BD-rate vs B* (negative = fewer bits for the same quality; '-' = curves do not overlap)
+                               display Y     face Y  face LPIPS   BD-quality: display dB / face dB / LPIPS
+   Full MLVC 540p                 -27.7%      -7.7%      -31.9%   +1.17 / +0.36 / -0.030
+   Full MLVC 540p (GPU enc)       -25.9%      -5.0%      -32.6%   +1.08 / +0.25 / -0.031
+   MLVC-S 540p                     -4.3%     +15.7%      -11.8%   +0.48 / -0.32 / -0.015
+   Full MLVC 720p                 -44.0%     -13.2%      -47.1%   +1.91 / +0.60 / -0.043
+   MLVC-S 720p                    -18.1%     +15.4%      -26.6%   +1.09 / -0.23 / -0.028
+   MLVC-S 720p (GPU enc)          -16.4%     +17.7%      -25.7%   +1.01 / -0.31 / -0.027
+   Full MLVC 1080p                  -         -9.2%        -      +2.21 / +0.44 / -0.040
+   MLVC-S 1080p                   -31.1%     +23.0%      -35.9%   +1.32 / -0.39 / -0.028
+
+== at equal bitrate (interpolated along each curve, blank outside its range): display Y / face LPIPS
+                                        100           150           200           287           400           600           800
+   Full MLVC 360p              32.36/0.286  33.26/0.261  33.78/0.247  34.26/0.233             -             -             -
+   Full MLVC 540p              32.91/0.267  34.35/0.233  35.21/0.212  36.11/0.191  36.76/0.175  37.37/0.160             -
+   Full MLVC 540p (GPU enc)    32.85/0.266  34.27/0.232  35.10/0.212  35.99/0.191  36.62/0.175  37.22/0.160             -
+   MLVC-S 540p                 32.07/0.287  33.62/0.248  34.53/0.226  35.50/0.202  36.21/0.185  36.85/0.168  37.20/0.159
+   Full MLVC 720p                         -  34.72/0.225  35.76/0.203  36.85/0.179  37.68/0.161  38.50/0.143  38.99/0.133
+   MLVC-S 720p                            -  33.70/0.245  34.87/0.219  36.08/0.192  37.00/0.172  37.92/0.151  38.44/0.140
+   MLVC-S 720p (GPU enc)                  -  33.64/0.246  34.78/0.219  35.99/0.192  36.91/0.172  37.82/0.152  38.32/0.140
+   Full MLVC 1080p                        -             -  35.29/0.216  36.69/0.190  37.81/0.170  38.92/0.150  39.58/0.138
+   MLVC-S 1080p                           -             -  34.17/0.233  35.76/0.202  37.01/0.179  38.22/0.157  38.92/0.144
+
+== energy vs quality at QP 26 (best placement per setting; energy = X3 mJ per frame pair, idle subtracted)
+   mlvcs_540p   npu-npu  30 fps          45.0 mJ    334.5 kbps  display 35.85  face 35.49 / 0.194  Pareto(LPIPS) all=Y 30fps=Y
+   mlvc_360p    npu-npu  30 fps          65.3 mJ    170.3 kbps  display 33.51  face 33.67 / 0.254  Pareto(LPIPS) all=- 30fps=-
+   mlvcs_1080p  npu-npu  15 fps only    291.6 mJ   1087.0 kbps  display 39.63  face 38.57 / 0.132  Pareto(LPIPS) all=Y 30fps=-
+   mlvcs_720p   gpu-npu  30 fps         333.4 mJ    522.0 kbps  display 37.54  face 36.80 / 0.158  Pareto(LPIPS) all=- 30fps=Y
+   mlvc_720p    npu-npu  15 fps only    404.8 mJ    480.2 kbps  display 38.08  face 37.34 / 0.152  Pareto(LPIPS) all=- 30fps=-
+   mlvc_540p    gpu-npu  30 fps         635.1 mJ    312.6 kbps  display 36.17  face 35.72 / 0.186  Pareto(LPIPS) all=- 30fps=-
+   mlvc_1080p   npu-npu  infeasible    1562.9 mJ    989.3 kbps  display 40.05  face 38.95 / 0.129  Pareto(LPIPS) all=Y 30fps=-
+
+== Q1: MLVC-S 540p (NE-NE) vs B* (full MLVC 360p NE-NE) at screen size
+   QP 26: B* 170 kbps, display 33.51, face 33.67 dB / LPIPS 0.254, 65.3 mJ
+          S540 335 kbps, display 35.85, face 35.49 dB / LPIPS 0.194, 45.0 mJ
+   BD vs B* on display PSNR-Y (dB): rate -4.3 %, quality +0.478
+   BD vs B* on face PSNR-Y (dB): rate +15.7 %, quality -0.324
+   BD vs B* on face LPIPS (lower is better): rate -11.8 %, quality -0.015
+   at 200 kbps: display 33.78 -> 34.53 dB, face LPIPS 0.247 -> 0.226
+   at 287 kbps: display 34.26 -> 35.50 dB, face LPIPS 0.233 -> 0.202
+
+== Q2: full MLVC 540p (best placement) vs MLVC-S 540p and vs B*
+   vs mlvcs_540p: energy x14.1 (45.0 -> 635.1 mJ), kbps x0.93, display +0.32 dB, face +0.23 dB, LPIPS -0.008
+   vs mlvc_360p: energy x9.7 (65.3 -> 635.1 mJ), kbps x1.84, display +2.66 dB, face +2.05 dB, LPIPS -0.068
+   BD-rate MLVC-S 540p vs full 540p on display PSNR-Y (dB): +28.4 %
+   BD-rate MLVC-S 540p vs full 540p on face LPIPS (lower is better): +23.0 %
+
+== encoder on GPU vs NE (same setting, same clips, decoder on NE)
+   mlvc_540p QP 16: coded PSNR-Y -0.300 dB (max |0.998|), bitrate -0.69 % (max |1.80|), 20 clips
+   mlvc_540p QP 24: coded PSNR-Y -0.236 dB (max |1.230|), bitrate -0.94 % (max |1.94|), 20 clips
+   mlvc_540p QP 26: coded PSNR-Y -0.216 dB (max |1.048|), bitrate -1.04 % (max |2.35|), 20 clips
+   mlvc_540p QP 32: coded PSNR-Y -0.166 dB (max |0.750|), bitrate -1.29 % (max |3.13|), 20 clips
+   mlvc_540p QP 40: coded PSNR-Y -0.090 dB (max |0.207|), bitrate -1.26 % (max |3.29|), 20 clips
+   mlvcs_720p QP 16: coded PSNR-Y -0.220 dB (max |0.659|), bitrate -0.28 % (max |0.44|), 20 clips
+   mlvcs_720p QP 24: coded PSNR-Y -0.166 dB (max |0.794|), bitrate -0.28 % (max |0.53|), 20 clips
+   mlvcs_720p QP 26: coded PSNR-Y -0.151 dB (max |0.667|), bitrate -0.24 % (max |0.80|), 20 clips
+   mlvcs_720p QP 32: coded PSNR-Y -0.123 dB (max |0.566|), bitrate -0.19 % (max |0.58|), 20 clips
+   mlvcs_720p QP 40: coded PSNR-Y -0.050 dB (max |0.189|), bitrate -0.05 % (max |0.75|), 20 clips
+
+== 360p cross-check: this step (Lanczos from 1080p MP4) minus E6 (VCD 360p YUV), same 20 clips
+   QP 16: kbps -7.4, coded Y +0.113, display Y +0.006, face Y +0.001, LPIPS +0.0008  (20 clips)
+   QP 24: kbps -2.3, coded Y +0.082, display Y -0.001, face Y -0.002, LPIPS +0.0006  (20 clips)
+   QP 32: kbps -0.4, coded Y +0.053, display Y +0.004, face Y +0.002, LPIPS -0.0003  (20 clips)
+   QP 40: kbps -0.0, coded Y +0.028, display Y -0.002, face Y +0.002, LPIPS +0.0003  (20 clips)
+
+== energy per frame pair vs QP (best placement, paced 30 fps, idle subtracted; median of runs)
+                              QP 16     QP 24     QP 26     QP 32     QP 40   QP16/QP40
+   mlvc_360p_npu-npu           63.6      63.4      63.3      63.1      62.9       1.01
+   mlvcs_540p_npu-npu          43.7      43.3      43.3      43.1      42.9       1.02
+   mlvc_540p_gpu-npu          625.7     672.0     670.2     614.6     592.0       1.06
+   mlvcs_720p_gpu-npu         315.1     375.7     356.3     335.9     323.3       0.97
+   mlvc_720p_npu-npu          407.2     405.4     405.2     404.0     402.5       1.01
+   mlvcs_1080p_npu-npu        295.0     293.0     292.6     291.3     290.2       1.02
+   mlvc_1080p_npu-npu        1574.5    1564.9    1563.6    1556.8    1551.0       1.02
+
+== energy vs quality at EQUAL BITRATE (energy and quality interpolated along each setting's QP curve)
+   at 170 kbps:
+      mlvcs_540p   npu-npu  30 fps          43.1 mJ  display 34.03  face 33.33 / 0.238  Pareto(LPIPS) all=Y 30fps=Y
+      mlvc_360p    npu-npu  30 fps          63.3 mJ  display 33.51  face 33.67 / 0.255  Pareto(LPIPS) all=- 30fps=-
+      mlvcs_720p   gpu-npu  30 fps         328.9 mJ  display 34.16  face 33.08 / 0.234  Pareto(LPIPS) all=Y 30fps=Y
+      mlvc_720p    npu-npu  15 fps only    403.4 mJ  display 35.19  face 34.08 / 0.215  Pareto(LPIPS) all=Y 30fps=-
+      mlvc_540p    gpu-npu  30 fps         616.5 mJ  display 34.65  face 33.89 / 0.223  Pareto(LPIPS) all=- 30fps=Y
+   at 287 kbps:
+      mlvcs_540p   npu-npu  30 fps          43.2 mJ  display 35.50  face 35.05 / 0.202  Pareto(LPIPS) all=Y 30fps=Y
+      mlvc_360p    npu-npu  30 fps          63.5 mJ  display 34.26  face 34.80 / 0.233  Pareto(LPIPS) all=- 30fps=-
+      mlvcs_1080p  npu-npu  15 fps only    290.7 mJ  display 35.76  face 34.54 / 0.202  Pareto(LPIPS) all=Y 30fps=-
+      mlvcs_720p   gpu-npu  30 fps         338.5 mJ  display 35.99  face 35.02 / 0.192  Pareto(LPIPS) all=Y 30fps=Y
+      mlvc_720p    npu-npu  15 fps only    404.3 mJ  display 36.85  face 35.87 / 0.179  Pareto(LPIPS) all=Y 30fps=-
+      mlvc_540p    gpu-npu  30 fps         667.1 mJ  display 35.99  face 35.49 / 0.191  Pareto(LPIPS) all=- 30fps=Y
+      mlvc_1080p   npu-npu  infeasible    1553.7 mJ  display 36.69  face 35.40 / 0.190  Pareto(LPIPS) all=- 30fps=-
+   at 400 kbps:
+      mlvcs_540p   npu-npu  30 fps          43.3 mJ  display 36.21  face 35.95 / 0.185  Pareto(LPIPS) all=Y 30fps=Y
+      mlvcs_1080p  npu-npu  15 fps only    291.1 mJ  display 37.01  face 35.78 / 0.179  Pareto(LPIPS) all=Y 30fps=-
+      mlvcs_720p   gpu-npu  30 fps         346.5 mJ  display 36.91  face 36.06 / 0.172  Pareto(LPIPS) all=Y 30fps=Y
+      mlvc_720p    npu-npu  15 fps only    404.9 mJ  display 37.68  face 36.85 / 0.161  Pareto(LPIPS) all=Y 30fps=-
+      mlvc_540p    gpu-npu  30 fps         671.8 mJ  display 36.62  face 36.32 / 0.175  Pareto(LPIPS) all=- 30fps=-
+      mlvc_1080p   npu-npu  infeasible    1556.0 mJ  display 37.81  face 36.53 / 0.170  Pareto(LPIPS) all=- 30fps=-
+   at 600 kbps:
+      mlvcs_540p   npu-npu  30 fps          43.5 mJ  display 36.85  face 36.82 / 0.168  Pareto(LPIPS) all=Y 30fps=Y
+      mlvcs_1080p  npu-npu  15 fps only    291.7 mJ  display 38.22  face 37.04 / 0.157  Pareto(LPIPS) all=Y 30fps=-
+      mlvcs_720p   gpu-npu  30 fps         369.4 mJ  display 37.82  face 37.14 / 0.152  Pareto(LPIPS) all=Y 30fps=Y
+      mlvc_720p    npu-npu  15 fps only    405.4 mJ  display 38.50  face 37.87 / 0.143  Pareto(LPIPS) all=Y 30fps=-
+      mlvc_540p    gpu-npu  30 fps         652.8 mJ  display 37.22  face 37.15 / 0.160  Pareto(LPIPS) all=- 30fps=-
+      mlvc_1080p   npu-npu  infeasible    1559.3 mJ  display 38.92  face 37.70 / 0.150  Pareto(LPIPS) all=- 30fps=-
+   at 1000 kbps:
+      mlvcs_1080p  npu-npu  15 fps only    292.4 mJ  display 39.44  face 38.36 / 0.136  Pareto(LPIPS) all=Y 30fps=-
+      mlvcs_720p   gpu-npu  30 fps         362.1 mJ  display 38.69  face 38.24 / 0.132  Pareto(LPIPS) all=Y 30fps=Y
+      mlvc_720p    npu-npu  15 fps only    406.4 mJ  display 39.33  face 38.94 / 0.126  Pareto(LPIPS) all=Y 30fps=-
+      mlvc_1080p   npu-npu  infeasible    1563.7 mJ  display 40.07  face 38.98 / 0.129  Pareto(LPIPS) all=- 30fps=-
+
+== results in /Users/shamsalani/Downloads/duplexnvc-baseline/phase2/4b/results

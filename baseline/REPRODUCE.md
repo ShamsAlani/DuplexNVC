@@ -1,8 +1,8 @@
 # Reproducing the baseline
 
-This guide reruns all nine experiments from scratch on an Apple Silicon Mac and rebuilds every result. Paths assume the scripts live in `~/Downloads/d` and the work folder is `~/Downloads/duplexnvc-baseline` (`$WORK`). Change both in `common/scripts/v` if yours differ.
+This guide reruns all ten experiments from scratch on an Apple Silicon Mac and rebuilds every result. Paths assume the scripts live in `~/Downloads/d` and the work folder is `~/Downloads/duplexnvc-baseline` (`$WORK`). Change both in `common/scripts/v` if yours differ.
 
-Total laptop time: about **29 hours** of runs (experiments 01–06 ≈ 5.3 h, 07 ≈ 2.3 h, 08 ≈ 0.5 h, 09 ≈ 21.4 h), plus downloads.
+Total laptop time: about **40 hours** of runs (experiments 01–06 ≈ 5.3 h, 07 ≈ 2.3 h, 08 ≈ 0.5 h, 09 ≈ 21.4 h, 10 ≈ 10.7 h), plus downloads.
 
 ---
 
@@ -92,9 +92,10 @@ uv run convert.py bundle --model-version dmc61sbr_reglu \
 **Step 4. The measurement program and tools.**
 ```bash
 cp <repo>/baseline/common/code/* "$TOOLS/"
-find <repo>/baseline -path '*/scripts/*' -type f ! -name README.md -exec cp {} ~/Downloads/d/ \;
+find <repo>/baseline -path '*/scripts/*' ! -path '*/10_quality_per_setting_experiment/*' -type f ! -name README.md -exec cp {} ~/Downloads/d/ \;
+mkdir -p ~/Downloads/d/4b && cp <repo>/baseline/10_quality_per_setting_experiment/scripts/* ~/Downloads/d/4b/
 cp <repo>/baseline/common/code/{mlplan.swift,thermal_log.swift} ~/Downloads/d/
-chmod +x ~/Downloads/d/*
+chmod +x ~/Downloads/d/* ~/Downloads/d/4b/*
 cp -R "$WORK/libmlvc/examples/minimal-fetchcontent" "$WORK/harness"
 cp "$TOOLS/duplex_bench.cpp" "$WORK/harness/main.cpp"
 cd "$WORK/harness"
@@ -119,7 +120,7 @@ All paths the scripts use are set in `~/Downloads/d/v` (from `baseline/common/sc
 
 ## 3. Quiet mode
 
-Every **timed** experiment (02, 03, 06, 07, 09) runs in quiet mode, because the operating system easily disturbs timing and energy, and idle power is subtracted from run power:
+Every **timed** experiment (02, 03, 06, 07, 09, and Part B of 10) runs in quiet mode, because the operating system easily disturbs timing and energy, and idle power is subtracted from run power:
 
 1. Charger plugged in (`pmset -g batt` says `AC Power`); Low Power Mode off.
 2. **Wi-Fi off** and **Bluetooth off** (on only between experiments, to download data or copy results).
@@ -155,8 +156,12 @@ Run everything from `~/Downloads/d`, in this order. Each script saves its consol
 | 18 | `./all` | `09_placement_experiment` | X3: 584 runs, every setting × placement (calls `./2r`) | 21.4 h | **quiet**, password; **resumable** |
 | 19 | `./4r` | `09_placement_experiment` | Table of feasible settings | 1 min | any |
 | 20 | `./u`, `./z` | `common` | Quiet mode off; collect raw results | 2 min | any |
+| 21 | `cd 4b && ./all` | `10_quality_per_setting_experiment` | Part A: quality of 9 configurations × 20 clips × 5 QPs (900 runs) and analysis | 3.0 h | any (charger in, lid open); **resumable** |
+| 22 | `cd .. && ./p` | `common` | Quiet mode on | 1 min | see §3 |
+| 23 | `cd 4b && ./en` | `10_quality_per_setting_experiment` | Part B: energy of the 7 best placements at 5 QPs (175 runs), then `es.py` and `ana.py` | 7.7 h | **quiet**, password; **resumable** |
+| 24 | `cd .. && ./u` | `common` | Quiet mode off | 1 min | — |
 
-Do not press Ctrl-C during `./x`, `./w` or `./1`; a rerun moves the old folder aside. `./all` is the exception: interrupt it at any time and run it again, and it continues where it stopped.
+Do not press Ctrl-C during `./x`, `./w` or `./1`; a rerun moves the old folder aside. `./all` (09 and 10) and `./en` (10) are the exceptions: interrupt them at any time and run them again, and they continue where they stopped.
 
 Check that every run used the processor it asked for:
 ```bash
@@ -174,6 +179,7 @@ Our run: `844 unit reports, 0 mismatches`.
    python3 make_figures.py         # figures of 03–06
    python3 make_tables_x3.py       # tables of 09
    ```
+   Experiment 10's tables and figures are rebuilt on the Mac by `~/Downloads/d/4b/ana.py` (from `$WORK/phase2/4b/q.csv` and `energy/energy_qp.csv`).
 3. Compare with each experiment's README. On an M4 Pro (24 GB, macOS 26.6), timing should agree within about 2 % and energy within about 5 %; quality values should be identical. On another Apple Silicon chip the milliseconds differ, but the conclusions should hold.
 
 Key values to check:
@@ -187,6 +193,9 @@ Key values to check:
 | Placement trace (07) | full MLVC 313 / 316 ops on the NE, 100.0 % of cost |
 | NE alone, full MLVC 360p / 540p / 720p / 1080p (09) | 5.86 / 11.83 / 22.23 / 46.36 ms (encoder) |
 | Feasibility count (09) | 30 fps: 22 (23 with B\*); 15 fps only: 9; infeasible: 6 |
+| 360p quality, this run vs experiment 05 (10) | coded PSNR-Y within 0.11 dB, display PSNR-Y within 0.006 dB |
+| MLVC-S 540p at QP 26, 20 evaluation clips (10) | 335 kbps, display PSNR-Y 35.85 dB, face LPIPS 0.194 |
+| Energy at QP 26 vs experiment 09 (10) | NE settings within 4 %; GPU-encoder settings within 7 % |
 
 ## 6. Problems we hit and how they are fixed
 
@@ -202,4 +211,5 @@ Key values to check:
 | zsh treats `#` as text | `setopt interactivecomments` |
 | Model conversion (`2a`) failed for every size | The 1080p MP4s are in `vcd_1080p/mp4/th/`, and the converter names the 1080p test clip `<id>_1920x1080_30.yuv`; `s2cfg` and `2a` use both |
 | A 22-hour run can be interrupted | `all` skips finished runs and appends to its log |
-| `sudo` expiring during long runs | `1` and `all` refresh `sudo` every 50 s in the background |
+| `sudo` expiring during long runs | `1`, `all` and `en` refresh `sudo` every 50 s in the background |
+| `./en` started without `./p` | Run `./p` in a second Terminal tab before the first idle recording; the stream preparation at the start is not measured |

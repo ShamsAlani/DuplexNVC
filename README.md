@@ -14,12 +14,12 @@ In a video call, every laptop does two jobs at once: it **encodes** its own came
 
 | Folder | Contents |
 |---|---|
-| [`baseline/`](baseline/) | The Phase 2 **baseline**, in nine experiments: smoke tests, Phase 1 check, timing of the core baseline B\*, correctness, quality, energy, processor, model conversion and placement experiments. Each experiment folder has its scripts, raw data, results and a README with what it shows and what we concluded |
+| [`baseline/`](baseline/) | The Phase 2 **baseline**, in ten experiments: smoke tests, Phase 1 check, timing of the core baseline B\*, correctness, quality, energy, processor, model conversion, placement and quality-per-setting experiments. Each experiment folder has its scripts, raw data, results and a README with what it shows and what we concluded |
 | [`reports/`](reports/) | Literature review, survey and Phase 2 baseline report (PDF) |
 | [`demo/`](demo/) | Demo video: MLVC-S encoding and decoding a talking-head clip, original and decoded side by side |
 | [`REPRODUCE.md`](REPRODUCE.md) | How to rerun everything and rebuild every result |
 
-The baseline took about **29 hours** of measurement (≈ 5.3 h for the core baseline B\* and ≈ 24 h for the processor, model conversion and placement experiments, including one run of 21.4 hours), every timed run in the same fixed **quiet mode** (below).
+The baseline took about **40 hours** of measurement (≈ 5.3 h for the core baseline B\*, ≈ 24 h for the processor, model conversion and placement experiments, including one run of 21.4 hours, and ≈ 10.7 h for quality and energy at every setting and QP), every timed run in the same fixed **quiet mode** (below).
 
 ## Key results
 
@@ -51,6 +51,25 @@ The baseline took about **29 hours** of measurement (≈ 5.3 h for the core base
 - **No CPU fallback:** every operation of every network runs on the processor it is given.
 - **Keep both networks on the NE while they keep up** — it is 3–7× cheaper than any placement using the GPU. When they stop keeping up, move the **encoder** to the GPU and keep the **decoder** on the NE (a decoder off the NE drifts).
 - At 30 fps every feasible setting keeps its slowest frames within 24–31 ms: **higher quality is paid for in frame rate, energy or bitrate, not latency.**
+
+### Quality per setting and energy vs quality (7 settings × 5 QPs, 20 evaluation clips)
+
+| Setting | Label | Energy (mJ / pair) | Display PSNR-Y at 287 kbps | Face LPIPS at 287 kbps |
+|---|---|---|---|---|
+| Full MLVC 360p (B\*) | 30 fps | 63 | 34.25 dB | 0.233 |
+| **MLVC-S 540p, NE–NE** | 30 fps | **43** | 35.50 dB | 0.202 |
+| MLVC-S 720p, GPU–NE | 30 fps | 339 | 35.98 dB | 0.192 |
+| Full MLVC 540p, GPU–NE | 30 fps | 667 | 35.98 dB | 0.190 |
+| MLVC-S 1080p, NE–NE | 15 fps only | 291 | 35.76 dB | 0.202 |
+| Full MLVC 720p, NE–NE | 15 fps only | 404 | 36.84 dB | 0.179 |
+| Full MLVC 1080p, NE–NE | infeasible | 1554 | 36.69 dB | 0.190 |
+
+Energy at 287 kbps from experiment 10 (re-measured at five QPs; B\* 63 mJ, 3 % below the 65.3 mJ of experiment 06).
+
+- **Energy does not depend on the bitrate:** on the NE it changes by 1–2 % from QP 16 to QP 40, so each setting's energy is fixed by its model, size and placement.
+- **MLVC-S 540p beats B\*** at screen size at every bitrate where both exist (+0.5 dB at B\*'s 170 kbps, +1.25 dB at 287 kbps; better face LPIPS) **with 32 % less energy**. B\* is dominated.
+- **Full MLVC 540p is not worth its energy:** 14–15× MLVC-S 540p for +0.4–0.6 dB; MLVC-S 720p (encoder on the GPU) matches it at half the energy.
+- The 30 fps energy–quality front is **MLVC-S 540p (NE–NE)** and **MLVC-S 720p (GPU–NE)**. Moving the encoder to the GPU costs about 4 % in bitrate (encoder–decoder drift).
 
 ## Platform
 
@@ -86,7 +105,7 @@ DuplexNVC/
 ├── reports/                           literature review, survey and Phase 2 baseline report (PDF)
 ├── demo/                              demo video: MLVC-S encoding and decoding on the M4 Pro
 └── baseline/
-    ├── README.md                      overview of the nine experiments and headline results
+    ├── README.md                      overview of the ten experiments and headline results
     ├── REPRODUCE.md                   setup, run order, conditions, expected values
     ├── common/                        measurement program, analysis tools, shared scripts, rebuild scripts
     ├── 01_smoke_test_experiment/      S1, S2: does the pipeline work?
@@ -97,15 +116,16 @@ DuplexNVC/
     ├── 06_energy_experiment/          E7: energy of B* per frame pair
     ├── 07_processor_experiment/       X1: placement trace; each network alone on NE, GPU, CPU
     ├── 08_model_conversion_experiment/ X2: full MLVC and MLVC-S at 540p/720p/1080p
-    └── 09_placement_experiment/       X3: every setting × placement, table of feasible settings
+    ├── 09_placement_experiment/       X3: every setting × placement, table of feasible settings
+    └── 10_quality_per_setting_experiment/ quality of all 7 settings, energy at every QP, energy–quality Pareto
 ```
 
 Each experiment folder holds `scripts/`, `raw_data/`, `results/` and a README.
 
 ## Reproducing
 
-Full guide: [`baseline/REPRODUCE.md`](baseline/REPRODUCE.md) (summary in [`REPRODUCE.md`](REPRODUCE.md)). Setup takes a few hours of downloads and builds; the nine experiments take about 29 hours, the longest being the resumable 21.4-hour placement experiment. Without a Mac, every table and figure can be rebuilt from the raw data with the three scripts in [`baseline/common/analysis/`](baseline/common/analysis/).
+Full guide: [`baseline/REPRODUCE.md`](baseline/REPRODUCE.md) (summary in [`REPRODUCE.md`](REPRODUCE.md)). Setup takes a few hours of downloads and builds; the ten experiments take about 40 hours, the longest being the resumable 21.4-hour placement experiment. Without a Mac, every table and figure can be rebuilt from the raw data with the three scripts in [`baseline/common/analysis/`](baseline/common/analysis/).
 
 ## Next steps
 
-The baseline is complete for timing and energy. Still to be measured, in order: quality at every setting and the energy–quality Pareto front; correctness of every encoder/decoder pairing; energy on battery and in Low Power Mode (plus a check against an external power meter, if hardware is provided); the cost of face-based scene analysis; multi-person data (full VCD, HEVC Class E, Pexels); and an on-device HEVC anchor. DuplexNVC itself — a controller that chooses placement, schedule, resolution and model from the content and the energy state — will then be measured against B\* with exactly this protocol.
+The baseline is complete for timing and energy. Still to be measured, in order: correctness of every encoder/decoder pairing (experiment 10 already shows a GPU encoder with an NE decoder costs about 4 % in bitrate); energy on battery and in Low Power Mode (plus a check against an external power meter, if hardware is provided); the cost of face-based scene analysis; multi-person data (full VCD, HEVC Class E, Pexels); and an on-device HEVC anchor. DuplexNVC itself — a controller that chooses placement, schedule, resolution and model from the content and the energy state — will then be measured against B\* with exactly this protocol.

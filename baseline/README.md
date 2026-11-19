@@ -1,8 +1,8 @@
 # DuplexNVC Baseline
 
-The baseline is the fixed reference against which every later DuplexNVC change is measured. It was built in nine experiments, each in its own folder with its scripts, raw data, results and a README that explains what was run, what it shows and what we concluded.
+The baseline is the fixed reference against which every later DuplexNVC change is measured. It was built in ten experiments, each in its own folder with its scripts, raw data, results and a README that explains what was run, what it shows and what we concluded.
 
-**The core baseline B\*:** full MLVC (`dmc61sbr_reglu`, PSNR weights, Core ML fp16) at 640×360, encoder **and** decoder on the Apple Neural Engine (NE), full duplex at 30 fps (33.3 ms deadline), QP 26, an I-frame every 64 frames, VCD talking-head content. Experiments 07–09 then extend it to the GPU and CPU, to the seven model/resolution settings of our survey, and to every placement of the encoder and the decoder.
+**The core baseline B\*:** full MLVC (`dmc61sbr_reglu`, PSNR weights, Core ML fp16) at 640×360, encoder **and** decoder on the Apple Neural Engine (NE), full duplex at 30 fps (33.3 ms deadline), QP 26, an I-frame every 64 frames, VCD talking-head content. Experiments 07–09 then extend it to the GPU and CPU, to the seven model/resolution settings of our survey, and to every placement of the encoder and the decoder; experiment 10 measures the quality of every setting and its energy at every QP.
 
 **Device:** MacBook Pro 14-inch, Apple M4 Pro, 24 GB, macOS 26.6 · **Codec:** `libmlvc` 0.1.0, commit `eb5d60a`.
 
@@ -19,9 +19,10 @@ The baseline is the fixed reference against which every later DuplexNVC change i
 | [`07_processor_experiment`](07_processor_experiment/) | X1 | Do the networks run where we ask? How do GPU and CPU compare with the NE? | 72 | 2.3 h |
 | [`08_model_conversion_experiment`](08_model_conversion_experiment/) | X2 | Full MLVC and MLVC-S at 540p/720p/1080p: conversion, placement, input streams | 7 bundles | 0.5 h |
 | [`09_placement_experiment`](09_placement_experiment/) | X3 | Every setting × every encoder/decoder placement: which meet 30 fps, at what energy? | 584 | 21.4 h |
+| [`10_quality_per_setting_experiment`](10_quality_per_setting_experiment/) | Step 4b | Quality of every setting at screen size and on faces; energy at every QP; which settings are on the energy–quality Pareto front at equal bitrate? | 900 + 175 | 3.0 h + 7.7 h |
 | [`common`](common/) | — | Measurement program, analysis tools, shared scripts, rebuild scripts, setup logs | — | — |
 
-In total about **29 hours** of measurement, almost all of it in quiet mode.
+In total about **40 hours** of measurement; every timed and energy run in quiet mode (quality runs do not depend on timing).
 
 ## Headline results
 
@@ -37,6 +38,10 @@ In total about **29 hours** of measurement, almost all of it in quiet mode.
 | Feasible at 30 fps | **23 of 38** setting × placement combinations; 9 only at 15 fps; 6 neither | 09 |
 | Best placements | Keep both networks on the NE while they keep up; then move the **encoder** to the GPU (full MLVC 540p, MLVC-S 720p); full MLVC above 540p does not reach 30 fps | 09 |
 | Most efficient setting | **MLVC-S 540p, NE–NE**: 30 fps, p99 ≈ 27 ms, 45 mJ per frame pair | 09 |
+| Energy vs bitrate | Energy per frame pair changes by only 1–2 % from QP 16 to QP 40 on the NE: it is set by model, size and placement | 10 |
+| MLVC-S 540p vs B\* at screen size | **Better at every bitrate** (+1.25 dB display PSNR-Y, face LPIPS 0.202 vs 0.233 at 287 kbps) with 32 % less energy; B\* is dominated | 10 |
+| Full MLVC 540p | **Not worth its energy**: 14–15× MLVC-S 540p for +0.4–0.6 dB; MLVC-S 720p (GPU–NE) matches it at half the energy | 10 |
+| 30 fps energy–quality front | **MLVC-S 540p (NE–NE)** and **MLVC-S 720p (GPU–NE)**; a GPU encoder with an NE decoder costs ≈ 4 % in bitrate | 10 |
 
 ## Quiet mode
 
@@ -47,7 +52,7 @@ Every timed run used the same state: AC power and Low Power Mode off; **Wi-Fi an
 ```
 NN_<name>_experiment/
 ├── README.md     question, what was run, how to run it, files, results, conclusion
-├── scripts/      the scripts that ran it (all are run from ~/Downloads/d)
+├── scripts/      the scripts that ran it (run from ~/Downloads/d; experiment 10's from ~/Downloads/d/4b)
 ├── raw_data/     per-run records (frames.csv, run.txt, power.txt) and console logs (logs/)
 └── results/      result tables (CSV) and figures (PNG, PDF)
 ```

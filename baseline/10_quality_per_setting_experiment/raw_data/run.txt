@@ -1,0 +1,5 @@
+Sat Nov 14 01:23:45 +04 2026
+ProductName:		macOS
+ProductVersion:		26.6.2
+BuildVersion:		25G83
+libmlvc eb5d60a

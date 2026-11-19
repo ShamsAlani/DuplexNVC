@@ -1,0 +1,1117 @@
+
+== 4b START  Sat Nov 14 01:23:45 +04 2026
+ProductName:		macOS ProductVersion:		26.6.2 BuildVersion:		25G83 
+libmlvc eb5d60a
+Now drawing from 'AC Power'
+== pre-flight
+   ok  /Users/shamsalani/Downloads/duplexnvc-baseline/harness/build/ninja-release/libmlvc_example
+   ok  /Users/shamsalani/Downloads/duplexnvc-baseline/libmlvc/install/mac-arm64-ninja-release/bin/mlvc
+   ok  /Users/shamsalani/Downloads/duplexnvc-baseline/.venv/bin/python3
+   ok  /Users/shamsalani/Downloads/duplexnvc-baseline/tools/facebox
+   ok  /Users/shamsalani/Downloads/duplexnvc-baseline/data/split.json
+   ok  /Users/shamsalani/Downloads/duplexnvc-baseline/phase2/step4/table_feasible.csv
+   ok  /Users/shamsalani/Downloads/duplexnvc-baseline/bundles/mlvc
+   ok  /Users/shamsalani/Downloads/duplexnvc-baseline/bundles/mlvc_540p
+   ok  /Users/shamsalani/Downloads/duplexnvc-baseline/bundles/mlvc_720p
+   ok  /Users/shamsalani/Downloads/duplexnvc-baseline/bundles/mlvc_1080p
+   ok  /Users/shamsalani/Downloads/duplexnvc-baseline/bundles/mlvcs_540p
+   ok  /Users/shamsalani/Downloads/duplexnvc-baseline/bundles/mlvcs_720p
+   ok  /Users/shamsalani/Downloads/duplexnvc-baseline/bundles/mlvcs_1080p
+   evaluation MP4s present: 20 of 20
+   ok  ffmpeg
+   installing matplotlib into the venv
+
+[notice] A new release of pip is available: 25.1.1 -> 26.3
+[notice] To update, run: /Users/shamsalani/Downloads/duplexnvc-baseline/.venv/bin/python3 -m pip install --upgrade pip
+/Users/shamsalani/Downloads/duplexnvc-baseline/.venv/lib/python3.13/site-packages/torchvision/models/_utils.py:207: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/Users/shamsalani/Downloads/duplexnvc-baseline/.venv/lib/python3.13/site-packages/torchvision/models/_utils.py:222: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=AlexNet_Weights.IMAGENET1K_V1`. You can also use `weights=AlexNet_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+   ok  python: cv2 5.0.0 torch 2.15.0 lpips AlexNet loaded, matplotlib 3.11.2
+   free disk: 587 GB (need ~10)
+
+== quality pass 1  Sat Nov 14 01:23:56 +04 2026
+FULL: 20 clips x 9 configurations x QP [16, 24, 26, 32, 40] = 900 runs, 0 already done, 900 to do
+/Users/shamsalani/Downloads/duplexnvc-baseline/.venv/lib/python3.13/site-packages/torchvision/models/_utils.py:207: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/Users/shamsalani/Downloads/duplexnvc-baseline/.venv/lib/python3.13/site-packages/torchvision/models/_utils.py:222: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=AlexNet_Weights.IMAGENET1K_V1`. You can also use `weights=AlexNet_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+== clip 1/20 08ee5e  01:23:58
+   originals + face boxes: 30 frames, 30 faces (1 s)
+   [1/900] mlvc_360p_npu-npu    qp16     332.2 kbps  Y 41.87  disp 34.27  face 39.29 / 0.173  (30 faces)  enc=npu  4 s  ETA 1.4 h
+   [2/900] mlvc_360p_npu-npu    qp24     186.5 kbps  Y 40.18  disp 33.78  face 38.11 / 0.199  (30 faces)  enc=npu  4 s  ETA 1.2 h
+   [3/900] mlvc_360p_npu-npu    qp26     157.3 kbps  Y 39.49  disp 33.54  face 37.63 / 0.211  (30 faces)  enc=npu  4 s  ETA 1.2 h
+   [4/900] mlvc_360p_npu-npu    qp32      88.5 kbps  Y 36.74  disp 32.34  face 35.57 / 0.249  (30 faces)  enc=npu  4 s  ETA 1.1 h
+   [5/900] mlvc_360p_npu-npu    qp40      36.8 kbps  Y 32.11  disp 29.42  face 32.08 / 0.339  (30 faces)  enc=npu  4 s  ETA 1.1 h
+   [6/900] mlvc_540p_npu-npu    qp16     712.0 kbps  Y 42.98  disp 38.03  face 41.74 / 0.118  (30 faces)  enc=npu  8 s  ETA 1.3 h
+   [7/900] mlvc_540p_npu-npu    qp24     341.8 kbps  Y 41.37  disp 37.22  face 40.32 / 0.141  (30 faces)  enc=npu  8 s  ETA 1.4 h
+   [8/900] mlvc_540p_npu-npu    qp26     279.8 kbps  Y 40.73  disp 36.87  face 39.77 / 0.151  (30 faces)  enc=npu  8 s  ETA 1.5 h
+   [9/900] mlvc_540p_npu-npu    qp32     152.7 kbps  Y 38.20  disp 35.25  face 37.66 / 0.193  (30 faces)  enc=npu  8 s  ETA 1.5 h
+   [10/900] mlvc_540p_npu-npu    qp40      65.6 kbps  Y 33.71  disp 31.71  face 34.20 / 0.260  (30 faces)  enc=npu  8 s  ETA 1.6 h
+   [11/900] mlvc_540p_gpu-npu    qp16     707.2 kbps  Y 42.88  disp 37.99  face 41.52 / 0.119  (30 faces)  enc=gpu  13 s  ETA 1.7 h
+   [12/900] mlvc_540p_gpu-npu    qp24     339.8 kbps  Y 41.30  disp 37.18  face 40.17 / 0.141  (30 faces)  enc=gpu  13 s  ETA 1.8 h
+   [13/900] mlvc_540p_gpu-npu    qp26     278.9 kbps  Y 40.67  disp 36.83  face 39.57 / 0.152  (30 faces)  enc=gpu  12 s  ETA 1.9 h
+   [14/900] mlvc_540p_gpu-npu    qp32     151.7 kbps  Y 38.14  disp 35.21  face 37.61 / 0.189  (30 faces)  enc=gpu  13 s  ETA 2.0 h
+   [15/900] mlvc_540p_gpu-npu    qp40      64.9 kbps  Y 33.66  disp 31.66  face 34.09 / 0.256  (30 faces)  enc=gpu  12 s  ETA 2.1 h
+   [16/900] mlvcs_540p_npu-npu   qp16     800.0 kbps  Y 42.39  disp 37.71  face 41.51 / 0.120  (30 faces)  enc=npu  4 s  ETA 2.0 h
+   [17/900] mlvcs_540p_npu-npu   qp24     336.7 kbps  Y 40.72  disp 36.84  face 39.90 / 0.151  (30 faces)  enc=npu  4 s  ETA 1.9 h
+   [18/900] mlvcs_540p_npu-npu   qp26     270.6 kbps  Y 40.06  disp 36.45  face 39.25 / 0.164  (30 faces)  enc=npu  4 s  ETA 1.9 h
+   [19/900] mlvcs_540p_npu-npu   qp32     146.3 kbps  Y 37.35  disp 34.64  face 36.76 / 0.212  (30 faces)  enc=npu  4 s  ETA 1.8 h
+   [20/900] mlvcs_540p_npu-npu   qp40      64.5 kbps  Y 32.83  disp 30.93  face 32.96 / 0.283  (30 faces)  enc=npu  4 s  ETA 1.8 h
+   [21/900] mlvc_720p_npu-npu    qp16    1216.7 kbps  Y 43.57  disp 39.88  face 42.98 / 0.101  (30 faces)  enc=npu  15 s  ETA 1.9 h
+   [22/900] mlvc_720p_npu-npu    qp24     524.5 kbps  Y 42.01  disp 38.86  face 41.51 / 0.121  (30 faces)  enc=npu  15 s  ETA 1.9 h
+   [23/900] mlvc_720p_npu-npu    qp26     407.9 kbps  Y 41.46  disp 38.48  face 40.99 / 0.130  (30 faces)  enc=npu  15 s  ETA 2.0 h
+   [24/900] mlvc_720p_npu-npu    qp32     209.5 kbps  Y 39.26  disp 36.85  face 38.96 / 0.167  (30 faces)  enc=npu  15 s  ETA 2.1 h
+   [25/900] mlvc_720p_npu-npu    qp40      89.9 kbps  Y 35.06  disp 33.29  face 35.31 / 0.223  (30 faces)  enc=npu  15 s  ETA 2.1 h
+   [26/900] mlvcs_720p_npu-npu   qp16    1400.1 kbps  Y 43.35  disp 39.68  face 42.77 / 0.099  (30 faces)  enc=npu  6 s  ETA 2.1 h
+   [27/900] mlvcs_720p_npu-npu   qp24     539.0 kbps  Y 41.58  disp 38.55  face 41.08 / 0.123  (30 faces)  enc=npu  6 s  ETA 2.1 h
+   [28/900] mlvcs_720p_npu-npu   qp26     410.2 kbps  Y 40.97  disp 38.12  face 40.53 / 0.135  (30 faces)  enc=npu  6 s  ETA 2.1 h
+   [29/900] mlvcs_720p_npu-npu   qp32     205.1 kbps  Y 38.49  disp 36.24  face 38.13 / 0.179  (30 faces)  enc=npu  6 s  ETA 2.0 h
+   [30/900] mlvcs_720p_npu-npu   qp40      90.0 kbps  Y 34.09  disp 32.41  face 34.33 / 0.240  (30 faces)  enc=npu  6 s  ETA 2.0 h
+   [31/900] mlvcs_720p_gpu-npu   qp16    1398.5 kbps  Y 43.26  disp 39.63  face 42.66 / 0.100  (30 faces)  enc=gpu  9 s  ETA 2.0 h
+   [32/900] mlvcs_720p_gpu-npu   qp24     538.8 kbps  Y 41.53  disp 38.52  face 40.96 / 0.125  (30 faces)  enc=gpu  9 s  ETA 2.0 h
+   [33/900] mlvcs_720p_gpu-npu   qp26     410.1 kbps  Y 40.93  disp 38.09  face 40.46 / 0.134  (30 faces)  enc=gpu  9 s  ETA 2.0 h
+   [34/900] mlvcs_720p_gpu-npu   qp32     204.9 kbps  Y 38.46  disp 36.22  face 38.07 / 0.177  (30 faces)  enc=gpu  9 s  ETA 2.0 h
+   [35/900] mlvcs_720p_gpu-npu   qp40      89.8 kbps  Y 34.08  disp 32.40  face 34.30 / 0.243  (30 faces)  enc=gpu  9 s  ETA 2.0 h
+   [36/900] mlvc_1080p_npu-npu   qp16    2528.0 kbps  Y 43.89  disp 42.26  face 44.32 / 0.091  (30 faces)  enc=npu  31 s  ETA 2.2 h
+   [37/900] mlvc_1080p_npu-npu   qp24    1088.0 kbps  Y 42.36  disp 40.70  face 42.76 / 0.112  (30 faces)  enc=npu  30 s  ETA 2.3 h
+   [38/900] mlvc_1080p_npu-npu   qp26     827.5 kbps  Y 41.90  disp 40.26  face 42.29 / 0.119  (30 faces)  enc=npu  30 s  ETA 2.4 h
+   [39/900] mlvc_1080p_npu-npu   qp32     365.5 kbps  Y 40.16  disp 38.61  face 40.53 / 0.147  (30 faces)  enc=npu  30 s  ETA 2.6 h
+   [40/900] mlvc_1080p_npu-npu   qp40     157.1 kbps  Y 36.72  disp 35.31  face 37.15 / 0.197  (30 faces)  enc=npu  30 s  ETA 2.7 h
+   [41/900] mlvcs_1080p_npu-npu  qp16    3012.5 kbps  Y 43.95  disp 42.16  face 44.26 / 0.087  (30 faces)  enc=npu  13 s  ETA 2.7 h
+   [42/900] mlvcs_1080p_npu-npu  qp24    1202.6 kbps  Y 42.14  disp 40.48  face 42.49 / 0.109  (30 faces)  enc=npu  13 s  ETA 2.7 h
+   [43/900] mlvcs_1080p_npu-npu  qp26     865.3 kbps  Y 41.57  disp 39.94  face 41.96 / 0.117  (30 faces)  enc=npu  13 s  ETA 2.7 h
+   [44/900] mlvcs_1080p_npu-npu  qp32     349.8 kbps  Y 39.56  disp 38.03  face 39.78 / 0.149  (30 faces)  enc=npu  13 s  ETA 2.7 h
+   [45/900] mlvcs_1080p_npu-npu  qp40     150.9 kbps  Y 35.74  disp 34.33  face 36.22 / 0.206  (30 faces)  enc=npu  13 s  ETA 2.7 h
+== clip 2/20 104c93  01:32:32
+   originals + face boxes: 30 frames, 36 faces (1 s)
+   [46/900] mlvc_360p_npu-npu    qp16     388.0 kbps  Y 41.65  disp 34.08  face 34.73 / 0.169  (36 faces)  enc=npu  4 s  ETA 2.7 h
+   [47/900] mlvc_360p_npu-npu    qp24     217.7 kbps  Y 39.66  disp 33.48  face 33.45 / 0.191  (36 faces)  enc=npu  4 s  ETA 2.6 h
+   [48/900] mlvc_360p_npu-npu    qp26     182.7 kbps  Y 38.92  disp 33.20  face 32.90 / 0.201  (36 faces)  enc=npu  4 s  ETA 2.6 h
+   [49/900] mlvc_360p_npu-npu    qp32      99.9 kbps  Y 36.08  disp 31.89  face 30.89 / 0.251  (36 faces)  enc=npu  4 s  ETA 2.6 h
+   [50/900] mlvc_360p_npu-npu    qp40      42.6 kbps  Y 31.70  disp 29.07  face 27.60 / 0.350  (36 faces)  enc=npu  4 s  ETA 2.5 h
+   [51/900] mlvc_540p_npu-npu    qp16     673.2 kbps  Y 43.39  disp 38.01  face 37.66 / 0.089  (36 faces)  enc=npu  8 s  ETA 2.5 h
+   [52/900] mlvc_540p_npu-npu    qp24     369.7 kbps  Y 41.35  disp 37.08  face 36.09 / 0.109  (36 faces)  enc=npu  8 s  ETA 2.5 h
+   [53/900] mlvc_540p_npu-npu    qp26     308.4 kbps  Y 40.60  disp 36.67  face 35.46 / 0.118  (36 faces)  enc=npu  8 s  ETA 2.5 h
+   [54/900] mlvc_540p_npu-npu    qp32     170.6 kbps  Y 37.83  disp 34.91  face 33.20 / 0.158  (36 faces)  enc=npu  8 s  ETA 2.5 h
+   [55/900] mlvc_540p_npu-npu    qp40      75.1 kbps  Y 33.40  disp 31.43  face 29.48 / 0.264  (36 faces)  enc=npu  8 s  ETA 2.5 h
+   [56/900] mlvc_540p_gpu-npu    qp16     669.4 kbps  Y 42.39  disp 37.51  face 37.22 / 0.089  (36 faces)  enc=gpu  13 s  ETA 2.5 h
+   [57/900] mlvc_540p_gpu-npu    qp24     366.5 kbps  Y 40.12  disp 36.25  face 35.49 / 0.111  (36 faces)  enc=gpu  13 s  ETA 2.5 h
+   [58/900] mlvc_540p_gpu-npu    qp26     306.5 kbps  Y 39.55  disp 35.94  face 34.88 / 0.118  (36 faces)  enc=gpu  13 s  ETA 2.5 h
+   [59/900] mlvc_540p_gpu-npu    qp32     169.6 kbps  Y 37.08  disp 34.33  face 32.72 / 0.160  (36 faces)  enc=gpu  13 s  ETA 2.5 h
+   [60/900] mlvc_540p_gpu-npu    qp40      74.3 kbps  Y 33.21  disp 31.26  face 29.26 / 0.266  (36 faces)  enc=gpu  13 s  ETA 2.5 h
+   [61/900] mlvcs_540p_npu-npu   qp16     732.8 kbps  Y 42.41  disp 37.46  face 37.06 / 0.098  (36 faces)  enc=npu  4 s  ETA 2.5 h
+   [62/900] mlvcs_540p_npu-npu   qp24     400.1 kbps  Y 40.46  disp 36.50  face 35.48 / 0.117  (36 faces)  enc=npu  4 s  ETA 2.4 h
+   [63/900] mlvcs_540p_npu-npu   qp26     333.2 kbps  Y 39.72  disp 36.08  face 34.87 / 0.127  (36 faces)  enc=npu  4 s  ETA 2.4 h
+   [64/900] mlvcs_540p_npu-npu   qp32     177.3 kbps  Y 36.78  disp 34.11  face 32.48 / 0.173  (36 faces)  enc=npu  4 s  ETA 2.4 h
+   [65/900] mlvcs_540p_npu-npu   qp40      74.5 kbps  Y 32.20  disp 30.38  face 28.68 / 0.291  (36 faces)  enc=npu  4 s  ETA 2.4 h
+   [66/900] mlvc_720p_npu-npu    qp16     958.9 kbps  Y 44.41  disp 39.92  face 39.66 / 0.057  (36 faces)  enc=npu  15 s  ETA 2.4 h
+   [67/900] mlvc_720p_npu-npu    qp24     506.0 kbps  Y 42.49  disp 38.88  face 37.91 / 0.075  (36 faces)  enc=npu  15 s  ETA 2.4 h
+   [68/900] mlvc_720p_npu-npu    qp26     419.8 kbps  Y 41.79  disp 38.46  face 37.26 / 0.081  (36 faces)  enc=npu  15 s  ETA 2.4 h
+   [69/900] mlvc_720p_npu-npu    qp32     233.5 kbps  Y 39.17  disp 36.64  face 34.80 / 0.116  (36 faces)  enc=npu  15 s  ETA 2.4 h
+   [70/900] mlvc_720p_npu-npu    qp40     102.8 kbps  Y 34.81  disp 33.05  face 30.94 / 0.206  (36 faces)  enc=npu  15 s  ETA 2.4 h
+   [71/900] mlvcs_720p_npu-npu   qp16    1106.3 kbps  Y 43.82  disp 39.58  face 39.16 / 0.059  (36 faces)  enc=npu  6 s  ETA 2.4 h
+   [72/900] mlvcs_720p_npu-npu   qp24     581.1 kbps  Y 41.79  disp 38.43  face 37.29 / 0.080  (36 faces)  enc=npu  6 s  ETA 2.4 h
+   [73/900] mlvcs_720p_npu-npu   qp26     478.4 kbps  Y 41.02  disp 37.94  face 36.61 / 0.087  (36 faces)  enc=npu  6 s  ETA 2.4 h
+   [74/900] mlvcs_720p_npu-npu   qp32     253.4 kbps  Y 38.09  disp 35.82  face 33.96 / 0.129  (36 faces)  enc=npu  6 s  ETA 2.4 h
+   [75/900] mlvcs_720p_npu-npu   qp40     112.0 kbps  Y 33.57  disp 31.92  face 29.86 / 0.236  (36 faces)  enc=npu  6 s  ETA 2.3 h
+   [76/900] mlvcs_720p_gpu-npu   qp16    1103.6 kbps  Y 43.16  disp 39.20  face 38.63 / 0.060  (36 faces)  enc=gpu  9 s  ETA 2.3 h
+   [77/900] mlvcs_720p_gpu-npu   qp24     579.3 kbps  Y 40.99  disp 37.83  face 36.55 / 0.081  (36 faces)  enc=gpu  9 s  ETA 2.3 h
+   [78/900] mlvcs_720p_gpu-npu   qp26     478.5 kbps  Y 40.36  disp 37.44  face 35.87 / 0.090  (36 faces)  enc=gpu  9 s  ETA 2.3 h
+   [79/900] mlvcs_720p_gpu-npu   qp32     253.0 kbps  Y 37.74  disp 35.53  face 33.43 / 0.134  (36 faces)  enc=gpu  9 s  ETA 2.3 h
+   [80/900] mlvcs_720p_gpu-npu   qp40     112.2 kbps  Y 33.38  disp 31.75  face 29.58 / 0.239  (36 faces)  enc=gpu  9 s  ETA 2.3 h
+   [81/900] mlvc_1080p_npu-npu   qp16    1774.6 kbps  Y 45.05  disp 43.56  face 41.67 / 0.043  (36 faces)  enc=npu  31 s  ETA 2.4 h
+   [82/900] mlvc_1080p_npu-npu   qp24     882.9 kbps  Y 43.37  disp 41.96  face 39.76 / 0.057  (36 faces)  enc=npu  31 s  ETA 2.4 h
+   [83/900] mlvc_1080p_npu-npu   qp26     721.7 kbps  Y 42.78  disp 41.39  face 39.14 / 0.064  (36 faces)  enc=npu  31 s  ETA 2.5 h
+   [84/900] mlvc_1080p_npu-npu   qp32     391.3 kbps  Y 40.53  disp 39.20  face 36.72 / 0.088  (36 faces)  enc=npu  30 s  ETA 2.5 h
+   [85/900] mlvc_1080p_npu-npu   qp40     177.9 kbps  Y 36.59  disp 35.32  face 32.80 / 0.152  (36 faces)  enc=npu  31 s  ETA 2.6 h
+   [86/900] mlvcs_1080p_npu-npu  qp16    2129.5 kbps  Y 44.73  disp 43.23  face 41.26 / 0.044  (36 faces)  enc=npu  13 s  ETA 2.6 h
+   [87/900] mlvcs_1080p_npu-npu  qp24    1048.3 kbps  Y 42.85  disp 41.45  face 39.24 / 0.060  (36 faces)  enc=npu  13 s  ETA 2.6 h
+   [88/900] mlvcs_1080p_npu-npu  qp26     844.3 kbps  Y 42.16  disp 40.78  face 38.49 / 0.067  (36 faces)  enc=npu  13 s  ETA 2.6 h
+   [89/900] mlvcs_1080p_npu-npu  qp32     424.1 kbps  Y 39.51  disp 38.20  face 35.81 / 0.097  (36 faces)  enc=npu  13 s  ETA 2.6 h
+   [90/900] mlvcs_1080p_npu-npu  qp40     184.5 kbps  Y 35.18  disp 33.93  face 31.62 / 0.174  (36 faces)  enc=npu  13 s  ETA 2.6 h
+== clip 3/20 1e8830  01:41:11
+   originals + face boxes: 30 frames, 30 faces (1 s)
+   [91/900] mlvc_360p_npu-npu    qp16     511.1 kbps  Y 36.89  disp 25.33  face 30.27 / 0.284  (30 faces)  enc=npu  4 s  ETA 2.6 h
+   [92/900] mlvc_360p_npu-npu    qp24     305.3 kbps  Y 35.80  disp 25.21  face 29.75 / 0.312  (30 faces)  enc=npu  4 s  ETA 2.5 h
+   [93/900] mlvc_360p_npu-npu    qp26     262.5 kbps  Y 35.31  disp 25.14  face 29.56 / 0.320  (30 faces)  enc=npu  4 s  ETA 2.5 h
+   [94/900] mlvc_360p_npu-npu    qp32     154.6 kbps  Y 33.30  disp 24.78  face 28.65 / 0.363  (30 faces)  enc=npu  4 s  ETA 2.5 h
+   [95/900] mlvc_360p_npu-npu    qp40      67.7 kbps  Y 29.12  disp 23.54  face 26.77 / 0.445  (30 faces)  enc=npu  4 s  ETA 2.5 h
+   [96/900] mlvc_540p_npu-npu    qp16    1097.5 kbps  Y 37.32  disp 28.01  face 33.10 / 0.154  (30 faces)  enc=npu  8 s  ETA 2.5 h
+   [97/900] mlvc_540p_npu-npu    qp24     594.6 kbps  Y 36.33  disp 27.82  face 32.26 / 0.187  (30 faces)  enc=npu  8 s  ETA 2.5 h
+   [98/900] mlvc_540p_npu-npu    qp26     493.9 kbps  Y 35.91  disp 27.72  face 31.93 / 0.202  (30 faces)  enc=npu  8 s  ETA 2.5 h
+   [99/900] mlvc_540p_npu-npu    qp32     283.7 kbps  Y 34.11  disp 27.24  face 30.59 / 0.266  (30 faces)  enc=npu  8 s  ETA 2.5 h
+   [100/900] mlvc_540p_npu-npu    qp40     120.1 kbps  Y 30.17  disp 25.66  face 28.41 / 0.368  (30 faces)  enc=npu  8 s  ETA 2.4 h
+   [101/900] mlvc_540p_gpu-npu    qp16    1093.9 kbps  Y 37.26  disp 28.00  face 32.98 / 0.154  (30 faces)  enc=gpu  13 s  ETA 2.4 h
+   [102/900] mlvc_540p_gpu-npu    qp24     594.4 kbps  Y 36.29  disp 27.81  face 32.13 / 0.187  (30 faces)  enc=gpu  13 s  ETA 2.4 h
+   [103/900] mlvc_540p_gpu-npu    qp26     492.8 kbps  Y 35.87  disp 27.72  face 31.79 / 0.202  (30 faces)  enc=gpu  13 s  ETA 2.4 h
+   [104/900] mlvc_540p_gpu-npu    qp32     282.4 kbps  Y 34.03  disp 27.22  face 30.45 / 0.264  (30 faces)  enc=gpu  13 s  ETA 2.4 h
+   [105/900] mlvc_540p_gpu-npu    qp40     120.2 kbps  Y 30.14  disp 25.64  face 28.27 / 0.368  (30 faces)  enc=gpu  13 s  ETA 2.4 h
+   [106/900] mlvcs_540p_npu-npu   qp16    1119.1 kbps  Y 35.95  disp 27.68  face 32.64 / 0.172  (30 faces)  enc=npu  4 s  ETA 2.4 h
+   [107/900] mlvcs_540p_npu-npu   qp24     590.7 kbps  Y 35.19  disp 27.50  face 31.93 / 0.203  (30 faces)  enc=npu  4 s  ETA 2.4 h
+   [108/900] mlvcs_540p_npu-npu   qp26     486.8 kbps  Y 34.83  disp 27.41  face 31.60 / 0.219  (30 faces)  enc=npu  4 s  ETA 2.4 h
+   [109/900] mlvcs_540p_npu-npu   qp32     271.5 kbps  Y 33.06  disp 26.87  face 30.21 / 0.283  (30 faces)  enc=npu  4 s  ETA 2.4 h
+   [110/900] mlvcs_540p_npu-npu   qp40     126.8 kbps  Y 29.37  disp 25.24  face 27.82 / 0.393  (30 faces)  enc=npu  4 s  ETA 2.4 h
+   [111/900] mlvc_720p_npu-npu    qp16    2204.3 kbps  Y 37.85  disp 30.62  face 35.26 / 0.089  (30 faces)  enc=npu  15 s  ETA 2.4 h
+   [112/900] mlvc_720p_npu-npu    qp24     994.9 kbps  Y 36.81  disp 30.30  face 34.13 / 0.116  (30 faces)  enc=npu  15 s  ETA 2.4 h
+   [113/900] mlvc_720p_npu-npu    qp26     793.2 kbps  Y 36.41  disp 30.16  face 33.68 / 0.131  (30 faces)  enc=npu  15 s  ETA 2.4 h
+   [114/900] mlvc_720p_npu-npu    qp32     422.0 kbps  Y 34.67  disp 29.49  face 31.97 / 0.204  (30 faces)  enc=npu  15 s  ETA 2.4 h
+   [115/900] mlvc_720p_npu-npu    qp40     175.7 kbps  Y 30.95  disp 27.49  face 29.49 / 0.316  (30 faces)  enc=npu  15 s  ETA 2.4 h
+   [116/900] mlvcs_720p_npu-npu   qp16    2178.8 kbps  Y 36.67  disp 30.18  face 34.66 / 0.099  (30 faces)  enc=npu  6 s  ETA 2.4 h
+   [117/900] mlvcs_720p_npu-npu   qp24    1007.3 kbps  Y 35.88  disp 29.92  face 33.73 / 0.129  (30 faces)  enc=npu  6 s  ETA 2.4 h
+   [118/900] mlvcs_720p_npu-npu   qp26     798.7 kbps  Y 35.51  disp 29.78  face 33.29 / 0.145  (30 faces)  enc=npu  6 s  ETA 2.3 h
+   [119/900] mlvcs_720p_npu-npu   qp32     413.9 kbps  Y 33.74  disp 29.02  face 31.58 / 0.216  (30 faces)  enc=npu  6 s  ETA 2.3 h
+   [120/900] mlvcs_720p_npu-npu   qp40     187.5 kbps  Y 30.16  disp 26.96  face 28.84 / 0.330  (30 faces)  enc=npu  6 s  ETA 2.3 h
+   [121/900] mlvcs_720p_gpu-npu   qp16    2171.0 kbps  Y 36.62  disp 30.17  face 34.56 / 0.099  (30 faces)  enc=gpu  9 s  ETA 2.3 h
+   [122/900] mlvcs_720p_gpu-npu   qp24    1003.9 kbps  Y 35.84  disp 29.91  face 33.61 / 0.129  (30 faces)  enc=gpu  9 s  ETA 2.3 h
+   [123/900] mlvcs_720p_gpu-npu   qp26     795.0 kbps  Y 35.47  disp 29.77  face 33.14 / 0.145  (30 faces)  enc=gpu  9 s  ETA 2.3 h
+   [124/900] mlvcs_720p_gpu-npu   qp32     412.9 kbps  Y 33.70  disp 29.00  face 31.55 / 0.216  (30 faces)  enc=gpu  9 s  ETA 2.3 h
+   [125/900] mlvcs_720p_gpu-npu   qp40     186.9 kbps  Y 30.13  disp 26.94  face 28.87 / 0.332  (30 faces)  enc=gpu  9 s  ETA 2.3 h
+   [126/900] mlvc_1080p_npu-npu   qp16    7178.1 kbps  Y 37.11  disp 36.19  face 38.46 / 0.054  (30 faces)  enc=npu  31 s  ETA 2.3 h
+   [127/900] mlvc_1080p_npu-npu   qp24    3053.5 kbps  Y 36.00  disp 34.95  face 36.62 / 0.077  (30 faces)  enc=npu  31 s  ETA 2.4 h
+   [128/900] mlvc_1080p_npu-npu   qp26    2237.5 kbps  Y 35.66  disp 34.54  face 36.03 / 0.087  (30 faces)  enc=npu  31 s  ETA 2.4 h
+   [129/900] mlvc_1080p_npu-npu   qp32     857.0 kbps  Y 34.42  disp 33.18  face 34.05 / 0.137  (30 faces)  enc=npu  31 s  ETA 2.4 h
+   [130/900] mlvc_1080p_npu-npu   qp40     322.2 kbps  Y 31.64  disp 30.41  face 31.07 / 0.249  (30 faces)  enc=npu  30 s  ETA 2.4 h
+   [131/900] mlvcs_1080p_npu-npu  qp16    5691.9 kbps  Y 36.25  disp 34.99  face 37.65 / 0.058  (30 faces)  enc=npu  14 s  ETA 2.4 h
+   [132/900] mlvcs_1080p_npu-npu  qp24    2836.0 kbps  Y 35.48  disp 34.25  face 36.26 / 0.083  (30 faces)  enc=npu  13 s  ETA 2.4 h
+   [133/900] mlvcs_1080p_npu-npu  qp26    2097.4 kbps  Y 35.15  disp 33.92  face 35.68 / 0.094  (30 faces)  enc=npu  13 s  ETA 2.4 h
+   [134/900] mlvcs_1080p_npu-npu  qp32     796.4 kbps  Y 33.85  disp 32.60  face 33.59 / 0.154  (30 faces)  enc=npu  13 s  ETA 2.4 h
+   [135/900] mlvcs_1080p_npu-npu  qp40     328.0 kbps  Y 30.85  disp 29.62  face 30.44 / 0.267  (30 faces)  enc=npu  14 s  ETA 2.4 h
+== clip 4/20 38a418  01:49:52
+   originals + face boxes: 30 frames, 30 faces (1 s)
+   [136/900] mlvc_360p_npu-npu    qp16     309.9 kbps  Y 42.29  disp 34.06  face 30.75 / 0.260  (30 faces)  enc=npu  5 s  ETA 2.4 h
+   [137/900] mlvc_360p_npu-npu    qp24     180.6 kbps  Y 40.39  disp 33.55  face 30.13 / 0.280  (30 faces)  enc=npu  5 s  ETA 2.4 h
+   [138/900] mlvc_360p_npu-npu    qp26     153.8 kbps  Y 39.69  disp 33.33  face 29.85 / 0.289  (30 faces)  enc=npu  5 s  ETA 2.4 h
+   [139/900] mlvc_360p_npu-npu    qp32      88.4 kbps  Y 36.99  disp 32.23  face 28.65 / 0.322  (30 faces)  enc=npu  5 s  ETA 2.4 h
+   [140/900] mlvc_360p_npu-npu    qp40      39.8 kbps  Y 32.58  disp 29.63  face 26.06 / 0.419  (30 faces)  enc=npu  5 s  ETA 2.4 h
+   [141/900] mlvc_540p_npu-npu    qp16     545.6 kbps  Y 43.94  disp 38.51  face 34.21 / 0.137  (30 faces)  enc=npu  9 s  ETA 2.4 h
+   [142/900] mlvc_540p_npu-npu    qp24     304.1 kbps  Y 42.06  disp 37.64  face 33.20 / 0.164  (30 faces)  enc=npu  9 s  ETA 2.4 h
+   [143/900] mlvc_540p_npu-npu    qp26     256.3 kbps  Y 41.37  disp 37.26  face 32.78 / 0.177  (30 faces)  enc=npu  9 s  ETA 2.4 h
+   [144/900] mlvc_540p_npu-npu    qp32     147.6 kbps  Y 38.74  disp 35.62  face 31.15 / 0.223  (30 faces)  enc=npu  9 s  ETA 2.4 h
+   [145/900] mlvc_540p_npu-npu    qp40      68.7 kbps  Y 34.35  disp 32.23  face 28.22 / 0.306  (30 faces)  enc=npu  9 s  ETA 2.4 h
+   [146/900] mlvc_540p_gpu-npu    qp16     541.2 kbps  Y 43.61  disp 38.39  face 33.88 / 0.138  (30 faces)  enc=gpu  14 s  ETA 2.4 h
+   [147/900] mlvc_540p_gpu-npu    qp24     301.7 kbps  Y 41.83  disp 37.53  face 33.01 / 0.163  (30 faces)  enc=gpu  13 s  ETA 2.4 h
+   [148/900] mlvc_540p_gpu-npu    qp26     254.1 kbps  Y 41.17  disp 37.17  face 32.58 / 0.178  (30 faces)  enc=gpu  14 s  ETA 2.4 h
+   [149/900] mlvc_540p_gpu-npu    qp32     145.3 kbps  Y 38.59  disp 35.53  face 30.95 / 0.224  (30 faces)  enc=gpu  13 s  ETA 2.4 h
+   [150/900] mlvc_540p_gpu-npu    qp40      67.8 kbps  Y 34.25  disp 32.16  face 28.07 / 0.307  (30 faces)  enc=gpu  14 s  ETA 2.4 h
+   [151/900] mlvcs_540p_npu-npu   qp16     597.9 kbps  Y 42.95  disp 37.99  face 33.68 / 0.150  (30 faces)  enc=npu  4 s  ETA 2.3 h
+   [152/900] mlvcs_540p_npu-npu   qp24     328.6 kbps  Y 41.10  disp 37.07  face 32.70 / 0.178  (30 faces)  enc=npu  4 s  ETA 2.3 h
+   [153/900] mlvcs_540p_npu-npu   qp26     275.3 kbps  Y 40.36  disp 36.65  face 32.30 / 0.191  (30 faces)  enc=npu  4 s  ETA 2.3 h
+   [154/900] mlvcs_540p_npu-npu   qp32     158.3 kbps  Y 37.58  disp 34.78  face 30.52 / 0.236  (30 faces)  enc=npu  4 s  ETA 2.3 h
+   [155/900] mlvcs_540p_npu-npu   qp40      71.3 kbps  Y 33.13  disp 31.21  face 27.41 / 0.331  (30 faces)  enc=npu  5 s  ETA 2.3 h
+   [156/900] mlvc_720p_npu-npu    qp16     784.9 kbps  Y 44.76  disp 41.59  face 37.14 / 0.077  (30 faces)  enc=npu  16 s  ETA 2.3 h
+   [157/900] mlvc_720p_npu-npu    qp24     416.8 kbps  Y 43.02  disp 40.37  face 35.65 / 0.104  (30 faces)  enc=npu  16 s  ETA 2.3 h
+   [158/900] mlvc_720p_npu-npu    qp26     347.7 kbps  Y 42.40  disp 39.91  face 35.14 / 0.115  (30 faces)  enc=npu  16 s  ETA 2.3 h
+   [159/900] mlvc_720p_npu-npu    qp32     198.3 kbps  Y 39.96  disp 37.90  face 33.03 / 0.166  (30 faces)  enc=npu  16 s  ETA 2.3 h
+   [160/900] mlvc_720p_npu-npu    qp40      93.4 kbps  Y 35.87  disp 34.24  face 29.71 / 0.240  (30 faces)  enc=npu  16 s  ETA 2.3 h
+   [161/900] mlvcs_720p_npu-npu   qp16     917.9 kbps  Y 44.14  disp 41.10  face 36.56 / 0.083  (30 faces)  enc=npu  7 s  ETA 2.3 h
+   [162/900] mlvcs_720p_npu-npu   qp24     478.4 kbps  Y 42.27  disp 39.76  face 35.16 / 0.110  (30 faces)  enc=npu  7 s  ETA 2.3 h
+   [163/900] mlvcs_720p_npu-npu   qp26     395.8 kbps  Y 41.55  disp 39.21  face 34.57 / 0.122  (30 faces)  enc=npu  7 s  ETA 2.3 h
+   [164/900] mlvcs_720p_npu-npu   qp32     217.8 kbps  Y 38.86  disp 36.96  face 32.33 / 0.177  (30 faces)  enc=npu  7 s  ETA 2.3 h
+   [165/900] mlvcs_720p_npu-npu   qp40     100.3 kbps  Y 34.48  disp 32.94  face 28.85 / 0.267  (30 faces)  enc=npu  7 s  ETA 2.3 h
+   [166/900] mlvcs_720p_gpu-npu   qp16     916.2 kbps  Y 43.94  disp 40.99  face 36.38 / 0.084  (30 faces)  enc=gpu  10 s  ETA 2.3 h
+   [167/900] mlvcs_720p_gpu-npu   qp24     477.4 kbps  Y 42.13  disp 39.67  face 35.01 / 0.109  (30 faces)  enc=gpu  10 s  ETA 2.3 h
+   [168/900] mlvcs_720p_gpu-npu   qp26     395.8 kbps  Y 41.45  disp 39.14  face 34.48 / 0.122  (30 faces)  enc=gpu  10 s  ETA 2.3 h
+   [169/900] mlvcs_720p_gpu-npu   qp32     217.0 kbps  Y 38.79  disp 36.91  face 32.21 / 0.178  (30 faces)  enc=gpu  10 s  ETA 2.2 h
+   [170/900] mlvcs_720p_gpu-npu   qp40     100.0 kbps  Y 34.46  disp 32.92  face 28.83 / 0.267  (30 faces)  enc=gpu  10 s  ETA 2.2 h
+   [171/900] mlvc_1080p_npu-npu   qp16    1512.8 kbps  Y 45.31  disp 43.81  face 39.92 / 0.043  (30 faces)  enc=npu  31 s  ETA 2.3 h
+   [172/900] mlvc_1080p_npu-npu   qp24     745.8 kbps  Y 43.78  disp 42.33  face 38.07 / 0.064  (30 faces)  enc=npu  31 s  ETA 2.3 h
+   [173/900] mlvc_1080p_npu-npu   qp26     613.2 kbps  Y 43.25  disp 41.82  face 37.45 / 0.073  (30 faces)  enc=npu  31 s  ETA 2.3 h
+   [174/900] mlvc_1080p_npu-npu   qp32     337.8 kbps  Y 41.20  disp 39.80  face 35.07 / 0.119  (30 faces)  enc=npu  31 s  ETA 2.3 h
+   [175/900] mlvc_1080p_npu-npu   qp40     160.2 kbps  Y 37.62  disp 36.31  face 31.75 / 0.186  (30 faces)  enc=npu  31 s  ETA 2.3 h
+   [176/900] mlvcs_1080p_npu-npu  qp16    1823.5 kbps  Y 45.03  disp 43.50  face 39.53 / 0.045  (30 faces)  enc=npu  14 s  ETA 2.3 h
+   [177/900] mlvcs_1080p_npu-npu  qp24     875.9 kbps  Y 43.28  disp 41.83  face 37.70 / 0.068  (30 faces)  enc=npu  14 s  ETA 2.3 h
+   [178/900] mlvcs_1080p_npu-npu  qp26     702.7 kbps  Y 42.66  disp 41.23  face 37.03 / 0.078  (30 faces)  enc=npu  14 s  ETA 2.3 h
+   [179/900] mlvcs_1080p_npu-npu  qp32     355.0 kbps  Y 40.27  disp 38.90  face 34.47 / 0.127  (30 faces)  enc=npu  14 s  ETA 2.3 h
+   [180/900] mlvcs_1080p_npu-npu  qp40     167.4 kbps  Y 36.35  disp 35.05  face 30.85 / 0.203  (30 faces)  enc=npu  14 s  ETA 2.3 h
+== clip 5/20 40fe4d  01:59:01
+   originals + face boxes: 30 frames, 30 faces (1 s)
+   [181/900] mlvc_360p_npu-npu    qp16     670.6 kbps  Y 38.57  disp 33.52  face 36.03 / 0.304  (30 faces)  enc=npu  5 s  ETA 2.3 h
+   [182/900] mlvc_360p_npu-npu    qp24     351.5 kbps  Y 37.01  disp 32.80  face 34.81 / 0.322  (30 faces)  enc=npu  5 s  ETA 2.3 h
+   [183/900] mlvc_360p_npu-npu    qp26     288.6 kbps  Y 36.38  disp 32.47  face 34.36 / 0.330  (30 faces)  enc=npu  5 s  ETA 2.3 h
+   [184/900] mlvc_360p_npu-npu    qp32     154.1 kbps  Y 33.95  disp 31.00  face 32.34 / 0.358  (30 faces)  enc=npu  5 s  ETA 2.3 h
+   [185/900] mlvc_360p_npu-npu    qp40      67.9 kbps  Y 29.71  disp 27.80  face 28.86 / 0.424  (30 faces)  enc=npu  5 s  ETA 2.3 h
+   [186/900] mlvc_540p_npu-npu    qp16    1367.2 kbps  Y 40.07  disp 36.71  face 37.76 / 0.263  (30 faces)  enc=npu  9 s  ETA 2.3 h
+   [187/900] mlvc_540p_npu-npu    qp24     648.8 kbps  Y 38.42  disp 35.66  face 36.47 / 0.286  (30 faces)  enc=npu  9 s  ETA 2.3 h
+   [188/900] mlvc_540p_npu-npu    qp26     514.8 kbps  Y 37.84  disp 35.24  face 36.02 / 0.293  (30 faces)  enc=npu  9 s  ETA 2.3 h
+   [189/900] mlvc_540p_npu-npu    qp32     258.1 kbps  Y 35.64  disp 33.55  face 34.15 / 0.323  (30 faces)  enc=npu  9 s  ETA 2.3 h
+   [190/900] mlvc_540p_npu-npu    qp40     114.2 kbps  Y 31.75  disp 30.20  face 30.88 / 0.375  (30 faces)  enc=npu  9 s  ETA 2.3 h
+   [191/900] mlvc_540p_gpu-npu    qp16    1362.1 kbps  Y 39.93  disp 36.63  face 37.62 / 0.262  (30 faces)  enc=gpu  14 s  ETA 2.3 h
+   [192/900] mlvc_540p_gpu-npu    qp24     644.1 kbps  Y 38.30  disp 35.58  face 36.34 / 0.286  (30 faces)  enc=gpu  14 s  ETA 2.3 h
+   [193/900] mlvc_540p_gpu-npu    qp26     511.5 kbps  Y 37.72  disp 35.17  face 35.87 / 0.294  (30 faces)  enc=gpu  14 s  ETA 2.3 h
+   [194/900] mlvc_540p_gpu-npu    qp32     256.5 kbps  Y 35.52  disp 33.47  face 34.04 / 0.322  (30 faces)  enc=gpu  14 s  ETA 2.3 h
+   [195/900] mlvc_540p_gpu-npu    qp40     113.7 kbps  Y 31.67  disp 30.14  face 30.81 / 0.375  (30 faces)  enc=gpu  13 s  ETA 2.3 h
+   [196/900] mlvcs_540p_npu-npu   qp16    1441.2 kbps  Y 39.44  disp 36.25  face 37.54 / 0.259  (30 faces)  enc=npu  5 s  ETA 2.2 h
+   [197/900] mlvcs_540p_npu-npu   qp24     681.6 kbps  Y 37.96  disp 35.29  face 36.13 / 0.287  (30 faces)  enc=npu  4 s  ETA 2.2 h
+   [198/900] mlvcs_540p_npu-npu   qp26     537.5 kbps  Y 37.37  disp 34.87  face 35.62 / 0.295  (30 faces)  enc=npu  5 s  ETA 2.2 h
+   [199/900] mlvcs_540p_npu-npu   qp32     264.8 kbps  Y 35.04  disp 33.05  face 33.50 / 0.331  (30 faces)  enc=npu  4 s  ETA 2.2 h
+   [200/900] mlvcs_540p_npu-npu   qp40     121.1 kbps  Y 31.08  disp 29.58  face 30.04 / 0.390  (30 faces)  enc=npu  5 s  ETA 2.2 h
+   [201/900] mlvc_720p_npu-npu    qp16    2281.0 kbps  Y 40.80  disp 38.51  face 38.79 / 0.233  (30 faces)  enc=npu  16 s  ETA 2.2 h
+   [202/900] mlvc_720p_npu-npu    qp24    1019.8 kbps  Y 39.02  disp 37.12  face 37.32 / 0.266  (30 faces)  enc=npu  16 s  ETA 2.2 h
+   [203/900] mlvc_720p_npu-npu    qp26     786.0 kbps  Y 38.46  disp 36.65  face 36.88 / 0.275  (30 faces)  enc=npu  16 s  ETA 2.2 h
+   [204/900] mlvc_720p_npu-npu    qp32     364.0 kbps  Y 36.51  disp 34.93  face 35.20 / 0.303  (30 faces)  enc=npu  16 s  ETA 2.2 h
+   [205/900] mlvc_720p_npu-npu    qp40     155.8 kbps  Y 33.05  disp 31.71  face 32.16 / 0.352  (30 faces)  enc=npu  15 s  ETA 2.2 h
+   [206/900] mlvcs_720p_npu-npu   qp16    2427.3 kbps  Y 40.47  disp 38.16  face 38.65 / 0.227  (30 faces)  enc=npu  7 s  ETA 2.2 h
+   [207/900] mlvcs_720p_npu-npu   qp24    1102.0 kbps  Y 38.80  disp 36.89  face 37.10 / 0.266  (30 faces)  enc=npu  7 s  ETA 2.2 h
+   [208/900] mlvcs_720p_npu-npu   qp26     846.0 kbps  Y 38.20  disp 36.39  face 36.55 / 0.276  (30 faces)  enc=npu  7 s  ETA 2.2 h
+   [209/900] mlvcs_720p_npu-npu   qp32     382.6 kbps  Y 36.04  disp 34.50  face 34.63 / 0.308  (30 faces)  enc=npu  7 s  ETA 2.2 h
+   [210/900] mlvcs_720p_npu-npu   qp40     167.0 kbps  Y 32.39  disp 31.08  face 31.28 / 0.365  (30 faces)  enc=npu  7 s  ETA 2.2 h
+   [211/900] mlvcs_720p_gpu-npu   qp16    2420.7 kbps  Y 40.34  disp 38.07  face 38.50 / 0.228  (30 faces)  enc=gpu  10 s  ETA 2.2 h
+   [212/900] mlvcs_720p_gpu-npu   qp24    1097.6 kbps  Y 38.72  disp 36.83  face 37.00 / 0.266  (30 faces)  enc=gpu  10 s  ETA 2.2 h
+   [213/900] mlvcs_720p_gpu-npu   qp26     842.3 kbps  Y 38.14  disp 36.34  face 36.47 / 0.277  (30 faces)  enc=gpu  9 s  ETA 2.2 h
+   [214/900] mlvcs_720p_gpu-npu   qp32     381.4 kbps  Y 36.00  disp 34.46  face 34.57 / 0.308  (30 faces)  enc=gpu  9 s  ETA 2.2 h
+   [215/900] mlvcs_720p_gpu-npu   qp40     166.5 kbps  Y 32.35  disp 31.04  face 31.19 / 0.367  (30 faces)  enc=gpu  10 s  ETA 2.1 h
+   [216/900] mlvc_1080p_npu-npu   qp16    4521.9 kbps  Y 41.78  disp 40.74  face 40.49 / 0.184  (30 faces)  enc=npu  32 s  ETA 2.2 h
+   [217/900] mlvc_1080p_npu-npu   qp24    2030.6 kbps  Y 39.75  disp 38.75  face 38.47 / 0.246  (30 faces)  enc=npu  32 s  ETA 2.2 h
+   [218/900] mlvc_1080p_npu-npu   qp26    1561.3 kbps  Y 39.17  disp 38.17  face 37.94 / 0.260  (30 faces)  enc=npu  32 s  ETA 2.2 h
+   [219/900] mlvc_1080p_npu-npu   qp32     661.0 kbps  Y 37.33  disp 36.31  face 36.30 / 0.292  (30 faces)  enc=npu  31 s  ETA 2.2 h
+   [220/900] mlvc_1080p_npu-npu   qp40     264.6 kbps  Y 34.57  disp 33.52  face 33.73 / 0.328  (30 faces)  enc=npu  31 s  ETA 2.2 h
+   [221/900] mlvcs_1080p_npu-npu  qp16    5118.0 kbps  Y 41.57  disp 40.41  face 40.28 / 0.175  (30 faces)  enc=npu  14 s  ETA 2.2 h
+   [222/900] mlvcs_1080p_npu-npu  qp24    2369.0 kbps  Y 39.64  disp 38.58  face 38.26 / 0.240  (30 faces)  enc=npu  14 s  ETA 2.2 h
+   [223/900] mlvcs_1080p_npu-npu  qp26    1785.9 kbps  Y 39.00  disp 37.95  face 37.67 / 0.255  (30 faces)  enc=npu  14 s  ETA 2.2 h
+   [224/900] mlvcs_1080p_npu-npu  qp32     695.6 kbps  Y 36.94  disp 35.88  face 35.81 / 0.290  (30 faces)  enc=npu  14 s  ETA 2.2 h
+   [225/900] mlvcs_1080p_npu-npu  qp40     273.1 kbps  Y 33.84  disp 32.76  face 32.92 / 0.335  (30 faces)  enc=npu  14 s  ETA 2.2 h
+== clip 6/20 45bb89  02:08:12
+   originals + face boxes: 30 frames, 30 faces (1 s)
+   [226/900] mlvc_360p_npu-npu    qp16     276.0 kbps  Y 42.02  disp 34.32  face 39.33 / 0.160  (30 faces)  enc=npu  5 s  ETA 2.2 h
+   [227/900] mlvc_360p_npu-npu    qp24     153.3 kbps  Y 40.26  disp 33.81  face 37.70 / 0.169  (30 faces)  enc=npu  5 s  ETA 2.2 h
+   [228/900] mlvc_360p_npu-npu    qp26     127.9 kbps  Y 39.56  disp 33.57  face 37.08 / 0.172  (30 faces)  enc=npu  5 s  ETA 2.2 h
+   [229/900] mlvc_360p_npu-npu    qp32      72.7 kbps  Y 36.99  disp 32.46  face 34.48 / 0.191  (30 faces)  enc=npu  5 s  ETA 2.2 h
+   [230/900] mlvc_360p_npu-npu    qp40      34.5 kbps  Y 32.82  disp 29.94  face 30.54 / 0.241  (30 faces)  enc=npu  5 s  ETA 2.2 h
+   [231/900] mlvc_540p_npu-npu    qp16     555.1 kbps  Y 43.00  disp 37.69  face 40.75 / 0.129  (30 faces)  enc=npu  9 s  ETA 2.2 h
+   [232/900] mlvc_540p_npu-npu    qp24     281.2 kbps  Y 41.31  disp 36.90  face 39.18 / 0.139  (30 faces)  enc=npu  9 s  ETA 2.2 h
+   [233/900] mlvc_540p_npu-npu    qp26     231.1 kbps  Y 40.67  disp 36.56  face 38.69 / 0.142  (30 faces)  enc=npu  9 s  ETA 2.2 h
+   [234/900] mlvc_540p_npu-npu    qp32     125.0 kbps  Y 38.20  disp 35.03  face 36.52 / 0.155  (30 faces)  enc=npu  9 s  ETA 2.1 h
+   [235/900] mlvc_540p_npu-npu    qp40      58.1 kbps  Y 34.31  disp 32.07  face 32.79 / 0.193  (30 faces)  enc=npu  9 s  ETA 2.1 h
+   [236/900] mlvc_540p_gpu-npu    qp16     550.5 kbps  Y 42.87  disp 37.64  face 40.46 / 0.129  (30 faces)  enc=gpu  13 s  ETA 2.1 h
+   [237/900] mlvc_540p_gpu-npu    qp24     277.9 kbps  Y 41.18  disp 36.85  face 38.97 / 0.139  (30 faces)  enc=gpu  13 s  ETA 2.1 h
+   [238/900] mlvc_540p_gpu-npu    qp26     227.8 kbps  Y 40.53  disp 36.49  face 38.43 / 0.142  (30 faces)  enc=gpu  13 s  ETA 2.1 h
+   [239/900] mlvc_540p_gpu-npu    qp32     123.2 kbps  Y 38.09  disp 34.97  face 36.33 / 0.155  (30 faces)  enc=gpu  13 s  ETA 2.1 h
+   [240/900] mlvc_540p_gpu-npu    qp40      57.0 kbps  Y 34.20  disp 31.98  face 32.53 / 0.195  (30 faces)  enc=gpu  13 s  ETA 2.1 h
+   [241/900] mlvcs_540p_npu-npu   qp16     591.2 kbps  Y 42.25  disp 37.30  face 40.64 / 0.128  (30 faces)  enc=npu  4 s  ETA 2.1 h
+   [242/900] mlvcs_540p_npu-npu   qp24     281.9 kbps  Y 40.54  disp 36.46  face 38.96 / 0.140  (30 faces)  enc=npu  4 s  ETA 2.1 h
+   [243/900] mlvcs_540p_npu-npu   qp26     229.9 kbps  Y 39.87  disp 36.08  face 38.33 / 0.146  (30 faces)  enc=npu  4 s  ETA 2.1 h
+   [244/900] mlvcs_540p_npu-npu   qp32     119.7 kbps  Y 37.30  disp 34.39  face 35.63 / 0.165  (30 faces)  enc=npu  5 s  ETA 2.1 h
+   [245/900] mlvcs_540p_npu-npu   qp40      55.0 kbps  Y 33.32  disp 31.24  face 31.45 / 0.212  (30 faces)  enc=npu  4 s  ETA 2.1 h
+   [246/900] mlvc_720p_npu-npu    qp16     944.0 kbps  Y 43.60  disp 39.89  face 41.59 / 0.114  (30 faces)  enc=npu  16 s  ETA 2.1 h
+   [247/900] mlvc_720p_npu-npu    qp24     422.0 kbps  Y 41.93  disp 38.85  face 40.08 / 0.127  (30 faces)  enc=npu  15 s  ETA 2.1 h
+   [248/900] mlvc_720p_npu-npu    qp26     338.0 kbps  Y 41.35  disp 38.45  face 39.60 / 0.131  (30 faces)  enc=npu  15 s  ETA 2.1 h
+   [249/900] mlvc_720p_npu-npu    qp32     174.3 kbps  Y 39.09  disp 36.76  face 37.66 / 0.144  (30 faces)  enc=npu  15 s  ETA 2.1 h
+   [250/900] mlvc_720p_npu-npu    qp40      78.8 kbps  Y 35.45  disp 33.64  face 34.07 / 0.174  (30 faces)  enc=npu  15 s  ETA 2.1 h
+   [251/900] mlvcs_720p_npu-npu   qp16    1042.0 kbps  Y 43.19  disp 39.63  face 41.44 / 0.113  (30 faces)  enc=npu  7 s  ETA 2.1 h
+   [252/900] mlvcs_720p_npu-npu   qp24     444.1 kbps  Y 41.43  disp 38.50  face 39.83 / 0.127  (30 faces)  enc=npu  7 s  ETA 2.1 h
+   [253/900] mlvcs_720p_npu-npu   qp26     348.7 kbps  Y 40.76  disp 38.04  face 39.24 / 0.131  (30 faces)  enc=npu  7 s  ETA 2.1 h
+   [254/900] mlvcs_720p_npu-npu   qp32     169.6 kbps  Y 38.27  disp 36.09  face 36.81 / 0.149  (30 faces)  enc=npu  7 s  ETA 2.1 h
+   [255/900] mlvcs_720p_npu-npu   qp40      76.5 kbps  Y 34.49  disp 32.76  face 32.87 / 0.186  (30 faces)  enc=npu  7 s  ETA 2.1 h
+   [256/900] mlvcs_720p_gpu-npu   qp16    1037.9 kbps  Y 42.98  disp 39.50  face 41.13 / 0.113  (30 faces)  enc=gpu  9 s  ETA 2.0 h
+   [257/900] mlvcs_720p_gpu-npu   qp24     442.9 kbps  Y 41.30  disp 38.42  face 39.64 / 0.127  (30 faces)  enc=gpu  9 s  ETA 2.0 h
+   [258/900] mlvcs_720p_gpu-npu   qp26     348.4 kbps  Y 40.67  disp 37.97  face 39.07 / 0.132  (30 faces)  enc=gpu  9 s  ETA 2.0 h
+   [259/900] mlvcs_720p_gpu-npu   qp32     168.9 kbps  Y 38.18  disp 36.03  face 36.70 / 0.149  (30 faces)  enc=gpu  9 s  ETA 2.0 h
+   [260/900] mlvcs_720p_gpu-npu   qp40      76.6 kbps  Y 34.43  disp 32.71  face 32.77 / 0.187  (30 faces)  enc=gpu  10 s  ETA 2.0 h
+   [261/900] mlvc_1080p_npu-npu   qp16    2181.1 kbps  Y 43.80  disp 42.23  face 42.73 / 0.105  (30 faces)  enc=npu  31 s  ETA 2.0 h
+   [262/900] mlvc_1080p_npu-npu   qp24     907.5 kbps  Y 42.16  disp 40.63  face 41.24 / 0.123  (30 faces)  enc=npu  31 s  ETA 2.1 h
+   [263/900] mlvc_1080p_npu-npu   qp26     682.5 kbps  Y 41.63  disp 40.12  face 40.75 / 0.128  (30 faces)  enc=npu  31 s  ETA 2.1 h
+   [264/900] mlvc_1080p_npu-npu   qp32     317.7 kbps  Y 39.85  disp 38.42  face 39.05 / 0.141  (30 faces)  enc=npu  31 s  ETA 2.1 h
+   [265/900] mlvc_1080p_npu-npu   qp40     136.4 kbps  Y 36.70  disp 35.34  face 35.89 / 0.162  (30 faces)  enc=npu  31 s  ETA 2.1 h
+   [266/900] mlvcs_1080p_npu-npu  qp16    2463.2 kbps  Y 43.63  disp 42.00  face 42.60 / 0.101  (30 faces)  enc=npu  14 s  ETA 2.1 h
+   [267/900] mlvcs_1080p_npu-npu  qp24     968.8 kbps  Y 41.85  disp 40.37  face 40.95 / 0.120  (30 faces)  enc=npu  14 s  ETA 2.1 h
+   [268/900] mlvcs_1080p_npu-npu  qp26     706.2 kbps  Y 41.26  disp 39.80  face 40.40 / 0.125  (30 faces)  enc=npu  14 s  ETA 2.1 h
+   [269/900] mlvcs_1080p_npu-npu  qp32     296.9 kbps  Y 39.16  disp 37.76  face 38.23 / 0.141  (30 faces)  enc=npu  14 s  ETA 2.1 h
+   [270/900] mlvcs_1080p_npu-npu  qp40     128.3 kbps  Y 35.77  disp 34.43  face 34.65 / 0.171  (30 faces)  enc=npu  14 s  ETA 2.1 h
+== clip 7/20 4d8ffe  02:17:12
+   originals + face boxes: 30 frames, 30 faces (1 s)
+   [271/900] mlvc_360p_npu-npu    qp16     794.3 kbps  Y 34.03  disp 25.56  face 34.46 / 0.209  (30 faces)  enc=npu  5 s  ETA 2.1 h
+   [272/900] mlvc_360p_npu-npu    qp24     413.1 kbps  Y 32.96  disp 25.32  face 33.44 / 0.233  (30 faces)  enc=npu  5 s  ETA 2.1 h
+   [273/900] mlvc_360p_npu-npu    qp26     334.2 kbps  Y 32.49  disp 25.19  face 33.04 / 0.244  (30 faces)  enc=npu  5 s  ETA 2.0 h
+   [274/900] mlvc_360p_npu-npu    qp32     168.4 kbps  Y 30.55  disp 24.58  face 31.44 / 0.286  (30 faces)  enc=npu  5 s  ETA 2.0 h
+   [275/900] mlvc_360p_npu-npu    qp40      55.0 kbps  Y 26.93  disp 22.92  face 28.59 / 0.389  (30 faces)  enc=npu  5 s  ETA 2.0 h
+   [276/900] mlvc_540p_npu-npu    qp16    1943.1 kbps  Y 35.30  disp 29.32  face 37.04 / 0.144  (30 faces)  enc=npu  9 s  ETA 2.0 h
+   [277/900] mlvc_540p_npu-npu    qp24     959.1 kbps  Y 33.94  disp 28.77  face 35.63 / 0.168  (30 faces)  enc=npu  9 s  ETA 2.0 h
+   [278/900] mlvc_540p_npu-npu    qp26     759.6 kbps  Y 33.42  disp 28.53  face 35.13 / 0.178  (30 faces)  enc=npu  9 s  ETA 2.0 h
+   [279/900] mlvc_540p_npu-npu    qp32     357.8 kbps  Y 31.34  disp 27.44  face 33.16 / 0.221  (30 faces)  enc=npu  9 s  ETA 2.0 h
+   [280/900] mlvc_540p_npu-npu    qp40     121.0 kbps  Y 27.58  disp 24.94  face 30.07 / 0.323  (30 faces)  enc=npu  9 s  ETA 2.0 h
+   [281/900] mlvc_540p_gpu-npu    qp16    1945.6 kbps  Y 35.22  disp 29.29  face 36.87 / 0.144  (30 faces)  enc=gpu  13 s  ETA 2.0 h
+   [282/900] mlvc_540p_gpu-npu    qp24     960.1 kbps  Y 33.88  disp 28.75  face 35.50 / 0.168  (30 faces)  enc=gpu  13 s  ETA 2.0 h
+   [283/900] mlvc_540p_gpu-npu    qp26     758.8 kbps  Y 33.35  disp 28.50  face 34.99 / 0.178  (30 faces)  enc=gpu  13 s  ETA 2.0 h
+   [284/900] mlvc_540p_gpu-npu    qp32     356.2 kbps  Y 31.27  disp 27.41  face 32.99 / 0.223  (30 faces)  enc=gpu  13 s  ETA 2.0 h
+   [285/900] mlvc_540p_gpu-npu    qp40     120.9 kbps  Y 27.53  disp 24.90  face 30.04 / 0.323  (30 faces)  enc=gpu  13 s  ETA 2.0 h
+   [286/900] mlvcs_540p_npu-npu   qp16    1772.3 kbps  Y 33.73  disp 28.56  face 36.35 / 0.149  (30 faces)  enc=npu  5 s  ETA 2.0 h
+   [287/900] mlvcs_540p_npu-npu   qp24     965.5 kbps  Y 32.91  disp 28.19  face 35.08 / 0.177  (30 faces)  enc=npu  5 s  ETA 2.0 h
+   [288/900] mlvcs_540p_npu-npu   qp26     772.7 kbps  Y 32.51  disp 27.99  face 34.59 / 0.188  (30 faces)  enc=npu  4 s  ETA 2.0 h
+   [289/900] mlvcs_540p_npu-npu   qp32     360.3 kbps  Y 30.61  disp 26.94  face 32.63 / 0.242  (30 faces)  enc=npu  4 s  ETA 2.0 h
+   [290/900] mlvcs_540p_npu-npu   qp40     124.8 kbps  Y 27.00  disp 24.45  face 29.47 / 0.356  (30 faces)  enc=npu  4 s  ETA 2.0 h
+   [291/900] mlvc_720p_npu-npu    qp16    3419.9 kbps  Y 37.02  disp 33.31  face 38.86 / 0.116  (30 faces)  enc=npu  16 s  ETA 2.0 h
+   [292/900] mlvc_720p_npu-npu    qp24    1672.7 kbps  Y 35.27  disp 32.21  face 37.21 / 0.142  (30 faces)  enc=npu  16 s  ETA 2.0 h
+   [293/900] mlvc_720p_npu-npu    qp26    1312.5 kbps  Y 34.65  disp 31.78  face 36.65 / 0.151  (30 faces)  enc=npu  16 s  ETA 2.0 h
+   [294/900] mlvc_720p_npu-npu    qp32     585.2 kbps  Y 32.40  disp 30.08  face 34.53 / 0.188  (30 faces)  enc=npu  16 s  ETA 2.0 h
+   [295/900] mlvc_720p_npu-npu    qp40     196.1 kbps  Y 28.66  disp 26.90  face 31.31 / 0.276  (30 faces)  enc=npu  16 s  ETA 2.0 h
+   [296/900] mlvcs_720p_npu-npu   qp16    3079.6 kbps  Y 35.47  disp 32.20  face 38.21 / 0.118  (30 faces)  enc=npu  7 s  ETA 1.9 h
+   [297/900] mlvcs_720p_npu-npu   qp24    1645.5 kbps  Y 34.36  disp 31.47  face 36.67 / 0.149  (30 faces)  enc=npu  7 s  ETA 1.9 h
+   [298/900] mlvcs_720p_npu-npu   qp26    1302.7 kbps  Y 33.84  disp 31.10  face 36.05 / 0.159  (30 faces)  enc=npu  7 s  ETA 1.9 h
+   [299/900] mlvcs_720p_npu-npu   qp32     590.9 kbps  Y 31.72  disp 29.47  face 33.88 / 0.208  (30 faces)  enc=npu  7 s  ETA 1.9 h
+   [300/900] mlvcs_720p_npu-npu   qp40     206.0 kbps  Y 28.00  disp 26.26  face 30.56 / 0.313  (30 faces)  enc=npu  7 s  ETA 1.9 h
+   [301/900] mlvcs_720p_gpu-npu   qp16    3069.1 kbps  Y 35.39  disp 32.15  face 38.00 / 0.118  (30 faces)  enc=gpu  10 s  ETA 1.9 h
+   [302/900] mlvcs_720p_gpu-npu   qp24    1640.1 kbps  Y 34.29  disp 31.42  face 36.48 / 0.148  (30 faces)  enc=gpu  10 s  ETA 1.9 h
+   [303/900] mlvcs_720p_gpu-npu   qp26    1300.7 kbps  Y 33.79  disp 31.06  face 35.91 / 0.159  (30 faces)  enc=gpu  10 s  ETA 1.9 h
+   [304/900] mlvcs_720p_gpu-npu   qp32     589.3 kbps  Y 31.68  disp 29.44  face 33.82 / 0.208  (30 faces)  enc=gpu  10 s  ETA 1.9 h
+   [305/900] mlvcs_720p_gpu-npu   qp40     205.4 kbps  Y 27.98  disp 26.23  face 30.54 / 0.308  (30 faces)  enc=gpu  10 s  ETA 1.9 h
+   [306/900] mlvc_1080p_npu-npu   qp16    6852.6 kbps  Y 38.50  disp 37.51  face 40.93 / 0.095  (30 faces)  enc=npu  32 s  ETA 1.9 h
+   [307/900] mlvc_1080p_npu-npu   qp24    3317.2 kbps  Y 36.59  disp 35.54  face 38.88 / 0.127  (30 faces)  enc=npu  31 s  ETA 1.9 h
+   [308/900] mlvc_1080p_npu-npu   qp26    2602.5 kbps  Y 35.96  disp 34.89  face 38.30 / 0.137  (30 faces)  enc=npu  32 s  ETA 1.9 h
+   [309/900] mlvc_1080p_npu-npu   qp32    1136.4 kbps  Y 33.76  disp 32.60  face 36.12 / 0.169  (30 faces)  enc=npu  31 s  ETA 1.9 h
+   [310/900] mlvc_1080p_npu-npu   qp40     373.0 kbps  Y 30.31  disp 29.12  face 32.79 / 0.238  (30 faces)  enc=npu  31 s  ETA 1.9 h
+   [311/900] mlvcs_1080p_npu-npu  qp16    6430.0 kbps  Y 37.59  disp 36.37  face 40.39 / 0.097  (30 faces)  enc=npu  14 s  ETA 1.9 h
+   [312/900] mlvcs_1080p_npu-npu  qp24    3331.2 kbps  Y 36.10  disp 34.93  face 38.44 / 0.131  (30 faces)  enc=npu  14 s  ETA 1.9 h
+   [313/900] mlvcs_1080p_npu-npu  qp26    2610.6 kbps  Y 35.47  disp 34.31  face 37.75 / 0.141  (30 faces)  enc=npu  14 s  ETA 1.9 h
+   [314/900] mlvcs_1080p_npu-npu  qp32    1125.5 kbps  Y 33.15  disp 31.97  face 35.46 / 0.181  (30 faces)  enc=npu  14 s  ETA 1.9 h
+   [315/900] mlvcs_1080p_npu-npu  qp40     384.6 kbps  Y 29.62  disp 28.41  face 32.13 / 0.258  (30 faces)  enc=npu  14 s  ETA 1.9 h
+== clip 8/20 6aa9cf  02:26:20
+   originals + face boxes: 30 frames, 29 faces (1 s)
+   [316/900] mlvc_360p_npu-npu    qp16     238.5 kbps  Y 44.55  disp 41.01  face 39.99 / 0.137  (29 faces)  enc=npu  5 s  ETA 1.9 h
+   [317/900] mlvc_360p_npu-npu    qp24     131.0 kbps  Y 42.37  disp 39.60  face 38.46 / 0.155  (29 faces)  enc=npu  5 s  ETA 1.9 h
+   [318/900] mlvc_360p_npu-npu    qp26     109.6 kbps  Y 41.61  disp 39.04  face 37.87 / 0.162  (29 faces)  enc=npu  5 s  ETA 1.9 h
+   [319/900] mlvc_360p_npu-npu    qp32      63.3 kbps  Y 38.83  disp 36.82  face 35.53 / 0.199  (29 faces)  enc=npu  5 s  ETA 1.9 h
+   [320/900] mlvc_360p_npu-npu    qp40      31.4 kbps  Y 34.69  disp 33.11  face 31.94 / 0.266  (29 faces)  enc=npu  5 s  ETA 1.9 h
+   [321/900] mlvc_540p_npu-npu    qp16     436.8 kbps  Y 45.48  disp 42.80  face 41.96 / 0.103  (29 faces)  enc=npu  9 s  ETA 1.9 h
+   [322/900] mlvc_540p_npu-npu    qp24     227.6 kbps  Y 43.61  disp 41.37  face 40.39 / 0.119  (29 faces)  enc=npu  9 s  ETA 1.9 h
+   [323/900] mlvc_540p_npu-npu    qp26     190.1 kbps  Y 42.96  disp 40.84  face 39.77 / 0.126  (29 faces)  enc=npu  9 s  ETA 1.9 h
+   [324/900] mlvc_540p_npu-npu    qp32     110.2 kbps  Y 40.49  disp 38.72  face 37.54 / 0.155  (29 faces)  enc=npu  9 s  ETA 1.9 h
+   [325/900] mlvc_540p_npu-npu    qp40      54.4 kbps  Y 36.57  disp 35.09  face 33.90 / 0.215  (29 faces)  enc=npu  9 s  ETA 1.9 h
+   [326/900] mlvc_540p_gpu-npu    qp16     430.9 kbps  Y 44.78  disp 42.19  face 41.64 / 0.103  (29 faces)  enc=gpu  13 s  ETA 1.9 h
+   [327/900] mlvc_540p_gpu-npu    qp24     223.8 kbps  Y 43.18  disp 40.98  face 40.20 / 0.119  (29 faces)  enc=gpu  14 s  ETA 1.9 h
+   [328/900] mlvc_540p_gpu-npu    qp26     187.0 kbps  Y 42.58  disp 40.51  face 39.60 / 0.126  (29 faces)  enc=gpu  13 s  ETA 1.9 h
+   [329/900] mlvc_540p_gpu-npu    qp32     107.8 kbps  Y 40.16  disp 38.41  face 37.39 / 0.155  (29 faces)  enc=gpu  14 s  ETA 1.9 h
+   [330/900] mlvc_540p_gpu-npu    qp40      53.6 kbps  Y 36.41  disp 34.92  face 33.70 / 0.215  (29 faces)  enc=gpu  13 s  ETA 1.9 h
+   [331/900] mlvcs_540p_npu-npu   qp16     510.9 kbps  Y 45.17  disp 42.50  face 41.66 / 0.104  (29 faces)  enc=npu  5 s  ETA 1.9 h
+   [332/900] mlvcs_540p_npu-npu   qp24     262.5 kbps  Y 43.18  disp 40.99  face 40.02 / 0.122  (29 faces)  enc=npu  5 s  ETA 1.8 h
+   [333/900] mlvcs_540p_npu-npu   qp26     214.9 kbps  Y 42.45  disp 40.37  face 39.36 / 0.128  (29 faces)  enc=npu  4 s  ETA 1.8 h
+   [334/900] mlvcs_540p_npu-npu   qp32     113.2 kbps  Y 39.74  disp 38.02  face 36.85 / 0.160  (29 faces)  enc=npu  5 s  ETA 1.8 h
+   [335/900] mlvcs_540p_npu-npu   qp40      54.9 kbps  Y 35.63  disp 34.16  face 32.98 / 0.222  (29 faces)  enc=npu  4 s  ETA 1.8 h
+   [336/900] mlvc_720p_npu-npu    qp16     656.3 kbps  Y 45.98  disp 43.78  face 43.05 / 0.090  (29 faces)  enc=npu  16 s  ETA 1.8 h
+   [337/900] mlvc_720p_npu-npu    qp24     321.2 kbps  Y 44.34  disp 42.40  face 41.49 / 0.106  (29 faces)  enc=npu  16 s  ETA 1.8 h
+   [338/900] mlvc_720p_npu-npu    qp26     263.8 kbps  Y 43.77  disp 41.90  face 40.94 / 0.111  (29 faces)  enc=npu  16 s  ETA 1.8 h
+   [339/900] mlvc_720p_npu-npu    qp32     147.8 kbps  Y 41.56  disp 39.92  face 38.75 / 0.135  (29 faces)  enc=npu  16 s  ETA 1.8 h
+   [340/900] mlvc_720p_npu-npu    qp40      71.8 kbps  Y 37.90  disp 36.45  face 35.19 / 0.187  (29 faces)  enc=npu  16 s  ETA 1.8 h
+   [341/900] mlvcs_720p_npu-npu   qp16     810.2 kbps  Y 45.79  disp 43.55  face 42.77 / 0.089  (29 faces)  enc=npu  7 s  ETA 1.8 h
+   [342/900] mlvcs_720p_npu-npu   qp24     395.6 kbps  Y 43.98  disp 42.03  face 41.10 / 0.105  (29 faces)  enc=npu  7 s  ETA 1.8 h
+   [343/900] mlvcs_720p_npu-npu   qp26     317.9 kbps  Y 43.33  disp 41.47  face 40.49 / 0.111  (29 faces)  enc=npu  7 s  ETA 1.8 h
+   [344/900] mlvcs_720p_npu-npu   qp32     160.7 kbps  Y 40.87  disp 39.26  face 38.10 / 0.136  (29 faces)  enc=npu  7 s  ETA 1.8 h
+   [345/900] mlvcs_720p_npu-npu   qp40      78.4 kbps  Y 36.95  disp 35.51  face 34.29 / 0.194  (29 faces)  enc=npu  7 s  ETA 1.8 h
+   [346/900] mlvcs_720p_gpu-npu   qp16     809.1 kbps  Y 45.34  disp 43.17  face 42.51 / 0.089  (29 faces)  enc=gpu  10 s  ETA 1.8 h
+   [347/900] mlvcs_720p_gpu-npu   qp24     395.4 kbps  Y 43.69  disp 41.78  face 40.93 / 0.105  (29 faces)  enc=gpu  10 s  ETA 1.8 h
+   [348/900] mlvcs_720p_gpu-npu   qp26     317.5 kbps  Y 43.06  disp 41.23  face 40.33 / 0.111  (29 faces)  enc=gpu  10 s  ETA 1.8 h
+   [349/900] mlvcs_720p_gpu-npu   qp32     160.2 kbps  Y 40.67  disp 39.06  face 37.98 / 0.137  (29 faces)  enc=gpu  9 s  ETA 1.8 h
+   [350/900] mlvcs_720p_gpu-npu   qp40      78.7 kbps  Y 36.87  disp 35.43  face 34.29 / 0.195  (29 faces)  enc=gpu  10 s  ETA 1.8 h
+   [351/900] mlvc_1080p_npu-npu   qp16    1315.8 kbps  Y 46.49  disp 44.95  face 44.25 / 0.085  (29 faces)  enc=npu  31 s  ETA 1.8 h
+   [352/900] mlvc_1080p_npu-npu   qp24     617.5 kbps  Y 44.94  disp 43.47  face 42.73 / 0.101  (29 faces)  enc=npu  32 s  ETA 1.8 h
+   [353/900] mlvc_1080p_npu-npu   qp26     501.9 kbps  Y 44.44  disp 43.00  face 42.20 / 0.105  (29 faces)  enc=npu  32 s  ETA 1.8 h
+   [354/900] mlvc_1080p_npu-npu   qp32     271.4 kbps  Y 42.57  disp 41.19  face 40.22 / 0.124  (29 faces)  enc=npu  32 s  ETA 1.8 h
+   [355/900] mlvc_1080p_npu-npu   qp40     130.4 kbps  Y 39.29  disp 37.95  face 36.82 / 0.162  (29 faces)  enc=npu  32 s  ETA 1.8 h
+   [356/900] mlvcs_1080p_npu-npu  qp16    1672.8 kbps  Y 46.38  disp 44.78  face 44.06 / 0.082  (29 faces)  enc=npu  14 s  ETA 1.8 h
+   [357/900] mlvcs_1080p_npu-npu  qp24     789.7 kbps  Y 44.69  disp 43.18  face 42.38 / 0.097  (29 faces)  enc=npu  14 s  ETA 1.8 h
+   [358/900] mlvcs_1080p_npu-npu  qp26     619.9 kbps  Y 44.11  disp 42.62  face 41.79 / 0.102  (29 faces)  enc=npu  14 s  ETA 1.8 h
+   [359/900] mlvcs_1080p_npu-npu  qp32     294.9 kbps  Y 41.94  disp 40.52  face 39.57 / 0.122  (29 faces)  enc=npu  14 s  ETA 1.8 h
+   [360/900] mlvcs_1080p_npu-npu  qp40     140.5 kbps  Y 38.30  disp 36.95  face 35.95 / 0.165  (29 faces)  enc=npu  14 s  ETA 1.8 h
+== clip 9/20 6eb39d  02:35:31
+   originals + face boxes: 30 frames, 29 faces (1 s)
+   [361/900] mlvc_360p_npu-npu    qp16     541.1 kbps  Y 41.08  disp 38.32  face 40.93 / 0.146  (29 faces)  enc=npu  5 s  ETA 1.8 h
+   [362/900] mlvc_360p_npu-npu    qp24     276.8 kbps  Y 38.68  disp 36.50  face 38.90 / 0.164  (29 faces)  enc=npu  5 s  ETA 1.8 h
+   [363/900] mlvc_360p_npu-npu    qp26     225.1 kbps  Y 37.88  disp 35.84  face 38.13 / 0.174  (29 faces)  enc=npu  5 s  ETA 1.8 h
+   [364/900] mlvc_360p_npu-npu    qp32     112.9 kbps  Y 35.10  disp 33.47  face 35.56 / 0.206  (29 faces)  enc=npu  5 s  ETA 1.8 h
+   [365/900] mlvc_360p_npu-npu    qp40      42.6 kbps  Y 31.00  disp 29.61  face 31.70 / 0.266  (29 faces)  enc=npu  5 s  ETA 1.8 h
+   [366/900] mlvc_540p_npu-npu    qp16     950.7 kbps  Y 42.60  disp 40.43  face 42.47 / 0.124  (29 faces)  enc=npu  9 s  ETA 1.8 h
+   [367/900] mlvc_540p_npu-npu    qp24     485.9 kbps  Y 40.19  disp 38.42  face 40.33 / 0.145  (29 faces)  enc=npu  9 s  ETA 1.7 h
+   [368/900] mlvc_540p_npu-npu    qp26     396.4 kbps  Y 39.40  disp 37.72  face 39.70 / 0.152  (29 faces)  enc=npu  9 s  ETA 1.7 h
+   [369/900] mlvc_540p_npu-npu    qp32     204.5 kbps  Y 36.63  disp 35.20  face 36.98 / 0.183  (29 faces)  enc=npu  9 s  ETA 1.7 h
+   [370/900] mlvc_540p_npu-npu    qp40      81.5 kbps  Y 32.47  disp 31.21  face 33.00 / 0.241  (29 faces)  enc=npu  9 s  ETA 1.7 h
+   [371/900] mlvc_540p_gpu-npu    qp16     945.5 kbps  Y 42.42  disp 40.27  face 42.27 / 0.125  (29 faces)  enc=gpu  13 s  ETA 1.7 h
+   [372/900] mlvc_540p_gpu-npu    qp24     480.6 kbps  Y 40.06  disp 38.29  face 40.22 / 0.146  (29 faces)  enc=gpu  13 s  ETA 1.7 h
+   [373/900] mlvc_540p_gpu-npu    qp26     392.5 kbps  Y 39.28  disp 37.60  face 39.50 / 0.153  (29 faces)  enc=gpu  13 s  ETA 1.7 h
+   [374/900] mlvc_540p_gpu-npu    qp32     202.3 kbps  Y 36.54  disp 35.10  face 36.92 / 0.183  (29 faces)  enc=gpu  13 s  ETA 1.7 h
+   [375/900] mlvc_540p_gpu-npu    qp40      81.2 kbps  Y 32.43  disp 31.17  face 33.20 / 0.238  (29 faces)  enc=gpu  13 s  ETA 1.7 h
+   [376/900] mlvcs_540p_npu-npu   qp16    1062.7 kbps  Y 42.14  disp 39.97  face 42.03 / 0.126  (29 faces)  enc=npu  5 s  ETA 1.7 h
+   [377/900] mlvcs_540p_npu-npu   qp24     572.3 kbps  Y 39.73  disp 37.99  face 39.80 / 0.149  (29 faces)  enc=npu  4 s  ETA 1.7 h
+   [378/900] mlvcs_540p_npu-npu   qp26     472.6 kbps  Y 38.89  disp 37.25  face 39.05 / 0.156  (29 faces)  enc=npu  5 s  ETA 1.7 h
+   [379/900] mlvcs_540p_npu-npu   qp32     246.4 kbps  Y 35.90  disp 34.49  face 36.30 / 0.193  (29 faces)  enc=npu  4 s  ETA 1.7 h
+   [380/900] mlvcs_540p_npu-npu   qp40      98.5 kbps  Y 31.66  disp 30.37  face 32.16 / 0.253  (29 faces)  enc=npu  4 s  ETA 1.7 h
+   [381/900] mlvc_720p_npu-npu    qp16    1376.7 kbps  Y 43.65  disp 41.82  face 43.44 / 0.112  (29 faces)  enc=npu  16 s  ETA 1.7 h
+   [382/900] mlvc_720p_npu-npu    qp24     697.4 kbps  Y 41.27  disp 39.72  face 41.33 / 0.133  (29 faces)  enc=npu  16 s  ETA 1.7 h
+   [383/900] mlvc_720p_npu-npu    qp26     567.9 kbps  Y 40.49  disp 39.00  face 40.66 / 0.141  (29 faces)  enc=npu  15 s  ETA 1.7 h
+   [384/900] mlvc_720p_npu-npu    qp32     293.9 kbps  Y 37.74  disp 36.44  face 38.07 / 0.168  (29 faces)  enc=npu  15 s  ETA 1.7 h
+   [385/900] mlvc_720p_npu-npu    qp40     120.3 kbps  Y 33.53  disp 32.34  face 33.95 / 0.221  (29 faces)  enc=npu  15 s  ETA 1.7 h
+   [386/900] mlvcs_720p_npu-npu   qp16    1573.0 kbps  Y 43.25  disp 41.40  face 43.03 / 0.114  (29 faces)  enc=npu  7 s  ETA 1.7 h
+   [387/900] mlvcs_720p_npu-npu   qp24     846.2 kbps  Y 40.82  disp 39.29  face 40.79 / 0.136  (29 faces)  enc=npu  7 s  ETA 1.7 h
+   [388/900] mlvcs_720p_npu-npu   qp26     695.6 kbps  Y 39.98  disp 38.53  face 40.00 / 0.145  (29 faces)  enc=npu  7 s  ETA 1.7 h
+   [389/900] mlvcs_720p_npu-npu   qp32     363.4 kbps  Y 37.04  disp 35.72  face 37.35 / 0.174  (29 faces)  enc=npu  7 s  ETA 1.7 h
+   [390/900] mlvcs_720p_npu-npu   qp40     155.8 kbps  Y 32.76  disp 31.51  face 33.31 / 0.230  (29 faces)  enc=npu  7 s  ETA 1.7 h
+   [391/900] mlvcs_720p_gpu-npu   qp16    1568.3 kbps  Y 43.14  disp 41.30  face 42.92 / 0.114  (29 faces)  enc=gpu  10 s  ETA 1.7 h
+   [392/900] mlvcs_720p_gpu-npu   qp24     843.3 kbps  Y 40.74  disp 39.21  face 40.67 / 0.136  (29 faces)  enc=gpu  9 s  ETA 1.6 h
+   [393/900] mlvcs_720p_gpu-npu   qp26     694.0 kbps  Y 39.91  disp 38.46  face 39.95 / 0.145  (29 faces)  enc=gpu  10 s  ETA 1.6 h
+   [394/900] mlvcs_720p_gpu-npu   qp32     362.4 kbps  Y 36.98  disp 35.67  face 37.27 / 0.175  (29 faces)  enc=gpu  9 s  ETA 1.6 h
+   [395/900] mlvcs_720p_gpu-npu   qp40     155.5 kbps  Y 32.75  disp 31.52  face 33.24 / 0.231  (29 faces)  enc=gpu  9 s  ETA 1.6 h
+   [396/900] mlvc_1080p_npu-npu   qp16    2446.1 kbps  Y 44.75  disp 43.46  face 44.81 / 0.100  (29 faces)  enc=npu  32 s  ETA 1.6 h
+   [397/900] mlvc_1080p_npu-npu   qp24    1255.3 kbps  Y 42.47  disp 41.28  face 42.68 / 0.123  (29 faces)  enc=npu  31 s  ETA 1.6 h
+   [398/900] mlvc_1080p_npu-npu   qp26    1026.9 kbps  Y 41.73  disp 40.55  face 41.97 / 0.130  (29 faces)  enc=npu  31 s  ETA 1.6 h
+   [399/900] mlvc_1080p_npu-npu   qp32     541.0 kbps  Y 39.07  disp 37.94  face 39.45 / 0.155  (29 faces)  enc=npu  31 s  ETA 1.7 h
+   [400/900] mlvc_1080p_npu-npu   qp40     231.9 kbps  Y 34.84  disp 33.74  face 35.14 / 0.201  (29 faces)  enc=npu  31 s  ETA 1.7 h
+   [401/900] mlvcs_1080p_npu-npu  qp16    2855.1 kbps  Y 44.44  disp 43.12  face 44.35 / 0.102  (29 faces)  enc=npu  14 s  ETA 1.7 h
+   [402/900] mlvcs_1080p_npu-npu  qp24    1551.5 kbps  Y 42.07  disp 40.87  face 42.12 / 0.124  (29 faces)  enc=npu  14 s  ETA 1.7 h
+   [403/900] mlvcs_1080p_npu-npu  qp26    1272.7 kbps  Y 41.28  disp 40.09  face 41.39 / 0.131  (29 faces)  enc=npu  14 s  ETA 1.6 h
+   [404/900] mlvcs_1080p_npu-npu  qp32     668.8 kbps  Y 38.45  disp 37.28  face 38.68 / 0.155  (29 faces)  enc=npu  14 s  ETA 1.6 h
+   [405/900] mlvcs_1080p_npu-npu  qp40     304.0 kbps  Y 34.17  disp 32.99  face 34.65 / 0.203  (29 faces)  enc=npu  14 s  ETA 1.6 h
+== clip 10/20 73f232  02:44:36
+   originals + face boxes: 30 frames, 30 faces (1 s)
+   [406/900] mlvc_360p_npu-npu    qp16     442.9 kbps  Y 42.23  disp 35.76  face 33.65 / 0.232  (30 faces)  enc=npu  5 s  ETA 1.6 h
+   [407/900] mlvc_360p_npu-npu    qp24     236.5 kbps  Y 39.95  disp 34.93  face 32.09 / 0.249  (30 faces)  enc=npu  5 s  ETA 1.6 h
+   [408/900] mlvc_360p_npu-npu    qp26     195.7 kbps  Y 39.16  disp 34.58  face 31.52 / 0.257  (30 faces)  enc=npu  5 s  ETA 1.6 h
+   [409/900] mlvc_360p_npu-npu    qp32     106.2 kbps  Y 36.24  disp 32.97  face 29.31 / 0.286  (30 faces)  enc=npu  5 s  ETA 1.6 h
+   [410/900] mlvc_360p_npu-npu    qp40      45.2 kbps  Y 31.87  disp 29.79  face 25.77 / 0.369  (30 faces)  enc=npu  5 s  ETA 1.6 h
+   [411/900] mlvc_540p_npu-npu    qp16     779.3 kbps  Y 43.39  disp 37.27  face 35.15 / 0.190  (30 faces)  enc=npu  9 s  ETA 1.6 h
+   [412/900] mlvc_540p_npu-npu    qp24     394.0 kbps  Y 41.28  disp 36.46  face 33.76 / 0.204  (30 faces)  enc=npu  9 s  ETA 1.6 h
+   [413/900] mlvc_540p_npu-npu    qp26     322.4 kbps  Y 40.57  disp 36.12  face 33.19 / 0.211  (30 faces)  enc=npu  9 s  ETA 1.6 h
+   [414/900] mlvc_540p_npu-npu    qp32     173.0 kbps  Y 37.98  disp 34.70  face 31.13 / 0.238  (30 faces)  enc=npu  11 s  ETA 1.6 h
+   [415/900] mlvc_540p_npu-npu    qp40      77.2 kbps  Y 33.87  disp 31.74  face 27.57 / 0.305  (30 faces)  enc=npu  11 s  ETA 1.6 h
+   [416/900] mlvc_540p_gpu-npu    qp16     775.0 kbps  Y 43.14  disp 37.19  face 35.02 / 0.188  (30 faces)  enc=gpu  13 s  ETA 1.6 h
+   [417/900] mlvc_540p_gpu-npu    qp24     391.5 kbps  Y 41.05  disp 36.36  face 33.64 / 0.204  (30 faces)  enc=gpu  13 s  ETA 1.6 h
+   [418/900] mlvc_540p_gpu-npu    qp26     320.4 kbps  Y 40.35  disp 36.03  face 33.07 / 0.210  (30 faces)  enc=gpu  13 s  ETA 1.6 h
+   [419/900] mlvc_540p_gpu-npu    qp32     171.9 kbps  Y 37.82  disp 34.60  face 31.01 / 0.236  (30 faces)  enc=gpu  13 s  ETA 1.6 h
+   [420/900] mlvc_540p_gpu-npu    qp40      76.5 kbps  Y 33.78  disp 31.70  face 27.65 / 0.303  (30 faces)  enc=gpu  13 s  ETA 1.6 h
+   [421/900] mlvcs_540p_npu-npu   qp16     864.1 kbps  Y 42.99  disp 37.09  face 34.92 / 0.188  (30 faces)  enc=npu  4 s  ETA 1.6 h
+   [422/900] mlvcs_540p_npu-npu   qp24     457.2 kbps  Y 40.90  disp 36.26  face 33.54 / 0.205  (30 faces)  enc=npu  4 s  ETA 1.6 h
+   [423/900] mlvcs_540p_npu-npu   qp26     373.9 kbps  Y 40.16  disp 35.90  face 32.96 / 0.213  (30 faces)  enc=npu  5 s  ETA 1.6 h
+   [424/900] mlvcs_540p_npu-npu   qp32     196.5 kbps  Y 37.41  disp 34.33  face 30.71 / 0.244  (30 faces)  enc=npu  5 s  ETA 1.6 h
+   [425/900] mlvcs_540p_npu-npu   qp40      85.9 kbps  Y 33.08  disp 31.11  face 27.05 / 0.318  (30 faces)  enc=npu  4 s  ETA 1.6 h
+   [426/900] mlvc_720p_npu-npu    qp16    1211.0 kbps  Y 43.80  disp 38.33  face 35.99 / 0.166  (30 faces)  enc=npu  16 s  ETA 1.6 h
+   [427/900] mlvc_720p_npu-npu    qp24     587.0 kbps  Y 41.75  disp 37.42  face 34.63 / 0.183  (30 faces)  enc=npu  16 s  ETA 1.5 h
+   [428/900] mlvc_720p_npu-npu    qp26     470.4 kbps  Y 41.09  disp 37.07  face 34.14 / 0.189  (30 faces)  enc=npu  15 s  ETA 1.5 h
+   [429/900] mlvc_720p_npu-npu    qp32     241.1 kbps  Y 38.77  disp 35.68  face 32.23 / 0.215  (30 faces)  enc=npu  15 s  ETA 1.5 h
+   [430/900] mlvc_720p_npu-npu    qp40     107.3 kbps  Y 35.09  disp 32.98  face 28.84 / 0.270  (30 faces)  enc=npu  15 s  ETA 1.5 h
+   [431/900] mlvcs_720p_npu-npu   qp16    1349.4 kbps  Y 43.45  disp 38.14  face 35.82 / 0.165  (30 faces)  enc=npu  7 s  ETA 1.5 h
+   [432/900] mlvcs_720p_npu-npu   qp24     695.7 kbps  Y 41.45  disp 37.23  face 34.45 / 0.182  (30 faces)  enc=npu  7 s  ETA 1.5 h
+   [433/900] mlvcs_720p_npu-npu   qp26     560.3 kbps  Y 40.76  disp 36.86  face 33.92 / 0.188  (30 faces)  enc=npu  7 s  ETA 1.5 h
+   [434/900] mlvcs_720p_npu-npu   qp32     282.4 kbps  Y 38.28  disp 35.35  face 31.77 / 0.216  (30 faces)  enc=npu  7 s  ETA 1.5 h
+   [435/900] mlvcs_720p_npu-npu   qp40     126.6 kbps  Y 34.39  disp 32.39  face 28.25 / 0.276  (30 faces)  enc=npu  7 s  ETA 1.5 h
+   [436/900] mlvcs_720p_gpu-npu   qp16    1348.2 kbps  Y 43.22  disp 38.07  face 35.74 / 0.166  (30 faces)  enc=gpu  9 s  ETA 1.5 h
+   [437/900] mlvcs_720p_gpu-npu   qp24     694.2 kbps  Y 41.31  disp 37.17  face 34.35 / 0.183  (30 faces)  enc=gpu  9 s  ETA 1.5 h
+   [438/900] mlvcs_720p_gpu-npu   qp26     559.8 kbps  Y 40.59  disp 36.80  face 33.83 / 0.188  (30 faces)  enc=gpu  9 s  ETA 1.5 h
+   [439/900] mlvcs_720p_gpu-npu   qp32     282.5 kbps  Y 38.15  disp 35.29  face 31.70 / 0.217  (30 faces)  enc=gpu  9 s  ETA 1.5 h
+   [440/900] mlvcs_720p_gpu-npu   qp40     126.6 kbps  Y 34.32  disp 32.36  face 28.29 / 0.278  (30 faces)  enc=gpu  9 s  ETA 1.5 h
+   [441/900] mlvc_1080p_npu-npu   qp16    2625.4 kbps  Y 43.36  disp 42.08  face 38.14 / 0.114  (30 faces)  enc=npu  32 s  ETA 1.5 h
+   [442/900] mlvc_1080p_npu-npu   qp24    1248.0 kbps  Y 41.30  disp 40.06  face 36.14 / 0.148  (30 faces)  enc=npu  31 s  ETA 1.5 h
+   [443/900] mlvc_1080p_npu-npu   qp26     982.9 kbps  Y 40.65  disp 39.40  face 35.52 / 0.159  (30 faces)  enc=npu  31 s  ETA 1.5 h
+   [444/900] mlvc_1080p_npu-npu   qp32     462.1 kbps  Y 38.56  disp 37.32  face 33.52 / 0.195  (30 faces)  enc=npu  31 s  ETA 1.5 h
+   [445/900] mlvc_1080p_npu-npu   qp40     193.3 kbps  Y 35.61  disp 34.40  face 30.41 / 0.237  (30 faces)  enc=npu  31 s  ETA 1.5 h
+   [446/900] mlvcs_1080p_npu-npu  qp16    2825.9 kbps  Y 42.61  disp 41.25  face 37.52 / 0.123  (30 faces)  enc=npu  14 s  ETA 1.5 h
+   [447/900] mlvcs_1080p_npu-npu  qp24    1459.8 kbps  Y 40.82  disp 39.52  face 35.86 / 0.154  (30 faces)  enc=npu  14 s  ETA 1.5 h
+   [448/900] mlvcs_1080p_npu-npu  qp26    1160.6 kbps  Y 40.20  disp 38.92  face 35.23 / 0.162  (30 faces)  enc=npu  14 s  ETA 1.5 h
+   [449/900] mlvcs_1080p_npu-npu  qp32     537.9 kbps  Y 38.11  disp 36.87  face 33.15 / 0.190  (30 faces)  enc=npu  14 s  ETA 1.5 h
+   [450/900] mlvcs_1080p_npu-npu  qp40     230.4 kbps  Y 35.02  disp 33.81  face 29.86 / 0.239  (30 faces)  enc=npu  14 s  ETA 1.5 h
+== clip 11/20 99b38e  02:53:43
+   originals + face boxes: 30 frames, 30 faces (1 s)
+   [451/900] mlvc_360p_npu-npu    qp16     177.5 kbps  Y 44.81  disp 40.89  face 39.22 / 0.190  (30 faces)  enc=npu  5 s  ETA 1.5 h
+   [452/900] mlvc_360p_npu-npu    qp24      93.6 kbps  Y 42.77  disp 39.63  face 37.62 / 0.220  (30 faces)  enc=npu  5 s  ETA 1.5 h
+   [453/900] mlvc_360p_npu-npu    qp26      78.1 kbps  Y 42.02  disp 39.11  face 37.04 / 0.236  (30 faces)  enc=npu  5 s  ETA 1.5 h
+   [454/900] mlvc_360p_npu-npu    qp32      43.7 kbps  Y 39.31  disp 37.09  face 34.82 / 0.290  (30 faces)  enc=npu  5 s  ETA 1.5 h
+   [455/900] mlvc_360p_npu-npu    qp40      20.8 kbps  Y 35.42  disp 33.73  face 31.62 / 0.379  (30 faces)  enc=npu  5 s  ETA 1.5 h
+   [456/900] mlvc_540p_npu-npu    qp16     358.5 kbps  Y 45.80  disp 43.09  face 41.43 / 0.118  (30 faces)  enc=npu  9 s  ETA 1.5 h
+   [457/900] mlvc_540p_npu-npu    qp24     175.0 kbps  Y 44.08  disp 41.75  face 39.68 / 0.147  (30 faces)  enc=npu  9 s  ETA 1.5 h
+   [458/900] mlvc_540p_npu-npu    qp26     145.6 kbps  Y 43.42  disp 41.22  face 39.05 / 0.160  (30 faces)  enc=npu  9 s  ETA 1.5 h
+   [459/900] mlvc_540p_npu-npu    qp32      81.3 kbps  Y 40.83  disp 39.00  face 36.54 / 0.223  (30 faces)  enc=npu  9 s  ETA 1.5 h
+   [460/900] mlvc_540p_npu-npu    qp40      37.9 kbps  Y 36.84  disp 35.36  face 33.10 / 0.320  (30 faces)  enc=npu  9 s  ETA 1.4 h
+   [461/900] mlvc_540p_gpu-npu    qp16     352.1 kbps  Y 45.31  disp 42.71  face 41.04 / 0.118  (30 faces)  enc=gpu  13 s  ETA 1.4 h
+   [462/900] mlvc_540p_gpu-npu    qp24     171.6 kbps  Y 43.73  disp 41.45  face 39.35 / 0.146  (30 faces)  enc=gpu  13 s  ETA 1.4 h
+   [463/900] mlvc_540p_gpu-npu    qp26     142.2 kbps  Y 43.06  disp 40.91  face 38.67 / 0.161  (30 faces)  enc=gpu  13 s  ETA 1.4 h
+   [464/900] mlvc_540p_gpu-npu    qp32      78.8 kbps  Y 40.61  disp 38.81  face 36.41 / 0.223  (30 faces)  enc=gpu  13 s  ETA 1.4 h
+   [465/900] mlvc_540p_gpu-npu    qp40      36.7 kbps  Y 36.70  disp 35.20  face 33.08 / 0.317  (30 faces)  enc=gpu  13 s  ETA 1.4 h
+   [466/900] mlvcs_540p_npu-npu   qp16     469.4 kbps  Y 45.49  disp 42.83  face 41.04 / 0.124  (30 faces)  enc=npu  5 s  ETA 1.4 h
+   [467/900] mlvcs_540p_npu-npu   qp24     213.1 kbps  Y 43.47  disp 41.26  face 39.26 / 0.159  (30 faces)  enc=npu  4 s  ETA 1.4 h
+   [468/900] mlvcs_540p_npu-npu   qp26     171.7 kbps  Y 42.72  disp 40.63  face 38.55 / 0.174  (30 faces)  enc=npu  4 s  ETA 1.4 h
+   [469/900] mlvcs_540p_npu-npu   qp32      83.8 kbps  Y 39.74  disp 38.03  face 36.04 / 0.241  (30 faces)  enc=npu  4 s  ETA 1.4 h
+   [470/900] mlvcs_540p_npu-npu   qp40      37.7 kbps  Y 35.85  disp 34.40  face 32.54 / 0.335  (30 faces)  enc=npu  4 s  ETA 1.4 h
+   [471/900] mlvc_720p_npu-npu    qp16     570.9 kbps  Y 46.35  disp 44.16  face 42.71 / 0.094  (30 faces)  enc=npu  16 s  ETA 1.4 h
+   [472/900] mlvc_720p_npu-npu    qp24     257.1 kbps  Y 44.87  disp 42.89  face 41.00 / 0.118  (30 faces)  enc=npu  16 s  ETA 1.4 h
+   [473/900] mlvc_720p_npu-npu    qp26     210.0 kbps  Y 44.30  disp 42.39  face 40.34 / 0.129  (30 faces)  enc=npu  16 s  ETA 1.4 h
+   [474/900] mlvc_720p_npu-npu    qp32     114.6 kbps  Y 41.97  disp 40.32  face 37.86 / 0.182  (30 faces)  enc=npu  16 s  ETA 1.4 h
+   [475/900] mlvc_720p_npu-npu    qp40      52.8 kbps  Y 38.02  disp 36.60  face 34.18 / 0.281  (30 faces)  enc=npu  16 s  ETA 1.4 h
+   [476/900] mlvcs_720p_npu-npu   qp16     798.9 kbps  Y 46.15  disp 43.96  face 42.40 / 0.096  (30 faces)  enc=npu  7 s  ETA 1.4 h
+   [477/900] mlvcs_720p_npu-npu   qp24     339.4 kbps  Y 44.37  disp 42.45  face 40.52 / 0.126  (30 faces)  enc=npu  7 s  ETA 1.4 h
+   [478/900] mlvcs_720p_npu-npu   qp26     265.5 kbps  Y 43.69  disp 41.85  face 39.82 / 0.139  (30 faces)  enc=npu  7 s  ETA 1.4 h
+   [479/900] mlvcs_720p_npu-npu   qp32     125.7 kbps  Y 40.93  disp 39.35  face 37.18 / 0.201  (30 faces)  enc=npu  7 s  ETA 1.4 h
+   [480/900] mlvcs_720p_npu-npu   qp40      57.6 kbps  Y 36.95  disp 35.57  face 33.63 / 0.296  (30 faces)  enc=npu  7 s  ETA 1.4 h
+   [481/900] mlvcs_720p_gpu-npu   qp16     796.8 kbps  Y 45.91  disp 43.78  face 42.16 / 0.096  (30 faces)  enc=gpu  10 s  ETA 1.4 h
+   [482/900] mlvcs_720p_gpu-npu   qp24     338.9 kbps  Y 44.22  disp 42.32  face 40.32 / 0.126  (30 faces)  enc=gpu  10 s  ETA 1.4 h
+   [483/900] mlvcs_720p_gpu-npu   qp26     264.7 kbps  Y 43.57  disp 41.75  face 39.69 / 0.139  (30 faces)  enc=gpu  10 s  ETA 1.4 h
+   [484/900] mlvcs_720p_gpu-npu   qp32     125.7 kbps  Y 40.82  disp 39.25  face 37.09 / 0.200  (30 faces)  enc=gpu  10 s  ETA 1.4 h
+   [485/900] mlvcs_720p_gpu-npu   qp40      58.0 kbps  Y 36.91  disp 35.55  face 33.54 / 0.300  (30 faces)  enc=gpu  10 s  ETA 1.4 h
+   [486/900] mlvc_1080p_npu-npu   qp16    1222.6 kbps  Y 46.88  disp 45.16  face 44.00 / 0.088  (30 faces)  enc=npu  32 s  ETA 1.4 h
+   [487/900] mlvc_1080p_npu-npu   qp24     522.6 kbps  Y 45.55  disp 43.88  face 42.31 / 0.109  (30 faces)  enc=npu  32 s  ETA 1.4 h
+   [488/900] mlvc_1080p_npu-npu   qp26     418.0 kbps  Y 45.10  disp 43.46  face 41.74 / 0.116  (30 faces)  enc=npu  31 s  ETA 1.4 h
+   [489/900] mlvc_1080p_npu-npu   qp32     221.8 kbps  Y 43.21  disp 41.70  face 39.49 / 0.154  (30 faces)  enc=npu  31 s  ETA 1.4 h
+   [490/900] mlvc_1080p_npu-npu   qp40     102.2 kbps  Y 39.43  disp 38.05  face 35.69 / 0.244  (30 faces)  enc=npu  32 s  ETA 1.4 h
+   [491/900] mlvcs_1080p_npu-npu  qp16    1723.3 kbps  Y 46.73  disp 44.97  face 43.70 / 0.088  (30 faces)  enc=npu  14 s  ETA 1.4 h
+   [492/900] mlvcs_1080p_npu-npu  qp24     719.1 kbps  Y 45.15  disp 43.51  face 41.91 / 0.110  (30 faces)  enc=npu  14 s  ETA 1.4 h
+   [493/900] mlvcs_1080p_npu-npu  qp26     544.7 kbps  Y 44.60  disp 42.99  face 41.24 / 0.119  (30 faces)  enc=npu  14 s  ETA 1.4 h
+   [494/900] mlvcs_1080p_npu-npu  qp32     242.7 kbps  Y 42.26  disp 40.80  face 38.75 / 0.164  (30 faces)  enc=npu  14 s  ETA 1.4 h
+   [495/900] mlvcs_1080p_npu-npu  qp40     111.3 kbps  Y 38.39  disp 37.05  face 34.97 / 0.257  (30 faces)  enc=npu  14 s  ETA 1.3 h
+== clip 12/20 a17620  03:02:51
+   originals + face boxes: 30 frames, 30 faces (1 s)
+   [496/900] mlvc_360p_npu-npu    qp16     235.3 kbps  Y 43.04  disp 35.77  face 34.37 / 0.219  (30 faces)  enc=npu  5 s  ETA 1.3 h
+   [497/900] mlvc_360p_npu-npu    qp24     134.7 kbps  Y 41.34  disp 35.22  face 33.45 / 0.247  (30 faces)  enc=npu  5 s  ETA 1.3 h
+   [498/900] mlvc_360p_npu-npu    qp26     114.5 kbps  Y 40.69  disp 34.97  face 33.07 / 0.256  (30 faces)  enc=npu  5 s  ETA 1.3 h
+   [499/900] mlvc_360p_npu-npu    qp32      65.7 kbps  Y 38.04  disp 33.73  face 31.49 / 0.302  (30 faces)  enc=npu  5 s  ETA 1.3 h
+   [500/900] mlvc_360p_npu-npu    qp40      29.8 kbps  Y 33.78  disp 31.00  face 28.77 / 0.398  (30 faces)  enc=npu  5 s  ETA 1.3 h
+   [501/900] mlvc_540p_npu-npu    qp16     454.4 kbps  Y 44.60  disp 39.87  face 37.76 / 0.122  (30 faces)  enc=npu  9 s  ETA 1.3 h
+   [502/900] mlvc_540p_npu-npu    qp24     241.0 kbps  Y 42.87  disp 38.93  face 36.35 / 0.153  (30 faces)  enc=npu  9 s  ETA 1.3 h
+   [503/900] mlvc_540p_npu-npu    qp26     200.5 kbps  Y 42.21  disp 38.54  face 35.83 / 0.166  (30 faces)  enc=npu  9 s  ETA 1.3 h
+   [504/900] mlvc_540p_npu-npu    qp32     113.2 kbps  Y 39.67  disp 36.82  face 33.73 / 0.217  (30 faces)  enc=npu  9 s  ETA 1.3 h
+   [505/900] mlvc_540p_npu-npu    qp40      51.7 kbps  Y 35.37  disp 33.35  face 30.56 / 0.311  (30 faces)  enc=npu  9 s  ETA 1.3 h
+   [506/900] mlvc_540p_gpu-npu    qp16     449.1 kbps  Y 44.39  disp 39.77  face 37.59 / 0.122  (30 faces)  enc=gpu  14 s  ETA 1.3 h
+   [507/900] mlvc_540p_gpu-npu    qp24     237.6 kbps  Y 42.74  disp 38.86  face 36.20 / 0.154  (30 faces)  enc=gpu  14 s  ETA 1.3 h
+   [508/900] mlvc_540p_gpu-npu    qp26     197.6 kbps  Y 42.08  disp 38.45  face 35.68 / 0.166  (30 faces)  enc=gpu  14 s  ETA 1.3 h
+   [509/900] mlvc_540p_gpu-npu    qp32     110.9 kbps  Y 39.56  disp 36.74  face 33.62 / 0.217  (30 faces)  enc=gpu  13 s  ETA 1.3 h
+   [510/900] mlvc_540p_gpu-npu    qp40      50.7 kbps  Y 35.29  disp 33.28  face 30.47 / 0.314  (30 faces)  enc=gpu  14 s  ETA 1.3 h
+   [511/900] mlvcs_540p_npu-npu   qp16     487.6 kbps  Y 43.72  disp 39.35  face 37.27 / 0.128  (30 faces)  enc=npu  5 s  ETA 1.3 h
+   [512/900] mlvcs_540p_npu-npu   qp24     244.9 kbps  Y 42.00  disp 38.38  face 35.86 / 0.165  (30 faces)  enc=npu  5 s  ETA 1.3 h
+   [513/900] mlvcs_540p_npu-npu   qp26     203.0 kbps  Y 41.34  disp 37.96  face 35.30 / 0.178  (30 faces)  enc=npu  4 s  ETA 1.3 h
+   [514/900] mlvcs_540p_npu-npu   qp32     111.5 kbps  Y 38.71  disp 36.10  face 33.17 / 0.233  (30 faces)  enc=npu  5 s  ETA 1.3 h
+   [515/900] mlvcs_540p_npu-npu   qp40      50.3 kbps  Y 34.41  disp 32.51  face 29.80 / 0.338  (30 faces)  enc=npu  5 s  ETA 1.3 h
+   [516/900] mlvc_720p_npu-npu    qp16     716.6 kbps  Y 45.47  disp 42.55  face 40.16 / 0.078  (30 faces)  enc=npu  16 s  ETA 1.3 h
+   [517/900] mlvc_720p_npu-npu    qp24     346.0 kbps  Y 43.80  disp 41.28  face 38.42 / 0.108  (30 faces)  enc=npu  16 s  ETA 1.3 h
+   [518/900] mlvc_720p_npu-npu    qp26     281.7 kbps  Y 43.18  disp 40.78  face 37.76 / 0.121  (30 faces)  enc=npu  16 s  ETA 1.3 h
+   [519/900] mlvc_720p_npu-npu    qp32     152.3 kbps  Y 40.82  disp 38.80  face 35.44 / 0.169  (30 faces)  enc=npu  16 s  ETA 1.3 h
+   [520/900] mlvc_720p_npu-npu    qp40      69.9 kbps  Y 36.76  disp 35.09  face 31.98 / 0.253  (30 faces)  enc=npu  16 s  ETA 1.3 h
+   [521/900] mlvcs_720p_npu-npu   qp16     818.3 kbps  Y 44.99  disp 42.14  face 39.71 / 0.081  (30 faces)  enc=npu  7 s  ETA 1.2 h
+   [522/900] mlvcs_720p_npu-npu   qp24     368.0 kbps  Y 43.17  disp 40.75  face 37.91 / 0.117  (30 faces)  enc=npu  7 s  ETA 1.2 h
+   [523/900] mlvcs_720p_npu-npu   qp26     297.4 kbps  Y 42.51  disp 40.21  face 37.22 / 0.131  (30 faces)  enc=npu  7 s  ETA 1.2 h
+   [524/900] mlvcs_720p_npu-npu   qp32     154.9 kbps  Y 39.90  disp 37.98  face 34.69 / 0.189  (30 faces)  enc=npu  7 s  ETA 1.2 h
+   [525/900] mlvcs_720p_npu-npu   qp40      69.6 kbps  Y 35.74  disp 34.15  face 31.13 / 0.277  (30 faces)  enc=npu  7 s  ETA 1.2 h
+   [526/900] mlvcs_720p_gpu-npu   qp16     815.1 kbps  Y 44.84  disp 42.04  face 39.58 / 0.081  (30 faces)  enc=gpu  10 s  ETA 1.2 h
+   [527/900] mlvcs_720p_gpu-npu   qp24     366.9 kbps  Y 43.07  disp 40.66  face 37.78 / 0.117  (30 faces)  enc=gpu  10 s  ETA 1.2 h
+   [528/900] mlvcs_720p_gpu-npu   qp26     297.2 kbps  Y 42.42  disp 40.14  face 37.15 / 0.131  (30 faces)  enc=gpu  10 s  ETA 1.2 h
+   [529/900] mlvcs_720p_gpu-npu   qp32     155.0 kbps  Y 39.85  disp 37.93  face 34.69 / 0.188  (30 faces)  enc=gpu  10 s  ETA 1.2 h
+   [530/900] mlvcs_720p_gpu-npu   qp40      69.5 kbps  Y 35.71  disp 34.11  face 31.11 / 0.278  (30 faces)  enc=gpu  10 s  ETA 1.2 h
+   [531/900] mlvc_1080p_npu-npu   qp16    1483.3 kbps  Y 46.25  disp 44.66  face 42.27 / 0.055  (30 faces)  enc=npu  32 s  ETA 1.2 h
+   [532/900] mlvc_1080p_npu-npu   qp24     676.0 kbps  Y 44.68  disp 43.10  face 40.37 / 0.078  (30 faces)  enc=npu  32 s  ETA 1.2 h
+   [533/900] mlvc_1080p_npu-npu   qp26     540.0 kbps  Y 44.16  disp 42.59  face 39.70 / 0.089  (30 faces)  enc=npu  32 s  ETA 1.2 h
+   [534/900] mlvc_1080p_npu-npu   qp32     275.5 kbps  Y 42.16  disp 40.63  face 37.33 / 0.131  (30 faces)  enc=npu  32 s  ETA 1.2 h
+   [535/900] mlvc_1080p_npu-npu   qp40     125.1 kbps  Y 38.62  disp 37.17  face 33.80 / 0.200  (30 faces)  enc=npu  32 s  ETA 1.2 h
+   [536/900] mlvcs_1080p_npu-npu  qp16    1769.4 kbps  Y 46.08  disp 44.40  face 41.92 / 0.056  (30 faces)  enc=npu  14 s  ETA 1.2 h
+   [537/900] mlvcs_1080p_npu-npu  qp24     750.0 kbps  Y 44.28  disp 42.68  face 39.94 / 0.084  (30 faces)  enc=npu  14 s  ETA 1.2 h
+   [538/900] mlvcs_1080p_npu-npu  qp26     574.4 kbps  Y 43.67  disp 42.09  face 39.21 / 0.097  (30 faces)  enc=npu  15 s  ETA 1.2 h
+   [539/900] mlvcs_1080p_npu-npu  qp32     264.5 kbps  Y 41.33  disp 39.82  face 36.58 / 0.146  (30 faces)  enc=npu  14 s  ETA 1.2 h
+   [540/900] mlvcs_1080p_npu-npu  qp40     121.3 kbps  Y 37.55  disp 36.12  face 32.94 / 0.223  (30 faces)  enc=npu  14 s  ETA 1.2 h
+== clip 13/20 b2d792  03:12:12
+   originals + face boxes: 30 frames, 30 faces (1 s)
+   [541/900] mlvc_360p_npu-npu    qp16     251.5 kbps  Y 42.50  disp 37.86  face 34.97 / 0.250  (30 faces)  enc=npu  5 s  ETA 1.2 h
+   [542/900] mlvc_360p_npu-npu    qp24     130.0 kbps  Y 40.64  disp 36.93  face 33.91 / 0.272  (30 faces)  enc=npu  5 s  ETA 1.2 h
+   [543/900] mlvc_360p_npu-npu    qp26     106.7 kbps  Y 40.01  disp 36.57  face 33.50 / 0.279  (30 faces)  enc=npu  5 s  ETA 1.2 h
+   [544/900] mlvc_360p_npu-npu    qp32      57.0 kbps  Y 37.66  disp 35.06  face 31.91 / 0.312  (30 faces)  enc=npu  5 s  ETA 1.2 h
+   [545/900] mlvc_360p_npu-npu    qp40      26.4 kbps  Y 34.14  disp 32.33  face 28.85 / 0.391  (30 faces)  enc=npu  4 s  ETA 1.2 h
+   [546/900] mlvc_540p_npu-npu    qp16     491.3 kbps  Y 43.18  disp 40.17  face 37.08 / 0.192  (30 faces)  enc=npu  9 s  ETA 1.2 h
+   [547/900] mlvc_540p_npu-npu    qp24     240.6 kbps  Y 41.46  disp 38.98  face 35.76 / 0.221  (30 faces)  enc=npu  9 s  ETA 1.2 h
+   [548/900] mlvc_540p_npu-npu    qp26     195.0 kbps  Y 40.85  disp 38.52  face 35.25 / 0.234  (30 faces)  enc=npu  9 s  ETA 1.2 h
+   [549/900] mlvc_540p_npu-npu    qp32     101.8 kbps  Y 38.66  disp 36.79  face 33.59 / 0.264  (30 faces)  enc=npu  9 s  ETA 1.2 h
+   [550/900] mlvc_540p_npu-npu    qp40      46.3 kbps  Y 35.43  disp 34.00  face 30.65 / 0.329  (30 faces)  enc=npu  9 s  ETA 1.2 h
+   [551/900] mlvc_540p_gpu-npu    qp16     485.8 kbps  Y 42.76  disp 39.89  face 36.84 / 0.191  (30 faces)  enc=gpu  13 s  ETA 1.2 h
+   [552/900] mlvc_540p_gpu-npu    qp24     236.8 kbps  Y 41.14  disp 38.75  face 35.55 / 0.222  (30 faces)  enc=gpu  13 s  ETA 1.2 h
+   [553/900] mlvc_540p_gpu-npu    qp26     191.4 kbps  Y 40.50  disp 38.26  face 35.02 / 0.233  (30 faces)  enc=gpu  14 s  ETA 1.2 h
+   [554/900] mlvc_540p_gpu-npu    qp32      99.6 kbps  Y 38.37  disp 36.54  face 33.32 / 0.264  (30 faces)  enc=gpu  13 s  ETA 1.1 h
+   [555/900] mlvc_540p_gpu-npu    qp40      45.4 kbps  Y 35.22  disp 33.82  face 30.50 / 0.330  (30 faces)  enc=gpu  14 s  ETA 1.1 h
+   [556/900] mlvcs_540p_npu-npu   qp16     549.8 kbps  Y 42.67  disp 39.76  face 36.70 / 0.198  (30 faces)  enc=npu  5 s  ETA 1.1 h
+   [557/900] mlvcs_540p_npu-npu   qp24     274.9 kbps  Y 40.97  disp 38.59  face 35.42 / 0.229  (30 faces)  enc=npu  5 s  ETA 1.1 h
+   [558/900] mlvcs_540p_npu-npu   qp26     221.2 kbps  Y 40.34  disp 38.12  face 34.93 / 0.240  (30 faces)  enc=npu  5 s  ETA 1.1 h
+   [559/900] mlvcs_540p_npu-npu   qp32     107.6 kbps  Y 38.00  disp 36.23  face 33.06 / 0.274  (30 faces)  enc=npu  5 s  ETA 1.1 h
+   [560/900] mlvcs_540p_npu-npu   qp40      47.2 kbps  Y 34.60  disp 33.21  face 29.94 / 0.350  (30 faces)  enc=npu  5 s  ETA 1.1 h
+   [561/900] mlvc_720p_npu-npu    qp16     783.9 kbps  Y 43.75  disp 41.65  face 38.51 / 0.154  (30 faces)  enc=npu  16 s  ETA 1.1 h
+   [562/900] mlvc_720p_npu-npu    qp24     355.8 kbps  Y 42.10  disp 40.28  face 36.94 / 0.189  (30 faces)  enc=npu  16 s  ETA 1.1 h
+   [563/900] mlvc_720p_npu-npu    qp26     285.4 kbps  Y 41.51  disp 39.79  face 36.41 / 0.202  (30 faces)  enc=npu  16 s  ETA 1.1 h
+   [564/900] mlvc_720p_npu-npu    qp32     143.9 kbps  Y 39.40  disp 37.93  face 34.53 / 0.245  (30 faces)  enc=npu  16 s  ETA 1.1 h
+   [565/900] mlvc_720p_npu-npu    qp40      63.6 kbps  Y 36.38  disp 35.14  face 31.83 / 0.298  (30 faces)  enc=npu  16 s  ETA 1.1 h
+   [566/900] mlvcs_720p_npu-npu   qp16     896.2 kbps  Y 43.38  disp 41.29  face 38.13 / 0.161  (30 faces)  enc=npu  7 s  ETA 1.1 h
+   [567/900] mlvcs_720p_npu-npu   qp24     424.5 kbps  Y 41.72  disp 39.94  face 36.65 / 0.199  (30 faces)  enc=npu  7 s  ETA 1.1 h
+   [568/900] mlvcs_720p_npu-npu   qp26     337.9 kbps  Y 41.11  disp 39.43  face 36.12 / 0.211  (30 faces)  enc=npu  7 s  ETA 1.1 h
+   [569/900] mlvcs_720p_npu-npu   qp32     158.4 kbps  Y 38.83  disp 37.41  face 34.17 / 0.251  (30 faces)  enc=npu  7 s  ETA 1.1 h
+   [570/900] mlvcs_720p_npu-npu   qp40      68.1 kbps  Y 35.56  disp 34.35  face 31.03 / 0.314  (30 faces)  enc=npu  7 s  ETA 1.1 h
+   [571/900] mlvcs_720p_gpu-npu   qp16     893.8 kbps  Y 43.09  disp 41.08  face 37.94 / 0.161  (30 faces)  enc=gpu  10 s  ETA 1.1 h
+   [572/900] mlvcs_720p_gpu-npu   qp24     424.3 kbps  Y 41.49  disp 39.76  face 36.53 / 0.199  (30 faces)  enc=gpu  10 s  ETA 1.1 h
+   [573/900] mlvcs_720p_gpu-npu   qp26     337.5 kbps  Y 40.92  disp 39.28  face 36.02 / 0.211  (30 faces)  enc=gpu  10 s  ETA 1.1 h
+   [574/900] mlvcs_720p_gpu-npu   qp32     158.6 kbps  Y 38.72  disp 37.30  face 34.04 / 0.250  (30 faces)  enc=gpu  10 s  ETA 1.1 h
+   [575/900] mlvcs_720p_gpu-npu   qp40      67.9 kbps  Y 35.51  disp 34.29  face 31.01 / 0.315  (30 faces)  enc=gpu  10 s  ETA 1.1 h
+   [576/900] mlvc_1080p_npu-npu   qp16    1620.8 kbps  Y 44.62  disp 43.37  face 40.28 / 0.125  (30 faces)  enc=npu  32 s  ETA 1.1 h
+   [577/900] mlvc_1080p_npu-npu   qp24     706.0 kbps  Y 43.04  disp 41.81  face 38.47 / 0.161  (30 faces)  enc=npu  32 s  ETA 1.1 h
+   [578/900] mlvc_1080p_npu-npu   qp26     558.9 kbps  Y 42.52  disp 41.30  face 37.91 / 0.175  (30 faces)  enc=npu  31 s  ETA 1.1 h
+   [579/900] mlvc_1080p_npu-npu   qp32     278.7 kbps  Y 40.61  disp 39.45  face 35.94 / 0.221  (30 faces)  enc=npu  30 s  ETA 1.1 h
+   [580/900] mlvc_1080p_npu-npu   qp40     119.0 kbps  Y 37.62  disp 36.54  face 33.21 / 0.271  (30 faces)  enc=npu  30 s  ETA 1.1 h
+   [581/900] mlvcs_1080p_npu-npu  qp16    1875.5 kbps  Y 44.42  disp 43.10  face 39.98 / 0.130  (30 faces)  enc=npu  13 s  ETA 1.1 h
+   [582/900] mlvcs_1080p_npu-npu  qp24     843.0 kbps  Y 42.76  disp 41.51  face 38.23 / 0.172  (30 faces)  enc=npu  13 s  ETA 1.1 h
+   [583/900] mlvcs_1080p_npu-npu  qp26     654.8 kbps  Y 42.17  disp 40.95  face 37.61 / 0.186  (30 faces)  enc=npu  13 s  ETA 1.1 h
+   [584/900] mlvcs_1080p_npu-npu  qp32     296.6 kbps  Y 39.98  disp 38.82  face 35.43 / 0.230  (30 faces)  enc=npu  13 s  ETA 1.1 h
+   [585/900] mlvcs_1080p_npu-npu  qp40     126.1 kbps  Y 36.76  disp 35.68  face 32.51 / 0.281  (30 faces)  enc=npu  13 s  ETA 1.1 h
+== clip 14/20 b8893c  03:21:20
+   originals + face boxes: 30 frames, 30 faces (1 s)
+   [586/900] mlvc_360p_npu-npu    qp16     302.0 kbps  Y 42.92  disp 38.59  face 37.02 / 0.335  (30 faces)  enc=npu  4 s  ETA 1.0 h
+   [587/900] mlvc_360p_npu-npu    qp24     141.8 kbps  Y 41.18  disp 37.59  face 35.90 / 0.350  (30 faces)  enc=npu  5 s  ETA 1.0 h
+   [588/900] mlvc_360p_npu-npu    qp26     114.6 kbps  Y 40.52  disp 37.18  face 35.44 / 0.356  (30 faces)  enc=npu  4 s  ETA 1.0 h
+   [589/900] mlvc_360p_npu-npu    qp32      62.4 kbps  Y 38.04  disp 35.50  face 33.53 / 0.383  (30 faces)  enc=npu  5 s  ETA 1.0 h
+   [590/900] mlvc_360p_npu-npu    qp40      28.6 kbps  Y 33.95  disp 32.17  face 30.21 / 0.455  (30 faces)  enc=npu  4 s  ETA 1.0 h
+   [591/900] mlvc_540p_npu-npu    qp16     666.6 kbps  Y 43.63  disp 40.79  face 39.21 / 0.285  (30 faces)  enc=npu  8 s  ETA 1.0 h
+   [592/900] mlvc_540p_npu-npu    qp24     287.3 kbps  Y 42.20  disp 39.72  face 37.94 / 0.307  (30 faces)  enc=npu  8 s  ETA 1.0 h
+   [593/900] mlvc_540p_npu-npu    qp26     222.0 kbps  Y 41.67  disp 39.29  face 37.48 / 0.314  (30 faces)  enc=npu  8 s  ETA 1.0 h
+   [594/900] mlvc_540p_npu-npu    qp32     109.8 kbps  Y 39.35  disp 37.39  face 35.63 / 0.334  (30 faces)  enc=npu  8 s  ETA 1.0 h
+   [595/900] mlvc_540p_npu-npu    qp40      49.7 kbps  Y 35.62  disp 34.07  face 32.06 / 0.392  (30 faces)  enc=npu  8 s  ETA 1.0 h
+   [596/900] mlvc_540p_gpu-npu    qp16     659.3 kbps  Y 43.32  disp 40.62  face 39.10 / 0.286  (30 faces)  enc=gpu  13 s  ETA 1.0 h
+   [597/900] mlvc_540p_gpu-npu    qp24     282.1 kbps  Y 42.03  disp 39.59  face 37.83 / 0.307  (30 faces)  enc=gpu  13 s  ETA 1.0 h
+   [598/900] mlvc_540p_gpu-npu    qp26     218.0 kbps  Y 41.51  disp 39.18  face 37.40 / 0.314  (30 faces)  enc=gpu  13 s  ETA 1.0 h
+   [599/900] mlvc_540p_gpu-npu    qp32     107.6 kbps  Y 39.23  disp 37.30  face 35.51 / 0.338  (30 faces)  enc=gpu  13 s  ETA 1.0 h
+   [600/900] mlvc_540p_gpu-npu    qp40      48.7 kbps  Y 35.51  disp 33.98  face 31.97 / 0.394  (30 faces)  enc=gpu  13 s  ETA 1.0 h
+   [601/900] mlvcs_540p_npu-npu   qp16     805.5 kbps  Y 43.43  disp 40.59  face 38.97 / 0.283  (30 faces)  enc=npu  4 s  ETA 1.0 h
+   [602/900] mlvcs_540p_npu-npu   qp24     307.7 kbps  Y 41.74  disp 39.33  face 37.56 / 0.308  (30 faces)  enc=npu  4 s  ETA 1.0 h
+   [603/900] mlvcs_540p_npu-npu   qp26     229.9 kbps  Y 41.12  disp 38.85  face 37.05 / 0.316  (30 faces)  enc=npu  4 s  ETA 1.0 h
+   [604/900] mlvcs_540p_npu-npu   qp32     106.6 kbps  Y 38.53  disp 36.69  face 34.94 / 0.341  (30 faces)  enc=npu  4 s  ETA 1.0 h
+   [605/900] mlvcs_540p_npu-npu   qp40      47.9 kbps  Y 34.60  disp 33.13  face 31.17 / 0.407  (30 faces)  enc=npu  4 s  ETA 1.0 h
+   [606/900] mlvc_720p_npu-npu    qp16    1133.4 kbps  Y 43.85  disp 41.82  face 40.37 / 0.262  (30 faces)  enc=npu  15 s  ETA 1.0 h
+   [607/900] mlvc_720p_npu-npu    qp24     461.1 kbps  Y 42.49  disp 40.62  face 39.04 / 0.287  (30 faces)  enc=npu  15 s  ETA 1.0 h
+   [608/900] mlvc_720p_npu-npu    qp26     348.8 kbps  Y 42.04  disp 40.21  face 38.54 / 0.295  (30 faces)  enc=npu  15 s  ETA 1.0 h
+   [609/900] mlvc_720p_npu-npu    qp32     155.6 kbps  Y 40.27  disp 38.61  face 36.78 / 0.319  (30 faces)  enc=npu  16 s  ETA 1.0 h
+   [610/900] mlvc_720p_npu-npu    qp40      67.5 kbps  Y 36.83  disp 35.41  face 33.52 / 0.364  (30 faces)  enc=npu  16 s  ETA 1.0 h
+   [611/900] mlvcs_720p_npu-npu   qp16    1434.1 kbps  Y 43.79  disp 41.69  face 40.21 / 0.256  (30 faces)  enc=npu  7 s  ETA 1.0 h
+   [612/900] mlvcs_720p_npu-npu   qp24     531.5 kbps  Y 42.14  disp 40.28  face 38.66 / 0.289  (30 faces)  enc=npu  7 s  ETA 1.0 h
+   [613/900] mlvcs_720p_npu-npu   qp26     381.4 kbps  Y 41.61  disp 39.81  face 38.17 / 0.296  (30 faces)  enc=npu  7 s  ETA 0.9 h
+   [614/900] mlvcs_720p_npu-npu   qp32     155.0 kbps  Y 39.48  disp 37.87  face 36.09 / 0.322  (30 faces)  enc=npu  7 s  ETA 0.9 h
+   [615/900] mlvcs_720p_npu-npu   qp40      67.4 kbps  Y 35.81  disp 34.45  face 32.50 / 0.373  (30 faces)  enc=npu  7 s  ETA 0.9 h
+   [616/900] mlvcs_720p_gpu-npu   qp16    1430.2 kbps  Y 43.37  disp 41.43  face 40.04 / 0.257  (30 faces)  enc=gpu  10 s  ETA 0.9 h
+   [617/900] mlvcs_720p_gpu-npu   qp24     530.2 kbps  Y 41.95  disp 40.16  face 38.58 / 0.290  (30 faces)  enc=gpu  10 s  ETA 0.9 h
+   [618/900] mlvcs_720p_gpu-npu   qp26     378.4 kbps  Y 41.45  disp 39.71  face 38.09 / 0.296  (30 faces)  enc=gpu  10 s  ETA 0.9 h
+   [619/900] mlvcs_720p_gpu-npu   qp32     154.1 kbps  Y 39.38  disp 37.82  face 36.04 / 0.321  (30 faces)  enc=gpu  10 s  ETA 0.9 h
+   [620/900] mlvcs_720p_gpu-npu   qp40      67.4 kbps  Y 35.77  disp 34.41  face 32.46 / 0.376  (30 faces)  enc=gpu  10 s  ETA 0.9 h
+   [621/900] mlvc_1080p_npu-npu   qp16    2454.9 kbps  Y 44.54  disp 43.24  face 41.81 / 0.232  (30 faces)  enc=npu  32 s  ETA 0.9 h
+   [622/900] mlvc_1080p_npu-npu   qp24     982.2 kbps  Y 42.94  disp 41.64  face 40.15 / 0.276  (30 faces)  enc=npu  32 s  ETA 0.9 h
+   [623/900] mlvc_1080p_npu-npu   qp26     741.4 kbps  Y 42.51  disp 41.20  face 39.67 / 0.284  (30 faces)  enc=npu  32 s  ETA 0.9 h
+   [624/900] mlvc_1080p_npu-npu   qp32     310.5 kbps  Y 41.06  disp 39.74  face 38.07 / 0.310  (30 faces)  enc=npu  32 s  ETA 0.9 h
+   [625/900] mlvc_1080p_npu-npu   qp40     123.0 kbps  Y 38.22  disp 36.94  face 35.27 / 0.341  (30 faces)  enc=npu  32 s  ETA 0.9 h
+   [626/900] mlvcs_1080p_npu-npu  qp16    3357.2 kbps  Y 44.57  disp 43.18  face 41.67 / 0.220  (30 faces)  enc=npu  14 s  ETA 0.9 h
+   [627/900] mlvcs_1080p_npu-npu  qp24    1263.1 kbps  Y 42.72  disp 41.36  face 39.81 / 0.274  (30 faces)  enc=npu  14 s  ETA 0.9 h
+   [628/900] mlvcs_1080p_npu-npu  qp26     888.5 kbps  Y 42.18  disp 40.82  face 39.26 / 0.285  (30 faces)  enc=npu  14 s  ETA 0.9 h
+   [629/900] mlvcs_1080p_npu-npu  qp32     298.6 kbps  Y 40.42  disp 39.09  face 37.42 / 0.311  (30 faces)  enc=npu  14 s  ETA 0.9 h
+   [630/900] mlvcs_1080p_npu-npu  qp40     121.1 kbps  Y 37.24  disp 35.99  face 34.34 / 0.350  (30 faces)  enc=npu  14 s  ETA 0.9 h
+== clip 15/20 b91038  03:30:20
+   originals + face boxes: 30 frames, 30 faces (1 s)
+   [631/900] mlvc_360p_npu-npu    qp16     301.8 kbps  Y 40.32  disp 34.27  face 31.48 / 0.209  (30 faces)  enc=npu  5 s  ETA 0.9 h
+   [632/900] mlvc_360p_npu-npu    qp24     173.5 kbps  Y 38.85  disp 33.67  face 30.66 / 0.227  (30 faces)  enc=npu  5 s  ETA 0.9 h
+   [633/900] mlvc_360p_npu-npu    qp26     147.4 kbps  Y 38.23  disp 33.39  face 30.33 / 0.236  (30 faces)  enc=npu  5 s  ETA 0.9 h
+   [634/900] mlvc_360p_npu-npu    qp32      81.5 kbps  Y 35.78  disp 32.09  face 28.95 / 0.271  (30 faces)  enc=npu  5 s  ETA 0.9 h
+   [635/900] mlvc_360p_npu-npu    qp40      34.6 kbps  Y 31.47  disp 29.07  face 25.94 / 0.394  (30 faces)  enc=npu  5 s  ETA 0.9 h
+   [636/900] mlvc_540p_npu-npu    qp16     643.7 kbps  Y 42.43  disp 38.37  face 35.75 / 0.097  (30 faces)  enc=npu  9 s  ETA 0.9 h
+   [637/900] mlvc_540p_npu-npu    qp24     325.2 kbps  Y 40.75  disp 37.35  face 34.39 / 0.116  (30 faces)  enc=npu  9 s  ETA 0.9 h
+   [638/900] mlvc_540p_npu-npu    qp26     265.6 kbps  Y 40.09  disp 36.92  face 33.84 / 0.123  (30 faces)  enc=npu  9 s  ETA 0.9 h
+   [639/900] mlvc_540p_npu-npu    qp32     142.5 kbps  Y 37.47  disp 35.00  face 31.76 / 0.164  (30 faces)  enc=npu  9 s  ETA 0.9 h
+   [640/900] mlvc_540p_npu-npu    qp40      59.6 kbps  Y 33.09  disp 31.30  face 28.34 / 0.258  (30 faces)  enc=npu  9 s  ETA 0.9 h
+   [641/900] mlvc_540p_gpu-npu    qp16     639.8 kbps  Y 42.32  disp 38.31  face 35.59 / 0.097  (30 faces)  enc=gpu  13 s  ETA 0.9 h
+   [642/900] mlvc_540p_gpu-npu    qp24     322.2 kbps  Y 40.69  disp 37.31  face 34.29 / 0.115  (30 faces)  enc=gpu  13 s  ETA 0.9 h
+   [643/900] mlvc_540p_gpu-npu    qp26     261.8 kbps  Y 40.02  disp 36.87  face 33.80 / 0.123  (30 faces)  enc=gpu  14 s  ETA 0.9 h
+   [644/900] mlvc_540p_gpu-npu    qp32     140.7 kbps  Y 37.38  disp 34.94  face 31.64 / 0.164  (30 faces)  enc=gpu  13 s  ETA 0.9 h
+   [645/900] mlvc_540p_gpu-npu    qp40      58.7 kbps  Y 33.06  disp 31.28  face 28.30 / 0.259  (30 faces)  enc=gpu  13 s  ETA 0.8 h
+   [646/900] mlvcs_540p_npu-npu   qp16     727.4 kbps  Y 41.60  disp 37.83  face 35.13 / 0.105  (30 faces)  enc=npu  4 s  ETA 0.8 h
+   [647/900] mlvcs_540p_npu-npu   qp24     325.7 kbps  Y 40.09  disp 36.90  face 33.94 / 0.122  (30 faces)  enc=npu  5 s  ETA 0.8 h
+   [648/900] mlvcs_540p_npu-npu   qp26     259.5 kbps  Y 39.46  disp 36.46  face 33.38 / 0.131  (30 faces)  enc=npu  4 s  ETA 0.8 h
+   [649/900] mlvcs_540p_npu-npu   qp32     136.2 kbps  Y 36.83  disp 34.50  face 31.22 / 0.178  (30 faces)  enc=npu  4 s  ETA 0.8 h
+   [650/900] mlvcs_540p_npu-npu   qp40      56.7 kbps  Y 32.40  disp 30.67  face 27.77 / 0.285  (30 faces)  enc=npu  4 s  ETA 0.8 h
+   [651/900] mlvc_720p_npu-npu    qp16    1106.6 kbps  Y 43.64  disp 40.72  face 38.32 / 0.060  (30 faces)  enc=npu  16 s  ETA 0.8 h
+   [652/900] mlvc_720p_npu-npu    qp24     500.5 kbps  Y 41.92  disp 39.42  face 36.59 / 0.074  (30 faces)  enc=npu  16 s  ETA 0.8 h
+   [653/900] mlvc_720p_npu-npu    qp26     397.5 kbps  Y 41.29  disp 38.92  face 36.01 / 0.081  (30 faces)  enc=npu  16 s  ETA 0.8 h
+   [654/900] mlvc_720p_npu-npu    qp32     199.0 kbps  Y 38.78  disp 36.83  face 33.56 / 0.112  (30 faces)  enc=npu  16 s  ETA 0.8 h
+   [655/900] mlvc_720p_npu-npu    qp40      83.6 kbps  Y 34.44  disp 32.88  face 29.85 / 0.193  (30 faces)  enc=npu  16 s  ETA 0.8 h
+   [656/900] mlvcs_720p_npu-npu   qp16    1276.0 kbps  Y 43.18  disp 40.31  face 37.84 / 0.062  (30 faces)  enc=npu  7 s  ETA 0.8 h
+   [657/900] mlvcs_720p_npu-npu   qp24     522.9 kbps  Y 41.45  disp 39.03  face 36.25 / 0.079  (30 faces)  enc=npu  7 s  ETA 0.8 h
+   [658/900] mlvcs_720p_npu-npu   qp26     400.3 kbps  Y 40.78  disp 38.51  face 35.61 / 0.087  (30 faces)  enc=npu  7 s  ETA 0.8 h
+   [659/900] mlvcs_720p_npu-npu   qp32     192.6 kbps  Y 38.09  disp 36.23  face 33.04 / 0.121  (30 faces)  enc=npu  7 s  ETA 0.8 h
+   [660/900] mlvcs_720p_npu-npu   qp40      80.2 kbps  Y 33.60  disp 32.08  face 29.26 / 0.222  (30 faces)  enc=npu  7 s  ETA 0.8 h
+   [661/900] mlvcs_720p_gpu-npu   qp16    1270.4 kbps  Y 43.08  disp 40.26  face 37.74 / 0.063  (30 faces)  enc=gpu  10 s  ETA 0.8 h
+   [662/900] mlvcs_720p_gpu-npu   qp24     520.2 kbps  Y 41.39  disp 38.99  face 36.18 / 0.080  (30 faces)  enc=gpu  10 s  ETA 0.8 h
+   [663/900] mlvcs_720p_gpu-npu   qp26     399.4 kbps  Y 40.73  disp 38.47  face 35.54 / 0.086  (30 faces)  enc=gpu  10 s  ETA 0.8 h
+   [664/900] mlvcs_720p_gpu-npu   qp32     191.9 kbps  Y 38.05  disp 36.19  face 33.00 / 0.123  (30 faces)  enc=gpu  10 s  ETA 0.8 h
+   [665/900] mlvcs_720p_gpu-npu   qp40      80.0 kbps  Y 33.57  disp 32.06  face 29.31 / 0.223  (30 faces)  enc=gpu  10 s  ETA 0.8 h
+   [666/900] mlvc_1080p_npu-npu   qp16    2259.1 kbps  Y 44.47  disp 42.90  face 40.67 / 0.041  (30 faces)  enc=npu  32 s  ETA 0.8 h
+   [667/900] mlvc_1080p_npu-npu   qp24    1012.4 kbps  Y 42.83  disp 41.26  face 38.77 / 0.054  (30 faces)  enc=npu  32 s  ETA 0.8 h
+   [668/900] mlvc_1080p_npu-npu   qp26     784.6 kbps  Y 42.30  disp 40.74  face 38.12 / 0.059  (30 faces)  enc=npu  32 s  ETA 0.8 h
+   [669/900] mlvc_1080p_npu-npu   qp32     355.1 kbps  Y 40.27  disp 38.77  face 35.67 / 0.081  (30 faces)  enc=npu  32 s  ETA 0.8 h
+   [670/900] mlvc_1080p_npu-npu   qp40     147.4 kbps  Y 36.46  disp 35.05  face 31.94 / 0.136  (30 faces)  enc=npu  32 s  ETA 0.8 h
+   [671/900] mlvcs_1080p_npu-npu  qp16    2761.8 kbps  Y 44.31  disp 42.59  face 40.39 / 0.040  (30 faces)  enc=npu  15 s  ETA 0.8 h
+   [672/900] mlvcs_1080p_npu-npu  qp24    1125.5 kbps  Y 42.48  disp 40.90  face 38.50 / 0.055  (30 faces)  enc=npu  14 s  ETA 0.8 h
+   [673/900] mlvcs_1080p_npu-npu  qp26     824.6 kbps  Y 41.85  disp 40.29  face 37.80 / 0.060  (30 faces)  enc=npu  13 s  ETA 0.8 h
+   [674/900] mlvcs_1080p_npu-npu  qp32     327.5 kbps  Y 39.47  disp 37.99  face 35.20 / 0.086  (30 faces)  enc=npu  13 s  ETA 0.8 h
+   [675/900] mlvcs_1080p_npu-npu  qp40     135.2 kbps  Y 35.35  disp 33.95  face 31.29 / 0.157  (30 faces)  enc=npu  13 s  ETA 0.8 h
+== clip 16/20 c33648  03:39:32
+   originals + face boxes: 30 frames, 30 faces (1 s)
+   [676/900] mlvc_360p_npu-npu    qp16     408.5 kbps  Y 41.59  disp 35.09  face 35.66 / 0.229  (30 faces)  enc=npu  4 s  ETA 0.7 h
+   [677/900] mlvc_360p_npu-npu    qp24     198.7 kbps  Y 39.95  disp 34.48  face 34.60 / 0.253  (30 faces)  enc=npu  4 s  ETA 0.7 h
+   [678/900] mlvc_360p_npu-npu    qp26     159.7 kbps  Y 39.31  disp 34.22  face 34.16 / 0.260  (30 faces)  enc=npu  4 s  ETA 0.7 h
+   [679/900] mlvc_360p_npu-npu    qp32      82.4 kbps  Y 36.93  disp 33.03  face 32.46 / 0.302  (30 faces)  enc=npu  4 s  ETA 0.7 h
+   [680/900] mlvc_360p_npu-npu    qp40      36.4 kbps  Y 33.05  disp 30.46  face 29.25 / 0.402  (30 faces)  enc=npu  4 s  ETA 0.7 h
+   [681/900] mlvc_540p_npu-npu    qp16     877.1 kbps  Y 42.48  disp 38.09  face 38.02 / 0.168  (30 faces)  enc=npu  8 s  ETA 0.7 h
+   [682/900] mlvc_540p_npu-npu    qp24     397.0 kbps  Y 40.86  disp 37.17  face 36.75 / 0.190  (30 faces)  enc=npu  9 s  ETA 0.7 h
+   [683/900] mlvc_540p_npu-npu    qp26     311.4 kbps  Y 40.29  disp 36.81  face 36.28 / 0.201  (30 faces)  enc=npu  9 s  ETA 0.7 h
+   [684/900] mlvc_540p_npu-npu    qp32     151.5 kbps  Y 38.08  disp 35.31  face 34.48 / 0.239  (30 faces)  enc=npu  9 s  ETA 0.7 h
+   [685/900] mlvc_540p_npu-npu    qp40      65.5 kbps  Y 34.44  disp 32.40  face 31.27 / 0.320  (30 faces)  enc=npu  9 s  ETA 0.7 h
+   [686/900] mlvc_540p_gpu-npu    qp16     875.4 kbps  Y 42.31  disp 38.01  face 37.98 / 0.168  (30 faces)  enc=gpu  13 s  ETA 0.7 h
+   [687/900] mlvc_540p_gpu-npu    qp24     393.7 kbps  Y 40.75  disp 37.11  face 36.72 / 0.191  (30 faces)  enc=gpu  14 s  ETA 0.7 h
+   [688/900] mlvc_540p_gpu-npu    qp26     308.8 kbps  Y 40.17  disp 36.75  face 36.21 / 0.202  (30 faces)  enc=gpu  14 s  ETA 0.7 h
+   [689/900] mlvc_540p_gpu-npu    qp32     150.0 kbps  Y 37.99  disp 35.24  face 34.42 / 0.237  (30 faces)  enc=gpu  13 s  ETA 0.7 h
+   [690/900] mlvc_540p_gpu-npu    qp40      64.7 kbps  Y 34.38  disp 32.36  face 31.37 / 0.318  (30 faces)  enc=gpu  13 s  ETA 0.7 h
+   [691/900] mlvcs_540p_npu-npu   qp16     984.4 kbps  Y 41.94  disp 37.70  face 37.76 / 0.168  (30 faces)  enc=npu  5 s  ETA 0.7 h
+   [692/900] mlvcs_540p_npu-npu   qp24     458.0 kbps  Y 40.37  disp 36.82  face 36.51 / 0.196  (30 faces)  enc=npu  4 s  ETA 0.7 h
+   [693/900] mlvcs_540p_npu-npu   qp26     355.2 kbps  Y 39.77  disp 36.44  face 36.01 / 0.207  (30 faces)  enc=npu  5 s  ETA 0.7 h
+   [694/900] mlvcs_540p_npu-npu   qp32     161.3 kbps  Y 37.43  disp 34.79  face 34.00 / 0.247  (30 faces)  enc=npu  4 s  ETA 0.7 h
+   [695/900] mlvcs_540p_npu-npu   qp40      68.6 kbps  Y 33.59  disp 31.64  face 30.60 / 0.330  (30 faces)  enc=npu  5 s  ETA 0.7 h
+   [696/900] mlvc_720p_npu-npu    qp16    1470.2 kbps  Y 43.05  disp 40.03  face 39.40 / 0.137  (30 faces)  enc=npu  16 s  ETA 0.7 h
+   [697/900] mlvc_720p_npu-npu    qp24     636.3 kbps  Y 41.36  disp 38.78  face 37.91 / 0.166  (30 faces)  enc=npu  16 s  ETA 0.7 h
+   [698/900] mlvc_720p_npu-npu    qp26     491.8 kbps  Y 40.82  disp 38.36  face 37.45 / 0.175  (30 faces)  enc=npu  16 s  ETA 0.7 h
+   [699/900] mlvc_720p_npu-npu    qp32     223.1 kbps  Y 38.83  disp 36.73  face 35.67 / 0.209  (30 faces)  enc=npu  16 s  ETA 0.7 h
+   [700/900] mlvc_720p_npu-npu    qp40      92.8 kbps  Y 35.42  disp 33.70  face 32.64 / 0.278  (30 faces)  enc=npu  16 s  ETA 0.7 h
+   [701/900] mlvcs_720p_npu-npu   qp16    1608.9 kbps  Y 42.65  disp 39.62  face 39.22 / 0.133  (30 faces)  enc=npu  7 s  ETA 0.7 h
+   [702/900] mlvcs_720p_npu-npu   qp24     752.9 kbps  Y 41.07  disp 38.50  face 37.77 / 0.166  (30 faces)  enc=npu  7 s  ETA 0.7 h
+   [703/900] mlvcs_720p_npu-npu   qp26     578.5 kbps  Y 40.48  disp 38.04  face 37.21 / 0.177  (30 faces)  enc=npu  7 s  ETA 0.7 h
+   [704/900] mlvcs_720p_npu-npu   qp32     250.3 kbps  Y 38.25  disp 36.22  face 35.26 / 0.215  (30 faces)  enc=npu  7 s  ETA 0.6 h
+   [705/900] mlvcs_720p_npu-npu   qp40     103.9 kbps  Y 34.61  disp 32.96  face 31.69 / 0.292  (30 faces)  enc=npu  7 s  ETA 0.6 h
+   [706/900] mlvcs_720p_gpu-npu   qp16    1603.7 kbps  Y 42.46  disp 39.51  face 39.06 / 0.133  (30 faces)  enc=gpu  10 s  ETA 0.6 h
+   [707/900] mlvcs_720p_gpu-npu   qp24     749.5 kbps  Y 40.93  disp 38.40  face 37.69 / 0.166  (30 faces)  enc=gpu  10 s  ETA 0.6 h
+   [708/900] mlvcs_720p_gpu-npu   qp26     575.7 kbps  Y 40.25  disp 37.88  face 37.16 / 0.177  (30 faces)  enc=gpu  10 s  ETA 0.6 h
+   [709/900] mlvcs_720p_gpu-npu   qp32     250.3 kbps  Y 37.68  disp 35.71  face 35.20 / 0.215  (30 faces)  enc=gpu  10 s  ETA 0.6 h
+   [710/900] mlvcs_720p_gpu-npu   qp40     104.1 kbps  Y 34.47  disp 32.84  face 31.68 / 0.295  (30 faces)  enc=gpu  10 s  ETA 0.6 h
+   [711/900] mlvc_1080p_npu-npu   qp16    3018.1 kbps  Y 43.53  disp 42.15  face 41.03 / 0.104  (30 faces)  enc=npu  32 s  ETA 0.6 h
+   [712/900] mlvc_1080p_npu-npu   qp24    1295.7 kbps  Y 41.70  disp 40.34  face 39.17 / 0.144  (30 faces)  enc=npu  32 s  ETA 0.6 h
+   [713/900] mlvc_1080p_npu-npu   qp26     991.7 kbps  Y 41.18  disp 39.82  face 38.63 / 0.155  (30 faces)  enc=npu  32 s  ETA 0.6 h
+   [714/900] mlvc_1080p_npu-npu   qp32     437.6 kbps  Y 39.47  disp 38.12  face 36.92 / 0.189  (30 faces)  enc=npu  32 s  ETA 0.6 h
+   [715/900] mlvc_1080p_npu-npu   qp40     174.0 kbps  Y 36.65  disp 35.29  face 34.23 / 0.244  (30 faces)  enc=npu  32 s  ETA 0.6 h
+   [716/900] mlvcs_1080p_npu-npu  qp16    3230.5 kbps  Y 43.24  disp 41.71  face 40.86 / 0.102  (30 faces)  enc=npu  14 s  ETA 0.6 h
+   [717/900] mlvcs_1080p_npu-npu  qp24    1538.7 kbps  Y 41.59  disp 40.16  face 39.06 / 0.144  (30 faces)  enc=npu  14 s  ETA 0.6 h
+   [718/900] mlvcs_1080p_npu-npu  qp26    1185.4 kbps  Y 41.03  disp 39.62  face 38.47 / 0.156  (30 faces)  enc=npu  14 s  ETA 0.6 h
+   [719/900] mlvcs_1080p_npu-npu  qp32     484.6 kbps  Y 39.03  disp 37.66  face 36.47 / 0.192  (30 faces)  enc=npu  14 s  ETA 0.6 h
+   [720/900] mlvcs_1080p_npu-npu  qp40     192.3 kbps  Y 35.78  disp 34.42  face 33.21 / 0.258  (30 faces)  enc=npu  14 s  ETA 0.6 h
+== clip 17/20 c52d75  03:48:44
+   originals + face boxes: 30 frames, 30 faces (1 s)
+   [721/900] mlvc_360p_npu-npu    qp16     349.1 kbps  Y 40.12  disp 31.16  face 31.90 / 0.306  (30 faces)  enc=npu  5 s  ETA 0.6 h
+   [722/900] mlvc_360p_npu-npu    qp24     173.8 kbps  Y 38.49  disp 30.80  face 31.17 / 0.329  (30 faces)  enc=npu  5 s  ETA 0.6 h
+   [723/900] mlvc_360p_npu-npu    qp26     142.9 kbps  Y 37.86  disp 30.64  face 30.84 / 0.337  (30 faces)  enc=npu  5 s  ETA 0.6 h
+   [724/900] mlvc_360p_npu-npu    qp32      76.6 kbps  Y 35.43  disp 29.83  face 29.53 / 0.374  (30 faces)  enc=npu  5 s  ETA 0.6 h
+   [725/900] mlvc_360p_npu-npu    qp40      34.1 kbps  Y 31.67  disp 27.98  face 27.06 / 0.430  (30 faces)  enc=npu  5 s  ETA 0.6 h
+   [726/900] mlvc_540p_npu-npu    qp16     761.5 kbps  Y 40.84  disp 34.71  face 34.34 / 0.205  (30 faces)  enc=npu  9 s  ETA 0.6 h
+   [727/900] mlvc_540p_npu-npu    qp24     349.3 kbps  Y 39.28  disp 34.08  face 33.34 / 0.235  (30 faces)  enc=npu  9 s  ETA 0.6 h
+   [728/900] mlvc_540p_npu-npu    qp26     280.3 kbps  Y 38.67  disp 33.80  face 32.94 / 0.246  (30 faces)  enc=npu  9 s  ETA 0.6 h
+   [729/900] mlvc_540p_npu-npu    qp32     144.1 kbps  Y 36.39  disp 32.54  face 31.32 / 0.299  (30 faces)  enc=npu  9 s  ETA 0.6 h
+   [730/900] mlvc_540p_npu-npu    qp40      61.3 kbps  Y 32.52  disp 29.85  face 28.67 / 0.376  (30 faces)  enc=npu  9 s  ETA 0.6 h
+   [731/900] mlvc_540p_gpu-npu    qp16     758.0 kbps  Y 40.23  disp 34.50  face 33.94 / 0.205  (30 faces)  enc=gpu  13 s  ETA 0.6 h
+   [732/900] mlvc_540p_gpu-npu    qp24     346.8 kbps  Y 38.84  disp 33.89  face 33.00 / 0.235  (30 faces)  enc=gpu  13 s  ETA 0.6 h
+   [733/900] mlvc_540p_gpu-npu    qp26     277.3 kbps  Y 38.35  disp 33.65  face 32.67 / 0.247  (30 faces)  enc=gpu  13 s  ETA 0.6 h
+   [734/900] mlvc_540p_gpu-npu    qp32     142.6 kbps  Y 36.19  disp 32.42  face 31.18 / 0.297  (30 faces)  enc=gpu  14 s  ETA 0.6 h
+   [735/900] mlvc_540p_gpu-npu    qp40      61.1 kbps  Y 32.43  disp 29.79  face 28.56 / 0.378  (30 faces)  enc=gpu  13 s  ETA 0.6 h
+   [736/900] mlvcs_540p_npu-npu   qp16     846.9 kbps  Y 39.90  disp 34.29  face 33.90 / 0.217  (30 faces)  enc=npu  4 s  ETA 0.5 h
+   [737/900] mlvcs_540p_npu-npu   qp24     401.7 kbps  Y 38.52  disp 33.68  face 33.06 / 0.243  (30 faces)  enc=npu  4 s  ETA 0.5 h
+   [738/900] mlvcs_540p_npu-npu   qp26     321.4 kbps  Y 37.92  disp 33.37  face 32.68 / 0.254  (30 faces)  enc=npu  4 s  ETA 0.5 h
+   [739/900] mlvcs_540p_npu-npu   qp32     162.8 kbps  Y 35.51  disp 31.95  face 31.08 / 0.309  (30 faces)  enc=npu  5 s  ETA 0.5 h
+   [740/900] mlvcs_540p_npu-npu   qp40      72.2 kbps  Y 31.59  disp 29.13  face 28.27 / 0.387  (30 faces)  enc=npu  5 s  ETA 0.5 h
+   [741/900] mlvc_720p_npu-npu    qp16    1447.0 kbps  Y 41.24  disp 37.05  face 36.03 / 0.144  (30 faces)  enc=npu  16 s  ETA 0.5 h
+   [742/900] mlvc_720p_npu-npu    qp24     583.8 kbps  Y 39.77  disp 36.19  face 34.77 / 0.178  (30 faces)  enc=npu  16 s  ETA 0.5 h
+   [743/900] mlvc_720p_npu-npu    qp26     448.1 kbps  Y 39.25  disp 35.86  face 34.28 / 0.192  (30 faces)  enc=npu  16 s  ETA 0.5 h
+   [744/900] mlvc_720p_npu-npu    qp32     212.1 kbps  Y 37.20  disp 34.47  face 32.54 / 0.250  (30 faces)  enc=npu  16 s  ETA 0.5 h
+   [745/900] mlvc_720p_npu-npu    qp40      89.1 kbps  Y 33.64  disp 31.64  face 29.62 / 0.341  (30 faces)  enc=npu  16 s  ETA 0.5 h
+   [746/900] mlvcs_720p_npu-npu   qp16    1529.5 kbps  Y 40.53  disp 36.61  face 35.51 / 0.152  (30 faces)  enc=npu  7 s  ETA 0.5 h
+   [747/900] mlvcs_720p_npu-npu   qp24     701.5 kbps  Y 39.24  disp 35.87  face 34.50 / 0.184  (30 faces)  enc=npu  7 s  ETA 0.5 h
+   [748/900] mlvcs_720p_npu-npu   qp26     542.3 kbps  Y 38.71  disp 35.54  face 34.06 / 0.197  (30 faces)  enc=npu  7 s  ETA 0.5 h
+   [749/900] mlvcs_720p_npu-npu   qp32     252.3 kbps  Y 36.54  disp 34.03  face 32.23 / 0.260  (30 faces)  enc=npu  7 s  ETA 0.5 h
+   [750/900] mlvcs_720p_npu-npu   qp40     108.0 kbps  Y 32.98  disp 31.12  face 29.30 / 0.351  (30 faces)  enc=npu  7 s  ETA 0.5 h
+   [751/900] mlvcs_720p_gpu-npu   qp16    1525.2 kbps  Y 40.32  disp 36.51  face 35.45 / 0.152  (30 faces)  enc=gpu  10 s  ETA 0.5 h
+   [752/900] mlvcs_720p_gpu-npu   qp24     697.8 kbps  Y 38.97  disp 35.73  face 34.43 / 0.184  (30 faces)  enc=gpu  10 s  ETA 0.5 h
+   [753/900] mlvcs_720p_gpu-npu   qp26     539.9 kbps  Y 38.43  disp 35.39  face 34.02 / 0.197  (30 faces)  enc=gpu  10 s  ETA 0.5 h
+   [754/900] mlvcs_720p_gpu-npu   qp32     252.1 kbps  Y 36.37  disp 33.93  face 32.18 / 0.260  (30 faces)  enc=gpu  10 s  ETA 0.5 h
+   [755/900] mlvcs_720p_gpu-npu   qp40     107.6 kbps  Y 32.89  disp 31.05  face 29.25 / 0.351  (30 faces)  enc=gpu  10 s  ETA 0.5 h
+   [756/900] mlvc_1080p_npu-npu   qp16    3717.0 kbps  Y 41.06  disp 39.81  face 38.20 / 0.091  (30 faces)  enc=npu  32 s  ETA 0.5 h
+   [757/900] mlvc_1080p_npu-npu   qp24    1477.8 kbps  Y 39.56  disp 38.32  face 36.49 / 0.129  (30 faces)  enc=npu  32 s  ETA 0.5 h
+   [758/900] mlvc_1080p_npu-npu   qp26    1094.4 kbps  Y 39.12  disp 37.86  face 35.98 / 0.143  (30 faces)  enc=npu  32 s  ETA 0.5 h
+   [759/900] mlvc_1080p_npu-npu   qp32     434.9 kbps  Y 37.56  disp 36.27  face 34.08 / 0.200  (30 faces)  enc=npu  32 s  ETA 0.5 h
+   [760/900] mlvc_1080p_npu-npu   qp40     167.7 kbps  Y 34.59  disp 33.32  face 31.10 / 0.297  (30 faces)  enc=npu  32 s  ETA 0.5 h
+   [761/900] mlvcs_1080p_npu-npu  qp16    3601.0 kbps  Y 40.62  disp 39.23  face 37.60 / 0.096  (30 faces)  enc=npu  15 s  ETA 0.5 h
+   [762/900] mlvcs_1080p_npu-npu  qp24    1712.4 kbps  Y 39.35  disp 38.06  face 36.27 / 0.133  (30 faces)  enc=npu  14 s  ETA 0.5 h
+   [763/900] mlvcs_1080p_npu-npu  qp26    1301.4 kbps  Y 38.90  disp 37.62  face 35.75 / 0.148  (30 faces)  enc=npu  14 s  ETA 0.5 h
+   [764/900] mlvcs_1080p_npu-npu  qp32     508.0 kbps  Y 37.17  disp 35.91  face 33.78 / 0.210  (30 faces)  enc=npu  14 s  ETA 0.5 h
+   [765/900] mlvcs_1080p_npu-npu  qp40     202.1 kbps  Y 34.10  disp 32.86  face 30.65 / 0.307  (30 faces)  enc=npu  14 s  ETA 0.5 h
+== clip 18/20 cd6bc1  03:58:00
+   originals + face boxes: 30 frames, 30 faces (1 s)
+   [766/900] mlvc_360p_npu-npu    qp16     418.8 kbps  Y 39.76  disp 32.49  face 30.72 / 0.261  (30 faces)  enc=npu  5 s  ETA 0.4 h
+   [767/900] mlvc_360p_npu-npu    qp24     226.6 kbps  Y 38.23  disp 32.00  face 30.16 / 0.276  (30 faces)  enc=npu  5 s  ETA 0.4 h
+   [768/900] mlvc_360p_npu-npu    qp26     189.2 kbps  Y 37.59  disp 31.75  face 29.93 / 0.281  (30 faces)  enc=npu  5 s  ETA 0.4 h
+   [769/900] mlvc_360p_npu-npu    qp32     106.8 kbps  Y 35.19  disp 30.67  face 28.90 / 0.305  (30 faces)  enc=npu  5 s  ETA 0.4 h
+   [770/900] mlvc_360p_npu-npu    qp40      50.5 kbps  Y 30.83  disp 27.98  face 26.76 / 0.358  (30 faces)  enc=npu  5 s  ETA 0.4 h
+   [771/900] mlvc_540p_npu-npu    qp16     935.7 kbps  Y 40.86  disp 35.65  face 34.03 / 0.166  (30 faces)  enc=npu  9 s  ETA 0.4 h
+   [772/900] mlvc_540p_npu-npu    qp24     424.5 kbps  Y 39.15  disp 34.82  face 33.19 / 0.186  (30 faces)  enc=npu  9 s  ETA 0.4 h
+   [773/900] mlvc_540p_npu-npu    qp26     336.7 kbps  Y 38.58  disp 34.50  face 32.85 / 0.194  (30 faces)  enc=npu  9 s  ETA 0.4 h
+   [774/900] mlvc_540p_npu-npu    qp32     174.6 kbps  Y 36.48  disp 33.22  face 31.48 / 0.224  (30 faces)  enc=npu  9 s  ETA 0.4 h
+   [775/900] mlvc_540p_npu-npu    qp40      80.7 kbps  Y 32.69  disp 30.40  face 28.89 / 0.277  (30 faces)  enc=npu  9 s  ETA 0.4 h
+   [776/900] mlvc_540p_gpu-npu    qp16     932.3 kbps  Y 40.68  disp 35.58  face 33.86 / 0.166  (30 faces)  enc=gpu  14 s  ETA 0.4 h
+   [777/900] mlvc_540p_gpu-npu    qp24     422.3 kbps  Y 39.02  disp 34.76  face 33.04 / 0.185  (30 faces)  enc=gpu  14 s  ETA 0.4 h
+   [778/900] mlvc_540p_gpu-npu    qp26     333.5 kbps  Y 38.46  disp 34.44  face 32.70 / 0.193  (30 faces)  enc=gpu  14 s  ETA 0.4 h
+   [779/900] mlvc_540p_gpu-npu    qp32     173.0 kbps  Y 36.40  disp 33.17  face 31.37 / 0.223  (30 faces)  enc=gpu  14 s  ETA 0.4 h
+   [780/900] mlvc_540p_gpu-npu    qp40      80.1 kbps  Y 32.64  disp 30.35  face 28.76 / 0.280  (30 faces)  enc=gpu  14 s  ETA 0.4 h
+   [781/900] mlvcs_540p_npu-npu   qp16     966.7 kbps  Y 40.24  disp 35.30  face 33.54 / 0.174  (30 faces)  enc=npu  5 s  ETA 0.4 h
+   [782/900] mlvcs_540p_npu-npu   qp24     431.0 kbps  Y 38.58  disp 34.48  face 32.74 / 0.196  (30 faces)  enc=npu  5 s  ETA 0.4 h
+   [783/900] mlvcs_540p_npu-npu   qp26     339.6 kbps  Y 37.98  disp 34.15  face 32.37 / 0.204  (30 faces)  enc=npu  5 s  ETA 0.4 h
+   [784/900] mlvcs_540p_npu-npu   qp32     177.9 kbps  Y 35.82  disp 32.77  face 30.88 / 0.240  (30 faces)  enc=npu  5 s  ETA 0.4 h
+   [785/900] mlvcs_540p_npu-npu   qp40      83.4 kbps  Y 31.83  disp 29.69  face 28.12 / 0.301  (30 faces)  enc=npu  5 s  ETA 0.4 h
+   [786/900] mlvc_720p_npu-npu    qp16    1649.5 kbps  Y 41.10  disp 37.42  face 36.20 / 0.114  (30 faces)  enc=npu  16 s  ETA 0.4 h
+   [787/900] mlvc_720p_npu-npu    qp24     727.5 kbps  Y 39.36  disp 36.30  face 35.12 / 0.137  (30 faces)  enc=npu  16 s  ETA 0.4 h
+   [788/900] mlvc_720p_npu-npu    qp26     548.4 kbps  Y 38.82  disp 35.91  face 34.70 / 0.145  (30 faces)  enc=npu  16 s  ETA 0.4 h
+   [789/900] mlvc_720p_npu-npu    qp32     244.1 kbps  Y 36.99  disp 34.52  face 33.09 / 0.179  (30 faces)  enc=npu  16 s  ETA 0.4 h
+   [790/900] mlvc_720p_npu-npu    qp40     108.8 kbps  Y 33.89  disp 31.93  face 30.31 / 0.233  (30 faces)  enc=npu  16 s  ETA 0.4 h
+   [791/900] mlvcs_720p_npu-npu   qp16    1640.3 kbps  Y 40.73  disp 37.09  face 35.72 / 0.121  (30 faces)  enc=npu  7 s  ETA 0.4 h
+   [792/900] mlvcs_720p_npu-npu   qp24     723.0 kbps  Y 38.98  disp 35.97  face 34.69 / 0.146  (30 faces)  enc=npu  7 s  ETA 0.4 h
+   [793/900] mlvcs_720p_npu-npu   qp26     542.8 kbps  Y 38.37  disp 35.55  face 34.24 / 0.155  (30 faces)  enc=npu  7 s  ETA 0.4 h
+   [794/900] mlvcs_720p_npu-npu   qp32     252.9 kbps  Y 36.42  disp 34.06  face 32.51 / 0.193  (30 faces)  enc=npu  7 s  ETA 0.4 h
+   [795/900] mlvcs_720p_npu-npu   qp40     114.3 kbps  Y 33.02  disp 31.16  face 29.51 / 0.253  (30 faces)  enc=npu  7 s  ETA 0.3 h
+   [796/900] mlvcs_720p_gpu-npu   qp16    1635.3 kbps  Y 40.62  disp 37.03  face 35.62 / 0.121  (30 faces)  enc=gpu  10 s  ETA 0.3 h
+   [797/900] mlvcs_720p_gpu-npu   qp24     722.4 kbps  Y 38.90  disp 35.93  face 34.57 / 0.146  (30 faces)  enc=gpu  10 s  ETA 0.3 h
+   [798/900] mlvcs_720p_gpu-npu   qp26     542.6 kbps  Y 38.30  disp 35.50  face 34.14 / 0.155  (30 faces)  enc=gpu  10 s  ETA 0.3 h
+   [799/900] mlvcs_720p_gpu-npu   qp32     252.3 kbps  Y 36.35  disp 34.01  face 32.41 / 0.194  (30 faces)  enc=gpu  10 s  ETA 0.3 h
+   [800/900] mlvcs_720p_gpu-npu   qp40     114.2 kbps  Y 32.99  disp 31.14  face 29.49 / 0.253  (30 faces)  enc=gpu  10 s  ETA 0.3 h
+   [801/900] mlvc_1080p_npu-npu   qp16    3693.2 kbps  Y 41.02  disp 39.87  face 39.05 / 0.070  (30 faces)  enc=npu  34 s  ETA 0.3 h
+   [802/900] mlvc_1080p_npu-npu   qp24    1674.4 kbps  Y 39.18  disp 38.00  face 37.20 / 0.103  (30 faces)  enc=npu  32 s  ETA 0.3 h
+   [803/900] mlvc_1080p_npu-npu   qp26    1264.5 kbps  Y 38.63  disp 37.43  face 36.62 / 0.114  (30 faces)  enc=npu  32 s  ETA 0.3 h
+   [804/900] mlvc_1080p_npu-npu   qp32     472.0 kbps  Y 36.98  disp 35.70  face 34.73 / 0.146  (30 faces)  enc=npu  32 s  ETA 0.3 h
+   [805/900] mlvc_1080p_npu-npu   qp40     183.0 kbps  Y 34.74  disp 33.39  face 31.88 / 0.198  (30 faces)  enc=npu  32 s  ETA 0.3 h
+   [806/900] mlvcs_1080p_npu-npu  qp16    3500.7 kbps  Y 40.60  disp 39.29  face 38.22 / 0.080  (30 faces)  enc=npu  15 s  ETA 0.3 h
+   [807/900] mlvcs_1080p_npu-npu  qp24    1659.3 kbps  Y 38.93  disp 37.66  face 36.70 / 0.112  (30 faces)  enc=npu  15 s  ETA 0.3 h
+   [808/900] mlvcs_1080p_npu-npu  qp26    1244.7 kbps  Y 38.36  disp 37.08  face 36.15 / 0.122  (30 faces)  enc=npu  15 s  ETA 0.3 h
+   [809/900] mlvcs_1080p_npu-npu  qp32     452.8 kbps  Y 36.54  disp 35.22  face 34.16 / 0.159  (30 faces)  enc=npu  15 s  ETA 0.3 h
+   [810/900] mlvcs_1080p_npu-npu  qp40     184.9 kbps  Y 34.02  disp 32.69  face 31.16 / 0.213  (30 faces)  enc=npu  14 s  ETA 0.3 h
+== clip 19/20 db623c  04:07:30
+   originals + face boxes: 30 frames, 30 faces (1 s)
+   [811/900] mlvc_360p_npu-npu    qp16     253.6 kbps  Y 39.70  disp 32.34  face 32.19 / 0.282  (30 faces)  enc=npu  5 s  ETA 0.3 h
+   [812/900] mlvc_360p_npu-npu    qp24     157.5 kbps  Y 38.56  disp 32.00  face 31.40 / 0.308  (30 faces)  enc=npu  5 s  ETA 0.3 h
+   [813/900] mlvc_360p_npu-npu    qp26     134.0 kbps  Y 38.05  disp 31.82  face 31.05 / 0.318  (30 faces)  enc=npu  5 s  ETA 0.3 h
+   [814/900] mlvc_360p_npu-npu    qp32      81.9 kbps  Y 36.02  disp 31.01  face 29.73 / 0.357  (30 faces)  enc=npu  5 s  ETA 0.3 h
+   [815/900] mlvc_360p_npu-npu    qp40      36.2 kbps  Y 31.82  disp 28.66  face 27.28 / 0.421  (30 faces)  enc=npu  5 s  ETA 0.3 h
+   [816/900] mlvc_540p_npu-npu    qp16     492.3 kbps  Y 41.79  disp 36.43  face 35.50 / 0.164  (30 faces)  enc=npu  9 s  ETA 0.3 h
+   [817/900] mlvc_540p_npu-npu    qp24     290.1 kbps  Y 40.49  disp 35.84  face 34.27 / 0.203  (30 faces)  enc=npu  9 s  ETA 0.3 h
+   [818/900] mlvc_540p_npu-npu    qp26     245.3 kbps  Y 39.92  disp 35.56  face 33.81 / 0.219  (30 faces)  enc=npu  9 s  ETA 0.3 h
+   [819/900] mlvc_540p_npu-npu    qp32     145.4 kbps  Y 37.70  disp 34.26  face 31.99 / 0.272  (30 faces)  enc=npu  9 s  ETA 0.3 h
+   [820/900] mlvc_540p_npu-npu    qp40      66.9 kbps  Y 33.55  disp 31.24  face 29.21 / 0.345  (30 faces)  enc=npu  9 s  ETA 0.3 h
+   [821/900] mlvc_540p_gpu-npu    qp16     487.7 kbps  Y 41.72  disp 36.41  face 35.41 / 0.165  (30 faces)  enc=gpu  14 s  ETA 0.3 h
+   [822/900] mlvc_540p_gpu-npu    qp24     287.2 kbps  Y 40.43  disp 35.82  face 34.20 / 0.203  (30 faces)  enc=gpu  14 s  ETA 0.3 h
+   [823/900] mlvc_540p_gpu-npu    qp26     242.4 kbps  Y 39.87  disp 35.53  face 33.74 / 0.218  (30 faces)  enc=gpu  13 s  ETA 0.3 h
+   [824/900] mlvc_540p_gpu-npu    qp32     143.6 kbps  Y 37.62  disp 34.22  face 31.88 / 0.274  (30 faces)  enc=gpu  14 s  ETA 0.3 h
+   [825/900] mlvc_540p_gpu-npu    qp40      65.5 kbps  Y 33.49  disp 31.20  face 29.15 / 0.346  (30 faces)  enc=gpu  14 s  ETA 0.3 h
+   [826/900] mlvcs_540p_npu-npu   qp16     519.2 kbps  Y 40.31  disp 35.68  face 35.06 / 0.174  (30 faces)  enc=npu  5 s  ETA 0.2 h
+   [827/900] mlvcs_540p_npu-npu   qp24     288.4 kbps  Y 39.36  disp 35.20  face 33.99 / 0.210  (30 faces)  enc=npu  4 s  ETA 0.2 h
+   [828/900] mlvcs_540p_npu-npu   qp26     240.1 kbps  Y 38.90  disp 34.95  face 33.52 / 0.226  (30 faces)  enc=npu  5 s  ETA 0.2 h
+   [829/900] mlvcs_540p_npu-npu   qp32     132.3 kbps  Y 36.77  disp 33.63  face 31.54 / 0.284  (30 faces)  enc=npu  5 s  ETA 0.2 h
+   [830/900] mlvcs_540p_npu-npu   qp40      64.2 kbps  Y 32.77  disp 30.61  face 28.47 / 0.371  (30 faces)  enc=npu  5 s  ETA 0.2 h
+   [831/900] mlvc_720p_npu-npu    qp16     788.3 kbps  Y 43.53  disp 39.84  face 37.98 / 0.105  (30 faces)  enc=npu  16 s  ETA 0.2 h
+   [832/900] mlvc_720p_npu-npu    qp24     425.1 kbps  Y 42.01  disp 38.86  face 36.37 / 0.141  (30 faces)  enc=npu  16 s  ETA 0.2 h
+   [833/900] mlvc_720p_npu-npu    qp26     353.9 kbps  Y 41.39  disp 38.44  face 35.76 / 0.158  (30 faces)  enc=npu  16 s  ETA 0.2 h
+   [834/900] mlvc_720p_npu-npu    qp32     201.4 kbps  Y 39.04  disp 36.68  face 33.54 / 0.220  (30 faces)  enc=npu  16 s  ETA 0.2 h
+   [835/900] mlvc_720p_npu-npu    qp40      91.7 kbps  Y 34.87  disp 33.11  face 30.43 / 0.304  (30 faces)  enc=npu  16 s  ETA 0.2 h
+   [836/900] mlvcs_720p_npu-npu   qp16     865.7 kbps  Y 42.34  disp 39.04  face 37.57 / 0.109  (30 faces)  enc=npu  7 s  ETA 0.2 h
+   [837/900] mlvcs_720p_npu-npu   qp24     440.6 kbps  Y 41.11  disp 38.21  face 36.07 / 0.147  (30 faces)  enc=npu  6 s  ETA 0.2 h
+   [838/900] mlvcs_720p_npu-npu   qp26     360.6 kbps  Y 40.59  disp 37.84  face 35.43 / 0.165  (30 faces)  enc=npu  7 s  ETA 0.2 h
+   [839/900] mlvcs_720p_npu-npu   qp32     188.0 kbps  Y 38.18  disp 35.98  face 33.01 / 0.234  (30 faces)  enc=npu  6 s  ETA 0.2 h
+   [840/900] mlvcs_720p_npu-npu   qp40      90.1 kbps  Y 34.13  disp 32.43  face 29.70 / 0.326  (30 faces)  enc=npu  6 s  ETA 0.2 h
+   [841/900] mlvcs_720p_gpu-npu   qp16     863.5 kbps  Y 42.25  disp 39.00  face 37.46 / 0.110  (30 faces)  enc=gpu  9 s  ETA 0.2 h
+   [842/900] mlvcs_720p_gpu-npu   qp24     438.9 kbps  Y 41.03  disp 38.17  face 36.01 / 0.147  (30 faces)  enc=gpu  9 s  ETA 0.2 h
+   [843/900] mlvcs_720p_gpu-npu   qp26     359.2 kbps  Y 40.53  disp 37.80  face 35.40 / 0.166  (30 faces)  enc=gpu  9 s  ETA 0.2 h
+   [844/900] mlvcs_720p_gpu-npu   qp32     187.7 kbps  Y 38.12  disp 35.94  face 32.98 / 0.235  (30 faces)  enc=gpu  9 s  ETA 0.2 h
+   [845/900] mlvcs_720p_gpu-npu   qp40      89.9 kbps  Y 34.11  disp 32.42  face 29.66 / 0.328  (30 faces)  enc=gpu  9 s  ETA 0.2 h
+   [846/900] mlvc_1080p_npu-npu   qp16    1754.2 kbps  Y 44.83  disp 43.11  face 40.42 / 0.068  (30 faces)  enc=npu  31 s  ETA 0.2 h
+   [847/900] mlvc_1080p_npu-npu   qp24     814.1 kbps  Y 43.27  disp 41.60  face 38.51 / 0.098  (30 faces)  enc=npu  31 s  ETA 0.2 h
+   [848/900] mlvc_1080p_npu-npu   qp26     653.5 kbps  Y 42.74  disp 41.09  face 37.86 / 0.110  (30 faces)  enc=npu  31 s  ETA 0.2 h
+   [849/900] mlvc_1080p_npu-npu   qp32     341.0 kbps  Y 40.57  disp 39.06  face 35.43 / 0.171  (30 faces)  enc=npu  31 s  ETA 0.2 h
+   [850/900] mlvc_1080p_npu-npu   qp40     156.5 kbps  Y 36.72  disp 35.34  face 32.13 / 0.258  (30 faces)  enc=npu  31 s  ETA 0.2 h
+   [851/900] mlvcs_1080p_npu-npu  qp16    1900.2 kbps  Y 44.36  disp 42.56  face 40.11 / 0.070  (30 faces)  enc=npu  14 s  ETA 0.2 h
+   [852/900] mlvcs_1080p_npu-npu  qp24     863.1 kbps  Y 42.85  disp 41.18  face 38.24 / 0.105  (30 faces)  enc=npu  14 s  ETA 0.2 h
+   [853/900] mlvcs_1080p_npu-npu  qp26     670.9 kbps  Y 42.27  disp 40.64  face 37.54 / 0.121  (30 faces)  enc=npu  14 s  ETA 0.2 h
+   [854/900] mlvcs_1080p_npu-npu  qp32     321.8 kbps  Y 39.91  disp 38.42  face 34.85 / 0.188  (30 faces)  enc=npu  15 s  ETA 0.2 h
+   [855/900] mlvcs_1080p_npu-npu  qp40     150.9 kbps  Y 35.95  disp 34.59  face 31.36 / 0.274  (30 faces)  enc=npu  15 s  ETA 0.2 h
+== clip 20/20 fda953  04:16:38
+   originals + face boxes: 30 frames, 30 faces (1 s)
+   [856/900] mlvc_360p_npu-npu    qp16     479.8 kbps  Y 41.15  disp 36.28  face 38.68 / 0.130  (30 faces)  enc=npu  5 s  ETA 0.1 h
+   [857/900] mlvc_360p_npu-npu    qp24     227.8 kbps  Y 38.86  disp 35.08  face 36.78 / 0.158  (30 faces)  enc=npu  5 s  ETA 0.1 h
+   [858/900] mlvc_360p_npu-npu    qp26     180.6 kbps  Y 38.07  disp 34.60  face 36.12 / 0.170  (30 faces)  enc=npu  5 s  ETA 0.1 h
+   [859/900] mlvc_360p_npu-npu    qp32      83.2 kbps  Y 35.13  disp 32.58  face 33.49 / 0.226  (30 faces)  enc=npu  5 s  ETA 0.1 h
+   [860/900] mlvc_360p_npu-npu    qp40      32.3 kbps  Y 31.32  disp 29.43  face 29.67 / 0.333  (30 faces)  enc=npu  5 s  ETA 0.1 h
+   [861/900] mlvc_540p_npu-npu    qp16     931.2 kbps  Y 43.15  disp 39.87  face 41.16 / 0.079  (30 faces)  enc=npu  10 s  ETA 0.1 h
+   [862/900] mlvc_540p_npu-npu    qp24     442.9 kbps  Y 40.79  disp 38.22  face 39.08 / 0.102  (30 faces)  enc=npu  9 s  ETA 0.1 h
+   [863/900] mlvc_540p_npu-npu    qp26     350.1 kbps  Y 40.00  disp 37.62  face 38.32 / 0.113  (30 faces)  enc=npu  9 s  ETA 0.1 h
+   [864/900] mlvc_540p_npu-npu    qp32     163.6 kbps  Y 37.09  disp 35.19  face 35.74 / 0.158  (30 faces)  enc=npu  9 s  ETA 0.1 h
+   [865/900] mlvc_540p_npu-npu    qp40      62.4 kbps  Y 32.91  disp 31.39  face 31.84 / 0.254  (30 faces)  enc=npu  9 s  ETA 0.1 h
+   [866/900] mlvc_540p_gpu-npu    qp16     929.0 kbps  Y 42.70  disp 39.58  face 40.98 / 0.080  (30 faces)  enc=gpu  14 s  ETA 0.1 h
+   [867/900] mlvc_540p_gpu-npu    qp24     440.5 kbps  Y 40.52  disp 38.04  face 38.92 / 0.102  (30 faces)  enc=gpu  14 s  ETA 0.1 h
+   [868/900] mlvc_540p_gpu-npu    qp26     348.2 kbps  Y 39.75  disp 37.43  face 38.20 / 0.113  (30 faces)  enc=gpu  14 s  ETA 0.1 h
+   [869/900] mlvc_540p_gpu-npu    qp32     161.7 kbps  Y 36.92  disp 35.06  face 35.62 / 0.157  (30 faces)  enc=gpu  14 s  ETA 0.1 h
+   [870/900] mlvc_540p_gpu-npu    qp40      61.6 kbps  Y 32.83  disp 31.31  face 31.73 / 0.252  (30 faces)  enc=gpu  14 s  ETA 0.1 h
+   [871/900] mlvcs_540p_npu-npu   qp16    1007.9 kbps  Y 42.55  disp 39.28  face 41.00 / 0.079  (30 faces)  enc=npu  5 s  ETA 0.1 h
+   [872/900] mlvcs_540p_npu-npu   qp24     485.0 kbps  Y 40.29  disp 37.74  face 38.84 / 0.107  (30 faces)  enc=npu  5 s  ETA 0.1 h
+   [873/900] mlvcs_540p_npu-npu   qp26     381.6 kbps  Y 39.44  disp 37.09  face 38.07 / 0.119  (30 faces)  enc=npu  5 s  ETA 0.1 h
+   [874/900] mlvcs_540p_npu-npu   qp32     169.5 kbps  Y 36.31  disp 34.46  face 35.20 / 0.174  (30 faces)  enc=npu  5 s  ETA 0.1 h
+   [875/900] mlvcs_540p_npu-npu   qp40      65.9 kbps  Y 32.19  disp 30.69  face 30.93 / 0.287  (30 faces)  enc=npu  5 s  ETA 0.1 h
+   [876/900] mlvc_720p_npu-npu    qp16    1363.3 kbps  Y 44.33  disp 41.27  face 42.49 / 0.063  (30 faces)  enc=npu  16 s  ETA 0.1 h
+   [877/900] mlvc_720p_npu-npu    qp24     667.4 kbps  Y 42.00  disp 39.61  face 40.36 / 0.083  (30 faces)  enc=npu  16 s  ETA 0.1 h
+   [878/900] mlvc_720p_npu-npu    qp26     530.4 kbps  Y 41.24  disp 39.01  face 39.66 / 0.091  (30 faces)  enc=npu  16 s  ETA 0.1 h
+   [879/900] mlvc_720p_npu-npu    qp32     244.5 kbps  Y 38.46  disp 36.65  face 37.13 / 0.129  (30 faces)  enc=npu  16 s  ETA 0.1 h
+   [880/900] mlvc_720p_npu-npu    qp40      89.7 kbps  Y 34.24  disp 32.79  face 33.27 / 0.208  (30 faces)  enc=npu  16 s  ETA 0.1 h
+   [881/900] mlvcs_720p_npu-npu   qp16    1573.1 kbps  Y 44.04  disp 40.98  face 42.33 / 0.062  (30 faces)  enc=npu  7 s  ETA 0.1 h
+   [882/900] mlvcs_720p_npu-npu   qp24     770.7 kbps  Y 41.63  disp 39.27  face 40.11 / 0.085  (30 faces)  enc=npu  7 s  ETA 0.1 h
+   [883/900] mlvcs_720p_npu-npu   qp26     605.5 kbps  Y 40.79  disp 38.60  face 39.33 / 0.096  (30 faces)  enc=npu  7 s  ETA 0.1 h
+   [884/900] mlvcs_720p_npu-npu   qp32     265.5 kbps  Y 37.64  disp 35.90  face 36.50 / 0.142  (30 faces)  enc=npu  7 s  ETA 0.1 h
+   [885/900] mlvcs_720p_npu-npu   qp40     105.8 kbps  Y 33.36  disp 31.94  face 32.30 / 0.240  (30 faces)  enc=npu  7 s  ETA 0.1 h
+   [886/900] mlvcs_720p_gpu-npu   qp16    1566.9 kbps  Y 43.66  disp 40.74  face 42.12 / 0.062  (30 faces)  enc=gpu  10 s  ETA 0.0 h
+   [887/900] mlvcs_720p_gpu-npu   qp24     768.0 kbps  Y 41.42  disp 39.11  face 40.01 / 0.085  (30 faces)  enc=gpu  10 s  ETA 0.0 h
+   [888/900] mlvcs_720p_gpu-npu   qp26     603.0 kbps  Y 40.60  disp 38.46  face 39.21 / 0.096  (30 faces)  enc=gpu  10 s  ETA 0.0 h
+   [889/900] mlvcs_720p_gpu-npu   qp32     265.2 kbps  Y 37.52  disp 35.80  face 36.41 / 0.141  (30 faces)  enc=gpu  10 s  ETA 0.0 h
+   [890/900] mlvcs_720p_gpu-npu   qp40     106.0 kbps  Y 33.35  disp 31.92  face 32.27 / 0.239  (30 faces)  enc=gpu  10 s  ETA 0.0 h
+   [891/900] mlvc_1080p_npu-npu   qp16    2344.0 kbps  Y 45.51  disp 44.04  face 43.95 / 0.059  (30 faces)  enc=npu  32 s  ETA 0.0 h
+   [892/900] mlvc_1080p_npu-npu   qp24    1212.1 kbps  Y 43.34  disp 42.01  face 41.91 / 0.073  (30 faces)  enc=npu  32 s  ETA 0.0 h
+   [893/900] mlvc_1080p_npu-npu   qp26     980.6 kbps  Y 42.62  disp 41.30  face 41.21 / 0.080  (30 faces)  enc=npu  32 s  ETA 0.0 h
+   [894/900] mlvc_1080p_npu-npu   qp32     465.6 kbps  Y 40.04  disp 38.76  face 38.74 / 0.109  (30 faces)  enc=npu  33 s  ETA 0.0 h
+   [895/900] mlvc_1080p_npu-npu   qp40     173.0 kbps  Y 36.00  disp 34.74  face 35.13 / 0.167  (30 faces)  enc=npu  31 s  ETA 0.0 h
+   [896/900] mlvcs_1080p_npu-npu  qp16    2912.4 kbps  Y 45.39  disp 43.84  face 43.82 / 0.056  (30 faces)  enc=npu  13 s  ETA 0.0 h
+   [897/900] mlvcs_1080p_npu-npu  qp24    1495.8 kbps  Y 43.05  disp 41.64  face 41.66 / 0.072  (30 faces)  enc=npu  13 s  ETA 0.0 h
+   [898/900] mlvcs_1080p_npu-npu  qp26    1185.1 kbps  Y 42.24  disp 40.87  face 40.89 / 0.079  (30 faces)  enc=npu  13 s  ETA 0.0 h
+   [899/900] mlvcs_1080p_npu-npu  qp32     512.5 kbps  Y 39.27  disp 37.96  face 38.14 / 0.114  (30 faces)  enc=npu  13 s  ETA 0.0 h
+   [900/900] mlvcs_1080p_npu-npu  qp40     190.9 kbps  Y 34.91  disp 33.63  face 34.13 / 0.188  (30 faces)  enc=npu  13 s  ETA 0.0 h
+== 900 runs, 0 failed, 182.1 min
+== after pass 1: 0 of 900 runs missing
+
+== analysis  Sat Nov 14 04:26:01 +04 2026
+STEP 4b: quality per setting (20 evaluation clips, QP 16/24/26/32/40)
+
+== coverage (expect 20 clips per configuration and QP)
+   Full MLVC 360p             clips per QP [20, 20, 20, 20, 20]  short decodes 0  encoder resolved ['npu']
+   Full MLVC 540p             clips per QP [20, 20, 20, 20, 20]  short decodes 0  encoder resolved ['npu']
+   Full MLVC 540p (GPU enc)   clips per QP [20, 20, 20, 20, 20]  short decodes 0  encoder resolved ['gpu']
+   MLVC-S 540p                clips per QP [20, 20, 20, 20, 20]  short decodes 0  encoder resolved ['npu']
+   Full MLVC 720p             clips per QP [20, 20, 20, 20, 20]  short decodes 0  encoder resolved ['npu']
+   MLVC-S 720p                clips per QP [20, 20, 20, 20, 20]  short decodes 0  encoder resolved ['npu']
+   MLVC-S 720p (GPU enc)      clips per QP [20, 20, 20, 20, 20]  short decodes 0  encoder resolved ['gpu']
+   Full MLVC 1080p            clips per QP [20, 20, 20, 20, 20]  short decodes 0  encoder resolved ['npu']
+   MLVC-S 1080p               clips per QP [20, 20, 20, 20, 20]  short decodes 0  encoder resolved ['npu']
+
+== mean over clips (kbps / coded Y / display Y / face Y / face LPIPS)
+   Full MLVC 360p
+      QP 16:   384.1 kbps  41.05  34.55  35.28  0.224
+      QP 24:   205.5 kbps  39.31  33.82  34.12  0.246
+      QP 26:   170.3 kbps  38.64  33.51  33.67  0.254
+      QP 32:    92.5 kbps  36.12  32.16  31.86  0.292
+      QP 40:    39.7 kbps  32.00  29.38  28.77  0.373
+   Full MLVC 540p
+      QP 16:   783.6 kbps  42.31  37.69  37.81  0.152
+      QP 24:   389.0 kbps  40.59  36.71  36.42  0.176
+      QP 26:   315.3 kbps  39.96  36.32  35.91  0.186
+      QP 32:   165.6 kbps  37.54  34.66  33.92  0.225
+      QP 40:    70.9 kbps  33.53  31.48  30.66  0.301
+   Full MLVC 540p (GPU enc)
+      QP 16:   779.5 kbps  42.01  37.52  37.59  0.152
+      QP 24:   386.1 kbps  40.35  36.56  36.24  0.176
+      QP 26:   312.6 kbps  39.74  36.17  35.72  0.186
+      QP 32:   163.8 kbps  37.38  34.54  33.77  0.225
+      QP 40:    70.2 kbps  33.44  31.40  30.58  0.302
+   MLVC-S 540p
+      QP 16:   842.9 kbps  41.56  37.26  37.42  0.157
+      QP 24:   415.4 kbps  39.91  36.27  36.04  0.183
+      QP 26:   334.5 kbps  39.26  35.85  35.49  0.194
+      QP 32:   170.2 kbps  36.72  34.04  33.34  0.238
+      QP 40:    73.6 kbps  32.66  30.72  29.88  0.322
+   Full MLVC 720p
+      QP 16:  1304.2 kbps  43.09  39.71  39.45  0.118
+      QP 24:   606.1 kbps  41.38  38.52  37.89  0.143
+      QP 26:   480.2 kbps  40.79  38.08  37.34  0.152
+      QP 32:   238.0 kbps  38.54  36.31  35.27  0.191
+      QP 40:   100.1 kbps  34.74  33.02  31.93  0.261
+   MLVC-S 720p
+      QP 16:  1416.3 kbps  42.57  39.32  39.09  0.120
+      QP 24:   665.5 kbps  40.86  38.12  37.52  0.147
+      QP 26:   523.3 kbps  40.23  37.64  36.92  0.158
+      QP 32:   251.8 kbps  37.78  35.67  34.66  0.201
+      QP 40:   108.2 kbps  33.85  32.20  31.12  0.279
+   MLVC-S 720p (GPU enc)
+      QP 16:  1412.2 kbps  42.35  39.18  38.91  0.120
+      QP 24:   663.5 kbps  40.70  38.00  37.37  0.148
+      QP 26:   522.0 kbps  40.08  37.54  36.80  0.158
+      QP 32:   251.3 kbps  37.66  35.57  34.57  0.201
+      QP 40:   108.1 kbps  33.80  32.15  31.08  0.280
+   Full MLVC 1080p
+      QP 16:  2825.2 kbps  43.64  42.26  41.37  0.092
+      QP 24:  1276.0 kbps  41.94  40.58  39.53  0.120
+      QP 26:   989.3 kbps  41.40  40.05  38.95  0.129
+      QP 32:   446.7 kbps  39.47  38.14  36.87  0.164
+      QP 40:   180.9 kbps  36.15  34.86  33.60  0.223
+   MLVC-S 1080p
+      QP 16:  3032.7 kbps  43.33  41.84  41.01  0.093
+      QP 24:  1420.1 kbps  41.60  40.21  39.20  0.122
+      QP 26:  1087.0 kbps  41.01  39.63  38.57  0.132
+      QP 32:   462.7 kbps  38.82  37.49  36.27  0.170
+      QP 40:   191.4 kbps  35.25  33.96  32.79  0.237
+
+== BD-rate vs B* (negative = fewer bits for the same quality; '-' = curves do not overlap)
+                               display Y     face Y  face LPIPS   BD-quality: display dB / face dB / LPIPS
+   Full MLVC 540p                 -27.7%      -7.7%      -31.9%   +1.17 / +0.36 / -0.030
+   Full MLVC 540p (GPU enc)       -25.9%      -5.0%      -32.6%   +1.08 / +0.25 / -0.031
+   MLVC-S 540p                     -4.3%     +15.7%      -11.8%   +0.48 / -0.32 / -0.015
+   Full MLVC 720p                 -44.0%     -13.2%      -47.1%   +1.91 / +0.60 / -0.043
+   MLVC-S 720p                    -18.1%     +15.4%      -26.6%   +1.09 / -0.23 / -0.028
+   MLVC-S 720p (GPU enc)          -16.4%     +17.7%      -25.7%   +1.01 / -0.31 / -0.027
+   Full MLVC 1080p                  -         -9.2%        -      +2.21 / +0.44 / -0.040
+   MLVC-S 1080p                   -31.1%     +23.0%      -35.9%   +1.32 / -0.39 / -0.028
+
+== at equal bitrate (interpolated along each curve, blank outside its range): display Y / face LPIPS
+                                        100           150           200           287           400           600           800
+   Full MLVC 360p              32.36/0.286  33.26/0.261  33.78/0.247  34.26/0.233             -             -             -
+   Full MLVC 540p              32.91/0.267  34.35/0.233  35.21/0.212  36.11/0.191  36.76/0.175  37.37/0.160             -
+   Full MLVC 540p (GPU enc)    32.85/0.266  34.27/0.232  35.10/0.212  35.99/0.191  36.62/0.175  37.22/0.160             -
+   MLVC-S 540p                 32.07/0.287  33.62/0.248  34.53/0.226  35.50/0.202  36.21/0.185  36.85/0.168  37.20/0.159
+   Full MLVC 720p                         -  34.72/0.225  35.76/0.203  36.85/0.179  37.68/0.161  38.50/0.143  38.99/0.133
+   MLVC-S 720p                            -  33.70/0.245  34.87/0.219  36.08/0.192  37.00/0.172  37.92/0.151  38.44/0.140
+   MLVC-S 720p (GPU enc)                  -  33.64/0.246  34.78/0.219  35.99/0.192  36.91/0.172  37.82/0.152  38.32/0.140
+   Full MLVC 1080p                        -             -  35.29/0.216  36.69/0.190  37.81/0.170  38.92/0.150  39.58/0.138
+   MLVC-S 1080p                           -             -  34.17/0.233  35.76/0.202  37.01/0.179  38.22/0.157  38.92/0.144
+
+== energy vs quality at QP 26 (best placement per setting; energy = X3 mJ per frame pair, idle subtracted)
+   mlvcs_540p   npu-npu  30 fps          45.0 mJ    334.5 kbps  display 35.85  face 35.49 / 0.194  Pareto(LPIPS) all=Y 30fps=Y
+   mlvc_360p    npu-npu  30 fps          65.3 mJ    170.3 kbps  display 33.51  face 33.67 / 0.254  Pareto(LPIPS) all=- 30fps=-
+   mlvcs_1080p  npu-npu  15 fps only    291.6 mJ   1087.0 kbps  display 39.63  face 38.57 / 0.132  Pareto(LPIPS) all=Y 30fps=-
+   mlvcs_720p   gpu-npu  30 fps         333.4 mJ    522.0 kbps  display 37.54  face 36.80 / 0.158  Pareto(LPIPS) all=- 30fps=Y
+   mlvc_720p    npu-npu  15 fps only    404.8 mJ    480.2 kbps  display 38.08  face 37.34 / 0.152  Pareto(LPIPS) all=- 30fps=-
+   mlvc_540p    gpu-npu  30 fps         635.1 mJ    312.6 kbps  display 36.17  face 35.72 / 0.186  Pareto(LPIPS) all=- 30fps=-
+   mlvc_1080p   npu-npu  infeasible    1562.9 mJ    989.3 kbps  display 40.05  face 38.95 / 0.129  Pareto(LPIPS) all=Y 30fps=-
+
+== Q1: MLVC-S 540p (NE-NE) vs B* (full MLVC 360p NE-NE) at screen size
+   QP 26: B* 170 kbps, display 33.51, face 33.67 dB / LPIPS 0.254, 65.3 mJ
+          S540 335 kbps, display 35.85, face 35.49 dB / LPIPS 0.194, 45.0 mJ
+   BD vs B* on display PSNR-Y (dB): rate -4.3 %, quality +0.478
+   BD vs B* on face PSNR-Y (dB): rate +15.7 %, quality -0.324
+   BD vs B* on face LPIPS (lower is better): rate -11.8 %, quality -0.015
+   at 200 kbps: display 33.78 -> 34.53 dB, face LPIPS 0.247 -> 0.226
+   at 287 kbps: display 34.26 -> 35.50 dB, face LPIPS 0.233 -> 0.202
+
+== Q2: full MLVC 540p (best placement) vs MLVC-S 540p and vs B*
+   vs mlvcs_540p: energy x14.1 (45.0 -> 635.1 mJ), kbps x0.93, display +0.32 dB, face +0.23 dB, LPIPS -0.008
+   vs mlvc_360p: energy x9.7 (65.3 -> 635.1 mJ), kbps x1.84, display +2.66 dB, face +2.05 dB, LPIPS -0.068
+   BD-rate MLVC-S 540p vs full 540p on display PSNR-Y (dB): +28.4 %
+   BD-rate MLVC-S 540p vs full 540p on face LPIPS (lower is better): +23.0 %
+
+== encoder on GPU vs NE (same setting, same clips, decoder on NE)
+   mlvc_540p QP 16: coded PSNR-Y -0.300 dB (max |0.998|), bitrate -0.69 % (max |1.80|), 20 clips
+   mlvc_540p QP 24: coded PSNR-Y -0.236 dB (max |1.230|), bitrate -0.94 % (max |1.94|), 20 clips
+   mlvc_540p QP 26: coded PSNR-Y -0.216 dB (max |1.048|), bitrate -1.04 % (max |2.35|), 20 clips
+   mlvc_540p QP 32: coded PSNR-Y -0.166 dB (max |0.750|), bitrate -1.29 % (max |3.13|), 20 clips
+   mlvc_540p QP 40: coded PSNR-Y -0.090 dB (max |0.207|), bitrate -1.26 % (max |3.29|), 20 clips
+   mlvcs_720p QP 16: coded PSNR-Y -0.220 dB (max |0.659|), bitrate -0.28 % (max |0.44|), 20 clips
+   mlvcs_720p QP 24: coded PSNR-Y -0.166 dB (max |0.794|), bitrate -0.28 % (max |0.53|), 20 clips
+   mlvcs_720p QP 26: coded PSNR-Y -0.151 dB (max |0.667|), bitrate -0.24 % (max |0.80|), 20 clips
+   mlvcs_720p QP 32: coded PSNR-Y -0.123 dB (max |0.566|), bitrate -0.19 % (max |0.58|), 20 clips
+   mlvcs_720p QP 40: coded PSNR-Y -0.050 dB (max |0.189|), bitrate -0.05 % (max |0.75|), 20 clips
+
+== 360p cross-check: this step (Lanczos from 1080p MP4) minus E6 (VCD 360p YUV), same 20 clips
+   QP 16: kbps -7.4, coded Y +0.113, display Y +0.006, face Y +0.001, LPIPS +0.0008  (20 clips)
+   QP 24: kbps -2.3, coded Y +0.082, display Y -0.001, face Y -0.002, LPIPS +0.0006  (20 clips)
+   QP 32: kbps -0.4, coded Y +0.053, display Y +0.004, face Y +0.002, LPIPS -0.0003  (20 clips)
+   QP 40: kbps -0.0, coded Y +0.028, display Y -0.002, face Y +0.002, LPIPS +0.0003  (20 clips)
+
+== results in /Users/shamsalani/Downloads/duplexnvc-baseline/phase2/4b/results

@@ -1,0 +1,8 @@
+setting,placement,label,mJ,quality_cfg,kbps,psnr_y,psnr_y_display,face_psnr_y,face_lpips,pareto_lpips_all,pareto_lpips_30fps,pareto_display_all
+mlvc_360p,npu-npu,30 fps,65.3,mlvc_360p_npu-npu,170.2625,38.6417,33.5079,33.6721,0.2545,False,False,False
+mlvc_540p,gpu-npu,30 fps,635.051,mlvc_540p_gpu-npu,312.5756,39.7419,36.1716,35.7183,0.1861,False,False,False
+mlvc_720p,npu-npu,15 fps only,404.847,mlvc_720p_npu-npu,480.1655,40.7866,38.0778,37.3422,0.1521,False,False,False
+mlvc_1080p,npu-npu,infeasible,1562.888,mlvc_1080p_npu-npu,989.2679,41.401,40.0471,38.9501,0.1292,True,False,True
+mlvcs_540p,npu-npu,30 fps,44.955,mlvcs_540p_npu-npu,334.5238,39.2626,35.854,35.4901,0.1938,True,True,True
+mlvcs_720p,gpu-npu,30 fps,333.414,mlvcs_720p_gpu-npu,521.9859,40.0782,37.5351,36.7976,0.1579,False,True,False
+mlvcs_1080p,npu-npu,15 fps only,291.644,mlvcs_1080p_npu-npu,1087.0151,41.0064,39.626,38.5653,0.1322,True,False,True
