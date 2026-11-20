@@ -24,9 +24,25 @@
 
 ## Results
 
-*(fill in on Day 1)* Machine: … · Bundle checksums equal to Shams's: yes/no · Every manager `resolved=npu`: … · Smoke B\* paced 30 fps late %: … · Trace: … of … operations on the NE.
+**Day 1, Fri 20 Nov 2026 (the plan's Day 1 was Wed 18 Nov; setup done two days late).** Machine: MacBook Air, Apple M1 (see `results/M1_machine.txt` for cores, memory and macOS build). libmlvc commit `eb5d60a`, built from source; `mlvc-tools` cloned on 20 Nov (commit `785fb06`, newer than Shams's 10 Nov clone: the `onnxruntime` extra no longer exists, otherwise the same conversion command). The full MLVC bundle was converted on the M1 itself from `mlvc-psnr-v1.ckpt`: 37,048,320 bytes, the same size as Shams's; SHA-256 in `results/M1_bundle_sha256.txt`, to be compared with hers. MLVC-S bundle from libmlvc (13 MB).
 
-M4 Pro reference: full MLVC 313 of 316 operations on the NE (100.0 % of cost); smoke duplex 30 fps 0 % late.
+- Every manager line `requested=npu resolved=npu`; no `FAILED`; every run ended. Encoder first frame (model load) and decoder first frame about 16 ms.
+- Smoke runs (10 s each, not quiet mode, not data), full MLVC 360p QP 26 on the NE, against the M4 Pro baseline:
+
+| Metric | M1 (smoke) | M4 Pro (baseline) | M1 / M4 Pro |
+|---|---|---|---|
+| Encoder alone, call ms (unpaced) | 9.55 | 5.86 | 1.63 |
+| Decoder alone, call ms (unpaced) | 9.78 | 5.94 | 1.65 |
+| T_turns, ms per frame pair | 19.49 | 11.81 | 1.65 |
+| T_shared, ms per frame pair (both on the NE) | 17.25 | 10.68 | 1.62 |
+| S = T_turns / T_shared | 1.13 | 1.11 | — |
+| kappa encoder / decoder (call) | 1.81 / 1.76 | 1.82 / 1.80 | — |
+| B\* paced 30 fps: late or dropped, send / receive | 0 % / 0 % | 0 % / 0 % | — |
+| B\* paced 30 fps: mean call ms, send / receive | 18.12 / 19.69 | 12.44 / 13.32 | 1.46 / 1.48 |
+| B\* paced 30 fps: due-to-done p99 ms, send / receive | 31.16 / 28.18 | 29.27 / 28.93 | slack 2.2 ms vs 4.1 ms |
+| MLVC-S 540p QP 22 paced 30 fps: late or dropped | 0.37 % / 0.37 % | 0 % / 0 % | borderline on the M1 |
+
+**Reading.** The M1 is about 1.6× slower than the M4 Pro for each network alone and for the pair, and its NE shares the two networks just as poorly (S 1.13 against 1.11 of a possible 1.98): the baseline's finding that the NE runs the two networks almost one after the other holds across the generation. B\* still meets 30 fps on the M1 with no late frame, but the slowest 1 % of frames keep only about 2 ms of slack instead of 4. MLVC-S 540p, the most efficient setting on the M4 Pro, already shows 0.37 % late frames on the M1 in a 10 s smoke run; the Day 2 run (quiet, 60 s, repeated) decides whether it stays feasible there.
 
 ## Conclusion
 
