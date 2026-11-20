@@ -1,0 +1,9 @@
+== M1 contention curve -> /Users/home/Downloads/duplexnvc-m1/runs/m1_contention/M1_contention_curve.csv   (memstress alone at 100 %: 58.29 GB/s)
+   load   GB/s |  enc alone call ms  net ms     p99 | B* send call p99 due-done  late% | B* recv call     p99  late%
+     0%    0.0 |               9.49    9.11    9.59 |        17.55        35.97   3.97 |        19.52   33.24   0.86
+    25%  24.73 |              10.12    9.71   10.71 |        11.34        25.46    0.0 |        18.72   26.85    0.0
+    50%  45.35 |              10.84   10.41   11.16 |        13.97        24.12    0.0 |        16.81   23.87    0.0
+    75%   46.1 |              11.27   10.79   11.81 |        15.14        26.44    0.0 |         14.9   25.88    0.0
+
+  encoder alone on the NE: 9.49 ms at 0 % -> 11.27 ms at 75 % (+18.8 %). Memory bandwidth is a limit for the NE on this chip.
+RESULT of Day 4 = 'M1 contention curve': /Users/home/Downloads/duplexnvc-m1/runs/m1_contention/M1_contention_curve.csv

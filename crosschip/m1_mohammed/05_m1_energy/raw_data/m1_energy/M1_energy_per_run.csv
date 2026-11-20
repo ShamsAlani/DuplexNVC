@@ -1,0 +1,6 @@
+run,ane_mJ_per_pair,cpu_mJ_per_pair,gpu_mJ_per_pair,total_mJ_per_pair
+M1_energy_r1,119.76,1.46,-0.07,121.15
+M1_energy_r2,120.1,1.62,-0.07,121.65
+M1_energy_r3,119.78,1.45,-0.07,121.16
+M1_energy_r4,119.75,1.48,-0.07,121.15
+M1_energy_r5,120.3,1.7,-0.07,121.92

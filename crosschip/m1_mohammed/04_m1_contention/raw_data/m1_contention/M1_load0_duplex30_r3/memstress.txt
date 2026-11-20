@@ -1,0 +1,1 @@
+memstress duty=0 threads=4 seconds=75.0 bytes_copied=0 GB_s=0.00

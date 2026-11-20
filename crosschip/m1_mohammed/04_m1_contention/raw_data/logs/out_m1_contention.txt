@@ -1,0 +1,90 @@
+
+== M1 CONTENTION START  Fri 20 Nov 2026 20:18:12 +04  threads=4  buffer_MB=128
+chip: Apple M1  memory: 8 GB  model: MacBookAir10,1
+ProductName:		macOS ProductVersion:		27.2.1 BuildVersion:		26B131 
+Now drawing from 'AC Power'
+-- memstress alone at 100 % for 10 s (the peak bandwidth this thread set can pull)
+memstress duty=100 threads=4 seconds=10.0 bytes_copied=292720476160 GB_s=58.29
+[1/24] 20:18:42 M1_load0_alone-enc_r1
+memstress duty=0 threads=4 seconds=75.1 bytes_copied=0 GB_s=0.00
+manager: requested=npu resolved=npu 
+[2/24] 20:20:57 M1_load0_duplex30_r1
+memstress duty=0 threads=4 seconds=75.1 bytes_copied=0 GB_s=0.00
+manager: requested=npu resolved=npu 
+[3/24] 20:23:12 M1_load25_alone-enc_r1
+memstress duty=25 threads=4 seconds=75.1 bytes_copied=1227882496000 GB_s=32.71
+manager: requested=npu resolved=npu 
+[4/24] 20:25:27 M1_load25_duplex30_r1
+memstress duty=25 threads=4 seconds=75.1 bytes_copied=1367838031872 GB_s=36.42
+manager: requested=npu resolved=npu 
+[5/24] 20:27:42 M1_load50_alone-enc_r1
+memstress duty=50 threads=4 seconds=75.1 bytes_copied=1687913758720 GB_s=44.94
+manager: requested=npu resolved=npu 
+[6/24] 20:29:57 M1_load50_duplex30_r1
+memstress duty=50 threads=4 seconds=75.1 bytes_copied=1886245617664 GB_s=50.25
+manager: requested=npu resolved=npu 
+[7/24] 20:32:13 M1_load75_alone-enc_r1
+memstress duty=75 threads=4 seconds=75.1 bytes_copied=1731626795008 GB_s=46.10
+manager: requested=npu resolved=npu 
+[8/24] 20:34:28 M1_load75_duplex30_r1
+memstress duty=75 threads=4 seconds=75.1 bytes_copied=1881841598464 GB_s=50.13
+manager: requested=npu resolved=npu 
+[9/24] 20:36:43 M1_load0_alone-enc_r2
+memstress duty=0 threads=4 seconds=75.1 bytes_copied=0 GB_s=0.00
+manager: requested=npu resolved=npu 
+[10/24] 20:38:58 M1_load0_duplex30_r2
+memstress duty=0 threads=4 seconds=75.1 bytes_copied=0 GB_s=0.00
+manager: requested=npu resolved=npu 
+[11/24] 20:41:13 M1_load25_alone-enc_r2
+memstress duty=25 threads=4 seconds=75.0 bytes_copied=928040091648 GB_s=24.73
+manager: requested=npu resolved=npu 
+[12/24] 20:43:28 M1_load25_duplex30_r2
+memstress duty=25 threads=4 seconds=75.1 bytes_copied=1133141557248 GB_s=30.17
+manager: requested=npu resolved=npu 
+[13/24] 20:45:44 M1_load50_alone-enc_r2
+memstress duty=50 threads=4 seconds=75.0 bytes_copied=1701478137856 GB_s=45.35
+manager: requested=npu resolved=npu 
+[14/24] 20:47:59 M1_load50_duplex30_r2
+memstress duty=50 threads=4 seconds=75.0 bytes_copied=1855383928832 GB_s=49.45
+manager: requested=npu resolved=npu 
+[15/24] 20:50:14 M1_load75_alone-enc_r2
+memstress duty=75 threads=4 seconds=75.1 bytes_copied=1725662494720 GB_s=45.96
+manager: requested=npu resolved=npu 
+[16/24] 20:52:29 M1_load75_duplex30_r2
+memstress duty=75 threads=4 seconds=75.1 bytes_copied=1882395246592 GB_s=50.12
+manager: requested=npu resolved=npu 
+[17/24] 20:54:44 M1_load0_alone-enc_r3
+memstress duty=0 threads=4 seconds=75.1 bytes_copied=0 GB_s=0.00
+manager: requested=npu resolved=npu 
+[18/24] 20:56:59 M1_load0_duplex30_r3
+memstress duty=0 threads=4 seconds=75.0 bytes_copied=0 GB_s=0.00
+manager: requested=npu resolved=npu 
+[19/24] 20:59:14 M1_load25_alone-enc_r3
+memstress duty=25 threads=4 seconds=75.1 bytes_copied=925062135808 GB_s=24.64
+manager: requested=npu resolved=npu 
+[20/24] 21:01:29 M1_load25_duplex30_r3
+memstress duty=25 threads=4 seconds=75.0 bytes_copied=1198035828736 GB_s=31.93
+manager: requested=npu resolved=npu 
+[21/24] 21:03:45 M1_load50_alone-enc_r3
+memstress duty=50 threads=4 seconds=75.1 bytes_copied=1704103772160 GB_s=45.41
+manager: requested=npu resolved=npu 
+[22/24] 21:06:00 M1_load50_duplex30_r3
+memstress duty=50 threads=4 seconds=75.0 bytes_copied=1857455915008 GB_s=49.50
+manager: requested=npu resolved=npu 
+[23/24] 21:08:15 M1_load75_alone-enc_r3
+memstress duty=75 threads=4 seconds=75.1 bytes_copied=1733682003968 GB_s=46.17
+manager: requested=npu resolved=npu 
+[24/24] 21:10:30 M1_load75_duplex30_r3
+memstress duty=75 threads=4 seconds=75.0 bytes_copied=1880398757888 GB_s=50.12
+manager: requested=npu resolved=npu 
+== M1 CONTENTION END  Fri 20 Nov 2026 21:12:45 +04
+thermal states seen: 3253 nominal 1 thermal_state 
+== M1 contention curve -> /Users/home/Downloads/duplexnvc-m1/runs/m1_contention/M1_contention_curve.csv   (memstress alone at 100 %: 58.29 GB/s)
+   load   GB/s |  enc alone call ms  net ms     p99 | B* send call p99 due-done  late% | B* recv call     p99  late%
+     0%    0.0 |               9.49    9.11    9.59 |        17.55        35.97   3.97 |        19.52   33.24   0.86
+    25%  24.73 |              10.12    9.71   10.71 |        11.34        25.46    0.0 |        18.72   26.85    0.0
+    50%  45.35 |              10.84   10.41   11.16 |        13.97        24.12    0.0 |        16.81   23.87    0.0
+    75%   46.1 |              11.27   10.79   11.81 |        15.14        26.44    0.0 |         14.9   25.88    0.0
+
+  encoder alone on the NE: 9.49 ms at 0 % -> 11.27 ms at 75 % (+18.8 %). Memory bandwidth is a limit for the NE on this chip.
+RESULT of Day 4 = 'M1 contention curve': /Users/home/Downloads/duplexnvc-m1/runs/m1_contention/M1_contention_curve.csv
