@@ -24,8 +24,8 @@ If the plan falls behind, the drop order is A4, then **the M1 energy run (Day 5)
 | Day 1 · Setup | **done** Fri 20 Nov | MLVC runs on the M1's Neural Engine: every network `resolved=npu`, no failure. Full MLVC bundle converted on the M1, 37,048,320 bytes, same size as Shams's | [`01_m1_setup/README.md`](01_m1_setup/README.md) |
 | Day 2 · Timing | **done** Fri 20 Nov, 16:55–18:28 | M1 is **1.62× slower** than the M4 Pro, uniformly; NE sharing identical (**S = 1.11** on both). **B\* misses 30 fps on the M1** (7.1 % late sends, p99 37.2 ms); taking turns meets it. MLVC-S 540p borderline (0–6 % late) | [`02_m1_timing/README.md`](02_m1_timing/README.md) |
 | Day 3 · Decode drift | to do | needs Shams's three files in `from_m4/` | [`03_m1_decode_drift/README.md`](03_m1_decode_drift/README.md) |
-| Day 4 · Contention | to do | — | [`04_m1_contention/README.md`](04_m1_contention/README.md) |
-| Day 5 · Energy | to do | — | [`05_m1_energy/README.md`](05_m1_energy/README.md) |
+| Day 4 · Contention | **done** Fri 20 Nov, about 20:18–21:12 | 46 GB/s of memory traffic slows the NE by only **19 %**: the NE itself, not memory, limits sharing. A light background load **removes the pacing penalty**: B\* send call 17.6 → 11.3 ms, late frames 4 % → **0 %** | [`04_m1_contention/README.md`](04_m1_contention/README.md) |
+| Day 5 · Energy | **done** Fri 20 Nov, evening | B\* costs **121.2 mJ per frame pair** on the M1 against 65.3 on the M4 Pro (**1.86×**), 99 % on the NE (3.6 W vs 1.9 W) | [`05_m1_energy/README.md`](05_m1_energy/README.md) |
 | E2 · Real call | to do (Days 9, 11, 15) | — | [`06_m1_e2_call/README.md`](06_m1_e2_call/README.md) |
 
 Machine: MacBook Air (MacBookAir10,1, fanless), Apple M1, 4 performance + 4 efficiency cores, 8 GB, macOS 27.2.1 (26B131). Reference: Shams's MacBook Pro, M4 Pro, 24 GB, macOS 26.6.
