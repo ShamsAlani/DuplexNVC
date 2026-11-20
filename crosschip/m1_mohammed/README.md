@@ -123,10 +123,14 @@ Quiet mode exactly as the baseline: charger in, Low Power Mode off, **Wi-Fi and 
 
 ```bash
 cd ~/Downloads/dm1
-./m1_quiet                 # password; Spotlight and Time Machine paused, keep-awake on, checks
+./m1_prep on               # Low Power Mode off, Wi-Fi and Bluetooth off, brightness max, apps quit; opens Displays settings
+./m1_quiet                 # password; Spotlight and Time Machine paused, keep-awake on, checks (must say AC Power)
 ./m1_timing                # ~95 min, do not press Ctrl-C; calls ./m1_timing_sum at the end
 ./m1_unquiet
+./m1_prep off              # Wi-Fi and Bluetooth back on
 ```
+
+`m1_prep` does what the command line can; auto-brightness and True Tone (System Settings, Displays), the charger, the lid and the surface stay by hand, and it prints that list.
 
 What runs: the exact B\* protocol of `baseline/03_timing_experiment/scripts/x` (5 interleaved rounds of turns / encoder alone / decoder alone / duplex unpaced, 5 paced B\* calls, 3 paced turns, 3 `mlvc benchmark` cross-checks), then MLVC-S 540p (3 rounds unpaced, 3 paced calls) for the cross-generation table. Same clips, same QP, same I-frame period, same bundle; only the chip changes.
 
@@ -282,6 +286,7 @@ Paths are inside the repository (`crosschip/m1_mohammed/`). On the Mac every one
 | all | Settings (paths, `TAG=M1`, B\* setting) | — | `common/vm1` | `baseline/common/scripts/v` | — |
 | 1 | Setup, build, streams, smoke tests | `./m1_setup` | `01_m1_setup/scripts/m1_setup` | `common/scripts/b`, `m`; `01_smoke_test_experiment/scripts/t` | `baseline/common/code/duplex_bench.cpp` (the measurement program), `analyze_run.py`, `quality_tools.py` |
 | 1 | Placement trace on the M1 | `./m1_trace` | `01_m1_setup/scripts/m1_trace` | `07_processor_experiment/scripts/1t` | `baseline/common/code/mlplan.swift` |
+| 2, 4, 5 | Quiet mode by hand (Wi-Fi, Bluetooth, Low Power Mode, brightness, apps) | `./m1_prep on`, `./m1_prep off` | `01_m1_setup/scripts/m1_prep` | new | `blueutil`, `brightness` (Homebrew) |
 | 2, 4, 5 | Quiet mode on / off | `./m1_quiet`, `./m1_unquiet` | `01_m1_setup/scripts/m1_quiet`, `m1_unquiet` | `common/scripts/p`, `u` | — |
 | 2 | Timing (B\* protocol + MLVC-S) | `./m1_timing` | `02_m1_timing/scripts/m1_timing` | `03_timing_experiment/scripts/x` | `baseline/common/code/thermal_log.swift` |
 | 2 | Timing tables and chip comparison | `./m1_timing_sum` | `02_m1_timing/scripts/m1_timing_sum` | `03_timing_experiment/scripts/y`, `common/scripts/sum.py` | `common/sum_m1.py`, `common/compare_chips.py` |

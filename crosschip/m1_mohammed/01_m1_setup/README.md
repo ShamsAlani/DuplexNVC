@@ -10,7 +10,8 @@
 |---|---|---|---|
 | `scripts/m1_setup` | Build, machine record, bundle checksums, streams, smoke tests | 10 min | any; after the one-time setup (main README §2) |
 | `scripts/m1_trace` | Placement trace of full MLVC and MLVC-S on the M1 | 5 min | any |
-| `scripts/m1_quiet`, `scripts/m1_unquiet` | Quiet mode on / off, used by Days 2, 4, 5 | 1 min | password |
+| `scripts/m1_prep on` / `off` | The by-hand part of quiet mode, automated where macOS allows: Low Power Mode off, Wi-Fi and Bluetooth off, brightness to maximum, every app quit; `off` turns Wi-Fi and Bluetooth back on | 1 min | password; the first run installs `blueutil` and `brightness` with Homebrew |
+| `scripts/m1_quiet`, `scripts/m1_unquiet` | Quiet mode on / off (Spotlight, Time Machine, keep-awake, checks), used by Days 2, 4, 5 | 1 min | password |
 
 ## Files
 
