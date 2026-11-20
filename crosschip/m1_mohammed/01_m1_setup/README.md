@@ -24,8 +24,9 @@
 
 ## Results
 
-**Day 1, Fri 20 Nov 2026 (the plan's Day 1 was Wed 18 Nov; setup done two days late).** Machine: MacBook Air, Apple M1 (see `results/M1_machine.txt` for cores, memory and macOS build). libmlvc commit `eb5d60a`, built from source; `mlvc-tools` cloned on 20 Nov (commit `785fb06`, newer than Shams's 10 Nov clone: the `onnxruntime` extra no longer exists, otherwise the same conversion command). The full MLVC bundle was converted on the M1 itself from `mlvc-psnr-v1.ckpt`: 37,048,320 bytes, the same size as Shams's; SHA-256 in `results/M1_bundle_sha256.txt`, to be compared with hers. MLVC-S bundle from libmlvc (13 MB).
+**Day 1, Fri 20 Nov 2026 (the plan's Day 1 was Wed 18 Nov; setup done two days late).** Machine: MacBook Air (MacBookAir10,1, fanless), Apple M1, 8 cores (4 performance, 4 efficiency), **8 GB** memory, macOS 27.2.1 (build 26B131); Shams's reference Mac is an M4 Pro with 24 GB on macOS 26.6, so the macOS version is a second difference besides the chip. libmlvc commit `eb5d60a`, built from source; `mlvc-tools` cloned on 20 Nov (commit `785fb06`, newer than Shams's 10 Nov clone: the `onnxruntime` extra no longer exists, otherwise the same conversion command). The full MLVC bundle was converted on the M1 itself from `mlvc-psnr-v1.ckpt`: 37,048,320 bytes, the same size as Shams's; SHA-256 in `results/M1_bundle_sha256.txt`, to be compared with hers. MLVC-S bundle from libmlvc (13 MB).
 
+- `fixed-version check (must be 13): 13`; the incoming stream (600 frames, QP 26, NE) decodes at PSNR-Y 34.98 dB, as on the M4 Pro.
 - Every manager line `requested=npu resolved=npu`; no `FAILED`; every run ended. Encoder first frame (model load) and decoder first frame about 16 ms.
 - Smoke runs (10 s each, not quiet mode, not data), full MLVC 360p QP 26 on the NE, against the M4 Pro baseline:
 
