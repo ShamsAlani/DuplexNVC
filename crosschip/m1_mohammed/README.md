@@ -17,6 +17,19 @@ The one rule of the plan applies: whoever runs a step owns it: codes it, runs it
 
 If the plan falls behind, the drop order is A4, then **the M1 energy run (Day 5)**, then B2 (p = 0.75). Days 1–4 and E2 always run.
 
+### Progress and headline results
+
+| Step | Status | Headline result | Details |
+|---|---|---|---|
+| Day 1 · Setup | **done** Fri 20 Nov | MLVC runs on the M1's Neural Engine: every network `resolved=npu`, no failure. Full MLVC bundle converted on the M1, 37,048,320 bytes, same size as Shams's | [`01_m1_setup/README.md`](01_m1_setup/README.md) |
+| Day 2 · Timing | **done** Fri 20 Nov, 16:55–18:28 | M1 is **1.62× slower** than the M4 Pro, uniformly; NE sharing identical (**S = 1.11** on both). **B\* misses 30 fps on the M1** (7.1 % late sends, p99 37.2 ms); taking turns meets it. MLVC-S 540p borderline (0–6 % late) | [`02_m1_timing/README.md`](02_m1_timing/README.md) |
+| Day 3 · Decode drift | to do | needs Shams's three files in `from_m4/` | [`03_m1_decode_drift/README.md`](03_m1_decode_drift/README.md) |
+| Day 4 · Contention | to do | — | [`04_m1_contention/README.md`](04_m1_contention/README.md) |
+| Day 5 · Energy | to do | — | [`05_m1_energy/README.md`](05_m1_energy/README.md) |
+| E2 · Real call | to do (Days 9, 11, 15) | — | [`06_m1_e2_call/README.md`](06_m1_e2_call/README.md) |
+
+Machine: MacBook Air (MacBookAir10,1, fanless), Apple M1, 4 performance + 4 efficiency cores, 8 GB, macOS 27.2.1 (26B131). Reference: Shams's MacBook Pro, M4 Pro, 24 GB, macOS 26.6.
+
 ---
 
 ## 0. Naming: how your results stay apart from Shams's
@@ -73,18 +86,25 @@ If your clone or work folder lives elsewhere, edit the two lines `WORK=` and `RE
 **One-time setup** (same as `baseline/REPRODUCE.md` §2, with the M1 work folder; about 1–2 hours of downloads and builds, Wi-Fi on):
 
 ```bash
-setopt interactivecomments
+setopt interactivecomments             # zsh only; bash accepts # comments already
 export WORK=~/Downloads/duplexnvc-m1 TOOLS=~/Downloads/duplexnvc-m1/tools
 mkdir -p "$WORK"/{tools,bundles/mlvc,bundles/mlvc-s,data,runs,from_m4,to_m4}
 ```
 
-Step 1, tools:
+Step 1, tools. On a fresh Mac, install Homebrew first (it also installs the Xcode Command Line Tools), then add it to the shell:
 ```bash
-xcode-select --install                  # skip if already installed
-brew install cmake ninja git-lfs ffmpeg python@3.12 uv
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+echo >> ~/.zprofile
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
+eval "$(/opt/homebrew/bin/brew shellenv)"
+```
+Then the packages. `pkg-config` is needed by libmlvc's vcpkg build (without it the `benchmark` port fails and cmake reports "Ninja not found"); the virtual environment uses Homebrew's Python 3.12, not the system Python:
+```bash
+brew install cmake ninja git-lfs ffmpeg python@3.12 uv pkg-config
 git lfs install
-python3 -m venv "$WORK/.venv"
+/opt/homebrew/bin/python3.12 -m venv "$WORK/.venv"
 "$WORK/.venv/bin/pip" install numpy scipy opencv-python-headless lpips torch torchvision
+"$WORK/.venv/bin/python3" -c "import numpy, cv2, lpips, torch; print('python packages ok', torch.__version__)"
 ```
 
 Step 2, libmlvc at the pinned commit `eb5d60a` (the MLVC-S bundle comes with it):
@@ -100,7 +120,30 @@ cmake --install build/mac-arm64-ninja-release
 cp data/model_bundles/*coreml-apple*.tar "$WORK/bundles/mlvc-s/"
 ```
 
-Step 3, the full MLVC bundle. **Take Shams's converted bundle instead of converting your own**: a cross-chip comparison must use byte-identical model files. Ask her for `~/Downloads/duplexnvc-baseline/bundles/mlvc/*.tar` (about 40 MB, AirDrop) and put it in `$WORK/bundles/mlvc/`. `m1_setup` prints its SHA-256; she runs `shasum -a 256 ~/Downloads/duplexnvc-baseline/bundles/*/*.tar` and the two lists must match. Only if that is impossible, convert it yourself with `baseline/REPRODUCE.md` §2 Step 3 (needs `mlvc-tools` and the 70 MB checkpoint).
+Step 3, the full MLVC bundle. Microsoft publishes full MLVC only as a PyTorch checkpoint; the Core ML bundle has to be converted, and model bundles are not in the repository (`.gitignore` excludes `*.tar`). Two ways:
+
+- **Convert it on the M1 (what was done on 20 Nov):**
+```bash
+mkdir -p "$WORK/mlvc-home" && ln -s "$WORK/mlvc-home" ~/mlvc
+mkdir -p ~/mlvc/job-outputs/pretrained ~/mlvc/data/VCD/yuv/640x360_30fps/s1
+curl -L -o ~/mlvc/job-outputs/pretrained/mlvc-psnr-v1.ckpt https://mlvideopub.blob.core.windows.net/mlvc/models/mlvc-psnr-v1.ckpt
+gunzip -c "$WORK/libmlvc/data/test_data/clips/VCD_s1_0380a3_640x360_30fps.nv12.gz" > /tmp/c360.nv12
+ffmpeg -v error -f rawvideo -pix_fmt nv12 -s 640x360 -i /tmp/c360.nv12 -f rawvideo -pix_fmt yuv420p \
+  ~/mlvc/data/VCD/yuv/640x360_30fps/s1/0380a333cb0fef69001fb4260e2a705f_640x360_30fps.yuv
+cd "$WORK" && git clone https://github.com/microsoft/mlvc.git mlvc-tools && cd mlvc-tools
+git log -1 --format='%h %ad' --date=short > "$WORK/MLVC_TOOLS_COMMIT.txt"
+uv sync && uv pip install packages/msrtc_rans          # since Nov 2026 there is no "--extra onnxruntime"
+cp video/conversion/_full_model/model_configs_example.yaml video/conversion/_full_model/model_configs.yaml
+cd video
+uv run convert.py bundle --model-version dmc61sbr_reglu --weights-path ~/mlvc/job-outputs/pretrained/mlvc-psnr-v1.ckpt \
+  --weights-version psnr_v1 --model-input-sizes 640x368 --mlvc-version v0.1 --model-type coreml --target-device apple \
+  2>&1 | tee ~/Downloads/dm1/out_m1_convert.txt
+cp output/model_bundles/dmc61sbr_reglu-psnr_v1-coreml-apple-v0.1.tar "$WORK/bundles/mlvc/"
+```
+  The result on the M1 was 37,048,320 bytes, the same size as Shams's. `mlvc-tools` was at commit `785fb06` (20 Nov), newer than her 10 Nov clone.
+- **Or take Shams's copy** (`~/Downloads/duplexnvc-baseline/bundles/mlvc/*.tar`, 35 MB, AirDrop) for byte-identical model files.
+
+Either way, compare `shasum -a 256` of the bundle with Shams's line (`m1_setup` records yours in `runs/m1_setup/M1_bundle_sha256.txt`). The `.tar` holds file timestamps, so equal hashes prove identical files but different hashes do not prove different models; then compare the model files inside the archives.
 
 The 360p VCD archive (Step 5 of the baseline) is **not needed** for your steps: the four timing clips ship with libmlvc.
 
@@ -125,12 +168,14 @@ Quiet mode exactly as the baseline: charger in, Low Power Mode off, **Wi-Fi and 
 cd ~/Downloads/dm1
 ./m1_prep on               # Low Power Mode off, Wi-Fi and Bluetooth off, brightness max, apps quit; opens Displays settings
 ./m1_quiet                 # password; Spotlight and Time Machine paused, keep-awake on, checks (must say AC Power)
-./m1_timing                # ~95 min, do not press Ctrl-C; calls ./m1_timing_sum at the end
+./m1_timing                # 46 runs, ~92 min, do not press Ctrl-C; calls ./m1_timing_sum at the end
 ./m1_unquiet
 ./m1_prep off              # Wi-Fi and Bluetooth back on
 ```
 
 `m1_prep` does what the command line can; auto-brightness and True Tone (System Settings, Displays), the charger, the lid and the surface stay by hand, and it prints that list.
+
+Run `./m1_status` before starting: it must show `AC Power`, Wi-Fi `Off`, Bluetooth `0`, and only Terminal and Finder as apps. If an app such as Chrome turns out to be open after the run has started, press Ctrl-C, quit the app, and run `./m1_timing` again: the stopped attempt is moved aside as `m1_timing_old_<time>` and not used (this happened on 20 Nov). Follow this chat on a phone, not on the Mac being measured.
 
 What runs: the exact B\* protocol of `baseline/03_timing_experiment/scripts/x` (5 interleaved rounds of turns / encoder alone / decoder alone / duplex unpaced, 5 paced B\* calls, 3 paced turns, 3 `mlvc benchmark` cross-checks), then MLVC-S 540p (3 rounds unpaced, 3 paced calls) for the cross-generation table. Same clips, same QP, same I-frame period, same bundle; only the chip changes.
 
@@ -251,6 +296,10 @@ Commit on the branch you checked out in §1 (or your own `mohammed/m1-crosschip`
 | Problem | What to do |
 |---|---|
 | `m1_setup` says MISSING for the bench or `mlvc` | §2 Step 2 or 4 did not finish; rerun that step, then `./m1_setup` again |
+| `cmake --preset` fails with "vcpkg install failed", then "unable to find ... Ninja" | Look at the end of `build/mac-arm64-ninja-release/vcpkg-manifest-install.log`; on 20 Nov it was "Could not find pkg-config": `brew install pkg-config`, `rm -rf build/mac-arm64-ninja-release`, configure again |
+| `uv sync --extra onnxruntime` says the extra is not defined | Microsoft's `mlvc` repo made onnxruntime a normal dependency; run `uv sync` without the extra |
+| `brew: command not found` | Homebrew not installed or not on the PATH; see §2 Step 1 |
+| `zsh: unknown sort specifier` or `command not found: home@MacBookAir` | The prompt text was pasted along with the command; paste only the command lines |
 | `fixed-version check` is not 13 | `$TOOLS/duplex_bench.cpp` is not the repository's; copy `baseline/common/code/duplex_bench.cpp` to `$TOOLS` and rerun |
 | `resolved=cpu` where `npu` was requested | Core ML did not take the NE: check macOS version and that the bundle is the Core ML one; report it, it is a finding |
 | Late frames in the M1 B\* smoke test | Not an error: a slower chip; Day 2 measures it. If late > 1 % at 30 fps, also note the paced turns result |
@@ -267,8 +316,8 @@ Commit on the branch you checked out in §1 (or your own `mohammed/m1-crosschip`
 
 | Day | Step | Laptop time | Conditions |
 |---|---|---|---|
-| 1 | one-time setup + `m1_setup` + `m1_trace` | 1–2 h downloads and builds, 15 min runs | Wi-Fi on for the setup |
-| 2 | `m1_timing` | 95 min | quiet, night |
+| 1 | one-time setup (Homebrew, packages, libmlvc, conversion) + `m1_setup` | about 1 h on 20 Nov, `m1_setup` 3 min | Wi-Fi on |
+| 2 | `m1_timing` | 92 min (46 runs of 60 s + 60 s rest) | quiet |
 | 3 | `m1_decode` | 15 min | any |
 | 4 | `m1_contention` | 55 min | quiet, evening |
 | 5 | `m1_energy` | 15 min | quiet, night, password |
