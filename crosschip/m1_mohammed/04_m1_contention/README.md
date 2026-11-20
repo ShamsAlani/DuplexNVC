@@ -11,7 +11,7 @@
 | `scripts/m1_contention` | The 24 runs and the peak run; resumable; calls `m1_contention_sum` | 55 min | quiet mode (`./m1_quiet` first) |
 | `scripts/m1_contention_sum` | The curve (`common/contention_sum.py`) | 1 min | any |
 
-`THREADS=8 ./m1_contention` for a chip with more performance cores (Shams's M4 Pro: 10).
+`THREADS=8 ./m1_contention` for a chip with more performance cores (Shams's M4 Pro: 10). The buffers are 128 MB per thread on a Mac with less than 16 GB (1 GB in all on the 8 GB M1 Air), 256 MB otherwise; `MB=64 ./m1_contention` overrides.
 
 ## Files
 
