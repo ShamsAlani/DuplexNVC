@@ -1,0 +1,26 @@
+#!/bin/bash
+# Copy this Mac's results into your clone of the repository, under crosschip/m1_mohammed/<step>/{raw_data,results},
+# without the large video and bitstream files (*.nv12, *.aus, *.mlvc, *.yuv). Then: cd $REPO && git add crosschip && git commit.
+#   ./m1_collect            (uses REPO from vm1)
+D=$(cd "$(dirname "$0")" && pwd); . "$D/vm1"
+C="$REPO/crosschip/m1_mohammed"; [ -d "$C" ] || { echo "repository folder not found: $C (set REPO in vm1)"; exit 1; }
+EX=(--exclude '*.nv12' --exclude '*.aus' --exclude '*.mlvc' --exclude '*.yuv' --exclude '*.mlpackage' --exclude '*.mlmodelc' --exclude '*_old_*')
+put () { [ -e "$1" ] && { mkdir -p "$2"; rsync -a "${EX[@]}" "$1" "$2/"; echo "  $1 -> ${2#$C/}"; }; }
+echo "== collecting $TAG results into $C"
+put "$RUNS/m1_setup/"            "$C/01_m1_setup/results"
+put "$RUNS/m1_smoke/"            "$C/01_m1_setup/raw_data/m1_smoke"
+put "$RUNS/m1_timing/"           "$C/02_m1_timing/raw_data/m1_timing"
+for f in "$RUNS"/m1_timing/${TAG}*.csv; do [ -e "$f" ] && cp "$f" "$C/02_m1_timing/results/"; done
+put "$RUNS/m1_decode/"           "$C/03_m1_decode_drift/raw_data/m1_decode"
+for f in "$RUNS"/m1_decode/${TAG}_*.csv "$RUNS"/m1_decode/${TAG}_*.txt; do [ -e "$f" ] && cp "$f" "$C/03_m1_decode_drift/results/"; done
+put "$RUNS/m1_contention/"       "$C/04_m1_contention/raw_data/m1_contention"
+for f in "$RUNS"/m1_contention/${TAG}_*.csv "$RUNS"/m1_contention/${TAG}_memstress_peak.txt; do [ -e "$f" ] && cp "$f" "$C/04_m1_contention/results/"; done
+put "$RUNS/m1_energy/"           "$C/05_m1_energy/raw_data/m1_energy"
+for f in "$RUNS"/m1_energy/${TAG}_*.csv; do [ -e "$f" ] && cp "$f" "$C/05_m1_energy/results/"; done
+put "$RUNS/m1_call/"             "$C/06_m1_e2_call/raw_data/m1_call"
+for r in "$RUNS"/m1_call/${TAG}_call_*/summary.json; do [ -e "$r" ] && cp "$r" "$C/06_m1_e2_call/results/$(basename "$(dirname "$r")")_summary.json"; done
+for s in setup:01_m1_setup convert:01_m1_setup trace:01_m1_setup quiet:01_m1_setup timing:02_m1_timing timing_sum:02_m1_timing decode:03_m1_decode_drift \
+         contention:04_m1_contention contention_sum:04_m1_contention energy:05_m1_energy call_build:06_m1_e2_call call:06_m1_e2_call; do
+  f="$D/out_${LTAG}_${s%%:*}.txt"; [ -e "$f" ] && cp "$f" "$C/${s#*:}/raw_data/logs/"
+done
+echo "== done. Now: cd $REPO && git status && git add crosschip && git commit -m 'M1 cross-chip: <step>' && git push"

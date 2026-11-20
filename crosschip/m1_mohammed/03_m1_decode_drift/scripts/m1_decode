@@ -1,0 +1,59 @@
+#!/bin/bash
+# DAY 3 (Fri 20 Nov) - CROSS-CHIP DECODE: does an M4 Pro -> M1 call drift?  (= baseline/04_correctness_experiment/scripts/c, across chips)
+#   A. Shams's B* bitstream (encoded on her M4 Pro) decoded on the M1: NE twice, GPU, CPU.
+#      Drift M4-NE vs M1-NE is the cross-chip answer; M1-NE vs M1-GPU/CPU repeats E5 on this chip.
+#   B. The M1's own B* bitstream (from Day 2) decoded on the M1 NE, GPU, CPU: E5 on this chip; the NE decode goes to Shams.
+#   C. Are the two encoders bit-exact? M1 outgoing.aus vs M4 outgoing.aus, access unit by access unit.
+# Needs in $M4IN (copied from Shams, see ../README.md): m4_outgoing.mlvc, m4_outgoing.aus, m4_dec_npu.nv12
+# Any conditions, ~15 min, ~3 GB of temporary video. Output: $RUNS/m1_decode, $WORK/to_m4 (files for Shams); out_m1_decode.txt
+D=$(cd "$(dirname "$0")" && pwd); . "$D/vm1"; m1log decode
+R="$RUNS/m1_decode"; mkdir -p "$R" "$WORK/to_m4"; cd "$R"
+CSV="$R/${TAG}_drift.csv"; rm -f "$CSV"
+echo "== $TAG CROSS-CHIP DECODE  $(date)"; machine
+dec () {  # dec <stem> <stream.mlvc> <cu>
+  local st u=${3%2}
+  "$MLVC" decode --model-bundles-dir "$WORK/bundles/mlvc" --compute-unit $u --input "$2" --output "$1_dec_$3.nv12" > "$1_dec_$3.log" 2>&1 && st=ok || st=FAILED
+  echo "   decode $1 on $3: $st, frames $(( $(stat -f%z "$1_dec_$3.nv12" 2>/dev/null || echo 0) / 345600 ))"
+}
+M4S="$M4IN/m4_outgoing.mlvc"
+if [ -s "$M4S" ]; then
+  echo "== A. Shams's M4 Pro stream on the M1: $M4S ($(( $(stat -f%z "$M4S") * 8 * 30 / 1802 / 1000 )) kbps if 1802 frames)"
+  for cu in npu npu2 gpu cpu; do dec M4stream "$M4S" $cu; done
+  cmp -s M4stream_dec_npu.nv12 M4stream_dec_npu2.nv12 && echo "   M1 NE decode deterministic: yes" || echo "   M1 NE decode deterministic: NO"
+  if [ -s "$M4IN/m4_dec_npu.nv12" ]; then
+    echo "-- CROSS-CHIP drift: M4 Pro NE decode vs M1 NE decode of the same stream"
+    "$PY" "$D/drift_csv.py" "$TOOLS" M4NE_vs_M1NE "$M4IN/m4_dec_npu.nv12" M4stream_dec_npu.nv12 640x360 "$CSV"
+    cmp -s "$M4IN/m4_dec_npu.nv12" M4stream_dec_npu.nv12 && echo "   M4 NE and M1 NE decodes bit-identical: YES" || echo "   M4 NE and M1 NE decodes bit-identical: no (see drift above)"
+    echo "-- M4 stream: M4 NE vs M1 GPU / CPU"
+    "$PY" "$D/drift_csv.py" "$TOOLS" M4NE_vs_M1GPU "$M4IN/m4_dec_npu.nv12" M4stream_dec_gpu.nv12 640x360 "$CSV"
+    "$PY" "$D/drift_csv.py" "$TOOLS" M4NE_vs_M1CPU "$M4IN/m4_dec_npu.nv12" M4stream_dec_cpu.nv12 640x360 "$CSV"
+  else
+    echo "   (no $M4IN/m4_dec_npu.nv12: ask Shams for runs/bl_bstar/T_duplex30_r1/dec_npu.nv12; the cross-chip drift row is skipped)"
+  fi
+  echo "-- M4 stream on the M1 alone: M1 NE vs M1 GPU / CPU (E5 on this chip)"
+  "$PY" "$D/drift_csv.py" "$TOOLS" M4stream_M1NE_vs_M1GPU M4stream_dec_npu.nv12 M4stream_dec_gpu.nv12 640x360 "$CSV"
+  "$PY" "$D/drift_csv.py" "$TOOLS" M4stream_M1NE_vs_M1CPU M4stream_dec_npu.nv12 M4stream_dec_cpu.nv12 640x360 "$CSV"
+  rm -f M4stream_dec_npu2.nv12 M4stream_dec_gpu.nv12 M4stream_dec_cpu.nv12
+else
+  echo "== A. skipped: $M4S not found (copy Shams's runs/bl_bstar/T_duplex30_r1/outgoing.mlvc there)"
+fi
+M1RUN="$RUNS/m1_timing/${TAG}_duplex30_r1"
+if [ -s "$M1RUN/outgoing.mlvc" ]; then
+  echo "== B. the M1's own B* stream ($M1RUN, $(grep -c '^E,' "$M1RUN/frames.csv") encoded frames) on the M1"
+  for cu in npu gpu cpu; do dec M1stream "$M1RUN/outgoing.mlvc" $cu; done
+  "$PY" "$D/drift_csv.py" "$TOOLS" M1stream_M1NE_vs_M1GPU M1stream_dec_npu.nv12 M1stream_dec_gpu.nv12 640x360 "$CSV"
+  "$PY" "$D/drift_csv.py" "$TOOLS" M1stream_M1NE_vs_M1CPU M1stream_dec_npu.nv12 M1stream_dec_cpu.nv12 640x360 "$CSV"
+  rm -f M1stream_dec_gpu.nv12 M1stream_dec_cpu.nv12
+  cp "$M1RUN/outgoing.mlvc" "$WORK/to_m4/m1_outgoing.mlvc"; cp "$M1RUN/outgoing.aus" "$WORK/to_m4/m1_outgoing.aus"
+  cp M1stream_dec_npu.nv12 "$WORK/to_m4/m1_dec_npu.nv12"
+  echo "   -> for Shams (reverse direction, M1 -> M4): $WORK/to_m4/{m1_outgoing.mlvc,m1_outgoing.aus,m1_dec_npu.nv12}"
+  if [ -s "$M4IN/m4_outgoing.aus" ]; then
+    echo "== C. are the two chips' encoders bit-exact? (same clips, same QP, same bundle)"
+    "$PY" "$D/au_cmp.py" "$M1RUN/outgoing.aus" "$M4IN/m4_outgoing.aus" "M1 encoder vs M4 Pro encoder" | tee "$R/${TAG}_encoder_vs_M4.txt"
+  fi
+else
+  echo "== B. skipped: $M1RUN/outgoing.mlvc not found (run ./m1_timing first)"
+fi
+echo "== done  $(date)"
+echo "RESULT of Day 3 = 'Does an M4 -> M1 call drift?': $CSV (rows M4NE_vs_M1NE), $R/${TAG}_encoder_vs_M4.txt"
+echo "M4 Pro reference (E5, same chip): NE vs GPU 52.13 / 38.46 dB, NE vs CPU 48.78 / 39.51 dB (mean / min)."

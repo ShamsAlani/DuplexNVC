@@ -1,0 +1,26 @@
+{
+  "cpu": {
+    "run_mW": 79.00689966221574,
+    "idle_mW": 35.57401193426934,
+    "dynamic_mJ_per_pair": 1.4475046273562846,
+    "dynamic_J_per_min": 2.605973263676784
+  },
+  "gpu": {
+    "run_mW": 0.0,
+    "idle_mW": 2.1478594274993026,
+    "dynamic_mJ_per_pair": -0.07158254085453283,
+    "dynamic_J_per_min": -0.12887156564995816
+  },
+  "ane": {
+    "run_mW": 3594.1486195412463,
+    "idle_mW": 0.0,
+    "dynamic_mJ_per_pair": 119.78357945664843,
+    "dynamic_J_per_min": 215.6489171724748
+  },
+  "combined": {
+    "run_mW": 3673.1879761436862,
+    "idle_mW": 37.735666358937834,
+    "dynamic_mJ_per_pair": 121.16012349693541,
+    "dynamic_J_per_min": 218.1271385870849
+  }
+}

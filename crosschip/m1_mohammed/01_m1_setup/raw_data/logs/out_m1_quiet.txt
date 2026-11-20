@@ -1,0 +1,23 @@
+== preparing the M1 Mac  Fri 20 Nov 2026 16:53:34 +04
+2026-11-20 16:53:34.295 mdutil[18760:100071] mdutil disabling Spotlight: / -> kMDConfigSearchLevelFSSearchOnly
+2026-11-20 16:53:34.405 mdutil[18760:100071] mdutil disabling Spotlight: /System/Volumes/Data -> kMDConfigSearchLevelFSSearchOnly
+2026-11-20 16:53:34.681 mdutil[18760:100071] mdutil disabling Spotlight: /System/Volumes/Preboot -> kMDConfigSearchLevelFSSearchOnly
+Spotlight indexing: paused
+tmutil: disable requires Full Disk Access privileges.
+To allow this operation, select Full Disk Access in the Privacy
+tab of the Security & Privacy preference pane, and add Terminal
+to the list of applications which are allowed Full Disk Access.
+Keep-awake: on
+Now drawing from 'AC Power'
+Battery Power:
+ lowpowermode         0
+AC Power:
+ lowpowermode         0
+ok  /Users/home/Downloads/duplexnvc-m1/harness/build/ninja-release/libmlvc_example
+ok  /Users/home/Downloads/duplexnvc-m1/libmlvc/install/mac-arm64-ninja-release/bin/mlvc
+ok  /Users/home/Downloads/duplexnvc-m1/.venv/bin/python3
+ok  /Users/home/Downloads/duplexnvc-m1/tools/analyze_run.py
+ok  /Users/home/Downloads/duplexnvc-m1/tools/thermal_log
+
+Now: charger in, quit every other app (keep Terminal), brightness MAX (auto-brightness and True Tone off), Wi-Fi and Bluetooth off, Low Power Mode off.
+A fanless MacBook Air M1 heats up: put it on a hard flat surface, not on a bed or lap. Expect 'AC Power' above and no MISSING lines.

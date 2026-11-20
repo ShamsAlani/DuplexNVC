@@ -1,0 +1,88 @@
+2026-11-20 20:48:04.208 [T#189964][ INFO][manager.cpp:216]: Initializing MlvcManager from bundles dir: compute_unit=npu, enable_model_cache=1, session_preload_mode=at-init, versions=[v0.1]
+2026-11-20 20:48:04.208 [T#189964][ INFO][platform_info.cpp:644]: Build: libmlvc 0.1.0 (eb5d60a, HEAD)
+2026-11-20 20:48:04.208 [T#189964][ INFO][platform_info.cpp:646]: Platform: OS=macOS 27.2, HW=Apple MacBookAir10,1
+2026-11-20 20:48:04.208 [T#189964][ INFO][platform_info.cpp:654]: Platform: CPU=Apple M1 (Apple M1, arm64), FP16=yes, DotProd=yes
+2026-11-20 20:48:04.208 [T#189964][ INFO][platform_info.cpp:666]: Platform: enumeration time: 0.0 ms
+2026-11-20 20:48:04.208 [T#189964][ INFO][engine.mm:630]: CoreML initialized: compute_unit=npu, os_ver=27, os_build=26B131, env_hash=45345c6b
+2026-11-20 20:48:04.208 [T#189964][ INFO][bundle.cpp:160]: Discovering model bundles...
+2026-11-20 20:48:04.209 [T#189964][ INFO][bundle.cpp:211]: Found model bundle: dmc61sbr_reglu-psnr_v1-coreml-apple-v0.1.tar
+2026-11-20 20:48:04.225 [T#189964][ INFO][manager.cpp:519]: Loading model bundle 1/1 (35.3 MB)...
+2026-11-20 20:48:04.227 [T#189964][ INFO][bundle.cpp:680]: Preparing model cache for bundle v0.1...
+2026-11-20 20:48:04.228 [T#189964][ INFO][bundle.cpp:711]: Preloading inference sessions for bundle v0.1...
+2026-11-20 20:48:04.228 [T#189964][ INFO][bundle.cpp:838]: Creating inference session for model 640x368, part=MLVCEncoder, registry_id=dmc61sbr_reglu-psnr_v1-coreml-apple-v0.1 func=MLVCEncoder_640x368
+2026-11-20 20:48:04.345 [T#189964][ INFO][bundle.cpp:838]: Creating inference session for model 640x368, part=MLVCDecoder, registry_id=dmc61sbr_reglu-psnr_v1-coreml-apple-v0.1 func=MLVCDecoder_640x368
+2026-11-20 20:48:04.424 [T#189964][ INFO][bundle.cpp:732]: Preloaded 2 inference sessions
+2026-11-20 20:48:04.424 [T#189964][ INFO][bundle.cpp:608]: Loaded bundle: v0.1, dmc61sbr_reglu-psnr_v1, coreml, apple, ts: 2026-11-20T12:37:45.860342+00:00, registry: 1, models: 1
+2026-11-20 20:48:04.424 [T#189964][ INFO][manager.cpp:545]: Loading model bundle 1/1 completed
+2026-11-20 20:48:04.425 [T#189964][ INFO][manager.cpp:571]: MLVC Manager initialized with 1 bundle(s)
+manager: requested=npu resolved=npu
+model v0.1 default iframe_period=64 -> using 64
+2026-11-20 20:48:04.425 [T#189964][ INFO][codec.cpp:469]: [Enc#0] Configuring encoder: version=v0.1, size=640x360, iframe_period=64, num_temporal_layers=1, ltr_mode=internal, ltr_start_idx=0, ltr_period=0, ltr_num_slots=4, ltr_recovery_period=0
+2026-11-20 20:48:04.428 [T#189964][ INFO][codec.cpp:534]: [Enc#0] Configured encoder in 2.75 ms
+encoder first-frame (init) ms: 19.3218
+2026-11-20 20:48:04.444 [T#189964][ INFO][codec.cpp:665]: [Dec#0] Configuring decoder: version=v0.1, model_id=640x368, display=640x360
+2026-11-20 20:48:04.446 [T#189964][ INFO][codec.cpp:719]: [Dec#0] Configured decoder in 1.40 ms
+decoder first-frame (init) ms: 17.6609
+2026-11-20 20:48:08.876 [T#190001][ INFO][codec.cpp:136]: [Enc#0] Encoder frames: 128/128 (128/0), fps: 28.7, kbps: 66.4 (1.00/0.00), idr: 0/2 (forced/total), ltr_recoveries: 0/0 (forced/total)
+2026-11-20 20:48:08.876 [T#190001][ INFO][codec.cpp:143]: [Enc#0] Encoder total: 14.08/3.79/10.89/21.43 (n=128), reconfigure: 2.75/0.00 (n=1), preprocess: 0.13/0.03, inference: 13.52/3.76, scale_decoder: 0.08/0.00, entropy_coding: 0.27/0.01, interval: 34.89/19.67 (mean/std/min/max)
+2026-11-20 20:48:08.885 [T#190002][ INFO][codec.cpp:173]: [Dec#0] Decoder calls: 128, frames: 128/128 (128/0), fps: 28.7, kbps: 258.6 (1.00/0.00), idr: 3, ltr_recoveries: 0
+2026-11-20 20:48:08.885 [T#190002][ INFO][codec.cpp:180]: [Dec#0] Decoder total: 16.81/4.29/11.12/21.56 (n=128), reconfigure: 1.40/0.00 (n=1), entropy_coding: 0.28/0.06, scale_decoder: 0.07/0.01, inference: 16.27/4.26, postprocess: 0.12/0.02, interval: 34.83/19.13 (mean/std/min/max)
+2026-11-20 20:48:13.142 [T#190001][ INFO][codec.cpp:136]: [Enc#0] Encoder frames: 128/128 (128/0), fps: 30.0, kbps: 77.9 (1.00/0.00), idr: 0/2 (forced/total), ltr_recoveries: 0/0 (forced/total)
+2026-11-20 20:48:13.142 [T#190001][ INFO][codec.cpp:143]: [Enc#0] Encoder total: 14.05/3.93/11.00/21.34 (n=128), reconfigure: n/a, preprocess: 0.13/0.03, inference: 13.52/3.92, scale_decoder: 0.08/0.00, entropy_coding: 0.27/0.01, interval: 33.33/8.45 (mean/std/min/max)
+2026-11-20 20:48:13.152 [T#190002][ INFO][codec.cpp:173]: [Dec#0] Decoder calls: 128, frames: 128/128 (128/0), fps: 30.0, kbps: 267.8 (1.00/0.00), idr: 2, ltr_recoveries: 0
+2026-11-20 20:48:13.152 [T#190002][ INFO][codec.cpp:180]: [Dec#0] Decoder total: 17.01/4.31/11.22/21.14 (n=128), reconfigure: n/a, entropy_coding: 0.28/0.05, scale_decoder: 0.07/0.01, inference: 16.49/4.29, postprocess: 0.12/0.01, interval: 33.33/7.89 (mean/std/min/max)
+2026-11-20 20:48:17.409 [T#190001][ INFO][codec.cpp:136]: [Enc#0] Encoder frames: 128/128 (128/0), fps: 30.0, kbps: 100.1 (1.00/0.00), idr: 0/2 (forced/total), ltr_recoveries: 0/0 (forced/total)
+2026-11-20 20:48:17.409 [T#190001][ INFO][codec.cpp:143]: [Enc#0] Encoder total: 13.87/3.78/10.95/21.34 (n=128), reconfigure: n/a, preprocess: 0.13/0.03, inference: 13.33/3.78, scale_decoder: 0.08/0.00, entropy_coding: 0.27/0.01, interval: 33.33/7.78 (mean/std/min/max)
+2026-11-20 20:48:17.418 [T#190002][ INFO][codec.cpp:173]: [Dec#0] Decoder calls: 128, frames: 128/128 (128/0), fps: 30.0, kbps: 333.1 (1.00/0.00), idr: 2, ltr_recoveries: 0
+2026-11-20 20:48:17.418 [T#190002][ INFO][codec.cpp:180]: [Dec#0] Decoder total: 17.17/4.33/11.14/21.10 (n=128), reconfigure: n/a, entropy_coding: 0.29/0.10, scale_decoder: 0.07/0.01, inference: 16.65/4.31, postprocess: 0.12/0.01, interval: 33.33/8.00 (mean/std/min/max)
+2026-11-20 20:48:21.675 [T#190002][ INFO][codec.cpp:173]: [Dec#0] Decoder calls: 128, frames: 128/128 (128/0), fps: 30.1, kbps: 228.1 (1.00/0.00), idr: 2, ltr_recoveries: 0
+2026-11-20 20:48:21.675 [T#190002][ INFO][codec.cpp:180]: [Dec#0] Decoder total: 16.80/4.37/11.15/21.09 (n=128), reconfigure: n/a, entropy_coding: 0.27/0.12, scale_decoder: 0.07/0.01, inference: 16.29/4.36, postprocess: 0.12/0.02, interval: 33.26/8.13 (mean/std/min/max)
+2026-11-20 20:48:21.685 [T#190001][ INFO][codec.cpp:136]: [Enc#0] Encoder frames: 128/128 (128/0), fps: 29.9, kbps: 142.5 (1.00/0.00), idr: 0/2 (forced/total), ltr_recoveries: 0/0 (forced/total)
+2026-11-20 20:48:21.685 [T#190001][ INFO][codec.cpp:143]: [Enc#0] Encoder total: 14.32/4.12/10.96/21.44 (n=128), reconfigure: n/a, preprocess: 0.13/0.03, inference: 13.78/4.11, scale_decoder: 0.08/0.00, entropy_coding: 0.27/0.01, interval: 33.41/8.51 (mean/std/min/max)
+2026-11-20 20:48:25.941 [T#190002][ INFO][codec.cpp:173]: [Dec#0] Decoder calls: 128, frames: 128/128 (128/0), fps: 30.0, kbps: 297.8 (1.00/0.00), idr: 3, ltr_recoveries: 0
+2026-11-20 20:48:25.941 [T#190002][ INFO][codec.cpp:180]: [Dec#0] Decoder total: 16.04/4.17/11.05/21.03 (n=128), reconfigure: n/a, entropy_coding: 0.28/0.13, scale_decoder: 0.07/0.01, inference: 15.52/4.14, postprocess: 0.12/0.02, interval: 33.33/8.72 (mean/std/min/max)
+2026-11-20 20:48:25.951 [T#190001][ INFO][codec.cpp:136]: [Enc#0] Encoder frames: 128/128 (128/0), fps: 30.0, kbps: 183.2 (1.00/0.00), idr: 0/2 (forced/total), ltr_recoveries: 0/0 (forced/total)
+2026-11-20 20:48:25.951 [T#190001][ INFO][codec.cpp:143]: [Enc#0] Encoder total: 14.32/3.88/10.68/21.40 (n=128), reconfigure: n/a, preprocess: 0.12/0.04, inference: 13.79/3.86, scale_decoder: 0.08/0.00, entropy_coding: 0.28/0.01, interval: 33.33/8.70 (mean/std/min/max)
+2026-11-20 20:48:30.208 [T#190001][ INFO][codec.cpp:136]: [Enc#0] Encoder frames: 128/128 (128/0), fps: 30.1, kbps: 64.9 (1.00/0.00), idr: 0/2 (forced/total), ltr_recoveries: 0/0 (forced/total)
+2026-11-20 20:48:30.208 [T#190001][ INFO][codec.cpp:143]: [Enc#0] Encoder total: 13.74/3.66/10.74/21.40 (n=128), reconfigure: n/a, preprocess: 0.08/0.03, inference: 13.26/3.65, scale_decoder: 0.08/0.00, entropy_coding: 0.27/0.01, interval: 33.26/8.35 (mean/std/min/max)
+2026-11-20 20:48:30.218 [T#190002][ INFO][codec.cpp:173]: [Dec#0] Decoder calls: 128, frames: 128/128 (128/0), fps: 29.9, kbps: 269.1 (1.00/0.00), idr: 2, ltr_recoveries: 0
+2026-11-20 20:48:30.218 [T#190002][ INFO][codec.cpp:180]: [Dec#0] Decoder total: 17.01/4.22/11.21/21.11 (n=128), reconfigure: n/a, entropy_coding: 0.28/0.04, scale_decoder: 0.07/0.01, inference: 16.48/4.20, postprocess: 0.12/0.02, interval: 33.41/8.11 (mean/std/min/max)
+2026-11-20 20:48:34.475 [T#190001][ INFO][codec.cpp:136]: [Enc#0] Encoder frames: 128/128 (128/0), fps: 30.0, kbps: 84.9 (1.00/0.00), idr: 0/2 (forced/total), ltr_recoveries: 0/0 (forced/total)
+2026-11-20 20:48:34.475 [T#190001][ INFO][codec.cpp:143]: [Enc#0] Encoder total: 14.21/3.83/10.81/21.26 (n=128), reconfigure: n/a, preprocess: 0.08/0.03, inference: 13.71/3.82, scale_decoder: 0.08/0.00, entropy_coding: 0.27/0.01, interval: 33.34/8.73 (mean/std/min/max)
+2026-11-20 20:48:34.485 [T#190002][ INFO][codec.cpp:173]: [Dec#0] Decoder calls: 128, frames: 128/128 (128/0), fps: 30.0, kbps: 249.3 (1.00/0.00), idr: 2, ltr_recoveries: 0
+2026-11-20 20:48:34.485 [T#190002][ INFO][codec.cpp:180]: [Dec#0] Decoder total: 16.25/4.25/11.08/21.19 (n=128), reconfigure: n/a, entropy_coding: 0.28/0.05, scale_decoder: 0.07/0.01, inference: 15.73/4.24, postprocess: 0.12/0.02, interval: 33.34/8.97 (mean/std/min/max)
+2026-11-20 20:48:38.741 [T#190001][ INFO][codec.cpp:136]: [Enc#0] Encoder frames: 128/128 (128/0), fps: 30.0, kbps: 97.9 (1.00/0.00), idr: 0/2 (forced/total), ltr_recoveries: 0/0 (forced/total)
+2026-11-20 20:48:38.741 [T#190001][ INFO][codec.cpp:143]: [Enc#0] Encoder total: 14.42/3.86/10.59/21.42 (n=128), reconfigure: n/a, preprocess: 0.08/0.04, inference: 13.92/3.85, scale_decoder: 0.08/0.00, entropy_coding: 0.28/0.02, interval: 33.33/9.26 (mean/std/min/max)
+2026-11-20 20:48:38.751 [T#190002][ INFO][codec.cpp:173]: [Dec#0] Decoder calls: 128, frames: 128/128 (128/0), fps: 30.0, kbps: 363.8 (1.00/0.00), idr: 2, ltr_recoveries: 0
+2026-11-20 20:48:38.751 [T#190002][ INFO][codec.cpp:180]: [Dec#0] Decoder total: 15.74/4.12/10.81/20.95 (n=128), reconfigure: n/a, entropy_coding: 0.29/0.13, scale_decoder: 0.07/0.01, inference: 15.22/4.09, postprocess: 0.11/0.02, interval: 33.33/9.10 (mean/std/min/max)
+2026-11-20 20:48:43.008 [T#190001][ INFO][codec.cpp:136]: [Enc#0] Encoder frames: 128/128 (128/0), fps: 30.0, kbps: 185.8 (1.00/0.00), idr: 0/2 (forced/total), ltr_recoveries: 0/0 (forced/total)
+2026-11-20 20:48:43.008 [T#190001][ INFO][codec.cpp:143]: [Enc#0] Encoder total: 13.78/3.74/10.90/21.48 (n=128), reconfigure: n/a, preprocess: 0.08/0.03, inference: 13.28/3.73, scale_decoder: 0.08/0.00, entropy_coding: 0.28/0.01, interval: 33.33/8.41 (mean/std/min/max)
+2026-11-20 20:48:43.018 [T#190002][ INFO][codec.cpp:173]: [Dec#0] Decoder calls: 128, frames: 128/128 (128/0), fps: 30.0, kbps: 232.9 (1.00/0.00), idr: 2, ltr_recoveries: 0
+2026-11-20 20:48:43.018 [T#190002][ INFO][codec.cpp:180]: [Dec#0] Decoder total: 17.05/4.22/10.92/21.13 (n=128), reconfigure: n/a, entropy_coding: 0.27/0.12, scale_decoder: 0.07/0.01, inference: 16.54/4.21, postprocess: 0.11/0.02, interval: 33.33/7.70 (mean/std/min/max)
+2026-11-20 20:48:47.275 [T#190001][ INFO][codec.cpp:136]: [Enc#0] Encoder frames: 128/128 (128/0), fps: 30.0, kbps: 128.1 (1.00/0.00), idr: 0/2 (forced/total), ltr_recoveries: 0/0 (forced/total)
+2026-11-20 20:48:47.275 [T#190001][ INFO][codec.cpp:143]: [Enc#0] Encoder total: 13.20/3.39/10.82/21.19 (n=128), reconfigure: n/a, preprocess: 0.08/0.02, inference: 12.70/3.39, scale_decoder: 0.08/0.00, entropy_coding: 0.27/0.01, interval: 33.33/7.15 (mean/std/min/max)
+2026-11-20 20:48:47.284 [T#190002][ INFO][codec.cpp:173]: [Dec#0] Decoder calls: 128, frames: 128/128 (128/0), fps: 30.0, kbps: 274.7 (1.00/0.00), idr: 3, ltr_recoveries: 0
+2026-11-20 20:48:47.284 [T#190002][ INFO][codec.cpp:180]: [Dec#0] Decoder total: 17.93/4.09/11.04/21.03 (n=128), reconfigure: n/a, entropy_coding: 0.28/0.09, scale_decoder: 0.07/0.01, inference: 17.41/4.08, postprocess: 0.11/0.02, interval: 33.33/7.05 (mean/std/min/max)
+2026-11-20 20:48:51.541 [T#190001][ INFO][codec.cpp:136]: [Enc#0] Encoder frames: 128/128 (128/0), fps: 30.0, kbps: 70.4 (1.00/0.00), idr: 0/2 (forced/total), ltr_recoveries: 0/0 (forced/total)
+2026-11-20 20:48:51.541 [T#190001][ INFO][codec.cpp:143]: [Enc#0] Encoder total: 13.66/3.60/10.80/21.12 (n=128), reconfigure: n/a, preprocess: 0.09/0.03, inference: 13.17/3.60, scale_decoder: 0.08/0.00, entropy_coding: 0.27/0.01, interval: 33.33/7.74 (mean/std/min/max)
+2026-11-20 20:48:51.551 [T#190002][ INFO][codec.cpp:173]: [Dec#0] Decoder calls: 128, frames: 128/128 (128/0), fps: 30.0, kbps: 264.8 (1.00/0.00), idr: 2, ltr_recoveries: 0
+2026-11-20 20:48:51.551 [T#190002][ INFO][codec.cpp:180]: [Dec#0] Decoder total: 17.32/4.33/11.21/21.12 (n=128), reconfigure: n/a, entropy_coding: 0.28/0.05, scale_decoder: 0.07/0.01, inference: 16.80/4.31, postprocess: 0.12/0.02, interval: 33.33/8.09 (mean/std/min/max)
+2026-11-20 20:48:55.808 [T#190001][ INFO][codec.cpp:136]: [Enc#0] Encoder frames: 128/128 (128/0), fps: 30.0, kbps: 99.3 (1.00/0.00), idr: 0/2 (forced/total), ltr_recoveries: 0/0 (forced/total)
+2026-11-20 20:48:55.808 [T#190001][ INFO][codec.cpp:143]: [Enc#0] Encoder total: 14.20/3.96/10.68/21.21 (n=128), reconfigure: n/a, preprocess: 0.09/0.04, inference: 13.71/3.95, scale_decoder: 0.08/0.00, entropy_coding: 0.27/0.01, interval: 33.33/8.91 (mean/std/min/max)
+2026-11-20 20:48:55.817 [T#190002][ INFO][codec.cpp:173]: [Dec#0] Decoder calls: 128, frames: 128/128 (128/0), fps: 30.0, kbps: 329.5 (1.00/0.00), idr: 2, ltr_recoveries: 0
+2026-11-20 20:48:55.817 [T#190002][ INFO][codec.cpp:180]: [Dec#0] Decoder total: 16.30/4.12/10.87/21.09 (n=128), reconfigure: n/a, entropy_coding: 0.29/0.10, scale_decoder: 0.07/0.01, inference: 15.78/4.09, postprocess: 0.12/0.02, interval: 33.33/8.32 (mean/std/min/max)
+2026-11-20 20:49:00.074 [T#190001][ INFO][codec.cpp:136]: [Enc#0] Encoder frames: 128/128 (128/0), fps: 30.0, kbps: 100.8 (1.00/0.00), idr: 0/2 (forced/total), ltr_recoveries: 0/0 (forced/total)
+2026-11-20 20:49:00.074 [T#190001][ INFO][codec.cpp:143]: [Enc#0] Encoder total: 14.26/3.91/10.34/21.87 (n=128), reconfigure: n/a, preprocess: 0.09/0.04, inference: 13.76/3.90, scale_decoder: 0.08/0.00, entropy_coding: 0.28/0.02, interval: 33.33/9.13 (mean/std/min/max)
+2026-11-20 20:49:00.084 [T#190002][ INFO][codec.cpp:173]: [Dec#0] Decoder calls: 128, frames: 128/128 (128/0), fps: 30.0, kbps: 302.2 (1.00/0.00), idr: 2, ltr_recoveries: 0
+2026-11-20 20:49:00.084 [T#190002][ INFO][codec.cpp:180]: [Dec#0] Decoder total: 16.00/4.13/10.47/21.14 (n=128), reconfigure: n/a, entropy_coding: 0.30/0.13, scale_decoder: 0.08/0.03, inference: 15.46/4.11, postprocess: 0.12/0.03, interval: 33.34/8.70 (mean/std/min/max)
+2026-11-20 20:49:04.341 [T#190001][ INFO][codec.cpp:136]: [Enc#0] Encoder frames: 128/128 (128/0), fps: 30.0, kbps: 201.3 (1.00/0.00), idr: 0/2 (forced/total), ltr_recoveries: 0/0 (forced/total)
+2026-11-20 20:49:04.341 [T#190001][ INFO][codec.cpp:143]: [Enc#0] Encoder total: 13.76/3.68/10.71/21.36 (n=128), reconfigure: n/a, preprocess: 0.08/0.03, inference: 13.26/3.67, scale_decoder: 0.08/0.00, entropy_coding: 0.28/0.02, interval: 33.34/8.13 (mean/std/min/max)
+2026-11-20 20:49:04.351 [T#190002][ INFO][codec.cpp:173]: [Dec#0] Decoder calls: 128, frames: 128/128 (128/0), fps: 30.0, kbps: 233.5 (1.00/0.00), idr: 2, ltr_recoveries: 0
+2026-11-20 20:49:04.351 [T#190002][ INFO][codec.cpp:180]: [Dec#0] Decoder total: 17.13/4.32/11.09/21.16 (n=128), reconfigure: n/a, entropy_coding: 0.27/0.12, scale_decoder: 0.07/0.01, inference: 16.63/4.30, postprocess: 0.11/0.02, interval: 33.33/8.23 (mean/std/min/max)
+done: 3603 frame records in M1_load50_duplex30_r2
+2026-11-20 20:49:04.694 [T#189964][ INFO][core.cpp:317]: ~Decoder core: entropy_coding: 0.28/0.10 (n=1802), scale_decoder: 0.07/0.01 (n=1802), inference: 16.26/4.25 (n=1802), postprocess: 0.12/0.02 (n=1802) (mean/std)
+2026-11-20 20:49:04.694 [T#189964][ INFO][codec.cpp:564]: [Dec#0] ~Decoder calls: 1802, frames: 1802/1802 (1802/0), fps: 29.9, kbps: 279.0 (1.00/0.00), idr: 32, ltr_recoveries: 0
+2026-11-20 20:49:04.694 [T#189964][ INFO][codec.cpp:571]: [Dec#0] ~Decoder total: 16.78/4.27/10.47/21.56 (n=1802), reconfigure: 1.40/0.00 (n=1), entropy_coding: 0.28/0.10, scale_decoder: 0.07/0.01, inference: 16.26/4.25, postprocess: 0.12/0.02, interval: 33.44/9.42 (mean/std/min/max)
+2026-11-20 20:49:04.694 [T#189964][ INFO][core.cpp:112]: ~Encoder core: preprocess: 0.10/0.04 (n=1802), inference: 13.46/3.80 (n=1802), scale_decoder: 0.08/0.00 (n=1802), entropy_coding: 0.27/0.01 (n=1802) (mean/std)
+2026-11-20 20:49:04.695 [T#189964][ INFO][codec.cpp:199]: [Enc#0] ~Encoder frames: 1802/1802 (1802/0), fps: 29.9, kbps: 116.1 (1.00/0.00), idr: 0/29 (forced/total), ltr_recoveries: 0/0 (forced/total)
+2026-11-20 20:49:04.695 [T#189964][ INFO][codec.cpp:206]: [Enc#0] ~Encoder total: 13.98/3.81/10.34/21.87 (n=1802), reconfigure: 2.75/0.00 (n=1), preprocess: 0.10/0.04, inference: 13.46/3.80, scale_decoder: 0.08/0.00, entropy_coding: 0.27/0.01, interval: 33.44/9.64 (mean/std/min/max)
