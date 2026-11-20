@@ -14,7 +14,7 @@ echo "== $TAG TIMING (cross-chip B*) START  $(date)"; machine; pmset -g batt | h
 ls -l "$WORK/bundles/mlvc"
 "$TOOLS/thermal_log" >> "$R/thermal.csv" & THERM=$!
 trap 'kill $THERM 2>/dev/null' EXIT
-n=0; N=61
+n=0; N=46
 run () { n=$((n+1)); echo "[$n/$N] $(date +%H:%M:%S) $*"; }
 therm () { pmset -g therm 2>/dev/null | grep -iE "speed_limit|warning" | tr -s ' \n' ' ' > "$1.therm"; }
 echo "== PART A: full MLVC 360p = B* setting"
