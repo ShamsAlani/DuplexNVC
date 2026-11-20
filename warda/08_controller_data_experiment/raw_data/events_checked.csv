@@ -1,0 +1,12 @@
+clip,frame,faces_before,faces_after,confirmed,note
+cekris,70,2,1,no,Kristen turns her back (head turn)
+cekris,100,1,2,no,Kristen turns back (head turn)
+px2ent,250,0,1,yes,at the woman's entry (source second 12); the first entry at frame 20 is not detected
+pxentr,190,0,4,yes,real entry; the people appear at frame 90
+px4ppl,90,0,2,yes,real entries; the first person enters at frame 20
+px5ppl,200,3,4,no,a seated person leans into view
+px7ppl,60,4,3,no,head turn
+px7ppl,130,3,2,no,head turn
+px7ppl,220,2,3,no,head turn
+pxcrwd,220,0,2,yes,crowd entering; people appear from frame 60
+pxdown,110,0,1,no,a man turns toward the camera

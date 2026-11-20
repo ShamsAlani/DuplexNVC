@@ -1,0 +1,116 @@
+{
+ "ce4peo": {
+  "src_w": 1280,
+  "src_h": 720,
+  "src_fps": 60.0,
+  "src_frames": 601,
+  "keep_every": 2,
+  "cropped_to_16x9": false,
+  "master_w": 1280,
+  "master_h": 720
+ },
+ "cejohn": {
+  "src_w": 1280,
+  "src_h": 720,
+  "src_fps": 60.0,
+  "src_frames": 601,
+  "keep_every": 2,
+  "cropped_to_16x9": false,
+  "master_w": 1280,
+  "master_h": 720
+ },
+ "cekris": {
+  "src_w": 1280,
+  "src_h": 720,
+  "src_fps": 60.0,
+  "src_frames": 601,
+  "keep_every": 2,
+  "cropped_to_16x9": false,
+  "master_w": 1280,
+  "master_h": 720
+ },
+ "pxentr": {
+  "src_w": 3840,
+  "src_h": 2160,
+  "src_fps": 25.0,
+  "src_frames": 382,
+  "keep_every": 1,
+  "cropped_to_16x9": false,
+  "master_w": 1920,
+  "master_h": 1080
+ },
+ "px4ppl": {
+  "src_w": 4096,
+  "src_h": 2160,
+  "src_fps": 25.0,
+  "src_frames": 766,
+  "keep_every": 1,
+  "cropped_to_16x9": true,
+  "master_w": 1920,
+  "master_h": 1080
+ },
+ "px5ppl": {
+  "src_w": 1920,
+  "src_h": 1080,
+  "src_fps": 25.0,
+  "src_frames": 834,
+  "keep_every": 1,
+  "cropped_to_16x9": false,
+  "master_w": 1920,
+  "master_h": 1080
+ },
+ "px7ppl": {
+  "src_w": 1920,
+  "src_h": 1080,
+  "src_fps": 25.0,
+  "src_frames": 521,
+  "keep_every": 1,
+  "cropped_to_16x9": false,
+  "master_w": 1920,
+  "master_h": 1080
+ },
+ "px2ent": {
+  "src_w": 4096,
+  "src_h": 2160,
+  "src_fps": 25.0,
+  "src_frames": 748,
+  "keep_every": 1,
+  "cropped_to_16x9": true,
+  "master_w": 1920,
+  "master_h": 1080,
+  "frames": 300
+ },
+ "pxcrwd": {
+  "src_w": 3840,
+  "src_h": 2160,
+  "src_fps": 30.0,
+  "src_frames": 265,
+  "keep_every": 1,
+  "cropped_to_16x9": false,
+  "master_w": 1920,
+  "master_h": 1080,
+  "frames": 265
+ },
+ "pxleav": {
+  "src_w": 3840,
+  "src_h": 2160,
+  "src_fps": 25.0,
+  "src_frames": 149,
+  "keep_every": 1,
+  "cropped_to_16x9": false,
+  "master_w": 1920,
+  "master_h": 1080,
+  "frames": 148
+ },
+ "pxdown": {
+  "src_w": 3840,
+  "src_h": 2160,
+  "src_fps": 25.0,
+  "src_frames": 183,
+  "keep_every": 1,
+  "cropped_to_16x9": false,
+  "master_w": 1920,
+  "master_h": 1080,
+  "frames": 182
+ }
+}
