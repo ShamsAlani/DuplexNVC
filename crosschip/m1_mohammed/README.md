@@ -296,6 +296,7 @@ Paths are inside the repository (`crosschip/m1_mohammed/`). On the Mac every one
 | 5 | Energy | `./m1_energy` | `05_m1_energy/scripts/m1_energy` | `06_energy_experiment/scripts/w` | `analyze_run.py power` |
 | 9 | Build the call program | `./m1_call_build` | `06_m1_e2_call/scripts/m1_call_build` | the harness build of `baseline/REPRODUCE.md` §2 Step 4 | `06_m1_e2_call/scripts/duplex_call.cpp` (new: `duplex_bench.cpp` + UDP) |
 | 9, 11, 15 | Loopback test and real calls | `./m1_call loopback`, `./m1_call <label> <ip>` | `06_m1_e2_call/scripts/m1_call` | new | `06_m1_e2_call/scripts/call_sum.py` (new) |
+| before each | Read-only status check (git, power, radios, quiet mode, apps, thermal, memory) | `./m1_status` | `common/m1_status` | new | — |
 | after each | Copy results into the repository | `./m1_collect` | `common/m1_collect` | new | `rsync` |
 
 Each step folder also has a `README.md` with the question, the files it produces and a *Results* table to fill in the day the step finishes.

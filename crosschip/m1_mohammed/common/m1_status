@@ -1,0 +1,13 @@
+#!/bin/bash
+# Read-only status check before any step: git, scripts, runs, power, radios, quiet mode, apps, thermal, memory, disk.
+# Changes nothing. Paste the whole output when asked.
+echo "== git"; cd ~/Downloads/DuplexNVC 2>/dev/null && git branch --show-current && git status --short | head -5 && git log --format='%h %an %s' -4
+echo "== scripts"; ls ~/Downloads/dm1 | wc -l; ls ~/Downloads/dm1/out_m1_*.txt 2>/dev/null
+echo "== runs"; ls ~/Downloads/duplexnvc-m1/runs/
+echo "== power"; pmset -g batt | head -2; echo "low power mode: $(pmset -g | awk '/lowpowermode/{print $2}' | head -1)"
+echo "== radios"; networksetup -getairportpower en0; command -v blueutil >/dev/null && echo "bluetooth: $(blueutil -p)"
+echo "== quiet mode"; pgrep -x caffeinate >/dev/null && echo "keep-awake: on" || echo "keep-awake: off"; mdutil -s / 2>/dev/null | tail -1
+echo "== apps"; osascript -e 'tell application "System Events" to get name of every process whose background only is false'
+echo "== thermal"; pmset -g therm | grep -iE "speed_limit|warning|No thermal" | head -3
+echo "== memory and disk"; memory_pressure 2>/dev/null | tail -1; df -h ~ | tail -1
+echo "== uptime"; uptime
