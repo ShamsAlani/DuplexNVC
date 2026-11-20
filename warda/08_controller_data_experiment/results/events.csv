@@ -1,0 +1,12 @@
+clip,frame,faces_before,faces_after,kind
+cekris,70,2,1,leave
+cekris,100,1,2,enter
+px2ent,250,0,1,enter
+pxentr,190,0,4,enter
+px4ppl,90,0,2,enter
+px5ppl,200,3,4,enter
+px7ppl,60,4,3,leave
+px7ppl,130,3,2,leave
+px7ppl,220,2,3,enter
+pxcrwd,220,0,2,enter
+pxdown,110,0,1,enter
