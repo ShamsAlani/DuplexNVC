@@ -26,7 +26,7 @@
 
 ## Results
 
-**Run:** Fri 20 Nov 2026, 16:5x–18:28 (+04), quiet mode (`m1_prep on`, `m1_quiet`), MacBook Air M1, 8 GB, macOS 27.2.1, AC power. All 61 runs completed; 5 of 5 unpaced rounds used, round-to-round spread ≤ 0.02 ms. Thermal state `nominal` for all 5,530 logged seconds: the fanless Air did not throttle.
+**Run:** Fri 20 Nov 2026, 16:5x–18:28 (+04), quiet mode (`m1_prep on`, `m1_quiet`), MacBook Air M1, 8 GB, macOS 27.2.1, AC power. All 46 runs completed (the progress label said "of 61" by mistake, fixed); 5 of 5 unpaced rounds used, round-to-round spread ≤ 0.02 ms. Thermal state `nominal` for all 5,530 logged seconds: the fanless Air did not throttle.
 
 ### Full MLVC 360p (B\* setting): M1 against the M4 Pro baseline and the MLVC paper's M3 Pro
 
