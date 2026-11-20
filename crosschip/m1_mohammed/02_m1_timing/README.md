@@ -8,7 +8,7 @@
 
 | Script | What | Time | Conditions |
 |---|---|---|---|
-| `scripts/m1_timing` | All of the above; calls `m1_timing_sum` at the end | 95 min | quiet mode (`./m1_quiet` first), night |
+| `scripts/m1_timing` | All of the above (46 runs); calls `m1_timing_sum` at the end | 92 min | quiet mode (`./m1_prep on`, `./m1_quiet` first) |
 | `scripts/m1_timing_sum` | Tables (`common/sum_m1.py`) and the chip comparison (`common/compare_chips.py`) | 1 min | any |
 
 ## Files

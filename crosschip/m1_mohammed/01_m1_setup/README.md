@@ -9,6 +9,7 @@
 | Script | What | Time | Conditions |
 |---|---|---|---|
 | `scripts/m1_setup` | Build, machine record, bundle checksums, streams, smoke tests | 10 min | any; after the one-time setup (main README §2) |
+| one-time setup | Homebrew, packages (incl. `pkg-config`), Python 3.12 environment, libmlvc `eb5d60a` built, full MLVC converted with `mlvc-tools` (main README §2) | about 1 h | Wi-Fi on |
 | `scripts/m1_trace` | Placement trace of full MLVC and MLVC-S on the M1 | 5 min | any |
 | `scripts/m1_prep on` / `off` | The by-hand part of quiet mode, automated where macOS allows: Low Power Mode off, Wi-Fi and Bluetooth off, brightness to maximum, every app quit; `off` turns Wi-Fi and Bluetooth back on | 1 min | password; the first run installs `blueutil` and `brightness` with Homebrew |
 | `scripts/m1_quiet`, `scripts/m1_unquiet` | Quiet mode on / off (Spotlight, Time Machine, keep-awake, checks), used by Days 2, 4, 5 | 1 min | password |
@@ -22,6 +23,7 @@
 | `results/trace/M1_trace.txt` | Operations per device from `mlplan` |
 | `raw_data/m1_smoke/` | The smoke runs `M1_smoke_<mode>`, `M1_smoke_duplex30`, `M1S_smoke_duplex30` |
 | `raw_data/logs/out_m1_setup.txt`, `out_m1_trace.txt` | Console output |
+| `raw_data/logs/out_m1_convert.txt` | Console output of the full MLVC conversion on the M1 (copied by `m1_collect`) |
 
 ## Results
 
