@@ -1,0 +1,33 @@
+#!/bin/bash
+# STEP 8 setup on Warda's M1: tools, folders, face detector. Safe to rerun.
+# usage: ./s8_setup <path-to-your-DuplexNVC-clone>
+set -e
+REPO=${1:?usage: ./s8_setup <path-to-DuplexNVC-clone>}
+WORK=~/Downloads/duplexnvc-baseline
+S8=$WORK/phase2/step8
+mkdir -p "$S8"/{src,master,frames,faces,check} "$WORK/tools"
+
+echo "== machine"
+system_profiler SPHardwareDataType | grep -E "Model Name|Model Identifier|Chip|Total Number of Cores|Memory"
+sw_vers
+
+echo "== tools"
+for t in ffmpeg ffprobe swiftc python3; do
+  printf "%-8s " "$t"; command -v "$t" || { echo "MISSING: install it (brew install ffmpeg / xcode-select --install)"; exit 1; }
+done
+ffmpeg -version | head -1
+
+echo "== python venv (numpy, opencv)"
+[ -x "$WORK/.venv/bin/python" ] || python3 -m venv "$WORK/.venv"
+"$WORK/.venv/bin/pip" -q install numpy opencv-python-headless
+"$WORK/.venv/bin/python" -c "import numpy, cv2; print('numpy', numpy.__version__, 'opencv', cv2.__version__)"
+
+echo "== face detector (same facebox.swift as the baseline)"
+cp "$REPO/baseline/common/code/facebox.swift" "$WORK/tools/"
+swiftc -O "$WORK/tools/facebox.swift" -o "$WORK/tools/facebox"
+echo "facebox built: $WORK/tools/facebox"
+
+[ -f "$S8/clips.csv" ] || cat > "$S8/clips.csv" <<'EOF'
+id,source,input,start_s,license,url,notes
+EOF
+echo "== ready. Put downloaded files in $S8/src and list them in $S8/clips.csv"
