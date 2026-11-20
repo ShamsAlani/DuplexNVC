@@ -270,3 +270,27 @@ Commit on the branch you checked out in §1 (or your own `mohammed/m1-crosschip`
 | 5 | `m1_energy` | 15 min | quiet, night, password |
 | 9 | `m1_call_build`, loopback, first call | 30 min | Wi-Fi on |
 | 11, 15 | real calls, 3 × 60 s each pairing | 20 min each | Wi-Fi on |
+
+---
+
+## 11. Where the code for each step is
+
+Paths are inside the repository (`crosschip/m1_mohammed/`). On the Mac every one of these files is copied into `~/Downloads/dm1/` by the install command in §1, and that is where you run them.
+
+| Day | Step | Script you run | Repository path | Built from (baseline) | Helpers it uses |
+|---|---|---|---|---|---|
+| all | Settings (paths, `TAG=M1`, B\* setting) | — | `common/vm1` | `baseline/common/scripts/v` | — |
+| 1 | Setup, build, streams, smoke tests | `./m1_setup` | `01_m1_setup/scripts/m1_setup` | `common/scripts/b`, `m`; `01_smoke_test_experiment/scripts/t` | `baseline/common/code/duplex_bench.cpp` (the measurement program), `analyze_run.py`, `quality_tools.py` |
+| 1 | Placement trace on the M1 | `./m1_trace` | `01_m1_setup/scripts/m1_trace` | `07_processor_experiment/scripts/1t` | `baseline/common/code/mlplan.swift` |
+| 2, 4, 5 | Quiet mode on / off | `./m1_quiet`, `./m1_unquiet` | `01_m1_setup/scripts/m1_quiet`, `m1_unquiet` | `common/scripts/p`, `u` | — |
+| 2 | Timing (B\* protocol + MLVC-S) | `./m1_timing` | `02_m1_timing/scripts/m1_timing` | `03_timing_experiment/scripts/x` | `baseline/common/code/thermal_log.swift` |
+| 2 | Timing tables and chip comparison | `./m1_timing_sum` | `02_m1_timing/scripts/m1_timing_sum` | `03_timing_experiment/scripts/y`, `common/scripts/sum.py` | `common/sum_m1.py`, `common/compare_chips.py` |
+| 3 | Cross-chip decode and drift | `./m1_decode` | `03_m1_decode_drift/scripts/m1_decode` | `04_correctness_experiment/scripts/c` | `common/drift_csv.py`, `common/au_cmp.py` (new) |
+| 4 | Contention test | `./m1_contention` | `04_m1_contention/scripts/m1_contention` | new (protocol of `09_placement_experiment/scripts/all`) | `common/memstress.c` (new, compiled by `m1_setup` into `$TOOLS/memstress`) |
+| 4 | Contention curve | `./m1_contention_sum` | `04_m1_contention/scripts/m1_contention_sum` | new | `common/contention_sum.py` (new) |
+| 5 | Energy | `./m1_energy` | `05_m1_energy/scripts/m1_energy` | `06_energy_experiment/scripts/w` | `analyze_run.py power` |
+| 9 | Build the call program | `./m1_call_build` | `06_m1_e2_call/scripts/m1_call_build` | the harness build of `baseline/REPRODUCE.md` §2 Step 4 | `06_m1_e2_call/scripts/duplex_call.cpp` (new: `duplex_bench.cpp` + UDP) |
+| 9, 11, 15 | Loopback test and real calls | `./m1_call loopback`, `./m1_call <label> <ip>` | `06_m1_e2_call/scripts/m1_call` | new | `06_m1_e2_call/scripts/call_sum.py` (new) |
+| after each | Copy results into the repository | `./m1_collect` | `common/m1_collect` | new | `rsync` |
+
+Each step folder also has a `README.md` with the question, the files it produces and a *Results* table to fill in the day the step finishes.
