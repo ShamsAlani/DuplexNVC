@@ -76,12 +76,12 @@ Software versions are in `machine.txt` (ffmpeg 9.0.2, Python 3.12.16, NumPy 2.5.
 
 ## Where the videos are
 
-The videos are not in git (the repo ignores `.mp4`, `.y4m` and `.nv12`). They are in the team's Google Drive folder: https://drive.google.com/drive/folders/1oWpQzQQ0RcG-FsGjj5eCvFNP4mEe8kJ0
+The videos are not in git (the repo ignores `.mp4`, `.y4m` and `.nv12`). They are in the team's Google Drive:
 
-| In the Drive folder | Contents |
+| Drive folder | Contents |
 |---|---|
-| the 11 source files (names as in the clip table) | the original clips the masters were made from |
-| `step8_masters/` | the 11 masters (`<id>_<width>x<height>_30.mp4`) and `meta.json` |
+| **[Step 8 master videos](https://drive.google.com/drive/folders/1Lve-EM16QhhRZU8_kebwevPCfzI3N87J?usp=drive_link)** | the 11 masters (`<id>_<width>x<height>_30.mp4`) and `meta.json` |
+| [Original source clips](https://drive.google.com/drive/folders/1oWpQzQQ0RcG-FsGjj5eCvFNP4mEe8kJ0) | the 11 original clips the masters were made from (names as in the clip table) |
 
 **Use the masters, not the sources, for every codec run.** All frame numbers in `raw_data/` and `results/` (face boxes, events) refer to the master frames. Download them into `~/Downloads/duplexnvc-baseline/phase2/step8/master/`; the encoder inputs at 360p/540p/720p are made from these files with the baseline's command.
 
