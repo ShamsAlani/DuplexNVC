@@ -1,0 +1,5 @@
+#!/bin/bash
+# Contention curve of this chip. Any conditions, 1 min. Output: $RUNS/m1_contention/M1_contention_curve.csv; out_m1_contention_sum.txt
+D=$(cd "$(dirname "$0")" && pwd); . "$D/vm1"; m1log contention_sum
+"$PY" "$D/contention_sum.py" "$RUNS/m1_contention" "$TAG" "$TOOLS"
+echo "RESULT of Day 4 = '$TAG contention curve': $RUNS/m1_contention/${TAG}_contention_curve.csv"

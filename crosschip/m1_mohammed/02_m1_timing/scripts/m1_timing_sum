@@ -1,0 +1,16 @@
+#!/bin/bash
+# Summary of the M1 timing runs: the four baseline tables for this chip, then M1 vs M4 Pro vs M3 Pro (paper).
+# Any conditions, 1 min. Output: $RUNS/m1_timing/M1_unpaced.csv, M1_duplex30.csv, M1_turns30.csv, M1_cli.csv,
+#         M1S_*.csv (MLVC-S 540p), M1_vs_M4Pro.csv; out_m1_timing_sum.txt
+D=$(cd "$(dirname "$0")" && pwd); . "$D/vm1"; m1log timing_sum
+R="$RUNS/m1_timing"
+echo "== $TAG timing results (full MLVC 360p = B* setting, on this chip)  $(date)"
+"$PY" "$D/sum_m1.py" "$R" "$TAG" "$TOOLS"
+echo; echo "== ${TAG}S: MLVC-S 540p on this chip"
+"$PY" "$D/sum_m1.py" "$R" "${TAG}S" "$TOOLS"
+echo; echo "== libmlvc CLI cross-check (last summary lines per run)"
+for f in "$R"/${TAG}_cli_r*.log; do [ -f "$f" ] && { echo "-- $f"; grep "^|" "$f"; }; done
+echo
+"$PY" "$D/compare_chips.py" "$R" "$RUNS/m1_energy" "$REPO/baseline" "$TAG"
+[ -f "$R/thermal.csv" ] && echo "thermal states during the night: $(cut -d, -f2 "$R/thermal.csv" | sort | uniq -c | tr -s ' \n' ' ')"
+echo "RESULT of Day 2 = 'M1 timing table': $R/${TAG}_*.csv and $R/${TAG}_vs_M4Pro.csv"

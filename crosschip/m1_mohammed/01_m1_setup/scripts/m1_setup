@@ -1,0 +1,73 @@
+#!/bin/bash
+# DAY 1 (Wed 18 Nov) - M1 SETUP: does MLVC run on the M1?
+#   Copies the analysis tools, builds the measurement program (duplex_bench), records which bundle this Mac uses,
+#   makes the B* streams (same clips as Shams's Mac), runs the B* and MLVC-S smoke tests on this chip.
+# Needs the one-time setup of baseline/REPRODUCE.md section 2 done with WORK=~/Downloads/duplexnvc-m1 (see ../../README.md).
+# Any conditions (not timed data). ~10 min. Output: $RUNS/m1_setup, $RUNS/m1_smoke, out_m1_setup.txt
+D=$(cd "$(dirname "$0")" && pwd); . "$D/vm1"; m1log setup
+S="$RUNS/m1_setup"; mkdir -p "$S" "$RUNS" "$M4IN" "$TOOLS" "$WORK/data/nv12" "$WORK/data/incoming"
+echo "== $TAG SETUP START  $(date)"; machine
+{ echo "owner=$OWNER tag=$TAG date=$(date)"; machine; system_profiler SPHardwareDataType 2>/dev/null | grep -E "Model Name|Model Identifier|Chip|Total Number of Cores|Memory"; 
+  echo "libmlvc commit: $(cat "$WORK/LIBMLVC_COMMIT.txt" 2>/dev/null)"; pmset -g batt | head -1; } > "$S/${TAG}_machine.txt"
+cat "$S/${TAG}_machine.txt"
+
+echo "== 1. analysis tools -> $TOOLS"
+[ -d "$REPO/baseline/common/code" ] && cp "$REPO"/baseline/common/code/* "$TOOLS/" || echo "   REPO not found at $REPO: copy baseline/common/code/* into $TOOLS yourself"
+cp "$D/memstress.c" "$TOOLS/" 2>/dev/null
+for f in analyze_run.py quality_tools.py duplex_bench.cpp mlplan.swift thermal_log.swift; do [ -e "$TOOLS/$f" ] && echo "   ok  $f" || echo "   MISSING  $TOOLS/$f"; done
+
+echo "== 2. measurement program (harness)"
+if [ ! -d "$WORK/harness" ]; then
+  cp -R "$WORK/libmlvc/examples/minimal-fetchcontent" "$WORK/harness" || { echo "   libmlvc not found at $WORK/libmlvc"; exit 1; }
+fi
+cp "$TOOLS/duplex_bench.cpp" "$WORK/harness/main.cpp"
+if [ ! -f "$WORK/harness/build/ninja-release/build.ninja" ]; then
+  cmake -S "$WORK/harness" -B "$WORK/harness/build/ninja-release" -G Ninja -DCMAKE_BUILD_TYPE=Release \
+        -DCMAKE_OSX_ARCHITECTURES=arm64 -DBUILD_SHARED_LIBS=OFF -DFETCHCONTENT_SOURCE_DIR_LIBMLVC="$WORK/libmlvc" 2>&1 | tail -3
+fi
+cmake --build "$WORK/harness/build/ninja-release" 2>&1 | tail -3
+echo "   fixed-version check (must be 13): $(grep -c 'Clock::now()' "$WORK/harness/main.cpp")"
+"$BENCH" 2>&1 | head -1
+[ -x "$TOOLS/thermal_log" ] || swiftc -O "$TOOLS/thermal_log.swift" -o "$TOOLS/thermal_log" 2>&1 | tail -2
+[ -x "$TOOLS/memstress" ] || cc -O2 -o "$TOOLS/memstress" "$TOOLS/memstress.c" -lpthread
+for f in "$BENCH" "$MLVC" "$PY" "$TOOLS/thermal_log" "$TOOLS/memstress"; do [ -e "$f" ] && echo "   ok  $f" || echo "   MISSING  $f"; done
+
+echo "== 3. model bundles (must be the SAME files as on Shams's Mac; compare the checksums)"
+ls -l "$WORK/bundles/mlvc" "$WORK/bundles/mlvc-s"
+shasum -a 256 "$WORK"/bundles/mlvc/*.tar "$WORK"/bundles/mlvc-s/*.tar 2>/dev/null | tee "$S/${TAG}_bundle_sha256.txt"
+echo "   -> $S/${TAG}_bundle_sha256.txt  (Shams: shasum -a 256 ~/Downloads/duplexnvc-baseline/bundles/*/*.tar)"
+
+echo "== 4. B* streams (360p): camera = 0380a3 + 6587ae, incoming = 6c9c96 + 9c02f6 at QP 26 on the NE"
+mkdir -p "$BINC"
+[ -s "$CAM" ] || gunzip -c "$CLIPS/VCD_s1_0380a3_640x360_30fps.nv12.gz" "$CLIPS/VCD_s1_6587ae_640x360_30fps.nv12.gz" > "$CAM"
+[ -s "$INCSRC" ] || gunzip -c "$CLIPS/VCD_s1_6c9c96_640x360_30fps.nv12.gz" "$CLIPS/VCD_s1_9c02f6_640x360_30fps.nv12.gz" > "$INCSRC"
+ls -l "$CAM" "$INCSRC"; echo "   (expect 207360000 bytes each = 600 frames)"
+if [ ! -s "$BINC/incoming.aus" ]; then
+  "$BENCH" prepare --input "$INCSRC" --size 640x360 --qp 26 --bundles "$WORK/bundles/mlvc" --enc-cu npu --out-dir "$BINC" 2> "$BINC/prepare.log"
+fi
+grep -E "Found model bundle|resolved|iframe_period|wrote|FAILED|rror" "$BINC/prepare.log"
+"$MLVC" decode --model-bundles-dir "$WORK/bundles/mlvc" --input "$BINC/incoming.mlvc" --output /tmp/m1_inc_check.nv12 2>&1 | tail -1
+"$PY" "$TOOLS/quality_tools.py" psnr /tmp/m1_inc_check.nv12 "$INCSRC" 640x360; rm -f /tmp/m1_inc_check.nv12
+echo "== 4b. MLVC-S 540p streams (Phase-1 setting, for the MLVC-S rows of the timing table)"
+[ -s "$CLIP" ] || gunzip -c "$CLIPS/VCD_s1_0380a3_960x540_30fps.nv12.gz" > "$CLIP"
+mkdir -p "$INC"
+[ -s "$INC/incoming.aus" ] || "$BENCH" prepare --input "$CLIP" --size 960x540 --qp 22 --bundles "$WORK/bundles/mlvc-s" --out-dir "$INC" 2> "$INC/prepare.log"
+grep -E "resolved|wrote|FAILED|rror" "$INC/prepare.log"
+
+echo "== 5. smoke tests on this chip (10 s each, not data)"
+R="$RUNS/m1_smoke"; mkdir -p "$R"; cd "$R"
+for m in turns alone-enc alone-dec duplex; do
+  echo "-- B* $m unpaced"; "$BENCH" $m $BL --fps 0 --seconds 10 --warmup-frames 30 --out-dir ${TAG}_smoke_$m 2> ${TAG}_smoke_$m.log
+  grep -E "resolved|init|FAILED|rror" ${TAG}_smoke_$m.log
+done
+echo "-- B* duplex paced 30 fps"; "$BENCH" duplex $BL --fps 30 --seconds 10 --warmup-frames 30 --out-dir ${TAG}_smoke_duplex30 2> ${TAG}_smoke_duplex30.log
+grep -E "resolved|init|FAILED|rror" ${TAG}_smoke_duplex30.log
+echo "-- MLVC-S 540p duplex paced 30 fps"; "$BENCH" duplex $P1 --fps 30 --seconds 10 --warmup-frames 30 --out-dir ${TAG}S_smoke_duplex30 2> ${TAG}S_smoke_duplex30.log
+grep -E "resolved|init|FAILED|rror" ${TAG}S_smoke_duplex30.log
+"$PY" "$TOOLS/analyze_run.py" timing ${TAG}_smoke_turns ${TAG}_smoke_alone-enc ${TAG}_smoke_alone-dec ${TAG}_smoke_duplex ${TAG}_smoke_duplex30 ${TAG}S_smoke_duplex30
+"$PY" "$TOOLS/analyze_run.py" compare --alone-enc ${TAG}_smoke_alone-enc --alone-dec ${TAG}_smoke_alone-dec --turns ${TAG}_smoke_turns --duplex ${TAG}_smoke_duplex
+echo
+echo "== $TAG SETUP END  $(date)"
+echo "CHECK: no FAILED, every manager line says resolved=npu, all runs end, B* duplex 30 fps late ~0 % (if late > 1 % on the M1, that is itself the Day 2 finding)."
+echo "RESULT of Day 1 = 'MLVC runs on the M1': $S/${TAG}_machine.txt, $S/${TAG}_bundle_sha256.txt, $R/, $D/out_${LTAG}_setup.txt"
+echo "Next: ./m1_trace (optional, 5 min), then on Day 2 night: ./m1_quiet; ./m1_timing"
