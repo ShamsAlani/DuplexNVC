@@ -1,0 +1,41 @@
+#!/bin/bash
+# DAY 4 (Sat 21 Nov, evening, quiet) - CONTENTION TEST on the M1 (Shams runs the same script on the M4 Pro with TAG=M4):
+#   memstress loads the unified memory at 0 / 25 / 50 / 75 % duty while (a) the encoder alone runs unpaced on the NE
+#   and (b) the B* call runs paced at 30 fps on the NE. If the NE slows down as the memory load grows, memory speed
+#   is the limit; if it does not, the NE itself is. This explains why the two networks barely overlap (S = 1.11 on M4 Pro).
+#   3 interleaved rounds x 4 loads x 2 modes = 24 runs of 60 s + 60 s rest (~55 min), plus a 10 s peak-bandwidth run.
+# QUIET MAC (./m1_quiet first). RESUMABLE: finished runs are skipped. Output: $RUNS/m1_contention; out_m1_contention.txt
+D=$(cd "$(dirname "$0")" && pwd); . "$D/vm1"; exec > >(tee -a "$D/out_${LTAG}_contention.txt") 2>&1
+R="$RUNS/m1_contention"; mkdir -p "$R"; cd "$R"
+THREADS=${THREADS:-4}      # memstress threads: 4 = the M1's performance cores (M4 Pro: use 8 or 10)
+echo; echo "== $TAG CONTENTION START  $(date)  threads=$THREADS"; machine; pmset -g batt | head -1
+[ -x "$TOOLS/memstress" ] || cc -O2 -o "$TOOLS/memstress" "$D/memstress.c" -lpthread || exit 1
+"$TOOLS/thermal_log" >> "$R/thermal.csv" & THERM=$!
+trap 'kill $THERM 2>/dev/null; echo "== stopped $(date) - run ./m1_contention again to continue"; exit 1' INT TERM
+if [ ! -s "${TAG}_memstress_peak.txt" ]; then
+  echo "-- memstress alone at 100 % for 10 s (the peak bandwidth this thread set can pull)"
+  "$TOOLS/memstress" 100 10 $THREADS | tee "${TAG}_memstress_peak.txt"; sleep 20
+fi
+done_run () { [ -s "$1/frames.csv" ] && [ -s "$1/memstress.txt" ]; }
+n=0; N=24
+for r in 1 2 3; do
+  for load in 0 25 50 75; do
+    for kind in alone-enc duplex30; do
+      n=$((n+1)); O="${TAG}_load${load}_${kind}_r$r"
+      if done_run "$O"; then echo "[$n/$N] skip (done) $O"; continue; fi
+      echo "[$n/$N] $(date +%H:%M:%S) $O"; mkdir -p "$O"
+      "$TOOLS/memstress" $load 75 $THREADS > "$O/memstress.txt" & MS=$!     # 5 s before, 10 s after the 60 s run
+      sleep 5
+      if [ $kind = alone-enc ]; then "$BENCH" alone-enc $BL --fps 0 --seconds 60 --out-dir "$O" 2> "$O.log"
+      else "$BENCH" duplex $BL --fps 30 --seconds 60 --out-dir "$O" 2> "$O.log"; fi
+      pmset -g therm 2>/dev/null | grep -iE "speed_limit|warning" | tr -s ' \n' ' ' > "$O.therm"
+      wait $MS; cat "$O/memstress.txt"
+      grep -E "resolved|FAILED|rror" "$O.log" | sort -u | tr '\n' ' '; echo
+      sleep 60
+    done
+  done
+done
+kill $THERM 2>/dev/null
+echo "== $TAG CONTENTION END  $(date)"
+echo "thermal states seen: $(cut -d, -f2 "$R/thermal.csv" | sort | uniq -c | tr -s ' \n' ' ')"
+"$D/m1_contention_sum"

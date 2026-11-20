@@ -1,0 +1,37 @@
+#!/bin/bash
+# E2 - A REAL CALL BETWEEN TWO LAPTOPS over Wi-Fi (plan section 8, E2). Wi-Fi ON (not quiet mode); charger in.
+#   ./m1_call loopback                                  Day 9: test on this Mac alone, two endpoints over 127.0.0.1 (20 s)
+#   ./m1_call <label> <peer-ip> [seconds] [start-epoch] Day 9/11/15: the real call. Run the same command on BOTH laptops
+#                                                       within the same minute; both start at the second-next full minute.
+#   e.g. on the M1:  ./m1_call shams_m4_r1 192.168.1.20 60      (Shams, on her Mac: her copy with the M1's address)
+# By default the M1 sends the B* INCOMING clips (6c9c96 + 9c02f6) so the other laptop receives what it received in B*,
+# and expects the other laptop to send the CAMERA clips (0380a3 + 6587ae). SEND=cam ./m1_call ... swaps that.
+# Output: $RUNS/m1_call/M1_call_<label>/ (frames.csv, clock.csv, run.txt, received.mlvc, outgoing.mlvc, summary.json); out_m1_call.txt
+D=$(cd "$(dirname "$0")" && pwd); . "$D/vm1"; exec > >(tee -a "$D/out_${LTAG}_call.txt") 2>&1
+R="$RUNS/m1_call"; mkdir -p "$R"; cd "$R"
+[ -x "$CALL" ] || { echo "no call program: run ./m1_call_build first"; exit 1; }
+SRC="$INCSRC"; [ "${SEND:-inc}" = cam ] && SRC="$CAM"
+COMMON="--size 640x360 --qp 26 --iframe-period 64 --bundles $WORK/bundles/mlvc --enc-cu npu --dec-cu npu --fps 30"
+echo; echo "== $TAG CALL  $(date)"; machine
+if [ "$1" = loopback ]; then
+  echo "-- loopback: endpoint a sends the camera clips to b on 5601, b sends the incoming clips to a on 5600 (20 s)"
+  rm -rf ${TAG}_call_loopback_a ${TAG}_call_loopback_b
+  START=$(( $(date +%s) + 5 ))
+  "$CALL" --peer 127.0.0.1 --port 5601 --listen-port 5600 --input "$CAM"    $COMMON --seconds 20 --start-at $START --out-dir ${TAG}_call_loopback_a 2> ${TAG}_call_loopback_a.log &
+  "$CALL" --peer 127.0.0.1 --port 5600 --listen-port 5601 --input "$INCSRC" $COMMON --seconds 20 --start-at $START --out-dir ${TAG}_call_loopback_b 2> ${TAG}_call_loopback_b.log
+  wait
+  for e in a b; do echo "-- endpoint $e"; grep -E "resolved|init|call:|done:|FAILED|rror" ${TAG}_call_loopback_$e.log; "$PY" "$D/call_sum.py" ${TAG}_call_loopback_$e "$TOOLS"; done
+  echo "CHECK: both endpoints 'done', received ~= sent, lost 0, decode failures 0, rtt < 1 ms, end-to-end about 20-30 ms (two NE networks sharing one chip)."
+  exit 0
+fi
+LABEL=$1; PEER=$2; SEC=${3:-60}
+[ -z "$LABEL" ] || [ -z "$PEER" ] && { echo "usage: ./m1_call loopback | ./m1_call <label> <peer-ip> [seconds] [start-epoch]"; exit 2; }
+START=${4:-$(( ( $(date +%s) / 60 + 2 ) * 60 ))}
+O="${TAG}_call_$LABEL"; [ -d "$O" ] && mv "$O" "${O}_old_$(date +%H%M%S)"
+echo "-- $O: peer $PEER, $SEC s, sending $(basename "$SRC"), start at $(date -r $START +%H:%M:%S) (epoch $START). My address: $(ipconfig getifaddr en0)"
+echo "   both laptops must be on the same Wi-Fi, clocks on 'Set time automatically', firewall allowing the program (answer Allow if macOS asks)."
+"$CALL" --peer "$PEER" --port 5600 --listen-port 5600 --input "$SRC" $COMMON --seconds $SEC --start-at $START --out-dir "$O" 2> "$O.log"
+grep -E "resolved|init|call:|done:|FAILED|rror" "$O.log"
+"$PY" "$D/call_sum.py" "$O" "$TOOLS"
+echo "   received stream for an offline decode and drift check (Day 3 method): $R/$O/received.mlvc"
+echo "RESULT of E2 = 'delay, lost frames and drift in a real call': $R/$O/summary.json"

@@ -1,0 +1,14 @@
+#!/bin/bash
+# Quiet mode ON for the M1 (= baseline common/scripts/p): Spotlight and Time Machine paused, keep-awake, checks.
+D=$(cd "$(dirname "$0")" && pwd); . "$D/vm1"; m1log quiet
+echo "== preparing the $TAG Mac  $(date)"
+sudo mdutil -a -i off >/dev/null && echo "Spotlight indexing: paused"
+sudo tmutil disable && echo "Time Machine: paused"
+pkill caffeinate 2>/dev/null; nohup caffeinate -dimsu >/dev/null 2>&1 &
+echo "Keep-awake: on"
+pmset -g batt | head -1
+pmset -g custom | grep -iE "power:|powermode"
+for f in "$BENCH" "$MLVC" "$PY" "$TOOLS/analyze_run.py" "$TOOLS/thermal_log"; do [ -e "$f" ] && echo "ok  $f" || echo "MISSING  $f"; done
+echo
+echo "Now: charger in, quit every other app (keep Terminal), brightness MAX (auto-brightness and True Tone off), Wi-Fi and Bluetooth off, Low Power Mode off."
+echo "A fanless MacBook Air M1 heats up: put it on a hard flat surface, not on a bed or lap. Expect 'AC Power' above and no MISSING lines."

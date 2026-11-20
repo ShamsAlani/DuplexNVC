@@ -1,0 +1,61 @@
+#!/bin/bash
+# DAY 2 (Thu 19 Nov, night, quiet) - CROSS-CHIP TIMING on the M1: the B* protocol of baseline/03_timing_experiment/scripts/x
+#   Part A, full MLVC 360p (B*): 5 interleaved rounds of turns / alone-enc / alone-dec / duplex unpaced (60 s + 60 s rest),
+#           5 x B* duplex paced 30 fps, 3 x turns paced 30 fps, 3 x libmlvc CLI cross-check          (~65 min)
+#   Part B, MLVC-S 540p (Phase-1 setting): 3 rounds of the four unpaced modes, 3 x duplex paced 30 fps   (~30 min)
+#   Thermal state and Low Power Mode logged every second (a fanless M1 may throttle; the M4 Pro did not).
+# QUIET MAC (./m1_quiet first). Do not press Ctrl-C; a rerun moves the old folder aside. Calls ./m1_timing_sum at the end.
+# Output: $RUNS/m1_timing/M1_<mode>_r<n>, M1S_<mode>_r<n>, thermal.csv; out_m1_timing.txt
+D=$(cd "$(dirname "$0")" && pwd); . "$D/vm1"; m1log timing
+R="$RUNS/m1_timing"
+if [ -d "$R" ]; then mv "$R" "${R}_old_$(date +%H%M%S)"; fi
+mkdir -p "$R"; cd "$R"
+echo "== $TAG TIMING (cross-chip B*) START  $(date)"; machine; pmset -g batt | head -1; cat "$WORK/LIBMLVC_COMMIT.txt" 2>/dev/null
+ls -l "$WORK/bundles/mlvc"
+"$TOOLS/thermal_log" >> "$R/thermal.csv" & THERM=$!
+trap 'kill $THERM 2>/dev/null' EXIT
+n=0; N=61
+run () { n=$((n+1)); echo "[$n/$N] $(date +%H:%M:%S) $*"; }
+therm () { pmset -g therm 2>/dev/null | grep -iE "speed_limit|warning" | tr -s ' \n' ' ' > "$1.therm"; }
+echo "== PART A: full MLVC 360p = B* setting"
+for r in 1 2 3 4 5; do
+  for m in turns alone-enc alone-dec duplex; do
+    run "round $r: $m unpaced (60 s + 60 s rest)"
+    "$BENCH" $m $BL --fps 0 --seconds 60 --out-dir ${TAG}_${m}_r$r 2> ${TAG}_${m}_r$r.log; therm ${TAG}_${m}_r$r
+    grep -E "resolved|FAILED|rror" ${TAG}_${m}_r$r.log | tr '\n' ' '; echo
+    sleep 60
+  done
+done
+for r in 1 2 3 4 5; do
+  run "B* duplex paced 30 fps, run $r"
+  "$BENCH" duplex $BL --fps 30 --seconds 60 --out-dir ${TAG}_duplex30_r$r 2> ${TAG}_duplex30_r$r.log; therm ${TAG}_duplex30_r$r
+  grep -E "FAILED|rror" ${TAG}_duplex30_r$r.log; sleep 60
+done
+for r in 1 2 3; do
+  run "turns paced 30 fps, run $r"
+  "$BENCH" turns $BL --fps 30 --seconds 60 --out-dir ${TAG}_turns30_r$r 2> ${TAG}_turns30_r$r.log; therm ${TAG}_turns30_r$r
+  sleep 60
+done
+for r in 1 2 3; do
+  run "libmlvc CLI cross-check, run $r"
+  mkdir -p ${TAG}_cli_r$r; "$MLVC" benchmark --model-bundles-dir "$WORK/bundles/mlvc" --num-encoders 1 --num-decoders 1 --input "$CAM:640x360" --qp 26 --iframe-period 64 --duration-seconds 60 --output-dir ${TAG}_cli_r$r > ${TAG}_cli_r$r.log 2>&1
+  sleep 60
+done
+echo "== PART B: MLVC-S 540p (Phase-1 setting, QP 22)"
+for r in 1 2 3; do
+  for m in turns alone-enc alone-dec duplex; do
+    run "MLVC-S round $r: $m unpaced"
+    "$BENCH" $m $P1 --fps 0 --seconds 60 --out-dir ${TAG}S_${m}_r$r 2> ${TAG}S_${m}_r$r.log; therm ${TAG}S_${m}_r$r
+    grep -E "resolved|FAILED|rror" ${TAG}S_${m}_r$r.log | tr '\n' ' '; echo
+    sleep 60
+  done
+done
+for r in 1 2 3; do
+  run "MLVC-S duplex paced 30 fps, run $r"
+  "$BENCH" duplex $P1 --fps 30 --seconds 60 --out-dir ${TAG}S_duplex30_r$r 2> ${TAG}S_duplex30_r$r.log; therm ${TAG}S_duplex30_r$r
+  sleep 60
+done
+echo "== $TAG TIMING END  $(date)"
+kill $THERM 2>/dev/null
+echo "thermal states seen: $(cut -d, -f2 "$R/thermal.csv" | sort | uniq -c | tr -s ' \n' ' ')"
+"$D/m1_timing_sum"
