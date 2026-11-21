@@ -43,7 +43,7 @@ The set has three roles: **entries with faces toward the camera** (the face trig
 - **Face-size groups:** face height scaled to 360p: <32, 32–63, 64–127, ≥128 px (= <96, 96–191, 192–383, ≥384 px at 1080p, the bins of experiment 10's `facesize.csv`).
 - **Poster faces** (`raw_data/exclude.csv`): in `cejohn` and `cekris` a poster with printed faces stands behind the speakers; faces under 45 px at 360p there are not participants (the real faces are 66–115 px, the printed ones 21–32 px). They stay in `faces_step8.csv` with `participant = 0` and are left out of people counts, groups and events.
 - **Automatic events** (`scripts/s8_table.py`): a change in the number of participant faces that holds for 3 labelled frames (1 s).
-- **Visual check:** check images with the boxes (first, middle and last labelled frame of each clip), contact sheets of every 10th master frame, and contact sheets of one frame per second over each full source clip.
+- **Manual annotation:** real events were annotated manually by inspecting every 10th master frame and one frame per second of each full source clip; event times are accurate to ±10 frames (0.33 s). Face boxes were also checked by eye on the first, middle and last labelled frame of each clip.
 
 ## How to run
 
@@ -69,7 +69,7 @@ Software versions are in `machine.txt` (ffmpeg 9.0.2, Python 3.12.16, NumPy 2.5.
 | `raw_data/exclude.csv` | Clips with poster faces and the size limit used |
 | `raw_data/meta.json` | Per clip: source size, fps, frames kept, crop, master size |
 | `raw_data/faces/<id>.json` | Apple Vision face boxes on every 10th master frame |
-| `raw_data/events_truth.csv` | Real entries and leaving, marked by eye |
+| `raw_data/events_truth.csv` | Real entries and leaving, annotated manually |
 | `raw_data/events_checked.csv` | Each automatic event, confirmed or not, with what actually happens |
 | `results/dataset_table.csv` | One row per clip: sizes, length, people (max, median), background faces, events, faces per group, smallest and largest face |
 | `results/faces_step8.csv` | One row per labelled face, with its group and `participant` |
@@ -82,6 +82,23 @@ Software versions are in `machine.txt` (ffmpeg 9.0.2, Python 3.12.16, NumPy 2.5.
 | `results/fusion_summary.csv` | Five ways to combine faces and bodies: real events caught, automatic events, not real, median delay |
 | `results/fusion_events.csv` | One row per real event: the frame where each method caught it |
 | `machine.txt` | Hardware, macOS, ffmpeg and Python of the labelling Mac |
+
+## Recorded call clips (next)
+
+The dataset has two parts. The **stock clips** above (HEVC Class E and Pexels) cover face sizes, groups of 4–7 and crowds, which would be hard to film ourselves. They are filmed like films, though: the camera is across the room and people move about the scene. A video call is one laptop camera about 50–80 cm away, with people facing it. The second part, **recorded call clips**, is filmed that way, so the events of a real call (someone joins, leaves or steps away) are tested as they happen in a call, and their times are known exactly instead of annotated afterwards from sampled frames.
+
+| Clip | Scenario | Why it is needed |
+|---|---|---|
+| `rcleav` | One person faces the camera ~5 s, stands up and leaves the frame; the empty chair stays in view ~8 s | A true exit from the frame (1 face → 0): the moment the controller can lower the resolution and save energy. The stock leaving clips only show people walking away while staying in view |
+| `rc2to1` | Two people side by side; after ~5 s one leaves, the other stays and keeps talking | A partial exit (2 faces → 1): the controller adapts without stopping |
+| `rcback` | One person leaves (~4 s), stays away ~4 s, comes back and sits down facing the camera | An exit and a close, face-forward entry in one clip: does A3 force two key frames? |
+| `rcjoin` | One person talking; a second sits down next to them | A close entry, the usual way someone joins a call; the stock entries are all far from the camera |
+| `rclook` | One person looks down or away for a few seconds but does not leave | False-alarm test: no trigger should fire. Faces turning away caused most of the false face events above |
+| `rcwalk` | One person talking; someone walks past in the background without joining | False-alarm test for bodies and frame difference: a person passing behind should not count as a participant joining |
+
+**How they are recorded.** MacBook (QuickTime Player → File → New Movie Recording) or iPad (Camera app, front camera, landscape, on a stand; Center Stage and HDR video off). The camera stays still at normal call distance; 15–20 s per clip; plain background with no posters or photos of faces; good light on the faces. The second of every event is written down while recording, and becomes the clip's rows in `events_truth.csv`. Everyone who appears agrees to the clips being stored in the team's Drive and used in the report.
+
+**How they are added.** They are listed in `clips.csv` (source `recorded`) and run through the same scripts: `s8_prep.py`, `s8_table.py`, `s8_bodies.py`, `s8_fusion.py`. A MacBook recording is 720p, so its master is 1280×720, like Class E.
 
 ## Where the videos are
 
