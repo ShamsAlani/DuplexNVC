@@ -56,6 +56,7 @@ conda deactivate                                             # if Anaconda is in
 ~/Downloads/duplexnvc-baseline/.venv/bin/python s8_table.py  # tables, groups, events, check images
 swiftc -O bodybox.swift -o ~/Downloads/duplexnvc-baseline/tools/bodybox   # body detector (once)
 ~/Downloads/duplexnvc-baseline/.venv/bin/python s8_bodies.py # faces vs bodies on the same frames
+~/Downloads/duplexnvc-baseline/.venv/bin/python s8_fusion.py # five ways to combine faces and bodies
 ```
 
 Software versions are in `machine.txt` (ffmpeg 9.0.2, Python 3.12.16, NumPy 2.5.5, OpenCV 5.1.0, Swift 6.1.2).
@@ -78,6 +79,8 @@ Software versions are in `machine.txt` (ffmpeg 9.0.2, Python 3.12.16, NumPy 2.5.
 | `results/body_events.csv` | Automatic body events (same 1 s rule as faces) |
 | `results/faces_vs_bodies.csv` | One row per real event: caught by faces? by bodies? delay |
 | `results/detector_summary.csv` | Per clip: bodies found (max, median), face and body events, events that were not real |
+| `results/fusion_summary.csv` | Five ways to combine faces and bodies: real events caught, automatic events, not real, median delay |
+| `results/fusion_events.csv` | One row per real event: the frame where each method caught it |
 | `machine.txt` | Hardware, macOS, ffmpeg and Python of the labelling Mac |
 
 ## Where the videos are
@@ -152,9 +155,24 @@ Body detection took a median of 7.4 ms per full-size frame on the M1 (the cost o
 - **As a trigger, bodies are as noisy as faces**: they catch one more real event and are faster on the family entry, but produce as many false events; in `px2ent` a mirror doubles the people (up to 5 bodies for 2 people).
 - **Neither detector marks "walking away"** in `pxleav` and `pxdown`: the people walk away but stay in view, so the number of people never drops. An exit test needs a clip where someone leaves the frame.
 
+### Combining faces and bodies
+
+`scripts/s8_fusion.py` combines the two detectors on the same frames, with the same 1 s rule and the same scoring (no new detection): **or** (an event from either; two in the same direction within 1 s count once), **and** (only when both have one in the same direction within 1 s, at the later of the two), and **max** (per frame, people = the larger of participant faces and bodies, events on that count).
+
+| Method | Real events caught (of 10) | Automatic events | Not real | Median delay |
+|---|---|---|---|---|
+| Faces | 3 | 11 | 8 | 2.3 s |
+| Bodies | 4 | 13 | 9 | 2.0 s |
+| Or | 5 | 22 | 17 | 1.0 s |
+| And | 1 | 2 | 1 | 2.3 s |
+| **Max** | **4** | **11** | **7** | **2.0 s** |
+
+- **Max is the best single trigger:** as many real events as bodies, with the fewest events that are not real among the methods that still catch events. **Or** catches the most and fastest but more than doubles the false events; **and** almost never fires.
+- **No method catches the rest, because of what the clips contain:** in `px4ppl` the third and fourth people enter 1–3 s after the second, while the count is still changing, so the 1 s rule merges them into one change (one switch for a group arriving is the behaviour the controller needs); in `pxcrwd` people keep arriving, so the count never settles; in `pxleav` and `pxdown` people walk away but stay in view.
+
 ## Conclusion
 
 1. **Every face-size group is covered** by this step and the baseline together: the new clips give the small groups (246 faces under 32 px in 9 clips, 236 in 32–63 px in 7 clips), which the baseline lacks; the baseline's talking heads give the large ones. This supports the controller rule "a face of this size needs at least this resolution".
 2. **Faces found are not people present.** In group clips Apple Vision finds about half of the people (median 3 of 7 in `px7ppl`, 3 of 5 in `px5ppl`), because faces turn away, look down or are hidden, and it also finds printed faces on a poster (68 boxes in two clips). The controller has to treat the face count as a lower bound and ignore faces that never move.
-3. **A face-count trigger alone is late and blind to faces turned away.** Of 11 automatic events, 4 are real, arriving 0–5.3 s after the first person enters; the distant entry and both leaving clips produce no face event at all. **The body detector does not fix this on its own:** it counts people far better when faces are away, but as a trigger it is as noisy as faces (4 of 10 real events caught, 9 false). The controller should use faces for face size (the resolution rule), bodies for how many people are present, and a frame-difference trigger for when the scene changes, with persistence (a change must last 1 s) on all of them.
+3. **A face-count trigger alone is late and blind to faces turned away.** Of 11 automatic events, 4 are real, arriving 0–5.3 s after the first person enters; the distant entry and both leaving clips produce no face event at all. **The body detector does not fix this on its own:** it counts people far better when faces are away, but as a trigger it is as noisy as faces (4 of 10 real events caught, 9 false). Combined, the larger of the face and body counts is the best single trigger (4 of 10 caught, 7 not real, against 8 and 9 for each alone). The controller should use faces for face size (the resolution rule), the combined count for how many people are present and when that changes, and a frame-difference trigger as the backup for scenes whose count never settles (a crowd), with persistence (a change must last 1 s) on all of them.
 4. **Clips for the next steps:** `px4ppl`, `pxentr`, `px2ent` and `pxcrwd` for entries; `pxleav` and `pxdown` for leaving; `ce4peo`, `cejohn`, `cekris`, `px5ppl` and `px7ppl` as controls, where nothing should trigger.
