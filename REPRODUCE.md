@@ -1,6 +1,6 @@
 # Reproducing everything
 
-All baseline measurements are in [`baseline/`](baseline/), in ten experiment folders. Tier B (fine-tuning MLVC on a GPU) has its own guide: **[`tier_b/REPRODUCE.md`](tier_b/REPRODUCE.md)**. The complete guide — tools, downloads, builds, quiet mode, the run order of every script, expected values and known problems — is **[`baseline/REPRODUCE.md`](baseline/REPRODUCE.md)**.
+All baseline measurements are in [`baseline/`](baseline/), in ten experiment folders. The Lab GPU Runs (fine-tuning MLVC on a GPU) have their own guide: **[`lab_gpu_runs/REPRODUCE.md`](lab_gpu_runs/REPRODUCE.md)**. The complete guide — tools, downloads, builds, quiet mode, the run order of every script, expected values and known problems — is **[`baseline/REPRODUCE.md`](baseline/REPRODUCE.md)**.
 
 ## In short
 

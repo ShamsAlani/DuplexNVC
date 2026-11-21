@@ -3,4 +3,4 @@ seconds_per_step,0.216,"median over all logged 100-step windows; batch 2 x 4 fra
 minutes_per_epoch_compute,3.60,1000 steps
 minutes_per_epoch_wall,3.93,median control+B1 round time / (2 runs x 2 epochs); includes the restart every 2 epochs
 hours_per_200_epoch_run,13.1,one fine-tune of 200 epochs (200k steps)
-rounds_measured,96,from pipeline.txt
+rounds_measured,99,from pipeline.txt

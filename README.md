@@ -15,7 +15,7 @@ In a video call, every laptop does two jobs at once: it **encodes** its own came
 | Folder | Contents |
 |---|---|
 | [`baseline/`](baseline/) | The Phase 2 **baseline**, in ten experiments: smoke tests, Phase 1 check, timing of the core baseline B\*, correctness, quality, energy, processor, model conversion, placement and quality-per-setting experiments. Each experiment folder has its scripts, raw data, results and a README with what it shows and what we concluded |
-| [`tier_b/`](tier_b/) | **Tier B: changes to the MLVC network**, fine-tuned on a lab GPU (control, piecewise-linear memory gates B1, B1 + input gate, I-frame dropout B2, a second control for training noise). Scripts of the whole training pipeline, the input-gate patch, training logs, the measured cost of training and the first results |
+| [`lab_gpu_runs/`](lab_gpu_runs/) | **Lab GPU Runs: changes to the MLVC network**, fine-tuned on a lab GPU (control, piecewise-linear memory gates B1, B1 + input gate, I-frame dropout B2, a second control for training noise). The whole training pipeline, the input-gate change, training logs, the measured cost of training and the first results, each folder with its own README |
 | [`warda/`](warda/) | **Step 8: controller data.** 11 multi-person clips (HEVC Class E, Pexels) with people entering and leaving, face labels and face-size groups, real events annotated manually, and a comparison of Apple Vision's face and body detectors (and their combinations) as scene-change triggers. Scripts, raw data, results and a README |
 | [`reports/`](reports/) | Literature review, survey and Phase 2 baseline report (PDF) |
 | [`demo/`](demo/) | Demo video: MLVC-S encoding and decoding a talking-head clip, original and decoded side by side |
@@ -73,12 +73,12 @@ Energy at 287 kbps from experiment 10 (re-measured at five QPs; B\* 63 mJ, 3 % b
 - **Full MLVC 540p is not worth its energy:** 14–15× MLVC-S 540p for +0.4–0.6 dB; MLVC-S 720p (encoder on the GPU) matches it at half the energy.
 - The 30 fps energy–quality front is **MLVC-S 540p (NE–NE)** and **MLVC-S 720p (GPU–NE)**. Moving the encoder to the GPU costs about 4 % in bitrate (encoder–decoder drift).
 
-### Tier B: network-level changes (in progress)
+### Lab GPU Runs: changes to the MLVC network (in progress)
 
 | Question | Answer so far |
 |---|---|
 | What does a fine-tune of MLVC cost? (E5) | **0.22 s per step; ≈ 13 h for 200 epochs (200,000 steps)** on one RTX 3060 Ti (8 GB) |
-| What does B1 (hard_tanh / hard_sigmoid gates) cost in quality? | **−0.07 dB PSNR** at +0.7 % bpp on training clips, vs a control trained the same way (first runs; being retrained, see [`tier_b/`](tier_b/)) |
+| What does B1 (hard_tanh / hard_sigmoid gates) cost in quality? | **−0.07 dB PSNR** at +0.6 % bpp on training clips, vs a control trained on the same samples (first runs; being retrained, see [`lab_gpu_runs/`](lab_gpu_runs/)) |
 | Does B1 reduce drift on the GPU/CPU? | To be measured on the Mac |
 
 ### Step 8: controller data (multi-person clips)
@@ -125,41 +125,41 @@ Every timed and energy run used the same state:
 DuplexNVC/
 ├── README.md                          this file
 ├── REPRODUCE.md                       how to rerun everything and rebuild every result
-├── reports/                           literature review, survey and Phase 2 baseline report (PDF)
-├── demo/                              demo video: MLVC-S encoding and decoding on the M4 Pro
+├── baseline/
+│   ├── README.md                      overview of the ten experiments and headline results
+│   ├── REPRODUCE.md                   setup, run order, conditions, expected values
+│   ├── common/                        measurement program, analysis tools, shared scripts, rebuild scripts
+│   ├── 01_smoke_test_experiment/      S1, S2: does the pipeline work?
+│   ├── 02_phase1_check_experiment/    E3a: does the new program reproduce Phase 1?
+│   ├── 03_timing_experiment/          E1–E4, B*: speed, sharing the NE, real time at 30 fps
+│   ├── 04_correctness_experiment/     E5: decoding correctness and drift across processors
+│   ├── 05_quality_experiment/         E6: BD-rate, rate–distortion, display and face quality
+│   ├── 06_energy_experiment/          E7: energy of B* per frame pair
+│   ├── 07_processor_experiment/       X1: placement trace; each network alone on NE, GPU, CPU
+│   ├── 08_model_conversion_experiment/ X2: full MLVC and MLVC-S at 540p/720p/1080p
+│   ├── 09_placement_experiment/       X3: every setting × placement, table of feasible settings
+│   └── 10_quality_per_setting_experiment/ quality of all 7 settings, energy at every QP, energy–quality Pareto
+├── lab_gpu_runs/                      changes to the MLVC network, trained on a lab GPU
+│   ├── README.md                      why, the runs, setup, settings, problems met, results so far
+│   ├── REPRODUCE.md                   how to rerun the training and rebuild the results
+│   ├── scripts/                       lab.ps1 (pipeline), patch_input_gate.py, analyze_training.py (+ README)
+│   ├── raw_data/logs/                 pipeline, data and training logs (+ READMEs)
+│   └── results/                       tables, figure and analysis (+ README)
 ├── warda/                             Step 8: controller data
 │   └── 08_controller_data_experiment/ multi-person clips, face and body labels, events, detector comparison
 │       ├── README.md                  clips, method, results, next step (our own call clips)
 │       ├── scripts/                   s8_setup, s8_prep.py, s8_table.py, bodybox.swift, s8_bodies.py, s8_fusion.py
 │       ├── raw_data/                  clip list, face boxes, real events, poster rule
 │       └── results/                   dataset table, face-size groups, events, faces vs bodies, fusion
-├── tier_b/                            network-level changes: lab GPU training pipeline, logs, results
-│   ├── README.md                      the runs, settings, problems met, results so far
-│   ├── REPRODUCE.md                   how to rerun the training and rebuild the results
-│   ├── scripts/                       lab.ps1 (pipeline), patch_input_gate.py, analyze_training.py
-│   ├── raw_data/logs/                 training and pipeline logs
-│   └── results/                       per-epoch tables, run comparison, training cost, figure
-└── baseline/
-    ├── README.md                      overview of the ten experiments and headline results
-    ├── REPRODUCE.md                   setup, run order, conditions, expected values
-    ├── common/                        measurement program, analysis tools, shared scripts, rebuild scripts
-    ├── 01_smoke_test_experiment/      S1, S2: does the pipeline work?
-    ├── 02_phase1_check_experiment/    E3a: does the new program reproduce Phase 1?
-    ├── 03_timing_experiment/          E1–E4, B*: speed, sharing the NE, real time at 30 fps
-    ├── 04_correctness_experiment/     E5: decoding correctness and drift across processors
-    ├── 05_quality_experiment/         E6: BD-rate, rate–distortion, display and face quality
-    ├── 06_energy_experiment/          E7: energy of B* per frame pair
-    ├── 07_processor_experiment/       X1: placement trace; each network alone on NE, GPU, CPU
-    ├── 08_model_conversion_experiment/ X2: full MLVC and MLVC-S at 540p/720p/1080p
-    ├── 09_placement_experiment/       X3: every setting × placement, table of feasible settings
-    └── 10_quality_per_setting_experiment/ quality of all 7 settings, energy at every QP, energy–quality Pareto
+├── reports/                           literature review, survey and Phase 2 baseline report (PDF)
+└── demo/                              demo video: MLVC-S encoding and decoding on the M4 Pro
 ```
 
 Each experiment folder holds `scripts/`, `raw_data/`, `results/` and a README.
 
 ## Reproducing
 
-Full guide: [`baseline/REPRODUCE.md`](baseline/REPRODUCE.md) (summary in [`REPRODUCE.md`](REPRODUCE.md)). Setup takes a few hours of downloads and builds; the ten experiments take about 40 hours, the longest being the resumable 21.4-hour placement experiment. Without a Mac, every table and figure can be rebuilt from the raw data with the three scripts in [`baseline/common/analysis/`](baseline/common/analysis/). Tier B training (Windows PC with an NVIDIA GPU) and its analysis: [`tier_b/REPRODUCE.md`](tier_b/REPRODUCE.md).
+Full guide: [`baseline/REPRODUCE.md`](baseline/REPRODUCE.md) (summary in [`REPRODUCE.md`](REPRODUCE.md)). Setup takes a few hours of downloads and builds; the ten experiments take about 40 hours, the longest being the resumable 21.4-hour placement experiment. Without a Mac, every table and figure can be rebuilt from the raw data with the three scripts in [`baseline/common/analysis/`](baseline/common/analysis/). Lab GPU Runs (Windows PC with an NVIDIA GPU) and their analysis: [`lab_gpu_runs/REPRODUCE.md`](lab_gpu_runs/REPRODUCE.md).
 
 ## Next steps
 

@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
-"""Tier B: training curves, run comparison and training cost (E5) from the lab logs.
+"""Lab GPU runs: training curves, run comparison and training cost (E5) from the lab logs.
 
 Reads the training logs written by lab.ps1 (one per run, e.g. control.txt, b1.txt) and pipeline.txt,
 and writes to ../results:
   training_per_epoch.csv   per run and epoch: mean loss, bpp (y + z), PSNR and seconds per 100 steps
   training_summary.csv     per run, over the epochs every run has completed: means and the difference to control
   training_cost.csv        E5: seconds per step, minutes per epoch, hours per 200-epoch run
+  training_parity.csv      per run: even vs odd epochs, and first vs last five epochs of each (detects replayed samples, trend)
   training_curves.png      loss and PSNR per epoch for every run, and each run minus control
 
 Usage:  python3 analyze_training.py [log folder]   (default: ../raw_data/logs)
@@ -94,6 +95,22 @@ def main():
     with open(os.path.join(OUT, "training_summary.csv"), "w", newline="") as f:
         w = csv.DictWriter(f, keys); w.writeheader(); w.writerows(rows)
 
+    # Parity and trend: with replayed samples, even and odd epochs are two fixed sample sets, so they differ
+    # systematically; comparing first and last five epochs of the same parity shows whether training still improves.
+    with open(os.path.join(OUT, "training_parity.csv"), "w", newline="") as f:
+        w = csv.writer(f)
+        w.writerow(["run", "parity", "epochs", "mean_loss", "mean_psnr_db", "first5_loss", "last5_loss", "first5_psnr_db", "last5_psnr_db"])
+        for n, d in data.items():
+            for par, name in ((0, "even"), (1, "odd")):
+                es = sorted(e for e in d if e % 2 == par)
+                if len(es) < 10:
+                    continue
+                v = {e: mean_cols(d[e]) for e in es}
+                f5, l5 = es[:5], es[-5:]
+                w.writerow([n, name, f"{es[0]}-{es[-1]}", f"{st.mean(v[e][1] for e in es):.4f}", f"{st.mean(v[e][3] for e in es):.3f}",
+                            f"{st.mean(v[e][1] for e in f5):.4f}", f"{st.mean(v[e][1] for e in l5):.4f}",
+                            f"{st.mean(v[e][3] for e in f5):.3f}", f"{st.mean(v[e][3] for e in l5):.3f}"])
+
     # E5: training cost. Step time from the logs; wall time per round (both runs advance 2 epochs) from pipeline.txt
     t100 = st.median(v[0] for d in data.values() for rows_ in d.values() for v in rows_)
     rounds = []
@@ -147,7 +164,7 @@ def main():
         a.set_xlabel("epoch (1000 steps)")
     for a in ax[:, 1]:
         a.axhline(0, color="k", lw=0.8)
-    fig.suptitle("Tier B fine-tuning on the lab GPU (training clips, not the test set)")
+    fig.suptitle("Fine-tuning MLVC on the lab GPU (training clips, not the test set)")
     fig.tight_layout(); fig.savefig(os.path.join(OUT, "training_curves.png"), dpi=150)
     print("written to", os.path.abspath(OUT))
 

@@ -1,11 +1,11 @@
-# Reproducing Tier B
+# Reproducing the Lab GPU Runs
 
 Two parts: **training** on a Windows PC with an NVIDIA GPU (any CUDA GPU with 8 GB or more), and **rebuilding the tables and figure** from the logs on any computer.
 
 ## 1. Rebuild the results from the logs (any computer)
 
 ```bash
-cd tier_b/scripts
+cd lab_gpu_runs/scripts
 python3 analyze_training.py                 # reads ../raw_data/logs, writes ../results
 python3 analyze_training.py /path/to/logs   # or another log folder, e.g. the full logs from the release
 ```
@@ -50,7 +50,7 @@ The pipeline, in order:
 
 1. Downloads OpenVidHD part 10 (50 GB) from Hugging Face over 32 connections and unzips it.
 2. Keeps the 5,411 sequences of MLVC's `openvidhd_60k64_frame_sequences.csv` that are in part 10 and extracts their frames with MLVC's `extract_frame_sequences.py` (about 8 hours), then keeps only fully extracted sequences.
-3. Queue A: `control` and `b1`, 200 epochs each, taking turns 2 epochs at a time.
+3. Moves the first runs, if present, to `v1_control` and `v1_b1`. Queue A: `control` and `b1`, 200 epochs each, taking turns 2 epochs at a time, with a new seed every chunk.
 4. Queue B+C: `b1gate`, `b2p25`, `b2p75`, `control_s2`, the same way.
 5. Run 6: `b1` continued to 400 epochs.
 
@@ -84,7 +84,7 @@ uv run --no-sync train_video.py --config configs/train_video-mlvc.yaml `
   --overrides "{train.n_epoch: 2, train.dataset.batch_size: 2, model.p_frame.memory_activation: hard_tanh, model.p_frame.gate_activation: hard_sigmoid, seed: 2}"
 ```
 
-Increase `train.n_epoch` by 2 and the seed accordingly for each following chunk, as the pipeline does.
+For each following chunk, increase `train.n_epoch` by 2 and set `seed` to `base × 100000 + train.n_epoch` (base 0; 2 for `control_s2`), as the pipeline does. A fixed seed would replay the same samples in every chunk.
 
 ## 3. Test the models (Mac)
 
