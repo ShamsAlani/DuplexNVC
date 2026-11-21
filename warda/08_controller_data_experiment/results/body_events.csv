@@ -1,0 +1,14 @@
+clip,frame,bodies_before,bodies_after,kind
+cejohn,100,0,1,enter
+cekris,190,2,1,leave
+cekris,240,1,0,leave
+px2ent,50,0,2,enter
+px2ent,100,2,4,enter
+px2ent,190,4,2,leave
+pxentr,90,1,2,enter
+pxentr,120,2,3,enter
+pxentr,270,3,4,enter
+px4ppl,80,1,3,enter
+px4ppl,150,3,4,enter
+px4ppl,240,4,3,leave
+pxdown,110,1,3,enter

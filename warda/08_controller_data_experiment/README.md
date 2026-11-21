@@ -54,6 +54,8 @@ conda deactivate                                             # if Anaconda is in
 # poster faces in exclude.csv (optional)
 ~/Downloads/duplexnvc-baseline/.venv/bin/python s8_prep.py   # masters + face labels (resumable)
 ~/Downloads/duplexnvc-baseline/.venv/bin/python s8_table.py  # tables, groups, events, check images
+swiftc -O bodybox.swift -o ~/Downloads/duplexnvc-baseline/tools/bodybox   # body detector (once)
+~/Downloads/duplexnvc-baseline/.venv/bin/python s8_bodies.py # faces vs bodies on the same frames
 ```
 
 Software versions are in `machine.txt` (ffmpeg 9.0.2, Python 3.12.16, NumPy 2.5.5, OpenCV 5.1.0, Swift 6.1.2).
@@ -71,7 +73,11 @@ Software versions are in `machine.txt` (ffmpeg 9.0.2, Python 3.12.16, NumPy 2.5.
 | `results/dataset_table.csv` | One row per clip: sizes, length, people (max, median), background faces, events, faces per group, smallest and largest face |
 | `results/faces_step8.csv` | One row per labelled face, with its group and `participant` |
 | `results/groups.csv` | Participant faces and clips per size group |
-| `results/events.csv` | Automatic events (rewritten by every run of `s8_table.py`) |
+| `results/events.csv` | Automatic face events (rewritten by every run of `s8_table.py`) |
+| `results/bodies_step8.csv` | One row per body box (Apple Vision body detector), with confidence |
+| `results/body_events.csv` | Automatic body events (same 1 s rule as faces) |
+| `results/faces_vs_bodies.csv` | One row per real event: caught by faces? by bodies? delay |
+| `results/detector_summary.csv` | Per clip: bodies found (max, median), face and body events, events that were not real |
 | `machine.txt` | Hardware, macOS, ffmpeg and Python of the labelling Mac |
 
 ## Where the videos are
@@ -118,9 +124,37 @@ The videos are not in git (the repo ignores `.mp4`, `.y4m` and `.nv12`). They ar
 | Delay after the first person enters | `px2ent` (woman) 0, `px4ppl` 70 frames (2.3 s), `pxentr` 100 (3.3 s), `pxcrwd` 160 (5.3 s) |
 | Real events with no automatic event | the distant entry in `px2ent` (frame 20); both leaving clips (faces never toward the camera) |
 
+### Faces vs bodies
+
+The same frames (every 10th master frame) were also run through Apple Vision's human body detector (`VNDetectHumanRectanglesRequest`, full body; `scripts/bodybox.swift`, `scripts/s8_bodies.py`). Bodies were turned into events with the same 1 s rule as faces, and both were scored against the real events: a real event counts as caught when an event in the same direction starts between 10 frames before it and 150 frames (5 s) after it.
+
+| | Faces | Bodies |
+|---|---|---|
+| Real events caught within 5 s (of 10) | 3 (the crowd's face event is real but 5.3 s late) | 4 |
+| Automatic events / not real | 11 / 8 | 13 / 9 |
+| `pxentr` family entry | 3.3 s late | on time |
+| `px2ent` distant entry (frame 20) | missed | 1.0 s late |
+| `px2ent` close entry, back turned (frame 250) | on time | missed |
+| `px4ppl` four entries | 1 caught (2.3 s) | 2 caught (2.0 s, 2.7 s) |
+| `pxcrwd` crowd, `pxleav`, `pxdown` | missed | missed |
+
+| People per clip (median per labelled frame) | Present | Faces | Bodies |
+|---|---|---|---|
+| `px7ppl` | 7 | 3 | 5 |
+| `px5ppl` | 5 | 3 | 2 |
+| `pxcrwd` | crowd | 1 | 7 |
+| `pxleav`, `pxdown` (seen from behind) | several / 3 | 0 / 0 | 3 / 3 |
+| `cejohn` (poster behind) | 1 | 1 (after removing 53 poster faces) | 1 (no poster bodies) |
+
+Body detection took a median of 7.4 ms per full-size frame on the M1 (the cost on a call-time thumbnail is measured in Step 7).
+
+- **Bodies count people better when faces are away**: people seen from behind (3 vs 0), the crowd (7 vs 1), the meeting of 7 (5 vs 3), and printed people on the poster are not boxed. Seated people hidden behind a table are the exception (`px5ppl`: 2 vs 3).
+- **As a trigger, bodies are as noisy as faces**: they catch one more real event and are faster on the family entry, but produce as many false events; in `px2ent` a mirror doubles the people (up to 5 bodies for 2 people).
+- **Neither detector marks "walking away"** in `pxleav` and `pxdown`: the people walk away but stay in view, so the number of people never drops. An exit test needs a clip where someone leaves the frame.
+
 ## Conclusion
 
 1. **Every face-size group is covered** by this step and the baseline together: the new clips give the small groups (246 faces under 32 px in 9 clips, 236 in 32–63 px in 7 clips), which the baseline lacks; the baseline's talking heads give the large ones. This supports the controller rule "a face of this size needs at least this resolution".
 2. **Faces found are not people present.** In group clips Apple Vision finds about half of the people (median 3 of 7 in `px7ppl`, 3 of 5 in `px5ppl`), because faces turn away, look down or are hidden, and it also finds printed faces on a poster (68 boxes in two clips). The controller has to treat the face count as a lower bound and ignore faces that never move.
-3. **A face-count trigger alone is late and blind to faces turned away.** Of 11 automatic events, 4 are real, arriving 0–5.3 s after the first person enters; the distant entry and both leaving clips produce no face event at all. The controller needs persistence (a change must last 1 s before it acts), and A3 should pair the face trigger with a frame-difference trigger, which reacts to movement whether or not a face is visible.
+3. **A face-count trigger alone is late and blind to faces turned away.** Of 11 automatic events, 4 are real, arriving 0–5.3 s after the first person enters; the distant entry and both leaving clips produce no face event at all. **The body detector does not fix this on its own:** it counts people far better when faces are away, but as a trigger it is as noisy as faces (4 of 10 real events caught, 9 false). The controller should use faces for face size (the resolution rule), bodies for how many people are present, and a frame-difference trigger for when the scene changes, with persistence (a change must last 1 s) on all of them.
 4. **Clips for the next steps:** `px4ppl`, `pxentr`, `px2ent` and `pxcrwd` for entries; `pxleav` and `pxdown` for leaving; `ce4peo`, `cejohn`, `cekris`, `px5ppl` and `px7ppl` as controls, where nothing should trigger.
