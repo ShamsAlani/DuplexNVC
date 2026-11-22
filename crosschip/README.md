@@ -12,4 +12,4 @@ Each step folder has the baseline's layout: `scripts/`, `raw_data/` (run records
 
 | Chip | Done | Headline so far |
 |---|---|---|
-| M1 (MacBook Air, 8 GB) | Day 1 setup, Day 2 timing, Day 4 contention, Day 5 energy (all 20 Nov) | 1.62× slower and 1.86× more energy per frame pair than the M4 Pro; the Neural Engine shares the two networks exactly as poorly (S = 1.11 on both chips) and memory bandwidth explains only 19 % of slowdown; the baseline B\* misses 30 fps on the M1 (4–7 % late sends), but taking turns or a light background load that keeps the clocks up brings it to 0 % |
+| M1 (MacBook Air, 8 GB) | Days 1–5: setup, timing, decode drift, contention, energy (20–22 Nov) | 1.62× slower and 1.86× more energy per frame pair than the M4 Pro; the Neural Engine shares the two networks exactly as poorly (S = 1.11 on both chips) and memory bandwidth explains only 19 % of slowdown; the baseline B\* misses 30 fps on the M1 (4–7 % late sends), but taking turns or a light background load that keeps the clocks up brings it to 0 %; **no cross-chip drift**: both chips encode to identical bitstreams and decode on the NE to identical pictures |

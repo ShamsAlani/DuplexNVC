@@ -4,7 +4,8 @@
 #      Drift M4-NE vs M1-NE is the cross-chip answer; M1-NE vs M1-GPU/CPU repeats E5 on this chip.
 #   B. The M1's own B* bitstream (from Day 2) decoded on the M1 NE, GPU, CPU: E5 on this chip; the NE decode goes to Shams.
 #   C. Are the two encoders bit-exact? M1 outgoing.aus vs M4 outgoing.aus, access unit by access unit.
-# Needs in $M4IN (copied from Shams, see ../README.md): m4_outgoing.mlvc, m4_outgoing.aus, m4_dec_npu.nv12
+# Needs in $M4IN (copied from Shams, see ../README.md): m4_outgoing.mlvc, m4_outgoing.aus, and m4_hashes.txt (SHA-256 of her
+#   dec_npu.nv12) or m4_dec_npu.nv12 itself (only needed when the fingerprints differ, to measure the drift)
 # Any conditions, ~15 min, ~3 GB of temporary video. Output: $RUNS/m1_decode, $WORK/to_m4 (files for Shams); out_m1_decode.txt
 D=$(cd "$(dirname "$0")" && pwd); . "$D/vm1"; m1log decode
 R="$RUNS/m1_decode"; mkdir -p "$R" "$WORK/to_m4"; cd "$R"
@@ -28,7 +29,12 @@ if [ -s "$M4S" ]; then
     "$PY" "$D/drift_csv.py" "$TOOLS" M4NE_vs_M1GPU "$M4IN/m4_dec_npu.nv12" M4stream_dec_gpu.nv12 640x360 "$CSV"
     "$PY" "$D/drift_csv.py" "$TOOLS" M4NE_vs_M1CPU "$M4IN/m4_dec_npu.nv12" M4stream_dec_cpu.nv12 640x360 "$CSV"
   else
-    echo "   (no $M4IN/m4_dec_npu.nv12: ask Shams for runs/bl_bstar/T_duplex30_r1/dec_npu.nv12; the cross-chip drift row is skipped)"
+    echo "   (no $M4IN/m4_dec_npu.nv12: the cross-chip drift rows are skipped)"
+  fi
+  if [ -s "$M4IN/m4_hashes.txt" ]; then
+    mine=$(shasum -a 256 M4stream_dec_npu.nv12 | cut -d' ' -f1); hers=$(awk '/dec_npu.nv12/{print $1}' "$M4IN/m4_hashes.txt")
+    { echo "M1 NE decode of the M4 Pro stream: $mine"; echo "M4 Pro NE decode (m4_hashes.txt):  $hers"
+      [ "$mine" = "$hers" ] && echo "cross-chip NE decode bit-identical: YES (no drift)" || echo "cross-chip NE decode bit-identical: no (get m4_dec_npu.nv12 to measure the drift)"; } | tee "$R/${TAG}_decode_vs_M4.txt"
   fi
   echo "-- M4 stream on the M1 alone: M1 NE vs M1 GPU / CPU (E5 on this chip)"
   "$PY" "$D/drift_csv.py" "$TOOLS" M4stream_M1NE_vs_M1GPU M4stream_dec_npu.nv12 M4stream_dec_gpu.nv12 640x360 "$CSV"
