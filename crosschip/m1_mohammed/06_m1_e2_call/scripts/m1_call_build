@@ -1,0 +1,13 @@
+#!/bin/bash
+# DAY 9 (Thu 26 Nov) - build the E2 call program (duplex_call.cpp) in its own harness next to the measurement program.
+# Any conditions, ~2 min. Output: $CALL (= $WORK/callharness/build/ninja-release/libmlvc_example); out_m1_call_build.txt
+D=$(cd "$(dirname "$0")" && pwd); . "$D/vm1"; m1log call_build
+echo "== building the E2 call program  $(date)"
+[ -d "$WORK/callharness" ] || cp -R "$WORK/libmlvc/examples/minimal-fetchcontent" "$WORK/callharness" || exit 1
+cp "$D/duplex_call.cpp" "$WORK/callharness/main.cpp"; cp "$D/duplex_call.cpp" "$TOOLS/"
+if [ ! -f "$WORK/callharness/build/ninja-release/build.ninja" ]; then
+  cmake -S "$WORK/callharness" -B "$WORK/callharness/build/ninja-release" -G Ninja -DCMAKE_BUILD_TYPE=Release \
+        -DCMAKE_OSX_ARCHITECTURES=arm64 -DBUILD_SHARED_LIBS=OFF -DFETCHCONTENT_SOURCE_DIR_LIBMLVC="$WORK/libmlvc" 2>&1 | tail -3
+fi
+cmake --build "$WORK/callharness/build/ninja-release" 2>&1 | tail -15
+[ -x "$CALL" ] && { echo "ok  $CALL"; "$CALL" 2>&1 | head -1; echo "Next: ./m1_call loopback"; } || echo "BUILD FAILED: read the errors above (the program was written without a Mac; fix the line it names and run ./m1_call_build again)"

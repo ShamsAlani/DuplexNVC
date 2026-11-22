@@ -1,0 +1,29 @@
+# Settings shared by every M1 cross-chip script (do not run this file directly; every script sources it).
+# This is baseline/common/scripts/v with its own work folder and a chip TAG, so that nothing written on
+# Mohammed's M1 can be confused with Shams's M4 Pro baseline (her run folders are T_*, W_*, S_*, U_*, P30_*).
+TAG=M1                                  # prefix of every run folder, result file and console log on this Mac
+OWNER=mohammed
+WORK=~/Downloads/duplexnvc-m1           # the M1 work folder (Shams: ~/Downloads/duplexnvc-baseline)
+REPO=~/Downloads/DuplexNVC              # your clone of the DuplexNVC repository (for compare_chips.py and m1_collect)
+TOOLS=$WORK/tools
+BENCH=$WORK/harness/build/ninja-release/libmlvc_example
+CALL=$WORK/callharness/build/ninja-release/libmlvc_example   # the E2 call program (built by m1_call_build)
+MLVC=$WORK/libmlvc/install/mac-arm64-ninja-release/bin/mlvc
+PY=$WORK/.venv/bin/python3
+CLIPS=$WORK/libmlvc/data/test_data/clips
+RUNS=$WORK/runs                         # every M1 run lands under here: $RUNS/m1_<step>/M1_<run>
+M4IN=$WORK/from_m4                      # files copied from Shams's M4 Pro for the cross-chip comparisons (Day 3)
+# BASELINE B* setting, identical to baseline/common/scripts/v: full MLVC (PSNR), 360p, NE, QP 26, I-frame every 64,
+# camera = clips 0380a3 + 6587ae, incoming = clips 6c9c96 + 9c02f6. Same clips, same bundle: only the chip changes.
+CAM=$WORK/data/nv12/bl_camera_640x360.nv12
+INCSRC=$WORK/data/nv12/bl_incoming_src_640x360.nv12
+BINC=$WORK/data/incoming/mlvc-640x360-qp26
+BL="--input $CAM --size 640x360 --qp 26 --bundles $WORK/bundles/mlvc --incoming $BINC/incoming.aus --iframe-period 64"
+# Phase-1 setting (MLVC-S 540p), only for the optional MLVC-S rows
+CLIP=$WORK/data/nv12/p1_540p.nv12
+INC=$WORK/data/incoming/p1-mlvc-s-540p
+P1="--input $CLIP --size 960x540 --qp 22 --bundles $WORK/bundles/mlvc-s --incoming $INC/incoming.aus --iframe-period 64"
+# helpers used by every script
+LTAG=m1                                 # lower-case TAG for file names (macOS bash 3.2 has no ${TAG,,})
+m1log () { exec > >(tee "$D/out_${LTAG}_$1.txt") 2>&1; }   # console log: out_m1_<step>.txt next to the scripts
+machine () { echo "chip: $(sysctl -n machdep.cpu.brand_string)  memory: $(( $(sysctl -n hw.memsize) / 1073741824 )) GB  model: $(sysctl -n hw.model)"; sw_vers | tr '\n' ' '; echo; }

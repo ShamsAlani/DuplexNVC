@@ -1,0 +1,1 @@
+memstress duty=25 threads=4 seconds=75.0 bytes_copied=928040091648 GB_s=24.73

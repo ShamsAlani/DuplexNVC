@@ -1,0 +1,46 @@
+== M1 CROSS-CHIP DECODE  Sun 22 Nov 2026 16:31:51 +04
+chip: Apple M1  memory: 8 GB  model: MacBookAir10,1
+ProductName:		macOS ProductVersion:		27.2.1 BuildVersion:		26B131 
+== A. Shams's M4 Pro stream on the M1: /Users/home/Downloads/duplexnvc-m1/from_m4/m4_outgoing.mlvc (119 kbps if 1802 frames)
+   decode M4stream on npu: ok, frames 1802
+   decode M4stream on npu2: ok, frames 1802
+   decode M4stream on gpu: ok, frames 1802
+   decode M4stream on cpu: ok, frames 1802
+   M1 NE decode deterministic: yes
+   (no /Users/home/Downloads/duplexnvc-m1/from_m4/m4_dec_npu.nv12: ask Shams for runs/bl_bstar/T_duplex30_r1/dec_npu.nv12; the cross-chip drift row is skipped)
+-- M4 stream on the M1 alone: M1 NE vs M1 GPU / CPU (E5 on this chip)
+  M4stream_M1NE_vs_M1GPU: 1802 frames, bit-identical 0, Y-PSNR between decodes mean 52.13 dB, min 38.51 dB
+    frames   0-0 after an I-frame: mean  60.58 dB  min  59.60 dB
+    frames  1-15 after an I-frame: mean  57.62 dB  min  52.07 dB
+    frames 16-31 after an I-frame: mean  52.86 dB  min  42.84 dB
+    frames 32-47 after an I-frame: mean  49.94 dB  min  39.65 dB
+    frames 48-63 after an I-frame: mean  47.81 dB  min  38.51 dB
+  M4stream_M1NE_vs_M1CPU: 1802 frames, bit-identical 0, Y-PSNR between decodes mean 48.78 dB, min 39.51 dB
+    frames   0-0 after an I-frame: mean  52.64 dB  min  51.39 dB
+    frames  1-15 after an I-frame: mean  51.74 dB  min  48.92 dB
+    frames 16-31 after an I-frame: mean  49.63 dB  min  44.70 dB
+    frames 32-47 after an I-frame: mean  47.57 dB  min  40.42 dB
+    frames 48-63 after an I-frame: mean  46.07 dB  min  39.51 dB
+== B. the M1's own B* stream (/Users/home/Downloads/duplexnvc-m1/runs/m1_timing/M1_duplex30_r1, 1802 encoded frames) on the M1
+   decode M1stream on npu: ok, frames 1802
+   decode M1stream on gpu: ok, frames 1802
+   decode M1stream on cpu: ok, frames 1802
+  M1stream_M1NE_vs_M1GPU: 1802 frames, bit-identical 0, Y-PSNR between decodes mean 52.13 dB, min 38.51 dB
+    frames   0-0 after an I-frame: mean  60.58 dB  min  59.60 dB
+    frames  1-15 after an I-frame: mean  57.62 dB  min  52.07 dB
+    frames 16-31 after an I-frame: mean  52.86 dB  min  42.84 dB
+    frames 32-47 after an I-frame: mean  49.94 dB  min  39.65 dB
+    frames 48-63 after an I-frame: mean  47.81 dB  min  38.51 dB
+  M1stream_M1NE_vs_M1CPU: 1802 frames, bit-identical 0, Y-PSNR between decodes mean 48.78 dB, min 39.51 dB
+    frames   0-0 after an I-frame: mean  52.64 dB  min  51.39 dB
+    frames  1-15 after an I-frame: mean  51.74 dB  min  48.92 dB
+    frames 16-31 after an I-frame: mean  49.63 dB  min  44.70 dB
+    frames 32-47 after an I-frame: mean  47.57 dB  min  40.42 dB
+    frames 48-63 after an I-frame: mean  46.07 dB  min  39.51 dB
+   -> for Shams (reverse direction, M1 -> M4): /Users/home/Downloads/duplexnvc-m1/to_m4/{m1_outgoing.mlvc,m1_outgoing.aus,m1_dec_npu.nv12}
+== C. are the two chips' encoders bit-exact? (same clips, same QP, same bundle)
+M1 encoder vs M4 Pro encoder: access units 1802 vs 1802; compared 1802; identical 1802; first difference at index none; bytes 895964 vs 895964 (+0.00 %)
+bitstreams identical across chips: YES
+== done  Sun 22 Nov 2026 16:39:14 +04
+RESULT of Day 3 = 'Does an M4 -> M1 call drift?': /Users/home/Downloads/duplexnvc-m1/runs/m1_decode/M1_drift.csv (rows M4NE_vs_M1NE), /Users/home/Downloads/duplexnvc-m1/runs/m1_decode/M1_encoder_vs_M4.txt
+M4 Pro reference (E5, same chip): NE vs GPU 52.13 / 38.46 dB, NE vs CPU 48.78 / 39.51 dB (mean / min).
