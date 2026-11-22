@@ -1,0 +1,2 @@
+M1 encoder vs M4 Pro encoder: access units 1802 vs 1802; compared 1802; identical 1802; first difference at index none; bytes 895964 vs 895964 (+0.00 %)
+bitstreams identical across chips: YES
