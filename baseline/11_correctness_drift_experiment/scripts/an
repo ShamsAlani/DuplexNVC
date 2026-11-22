@@ -1,0 +1,5 @@
+#!/bin/bash
+# Analyse whatever Step 5 has finished so far (safe to run while ./all is running). Output: phase2/5/results/
+D=$(cd "$(dirname "$0")" && pwd); . "$D/../v"
+exec > >(tee "$D/out_an.txt") 2>&1
+"$PY" "$D/ana.py"

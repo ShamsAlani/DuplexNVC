@@ -1,0 +1,21 @@
+STEP 9 (quality): Apple hardware HEVC (VideoToolbox, real time, no B-frames, I-frame every 64) vs MLVC
+
+== mean of the clips per target (kbps / coded PSNR-Y / display PSNR-Y / face PSNR-Y / face LPIPS); target = MLVC's QP
+   hevc_360p
+     @QP16: target  384.1 ->  413.1 kbps (+7.5 %)  40.83 / 34.15 / 34.42 / 0.219
+     @QP24: target  205.5 ->  239.3 kbps (+16.4 %)  38.10 / 32.84 / 32.66 / 0.258
+     @QP26: target  170.3 ->  203.9 kbps (+19.8 %)  37.20 / 32.37 / 32.05 / 0.274
+     @QP32: target   92.5 ->  138.6 kbps (+49.8 %)  34.89 / 31.19 / 30.62 / 0.317
+     @QP40: target   39.7 ->  117.5 kbps (+196.3 %)  33.44 / 30.42 / 29.95 / 0.345
+   hevc_720p
+     @QP16: target 1416.3 -> 1488.1 kbps (+5.1 %)  42.58 / 39.10 / 38.55 / 0.093
+     @QP24: target  665.5 ->  735.4 kbps (+10.5 %)  39.83 / 37.09 / 36.20 / 0.130
+     @QP26: target  523.3 ->  589.5 kbps (+12.6 %)  38.81 / 36.29 / 35.30 / 0.148
+     @QP32: target  251.8 ->  373.6 kbps (+48.4 %)  36.55 / 34.51 / 33.45 / 0.190
+     @QP40: target  108.3 ->  346.0 kbps (+219.6 %)  35.87 / 33.96 / 33.04 / 0.204
+
+== BD-rate of HEVC vs MLVC (negative = HEVC needs fewer bits); mean curves, then per clip (median, clips where HEVC wins)
+                                                        coded Y                 display Y                    face Y                face LPIPS
+   HEVC 360p vs B* (full MLVC 360p)       +68.9 % (+91.6, 2/20)    +98.1 % (+105.2, 1/20)   +102.9 % (+103.2, 0/20)     +70.7 % (+69.0, 1/20)
+   HEVC 720p vs MLVC-S 720p               +62.1 % (+68.1, 2/20)     +78.3 % (+82.1, 2/20)     +81.3 % (+77.4, 0/20)      -1.2 % (-6.7, 11/20)
+   HEVC 720p vs full MLVC 720p          +113.6 % (+120.4, 0/20)   +135.7 % (+140.3, 0/20)   +131.0 % (+136.4, 0/20)     +19.0 % (+13.7, 7/20)

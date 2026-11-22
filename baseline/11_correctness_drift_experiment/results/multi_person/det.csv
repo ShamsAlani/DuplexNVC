@@ -1,0 +1,4 @@
+setting,NE>NE,NE>GPU,NE>CPU,GPU>NE,GPU>GPU,GPU>CPU,CPU>NE,CPU>GPU,CPU>CPU,enc_NE_same_as_exp10,enc_GPU_same_as_exp10,enc_CPU_same_as_exp10
+mlvc_360p,4/4,4/4,4/4,4/4,4/4,4/4,4/4,4/4,4/4,,,
+mlvcs_720p,4/4,4/4,4/4,4/4,4/4,4/4,4/4,4/4,4/4,,,
+mlvcs_540p,4/4,4/4,4/4,4/4,4/4,4/4,4/4,4/4,4/4,,,

@@ -1,8 +1,8 @@
 # Reproducing the baseline
 
-This guide reruns all ten experiments from scratch on an Apple Silicon Mac and rebuilds every result. Paths assume the scripts live in `~/Downloads/d` and the work folder is `~/Downloads/duplexnvc-baseline` (`$WORK`). Change both in `common/scripts/v` if yours differ.
+This guide reruns all fourteen experiments from scratch on an Apple Silicon Mac and rebuilds every result. Paths assume the scripts live in `~/Downloads/d` and the work folder is `~/Downloads/duplexnvc-baseline` (`$WORK`). Change both in `common/scripts/v` if yours differ.
 
-Total laptop time: about **40 hours** of runs (experiments 01–06 ≈ 5.3 h, 07 ≈ 2.3 h, 08 ≈ 0.5 h, 09 ≈ 21.4 h, 10 ≈ 10.7 h), plus downloads.
+Total laptop time: about **75 hours** of runs (experiments 01–06 ≈ 5.3 h, 07 ≈ 2.3 h, 08 ≈ 0.5 h, 09 ≈ 21.4 h, 10 ≈ 10.7 h, 11 ≈ 33 h, 12 ≈ 0.9 h, 13 ≈ 0.8 h, 14 ≈ 0.2 h + 1.2 h), plus downloads.
 
 ---
 
@@ -92,10 +92,16 @@ uv run convert.py bundle --model-version dmc61sbr_reglu \
 **Step 4. The measurement program and tools.**
 ```bash
 cp <repo>/baseline/common/code/* "$TOOLS/"
-find <repo>/baseline -path '*/scripts/*' ! -path '*/10_quality_per_setting_experiment/*' -type f ! -name README.md -exec cp {} ~/Downloads/d/ \;
-mkdir -p ~/Downloads/d/4b && cp <repo>/baseline/10_quality_per_setting_experiment/scripts/* ~/Downloads/d/4b/
+find <repo>/baseline -path '*/scripts/*' ! -path '*/1[0-4]_*_experiment/*' -type f ! -name README.md -exec cp {} ~/Downloads/d/ \;
+mkdir -p ~/Downloads/d/{4b,5,ct,a1,hv,he}
+cp <repo>/baseline/10_quality_per_setting_experiment/scripts/* ~/Downloads/d/4b/
+cp <repo>/baseline/11_correctness_drift_experiment/scripts/* ~/Downloads/d/5/
+cp <repo>/baseline/12_contention_experiment/scripts/* ~/Downloads/d/ct/
+cp <repo>/baseline/13_a1_keyframe_qp_experiment/scripts/* ~/Downloads/d/a1/
+cp <repo>/baseline/14_hevc_anchor_experiment/scripts/{all,hv.py,hvana.py} ~/Downloads/d/hv/
+cp <repo>/baseline/14_hevc_anchor_experiment/scripts/energy/* ~/Downloads/d/he/
 cp <repo>/baseline/common/code/{mlplan.swift,thermal_log.swift} ~/Downloads/d/
-chmod +x ~/Downloads/d/* ~/Downloads/d/4b/*
+chmod +x ~/Downloads/d/* ~/Downloads/d/{4b,5,ct,a1,hv,he}/*
 cp -R "$WORK/libmlvc/examples/minimal-fetchcontent" "$WORK/harness"
 cp "$TOOLS/duplex_bench.cpp" "$WORK/harness/main.cpp"
 cd "$WORK/harness"
@@ -160,8 +166,16 @@ Run everything from `~/Downloads/d`, in this order. Each script saves its consol
 | 22 | `cd .. && ./p` | `common` | Quiet mode on | 1 min | see §3 |
 | 23 | `cd 4b && ./en` | `10_quality_per_setting_experiment` | Part B: energy of the 7 best placements at 5 QPs (175 runs), then `es.py` and `ana.py` | 7.7 h | **quiet**, password; **resumable** |
 | 24 | `cd .. && ./u` | `common` | Quiet mode off | 1 min | — |
+| 25 | `cd 5 && ./all` | `11_correctness_drift_experiment` | All 9 encoder→decoder pairs × 7 settings × 20 clips × 4 QPs, drift bounds (A2), analysis (`PHASE=main\|a2`, `ONLY=…`) | main ≈ 17 h; A2 ≈ 10 h (30 fps settings) + ≈ 43 h (others) | any (charger in, lid open); **resumable** |
+| 26 | `cd 5 && ./mp` | `11_correctness_drift_experiment` | Multi-person check (needs the Step 8 masters, `controller_data/`) | 1.4 h | any; **resumable** |
+| 27 | `cd a1 && ./all` | `13_a1_keyframe_qp_experiment` | Builds `harness_a1`, checks, 600 runs, analysis | 50 min | any; **resumable** |
+| 28 | `cd hv && ./all` | `14_hevc_anchor_experiment` | Hardware HEVC at MLVC's bitrates (200 runs), BD-rate | 10 min | any; **resumable** |
+| 29 | `./p` | `common` | Quiet mode on | 1 min | see §3 |
+| 30 | `cd ct && ./all` | `12_contention_experiment` | Memory load 0/25/50/75 % against the encoder alone and the paced B\* call (24 runs), then `./sum` | 55 min | **quiet**; **resumable** |
+| 31 | `cd he && ./all` | `14_hevc_anchor_experiment` | Energy of hardware HEVC and MLVC calls from the chip's energy counters (25 runs) | 70 min | **quiet**; **resumable** |
+| 32 | `./u` | `common` | Quiet mode off | 1 min | — |
 
-Do not press Ctrl-C during `./x`, `./w` or `./1`; a rerun moves the old folder aside. `./all` (09 and 10) and `./en` (10) are the exceptions: interrupt them at any time and run them again, and they continue where they stopped.
+Do not press Ctrl-C during `./x`, `./w` or `./1`; a rerun moves the old folder aside. `./all` (09–14), `./mp` (11) and `./en` (10) are the exceptions: interrupt them at any time and run them again, and they continue where they stopped.
 
 Check that every run used the processor it asked for:
 ```bash

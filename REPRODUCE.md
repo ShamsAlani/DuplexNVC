@@ -1,15 +1,21 @@
 # Reproducing everything
 
-All measurements are in [`baseline/`](baseline/), in ten experiment folders. The complete guide — tools, downloads, builds, quiet mode, the run order of every script, expected values and known problems — is **[`baseline/REPRODUCE.md`](baseline/REPRODUCE.md)**.
+All baseline measurements are in [`baseline/`](baseline/), in fourteen experiment folders. The Lab GPU Runs (fine-tuning MLVC on a GPU) have their own guide: **[`lab_gpu_runs/REPRODUCE.md`](lab_gpu_runs/REPRODUCE.md)**. The complete guide — tools, downloads, builds, quiet mode, the run order of every script, expected values and known problems — is **[`baseline/REPRODUCE.md`](baseline/REPRODUCE.md)**.
 
 ## In short
 
 ```bash
 # one-time setup: see baseline/REPRODUCE.md §1–2, then install every script:
 mkdir -p ~/Downloads/d
-find <repo>/baseline -path '*/scripts/*' ! -path '*/10_quality_per_setting_experiment/*' -type f ! -name README.md -exec cp {} ~/Downloads/d/ \;
-mkdir -p ~/Downloads/d/4b && cp <repo>/baseline/10_quality_per_setting_experiment/scripts/* ~/Downloads/d/4b/
-cp <repo>/baseline/common/code/{mlplan.swift,thermal_log.swift} ~/Downloads/d/ && chmod +x ~/Downloads/d/* ~/Downloads/d/4b/*
+find <repo>/baseline -path '*/scripts/*' ! -path '*/1[0-4]_*_experiment/*' -type f ! -name README.md -exec cp {} ~/Downloads/d/ \;
+mkdir -p ~/Downloads/d/{4b,5,ct,a1,hv,he}
+cp <repo>/baseline/10_quality_per_setting_experiment/scripts/* ~/Downloads/d/4b/
+cp <repo>/baseline/11_correctness_drift_experiment/scripts/* ~/Downloads/d/5/
+cp <repo>/baseline/12_contention_experiment/scripts/* ~/Downloads/d/ct/
+cp <repo>/baseline/13_a1_keyframe_qp_experiment/scripts/* ~/Downloads/d/a1/
+cp <repo>/baseline/14_hevc_anchor_experiment/scripts/{all,hv.py,hvana.py} ~/Downloads/d/hv/
+cp <repo>/baseline/14_hevc_anchor_experiment/scripts/energy/* ~/Downloads/d/he/
+cp <repo>/baseline/common/code/{mlplan.swift,thermal_log.swift} ~/Downloads/d/ && chmod +x ~/Downloads/d/* ~/Downloads/d/{4b,5,ct,a1,hv,he}/*
 cd ~/Downloads/d
 
 ./s; ./m; ./t                  # 01 smoke tests, streams

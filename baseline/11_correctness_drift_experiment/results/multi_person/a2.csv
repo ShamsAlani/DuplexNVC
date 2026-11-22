@@ -1,0 +1,4 @@
+setting,variant,bound_frames,cost_bd_pct,worst_drift_db,worst_pair,worst_mismatch_bd_pct,worst_NE>GPU,worst_NE>CPU,worst_GPU>NE,worst_GPU>CPU,worst_CPU>NE,worst_CPU>GPU
+mlvc_360p,main,64,0.0,27.23,NE>CPU,15.8649,29.329,27.23,30.653,33.133,27.949,30.701
+mlvcs_720p,main,64,0.0,29.296,GPU>CPU,19.7198,30.894,30.507,30.605,29.296,29.714,33.679
+mlvcs_540p,main,64,0.0,27.1,CPU>NE,16.9045,31.132,29.947,30.016,32.83,27.1,30.085

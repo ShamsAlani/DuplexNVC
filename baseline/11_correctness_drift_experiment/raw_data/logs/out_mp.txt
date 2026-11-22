@@ -1,0 +1,193 @@
+
+== multi-person drift check START  Sun Nov 22 18:52:45 +04 2026
+Now drawing from 'AC Power'
+   masters: /Users/shamsalani/Downloads/step8_masters
+   masters present: 11 of 11
+132 jobs, 0 done, 132 to do
+[1/132] 18:53 mlvc_360p   ce4peo qp16  frames 300  NE>NE 39.0195 dB  worst drift 43.0 dB  all 9 ok  64 s  left ~2.3 h
+[2/132] 18:54 mlvc_360p   ce4peo qp24  frames 300  NE>NE 37.1779 dB  worst drift 41.6 dB  all 9 ok  58 s  left ~2.2 h
+[3/132] 18:55 mlvc_360p   ce4peo qp32  frames 300  NE>NE 33.7971 dB  worst drift 39.7 dB  all 9 ok  58 s  left ~2.1 h
+[4/132] 18:56 mlvc_360p   ce4peo qp40  frames 300  NE>NE 29.3769 dB  worst drift 37.9 dB  all 9 ok  58 s  left ~2.1 h
+[5/132] 18:57 mlvc_360p   cejohn qp16  frames 300  NE>NE 40.8124 dB  worst drift 43.0 dB  all 9 ok  34 s  left ~1.9 h
+[6/132] 18:57 mlvc_360p   cejohn qp24  frames 300  NE>NE 39.5143 dB  worst drift 40.6 dB  all 9 ok  33 s  left ~1.8 h
+[7/132] 18:58 mlvc_360p   cejohn qp32  frames 300  NE>NE 37.0293 dB  worst drift 39.2 dB  all 9 ok  30 s  left ~1.7 h
+[8/132] 18:58 mlvc_360p   cejohn qp40  frames 300  NE>NE 33.5501 dB  worst drift 35.6 dB  all 9 ok  28 s  left ~1.6 h
+[9/132] 18:59 mlvc_360p   cekris qp16  frames 300  NE>NE 40.3528 dB  worst drift 42.8 dB  all 9 ok  34 s  left ~1.5 h
+[10/132] 18:59 mlvc_360p   cekris qp24  frames 300  NE>NE 38.6469 dB  worst drift 42.1 dB  all 9 ok  34 s  left ~1.5 h
+[11/132] 19:00 mlvc_360p   cekris qp32  frames 300  NE>NE 35.6032 dB  worst drift 38.8 dB  all 9 ok  34 s  left ~1.4 h
+[12/132] 19:01 mlvc_360p   cekris qp40  frames 300  NE>NE 31.6595 dB  worst drift 38.0 dB  all 9 ok  34 s  left ~1.4 h
+[13/132] 19:01 mlvc_360p   px2ent qp16  frames 300  NE>NE 43.9729 dB  worst drift 37.3 dB  all 9 ok  34 s  left ~1.4 h
+[14/132] 19:02 mlvc_360p   px2ent qp24  frames 300  NE>NE 41.7863 dB  worst drift 37.3 dB  all 9 ok  34 s  left ~1.3 h
+[15/132] 19:02 mlvc_360p   px2ent qp32  frames 300  NE>NE 38.4194 dB  worst drift 32.5 dB  all 9 ok  34 s  left ~1.3 h
+[16/132] 19:03 mlvc_360p   px2ent qp40  frames 300  NE>NE 34.7526 dB  worst drift 36.9 dB  all 9 ok  34 s  left ~1.3 h
+[17/132] 19:03 mlvc_360p   px4ppl qp16  frames 300  NE>NE 39.5764 dB  worst drift 35.9 dB  all 9 ok  35 s  left ~1.3 h
+[18/132] 19:04 mlvc_360p   px4ppl qp24  frames 300  NE>NE 37.5634 dB  worst drift 34.5 dB  all 9 ok  33 s  left ~1.2 h
+[19/132] 19:04 mlvc_360p   px4ppl qp32  frames 300  NE>NE 34.3783 dB  worst drift 31.1 dB  all 9 ok  30 s  left ~1.2 h
+[20/132] 19:05 mlvc_360p   px4ppl qp40  frames 300  NE>NE 28.9191 dB  worst drift 29.4 dB  all 9 ok  29 s  left ~1.2 h
+[21/132] 19:05 mlvc_360p   px5ppl qp16  frames 300  NE>NE 42.5584 dB  worst drift 39.6 dB  all 9 ok  28 s  left ~1.2 h
+[22/132] 19:06 mlvc_360p   px5ppl qp24  frames 300  NE>NE 40.4557 dB  worst drift 37.9 dB  all 9 ok  28 s  left ~1.1 h
+[23/132] 19:06 mlvc_360p   px5ppl qp32  frames 300  NE>NE 36.9745 dB  worst drift 34.1 dB  all 9 ok  27 s  left ~1.1 h
+[24/132] 19:07 mlvc_360p   px5ppl qp40  frames 300  NE>NE 32.7672 dB  worst drift 30.3 dB  all 9 ok  27 s  left ~1.1 h
+[25/132] 19:07 mlvc_360p   px7ppl qp16  frames 300  NE>NE 39.4645 dB  worst drift 37.2 dB  all 9 ok  27 s  left ~1.1 h
+[26/132] 19:08 mlvc_360p   px7ppl qp24  frames 300  NE>NE 37.4364 dB  worst drift 36.0 dB  all 9 ok  27 s  left ~1.0 h
+[27/132] 19:08 mlvc_360p   px7ppl qp32  frames 300  NE>NE 34.1707 dB  worst drift 34.0 dB  all 9 ok  27 s  left ~1.0 h
+[28/132] 19:09 mlvc_360p   px7ppl qp40  frames 300  NE>NE 30.4409 dB  worst drift 32.1 dB  all 9 ok  27 s  left ~1.0 h
+[29/132] 19:09 mlvc_360p   pxcrwd qp16  frames 265  NE>NE 34.2142 dB  worst drift 32.1 dB  all 9 ok  25 s  left ~1.0 h
+[30/132] 19:09 mlvc_360p   pxcrwd qp24  frames 265  NE>NE 32.4836 dB  worst drift 31.0 dB  all 9 ok  24 s  left ~1.0 h
+[31/132] 19:10 mlvc_360p   pxcrwd qp32  frames 265  NE>NE 29.4597 dB  worst drift 28.7 dB  all 9 ok  24 s  left ~1.0 h
+[32/132] 19:10 mlvc_360p   pxcrwd qp40  frames 265  NE>NE 25.9138 dB  worst drift 27.2 dB  all 9 ok  25 s  left ~0.9 h
+[33/132] 19:10 mlvc_360p   pxdown qp16  frames 182  NE>NE 43.2188 dB  worst drift 41.1 dB  all 9 ok  17 s  left ~0.9 h
+[34/132] 19:11 mlvc_360p   pxdown qp24  frames 182  NE>NE 40.9842 dB  worst drift 30.5 dB  all 9 ok  17 s  left ~0.9 h
+[35/132] 19:11 mlvc_360p   pxdown qp32  frames 182  NE>NE 37.6598 dB  worst drift 36.4 dB  all 9 ok  17 s  left ~0.9 h
+[36/132] 19:11 mlvc_360p   pxdown qp40  frames 182  NE>NE 34.1478 dB  worst drift 35.6 dB  all 9 ok  17 s  left ~0.8 h
+[37/132] 19:12 mlvc_360p   pxentr qp16  frames 300  NE>NE 41.6586 dB  worst drift 33.7 dB  all 9 ok  28 s  left ~0.8 h
+[38/132] 19:12 mlvc_360p   pxentr qp24  frames 300  NE>NE 39.3941 dB  worst drift 35.4 dB  all 9 ok  29 s  left ~0.8 h
+[39/132] 19:13 mlvc_360p   pxentr qp32  frames 300  NE>NE 36.1074 dB  worst drift 32.9 dB  all 9 ok  29 s  left ~0.8 h
+[40/132] 19:13 mlvc_360p   pxentr qp40  frames 300  NE>NE 32.8676 dB  worst drift 34.3 dB  all 9 ok  28 s  left ~0.8 h
+[41/132] 19:13 mlvc_360p   pxleav qp16  frames 148  NE>NE 39.2633 dB  worst drift 40.1 dB  all 9 ok  14 s  left ~0.8 h
+[42/132] 19:14 mlvc_360p   pxleav qp24  frames 148  NE>NE 36.9367 dB  worst drift 39.6 dB  all 9 ok  14 s  left ~0.8 h
+[43/132] 19:14 mlvc_360p   pxleav qp32  frames 148  NE>NE 33.3568 dB  worst drift 34.4 dB  all 9 ok  14 s  left ~0.7 h
+[44/132] 19:14 mlvc_360p   pxleav qp40  frames 148  NE>NE 29.3926 dB  worst drift 31.1 dB  all 9 ok  14 s  left ~0.7 h
+[45/132] 19:15 mlvcs_540p  ce4peo qp16  frames 300  NE>NE 40.1641 dB  worst drift 44.5 dB  all 9 ok  56 s  left ~0.7 h
+[46/132] 19:16 mlvcs_540p  ce4peo qp24  frames 300  NE>NE 38.4765 dB  worst drift 43.8 dB  all 9 ok  51 s  left ~0.7 h
+[47/132] 19:17 mlvcs_540p  ce4peo qp32  frames 300  NE>NE 34.91 dB  worst drift 45.4 dB  all 9 ok  50 s  left ~0.7 h
+[48/132] 19:18 mlvcs_540p  ce4peo qp40  frames 300  NE>NE 30.5934 dB  worst drift 38.0 dB  all 9 ok  50 s  left ~0.7 h
+[49/132] 19:18 mlvcs_540p  cejohn qp16  frames 300  NE>NE 41.4482 dB  worst drift 43.2 dB  all 9 ok  30 s  left ~0.7 h
+[50/132] 19:19 mlvcs_540p  cejohn qp24  frames 300  NE>NE 39.743 dB  worst drift 45.8 dB  all 9 ok  33 s  left ~0.7 h
+[51/132] 19:19 mlvcs_540p  cejohn qp32  frames 300  NE>NE 36.6141 dB  worst drift 46.6 dB  all 9 ok  32 s  left ~0.7 h
+[52/132] 19:20 mlvcs_540p  cejohn qp40  frames 300  NE>NE 33.5565 dB  worst drift 43.0 dB  all 9 ok  30 s  left ~0.7 h
+[53/132] 19:20 mlvcs_540p  cekris qp16  frames 300  NE>NE 40.9353 dB  worst drift 35.3 dB  all 9 ok  34 s  left ~0.7 h
+[54/132] 19:21 mlvcs_540p  cekris qp24  frames 300  NE>NE 39.4498 dB  worst drift 36.3 dB  all 9 ok  33 s  left ~0.7 h
+[55/132] 19:21 mlvcs_540p  cekris qp32  frames 300  NE>NE 36.4034 dB  worst drift 40.8 dB  all 9 ok  32 s  left ~0.7 h
+[56/132] 19:22 mlvcs_540p  cekris qp40  frames 300  NE>NE 32.4772 dB  worst drift 42.6 dB  all 9 ok  31 s  left ~0.7 h
+[57/132] 19:22 mlvcs_540p  px2ent qp16  frames 300  NE>NE 44.5803 dB  worst drift 32.6 dB  all 9 ok  33 s  left ~0.7 h
+[58/132] 19:23 mlvcs_540p  px2ent qp24  frames 300  NE>NE 42.5001 dB  worst drift 34.4 dB  all 9 ok  30 s  left ~0.7 h
+[59/132] 19:23 mlvcs_540p  px2ent qp32  frames 300  NE>NE 38.8721 dB  worst drift 32.8 dB  all 9 ok  32 s  left ~0.6 h
+[60/132] 19:24 mlvcs_540p  px2ent qp40  frames 300  NE>NE 35.2091 dB  worst drift 37.2 dB  all 9 ok  30 s  left ~0.6 h
+[61/132] 19:24 mlvcs_540p  px4ppl qp16  frames 300  NE>NE 40.3806 dB  worst drift 34.7 dB  all 9 ok  34 s  left ~0.6 h
+[62/132] 19:25 mlvcs_540p  px4ppl qp24  frames 300  NE>NE 38.2139 dB  worst drift 32.6 dB  all 9 ok  32 s  left ~0.6 h
+[63/132] 19:26 mlvcs_540p  px4ppl qp32  frames 300  NE>NE 34.5446 dB  worst drift 30.7 dB  all 9 ok  33 s  left ~0.6 h
+[64/132] 19:26 mlvcs_540p  px4ppl qp40  frames 300  NE>NE 30.3547 dB  worst drift 32.8 dB  all 9 ok  30 s  left ~0.6 h
+[65/132] 19:27 mlvcs_540p  px5ppl qp16  frames 300  NE>NE 43.7394 dB  worst drift 42.5 dB  all 9 ok  33 s  left ~0.6 h
+[66/132] 19:27 mlvcs_540p  px5ppl qp24  frames 300  NE>NE 41.5983 dB  worst drift 42.5 dB  all 9 ok  30 s  left ~0.6 h
+[67/132] 19:28 mlvcs_540p  px5ppl qp32  frames 300  NE>NE 37.8681 dB  worst drift 42.0 dB  all 9 ok  30 s  left ~0.6 h
+[68/132] 19:28 mlvcs_540p  px5ppl qp40  frames 300  NE>NE 33.4639 dB  worst drift 39.0 dB  all 9 ok  29 s  left ~0.6 h
+[69/132] 19:29 mlvcs_540p  px7ppl qp16  frames 300  NE>NE 39.4572 dB  worst drift 35.9 dB  all 9 ok  33 s  left ~0.6 h
+[70/132] 19:29 mlvcs_540p  px7ppl qp24  frames 300  NE>NE 37.5932 dB  worst drift 36.4 dB  all 9 ok  30 s  left ~0.5 h
+[71/132] 19:30 mlvcs_540p  px7ppl qp32  frames 300  NE>NE 34.2544 dB  worst drift 37.9 dB  all 9 ok  31 s  left ~0.5 h
+[72/132] 19:30 mlvcs_540p  px7ppl qp40  frames 300  NE>NE 30.9044 dB  worst drift 37.9 dB  all 9 ok  30 s  left ~0.5 h
+[73/132] 19:31 mlvcs_540p  pxcrwd qp16  frames 265  NE>NE 33.895 dB  worst drift 30.3 dB  all 9 ok  29 s  left ~0.5 h
+[74/132] 19:31 mlvcs_540p  pxcrwd qp24  frames 265  NE>NE 32.7341 dB  worst drift 27.1 dB  all 9 ok  28 s  left ~0.5 h
+[75/132] 19:32 mlvcs_540p  pxcrwd qp32  frames 265  NE>NE 29.8616 dB  worst drift 27.5 dB  all 9 ok  28 s  left ~0.5 h
+[76/132] 19:32 mlvcs_540p  pxcrwd qp40  frames 265  NE>NE 26.3487 dB  worst drift 33.8 dB  all 9 ok  26 s  left ~0.5 h
+[77/132] 19:32 mlvcs_540p  pxdown qp16  frames 182  NE>NE 43.8882 dB  worst drift 37.8 dB  all 9 ok  18 s  left ~0.5 h
+[78/132] 19:33 mlvcs_540p  pxdown qp24  frames 182  NE>NE 41.6801 dB  worst drift 35.9 dB  all 9 ok  18 s  left ~0.5 h
+[79/132] 19:33 mlvcs_540p  pxdown qp32  frames 182  NE>NE 38.287 dB  worst drift 33.7 dB  all 9 ok  18 s  left ~0.5 h
+[80/132] 19:33 mlvcs_540p  pxdown qp40  frames 182  NE>NE 34.815 dB  worst drift 33.1 dB  all 9 ok  18 s  left ~0.4 h
+[81/132] 19:34 mlvcs_540p  pxentr qp16  frames 300  NE>NE 41.9938 dB  worst drift 36.0 dB  all 9 ok  34 s  left ~0.4 h
+[82/132] 19:34 mlvcs_540p  pxentr qp24  frames 300  NE>NE 39.7536 dB  worst drift 35.3 dB  all 9 ok  30 s  left ~0.4 h
+[83/132] 19:35 mlvcs_540p  pxentr qp32  frames 300  NE>NE 36.3803 dB  worst drift 39.2 dB  all 9 ok  30 s  left ~0.4 h
+[84/132] 19:35 mlvcs_540p  pxentr qp40  frames 300  NE>NE 33.1567 dB  worst drift 38.8 dB  all 9 ok  30 s  left ~0.4 h
+[85/132] 19:36 mlvcs_540p  pxleav qp16  frames 148  NE>NE 39.8129 dB  worst drift 32.0 dB  all 9 ok  15 s  left ~0.4 h
+[86/132] 19:36 mlvcs_540p  pxleav qp24  frames 148  NE>NE 37.7516 dB  worst drift 34.5 dB  all 9 ok  15 s  left ~0.4 h
+[87/132] 19:36 mlvcs_540p  pxleav qp32  frames 148  NE>NE 34.0462 dB  worst drift 35.6 dB  all 9 ok  15 s  left ~0.4 h
+[88/132] 19:36 mlvcs_540p  pxleav qp40  frames 148  NE>NE 30.1272 dB  worst drift 38.3 dB  all 9 ok  15 s  left ~0.4 h
+[89/132] 19:38 mlvcs_720p  ce4peo qp16  frames 300  NE>NE 41.4666 dB  worst drift 43.2 dB  all 9 ok  94 s  left ~0.4 h
+[90/132] 19:39 mlvcs_720p  ce4peo qp24  frames 300  NE>NE 39.7261 dB  worst drift 44.3 dB  all 9 ok  85 s  left ~0.4 h
+[91/132] 19:41 mlvcs_720p  ce4peo qp32  frames 300  NE>NE 36.287 dB  worst drift 46.0 dB  all 9 ok  84 s  left ~0.4 h
+[92/132] 19:42 mlvcs_720p  ce4peo qp40  frames 300  NE>NE 32.0158 dB  worst drift 43.6 dB  all 9 ok  84 s  left ~0.4 h
+[93/132] 19:43 mlvcs_720p  cejohn qp16  frames 300  NE>NE 42.0903 dB  worst drift 39.9 dB  all 9 ok  53 s  left ~0.4 h
+[94/132] 19:44 mlvcs_720p  cejohn qp24  frames 300  NE>NE 40.5489 dB  worst drift 45.6 dB  all 9 ok  50 s  left ~0.3 h
+[95/132] 19:45 mlvcs_720p  cejohn qp32  frames 300  NE>NE 37.4745 dB  worst drift 47.1 dB  all 9 ok  50 s  left ~0.3 h
+[96/132] 19:45 mlvcs_720p  cejohn qp40  frames 300  NE>NE 34.4592 dB  worst drift 43.6 dB  all 9 ok  50 s  left ~0.3 h
+[97/132] 19:46 mlvcs_720p  cekris qp16  frames 300  NE>NE 41.8344 dB  worst drift 36.7 dB  all 9 ok  55 s  left ~0.3 h
+[98/132] 19:47 mlvcs_720p  cekris qp24  frames 300  NE>NE 40.344 dB  worst drift 38.6 dB  all 9 ok  52 s  left ~0.3 h
+[99/132] 19:48 mlvcs_720p  cekris qp32  frames 300  NE>NE 37.442 dB  worst drift 42.2 dB  all 9 ok  52 s  left ~0.3 h
+[100/132] 19:49 mlvcs_720p  cekris qp40  frames 300  NE>NE 33.6482 dB  worst drift 42.2 dB  all 9 ok  51 s  left ~0.3 h
+[101/132] 19:50 mlvcs_720p  px2ent qp16  frames 300  NE>NE 45.7841 dB  worst drift 34.0 dB  all 9 ok  55 s  left ~0.3 h
+[102/132] 19:51 mlvcs_720p  px2ent qp24  frames 300  NE>NE 43.6519 dB  worst drift 33.7 dB  all 9 ok  51 s  left ~0.3 h
+[103/132] 19:52 mlvcs_720p  px2ent qp32  frames 300  NE>NE 39.9481 dB  worst drift 37.0 dB  all 9 ok  53 s  left ~0.3 h
+[104/132] 19:52 mlvcs_720p  px2ent qp40  frames 300  NE>NE 36.1927 dB  worst drift 37.4 dB  all 9 ok  50 s  left ~0.3 h
+[105/132] 19:53 mlvcs_720p  px4ppl qp16  frames 300  NE>NE 41.5697 dB  worst drift 37.0 dB  all 9 ok  56 s  left ~0.3 h
+[106/132] 19:54 mlvcs_720p  px4ppl qp24  frames 300  NE>NE 39.5225 dB  worst drift 34.7 dB  all 9 ok  53 s  left ~0.3 h
+[107/132] 19:55 mlvcs_720p  px4ppl qp32  frames 300  NE>NE 36.037 dB  worst drift 32.3 dB  all 9 ok  53 s  left ~0.2 h
+[108/132] 19:56 mlvcs_720p  px4ppl qp40  frames 300  NE>NE 31.8937 dB  worst drift 32.6 dB  all 9 ok  54 s  left ~0.2 h
+[109/132] 19:57 mlvcs_720p  px5ppl qp16  frames 300  NE>NE 45.076 dB  worst drift 42.2 dB  all 9 ok  55 s  left ~0.2 h
+[110/132] 19:58 mlvcs_720p  px5ppl qp24  frames 300  NE>NE 42.9421 dB  worst drift 42.8 dB  all 9 ok  50 s  left ~0.2 h
+[111/132] 19:59 mlvcs_720p  px5ppl qp32  frames 300  NE>NE 39.2025 dB  worst drift 42.5 dB  all 9 ok  51 s  left ~0.2 h
+[112/132] 19:59 mlvcs_720p  px5ppl qp40  frames 300  NE>NE 34.6715 dB  worst drift 38.4 dB  all 9 ok  50 s  left ~0.2 h
+[113/132] 20:00 mlvcs_720p  px7ppl qp16  frames 300  NE>NE 40.4473 dB  worst drift 36.0 dB  all 9 ok  55 s  left ~0.2 h
+[114/132] 20:01 mlvcs_720p  px7ppl qp24  frames 300  NE>NE 38.5377 dB  worst drift 35.9 dB  all 9 ok  57 s  left ~0.2 h
+[115/132] 20:02 mlvcs_720p  px7ppl qp32  frames 300  NE>NE 35.2703 dB  worst drift 40.7 dB  all 9 ok  57 s  left ~0.2 h
+[116/132] 20:03 mlvcs_720p  px7ppl qp40  frames 300  NE>NE 31.6751 dB  worst drift 36.9 dB  all 9 ok  54 s  left ~0.2 h
+[117/132] 20:04 mlvcs_720p  pxcrwd qp16  frames 265  NE>NE 35.2181 dB  worst drift 30.1 dB  all 9 ok  46 s  left ~0.2 h
+[118/132] 20:05 mlvcs_720p  pxcrwd qp24  frames 265  NE>NE 33.8819 dB  worst drift 29.7 dB  all 9 ok  45 s  left ~0.1 h
+[119/132] 20:06 mlvcs_720p  pxcrwd qp32  frames 265  NE>NE 30.8191 dB  worst drift 31.2 dB  all 9 ok  51 s  left ~0.1 h
+[120/132] 20:06 mlvcs_720p  pxcrwd qp40  frames 265  NE>NE 27.1068 dB  worst drift 32.7 dB  all 9 ok  51 s  left ~0.1 h
+[121/132] 20:07 mlvcs_720p  pxdown qp16  frames 182  NE>NE 44.7579 dB  worst drift 37.2 dB  all 9 ok  33 s  left ~0.1 h
+[122/132] 20:07 mlvcs_720p  pxdown qp24  frames 182  NE>NE 42.6339 dB  worst drift 34.9 dB  all 9 ok  34 s  left ~0.1 h
+[123/132] 20:08 mlvcs_720p  pxdown qp32  frames 182  NE>NE 39.3201 dB  worst drift 35.3 dB  all 9 ok  34 s  left ~0.1 h
+[124/132] 20:09 mlvcs_720p  pxdown qp40  frames 182  NE>NE 35.8625 dB  worst drift 34.2 dB  all 9 ok  35 s  left ~0.1 h
+[125/132] 20:10 mlvcs_720p  pxentr qp16  frames 300  NE>NE 42.7179 dB  worst drift 35.4 dB  all 9 ok  60 s  left ~0.1 h
+[126/132] 20:10 mlvcs_720p  pxentr qp24  frames 300  NE>NE 40.4427 dB  worst drift 38.1 dB  all 9 ok  53 s  left ~0.1 h
+[127/132] 20:11 mlvcs_720p  pxentr qp32  frames 300  NE>NE 37.0588 dB  worst drift 37.9 dB  all 9 ok  53 s  left ~0.1 h
+[128/132] 20:12 mlvcs_720p  pxentr qp40  frames 300  NE>NE 33.9166 dB  worst drift 38.2 dB  all 9 ok  54 s  left ~0.0 h
+[129/132] 20:13 mlvcs_720p  pxleav qp16  frames 148  NE>NE 40.7871 dB  worst drift 30.9 dB  all 9 ok  26 s  left ~0.0 h
+[130/132] 20:13 mlvcs_720p  pxleav qp24  frames 148  NE>NE 38.7194 dB  worst drift 34.4 dB  all 9 ok  26 s  left ~0.0 h
+[131/132] 20:14 mlvcs_720p  pxleav qp32  frames 148  NE>NE 34.9864 dB  worst drift 35.2 dB  all 9 ok  26 s  left ~0.0 h
+[132/132] 20:14 mlvcs_720p  pxleav qp40  frames 148  NE>NE 31.0925 dB  worst drift 29.3 dB  all 9 ok  26 s  left ~0.0 h
+== finished: 1.4 h
+132 jobs, 132 done, 0 to do
+== finished: 0.0 h
+
+== analysis  Sun Nov 22 20:14:29 +04 2026
+STEP 5 + A2: correctness of every encoder->decoder pair and drift bounds
+
+== coverage and failures (jobs = clip x QP; each job has 9 pairs)
+   Full MLVC 360p   main   44 jobs  no failures, no short decodes
+   MLVC-S 720p      main   44 jobs  no failures, no short decodes
+   MLVC-S 540p      main   44 jobs  no failures, no short decodes
+
+== determinism (main, first clip, 4 QPs): same bitstream decoded twice on the same processor
+   Full MLVC 360p   NE>NE 4/4, NE>GPU 4/4, NE>CPU 4/4, GPU>NE 4/4, GPU>GPU 4/4, GPU>CPU 4/4, CPU>NE 4/4, CPU>GPU 4/4, CPU>CPU 4/4
+   MLVC-S 720p      NE>NE 4/4, NE>GPU 4/4, NE>CPU 4/4, GPU>NE 4/4, GPU>GPU 4/4, GPU>CPU 4/4, CPU>NE 4/4, CPU>GPU 4/4, CPU>CPU 4/4
+   MLVC-S 540p      NE>NE 4/4, NE>GPU 4/4, NE>CPU 4/4, GPU>NE 4/4, GPU>GPU 4/4, GPU>CPU 4/4, CPU>NE 4/4, CPU>GPU 4/4, CPU>CPU 4/4
+
+== drift = PSNR-Y of the decode against the decode on the encoder's own processor (main)
+   worst frame dB / mean dB (MSE-averaged) / bit-identical frames; then mean dB by frames after the I-frame
+                    pair      worst   mean  ident.  0  1-15  16-31  32-47  48-63
+   Full MLVC 360p   NE>GPU     29.3   45.7    0.0%   59.1   56.0   50.7   45.5   41.2
+   Full MLVC 360p   NE>CPU     27.2   43.3    0.0%   52.3   51.3   47.6   43.1   39.1
+   Full MLVC 360p   GPU>NE     30.7   45.5    0.0%   59.2   56.0   50.8   45.4   40.9
+   Full MLVC 360p   GPU>CPU    33.1   47.3    0.0%   52.4   52.0   50.1   47.1   44.0
+   Full MLVC 360p   CPU>NE     27.9   43.2    0.0%   52.3   51.3   47.6   42.9   38.9
+   Full MLVC 360p   CPU>GPU    30.7   46.8    0.0%   52.4   52.0   50.0   46.8   43.1
+   MLVC-S 720p      NE>GPU     30.9   46.9    0.0%   58.8   56.0   51.8   46.8   42.6
+   MLVC-S 720p      NE>CPU     30.5   44.4    0.0%   52.9   51.8   48.4   43.9   40.5
+   MLVC-S 720p      GPU>NE     30.6   47.0    0.0%   58.8   56.0   51.7   46.8   42.8
+   MLVC-S 720p      GPU>CPU    29.3   46.9    0.0%   53.1   52.6   50.5   46.8   43.5
+   MLVC-S 720p      CPU>NE     29.7   44.3    0.0%   52.9   51.8   48.3   43.8   40.4
+   MLVC-S 720p      CPU>GPU    33.7   47.5    0.0%   53.1   52.6   50.7   47.2   44.0
+   MLVC-S 540p      NE>GPU     31.1   46.5    0.0%   58.8   56.1   51.7   46.3   42.2
+   MLVC-S 540p      NE>CPU     29.9   44.1    0.0%   52.9   51.8   48.3   43.6   40.2
+   MLVC-S 540p      GPU>NE     30.0   46.5    0.0%   58.8   56.1   51.6   46.3   42.2
+   MLVC-S 540p      GPU>CPU    32.8   47.0    0.0%   53.0   52.5   50.3   46.4   43.5
+   MLVC-S 540p      CPU>NE     27.1   43.8    0.0%   52.8   51.8   48.3   43.4   39.8
+   MLVC-S 540p      CPU>GPU    30.1   47.0    0.0%   53.0   52.5   50.5   46.8   43.3
+
+== BD-rate (coded PSNR-Y) of each pair vs NE>NE of the same setting, main structure (H4: |change| < 1 point)
+                       NE>NE   NE>GPU   NE>CPU   GPU>NE  GPU>GPU  GPU>CPU   CPU>NE  CPU>GPU  CPU>CPU
+   Full MLVC 360p     +0.00%   +8.85%  +15.86%   +9.18%   -0.01%   +5.86%  +15.82%   +6.37%   +2.09%
+   MLVC-S 720p        +0.00%  +10.04%  +19.72%  +10.29%   -0.07%  +10.33%  +18.50%   +8.19%   +1.95%
+   MLVC-S 540p        +0.00%   +8.71%  +16.90%   +8.94%   -0.03%   +8.60%  +15.79%   +6.86%   +1.55%
+   H4 fails (|change| >= 1 point): Full MLVC 360p NE>GPU, Full MLVC 360p NE>CPU, Full MLVC 360p GPU>NE, Full MLVC 360p GPU>CPU, Full MLVC 360p CPU>NE, Full MLVC 360p CPU>GPU, Full MLVC 360p CPU>CPU, MLVC-S 720p NE>GPU, MLVC-S 720p NE>CPU, MLVC-S 720p GPU>NE, MLVC-S 720p GPU>CPU, MLVC-S 720p CPU>NE, MLVC-S 720p CPU>GPU, MLVC-S 720p CPU>CPU, MLVC-S 540p NE>GPU, MLVC-S 540p NE>CPU, MLVC-S 540p GPU>NE, MLVC-S 540p GPU>CPU, MLVC-S 540p CPU>NE, MLVC-S 540p CPU>GPU, MLVC-S 540p CPU>CPU
+
+== A2: drift bounds. Cost = BD-rate of NE>NE vs the main structure; worst drift over the 6 mismatched pairs;
+   worst mismatch BD-rate = largest BD-rate of a mismatched pair vs the main NE>NE
+   Full MLVC 360p   B* structure (I 64, LTR rec. 64) cost  +0.00 %  worst drift  27.2 dB (NE>CPU)  worst mismatch BD +15.86 %
+   MLVC-S 720p      B* structure (I 64, LTR rec. 64) cost  +0.00 %  worst drift  29.3 dB (GPU>CPU)  worst mismatch BD +19.72 %
+   MLVC-S 540p      B* structure (I 64, LTR rec. 64) cost  +0.00 %  worst drift  27.1 dB (CPU>NE)  worst mismatch BD +16.90 %
+
+== results in /Users/shamsalani/Downloads/duplexnvc-baseline/phase2/5m/results
+VCD (20 clips) for comparison: phase2/5/results/summary.txt
+== multi-person drift check END  Sun Nov 22 20:14:31 +04 2026

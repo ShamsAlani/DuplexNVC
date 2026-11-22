@@ -1,0 +1,685 @@
+
+== A1 START  Sun Nov 22 20:14:32 +04 2026
+ProductName:		macOS ProductVersion:		26.6.2 BuildVersion:		25G83 
+Now drawing from 'AC Power'
+== building the A1 program in /Users/shamsalani/Downloads/duplexnvc-baseline/harness_a1 (a few minutes)
+   built: /Users/shamsalani/Downloads/duplexnvc-baseline/harness_a1/build/ninja-release/libmlvc_example
+
+== check (first clip, QP 26, offset 0 and -4)
+CHECK: 1 clips x 2 configurations x QP [26]; 2 runs to do
+/Users/shamsalani/Downloads/duplexnvc-baseline/.venv/lib/python3.13/site-packages/torchvision/models/_utils.py:207: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/Users/shamsalani/Downloads/duplexnvc-baseline/.venv/lib/python3.13/site-packages/torchvision/models/_utils.py:222: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=AlexNet_Weights.IMAGENET1K_V1`. You can also use `weights=AlexNet_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+== clip 1/1 08ee5e  20:15:19
+   [1/2] o0 qp26    157.3 kbps  Y 39.49  disp 33.54  face 37.63 / 0.211  I 5, LTR 0  same as exp. 10: YES  5 s  left ~0.0 h
+   [2/2] b4 qp26    159.0 kbps  Y 39.57  disp 33.58  face 37.66 / 0.211  I 5, LTR 0  5 s  left ~0.0 h
+== offset 0 identical to experiment 10's B* bitstreams: 1 of 1
+== 2 runs, 0.2 min
+-- LTR frames: this program vs libmlvc's own trace (mlvc encode --log-level trace, same clip and QP)
+   libmlvc's trace has no 'LTR marked' lines (trace compiled out?): not verifiable; continuing
+
+== runs, pass 1  Sun Nov 22 20:15:32 +04 2026
+FULL: 20 clips x 6 configurations x QP [16, 24, 26, 32, 40]; 598 runs to do
+/Users/shamsalani/Downloads/duplexnvc-baseline/.venv/lib/python3.13/site-packages/torchvision/models/_utils.py:207: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/Users/shamsalani/Downloads/duplexnvc-baseline/.venv/lib/python3.13/site-packages/torchvision/models/_utils.py:222: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=AlexNet_Weights.IMAGENET1K_V1`. You can also use `weights=AlexNet_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+== clip 1/20 08ee5e  20:15:33
+   [1/598] o0 qp16    332.2 kbps  Y 41.87  disp 34.27  face 39.29 / 0.173  I 5, LTR 0  same as exp. 10: YES  5 s  left ~0.8 h
+   [2/598] o0 qp24    186.5 kbps  Y 40.18  disp 33.78  face 38.11 / 0.199  I 5, LTR 0  same as exp. 10: YES  5 s  left ~0.8 h
+   [3/598] o0 qp32     88.5 kbps  Y 36.74  disp 32.34  face 35.57 / 0.249  I 5, LTR 0  same as exp. 10: YES  5 s  left ~0.8 h
+   [4/598] o0 qp40     36.8 kbps  Y 32.11  disp 29.42  face 32.08 / 0.339  I 5, LTR 0  same as exp. 10: YES  5 s  left ~0.8 h
+   [5/598] b2 qp16    332.2 kbps  Y 41.87  disp 34.27  face 39.29 / 0.173  I 5, LTR 0  5 s  left ~0.8 h
+   [6/598] b2 qp24    188.2 kbps  Y 40.22  disp 33.80  face 38.10 / 0.200  I 5, LTR 0  5 s  left ~0.8 h
+   [7/598] b2 qp26    157.1 kbps  Y 39.54  disp 33.56  face 37.64 / 0.211  I 5, LTR 0  5 s  left ~0.8 h
+   [8/598] b2 qp32     89.4 kbps  Y 36.88  disp 32.41  face 35.68 / 0.248  I 5, LTR 0  5 s  left ~0.8 h
+   [9/598] b2 qp40     37.1 kbps  Y 32.31  disp 29.58  face 32.25 / 0.330  I 5, LTR 0  5 s  left ~0.7 h
+   [10/598] b4 qp16    332.4 kbps  Y 41.87  disp 34.27  face 39.29 / 0.173  I 5, LTR 0  5 s  left ~0.7 h
+   [11/598] b4 qp24    190.3 kbps  Y 40.27  disp 33.82  face 38.17 / 0.198  I 5, LTR 0  5 s  left ~0.7 h
+   [12/598] b4 qp32     89.8 kbps  Y 36.97  disp 32.46  face 35.70 / 0.245  I 5, LTR 0  5 s  left ~0.7 h
+   [13/598] b4 qp40     37.5 kbps  Y 32.48  disp 29.71  face 32.23 / 0.324  I 5, LTR 0  5 s  left ~0.7 h
+   [14/598] b6 qp16    332.4 kbps  Y 41.87  disp 34.27  face 39.29 / 0.173  I 5, LTR 0  5 s  left ~0.7 h
+   [15/598] b6 qp24    191.6 kbps  Y 40.30  disp 33.83  face 38.20 / 0.197  I 5, LTR 0  4 s  left ~0.7 h
+   [16/598] b6 qp26    161.0 kbps  Y 39.63  disp 33.60  face 37.72 / 0.209  I 5, LTR 0  5 s  left ~0.7 h
+   [17/598] b6 qp32     91.1 kbps  Y 37.04  disp 32.51  face 35.85 / 0.245  I 5, LTR 0  5 s  left ~0.7 h
+   [18/598] b6 qp40     38.3 kbps  Y 32.67  disp 29.85  face 32.54 / 0.315  I 5, LTR 0  5 s  left ~0.7 h
+   [19/598] i4 qp16    332.4 kbps  Y 41.87  disp 34.27  face 39.29 / 0.173  I 5, LTR 0  4 s  left ~0.7 h
+   [20/598] i4 qp24    190.3 kbps  Y 40.27  disp 33.82  face 38.17 / 0.198  I 5, LTR 0  5 s  left ~0.7 h
+   [21/598] i4 qp26    159.0 kbps  Y 39.57  disp 33.58  face 37.66 / 0.211  I 5, LTR 0  5 s  left ~0.7 h
+   [22/598] i4 qp32     89.8 kbps  Y 36.97  disp 32.46  face 35.70 / 0.245  I 5, LTR 0  5 s  left ~0.7 h
+   [23/598] i4 qp40     37.5 kbps  Y 32.48  disp 29.71  face 32.23 / 0.324  I 5, LTR 0  5 s  left ~0.7 h
+   [24/598] l4 qp16    332.2 kbps  Y 41.87  disp 34.27  face 39.29 / 0.173  I 5, LTR 0  5 s  left ~0.7 h
+   [25/598] l4 qp24    186.5 kbps  Y 40.18  disp 33.78  face 38.11 / 0.199  I 5, LTR 0  5 s  left ~0.7 h
+   [26/598] l4 qp26    157.3 kbps  Y 39.49  disp 33.54  face 37.63 / 0.211  I 5, LTR 0  5 s  left ~0.7 h
+   [27/598] l4 qp32     88.5 kbps  Y 36.74  disp 32.34  face 35.57 / 0.249  I 5, LTR 0  4 s  left ~0.7 h
+   [28/598] l4 qp40     36.8 kbps  Y 32.11  disp 29.42  face 32.08 / 0.339  I 5, LTR 0  5 s  left ~0.7 h
+== clip 2/20 104c93  20:17:40
+   [29/598] o0 qp16    388.0 kbps  Y 41.65  disp 34.08  face 34.73 / 0.169  I 5, LTR 0  same as exp. 10: YES  5 s  left ~0.7 h
+   [30/598] o0 qp24    217.7 kbps  Y 39.66  disp 33.48  face 33.45 / 0.191  I 5, LTR 0  same as exp. 10: YES  5 s  left ~0.7 h
+   [31/598] o0 qp26    182.7 kbps  Y 38.92  disp 33.20  face 32.90 / 0.201  I 5, LTR 0  same as exp. 10: YES  5 s  left ~0.7 h
+   [32/598] o0 qp32     99.9 kbps  Y 36.08  disp 31.89  face 30.89 / 0.251  I 5, LTR 0  same as exp. 10: YES  5 s  left ~0.7 h
+   [33/598] o0 qp40     42.6 kbps  Y 31.70  disp 29.07  face 27.60 / 0.350  I 5, LTR 0  same as exp. 10: YES  5 s  left ~0.7 h
+   [34/598] b2 qp16    388.0 kbps  Y 41.65  disp 34.08  face 34.73 / 0.169  I 5, LTR 0  5 s  left ~0.7 h
+   [35/598] b2 qp24    221.2 kbps  Y 39.71  disp 33.50  face 33.45 / 0.189  I 5, LTR 0  5 s  left ~0.7 h
+   [36/598] b2 qp26    184.1 kbps  Y 38.94  disp 33.22  face 32.93 / 0.198  I 5, LTR 0  5 s  left ~0.7 h
+   [37/598] b2 qp32    100.9 kbps  Y 36.14  disp 31.93  face 30.90 / 0.252  I 5, LTR 0  5 s  left ~0.7 h
+   [38/598] b2 qp40     42.7 kbps  Y 31.83  disp 29.20  face 27.74 / 0.346  I 5, LTR 0  5 s  left ~0.7 h
+   [39/598] b4 qp16    388.3 kbps  Y 41.65  disp 34.08  face 34.73 / 0.169  I 5, LTR 0  5 s  left ~0.7 h
+   [40/598] b4 qp24    223.3 kbps  Y 39.73  disp 33.51  face 33.48 / 0.190  I 5, LTR 0  5 s  left ~0.7 h
+   [41/598] b4 qp26    187.6 kbps  Y 39.00  disp 33.24  face 33.01 / 0.199  I 5, LTR 0  5 s  left ~0.7 h
+   [42/598] b4 qp32    102.9 kbps  Y 36.24  disp 31.99  face 31.00 / 0.244  I 5, LTR 0  4 s  left ~0.7 h
+   [43/598] b4 qp40     43.6 kbps  Y 31.97  disp 29.30  face 27.83 / 0.338  I 5, LTR 0  4 s  left ~0.7 h
+   [44/598] b6 qp16    388.3 kbps  Y 41.65  disp 34.08  face 34.73 / 0.169  I 5, LTR 0  5 s  left ~0.7 h
+   [45/598] b6 qp24    227.0 kbps  Y 39.77  disp 33.53  face 33.47 / 0.189  I 5, LTR 0  5 s  left ~0.7 h
+   [46/598] b6 qp26    189.9 kbps  Y 39.05  disp 33.27  face 33.02 / 0.197  I 5, LTR 0  5 s  left ~0.7 h
+   [47/598] b6 qp32    104.7 kbps  Y 36.33  disp 32.04  face 31.02 / 0.243  I 5, LTR 0  5 s  left ~0.7 h
+   [48/598] b6 qp40     45.0 kbps  Y 32.12  disp 29.42  face 28.00 / 0.331  I 5, LTR 0  5 s  left ~0.7 h
+   [49/598] i4 qp16    388.3 kbps  Y 41.65  disp 34.08  face 34.73 / 0.169  I 5, LTR 0  5 s  left ~0.7 h
+   [50/598] i4 qp24    223.3 kbps  Y 39.73  disp 33.51  face 33.48 / 0.190  I 5, LTR 0  5 s  left ~0.7 h
+   [51/598] i4 qp26    187.6 kbps  Y 39.00  disp 33.24  face 33.01 / 0.199  I 5, LTR 0  5 s  left ~0.7 h
+   [52/598] i4 qp32    102.9 kbps  Y 36.24  disp 31.99  face 31.00 / 0.244  I 5, LTR 0  5 s  left ~0.7 h
+   [53/598] i4 qp40     43.6 kbps  Y 31.97  disp 29.30  face 27.83 / 0.338  I 5, LTR 0  5 s  left ~0.7 h
+   [54/598] l4 qp16    388.0 kbps  Y 41.65  disp 34.08  face 34.73 / 0.169  I 5, LTR 0  4 s  left ~0.7 h
+   [55/598] l4 qp24    217.7 kbps  Y 39.66  disp 33.48  face 33.45 / 0.191  I 5, LTR 0  4 s  left ~0.7 h
+   [56/598] l4 qp26    182.7 kbps  Y 38.92  disp 33.20  face 32.90 / 0.201  I 5, LTR 0  5 s  left ~0.7 h
+   [57/598] l4 qp32     99.9 kbps  Y 36.08  disp 31.89  face 30.89 / 0.251  I 5, LTR 0  4 s  left ~0.7 h
+   [58/598] l4 qp40     42.6 kbps  Y 31.70  disp 29.07  face 27.60 / 0.350  I 5, LTR 0  5 s  left ~0.7 h
+== clip 3/20 1e8830  20:19:58
+   [59/598] o0 qp16    511.1 kbps  Y 36.89  disp 25.33  face 30.27 / 0.284  I 5, LTR 0  same as exp. 10: YES  5 s  left ~0.7 h
+   [60/598] o0 qp24    305.3 kbps  Y 35.80  disp 25.21  face 29.75 / 0.312  I 5, LTR 0  same as exp. 10: YES  5 s  left ~0.7 h
+   [61/598] o0 qp26    262.5 kbps  Y 35.31  disp 25.14  face 29.56 / 0.320  I 5, LTR 0  same as exp. 10: YES  5 s  left ~0.7 h
+   [62/598] o0 qp32    154.6 kbps  Y 33.30  disp 24.78  face 28.65 / 0.363  I 5, LTR 0  same as exp. 10: YES  5 s  left ~0.7 h
+   [63/598] o0 qp40     67.7 kbps  Y 29.12  disp 23.54  face 26.77 / 0.445  I 5, LTR 0  same as exp. 10: YES  5 s  left ~0.7 h
+   [64/598] b2 qp16    511.1 kbps  Y 36.89  disp 25.33  face 30.27 / 0.284  I 5, LTR 0  5 s  left ~0.7 h
+   [65/598] b2 qp24    307.6 kbps  Y 35.84  disp 25.22  face 29.79 / 0.309  I 5, LTR 0  5 s  left ~0.7 h
+   [66/598] b2 qp26    262.3 kbps  Y 35.36  disp 25.15  face 29.56 / 0.320  I 5, LTR 0  5 s  left ~0.7 h
+   [67/598] b2 qp32    155.1 kbps  Y 33.34  disp 24.80  face 28.71 / 0.359  I 5, LTR 0  5 s  left ~0.7 h
+   [68/598] b2 qp40     68.5 kbps  Y 29.27  disp 23.62  face 26.82 / 0.448  I 5, LTR 0  5 s  left ~0.7 h
+   [69/598] b4 qp16    511.4 kbps  Y 36.89  disp 25.33  face 30.27 / 0.284  I 5, LTR 0  5 s  left ~0.7 h
+   [70/598] b4 qp24    312.0 kbps  Y 35.87  disp 25.22  face 29.80 / 0.309  I 5, LTR 0  5 s  left ~0.7 h
+   [71/598] b4 qp26    264.6 kbps  Y 35.42  disp 25.16  face 29.60 / 0.318  I 5, LTR 0  5 s  left ~0.7 h
+   [72/598] b4 qp32    157.1 kbps  Y 33.40  disp 24.82  face 28.73 / 0.359  I 5, LTR 0  5 s  left ~0.7 h
+   [73/598] b4 qp40     69.9 kbps  Y 29.42  disp 23.68  face 26.88 / 0.439  I 5, LTR 0  5 s  left ~0.7 h
+   [74/598] b6 qp16    511.4 kbps  Y 36.89  disp 25.33  face 30.27 / 0.284  I 5, LTR 0  5 s  left ~0.7 h
+   [75/598] b6 qp24    317.1 kbps  Y 35.90  disp 25.22  face 29.81 / 0.309  I 5, LTR 0  5 s  left ~0.7 h
+   [76/598] b6 qp26    268.9 kbps  Y 35.45  disp 25.16  face 29.60 / 0.318  I 5, LTR 0  5 s  left ~0.7 h
+   [77/598] b6 qp32    160.3 kbps  Y 33.46  disp 24.83  face 28.75 / 0.358  I 5, LTR 0  5 s  left ~0.7 h
+   [78/598] b6 qp40     70.7 kbps  Y 29.60  disp 23.75  face 27.02 / 0.434  I 5, LTR 0  5 s  left ~0.7 h
+   [79/598] i4 qp16    511.4 kbps  Y 36.89  disp 25.33  face 30.27 / 0.284  I 5, LTR 0  5 s  left ~0.7 h
+   [80/598] i4 qp24    312.0 kbps  Y 35.87  disp 25.22  face 29.80 / 0.309  I 5, LTR 0  5 s  left ~0.7 h
+   [81/598] i4 qp26    264.6 kbps  Y 35.42  disp 25.16  face 29.60 / 0.318  I 5, LTR 0  5 s  left ~0.7 h
+   [82/598] i4 qp32    157.1 kbps  Y 33.40  disp 24.82  face 28.73 / 0.359  I 5, LTR 0  5 s  left ~0.7 h
+   [83/598] i4 qp40     69.9 kbps  Y 29.42  disp 23.68  face 26.88 / 0.439  I 5, LTR 0  5 s  left ~0.7 h
+   [84/598] l4 qp16    511.1 kbps  Y 36.89  disp 25.33  face 30.27 / 0.284  I 5, LTR 0  5 s  left ~0.7 h
+   [85/598] l4 qp24    305.3 kbps  Y 35.80  disp 25.21  face 29.75 / 0.312  I 5, LTR 0  4 s  left ~0.6 h
+   [86/598] l4 qp26    262.5 kbps  Y 35.31  disp 25.14  face 29.56 / 0.320  I 5, LTR 0  4 s  left ~0.6 h
+   [87/598] l4 qp32    154.6 kbps  Y 33.30  disp 24.78  face 28.65 / 0.363  I 5, LTR 0  4 s  left ~0.6 h
+   [88/598] l4 qp40     67.7 kbps  Y 29.12  disp 23.54  face 26.77 / 0.445  I 5, LTR 0  4 s  left ~0.6 h
+== clip 4/20 38a418  20:22:14
+   [89/598] o0 qp16    309.9 kbps  Y 42.29  disp 34.06  face 30.75 / 0.260  I 5, LTR 0  same as exp. 10: YES  5 s  left ~0.6 h
+   [90/598] o0 qp24    180.6 kbps  Y 40.39  disp 33.55  face 30.13 / 0.280  I 5, LTR 0  same as exp. 10: YES  4 s  left ~0.6 h
+   [91/598] o0 qp26    153.8 kbps  Y 39.69  disp 33.33  face 29.85 / 0.289  I 5, LTR 0  same as exp. 10: YES  4 s  left ~0.6 h
+   [92/598] o0 qp32     88.4 kbps  Y 36.99  disp 32.23  face 28.65 / 0.322  I 5, LTR 0  same as exp. 10: YES  4 s  left ~0.6 h
+   [93/598] o0 qp40     39.8 kbps  Y 32.58  disp 29.63  face 26.06 / 0.419  I 5, LTR 0  same as exp. 10: YES  4 s  left ~0.6 h
+   [94/598] b2 qp16    309.9 kbps  Y 42.29  disp 34.06  face 30.75 / 0.260  I 5, LTR 0  4 s  left ~0.6 h
+   [95/598] b2 qp24    184.6 kbps  Y 40.42  disp 33.57  face 30.13 / 0.278  I 5, LTR 0  4 s  left ~0.6 h
+   [96/598] b2 qp26    155.7 kbps  Y 39.72  disp 33.35  face 29.85 / 0.289  I 5, LTR 0  4 s  left ~0.6 h
+   [97/598] b2 qp32     89.6 kbps  Y 37.07  disp 32.29  face 28.71 / 0.320  I 5, LTR 0  4 s  left ~0.6 h
+   [98/598] b2 qp40     40.5 kbps  Y 32.62  disp 29.67  face 26.12 / 0.410  I 5, LTR 0  4 s  left ~0.6 h
+   [99/598] b4 qp16    310.1 kbps  Y 42.29  disp 34.06  face 30.75 / 0.260  I 5, LTR 0  4 s  left ~0.6 h
+   [100/598] b4 qp24    187.3 kbps  Y 40.45  disp 33.59  face 30.15 / 0.279  I 5, LTR 0  4 s  left ~0.6 h
+   [101/598] b4 qp26    159.8 kbps  Y 39.76  disp 33.37  face 29.90 / 0.285  I 5, LTR 0  4 s  left ~0.6 h
+   [102/598] b4 qp32     91.9 kbps  Y 37.13  disp 32.32  face 28.74 / 0.320  I 5, LTR 0  4 s  left ~0.6 h
+   [103/598] b4 qp40     41.6 kbps  Y 32.78  disp 29.80  face 26.28 / 0.399  I 5, LTR 0  4 s  left ~0.6 h
+   [104/598] b6 qp16    310.1 kbps  Y 42.29  disp 34.06  face 30.75 / 0.260  I 5, LTR 0  4 s  left ~0.6 h
+   [105/598] b6 qp24    191.7 kbps  Y 40.47  disp 33.60  face 30.17 / 0.279  I 5, LTR 0  4 s  left ~0.6 h
+   [106/598] b6 qp26    162.6 kbps  Y 39.79  disp 33.39  face 29.92 / 0.285  I 5, LTR 0  4 s  left ~0.6 h
+   [107/598] b6 qp32     94.6 kbps  Y 37.19  disp 32.35  face 28.79 / 0.316  I 5, LTR 0  4 s  left ~0.6 h
+   [108/598] b6 qp40     42.6 kbps  Y 32.95  disp 29.93  face 26.46 / 0.383  I 5, LTR 0  4 s  left ~0.6 h
+   [109/598] i4 qp16    310.1 kbps  Y 42.29  disp 34.06  face 30.75 / 0.260  I 5, LTR 0  4 s  left ~0.6 h
+   [110/598] i4 qp24    187.3 kbps  Y 40.45  disp 33.59  face 30.15 / 0.279  I 5, LTR 0  4 s  left ~0.6 h
+   [111/598] i4 qp26    159.8 kbps  Y 39.76  disp 33.37  face 29.90 / 0.285  I 5, LTR 0  4 s  left ~0.6 h
+   [112/598] i4 qp32     91.9 kbps  Y 37.13  disp 32.32  face 28.74 / 0.320  I 5, LTR 0  4 s  left ~0.6 h
+   [113/598] i4 qp40     41.6 kbps  Y 32.78  disp 29.80  face 26.28 / 0.399  I 5, LTR 0  4 s  left ~0.6 h
+   [114/598] l4 qp16    309.9 kbps  Y 42.29  disp 34.06  face 30.75 / 0.260  I 5, LTR 0  4 s  left ~0.6 h
+   [115/598] l4 qp24    180.6 kbps  Y 40.39  disp 33.55  face 30.13 / 0.280  I 5, LTR 0  4 s  left ~0.6 h
+   [116/598] l4 qp26    153.8 kbps  Y 39.69  disp 33.33  face 29.85 / 0.289  I 5, LTR 0  4 s  left ~0.6 h
+   [117/598] l4 qp32     88.4 kbps  Y 36.99  disp 32.23  face 28.65 / 0.322  I 5, LTR 0  4 s  left ~0.6 h
+   [118/598] l4 qp40     39.8 kbps  Y 32.58  disp 29.63  face 26.06 / 0.419  I 5, LTR 0  4 s  left ~0.6 h
+== clip 5/20 40fe4d  20:24:27
+   [119/598] o0 qp16    670.6 kbps  Y 38.57  disp 33.52  face 36.03 / 0.304  I 5, LTR 0  same as exp. 10: YES  5 s  left ~0.6 h
+   [120/598] o0 qp24    351.5 kbps  Y 37.01  disp 32.80  face 34.81 / 0.322  I 5, LTR 0  same as exp. 10: YES  5 s  left ~0.6 h
+   [121/598] o0 qp26    288.6 kbps  Y 36.38  disp 32.47  face 34.36 / 0.330  I 5, LTR 0  same as exp. 10: YES  5 s  left ~0.6 h
+   [122/598] o0 qp32    154.1 kbps  Y 33.95  disp 31.00  face 32.34 / 0.358  I 5, LTR 0  same as exp. 10: YES  5 s  left ~0.6 h
+   [123/598] o0 qp40     67.9 kbps  Y 29.71  disp 27.80  face 28.86 / 0.424  I 5, LTR 0  same as exp. 10: YES  5 s  left ~0.6 h
+   [124/598] b2 qp16    670.6 kbps  Y 38.57  disp 33.52  face 36.03 / 0.304  I 5, LTR 0  5 s  left ~0.6 h
+   [125/598] b2 qp24    355.5 kbps  Y 37.06  disp 32.83  face 34.88 / 0.321  I 5, LTR 0  5 s  left ~0.6 h
+   [126/598] b2 qp26    291.0 kbps  Y 36.43  disp 32.50  face 34.35 / 0.329  I 5, LTR 0  5 s  left ~0.6 h
+   [127/598] b2 qp32    155.9 kbps  Y 34.06  disp 31.08  face 32.44 / 0.357  I 5, LTR 0  5 s  left ~0.6 h
+   [128/598] b2 qp40     67.7 kbps  Y 29.86  disp 27.94  face 29.04 / 0.421  I 5, LTR 0  5 s  left ~0.6 h
+   [129/598] b4 qp16    670.8 kbps  Y 38.57  disp 33.52  face 36.03 / 0.304  I 5, LTR 0  5 s  left ~0.6 h
+   [130/598] b4 qp24    360.9 kbps  Y 37.09  disp 32.86  face 34.90 / 0.321  I 5, LTR 0  5 s  left ~0.6 h
+   [131/598] b4 qp26    292.7 kbps  Y 36.48  disp 32.54  face 34.45 / 0.327  I 5, LTR 0  5 s  left ~0.6 h
+   [132/598] b4 qp32    158.4 kbps  Y 34.14  disp 31.14  face 32.50 / 0.356  I 5, LTR 0  5 s  left ~0.6 h
+   [133/598] b4 qp40     68.3 kbps  Y 30.03  disp 28.09  face 29.19 / 0.413  I 5, LTR 0  5 s  left ~0.6 h
+   [134/598] b6 qp16    670.8 kbps  Y 38.57  disp 33.52  face 36.03 / 0.304  I 5, LTR 0  5 s  left ~0.6 h
+   [135/598] b6 qp24    362.5 kbps  Y 37.10  disp 32.86  face 34.91 / 0.321  I 5, LTR 0  5 s  left ~0.6 h
+   [136/598] b6 qp26    297.3 kbps  Y 36.52  disp 32.56  face 34.45 / 0.326  I 5, LTR 0  5 s  left ~0.6 h
+   [137/598] b6 qp32    160.0 kbps  Y 34.24  disp 31.20  face 32.56 / 0.355  I 5, LTR 0  5 s  left ~0.6 h
+   [138/598] b6 qp40     69.0 kbps  Y 30.15  disp 28.20  face 29.26 / 0.409  I 5, LTR 0  5 s  left ~0.6 h
+   [139/598] i4 qp16    670.8 kbps  Y 38.57  disp 33.52  face 36.03 / 0.304  I 5, LTR 0  5 s  left ~0.6 h
+   [140/598] i4 qp24    360.9 kbps  Y 37.09  disp 32.86  face 34.90 / 0.321  I 5, LTR 0  5 s  left ~0.6 h
+   [141/598] i4 qp26    292.7 kbps  Y 36.48  disp 32.54  face 34.45 / 0.327  I 5, LTR 0  5 s  left ~0.6 h
+   [142/598] i4 qp32    158.4 kbps  Y 34.14  disp 31.14  face 32.50 / 0.356  I 5, LTR 0  5 s  left ~0.6 h
+   [143/598] i4 qp40     68.3 kbps  Y 30.03  disp 28.09  face 29.19 / 0.413  I 5, LTR 0  5 s  left ~0.6 h
+   [144/598] l4 qp16    670.6 kbps  Y 38.57  disp 33.52  face 36.03 / 0.304  I 5, LTR 0  5 s  left ~0.6 h
+   [145/598] l4 qp24    351.5 kbps  Y 37.01  disp 32.80  face 34.81 / 0.322  I 5, LTR 0  5 s  left ~0.6 h
+   [146/598] l4 qp26    288.6 kbps  Y 36.38  disp 32.47  face 34.36 / 0.330  I 5, LTR 0  5 s  left ~0.6 h
+   [147/598] l4 qp32    154.1 kbps  Y 33.95  disp 31.00  face 32.34 / 0.358  I 5, LTR 0  5 s  left ~0.6 h
+   [148/598] l4 qp40     67.9 kbps  Y 29.71  disp 27.80  face 28.86 / 0.424  I 5, LTR 0  5 s  left ~0.6 h
+== clip 6/20 45bb89  20:26:45
+   [149/598] o0 qp16    276.0 kbps  Y 42.02  disp 34.32  face 39.33 / 0.160  I 5, LTR 0  same as exp. 10: YES  5 s  left ~0.6 h
+   [150/598] o0 qp24    153.3 kbps  Y 40.26  disp 33.81  face 37.70 / 0.169  I 5, LTR 0  same as exp. 10: YES  4 s  left ~0.6 h
+   [151/598] o0 qp26    127.9 kbps  Y 39.56  disp 33.57  face 37.08 / 0.172  I 5, LTR 0  same as exp. 10: YES  4 s  left ~0.6 h
+   [152/598] o0 qp32     72.7 kbps  Y 36.99  disp 32.46  face 34.48 / 0.191  I 5, LTR 0  same as exp. 10: YES  4 s  left ~0.6 h
+   [153/598] o0 qp40     34.5 kbps  Y 32.82  disp 29.94  face 30.54 / 0.241  I 5, LTR 0  same as exp. 10: YES  4 s  left ~0.6 h
+   [154/598] b2 qp16    276.0 kbps  Y 42.02  disp 34.32  face 39.33 / 0.160  I 5, LTR 0  4 s  left ~0.6 h
+   [155/598] b2 qp24    154.5 kbps  Y 40.31  disp 33.83  face 37.74 / 0.168  I 5, LTR 0  4 s  left ~0.6 h
+   [156/598] b2 qp26    129.4 kbps  Y 39.62  disp 33.60  face 37.10 / 0.172  I 5, LTR 0  4 s  left ~0.6 h
+   [157/598] b2 qp32     73.3 kbps  Y 37.05  disp 32.50  face 34.57 / 0.189  I 5, LTR 0  4 s  left ~0.6 h
+   [158/598] b2 qp40     34.9 kbps  Y 32.98  disp 30.07  face 30.62 / 0.238  I 5, LTR 0  4 s  left ~0.6 h
+   [159/598] b4 qp16    276.3 kbps  Y 42.02  disp 34.32  face 39.33 / 0.160  I 5, LTR 0  4 s  left ~0.6 h
+   [160/598] b4 qp24    156.8 kbps  Y 40.34  disp 33.85  face 37.80 / 0.168  I 5, LTR 0  4 s  left ~0.6 h
+   [161/598] b4 qp26    130.9 kbps  Y 39.67  disp 33.62  face 37.18 / 0.170  I 5, LTR 0  5 s  left ~0.6 h
+   [162/598] b4 qp32     74.3 kbps  Y 37.16  disp 32.56  face 34.65 / 0.189  I 5, LTR 0  4 s  left ~0.5 h
+   [163/598] b4 qp40     35.4 kbps  Y 33.08  disp 30.14  face 30.86 / 0.231  I 5, LTR 0  5 s  left ~0.5 h
+   [164/598] b6 qp16    276.3 kbps  Y 42.02  disp 34.32  face 39.33 / 0.160  I 5, LTR 0  5 s  left ~0.5 h
+   [165/598] b6 qp24    160.2 kbps  Y 40.39  disp 33.87  face 37.80 / 0.168  I 5, LTR 0  5 s  left ~0.5 h
+   [166/598] b6 qp26    133.3 kbps  Y 39.72  disp 33.65  face 37.20 / 0.171  I 5, LTR 0  4 s  left ~0.5 h
+   [167/598] b6 qp32     75.9 kbps  Y 37.23  disp 32.60  face 34.78 / 0.188  I 5, LTR 0  4 s  left ~0.5 h
+   [168/598] b6 qp40     35.8 kbps  Y 33.17  disp 30.20  face 30.97 / 0.230  I 5, LTR 0  5 s  left ~0.5 h
+   [169/598] i4 qp16    276.3 kbps  Y 42.02  disp 34.32  face 39.33 / 0.160  I 5, LTR 0  5 s  left ~0.5 h
+   [170/598] i4 qp24    156.8 kbps  Y 40.34  disp 33.85  face 37.80 / 0.168  I 5, LTR 0  5 s  left ~0.5 h
+   [171/598] i4 qp26    130.9 kbps  Y 39.67  disp 33.62  face 37.18 / 0.170  I 5, LTR 0  5 s  left ~0.5 h
+   [172/598] i4 qp32     74.3 kbps  Y 37.16  disp 32.56  face 34.65 / 0.189  I 5, LTR 0  5 s  left ~0.5 h
+   [173/598] i4 qp40     35.4 kbps  Y 33.08  disp 30.14  face 30.86 / 0.231  I 5, LTR 0  5 s  left ~0.5 h
+   [174/598] l4 qp16    276.0 kbps  Y 42.02  disp 34.32  face 39.33 / 0.160  I 5, LTR 0  4 s  left ~0.5 h
+   [175/598] l4 qp24    153.3 kbps  Y 40.26  disp 33.81  face 37.70 / 0.169  I 5, LTR 0  4 s  left ~0.5 h
+   [176/598] l4 qp26    127.9 kbps  Y 39.56  disp 33.57  face 37.08 / 0.172  I 5, LTR 0  5 s  left ~0.5 h
+   [177/598] l4 qp32     72.7 kbps  Y 36.99  disp 32.46  face 34.48 / 0.191  I 5, LTR 0  4 s  left ~0.5 h
+   [178/598] l4 qp40     34.5 kbps  Y 32.82  disp 29.94  face 30.54 / 0.241  I 5, LTR 0  4 s  left ~0.5 h
+== clip 7/20 4d8ffe  20:29:00
+   [179/598] o0 qp16    794.3 kbps  Y 34.03  disp 25.56  face 34.46 / 0.209  I 5, LTR 0  same as exp. 10: YES  5 s  left ~0.5 h
+   [180/598] o0 qp24    413.1 kbps  Y 32.96  disp 25.32  face 33.44 / 0.233  I 5, LTR 0  same as exp. 10: YES  5 s  left ~0.5 h
+   [181/598] o0 qp26    334.2 kbps  Y 32.49  disp 25.19  face 33.04 / 0.244  I 5, LTR 0  same as exp. 10: YES  5 s  left ~0.5 h
+   [182/598] o0 qp32    168.4 kbps  Y 30.55  disp 24.58  face 31.44 / 0.286  I 5, LTR 0  same as exp. 10: YES  5 s  left ~0.5 h
+   [183/598] o0 qp40     55.0 kbps  Y 26.93  disp 22.92  face 28.59 / 0.389  I 5, LTR 0  same as exp. 10: YES  5 s  left ~0.5 h
+   [184/598] b2 qp16    794.3 kbps  Y 34.03  disp 25.56  face 34.46 / 0.209  I 5, LTR 0  5 s  left ~0.5 h
+   [185/598] b2 qp24    416.7 kbps  Y 32.99  disp 25.33  face 33.49 / 0.231  I 5, LTR 0  5 s  left ~0.5 h
+   [186/598] b2 qp26    335.4 kbps  Y 32.53  disp 25.20  face 33.08 / 0.242  I 5, LTR 0  5 s  left ~0.5 h
+   [187/598] b2 qp32    167.2 kbps  Y 30.64  disp 24.61  face 31.43 / 0.287  I 5, LTR 0  5 s  left ~0.5 h
+   [188/598] b2 qp40     54.5 kbps  Y 27.08  disp 23.01  face 28.79 / 0.387  I 5, LTR 0  4 s  left ~0.5 h
+   [189/598] b4 qp16    794.5 kbps  Y 34.03  disp 25.56  face 34.46 / 0.209  I 5, LTR 0  5 s  left ~0.5 h
+   [190/598] b4 qp24    421.5 kbps  Y 33.00  disp 25.33  face 33.48 / 0.232  I 5, LTR 0  5 s  left ~0.5 h
+   [191/598] b4 qp26    339.4 kbps  Y 32.56  disp 25.21  face 33.12 / 0.241  I 5, LTR 0  5 s  left ~0.5 h
+   [192/598] b4 qp32    168.8 kbps  Y 30.74  disp 24.65  face 31.55 / 0.284  I 5, LTR 0  5 s  left ~0.5 h
+   [193/598] b4 qp40     56.1 kbps  Y 27.28  disp 23.12  face 28.88 / 0.383  I 5, LTR 0  4 s  left ~0.5 h
+   [194/598] b6 qp16    794.5 kbps  Y 34.03  disp 25.56  face 34.46 / 0.209  I 5, LTR 0  5 s  left ~0.5 h
+   [195/598] b6 qp24    422.8 kbps  Y 33.01  disp 25.33  face 33.48 / 0.231  I 5, LTR 0  5 s  left ~0.5 h
+   [196/598] b6 qp26    342.5 kbps  Y 32.58  disp 25.22  face 33.15 / 0.241  I 5, LTR 0  5 s  left ~0.5 h
+   [197/598] b6 qp32    170.2 kbps  Y 30.83  disp 24.68  face 31.56 / 0.285  I 5, LTR 0  5 s  left ~0.5 h
+   [198/598] b6 qp40     58.9 kbps  Y 27.52  disp 23.25  face 29.09 / 0.370  I 5, LTR 0  5 s  left ~0.5 h
+   [199/598] i4 qp16    794.5 kbps  Y 34.03  disp 25.56  face 34.46 / 0.209  I 5, LTR 0  5 s  left ~0.5 h
+   [200/598] i4 qp24    421.5 kbps  Y 33.00  disp 25.33  face 33.48 / 0.232  I 5, LTR 0  5 s  left ~0.5 h
+   [201/598] i4 qp26    339.4 kbps  Y 32.56  disp 25.21  face 33.12 / 0.241  I 5, LTR 0  5 s  left ~0.5 h
+   [202/598] i4 qp32    168.8 kbps  Y 30.74  disp 24.65  face 31.55 / 0.284  I 5, LTR 0  5 s  left ~0.5 h
+   [203/598] i4 qp40     56.1 kbps  Y 27.28  disp 23.12  face 28.88 / 0.383  I 5, LTR 0  5 s  left ~0.5 h
+   [204/598] l4 qp16    794.3 kbps  Y 34.03  disp 25.56  face 34.46 / 0.209  I 5, LTR 0  5 s  left ~0.5 h
+   [205/598] l4 qp24    413.1 kbps  Y 32.96  disp 25.32  face 33.44 / 0.233  I 5, LTR 0  5 s  left ~0.5 h
+   [206/598] l4 qp26    334.2 kbps  Y 32.49  disp 25.19  face 33.04 / 0.244  I 5, LTR 0  5 s  left ~0.5 h
+   [207/598] l4 qp32    168.4 kbps  Y 30.55  disp 24.58  face 31.44 / 0.286  I 5, LTR 0  5 s  left ~0.5 h
+   [208/598] l4 qp40     55.0 kbps  Y 26.93  disp 22.92  face 28.59 / 0.389  I 5, LTR 0  5 s  left ~0.5 h
+== clip 8/20 6aa9cf  20:31:17
+   [209/598] o0 qp16    238.5 kbps  Y 44.55  disp 41.01  face 39.99 / 0.137  I 5, LTR 0  same as exp. 10: YES  5 s  left ~0.5 h
+   [210/598] o0 qp24    131.0 kbps  Y 42.37  disp 39.60  face 38.46 / 0.155  I 5, LTR 0  same as exp. 10: YES  5 s  left ~0.5 h
+   [211/598] o0 qp26    109.6 kbps  Y 41.61  disp 39.04  face 37.87 / 0.162  I 5, LTR 0  same as exp. 10: YES  5 s  left ~0.5 h
+   [212/598] o0 qp32     63.3 kbps  Y 38.83  disp 36.82  face 35.53 / 0.199  I 5, LTR 0  same as exp. 10: YES  5 s  left ~0.5 h
+   [213/598] o0 qp40     31.4 kbps  Y 34.69  disp 33.11  face 31.94 / 0.266  I 5, LTR 0  same as exp. 10: YES  5 s  left ~0.5 h
+   [214/598] b2 qp16    238.5 kbps  Y 44.55  disp 41.01  face 39.99 / 0.137  I 5, LTR 0  5 s  left ~0.5 h
+   [215/598] b2 qp24    132.2 kbps  Y 42.42  disp 39.63  face 38.47 / 0.154  I 5, LTR 0  5 s  left ~0.5 h
+   [216/598] b2 qp26    110.6 kbps  Y 41.65  disp 39.08  face 37.91 / 0.161  I 5, LTR 0  5 s  left ~0.5 h
+   [217/598] b2 qp32     64.1 kbps  Y 38.93  disp 36.92  face 35.56 / 0.197  I 5, LTR 0  5 s  left ~0.5 h
+   [218/598] b2 qp40     31.9 kbps  Y 34.84  disp 33.25  face 31.99 / 0.264  I 5, LTR 0  5 s  left ~0.5 h
+   [219/598] b4 qp16    238.7 kbps  Y 44.55  disp 41.01  face 39.99 / 0.137  I 5, LTR 0  5 s  left ~0.5 h
+   [220/598] b4 qp24    134.4 kbps  Y 42.45  disp 39.66  face 38.51 / 0.153  I 5, LTR 0  5 s  left ~0.5 h
+   [221/598] b4 qp26    112.7 kbps  Y 41.71  disp 39.14  face 37.95 / 0.160  I 5, LTR 0  5 s  left ~0.5 h
+   [222/598] b4 qp32     65.3 kbps  Y 38.97  disp 36.96  face 35.69 / 0.194  I 5, LTR 0  5 s  left ~0.5 h
+   [223/598] b4 qp40     32.4 kbps  Y 34.87  disp 33.30  face 32.02 / 0.261  I 5, LTR 0  5 s  left ~0.5 h
+   [224/598] b6 qp16    238.7 kbps  Y 44.55  disp 41.01  face 39.99 / 0.137  I 5, LTR 0  5 s  left ~0.5 h
+   [225/598] b6 qp24    136.1 kbps  Y 42.50  disp 39.69  face 38.54 / 0.153  I 5, LTR 0  5 s  left ~0.5 h
+   [226/598] b6 qp26    114.5 kbps  Y 41.75  disp 39.17  face 37.97 / 0.160  I 5, LTR 0  5 s  left ~0.5 h
+   [227/598] b6 qp32     66.3 kbps  Y 39.07  disp 37.06  face 35.69 / 0.194  I 5, LTR 0  5 s  left ~0.5 h
+   [228/598] b6 qp40     33.0 kbps  Y 34.99  disp 33.44  face 32.11 / 0.257  I 5, LTR 0  5 s  left ~0.5 h
+   [229/598] i4 qp16    238.7 kbps  Y 44.55  disp 41.01  face 39.99 / 0.137  I 5, LTR 0  5 s  left ~0.5 h
+   [230/598] i4 qp24    134.4 kbps  Y 42.45  disp 39.66  face 38.51 / 0.153  I 5, LTR 0  5 s  left ~0.5 h
+   [231/598] i4 qp26    112.7 kbps  Y 41.71  disp 39.14  face 37.95 / 0.160  I 5, LTR 0  5 s  left ~0.5 h
+   [232/598] i4 qp32     65.3 kbps  Y 38.97  disp 36.96  face 35.69 / 0.194  I 5, LTR 0  5 s  left ~0.5 h
+   [233/598] i4 qp40     32.4 kbps  Y 34.87  disp 33.30  face 32.02 / 0.261  I 5, LTR 0  5 s  left ~0.5 h
+   [234/598] l4 qp16    238.5 kbps  Y 44.55  disp 41.01  face 39.99 / 0.137  I 5, LTR 0  5 s  left ~0.5 h
+   [235/598] l4 qp24    131.0 kbps  Y 42.37  disp 39.60  face 38.46 / 0.155  I 5, LTR 0  5 s  left ~0.5 h
+   [236/598] l4 qp26    109.6 kbps  Y 41.61  disp 39.04  face 37.87 / 0.162  I 5, LTR 0  5 s  left ~0.5 h
+   [237/598] l4 qp32     63.3 kbps  Y 38.83  disp 36.82  face 35.53 / 0.199  I 5, LTR 0  5 s  left ~0.5 h
+   [238/598] l4 qp40     31.4 kbps  Y 34.69  disp 33.11  face 31.94 / 0.266  I 5, LTR 0  5 s  left ~0.5 h
+== clip 9/20 6eb39d  20:33:41
+   [239/598] o0 qp16    541.1 kbps  Y 41.08  disp 38.32  face 40.93 / 0.146  I 5, LTR 0  same as exp. 10: YES  5 s  left ~0.5 h
+   [240/598] o0 qp24    276.8 kbps  Y 38.68  disp 36.50  face 38.90 / 0.164  I 5, LTR 0  same as exp. 10: YES  5 s  left ~0.5 h
+   [241/598] o0 qp26    225.1 kbps  Y 37.88  disp 35.84  face 38.13 / 0.174  I 5, LTR 0  same as exp. 10: YES  5 s  left ~0.5 h
+   [242/598] o0 qp32    112.9 kbps  Y 35.10  disp 33.47  face 35.56 / 0.206  I 5, LTR 0  same as exp. 10: YES  5 s  left ~0.5 h
+   [243/598] o0 qp40     42.6 kbps  Y 31.00  disp 29.61  face 31.70 / 0.266  I 5, LTR 0  same as exp. 10: YES  5 s  left ~0.5 h
+   [244/598] b2 qp16    541.1 kbps  Y 41.08  disp 38.32  face 40.93 / 0.146  I 5, LTR 0  5 s  left ~0.4 h
+   [245/598] b2 qp24    279.0 kbps  Y 38.71  disp 36.54  face 38.90 / 0.164  I 5, LTR 0  5 s  left ~0.4 h
+   [246/598] b2 qp26    226.4 kbps  Y 37.92  disp 35.88  face 38.21 / 0.172  I 5, LTR 0  5 s  left ~0.4 h
+   [247/598] b2 qp32    113.6 kbps  Y 35.14  disp 33.51  face 35.60 / 0.205  I 5, LTR 0  5 s  left ~0.4 h
+   [248/598] b2 qp40     43.0 kbps  Y 31.07  disp 29.69  face 31.69 / 0.268  I 5, LTR 0  5 s  left ~0.4 h
+   [249/598] b4 qp16    541.3 kbps  Y 41.08  disp 38.32  face 40.93 / 0.146  I 5, LTR 0  5 s  left ~0.4 h
+   [250/598] b4 qp24    281.9 kbps  Y 38.74  disp 36.55  face 38.94 / 0.165  I 5, LTR 0  5 s  left ~0.4 h
+   [251/598] b4 qp26    229.2 kbps  Y 37.95  disp 35.91  face 38.21 / 0.172  I 5, LTR 0  5 s  left ~0.4 h
+   [252/598] b4 qp32    114.9 kbps  Y 35.18  disp 33.52  face 35.64 / 0.203  I 5, LTR 0  5 s  left ~0.4 h
+   [253/598] b4 qp40     43.8 kbps  Y 31.16  disp 29.78  face 31.77 / 0.265  I 5, LTR 0  5 s  left ~0.4 h
+   [254/598] b6 qp16    541.3 kbps  Y 41.08  disp 38.32  face 40.93 / 0.146  I 5, LTR 0  5 s  left ~0.4 h
+   [255/598] b6 qp24    285.4 kbps  Y 38.75  disp 36.56  face 38.97 / 0.164  I 5, LTR 0  5 s  left ~0.4 h
+   [256/598] b6 qp26    232.2 kbps  Y 37.97  disp 35.94  face 38.32 / 0.171  I 5, LTR 0  5 s  left ~0.4 h
+   [257/598] b6 qp32    117.5 kbps  Y 35.22  disp 33.58  face 35.76 / 0.201  I 5, LTR 0  5 s  left ~0.4 h
+   [258/598] b6 qp40     44.5 kbps  Y 31.25  disp 29.86  face 31.85 / 0.261  I 5, LTR 0  5 s  left ~0.4 h
+   [259/598] i4 qp16    541.3 kbps  Y 41.08  disp 38.32  face 40.93 / 0.146  I 5, LTR 0  5 s  left ~0.4 h
+   [260/598] i4 qp24    281.9 kbps  Y 38.74  disp 36.55  face 38.94 / 0.165  I 5, LTR 0  5 s  left ~0.4 h
+   [261/598] i4 qp26    229.2 kbps  Y 37.95  disp 35.91  face 38.21 / 0.172  I 5, LTR 0  5 s  left ~0.4 h
+   [262/598] i4 qp32    114.9 kbps  Y 35.18  disp 33.52  face 35.64 / 0.203  I 5, LTR 0  5 s  left ~0.4 h
+   [263/598] i4 qp40     43.8 kbps  Y 31.16  disp 29.78  face 31.77 / 0.265  I 5, LTR 0  5 s  left ~0.4 h
+   [264/598] l4 qp16    541.1 kbps  Y 41.08  disp 38.32  face 40.93 / 0.146  I 5, LTR 0  5 s  left ~0.4 h
+   [265/598] l4 qp24    276.8 kbps  Y 38.68  disp 36.50  face 38.90 / 0.164  I 5, LTR 0  5 s  left ~0.4 h
+   [266/598] l4 qp26    225.1 kbps  Y 37.88  disp 35.84  face 38.13 / 0.174  I 5, LTR 0  5 s  left ~0.4 h
+   [267/598] l4 qp32    112.9 kbps  Y 35.10  disp 33.47  face 35.56 / 0.206  I 5, LTR 0  5 s  left ~0.4 h
+   [268/598] l4 qp40     42.6 kbps  Y 31.00  disp 29.61  face 31.70 / 0.266  I 5, LTR 0  5 s  left ~0.4 h
+== clip 10/20 73f232  20:36:02
+   [269/598] o0 qp16    442.9 kbps  Y 42.23  disp 35.76  face 33.65 / 0.232  I 5, LTR 0  same as exp. 10: YES  5 s  left ~0.4 h
+   [270/598] o0 qp24    236.5 kbps  Y 39.95  disp 34.93  face 32.09 / 0.249  I 5, LTR 0  same as exp. 10: YES  5 s  left ~0.4 h
+   [271/598] o0 qp26    195.7 kbps  Y 39.16  disp 34.58  face 31.52 / 0.257  I 5, LTR 0  same as exp. 10: YES  5 s  left ~0.4 h
+   [272/598] o0 qp32    106.2 kbps  Y 36.24  disp 32.97  face 29.31 / 0.286  I 5, LTR 0  same as exp. 10: YES  5 s  left ~0.4 h
+   [273/598] o0 qp40     45.2 kbps  Y 31.87  disp 29.79  face 25.77 / 0.369  I 5, LTR 0  same as exp. 10: YES  5 s  left ~0.4 h
+   [274/598] b2 qp16    442.9 kbps  Y 42.23  disp 35.76  face 33.65 / 0.232  I 5, LTR 0  5 s  left ~0.4 h
+   [275/598] b2 qp24    239.2 kbps  Y 39.99  disp 34.96  face 32.13 / 0.249  I 5, LTR 0  5 s  left ~0.4 h
+   [276/598] b2 qp26    197.5 kbps  Y 39.18  disp 34.59  face 31.56 / 0.255  I 5, LTR 0  5 s  left ~0.4 h
+   [277/598] b2 qp32    107.2 kbps  Y 36.30  disp 33.01  face 29.32 / 0.288  I 5, LTR 0  5 s  left ~0.4 h
+   [278/598] b2 qp40     45.9 kbps  Y 31.96  disp 29.87  face 25.75 / 0.374  I 5, LTR 0  4 s  left ~0.4 h
+   [279/598] b4 qp16    443.1 kbps  Y 42.23  disp 35.76  face 33.65 / 0.232  I 5, LTR 0  5 s  left ~0.4 h
+   [280/598] b4 qp24    243.1 kbps  Y 40.01  disp 34.97  face 32.14 / 0.250  I 5, LTR 0  5 s  left ~0.4 h
+   [281/598] b4 qp26    201.1 kbps  Y 39.22  disp 34.63  face 31.61 / 0.254  I 5, LTR 0  4 s  left ~0.4 h
+   [282/598] b4 qp32    109.4 kbps  Y 36.38  disp 33.07  face 29.41 / 0.287  I 5, LTR 0  4 s  left ~0.4 h
+   [283/598] b4 qp40     46.9 kbps  Y 32.05  disp 29.94  face 25.87 / 0.360  I 5, LTR 0  4 s  left ~0.4 h
+   [284/598] b6 qp16    443.1 kbps  Y 42.23  disp 35.76  face 33.65 / 0.232  I 5, LTR 0  5 s  left ~0.4 h
+   [285/598] b6 qp24    246.9 kbps  Y 40.03  disp 34.99  face 32.18 / 0.247  I 5, LTR 0  4 s  left ~0.4 h
+   [286/598] b6 qp26    205.1 kbps  Y 39.25  disp 34.64  face 31.61 / 0.256  I 5, LTR 0  4 s  left ~0.4 h
+   [287/598] b6 qp32    111.5 kbps  Y 36.42  disp 33.09  face 29.49 / 0.284  I 5, LTR 0  4 s  left ~0.4 h
+   [288/598] b6 qp40     48.3 kbps  Y 32.20  disp 30.07  face 26.05 / 0.356  I 5, LTR 0  4 s  left ~0.4 h
+   [289/598] i4 qp16    443.1 kbps  Y 42.23  disp 35.76  face 33.65 / 0.232  I 5, LTR 0  5 s  left ~0.4 h
+   [290/598] i4 qp24    243.1 kbps  Y 40.01  disp 34.97  face 32.14 / 0.250  I 5, LTR 0  4 s  left ~0.4 h
+   [291/598] i4 qp26    201.1 kbps  Y 39.22  disp 34.63  face 31.61 / 0.254  I 5, LTR 0  4 s  left ~0.4 h
+   [292/598] i4 qp32    109.4 kbps  Y 36.38  disp 33.07  face 29.41 / 0.287  I 5, LTR 0  4 s  left ~0.4 h
+   [293/598] i4 qp40     46.9 kbps  Y 32.05  disp 29.94  face 25.87 / 0.360  I 5, LTR 0  4 s  left ~0.4 h
+   [294/598] l4 qp16    442.9 kbps  Y 42.23  disp 35.76  face 33.65 / 0.232  I 5, LTR 0  5 s  left ~0.4 h
+   [295/598] l4 qp24    236.5 kbps  Y 39.95  disp 34.93  face 32.09 / 0.249  I 5, LTR 0  4 s  left ~0.4 h
+   [296/598] l4 qp26    195.7 kbps  Y 39.16  disp 34.58  face 31.52 / 0.257  I 5, LTR 0  4 s  left ~0.4 h
+   [297/598] l4 qp32    106.2 kbps  Y 36.24  disp 32.97  face 29.31 / 0.286  I 5, LTR 0  5 s  left ~0.4 h
+   [298/598] l4 qp40     45.2 kbps  Y 31.87  disp 29.79  face 25.77 / 0.369  I 5, LTR 0  5 s  left ~0.4 h
+== clip 11/20 99b38e  20:38:17
+   [299/598] o0 qp16    177.5 kbps  Y 44.81  disp 40.89  face 39.22 / 0.190  I 5, LTR 0  same as exp. 10: YES  5 s  left ~0.4 h
+   [300/598] o0 qp24     93.6 kbps  Y 42.77  disp 39.63  face 37.62 / 0.220  I 5, LTR 0  same as exp. 10: YES  5 s  left ~0.4 h
+   [301/598] o0 qp26     78.1 kbps  Y 42.02  disp 39.11  face 37.04 / 0.236  I 5, LTR 0  same as exp. 10: YES  4 s  left ~0.4 h
+   [302/598] o0 qp32     43.7 kbps  Y 39.31  disp 37.09  face 34.82 / 0.290  I 5, LTR 0  same as exp. 10: YES  5 s  left ~0.4 h
+   [303/598] o0 qp40     20.8 kbps  Y 35.42  disp 33.73  face 31.62 / 0.379  I 5, LTR 0  same as exp. 10: YES  5 s  left ~0.4 h
+   [304/598] b2 qp16    177.5 kbps  Y 44.81  disp 40.89  face 39.22 / 0.190  I 5, LTR 0  5 s  left ~0.4 h
+   [305/598] b2 qp24     95.6 kbps  Y 42.84  disp 39.69  face 37.71 / 0.220  I 5, LTR 0  5 s  left ~0.4 h
+   [306/598] b2 qp26     79.0 kbps  Y 42.09  disp 39.18  face 37.07 / 0.235  I 5, LTR 0  5 s  left ~0.4 h
+   [307/598] b2 qp32     44.0 kbps  Y 39.41  disp 37.17  face 34.95 / 0.290  I 5, LTR 0  4 s  left ~0.4 h
+   [308/598] b2 qp40     21.1 kbps  Y 35.52  disp 33.85  face 31.71 / 0.378  I 5, LTR 0  4 s  left ~0.4 h
+   [309/598] b4 qp16    177.7 kbps  Y 44.81  disp 40.89  face 39.22 / 0.190  I 5, LTR 0  4 s  left ~0.4 h
+   [310/598] b4 qp24     97.1 kbps  Y 42.90  disp 39.73  face 37.79 / 0.218  I 5, LTR 0  4 s  left ~0.4 h
+   [311/598] b4 qp26     81.4 kbps  Y 42.19  disp 39.26  face 37.25 / 0.231  I 5, LTR 0  4 s  left ~0.4 h
+   [312/598] b4 qp32     45.0 kbps  Y 39.52  disp 37.28  face 35.06 / 0.287  I 5, LTR 0  5 s  left ~0.4 h
+   [313/598] b4 qp40     21.7 kbps  Y 35.66  disp 33.98  face 31.87 / 0.367  I 5, LTR 0  4 s  left ~0.4 h
+   [314/598] b6 qp16    177.7 kbps  Y 44.81  disp 40.89  face 39.22 / 0.190  I 5, LTR 0  5 s  left ~0.4 h
+   [315/598] b6 qp24     99.3 kbps  Y 42.97  disp 39.79  face 37.85 / 0.216  I 5, LTR 0  4 s  left ~0.4 h
+   [316/598] b6 qp26     83.0 kbps  Y 42.25  disp 39.31  face 37.25 / 0.230  I 5, LTR 0  4 s  left ~0.4 h
+   [317/598] b6 qp32     46.3 kbps  Y 39.68  disp 37.41  face 35.12 / 0.284  I 5, LTR 0  4 s  left ~0.4 h
+   [318/598] b6 qp40     22.3 kbps  Y 35.89  disp 34.18  face 31.96 / 0.370  I 5, LTR 0  4 s  left ~0.4 h
+   [319/598] i4 qp16    177.7 kbps  Y 44.81  disp 40.89  face 39.22 / 0.190  I 5, LTR 0  4 s  left ~0.4 h
+   [320/598] i4 qp24     97.1 kbps  Y 42.90  disp 39.73  face 37.79 / 0.218  I 5, LTR 0  4 s  left ~0.4 h
+   [321/598] i4 qp26     81.4 kbps  Y 42.19  disp 39.26  face 37.25 / 0.231  I 5, LTR 0  4 s  left ~0.4 h
+   [322/598] i4 qp32     45.0 kbps  Y 39.52  disp 37.28  face 35.06 / 0.287  I 5, LTR 0  5 s  left ~0.4 h
+   [323/598] i4 qp40     21.7 kbps  Y 35.66  disp 33.98  face 31.87 / 0.367  I 5, LTR 0  5 s  left ~0.3 h
+   [324/598] l4 qp16    177.5 kbps  Y 44.81  disp 40.89  face 39.22 / 0.190  I 5, LTR 0  4 s  left ~0.3 h
+   [325/598] l4 qp24     93.6 kbps  Y 42.77  disp 39.63  face 37.62 / 0.220  I 5, LTR 0  5 s  left ~0.3 h
+   [326/598] l4 qp26     78.1 kbps  Y 42.02  disp 39.11  face 37.04 / 0.236  I 5, LTR 0  5 s  left ~0.3 h
+   [327/598] l4 qp32     43.7 kbps  Y 39.31  disp 37.09  face 34.82 / 0.290  I 5, LTR 0  4 s  left ~0.3 h
+   [328/598] l4 qp40     20.8 kbps  Y 35.42  disp 33.73  face 31.62 / 0.379  I 5, LTR 0  4 s  left ~0.3 h
+== clip 12/20 a17620  20:40:33
+   [329/598] o0 qp16    235.3 kbps  Y 43.04  disp 35.77  face 34.37 / 0.219  I 5, LTR 0  same as exp. 10: YES  5 s  left ~0.3 h
+   [330/598] o0 qp24    134.7 kbps  Y 41.34  disp 35.22  face 33.45 / 0.247  I 5, LTR 0  same as exp. 10: YES  5 s  left ~0.3 h
+   [331/598] o0 qp26    114.5 kbps  Y 40.69  disp 34.97  face 33.07 / 0.256  I 5, LTR 0  same as exp. 10: YES  5 s  left ~0.3 h
+   [332/598] o0 qp32     65.7 kbps  Y 38.04  disp 33.73  face 31.49 / 0.302  I 5, LTR 0  same as exp. 10: YES  5 s  left ~0.3 h
+   [333/598] o0 qp40     29.8 kbps  Y 33.78  disp 31.00  face 28.77 / 0.398  I 5, LTR 0  same as exp. 10: YES  5 s  left ~0.3 h
+   [334/598] b2 qp16    235.3 kbps  Y 43.04  disp 35.77  face 34.37 / 0.219  I 5, LTR 0  5 s  left ~0.3 h
+   [335/598] b2 qp24    137.3 kbps  Y 41.39  disp 35.25  face 33.48 / 0.244  I 5, LTR 0  5 s  left ~0.3 h
+   [336/598] b2 qp26    115.2 kbps  Y 40.73  disp 34.99  face 33.10 / 0.256  I 5, LTR 0  5 s  left ~0.3 h
+   [337/598] b2 qp32     66.5 kbps  Y 38.18  disp 33.81  face 31.55 / 0.298  I 5, LTR 0  5 s  left ~0.3 h
+   [338/598] b2 qp40     30.0 kbps  Y 33.94  disp 31.13  face 28.86 / 0.395  I 5, LTR 0  5 s  left ~0.3 h
+   [339/598] b4 qp16    235.6 kbps  Y 43.04  disp 35.77  face 34.37 / 0.219  I 5, LTR 0  5 s  left ~0.3 h
+   [340/598] b4 qp24    139.7 kbps  Y 41.43  disp 35.26  face 33.50 / 0.245  I 5, LTR 0  5 s  left ~0.3 h
+   [341/598] b4 qp26    118.1 kbps  Y 40.79  disp 35.02  face 33.14 / 0.254  I 5, LTR 0  5 s  left ~0.3 h
+   [342/598] b4 qp32     67.6 kbps  Y 38.26  disp 33.87  face 31.58 / 0.297  I 5, LTR 0  5 s  left ~0.3 h
+   [343/598] b4 qp40     30.5 kbps  Y 34.07  disp 31.23  face 28.98 / 0.383  I 5, LTR 0  5 s  left ~0.3 h
+   [344/598] b6 qp16    235.6 kbps  Y 43.04  disp 35.77  face 34.37 / 0.219  I 5, LTR 0  5 s  left ~0.3 h
+   [345/598] b6 qp24    143.6 kbps  Y 41.47  disp 35.28  face 33.51 / 0.243  I 5, LTR 0  5 s  left ~0.3 h
+   [346/598] b6 qp26    120.9 kbps  Y 40.82  disp 35.03  face 33.16 / 0.253  I 5, LTR 0  5 s  left ~0.3 h
+   [347/598] b6 qp32     69.6 kbps  Y 38.40  disp 33.94  face 31.69 / 0.293  I 5, LTR 0  5 s  left ~0.3 h
+   [348/598] b6 qp40     31.7 kbps  Y 34.30  disp 31.41  face 29.08 / 0.376  I 5, LTR 0  5 s  left ~0.3 h
+   [349/598] i4 qp16    235.6 kbps  Y 43.04  disp 35.77  face 34.37 / 0.219  I 5, LTR 0  5 s  left ~0.3 h
+   [350/598] i4 qp24    139.7 kbps  Y 41.43  disp 35.26  face 33.50 / 0.245  I 5, LTR 0  5 s  left ~0.3 h
+   [351/598] i4 qp26    118.1 kbps  Y 40.79  disp 35.02  face 33.14 / 0.254  I 5, LTR 0  5 s  left ~0.3 h
+   [352/598] i4 qp32     67.6 kbps  Y 38.26  disp 33.87  face 31.58 / 0.297  I 5, LTR 0  5 s  left ~0.3 h
+   [353/598] i4 qp40     30.5 kbps  Y 34.07  disp 31.23  face 28.98 / 0.383  I 5, LTR 0  5 s  left ~0.3 h
+   [354/598] l4 qp16    235.3 kbps  Y 43.04  disp 35.77  face 34.37 / 0.219  I 5, LTR 0  5 s  left ~0.3 h
+   [355/598] l4 qp24    134.7 kbps  Y 41.34  disp 35.22  face 33.45 / 0.247  I 5, LTR 0  5 s  left ~0.3 h
+   [356/598] l4 qp26    114.5 kbps  Y 40.69  disp 34.97  face 33.07 / 0.256  I 5, LTR 0  5 s  left ~0.3 h
+   [357/598] l4 qp32     65.7 kbps  Y 38.04  disp 33.73  face 31.49 / 0.302  I 5, LTR 0  5 s  left ~0.3 h
+   [358/598] l4 qp40     29.8 kbps  Y 33.78  disp 31.00  face 28.77 / 0.398  I 5, LTR 0  5 s  left ~0.3 h
+== clip 13/20 b2d792  20:42:50
+   [359/598] o0 qp16    251.5 kbps  Y 42.50  disp 37.86  face 34.97 / 0.250  I 5, LTR 0  same as exp. 10: YES  5 s  left ~0.3 h
+   [360/598] o0 qp24    130.0 kbps  Y 40.64  disp 36.93  face 33.91 / 0.272  I 5, LTR 0  same as exp. 10: YES  4 s  left ~0.3 h
+   [361/598] o0 qp26    106.7 kbps  Y 40.01  disp 36.57  face 33.50 / 0.279  I 5, LTR 0  same as exp. 10: YES  4 s  left ~0.3 h
+   [362/598] o0 qp32     57.0 kbps  Y 37.66  disp 35.06  face 31.91 / 0.312  I 5, LTR 0  same as exp. 10: YES  4 s  left ~0.3 h
+   [363/598] o0 qp40     26.4 kbps  Y 34.14  disp 32.33  face 28.85 / 0.391  I 5, LTR 0  same as exp. 10: YES  4 s  left ~0.3 h
+   [364/598] b2 qp16    251.5 kbps  Y 42.50  disp 37.86  face 34.97 / 0.250  I 5, LTR 0  4 s  left ~0.3 h
+   [365/598] b2 qp24    132.1 kbps  Y 40.70  disp 36.97  face 33.95 / 0.269  I 5, LTR 0  4 s  left ~0.3 h
+   [366/598] b2 qp26    108.1 kbps  Y 40.05  disp 36.59  face 33.54 / 0.279  I 5, LTR 0  4 s  left ~0.3 h
+   [367/598] b2 qp32     58.1 kbps  Y 37.75  disp 35.13  face 31.94 / 0.310  I 5, LTR 0  4 s  left ~0.3 h
+   [368/598] b2 qp40     26.7 kbps  Y 34.24  disp 32.43  face 28.95 / 0.388  I 5, LTR 0  4 s  left ~0.3 h
+   [369/598] b4 qp16    251.8 kbps  Y 42.50  disp 37.86  face 34.97 / 0.250  I 5, LTR 0  4 s  left ~0.3 h
+   [370/598] b4 qp24    134.5 kbps  Y 40.75  disp 36.99  face 33.99 / 0.270  I 5, LTR 0  4 s  left ~0.3 h
+   [371/598] b4 qp26    110.7 kbps  Y 40.11  disp 36.63  face 33.58 / 0.278  I 5, LTR 0  4 s  left ~0.3 h
+   [372/598] b4 qp32     59.7 kbps  Y 37.84  disp 35.19  face 31.98 / 0.309  I 5, LTR 0  4 s  left ~0.3 h
+   [373/598] b4 qp40     27.3 kbps  Y 34.39  disp 32.56  face 29.02 / 0.382  I 5, LTR 0  4 s  left ~0.3 h
+   [374/598] b6 qp16    251.8 kbps  Y 42.50  disp 37.86  face 34.97 / 0.250  I 5, LTR 0  4 s  left ~0.3 h
+   [375/598] b6 qp24    137.4 kbps  Y 40.78  disp 37.01  face 34.01 / 0.269  I 5, LTR 0  4 s  left ~0.3 h
+   [376/598] b6 qp26    113.1 kbps  Y 40.16  disp 36.67  face 33.64 / 0.276  I 5, LTR 0  4 s  left ~0.3 h
+   [377/598] b6 qp32     61.5 kbps  Y 37.92  disp 35.26  face 32.08 / 0.306  I 5, LTR 0  4 s  left ~0.3 h
+   [378/598] b6 qp40     27.9 kbps  Y 34.49  disp 32.67  face 29.18 / 0.376  I 5, LTR 0  4 s  left ~0.3 h
+   [379/598] i4 qp16    251.8 kbps  Y 42.50  disp 37.86  face 34.97 / 0.250  I 5, LTR 0  4 s  left ~0.3 h
+   [380/598] i4 qp24    134.5 kbps  Y 40.75  disp 36.99  face 33.99 / 0.270  I 5, LTR 0  4 s  left ~0.3 h
+   [381/598] i4 qp26    110.7 kbps  Y 40.11  disp 36.63  face 33.58 / 0.278  I 5, LTR 0  4 s  left ~0.3 h
+   [382/598] i4 qp32     59.7 kbps  Y 37.84  disp 35.19  face 31.98 / 0.309  I 5, LTR 0  4 s  left ~0.3 h
+   [383/598] i4 qp40     27.3 kbps  Y 34.39  disp 32.56  face 29.02 / 0.382  I 5, LTR 0  4 s  left ~0.3 h
+   [384/598] l4 qp16    251.5 kbps  Y 42.50  disp 37.86  face 34.97 / 0.250  I 5, LTR 0  4 s  left ~0.3 h
+   [385/598] l4 qp24    130.0 kbps  Y 40.64  disp 36.93  face 33.91 / 0.272  I 5, LTR 0  4 s  left ~0.3 h
+   [386/598] l4 qp26    106.7 kbps  Y 40.01  disp 36.57  face 33.50 / 0.279  I 5, LTR 0  4 s  left ~0.3 h
+   [387/598] l4 qp32     57.0 kbps  Y 37.66  disp 35.06  face 31.91 / 0.312  I 5, LTR 0  4 s  left ~0.3 h
+   [388/598] l4 qp40     26.4 kbps  Y 34.14  disp 32.33  face 28.85 / 0.391  I 5, LTR 0  4 s  left ~0.3 h
+== clip 14/20 b8893c  20:45:04
+   [389/598] o0 qp16    302.0 kbps  Y 42.92  disp 38.59  face 37.02 / 0.335  I 5, LTR 0  same as exp. 10: YES  5 s  left ~0.3 h
+   [390/598] o0 qp24    141.8 kbps  Y 41.18  disp 37.59  face 35.90 / 0.350  I 5, LTR 0  same as exp. 10: YES  4 s  left ~0.3 h
+   [391/598] o0 qp26    114.6 kbps  Y 40.52  disp 37.18  face 35.44 / 0.356  I 5, LTR 0  same as exp. 10: YES  4 s  left ~0.3 h
+   [392/598] o0 qp32     62.4 kbps  Y 38.04  disp 35.50  face 33.53 / 0.383  I 5, LTR 0  same as exp. 10: YES  4 s  left ~0.3 h
+   [393/598] o0 qp40     28.6 kbps  Y 33.95  disp 32.17  face 30.21 / 0.455  I 5, LTR 0  same as exp. 10: YES  4 s  left ~0.3 h
+   [394/598] b2 qp16    302.0 kbps  Y 42.92  disp 38.59  face 37.02 / 0.335  I 5, LTR 0  4 s  left ~0.3 h
+   [395/598] b2 qp24    144.1 kbps  Y 41.25  disp 37.65  face 35.92 / 0.349  I 5, LTR 0  4 s  left ~0.3 h
+   [396/598] b2 qp26    115.4 kbps  Y 40.56  disp 37.22  face 35.51 / 0.355  I 5, LTR 0  5 s  left ~0.3 h
+   [397/598] b2 qp32     62.8 kbps  Y 38.12  disp 35.55  face 33.61 / 0.381  I 5, LTR 0  4 s  left ~0.3 h
+   [398/598] b2 qp40     28.6 kbps  Y 34.09  disp 32.29  face 30.42 / 0.451  I 5, LTR 0  4 s  left ~0.3 h
+   [399/598] b4 qp16    302.3 kbps  Y 42.92  disp 38.59  face 37.02 / 0.335  I 5, LTR 0  4 s  left ~0.3 h
+   [400/598] b4 qp24    145.3 kbps  Y 41.30  disp 37.68  face 35.98 / 0.348  I 5, LTR 0  4 s  left ~0.3 h
+   [401/598] b4 qp26    117.5 kbps  Y 40.63  disp 37.28  face 35.52 / 0.355  I 5, LTR 0  4 s  left ~0.2 h
+   [402/598] b4 qp32     63.9 kbps  Y 38.19  disp 35.61  face 33.61 / 0.382  I 5, LTR 0  4 s  left ~0.2 h
+   [403/598] b4 qp40     29.1 kbps  Y 34.18  disp 32.39  face 30.42 / 0.450  I 5, LTR 0  4 s  left ~0.2 h
+   [404/598] b6 qp16    302.3 kbps  Y 42.92  disp 38.59  face 37.02 / 0.335  I 5, LTR 0  4 s  left ~0.2 h
+   [405/598] b6 qp24    148.8 kbps  Y 41.34  disp 37.71  face 35.97 / 0.349  I 5, LTR 0  4 s  left ~0.2 h
+   [406/598] b6 qp26    119.4 kbps  Y 40.71  disp 37.32  face 35.56 / 0.355  I 5, LTR 0  4 s  left ~0.2 h
+   [407/598] b6 qp32     64.7 kbps  Y 38.31  disp 35.71  face 33.71 / 0.379  I 5, LTR 0  4 s  left ~0.2 h
+   [408/598] b6 qp40     29.4 kbps  Y 34.35  disp 32.53  face 30.54 / 0.445  I 5, LTR 0  4 s  left ~0.2 h
+   [409/598] i4 qp16    302.3 kbps  Y 42.92  disp 38.59  face 37.02 / 0.335  I 5, LTR 0  4 s  left ~0.2 h
+   [410/598] i4 qp24    145.3 kbps  Y 41.30  disp 37.68  face 35.98 / 0.348  I 5, LTR 0  4 s  left ~0.2 h
+   [411/598] i4 qp26    117.5 kbps  Y 40.63  disp 37.28  face 35.52 / 0.355  I 5, LTR 0  4 s  left ~0.2 h
+   [412/598] i4 qp32     63.9 kbps  Y 38.19  disp 35.61  face 33.61 / 0.382  I 5, LTR 0  4 s  left ~0.2 h
+   [413/598] i4 qp40     29.1 kbps  Y 34.18  disp 32.39  face 30.42 / 0.450  I 5, LTR 0  4 s  left ~0.2 h
+   [414/598] l4 qp16    302.0 kbps  Y 42.92  disp 38.59  face 37.02 / 0.335  I 5, LTR 0  4 s  left ~0.2 h
+   [415/598] l4 qp24    141.8 kbps  Y 41.18  disp 37.59  face 35.90 / 0.350  I 5, LTR 0  4 s  left ~0.2 h
+   [416/598] l4 qp26    114.6 kbps  Y 40.52  disp 37.18  face 35.44 / 0.356  I 5, LTR 0  5 s  left ~0.2 h
+   [417/598] l4 qp32     62.4 kbps  Y 38.04  disp 35.50  face 33.53 / 0.383  I 5, LTR 0  4 s  left ~0.2 h
+   [418/598] l4 qp40     28.6 kbps  Y 33.95  disp 32.17  face 30.21 / 0.455  I 5, LTR 0  4 s  left ~0.2 h
+== clip 15/20 b91038  20:47:19
+   [419/598] o0 qp16    301.8 kbps  Y 40.32  disp 34.27  face 31.48 / 0.209  I 5, LTR 0  same as exp. 10: YES  4 s  left ~0.2 h
+   [420/598] o0 qp24    173.5 kbps  Y 38.85  disp 33.67  face 30.66 / 0.227  I 5, LTR 0  same as exp. 10: YES  4 s  left ~0.2 h
+   [421/598] o0 qp26    147.4 kbps  Y 38.23  disp 33.39  face 30.33 / 0.236  I 5, LTR 0  same as exp. 10: YES  4 s  left ~0.2 h
+   [422/598] o0 qp32     81.5 kbps  Y 35.78  disp 32.09  face 28.95 / 0.271  I 5, LTR 0  same as exp. 10: YES  4 s  left ~0.2 h
+   [423/598] o0 qp40     34.6 kbps  Y 31.47  disp 29.07  face 25.94 / 0.394  I 5, LTR 0  same as exp. 10: YES  4 s  left ~0.2 h
+   [424/598] b2 qp16    301.8 kbps  Y 40.32  disp 34.27  face 31.48 / 0.209  I 5, LTR 0  4 s  left ~0.2 h
+   [425/598] b2 qp24    176.3 kbps  Y 38.93  disp 33.72  face 30.71 / 0.225  I 5, LTR 0  4 s  left ~0.2 h
+   [426/598] b2 qp26    146.6 kbps  Y 38.30  disp 33.43  face 30.36 / 0.234  I 5, LTR 0  4 s  left ~0.2 h
+   [427/598] b2 qp32     81.6 kbps  Y 35.89  disp 32.16  face 28.99 / 0.270  I 5, LTR 0  4 s  left ~0.2 h
+   [428/598] b2 qp40     34.3 kbps  Y 31.66  disp 29.24  face 26.15 / 0.376  I 5, LTR 0  4 s  left ~0.2 h
+   [429/598] b4 qp16    302.1 kbps  Y 40.32  disp 34.27  face 31.48 / 0.209  I 5, LTR 0  4 s  left ~0.2 h
+   [430/598] b4 qp24    177.5 kbps  Y 38.95  disp 33.74  face 30.70 / 0.226  I 5, LTR 0  4 s  left ~0.2 h
+   [431/598] b4 qp26    149.1 kbps  Y 38.39  disp 33.48  face 30.37 / 0.233  I 5, LTR 0  4 s  left ~0.2 h
+   [432/598] b4 qp32     82.0 kbps  Y 35.92  disp 32.19  face 29.01 / 0.270  I 5, LTR 0  4 s  left ~0.2 h
+   [433/598] b4 qp40     34.9 kbps  Y 31.91  disp 29.43  face 26.34 / 0.360  I 5, LTR 0  4 s  left ~0.2 h
+   [434/598] b6 qp16    302.1 kbps  Y 40.32  disp 34.27  face 31.48 / 0.209  I 5, LTR 0  4 s  left ~0.2 h
+   [435/598] b6 qp24    176.9 kbps  Y 39.00  disp 33.76  face 30.74 / 0.226  I 5, LTR 0  4 s  left ~0.2 h
+   [436/598] b6 qp26    150.2 kbps  Y 38.45  disp 33.52  face 30.43 / 0.232  I 5, LTR 0  4 s  left ~0.2 h
+   [437/598] b6 qp32     83.9 kbps  Y 36.08  disp 32.28  face 29.00 / 0.268  I 5, LTR 0  4 s  left ~0.2 h
+   [438/598] b6 qp40     35.8 kbps  Y 32.11  disp 29.59  face 26.37 / 0.357  I 5, LTR 0  4 s  left ~0.2 h
+   [439/598] i4 qp16    302.1 kbps  Y 40.32  disp 34.27  face 31.48 / 0.209  I 5, LTR 0  4 s  left ~0.2 h
+   [440/598] i4 qp24    177.5 kbps  Y 38.95  disp 33.74  face 30.70 / 0.226  I 5, LTR 0  4 s  left ~0.2 h
+   [441/598] i4 qp26    149.1 kbps  Y 38.39  disp 33.48  face 30.37 / 0.233  I 5, LTR 0  4 s  left ~0.2 h
+   [442/598] i4 qp32     82.0 kbps  Y 35.92  disp 32.19  face 29.01 / 0.270  I 5, LTR 0  4 s  left ~0.2 h
+   [443/598] i4 qp40     34.9 kbps  Y 31.91  disp 29.43  face 26.34 / 0.360  I 5, LTR 0  4 s  left ~0.2 h
+   [444/598] l4 qp16    301.8 kbps  Y 40.32  disp 34.27  face 31.48 / 0.209  I 5, LTR 0  4 s  left ~0.2 h
+   [445/598] l4 qp24    173.5 kbps  Y 38.85  disp 33.67  face 30.66 / 0.227  I 5, LTR 0  4 s  left ~0.2 h
+   [446/598] l4 qp26    147.4 kbps  Y 38.23  disp 33.39  face 30.33 / 0.236  I 5, LTR 0  4 s  left ~0.2 h
+   [447/598] l4 qp32     81.5 kbps  Y 35.78  disp 32.09  face 28.95 / 0.271  I 5, LTR 0  4 s  left ~0.2 h
+   [448/598] l4 qp40     34.6 kbps  Y 31.47  disp 29.07  face 25.94 / 0.394  I 5, LTR 0  4 s  left ~0.2 h
+== clip 16/20 c33648  20:49:30
+   [449/598] o0 qp16    408.5 kbps  Y 41.59  disp 35.09  face 35.66 / 0.229  I 5, LTR 0  same as exp. 10: YES  5 s  left ~0.2 h
+   [450/598] o0 qp24    198.7 kbps  Y 39.95  disp 34.48  face 34.60 / 0.253  I 5, LTR 0  same as exp. 10: YES  4 s  left ~0.2 h
+   [451/598] o0 qp26    159.7 kbps  Y 39.31  disp 34.22  face 34.16 / 0.260  I 5, LTR 0  same as exp. 10: YES  4 s  left ~0.2 h
+   [452/598] o0 qp32     82.4 kbps  Y 36.93  disp 33.03  face 32.46 / 0.302  I 5, LTR 0  same as exp. 10: YES  4 s  left ~0.2 h
+   [453/598] o0 qp40     36.4 kbps  Y 33.05  disp 30.46  face 29.25 / 0.402  I 5, LTR 0  same as exp. 10: YES  4 s  left ~0.2 h
+   [454/598] b2 qp16    408.5 kbps  Y 41.59  disp 35.09  face 35.66 / 0.229  I 5, LTR 0  4 s  left ~0.2 h
+   [455/598] b2 qp24    201.0 kbps  Y 39.97  disp 34.50  face 34.64 / 0.251  I 5, LTR 0  4 s  left ~0.2 h
+   [456/598] b2 qp26    160.6 kbps  Y 39.34  disp 34.24  face 34.19 / 0.260  I 5, LTR 0  4 s  left ~0.2 h
+   [457/598] b2 qp32     83.4 kbps  Y 36.99  disp 33.07  face 32.48 / 0.300  I 5, LTR 0  4 s  left ~0.2 h
+   [458/598] b2 qp40     36.4 kbps  Y 33.12  disp 30.52  face 29.40 / 0.401  I 5, LTR 0  4 s  left ~0.2 h
+   [459/598] b4 qp16    408.8 kbps  Y 41.59  disp 35.09  face 35.66 / 0.229  I 5, LTR 0  4 s  left ~0.2 h
+   [460/598] b4 qp24    203.4 kbps  Y 40.02  disp 34.52  face 34.66 / 0.250  I 5, LTR 0  4 s  left ~0.2 h
+   [461/598] b4 qp26    163.7 kbps  Y 39.40  disp 34.27  face 34.26 / 0.259  I 5, LTR 0  4 s  left ~0.2 h
+   [462/598] b4 qp32     84.4 kbps  Y 37.05  disp 33.11  face 32.55 / 0.296  I 5, LTR 0  4 s  left ~0.2 h
+   [463/598] b4 qp40     37.3 kbps  Y 33.29  disp 30.65  face 29.50 / 0.391  I 5, LTR 0  4 s  left ~0.2 h
+   [464/598] b6 qp16    408.8 kbps  Y 41.59  disp 35.09  face 35.66 / 0.229  I 5, LTR 0  4 s  left ~0.2 h
+   [465/598] b6 qp24    205.9 kbps  Y 40.04  disp 34.54  face 34.70 / 0.250  I 5, LTR 0  4 s  left ~0.2 h
+   [466/598] b6 qp26    165.6 kbps  Y 39.44  disp 34.29  face 34.29 / 0.258  I 5, LTR 0  4 s  left ~0.2 h
+   [467/598] b6 qp32     85.9 kbps  Y 37.13  disp 33.16  face 32.57 / 0.294  I 5, LTR 0  4 s  left ~0.2 h
+   [468/598] b6 qp40     37.9 kbps  Y 33.42  disp 30.75  face 29.56 / 0.384  I 5, LTR 0  4 s  left ~0.2 h
+   [469/598] i4 qp16    408.8 kbps  Y 41.59  disp 35.09  face 35.66 / 0.229  I 5, LTR 0  4 s  left ~0.2 h
+   [470/598] i4 qp24    203.4 kbps  Y 40.02  disp 34.52  face 34.66 / 0.250  I 5, LTR 0  4 s  left ~0.2 h
+   [471/598] i4 qp26    163.7 kbps  Y 39.40  disp 34.27  face 34.26 / 0.259  I 5, LTR 0  4 s  left ~0.2 h
+   [472/598] i4 qp32     84.4 kbps  Y 37.05  disp 33.11  face 32.55 / 0.296  I 5, LTR 0  4 s  left ~0.2 h
+   [473/598] i4 qp40     37.3 kbps  Y 33.29  disp 30.65  face 29.50 / 0.391  I 5, LTR 0  4 s  left ~0.2 h
+   [474/598] l4 qp16    408.5 kbps  Y 41.59  disp 35.09  face 35.66 / 0.229  I 5, LTR 0  4 s  left ~0.2 h
+   [475/598] l4 qp24    198.7 kbps  Y 39.95  disp 34.48  face 34.60 / 0.253  I 5, LTR 0  4 s  left ~0.2 h
+   [476/598] l4 qp26    159.7 kbps  Y 39.31  disp 34.22  face 34.16 / 0.260  I 5, LTR 0  4 s  left ~0.2 h
+   [477/598] l4 qp32     82.4 kbps  Y 36.93  disp 33.03  face 32.46 / 0.302  I 5, LTR 0  4 s  left ~0.2 h
+   [478/598] l4 qp40     36.4 kbps  Y 33.05  disp 30.46  face 29.25 / 0.402  I 5, LTR 0  4 s  left ~0.2 h
+== clip 17/20 c52d75  20:51:43
+   [479/598] o0 qp16    349.1 kbps  Y 40.12  disp 31.16  face 31.90 / 0.306  I 5, LTR 0  same as exp. 10: YES  5 s  left ~0.2 h
+   [480/598] o0 qp24    173.8 kbps  Y 38.49  disp 30.80  face 31.17 / 0.329  I 5, LTR 0  same as exp. 10: YES  4 s  left ~0.1 h
+   [481/598] o0 qp26    142.9 kbps  Y 37.86  disp 30.64  face 30.84 / 0.337  I 5, LTR 0  same as exp. 10: YES  4 s  left ~0.1 h
+   [482/598] o0 qp32     76.6 kbps  Y 35.43  disp 29.83  face 29.53 / 0.374  I 5, LTR 0  same as exp. 10: YES  5 s  left ~0.1 h
+   [483/598] o0 qp40     34.1 kbps  Y 31.67  disp 27.98  face 27.06 / 0.430  I 5, LTR 0  same as exp. 10: YES  4 s  left ~0.1 h
+   [484/598] b2 qp16    349.1 kbps  Y 40.12  disp 31.16  face 31.90 / 0.306  I 5, LTR 0  4 s  left ~0.1 h
+   [485/598] b2 qp24    177.5 kbps  Y 38.53  disp 30.82  face 31.19 / 0.327  I 5, LTR 0  4 s  left ~0.1 h
+   [486/598] b2 qp26    145.7 kbps  Y 37.91  disp 30.66  face 30.87 / 0.336  I 5, LTR 0  4 s  left ~0.1 h
+   [487/598] b2 qp32     78.8 kbps  Y 35.61  disp 29.91  face 29.60 / 0.376  I 5, LTR 0  4 s  left ~0.1 h
+   [488/598] b2 qp40     35.0 kbps  Y 31.87  disp 28.11  face 27.22 / 0.430  I 5, LTR 0  4 s  left ~0.1 h
+   [489/598] b4 qp16    349.3 kbps  Y 40.12  disp 31.16  face 31.90 / 0.306  I 5, LTR 0  4 s  left ~0.1 h
+   [490/598] b4 qp24    181.5 kbps  Y 38.57  disp 30.83  face 31.22 / 0.325  I 5, LTR 0  4 s  left ~0.1 h
+   [491/598] b4 qp26    149.0 kbps  Y 37.96  disp 30.67  face 30.90 / 0.334  I 5, LTR 0  4 s  left ~0.1 h
+   [492/598] b4 qp32     80.9 kbps  Y 35.69  disp 29.94  face 29.63 / 0.373  I 5, LTR 0  4 s  left ~0.1 h
+   [493/598] b4 qp40     36.4 kbps  Y 32.06  disp 28.23  face 27.30 / 0.426  I 5, LTR 0  4 s  left ~0.1 h
+   [494/598] b6 qp16    349.3 kbps  Y 40.12  disp 31.16  face 31.90 / 0.306  I 5, LTR 0  4 s  left ~0.1 h
+   [495/598] b6 qp24    185.7 kbps  Y 38.61  disp 30.84  face 31.21 / 0.327  I 5, LTR 0  5 s  left ~0.1 h
+   [496/598] b6 qp26    152.8 kbps  Y 38.02  disp 30.69  face 30.94 / 0.333  I 5, LTR 0  5 s  left ~0.1 h
+   [497/598] b6 qp32     84.3 kbps  Y 35.85  disp 30.01  face 29.71 / 0.369  I 5, LTR 0  5 s  left ~0.1 h
+   [498/598] b6 qp40     37.7 kbps  Y 32.20  disp 28.31  face 27.40 / 0.424  I 5, LTR 0  5 s  left ~0.1 h
+   [499/598] i4 qp16    349.3 kbps  Y 40.12  disp 31.16  face 31.90 / 0.306  I 5, LTR 0  4 s  left ~0.1 h
+   [500/598] i4 qp24    181.5 kbps  Y 38.57  disp 30.83  face 31.22 / 0.325  I 5, LTR 0  4 s  left ~0.1 h
+   [501/598] i4 qp26    149.0 kbps  Y 37.96  disp 30.67  face 30.90 / 0.334  I 5, LTR 0  5 s  left ~0.1 h
+   [502/598] i4 qp32     80.9 kbps  Y 35.69  disp 29.94  face 29.63 / 0.373  I 5, LTR 0  5 s  left ~0.1 h
+   [503/598] i4 qp40     36.4 kbps  Y 32.06  disp 28.23  face 27.30 / 0.426  I 5, LTR 0  4 s  left ~0.1 h
+   [504/598] l4 qp16    349.1 kbps  Y 40.12  disp 31.16  face 31.90 / 0.306  I 5, LTR 0  4 s  left ~0.1 h
+   [505/598] l4 qp24    173.8 kbps  Y 38.49  disp 30.80  face 31.17 / 0.329  I 5, LTR 0  4 s  left ~0.1 h
+   [506/598] l4 qp26    142.9 kbps  Y 37.86  disp 30.64  face 30.84 / 0.337  I 5, LTR 0  5 s  left ~0.1 h
+   [507/598] l4 qp32     76.6 kbps  Y 35.43  disp 29.83  face 29.53 / 0.374  I 5, LTR 0  4 s  left ~0.1 h
+   [508/598] l4 qp40     34.1 kbps  Y 31.67  disp 27.98  face 27.06 / 0.430  I 5, LTR 0  5 s  left ~0.1 h
+== clip 18/20 cd6bc1  20:53:58
+   [509/598] o0 qp16    418.8 kbps  Y 39.76  disp 32.49  face 30.72 / 0.261  I 5, LTR 0  same as exp. 10: YES  5 s  left ~0.1 h
+   [510/598] o0 qp24    226.6 kbps  Y 38.23  disp 32.00  face 30.16 / 0.276  I 5, LTR 0  same as exp. 10: YES  5 s  left ~0.1 h
+   [511/598] o0 qp26    189.2 kbps  Y 37.59  disp 31.75  face 29.93 / 0.281  I 5, LTR 0  same as exp. 10: YES  5 s  left ~0.1 h
+   [512/598] o0 qp32    106.8 kbps  Y 35.19  disp 30.67  face 28.90 / 0.305  I 5, LTR 0  same as exp. 10: YES  5 s  left ~0.1 h
+   [513/598] o0 qp40     50.5 kbps  Y 30.83  disp 27.98  face 26.76 / 0.358  I 5, LTR 0  same as exp. 10: YES  5 s  left ~0.1 h
+   [514/598] b2 qp16    418.8 kbps  Y 39.76  disp 32.49  face 30.72 / 0.261  I 5, LTR 0  5 s  left ~0.1 h
+   [515/598] b2 qp24    229.8 kbps  Y 38.25  disp 32.01  face 30.18 / 0.276  I 5, LTR 0  5 s  left ~0.1 h
+   [516/598] b2 qp26    189.8 kbps  Y 37.64  disp 31.79  face 29.94 / 0.281  I 5, LTR 0  5 s  left ~0.1 h
+   [517/598] b2 qp32    108.2 kbps  Y 35.26  disp 30.72  face 28.95 / 0.303  I 5, LTR 0  5 s  left ~0.1 h
+   [518/598] b2 qp40     49.6 kbps  Y 30.94  disp 28.07  face 26.89 / 0.354  I 5, LTR 0  5 s  left ~0.1 h
+   [519/598] b4 qp16    419.0 kbps  Y 39.76  disp 32.49  face 30.72 / 0.261  I 5, LTR 0  5 s  left ~0.1 h
+   [520/598] b4 qp24    235.1 kbps  Y 38.28  disp 32.02  face 30.18 / 0.275  I 5, LTR 0  5 s  left ~0.1 h
+   [521/598] b4 qp26    194.0 kbps  Y 37.70  disp 31.81  face 29.95 / 0.281  I 5, LTR 0  5 s  left ~0.1 h
+   [522/598] b4 qp32    110.1 kbps  Y 35.30  disp 30.75  face 28.93 / 0.305  I 5, LTR 0  5 s  left ~0.1 h
+   [523/598] b4 qp40     49.9 kbps  Y 31.11  disp 28.20  face 26.91 / 0.351  I 5, LTR 0  5 s  left ~0.1 h
+   [524/598] b6 qp16    419.0 kbps  Y 39.76  disp 32.49  face 30.72 / 0.261  I 5, LTR 0  5 s  left ~0.1 h
+   [525/598] b6 qp24    238.4 kbps  Y 38.31  disp 32.04  face 30.19 / 0.275  I 5, LTR 0  5 s  left ~0.1 h
+   [526/598] b6 qp26    198.9 kbps  Y 37.72  disp 31.83  face 29.97 / 0.281  I 5, LTR 0  5 s  left ~0.1 h
+   [527/598] b6 qp32    112.8 kbps  Y 35.44  disp 30.83  face 29.00 / 0.303  I 5, LTR 0  5 s  left ~0.1 h
+   [528/598] b6 qp40     50.7 kbps  Y 31.28  disp 28.33  face 26.97 / 0.349  I 5, LTR 0  5 s  left ~0.1 h
+   [529/598] i4 qp16    419.0 kbps  Y 39.76  disp 32.49  face 30.72 / 0.261  I 5, LTR 0  5 s  left ~0.1 h
+   [530/598] i4 qp24    235.1 kbps  Y 38.28  disp 32.02  face 30.18 / 0.275  I 5, LTR 0  5 s  left ~0.1 h
+   [531/598] i4 qp26    194.0 kbps  Y 37.70  disp 31.81  face 29.95 / 0.281  I 5, LTR 0  5 s  left ~0.1 h
+   [532/598] i4 qp32    110.1 kbps  Y 35.30  disp 30.75  face 28.93 / 0.305  I 5, LTR 0  5 s  left ~0.1 h
+   [533/598] i4 qp40     49.9 kbps  Y 31.11  disp 28.20  face 26.91 / 0.351  I 5, LTR 0  5 s  left ~0.1 h
+   [534/598] l4 qp16    418.8 kbps  Y 39.76  disp 32.49  face 30.72 / 0.261  I 5, LTR 0  5 s  left ~0.1 h
+   [535/598] l4 qp24    226.6 kbps  Y 38.23  disp 32.00  face 30.16 / 0.276  I 5, LTR 0  5 s  left ~0.1 h
+   [536/598] l4 qp26    189.2 kbps  Y 37.59  disp 31.75  face 29.93 / 0.281  I 5, LTR 0  5 s  left ~0.1 h
+   [537/598] l4 qp32    106.8 kbps  Y 35.19  disp 30.67  face 28.90 / 0.305  I 5, LTR 0  5 s  left ~0.1 h
+   [538/598] l4 qp40     50.5 kbps  Y 30.83  disp 27.98  face 26.76 / 0.358  I 5, LTR 0  5 s  left ~0.1 h
+== clip 19/20 db623c  20:56:18
+   [539/598] o0 qp16    253.6 kbps  Y 39.70  disp 32.34  face 32.19 / 0.282  I 5, LTR 0  same as exp. 10: YES  5 s  left ~0.1 h
+   [540/598] o0 qp24    157.5 kbps  Y 38.56  disp 32.00  face 31.40 / 0.308  I 5, LTR 0  same as exp. 10: YES  4 s  left ~0.1 h
+   [541/598] o0 qp26    134.0 kbps  Y 38.05  disp 31.82  face 31.05 / 0.318  I 5, LTR 0  same as exp. 10: YES  4 s  left ~0.1 h
+   [542/598] o0 qp32     81.9 kbps  Y 36.02  disp 31.01  face 29.73 / 0.357  I 5, LTR 0  same as exp. 10: YES  4 s  left ~0.1 h
+   [543/598] o0 qp40     36.2 kbps  Y 31.82  disp 28.66  face 27.28 / 0.421  I 5, LTR 0  same as exp. 10: YES  4 s  left ~0.1 h
+   [544/598] b2 qp16    253.6 kbps  Y 39.70  disp 32.34  face 32.19 / 0.282  I 5, LTR 0  5 s  left ~0.1 h
+   [545/598] b2 qp24    160.8 kbps  Y 38.61  disp 32.02  face 31.43 / 0.307  I 5, LTR 0  4 s  left ~0.1 h
+   [546/598] b2 qp26    136.5 kbps  Y 38.13  disp 31.86  face 31.10 / 0.317  I 5, LTR 0  4 s  left ~0.1 h
+   [547/598] b2 qp32     82.0 kbps  Y 36.04  disp 31.03  face 29.79 / 0.354  I 5, LTR 0  4 s  left ~0.1 h
+   [548/598] b2 qp40     36.0 kbps  Y 31.94  disp 28.75  face 27.42 / 0.419  I 5, LTR 0  4 s  left ~0.1 h
+   [549/598] b4 qp16    253.8 kbps  Y 39.70  disp 32.34  face 32.19 / 0.282  I 5, LTR 0  5 s  left ~0.1 h
+   [550/598] b4 qp24    161.7 kbps  Y 38.66  disp 32.04  face 31.46 / 0.307  I 5, LTR 0  5 s  left ~0.1 h
+   [551/598] b4 qp26    140.1 kbps  Y 38.18  disp 31.88  face 31.14 / 0.316  I 5, LTR 0  4 s  left ~0.1 h
+   [552/598] b4 qp32     82.3 kbps  Y 36.12  disp 31.07  face 29.84 / 0.353  I 5, LTR 0  5 s  left ~0.1 h
+   [553/598] b4 qp40     36.6 kbps  Y 32.14  disp 28.89  face 27.52 / 0.412  I 5, LTR 0  5 s  left ~0.1 h
+   [554/598] b6 qp16    253.8 kbps  Y 39.70  disp 32.34  face 32.19 / 0.282  I 5, LTR 0  4 s  left ~0.1 h
+   [555/598] b6 qp24    165.0 kbps  Y 38.71  disp 32.06  face 31.48 / 0.305  I 5, LTR 0  4 s  left ~0.1 h
+   [556/598] b6 qp26    141.3 kbps  Y 38.24  disp 31.91  face 31.18 / 0.313  I 5, LTR 0  4 s  left ~0.1 h
+   [557/598] b6 qp32     82.8 kbps  Y 36.26  disp 31.15  face 29.95 / 0.348  I 5, LTR 0  4 s  left ~0.1 h
+   [558/598] b6 qp40     37.3 kbps  Y 32.36  disp 29.04  face 27.68 / 0.408  I 5, LTR 0  4 s  left ~0.1 h
+   [559/598] i4 qp16    253.8 kbps  Y 39.70  disp 32.34  face 32.19 / 0.282  I 5, LTR 0  4 s  left ~0.0 h
+   [560/598] i4 qp24    161.7 kbps  Y 38.66  disp 32.04  face 31.46 / 0.307  I 5, LTR 0  4 s  left ~0.0 h
+   [561/598] i4 qp26    140.1 kbps  Y 38.18  disp 31.88  face 31.14 / 0.316  I 5, LTR 0  4 s  left ~0.0 h
+   [562/598] i4 qp32     82.3 kbps  Y 36.12  disp 31.07  face 29.84 / 0.353  I 5, LTR 0  5 s  left ~0.0 h
+   [563/598] i4 qp40     36.6 kbps  Y 32.14  disp 28.89  face 27.52 / 0.412  I 5, LTR 0  5 s  left ~0.0 h
+   [564/598] l4 qp16    253.6 kbps  Y 39.70  disp 32.34  face 32.19 / 0.282  I 5, LTR 0  5 s  left ~0.0 h
+   [565/598] l4 qp24    157.5 kbps  Y 38.56  disp 32.00  face 31.40 / 0.308  I 5, LTR 0  4 s  left ~0.0 h
+   [566/598] l4 qp26    134.0 kbps  Y 38.05  disp 31.82  face 31.05 / 0.318  I 5, LTR 0  4 s  left ~0.0 h
+   [567/598] l4 qp32     81.9 kbps  Y 36.02  disp 31.01  face 29.73 / 0.357  I 5, LTR 0  4 s  left ~0.0 h
+   [568/598] l4 qp40     36.2 kbps  Y 31.82  disp 28.66  face 27.28 / 0.421  I 5, LTR 0  4 s  left ~0.0 h
+== clip 20/20 fda953  20:58:33
+   [569/598] o0 qp16    479.8 kbps  Y 41.15  disp 36.28  face 38.68 / 0.130  I 5, LTR 0  same as exp. 10: YES  5 s  left ~0.0 h
+   [570/598] o0 qp24    227.8 kbps  Y 38.86  disp 35.08  face 36.78 / 0.158  I 5, LTR 0  same as exp. 10: YES  5 s  left ~0.0 h
+   [571/598] o0 qp26    180.6 kbps  Y 38.07  disp 34.60  face 36.12 / 0.170  I 5, LTR 0  same as exp. 10: YES  5 s  left ~0.0 h
+   [572/598] o0 qp32     83.2 kbps  Y 35.13  disp 32.58  face 33.49 / 0.226  I 5, LTR 0  same as exp. 10: YES  5 s  left ~0.0 h
+   [573/598] o0 qp40     32.3 kbps  Y 31.32  disp 29.43  face 29.67 / 0.333  I 5, LTR 0  same as exp. 10: YES  5 s  left ~0.0 h
+   [574/598] b2 qp16    479.8 kbps  Y 41.15  disp 36.28  face 38.68 / 0.130  I 5, LTR 0  5 s  left ~0.0 h
+   [575/598] b2 qp24    230.6 kbps  Y 38.92  disp 35.12  face 36.88 / 0.156  I 5, LTR 0  5 s  left ~0.0 h
+   [576/598] b2 qp26    182.4 kbps  Y 38.09  disp 34.62  face 36.14 / 0.169  I 5, LTR 0  5 s  left ~0.0 h
+   [577/598] b2 qp32     85.0 kbps  Y 35.26  disp 32.68  face 33.58 / 0.224  I 5, LTR 0  5 s  left ~0.0 h
+   [578/598] b2 qp40     32.8 kbps  Y 31.48  disp 29.59  face 29.83 / 0.328  I 5, LTR 0  5 s  left ~0.0 h
+   [579/598] b4 qp16    480.0 kbps  Y 41.15  disp 36.28  face 38.68 / 0.130  I 5, LTR 0  5 s  left ~0.0 h
+   [580/598] b4 qp24    233.9 kbps  Y 38.97  disp 35.16  face 36.91 / 0.155  I 5, LTR 0  5 s  left ~0.0 h
+   [581/598] b4 qp26    185.8 kbps  Y 38.17  disp 34.68  face 36.22 / 0.168  I 5, LTR 0  5 s  left ~0.0 h
+   [582/598] b4 qp32     87.5 kbps  Y 35.34  disp 32.74  face 33.72 / 0.220  I 5, LTR 0  5 s  left ~0.0 h
+   [583/598] b4 qp40     33.9 kbps  Y 31.61  disp 29.72  face 29.93 / 0.327  I 5, LTR 0  5 s  left ~0.0 h
+   [584/598] b6 qp16    480.0 kbps  Y 41.15  disp 36.28  face 38.68 / 0.130  I 5, LTR 0  5 s  left ~0.0 h
+   [585/598] b6 qp24    237.0 kbps  Y 38.99  disp 35.18  face 36.95 / 0.154  I 5, LTR 0  5 s  left ~0.0 h
+   [586/598] b6 qp26    189.3 kbps  Y 38.23  disp 34.72  face 36.27 / 0.165  I 5, LTR 0  5 s  left ~0.0 h
+   [587/598] b6 qp32     90.1 kbps  Y 35.44  disp 32.83  face 33.81 / 0.218  I 5, LTR 0  5 s  left ~0.0 h
+   [588/598] b6 qp40     35.6 kbps  Y 31.80  disp 29.89  face 30.04 / 0.321  I 5, LTR 0  5 s  left ~0.0 h
+   [589/598] i4 qp16    480.0 kbps  Y 41.15  disp 36.28  face 38.68 / 0.130  I 5, LTR 0  5 s  left ~0.0 h
+   [590/598] i4 qp24    233.9 kbps  Y 38.97  disp 35.16  face 36.91 / 0.155  I 5, LTR 0  5 s  left ~0.0 h
+   [591/598] i4 qp26    185.8 kbps  Y 38.17  disp 34.68  face 36.22 / 0.168  I 5, LTR 0  5 s  left ~0.0 h
+   [592/598] i4 qp32     87.5 kbps  Y 35.34  disp 32.74  face 33.72 / 0.220  I 5, LTR 0  5 s  left ~0.0 h
+   [593/598] i4 qp40     33.9 kbps  Y 31.61  disp 29.72  face 29.93 / 0.327  I 5, LTR 0  5 s  left ~0.0 h
+   [594/598] l4 qp16    479.8 kbps  Y 41.15  disp 36.28  face 38.68 / 0.130  I 5, LTR 0  5 s  left ~0.0 h
+   [595/598] l4 qp24    227.8 kbps  Y 38.86  disp 35.08  face 36.78 / 0.158  I 5, LTR 0  5 s  left ~0.0 h
+   [596/598] l4 qp26    180.6 kbps  Y 38.07  disp 34.60  face 36.12 / 0.170  I 5, LTR 0  5 s  left ~0.0 h
+   [597/598] l4 qp32     83.2 kbps  Y 35.13  disp 32.58  face 33.49 / 0.226  I 5, LTR 0  5 s  left ~0.0 h
+   [598/598] l4 qp40     32.3 kbps  Y 31.32  disp 29.43  face 29.67 / 0.333  I 5, LTR 0  5 s  left ~0.0 h
+== offset 0 identical to experiment 10's B* bitstreams: 99 of 99
+== 598 runs, 45.3 min
+
+== runs, pass 2  Sun Nov 22 21:00:54 +04 2026
+FULL: 20 clips x 6 configurations x QP [16, 24, 26, 32, 40]; 0 runs to do
+/Users/shamsalani/Downloads/duplexnvc-baseline/.venv/lib/python3.13/site-packages/torchvision/models/_utils.py:207: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/Users/shamsalani/Downloads/duplexnvc-baseline/.venv/lib/python3.13/site-packages/torchvision/models/_utils.py:222: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=AlexNet_Weights.IMAGENET1K_V1`. You can also use `weights=AlexNet_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+== 0 runs, 0.0 min
+
+== analysis  Sun Nov 22 21:00:56 +04 2026
+A1: QP offset on I-frames and LTR frames, B* (full MLVC 360p, NE-NE), 20 evaluation clips
+
+== mean of the clips (kbps / coded PSNR-Y / display PSNR-Y / face PSNR-Y / face LPIPS)
+   no offset (B*)   QP16 384/41.05/34.55/35.28/0.224  QP24 206/39.31/33.82/34.12/0.246  QP26 170/38.64/33.51/33.67/0.254  QP32 93/36.12/32.16/31.86/0.292  QP40 40/32.00/29.38/28.77/0.373
+   I and LTR -2     QP16 384/41.05/34.55/35.28/0.224  QP24 208/39.35/33.85/34.16/0.244  QP26 171/38.69/33.54/33.70/0.253  QP32 93/36.20/32.22/31.92/0.290  QP40 40/32.13/29.49/28.88/0.370
+   I and LTR -4     QP16 384/41.05/34.55/35.28/0.224  QP24 211/39.39/33.87/34.19/0.244  QP26 174/38.74/33.57/33.75/0.252  QP32 95/36.28/32.26/31.98/0.288  QP40 41/32.28/29.61/28.98/0.363
+   I and LTR -6     QP16 384/41.05/34.55/35.28/0.224  QP24 214/39.42/33.89/34.21/0.244  QP26 177/38.79/33.59/33.78/0.252  QP32 97/36.38/32.33/32.05/0.287  QP40 42/32.44/29.73/29.11/0.358
+   I only -4        QP16 384/41.05/34.55/35.28/0.224  QP24 211/39.39/33.87/34.19/0.244  QP26 174/38.74/33.57/33.75/0.252  QP32 95/36.28/32.26/31.98/0.288  QP40 41/32.28/29.61/28.98/0.363
+   LTR only -4      QP16 384/41.05/34.55/35.28/0.224  QP24 206/39.31/33.82/34.12/0.246  QP26 170/38.64/33.51/33.67/0.254  QP32 93/36.12/32.16/31.86/0.292  QP40 40/32.00/29.38/28.77/0.373
+
+== BD-rate vs no offset (negative = fewer bits for the same quality); per clip: median, clips that gain
+                                       coded Y                 display Y                    face Y                face LPIPS
+   I and LTR -2         -0.95 % (-0.74, 19/20)    -1.39 % (-1.27, 20/20)    -0.96 % (-0.72, 17/20)    -1.23 % (-1.28, 16/20)
+   I and LTR -4         -1.10 % (-0.66, 17/20)    -1.74 % (-1.46, 19/20)    -1.17 % (-0.95, 13/20)    -2.60 % (-2.49, 18/20)
+   I and LTR -6         -1.29 % (-0.62, 14/20)    -2.21 % (-1.87, 17/20)    -1.32 % (-0.65, 14/20)    -3.54 % (-3.07, 18/20)
+   I only -4            -1.10 % (-0.66, 17/20)    -1.74 % (-1.46, 19/20)    -1.17 % (-0.95, 13/20)    -2.60 % (-2.49, 18/20)
+   LTR only -4           +0.00 % (+0.00, 0/20)     +0.00 % (+0.00, 0/20)     +0.00 % (+0.00, 0/20)     +0.00 % (+0.00, 0/20)
+
+== share of the bits in I-frames / LTR frames / other frames (mean over clips, QP 26)
+   no offset (B*)   I  20.8 %   LTR   0.0 %   other  79.2 %
+   I and LTR -2     I  24.0 %   LTR   0.0 %   other  76.0 %
+   I and LTR -4     I  28.0 %   LTR   0.0 %   other  72.0 %
+   I and LTR -6     I  31.4 %   LTR   0.0 %   other  68.6 %
+   I only -4        I  28.0 %   LTR   0.0 %   other  72.0 %
+   LTR only -4      I  20.8 %   LTR   0.0 %   other  79.2 %
+
+== results in /Users/shamsalani/Downloads/duplexnvc-baseline/phase2/a1/results
+== A1 END  Sun Nov 22 21:00:56 +04 2026

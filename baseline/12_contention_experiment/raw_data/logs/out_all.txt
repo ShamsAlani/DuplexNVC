@@ -1,0 +1,90 @@
+== M4 CONTENTION START  Sat Nov 21 21:46:18 +04 2026  threads=10  buffer_MB=256
+chip: Apple M4 Pro  memory: 24 GB  model: Mac16,8
+ProductName:		macOS ProductVersion:		26.6.2 BuildVersion:		25G83 
+Now drawing from 'AC Power'
+-- memstress alone at 100 % for 10 s (peak bandwidth of this thread set)
+memstress duty=100 threads=10 seconds=10.1 bytes_copied=1194630053888 GB_s=237.37
+[1/24] 21:46:49 M4_load0_alone-enc_r1
+memstress duty=0 threads=10 seconds=75.1 bytes_copied=0 GB_s=0.00
+manager: requested=npu resolved=npu 
+[2/24] 21:49:04 M4_load0_duplex30_r1
+memstress duty=0 threads=10 seconds=75.0 bytes_copied=0 GB_s=0.00
+manager: requested=npu resolved=npu 
+[3/24] 21:51:19 M4_load25_alone-enc_r1
+memstress duty=25 threads=10 seconds=75.1 bytes_copied=5161837658112 GB_s=137.50
+manager: requested=npu resolved=npu 
+[4/24] 21:53:34 M4_load25_duplex30_r1
+memstress duty=25 threads=10 seconds=75.1 bytes_copied=4892110356480 GB_s=130.32
+manager: requested=npu resolved=npu 
+[5/24] 21:55:49 M4_load50_alone-enc_r1
+memstress duty=50 threads=10 seconds=75.1 bytes_copied=7734699229184 GB_s=206.03
+manager: requested=npu resolved=npu 
+[6/24] 21:58:04 M4_load50_duplex30_r1
+memstress duty=50 threads=10 seconds=75.1 bytes_copied=8065520762880 GB_s=214.91
+manager: requested=npu resolved=npu 
+[7/24] 22:00:19 M4_load75_alone-enc_r1
+memstress duty=75 threads=10 seconds=75.1 bytes_copied=8162669232128 GB_s=217.38
+manager: requested=npu resolved=npu 
+[8/24] 22:02:35 M4_load75_duplex30_r1
+memstress duty=75 threads=10 seconds=75.1 bytes_copied=8657857150976 GB_s=230.52
+manager: requested=npu resolved=npu 
+[9/24] 22:04:50 M4_load0_alone-enc_r2
+memstress duty=0 threads=10 seconds=75.0 bytes_copied=0 GB_s=0.00
+manager: requested=npu resolved=npu 
+[10/24] 22:07:05 M4_load0_duplex30_r2
+memstress duty=0 threads=10 seconds=75.1 bytes_copied=0 GB_s=0.00
+manager: requested=npu resolved=npu 
+[11/24] 22:09:20 M4_load25_alone-enc_r2
+memstress duty=25 threads=10 seconds=75.1 bytes_copied=5100558876672 GB_s=135.84
+manager: requested=npu resolved=npu 
+[12/24] 22:11:35 M4_load25_duplex30_r2
+memstress duty=25 threads=10 seconds=75.0 bytes_copied=4939128504320 GB_s=131.65
+manager: requested=npu resolved=npu 
+[13/24] 22:13:50 M4_load50_alone-enc_r2
+memstress duty=50 threads=10 seconds=75.1 bytes_copied=7690524819456 GB_s=204.87
+manager: requested=npu resolved=npu 
+[14/24] 22:16:06 M4_load50_duplex30_r2
+memstress duty=50 threads=10 seconds=75.1 bytes_copied=8112975118336 GB_s=216.09
+manager: requested=npu resolved=npu 
+[15/24] 22:18:21 M4_load75_alone-enc_r2
+memstress duty=75 threads=10 seconds=75.0 bytes_copied=8157845782528 GB_s=217.43
+manager: requested=npu resolved=npu 
+[16/24] 22:20:36 M4_load75_duplex30_r2
+memstress duty=75 threads=10 seconds=75.1 bytes_copied=8650122854400 GB_s=230.35
+manager: requested=npu resolved=npu 
+[17/24] 22:22:51 M4_load0_alone-enc_r3
+memstress duty=0 threads=10 seconds=75.1 bytes_copied=0 GB_s=0.00
+manager: requested=npu resolved=npu 
+[18/24] 22:25:06 M4_load0_duplex30_r3
+memstress duty=0 threads=10 seconds=75.1 bytes_copied=0 GB_s=0.00
+manager: requested=npu resolved=npu 
+[19/24] 22:27:21 M4_load25_alone-enc_r3
+memstress duty=25 threads=10 seconds=75.1 bytes_copied=5105407492096 GB_s=136.04
+manager: requested=npu resolved=npu 
+[20/24] 22:29:37 M4_load25_duplex30_r3
+memstress duty=25 threads=10 seconds=75.1 bytes_copied=4883931463680 GB_s=130.14
+manager: requested=npu resolved=npu 
+[21/24] 22:31:52 M4_load50_alone-enc_r3
+memstress duty=50 threads=10 seconds=75.1 bytes_copied=7693016236032 GB_s=204.85
+manager: requested=npu resolved=npu 
+[22/24] 22:34:07 M4_load50_duplex30_r3
+memstress duty=50 threads=10 seconds=75.1 bytes_copied=8077877182464 GB_s=215.22
+manager: requested=npu resolved=npu 
+[23/24] 22:36:22 M4_load75_alone-enc_r3
+memstress duty=75 threads=10 seconds=75.1 bytes_copied=8167249412096 GB_s=217.46
+manager: requested=npu resolved=npu 
+[24/24] 22:38:37 M4_load75_duplex30_r3
+memstress duty=75 threads=10 seconds=75.0 bytes_copied=8648193474560 GB_s=230.51
+manager: requested=npu resolved=npu 
+== M4 CONTENTION END  Sat Nov 21 22:40:52 +04 2026
+thermal states seen: 3251 nominal 1 thermal_state 
+== M4 contention curve -> /Users/shamsalani/Downloads/duplexnvc-baseline/phase2/ct/M4_contention_curve.csv   (memstress alone at 100 %: 237.37 GB/s)
+   load   GB/s |  enc alone call ms  net ms     p99 | B* send call p99 due-done  late% | B* recv call     p99  late%
+     0%    0.0 |               5.86    5.57     6.0 |        12.64        29.18    0.0 |        13.65   29.02    0.0
+    25% 136.04 |                6.0    5.69    6.15 |         8.25        23.61    0.0 |         9.45   24.49    0.0
+    50% 204.87 |               6.05    5.74    6.16 |         7.62        20.66    0.0 |         9.23   20.94    0.0
+    75% 217.43 |               6.12    5.79    6.34 |         7.37        21.11    0.0 |         8.65   21.05    0.0
+
+  encoder alone on the NE: 5.86 ms at 0 % -> 6.12 ms at 75 % (+4.4 %). Within 5 %: the NE itself, not memory speed, is the limit.
+M1 for comparison (cross-chip study, 20 Nov): encoder alone 9.49 -> 11.27 ms at 0 -> 75 % (+18.8 %); B* send late 3.97 % at 0 %, 0 % at 25 %
+

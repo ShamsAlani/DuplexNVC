@@ -1,0 +1,48 @@
+#!/bin/bash
+# A1: more bits for key frames and LTR frames (QP offset on I-frames and LTR-marked frames), B* on the 20 evaluation
+# clips at QP 16/24/26/32/40, 6 configurations (600 runs, ~1.5-2 h). Normal Mac use is fine (quality only);
+# charger in, lid open. RESUMABLE: ./all again continues.
+#   1. builds the A1 version of the measurement program in $WORK/harness_a1 (the baseline's harness is not touched)
+#   2. check: offset 0 must give bitstreams identical to experiment 10's, the frame-type prediction must match, and the
+#      LTR frames found by the program must match the ones libmlvc's own trace reports
+#   3. the 600 runs (a1.py), then the analysis (a1ana.py)
+# Output: ~/Downloads/duplexnvc-baseline/phase2/a1/ ; console: out_all.txt
+D=$(cd "$(dirname "$0")" && pwd); . "$D/../v"; exec > >(tee -a "$D/out_all.txt") 2>&1
+H="$WORK/harness_a1"; O="$WORK/phase2/a1"; mkdir -p "$O"
+echo; echo "== A1 START  $(date)"; sw_vers | tr '\n' ' '; echo; pmset -g batt | head -1
+for f in "$D/../4b/q.py" "$D/../4b/ana.py" "$WORK/phase2/4b/bits/mlvc_360p_npu-npu" "$WORK/phase2/4b/cache" "$MLVC" "$PY"; do
+  [ -e "$f" ] || { echo "MISSING $f"; exit 1; }; done
+if ! cmp -s "$D/duplex_bench.cpp" "$H/main.cpp" || [ ! -x "$H/build/ninja-release/libmlvc_example" ]; then
+  echo "== building the A1 program in $H (a few minutes)"
+  rm -rf "$H"; cp -R "$WORK/libmlvc/examples/minimal-fetchcontent" "$H"; cp "$D/duplex_bench.cpp" "$H/main.cpp"
+  ( cd "$H" && cmake -S . -B build/ninja-release -G Ninja -DCMAKE_BUILD_TYPE=Release -DCMAKE_OSX_ARCHITECTURES=arm64 \
+      -DBUILD_SHARED_LIBS=OFF -DFETCHCONTENT_SOURCE_DIR_LIBMLVC="$WORK/libmlvc" > "$O/build.log" 2>&1 \
+    && cmake --build build/ninja-release >> "$O/build.log" 2>&1 ) || { echo "BUILD FAILED, see $O/build.log"; tail -20 "$O/build.log"; exit 1; }
+  echo "   built: $H/build/ninja-release/libmlvc_example"
+fi
+echo; echo "== check (first clip, QP 26, offset 0 and -4)"
+caffeinate -ims "$PY" -u "$D/a1.py" check || exit 1
+grep -q "identical to experiment 10's B\* bitstreams: 1 of 1" "$D/out_all.txt" || { echo "== CHECK FAILED: offset 0 does not reproduce experiment 10 (nothing else run)"; exit 1; }
+echo "-- LTR frames: this program vs libmlvc's own trace (mlvc encode --log-level trace, same clip and QP)"
+C=$("$PY" -c "import json;print(json.load(open('$WORK/data/split.json'))['evaluation'][0])")
+ffmpeg -v error -y -i "$WORK/data/vcd_1080p/mp4/th/${C}_1920x1080_30.mp4" -frames:v 300 -vf scale=640:360:flags=lanczos -pix_fmt nv12 -f rawvideo /tmp/a1c.nv12
+"$MLVC" encode --model-bundles-dir "$WORK/bundles/mlvc" --compute-unit npu --input /tmp/a1c.nv12 --input-width 640 --input-height 360 \
+  --output /tmp/a1c.mlvc --qp 26 --iframe-period 64 --log-level trace > /tmp/a1c.log 2>&1
+"$PY" - "$O/flog/o0/${C:0:6}_qp26.csv" /tmp/a1c.log <<'P'
+import csv, re, sys
+mine = [int(r["frame_idx"]) for r in csv.DictReader(open(sys.argv[1])) if r["ltr"] == "1"]
+lib = [int(x) for x in re.findall(r"LTR marked: frameIdx=(\d+)", open(sys.argv[2], errors="ignore").read())]
+if not lib:
+    print("   libmlvc's trace has no 'LTR marked' lines (trace compiled out?): not verifiable; continuing")
+else:
+    print(f"   program: {len(mine)} LTR marks, libmlvc: {len(lib)}; first 8: {mine[:8]} / {lib[:8]}")
+    print("   MATCH" if mine == lib else "   MISMATCH: LTR offsets would land on the wrong frames")
+    open("/tmp/a1_ltr_ok", "w").write("1" if mine == lib else "0")
+P
+rm -f /tmp/a1c.nv12 /tmp/a1c.mlvc
+[ "$(cat /tmp/a1_ltr_ok 2>/dev/null || echo 1)" = 1 ] || { echo "== CHECK FAILED (LTR frames): nothing else run"; exit 1; }
+for pass in 1 2; do echo; echo "== runs, pass $pass  $(date)"; caffeinate -ims "$PY" -u "$D/a1.py"; done
+echo; echo "== analysis  $(date)"
+"$PY" "$D/a1ana.py"
+cp "$D/out_all.txt" "$O/results/" 2>/dev/null
+echo "== A1 END  $(date)"

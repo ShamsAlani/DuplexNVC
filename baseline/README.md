@@ -1,8 +1,8 @@
 # DuplexNVC Baseline
 
-The baseline is the fixed reference against which every later DuplexNVC change is measured. It was built in ten experiments, each in its own folder with its scripts, raw data, results and a README that explains what was run, what it shows and what we concluded.
+The baseline is the fixed reference against which every later DuplexNVC change is measured. It was built in fourteen experiments, each in its own folder with its scripts, raw data, results and a README that explains what was run, what it shows and what we concluded.
 
-**The core baseline B\*:** full MLVC (`dmc61sbr_reglu`, PSNR weights, Core ML fp16) at 640×360, encoder **and** decoder on the Apple Neural Engine (NE), full duplex at 30 fps (33.3 ms deadline), QP 26, an I-frame every 64 frames, VCD talking-head content. Experiments 07–09 then extend it to the GPU and CPU, to the seven model/resolution settings of our survey, and to every placement of the encoder and the decoder; experiment 10 measures the quality of every setting and its energy at every QP.
+**The core baseline B\*:** full MLVC (`dmc61sbr_reglu`, PSNR weights, Core ML fp16) at 640×360, encoder **and** decoder on the Apple Neural Engine (NE), full duplex at 30 fps (33.3 ms deadline), QP 26, an I-frame every 64 frames, VCD talking-head content. Experiments 07–09 then extend it to the GPU and CPU, to the seven model/resolution settings of our survey, and to every placement of the encoder and the decoder; experiment 10 measures the quality of every setting and its energy at every QP; experiment 11 the correctness and drift of every encoder/decoder pair; experiment 12 whether memory bandwidth limits the NE; experiment 13 the first codec-level mechanism (A1); experiment 14 the Mac's own hardware HEVC as the reference.
 
 **Device:** MacBook Pro 14-inch, Apple M4 Pro, 24 GB, macOS 26.6 · **Codec:** `libmlvc` 0.1.0, commit `eb5d60a`.
 
@@ -20,9 +20,13 @@ The baseline is the fixed reference against which every later DuplexNVC change i
 | [`08_model_conversion_experiment`](08_model_conversion_experiment/) | X2 | Full MLVC and MLVC-S at 540p/720p/1080p: conversion, placement, input streams | 7 bundles | 0.5 h |
 | [`09_placement_experiment`](09_placement_experiment/) | X3 | Every setting × every encoder/decoder placement: which meet 30 fps, at what energy? | 584 | 21.4 h |
 | [`10_quality_per_setting_experiment`](10_quality_per_setting_experiment/) | Step 4b | Quality of every setting at screen size and on faces; energy at every QP; which settings are on the energy–quality Pareto front at equal bitrate? | 900 + 175 | 3.0 h + 7.7 h |
+| [`11_correctness_drift_experiment`](11_correctness_drift_experiment/) | Step 5 + A2 | All 9 encoder→decoder pairs on every setting: failures, determinism, drift, BD-rate (H4); I-frame vs LTR recovery as drift bounds; multi-person content | 2,212 jobs × 9 pairs | ≈ 33 h |
+| [`12_contention_experiment`](12_contention_experiment/) | Contention | Is the NE limited by memory bandwidth? Why does a paced call take twice the unpaced time per frame? | 24 + peak | 55 min |
+| [`13_a1_keyframe_qp_experiment`](13_a1_keyframe_qp_experiment/) | A1 | Does a lower QP on I-frames and LTR frames save bits? | 600 | 50 min |
+| [`14_hevc_anchor_experiment`](14_hevc_anchor_experiment/) | Step 9 | The Mac's real-time hardware HEVC at MLVC's bitrates: quality (and energy, pending) | 200 (+25) | 10 min (+70 min) |
 | [`common`](common/) | — | Measurement program, analysis tools, shared scripts, rebuild scripts, setup logs | — | — |
 
-In total about **40 hours** of measurement; every timed and energy run in quiet mode (quality runs do not depend on timing).
+In total about **75 hours** of measurement; every timed and energy run in quiet mode (quality runs do not depend on timing).
 
 ## Headline results
 
@@ -42,6 +46,12 @@ In total about **40 hours** of measurement; every timed and energy run in quiet 
 | MLVC-S 540p vs B\* at screen size | **Better at every bitrate** (+1.25 dB display PSNR-Y, face LPIPS 0.202 vs 0.233 at 287 kbps) with 32 % less energy; B\* is dominated | 10 |
 | Full MLVC 540p | **Not worth its energy**: 14–15× MLVC-S 540p for +0.4–0.6 dB; MLVC-S 720p (GPU–NE) matches it at half the energy | 10 |
 | 30 fps energy–quality front | **MLVC-S 540p (NE–NE)** and **MLVC-S 720p (GPU–NE)**; a GPU encoder with an NE decoder costs ≈ 4 % in bitrate | 10 |
+| Correctness on every processor pair (H4) | **Deterministic, no failures, but H4 fails for every mismatched pair**: +3–7 % bitrate GPU/NE, +7–20 % with the CPU; about twice that on multi-person clips | 11 |
+| Cheapest drift bound | **LTR recovery every 32 frames**: same worst frame as an I-frame every 32 (37–39 dB) for a quarter of the bits on MLVC-S (+9.6 %) | 11 |
+| Is the NE limited by memory bandwidth? | **No**: 217 GB/s of competing traffic slows the encoder by only 4.4 % (M1: 18.8 %); the NE itself limits sharing | 12 |
+| Why are paced calls slow? | **Clocks drop between frames**: a background memory load cuts the paced B\* call from 12.6 to 7.4 ms per frame | 12 |
+| More bits for the I-frame (A1) | **−1.3 % (coded) to −3.5 % (face LPIPS) BD-rate** at QP offset −6; full MLVC has no LTR frames by default | 13 |
+| Mac's real-time hardware HEVC vs B\* | **HEVC needs +69 % more bits** (coded PSNR-Y); matches MLVC-S 720p only on face LPIPS | 14 |
 
 ## Quiet mode
 
@@ -52,7 +62,7 @@ Every timed run used the same state: AC power and Low Power Mode off; **Wi-Fi an
 ```
 NN_<name>_experiment/
 ├── README.md     question, what was run, how to run it, files, results, conclusion
-├── scripts/      the scripts that ran it (run from ~/Downloads/d; experiment 10's from ~/Downloads/d/4b)
+├── scripts/      the scripts that ran it (run from ~/Downloads/d; experiment 10's from ~/Downloads/d/4b, 11's from d/5, 12's from d/ct, 13's from d/a1, 14's from d/hv and d/he)
 ├── raw_data/     per-run records (frames.csv, run.txt, power.txt) and console logs (logs/)
 └── results/      result tables (CSV) and figures (PNG, PDF)
 ```

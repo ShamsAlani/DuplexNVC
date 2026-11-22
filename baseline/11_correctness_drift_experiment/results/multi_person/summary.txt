@@ -1,0 +1,46 @@
+STEP 5 + A2: correctness of every encoder->decoder pair and drift bounds
+
+== coverage and failures (jobs = clip x QP; each job has 9 pairs)
+   Full MLVC 360p   main   44 jobs  no failures, no short decodes
+   MLVC-S 720p      main   44 jobs  no failures, no short decodes
+   MLVC-S 540p      main   44 jobs  no failures, no short decodes
+
+== determinism (main, first clip, 4 QPs): same bitstream decoded twice on the same processor
+   Full MLVC 360p   NE>NE 4/4, NE>GPU 4/4, NE>CPU 4/4, GPU>NE 4/4, GPU>GPU 4/4, GPU>CPU 4/4, CPU>NE 4/4, CPU>GPU 4/4, CPU>CPU 4/4
+   MLVC-S 720p      NE>NE 4/4, NE>GPU 4/4, NE>CPU 4/4, GPU>NE 4/4, GPU>GPU 4/4, GPU>CPU 4/4, CPU>NE 4/4, CPU>GPU 4/4, CPU>CPU 4/4
+   MLVC-S 540p      NE>NE 4/4, NE>GPU 4/4, NE>CPU 4/4, GPU>NE 4/4, GPU>GPU 4/4, GPU>CPU 4/4, CPU>NE 4/4, CPU>GPU 4/4, CPU>CPU 4/4
+
+== drift = PSNR-Y of the decode against the decode on the encoder's own processor (main)
+   worst frame dB / mean dB (MSE-averaged) / bit-identical frames; then mean dB by frames after the I-frame
+                    pair      worst   mean  ident.  0  1-15  16-31  32-47  48-63
+   Full MLVC 360p   NE>GPU     29.3   45.7    0.0%   59.1   56.0   50.7   45.5   41.2
+   Full MLVC 360p   NE>CPU     27.2   43.3    0.0%   52.3   51.3   47.6   43.1   39.1
+   Full MLVC 360p   GPU>NE     30.7   45.5    0.0%   59.2   56.0   50.8   45.4   40.9
+   Full MLVC 360p   GPU>CPU    33.1   47.3    0.0%   52.4   52.0   50.1   47.1   44.0
+   Full MLVC 360p   CPU>NE     27.9   43.2    0.0%   52.3   51.3   47.6   42.9   38.9
+   Full MLVC 360p   CPU>GPU    30.7   46.8    0.0%   52.4   52.0   50.0   46.8   43.1
+   MLVC-S 720p      NE>GPU     30.9   46.9    0.0%   58.8   56.0   51.8   46.8   42.6
+   MLVC-S 720p      NE>CPU     30.5   44.4    0.0%   52.9   51.8   48.4   43.9   40.5
+   MLVC-S 720p      GPU>NE     30.6   47.0    0.0%   58.8   56.0   51.7   46.8   42.8
+   MLVC-S 720p      GPU>CPU    29.3   46.9    0.0%   53.1   52.6   50.5   46.8   43.5
+   MLVC-S 720p      CPU>NE     29.7   44.3    0.0%   52.9   51.8   48.3   43.8   40.4
+   MLVC-S 720p      CPU>GPU    33.7   47.5    0.0%   53.1   52.6   50.7   47.2   44.0
+   MLVC-S 540p      NE>GPU     31.1   46.5    0.0%   58.8   56.1   51.7   46.3   42.2
+   MLVC-S 540p      NE>CPU     29.9   44.1    0.0%   52.9   51.8   48.3   43.6   40.2
+   MLVC-S 540p      GPU>NE     30.0   46.5    0.0%   58.8   56.1   51.6   46.3   42.2
+   MLVC-S 540p      GPU>CPU    32.8   47.0    0.0%   53.0   52.5   50.3   46.4   43.5
+   MLVC-S 540p      CPU>NE     27.1   43.8    0.0%   52.8   51.8   48.3   43.4   39.8
+   MLVC-S 540p      CPU>GPU    30.1   47.0    0.0%   53.0   52.5   50.5   46.8   43.3
+
+== BD-rate (coded PSNR-Y) of each pair vs NE>NE of the same setting, main structure (H4: |change| < 1 point)
+                       NE>NE   NE>GPU   NE>CPU   GPU>NE  GPU>GPU  GPU>CPU   CPU>NE  CPU>GPU  CPU>CPU
+   Full MLVC 360p     +0.00%   +8.85%  +15.86%   +9.18%   -0.01%   +5.86%  +15.82%   +6.37%   +2.09%
+   MLVC-S 720p        +0.00%  +10.04%  +19.72%  +10.29%   -0.07%  +10.33%  +18.50%   +8.19%   +1.95%
+   MLVC-S 540p        +0.00%   +8.71%  +16.90%   +8.94%   -0.03%   +8.60%  +15.79%   +6.86%   +1.55%
+   H4 fails (|change| >= 1 point): Full MLVC 360p NE>GPU, Full MLVC 360p NE>CPU, Full MLVC 360p GPU>NE, Full MLVC 360p GPU>CPU, Full MLVC 360p CPU>NE, Full MLVC 360p CPU>GPU, Full MLVC 360p CPU>CPU, MLVC-S 720p NE>GPU, MLVC-S 720p NE>CPU, MLVC-S 720p GPU>NE, MLVC-S 720p GPU>CPU, MLVC-S 720p CPU>NE, MLVC-S 720p CPU>GPU, MLVC-S 720p CPU>CPU, MLVC-S 540p NE>GPU, MLVC-S 540p NE>CPU, MLVC-S 540p GPU>NE, MLVC-S 540p GPU>CPU, MLVC-S 540p CPU>NE, MLVC-S 540p CPU>GPU, MLVC-S 540p CPU>CPU
+
+== A2: drift bounds. Cost = BD-rate of NE>NE vs the main structure; worst drift over the 6 mismatched pairs;
+   worst mismatch BD-rate = largest BD-rate of a mismatched pair vs the main NE>NE
+   Full MLVC 360p   default structure (I-frame every 64)   cost  +0.00 %  worst drift  27.2 dB (NE>CPU)  worst mismatch BD +15.86 %
+   MLVC-S 720p      default structure (I-frame every 64)   cost  +0.00 %  worst drift  29.3 dB (GPU>CPU)  worst mismatch BD +19.72 %
+   MLVC-S 540p      default structure (I-frame every 64)   cost  +0.00 %  worst drift  27.1 dB (CPU>NE)  worst mismatch BD +16.90 %

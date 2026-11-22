@@ -1,0 +1,4 @@
+setting,variant,jobs,NE>NE_enc_fail,NE>NE_dec_fail,NE>NE_short,NE>GPU_enc_fail,NE>GPU_dec_fail,NE>GPU_short,NE>CPU_enc_fail,NE>CPU_dec_fail,NE>CPU_short,GPU>NE_enc_fail,GPU>NE_dec_fail,GPU>NE_short,GPU>GPU_enc_fail,GPU>GPU_dec_fail,GPU>GPU_short,GPU>CPU_enc_fail,GPU>CPU_dec_fail,GPU>CPU_short,CPU>NE_enc_fail,CPU>NE_dec_fail,CPU>NE_short,CPU>GPU_enc_fail,CPU>GPU_dec_fail,CPU>GPU_short,CPU>CPU_enc_fail,CPU>CPU_dec_fail,CPU>CPU_short
+mlvc_360p,main,44,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+mlvcs_720p,main,44,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+mlvcs_540p,main,44,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
