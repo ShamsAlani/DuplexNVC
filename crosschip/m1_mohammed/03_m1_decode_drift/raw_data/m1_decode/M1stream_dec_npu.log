@@ -1,0 +1,9 @@
+libmlvc 0.1.0 (eb5d60a, HEAD)
+Platform: Apple MacBookAir10,1, macOS 27.2
+  CPU: Apple M1 (M1, arm64, fp16, dotprod)
+Reading access units...
+Creating manager...
+Manager: coreml/npu, model_cache, session_preload at-init
+  v0.1: 640x368, max_fps=120, max_temporal=2, max_ltr=8
+Decoding...
+Decoding completed.

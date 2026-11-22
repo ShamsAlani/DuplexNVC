@@ -1,0 +1,55 @@
+#!/bin/bash
+# DAY 5 (Sun 22 Nov, night, quiet) - CROSS-CHIP ENERGY on the M1 (= baseline/06_energy_experiment/scripts/w):
+#   120 s idle, then 5 x 60 s B* duplex paced 30 fps with powermetrics every 100 ms; idle subtracted; mJ per frame pair.
+# QUIET MAC (./m1_quiet first); asks for the password (powermetrics needs sudo). ~15 min. Do not press Ctrl-C.
+# Output: $RUNS/m1_energy/idle, M1_energy_r<n>, M1_energy_summary.csv, M1_energy_per_run.csv; out_m1_energy.txt
+D=$(cd "$(dirname "$0")" && pwd); . "$D/vm1"; m1log energy
+E="$RUNS/m1_energy"; [ -d "$E" ] && mv "$E" "${E}_old_$(date +%H%M%S)"; mkdir -p "$E"; cd "$E"
+echo "== $TAG ENERGY (AC) START  $(date)"; machine; pmset -g batt | head -1
+sudo -v || exit 1
+( while true; do sudo -n true 2>/dev/null; sleep 50; done ) & KEEP=$!
+"$TOOLS/thermal_log" >> "$E/thermal.csv" & THERM=$!
+SAMP="cpu_power,gpu_power"
+echo "[idle] 120 s, do not touch the laptop"
+mkdir -p idle; sudo powermetrics --samplers $SAMP -i 100 -n 1200 -o idle/power.txt >/dev/null 2>&1
+for r in 1 2 3 4 5; do
+  echo "[$r/5] $(date +%H:%M:%S) B* duplex 30 fps + power log"
+  mkdir -p ${TAG}_energy_r$r
+  sudo powermetrics --samplers $SAMP -i 100 -n 800 -o ${TAG}_energy_r$r/power.txt >/dev/null 2>&1 &
+  sleep 5
+  "$BENCH" duplex $BL --fps 30 --seconds 60 --out-dir ${TAG}_energy_r$r 2> ${TAG}_energy_r$r.log
+  wait $!; sleep 60
+done
+kill $KEEP $THERM 2>/dev/null
+echo "== $TAG ENERGY END  $(date)"
+grep -c "ANE Power" idle/power.txt | sed 's/^/idle samples with ANE line: /'
+for r in 1 2 3 4 5; do echo "-- run $r"; "$PY" "$TOOLS/analyze_run.py" power ${TAG}_energy_r$r --pm ${TAG}_energy_r$r/power.txt --idle-pm idle/power.txt --json ${TAG}_energy_r$r/energy.json; done
+"$PY" - "$E" "$TAG" <<'PY'
+import csv, json, glob, os, statistics as st, sys
+base, tag = sys.argv[1], sys.argv[2]
+runs = sorted(glob.glob(f"{base}/{tag}_energy_r*/energy.json"))
+rs = [(os.path.basename(os.path.dirname(f)), json.load(open(f))) for f in runs]
+per = []
+for name, r in rs:
+    tot = sum(r[k]["dynamic_mJ_per_pair"] for k in ("ane", "cpu", "gpu") if k in r)
+    per.append([name, round(r["ane"]["dynamic_mJ_per_pair"], 2), round(r["cpu"]["dynamic_mJ_per_pair"], 2),
+                round(r["gpu"]["dynamic_mJ_per_pair"], 2), round(tot, 2)])
+with open(f"{base}/{tag}_energy_per_run.csv", "w", newline="") as f:
+    w = csv.writer(f); w.writerow(["run", "ane_mJ_per_pair", "cpu_mJ_per_pair", "gpu_mJ_per_pair", "total_mJ_per_pair"]); w.writerows(per)
+rows = []
+for k, lab in (("ane", "neural_engine"), ("cpu", "cpu"), ("gpu", "gpu")):
+    v = [r[k]["dynamic_mJ_per_pair"] for _, r in rs]
+    rows.append([lab, round(st.median(r[k]["run_mW"] for _, r in rs), 2), round(st.median(r[k]["idle_mW"] for _, r in rs), 2),
+                 round(st.median(v), 2), round(min(v), 2), round(max(v), 2), round(st.median(r[k]["dynamic_J_per_min"] for _, r in rs), 2)])
+tv = [p[4] for p in per]
+rows.append(["total", round(sum(r[1] for r in rows), 2), round(sum(r[2] for r in rows), 2), round(st.median(tv), 2), round(min(tv), 2), round(max(tv), 2),
+             round(st.median(sum(r[k]["dynamic_J_per_min"] for k in ("ane", "cpu", "gpu")) for _, r in rs), 2)])
+with open(f"{base}/{tag}_energy_summary.csv", "w", newline="") as f:
+    w = csv.writer(f); w.writerow(["processor", "run_mW", "idle_mW", "mJ_per_pair_median", "mJ_min", "mJ_max", "J_per_minute"]); w.writerows(rows)
+print(f"\n== {tag} energy summary, {len(rs)} runs -> {tag}_energy_summary.csv, {tag}_energy_per_run.csv")
+print(f"  {'processor':14s} {'run mW':>8s} {'idle mW':>8s} {'mJ/pair':>8s} {'min':>8s} {'max':>8s} {'J/min':>8s}")
+for r in rows: print(f"  {r[0]:14s} " + " ".join(f"{x:8.1f}" for x in r[1:]))
+print("  M4 Pro reference (06_energy_experiment): total 65.3 mJ per frame pair (64.2-66.3), NE 63.4, CPU 1.9, GPU 0.0")
+PY
+echo "thermal states seen: $(cut -d, -f2 "$E/thermal.csv" | sort | uniq -c | tr -s ' \n' ' ')"
+echo "RESULT of Day 5 = '$TAG energy per frame pair': $E/${TAG}_energy_summary.csv"

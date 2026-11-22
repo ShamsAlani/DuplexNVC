@@ -1,0 +1,42 @@
+2026-11-20 16:40:15.103 [T#77200][ INFO][manager.cpp:216]: Initializing MlvcManager from bundles dir: compute_unit=npu, enable_model_cache=1, session_preload_mode=at-init, versions=[v0.1]
+2026-11-20 16:40:15.103 [T#77200][ INFO][platform_info.cpp:644]: Build: libmlvc 0.1.0 (eb5d60a, HEAD)
+2026-11-20 16:40:15.103 [T#77200][ INFO][platform_info.cpp:646]: Platform: OS=macOS 27.2, HW=Apple MacBookAir10,1
+2026-11-20 16:40:15.103 [T#77200][ INFO][platform_info.cpp:654]: Platform: CPU=Apple M1 (Apple M1, arm64), FP16=yes, DotProd=yes
+2026-11-20 16:40:15.103 [T#77200][ INFO][platform_info.cpp:666]: Platform: enumeration time: 0.0 ms
+2026-11-20 16:40:15.103 [T#77200][ INFO][engine.mm:630]: CoreML initialized: compute_unit=npu, os_ver=27, os_build=26B131, env_hash=45345c6b
+2026-11-20 16:40:15.103 [T#77200][ INFO][bundle.cpp:160]: Discovering model bundles...
+2026-11-20 16:40:15.103 [T#77200][ INFO][bundle.cpp:211]: Found model bundle: dmc61sbr_reglu-psnr_v1-coreml-apple-v0.1.tar
+2026-11-20 16:40:15.114 [T#77200][ INFO][manager.cpp:519]: Loading model bundle 1/1 (35.3 MB)...
+2026-11-20 16:40:15.116 [T#77200][ INFO][bundle.cpp:680]: Preparing model cache for bundle v0.1...
+2026-11-20 16:40:15.117 [T#77200][ INFO][bundle.cpp:711]: Preloading inference sessions for bundle v0.1...
+2026-11-20 16:40:15.117 [T#77200][ INFO][bundle.cpp:838]: Creating inference session for model 640x368, part=MLVCEncoder, registry_id=dmc61sbr_reglu-psnr_v1-coreml-apple-v0.1 func=MLVCEncoder_640x368
+2026-11-20 16:40:15.197 [T#77200][ INFO][bundle.cpp:838]: Creating inference session for model 640x368, part=MLVCDecoder, registry_id=dmc61sbr_reglu-psnr_v1-coreml-apple-v0.1 func=MLVCDecoder_640x368
+2026-11-20 16:40:15.266 [T#77200][ INFO][bundle.cpp:732]: Preloaded 2 inference sessions
+2026-11-20 16:40:15.266 [T#77200][ INFO][bundle.cpp:608]: Loaded bundle: v0.1, dmc61sbr_reglu-psnr_v1, coreml, apple, ts: 2026-11-20T12:37:45.860342+00:00, registry: 1, models: 1
+2026-11-20 16:40:15.266 [T#77200][ INFO][manager.cpp:545]: Loading model bundle 1/1 completed
+2026-11-20 16:40:15.267 [T#77200][ INFO][manager.cpp:571]: MLVC Manager initialized with 1 bundle(s)
+manager: requested=npu resolved=npu
+model v0.1 default iframe_period=64 -> using 64
+2026-11-20 16:40:15.267 [T#77200][ INFO][codec.cpp:469]: [Enc#0] Configuring encoder: version=v0.1, size=640x360, iframe_period=64, num_temporal_layers=1, ltr_mode=internal, ltr_start_idx=0, ltr_period=0, ltr_num_slots=4, ltr_recovery_period=0
+2026-11-20 16:40:15.269 [T#77200][ INFO][codec.cpp:534]: [Enc#0] Configured encoder in 1.98 ms
+encoder first-frame (init) ms: 15.9869
+2026-11-20 16:40:16.744 [T#77213][ INFO][codec.cpp:136]: [Enc#0] Encoder frames: 128/128 (128/0), fps: 86.9, kbps: 201.2 (1.00/0.00), idr: 0/2 (forced/total), ltr_recoveries: 0/0 (forced/total)
+2026-11-20 16:40:16.744 [T#77213][ INFO][codec.cpp:143]: [Enc#0] Encoder total: 9.94/1.38/9.41/21.28 (n=128), reconfigure: 1.98/0.00 (n=1), preprocess: 0.06/0.07, inference: 9.44/1.09, scale_decoder: 0.09/0.07, entropy_coding: 0.30/0.17, interval: 11.51/19.16 (mean/std/min/max)
+2026-11-20 16:40:17.968 [T#77213][ INFO][codec.cpp:136]: [Enc#0] Encoder frames: 128/128 (128/0), fps: 104.6, kbps: 271.4 (1.00/0.00), idr: 0/2 (forced/total), ltr_recoveries: 0/0 (forced/total)
+2026-11-20 16:40:17.968 [T#77213][ INFO][codec.cpp:143]: [Enc#0] Encoder total: 9.56/0.06/9.43/9.76 (n=128), reconfigure: n/a, preprocess: 0.04/0.01, inference: 9.18/0.05, scale_decoder: 0.07/0.00, entropy_coding: 0.25/0.01, interval: 9.56/0.06 (mean/std/min/max)
+2026-11-20 16:40:19.191 [T#77213][ INFO][codec.cpp:136]: [Enc#0] Encoder frames: 128/128 (128/0), fps: 104.7, kbps: 349.3 (1.00/0.00), idr: 0/2 (forced/total), ltr_recoveries: 0/0 (forced/total)
+2026-11-20 16:40:19.191 [T#77213][ INFO][codec.cpp:143]: [Enc#0] Encoder total: 9.55/0.05/9.43/9.73 (n=128), reconfigure: n/a, preprocess: 0.04/0.01, inference: 9.17/0.05, scale_decoder: 0.07/0.00, entropy_coding: 0.25/0.01, interval: 9.56/0.05 (mean/std/min/max)
+2026-11-20 16:40:20.414 [T#77213][ INFO][codec.cpp:136]: [Enc#0] Encoder frames: 128/128 (128/0), fps: 104.6, kbps: 498.0 (1.00/0.00), idr: 0/2 (forced/total), ltr_recoveries: 0/0 (forced/total)
+2026-11-20 16:40:20.415 [T#77213][ INFO][codec.cpp:143]: [Enc#0] Encoder total: 9.56/0.07/9.41/9.74 (n=128), reconfigure: n/a, preprocess: 0.05/0.00, inference: 9.16/0.07, scale_decoder: 0.07/0.00, entropy_coding: 0.25/0.01, interval: 9.56/0.07 (mean/std/min/max)
+2026-11-20 16:40:21.639 [T#77213][ INFO][codec.cpp:136]: [Enc#0] Encoder frames: 128/128 (128/0), fps: 104.6, kbps: 638.4 (1.00/0.00), idr: 0/2 (forced/total), ltr_recoveries: 0/0 (forced/total)
+2026-11-20 16:40:21.639 [T#77213][ INFO][codec.cpp:143]: [Enc#0] Encoder total: 9.56/0.08/9.39/9.74 (n=128), reconfigure: n/a, preprocess: 0.05/0.01, inference: 9.17/0.07, scale_decoder: 0.07/0.00, entropy_coding: 0.25/0.01, interval: 9.56/0.08 (mean/std/min/max)
+2026-11-20 16:40:22.859 [T#77213][ INFO][codec.cpp:136]: [Enc#0] Encoder frames: 128/128 (128/0), fps: 104.9, kbps: 226.2 (1.00/0.00), idr: 0/2 (forced/total), ltr_recoveries: 0/0 (forced/total)
+2026-11-20 16:40:22.859 [T#77213][ INFO][codec.cpp:143]: [Enc#0] Encoder total: 9.53/0.10/9.36/10.26 (n=128), reconfigure: n/a, preprocess: 0.03/0.00, inference: 9.16/0.10, scale_decoder: 0.07/0.00, entropy_coding: 0.25/0.01, interval: 9.54/0.10 (mean/std/min/max)
+2026-11-20 16:40:24.079 [T#77213][ INFO][codec.cpp:136]: [Enc#0] Encoder frames: 128/128 (128/0), fps: 104.9, kbps: 297.1 (1.00/0.00), idr: 0/2 (forced/total), ltr_recoveries: 0/0 (forced/total)
+2026-11-20 16:40:24.079 [T#77213][ INFO][codec.cpp:143]: [Enc#0] Encoder total: 9.53/0.06/9.33/9.69 (n=128), reconfigure: n/a, preprocess: 0.03/0.00, inference: 9.15/0.06, scale_decoder: 0.07/0.00, entropy_coding: 0.25/0.01, interval: 9.53/0.06 (mean/std/min/max)
+2026-11-20 16:40:25.299 [T#77213][ INFO][codec.cpp:136]: [Enc#0] Encoder frames: 128/128 (128/0), fps: 104.9, kbps: 342.4 (1.00/0.00), idr: 0/2 (forced/total), ltr_recoveries: 0/0 (forced/total)
+2026-11-20 16:40:25.299 [T#77213][ INFO][codec.cpp:143]: [Enc#0] Encoder total: 9.53/0.06/9.37/9.68 (n=128), reconfigure: n/a, preprocess: 0.04/0.01, inference: 9.15/0.06, scale_decoder: 0.07/0.00, entropy_coding: 0.25/0.01, interval: 9.53/0.06 (mean/std/min/max)
+done: 1044 frame records in M1_smoke_alone-enc
+2026-11-20 16:40:25.492 [T#77200][ INFO][core.cpp:112]: ~Encoder core: preprocess: 0.04/0.03 (n=1044), inference: 9.20/0.40 (n=1044), scale_decoder: 0.07/0.03 (n=1044), entropy_coding: 0.25/0.06 (n=1044) (mean/std)
+2026-11-20 16:40:25.493 [T#77200][ INFO][codec.cpp:199]: [Enc#0] ~Encoder frames: 1044/1044 (1044/0), fps: 102.2, kbps: 355.2 (1.00/0.00), idr: 0/17 (forced/total), ltr_recoveries: 0/0 (forced/total)
+2026-11-20 16:40:25.493 [T#77200][ INFO][codec.cpp:206]: [Enc#0] ~Encoder total: 9.59/0.50/9.33/21.28 (n=1044), reconfigure: 1.98/0.00 (n=1), preprocess: 0.04/0.03, inference: 9.20/0.40, scale_decoder: 0.07/0.03, entropy_coding: 0.25/0.06, interval: 9.79/6.72 (mean/std/min/max)

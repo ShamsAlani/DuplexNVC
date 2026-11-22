@@ -1,0 +1,2 @@
+d241a006edd907a30c9e94302356db86d231b1025c2b25eb347e6a6924cd9458  /Users/home/Downloads/duplexnvc-m1/bundles/mlvc/dmc61sbr_reglu-psnr_v1-coreml-apple-v0.1.tar
+5bb591f3337f6f8774df5bb0863a600883b0efd0a6a43cd6f042b5fb7733dbd1  /Users/home/Downloads/duplexnvc-m1/bundles/mlvc-s/dmc61sbr_mini_reglu-perceptual_v1-coreml-apple-v0.1.tar

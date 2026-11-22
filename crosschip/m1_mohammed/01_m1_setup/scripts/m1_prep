@@ -1,0 +1,41 @@
+#!/bin/bash
+# QUIET MODE BY HAND, automated as far as macOS allows. Run before every timed run (Days 2, 4, 5), then ./m1_quiet.
+#   ./m1_prep on     Low Power Mode off, Wi-Fi off, Bluetooth off, brightness to maximum, quit every app but Terminal,
+#                    then read the state back and list what you must still check yourself
+#   ./m1_prep off    Wi-Fi and Bluetooth back on (run after ./m1_unquiet)
+# Needs two small Homebrew tools the first time (installed by this script while Wi-Fi is still on): blueutil, brightness.
+# Cannot be done from the command line on macOS: "Automatically adjust brightness" and True Tone (System Settings, Displays),
+# plugging in the charger, the lid and the surface. The script opens the Displays settings for you and checks AC power.
+D=$(cd "$(dirname "$0")" && pwd); . "$D/vm1"
+case "${1:-on}" in
+on)
+  echo "== $TAG quiet-mode preparation  $(date)"
+  for t in blueutil brightness; do command -v $t >/dev/null || { echo "-- installing $t (Homebrew, needs Wi-Fi)"; brew install $t >/dev/null 2>&1 || echo "   could not install $t"; }; done
+  echo "-- Low Power Mode off (password)"; sudo pmset -a lowpowermode 0 2>/dev/null
+  echo "-- quitting every app except Terminal and Finder"
+  osascript -e 'tell application "System Events" to set L to name of every process whose background only is false and name is not "Terminal" and name is not "Finder"' -e 'repeat with n in L' -e 'try' -e 'tell application n to quit' -e 'end try' -e 'end repeat' >/dev/null 2>&1
+  echo "-- brightness to maximum"; command -v brightness >/dev/null && brightness 1 >/dev/null 2>&1
+  echo "-- opening System Settings > Displays: turn OFF 'Automatically adjust brightness' and True Tone, then quit System Settings"
+  open "x-apple.systempreferences:com.apple.Displays-Settings.extension"
+  echo "-- Bluetooth off"; command -v blueutil >/dev/null && blueutil -p 0
+  WIFI=$(networksetup -listallhardwareports | awk '/Wi-Fi/{getline; print $2}')
+  echo "-- Wi-Fi off ($WIFI)"; [ -n "$WIFI" ] && networksetup -setairportpower "$WIFI" off
+  sleep 2
+  echo; echo "== state"
+  pmset -g batt | head -1
+  echo "Low Power Mode: $(pmset -g | awk '/lowpowermode/{print $2}' | head -1)   (must be 0)"
+  [ -n "$WIFI" ] && networksetup -getairportpower "$WIFI"
+  command -v blueutil >/dev/null && echo "Bluetooth power: $(blueutil -p)   (must be 0)"
+  command -v brightness >/dev/null && brightness -l 2>/dev/null | grep -i "brightness" | head -1
+  echo "running apps: $(osascript -e 'tell application "System Events" to get name of every process whose background only is false' 2>/dev/null)"
+  echo
+  echo "STILL BY HAND: charger in (line 1 above must say 'AC Power'); Displays: auto-brightness OFF, True Tone OFF; quit System Settings;"
+  echo "Air flat on a hard surface, lid open. Then: ./m1_quiet and the run. Afterwards: ./m1_unquiet; ./m1_prep off"
+  ;;
+off)
+  WIFI=$(networksetup -listallhardwareports | awk '/Wi-Fi/{getline; print $2}')
+  [ -n "$WIFI" ] && networksetup -setairportpower "$WIFI" on && echo "Wi-Fi: on"
+  command -v blueutil >/dev/null && blueutil -p 1 && echo "Bluetooth: on"
+  ;;
+*) echo "usage: ./m1_prep on | off"; exit 2;;
+esac

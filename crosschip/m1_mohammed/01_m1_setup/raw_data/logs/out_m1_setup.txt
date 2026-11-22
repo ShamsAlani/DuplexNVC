@@ -1,0 +1,129 @@
+== M1 SETUP START  Fri 20 Nov 2026 16:38:18 +04
+chip: Apple M1  memory: 8 GB  model: MacBookAir10,1
+ProductName:		macOS ProductVersion:		27.2.1 BuildVersion:		26B131 
+owner=mohammed tag=M1 date=Fri 20 Nov 2026 16:38:18 +04
+chip: Apple M1  memory: 8 GB  model: MacBookAir10,1
+ProductName:		macOS ProductVersion:		27.2.1 BuildVersion:		26B131 
+      Model Name: MacBook Air
+      Model Identifier: MacBookAir10,1
+      Chip: Apple M1
+      Total Number of Cores: 8 (4 Performance and 4 Efficiency)
+      Memory: 8 GB
+libmlvc commit: eb5d60a
+Now drawing from 'Battery Power'
+== 1. analysis tools -> /Users/home/Downloads/duplexnvc-m1/tools
+   ok  analyze_run.py
+   ok  quality_tools.py
+   ok  duplex_bench.cpp
+   ok  mlplan.swift
+   ok  thermal_log.swift
+== 2. measurement program (harness)
+-- Configuring done (20.3s)
+-- Generating done (0.0s)
+-- Build files have been written to: /Users/home/Downloads/duplexnvc-m1/harness/build/ninja-release
+[37/40] Building CXX object _deps/libmlvc-build/src/CMakeFiles/libmlvc.dir/libmlvc/codec/bundle.cpp.o
+[38/40] Linking CXX static library _deps/libmlvc-build/src/libmlvc.a
+[39/40] Linking CXX executable libmlvc_example
+   fixed-version check (must be 13): 13
+usage: duplex_bench <prepare|alone-enc|alone-dec|turns|duplex> [options]
+   ok  /Users/home/Downloads/duplexnvc-m1/harness/build/ninja-release/libmlvc_example
+   ok  /Users/home/Downloads/duplexnvc-m1/libmlvc/install/mac-arm64-ninja-release/bin/mlvc
+   ok  /Users/home/Downloads/duplexnvc-m1/.venv/bin/python3
+   ok  /Users/home/Downloads/duplexnvc-m1/tools/thermal_log
+   ok  /Users/home/Downloads/duplexnvc-m1/tools/memstress
+== 3. model bundles (must be the SAME files as on Shams's Mac; compare the checksums)
+/Users/home/Downloads/duplexnvc-m1/bundles/mlvc:
+total 72360
+-rw-r--r--  1 home  staff  37048320 20 Nov 16:37 dmc61sbr_reglu-psnr_v1-coreml-apple-v0.1.tar
+
+/Users/home/Downloads/duplexnvc-m1/bundles/mlvc-s:
+total 26184
+-rw-r--r--  1 home  staff  13404160 20 Nov 16:28 dmc61sbr_mini_reglu-perceptual_v1-coreml-apple-v0.1.tar
+d241a006edd907a30c9e94302356db86d231b1025c2b25eb347e6a6924cd9458  /Users/home/Downloads/duplexnvc-m1/bundles/mlvc/dmc61sbr_reglu-psnr_v1-coreml-apple-v0.1.tar
+5bb591f3337f6f8774df5bb0863a600883b0efd0a6a43cd6f042b5fb7733dbd1  /Users/home/Downloads/duplexnvc-m1/bundles/mlvc-s/dmc61sbr_mini_reglu-perceptual_v1-coreml-apple-v0.1.tar
+   -> /Users/home/Downloads/duplexnvc-m1/runs/m1_setup/M1_bundle_sha256.txt  (Shams: shasum -a 256 ~/Downloads/duplexnvc-baseline/bundles/*/*.tar)
+== 4. B* streams (360p): camera = 0380a3 + 6587ae, incoming = 6c9c96 + 9c02f6 at QP 26 on the NE
+-rw-r--r--  1 home  staff  207360000 20 Nov 16:39 /Users/home/Downloads/duplexnvc-m1/data/nv12/bl_camera_640x360.nv12
+-rw-r--r--  1 home  staff  207360000 20 Nov 16:39 /Users/home/Downloads/duplexnvc-m1/data/nv12/bl_incoming_src_640x360.nv12
+   (expect 207360000 bytes each = 600 frames)
+2026-11-20 16:39:18.582 [T#75906][ INFO][bundle.cpp:211]: Found model bundle: dmc61sbr_reglu-psnr_v1-coreml-apple-v0.1.tar
+manager: requested=npu resolved=npu
+model v0.1 default iframe_period=64 -> using 64
+2026-11-20 16:39:25.521 [T#75906][ INFO][codec.cpp:469]: [Enc#0] Configuring encoder: version=v0.1, size=640x360, iframe_period=64, num_temporal_layers=1, ltr_mode=internal, ltr_start_idx=0, ltr_period=0, ltr_num_slots=4, ltr_recovery_period=0
+wrote 600 access units to /Users/home/Downloads/duplexnvc-m1/data/incoming/mlvc-640x360-qp26/incoming.{aus,mlvc}
+Decoding completed.
+frames 600: PSNR-Y 34.983 dB, PSNR-YUV(6:1:1) 37.356 dB
+== 4b. MLVC-S 540p streams (Phase-1 setting, for the MLVC-S rows of the timing table)
+manager: requested=npu resolved=npu
+wrote 300 access units to /Users/home/Downloads/duplexnvc-m1/data/incoming/p1-mlvc-s-540p/incoming.{aus,mlvc}
+== 5. smoke tests on this chip (10 s each, not data)
+-- B* turns unpaced
+2026-11-20 16:40:04.601 [T#76767][ INFO][manager.cpp:216]: Initializing MlvcManager from bundles dir: compute_unit=npu, enable_model_cache=1, session_preload_mode=at-init, versions=[v0.1]
+2026-11-20 16:40:04.601 [T#76767][ INFO][engine.mm:630]: CoreML initialized: compute_unit=npu, os_ver=27, os_build=26B131, env_hash=45345c6b
+2026-11-20 16:40:04.775 [T#76767][ INFO][manager.cpp:571]: MLVC Manager initialized with 1 bundle(s)
+manager: requested=npu resolved=npu
+encoder first-frame (init) ms: 16.217
+decoder first-frame (init) ms: 15.3977
+-- B* alone-enc unpaced
+2026-11-20 16:40:15.103 [T#77200][ INFO][manager.cpp:216]: Initializing MlvcManager from bundles dir: compute_unit=npu, enable_model_cache=1, session_preload_mode=at-init, versions=[v0.1]
+2026-11-20 16:40:15.103 [T#77200][ INFO][engine.mm:630]: CoreML initialized: compute_unit=npu, os_ver=27, os_build=26B131, env_hash=45345c6b
+2026-11-20 16:40:15.267 [T#77200][ INFO][manager.cpp:571]: MLVC Manager initialized with 1 bundle(s)
+manager: requested=npu resolved=npu
+encoder first-frame (init) ms: 15.9869
+-- B* alone-dec unpaced
+2026-11-20 16:40:25.517 [T#77494][ INFO][manager.cpp:216]: Initializing MlvcManager from bundles dir: compute_unit=npu, enable_model_cache=1, session_preload_mode=at-init, versions=[v0.1]
+2026-11-20 16:40:25.518 [T#77494][ INFO][engine.mm:630]: CoreML initialized: compute_unit=npu, os_ver=27, os_build=26B131, env_hash=45345c6b
+2026-11-20 16:40:25.685 [T#77494][ INFO][manager.cpp:571]: MLVC Manager initialized with 1 bundle(s)
+manager: requested=npu resolved=npu
+decoder first-frame (init) ms: 21.5686
+-- B* duplex unpaced
+2026-11-20 16:40:35.993 [T#77656][ INFO][manager.cpp:216]: Initializing MlvcManager from bundles dir: compute_unit=npu, enable_model_cache=1, session_preload_mode=at-init, versions=[v0.1]
+2026-11-20 16:40:35.993 [T#77656][ INFO][engine.mm:630]: CoreML initialized: compute_unit=npu, os_ver=27, os_build=26B131, env_hash=45345c6b
+2026-11-20 16:40:36.156 [T#77656][ INFO][manager.cpp:571]: MLVC Manager initialized with 1 bundle(s)
+manager: requested=npu resolved=npu
+encoder first-frame (init) ms: 15.9885
+decoder first-frame (init) ms: 15.0103
+-- B* duplex paced 30 fps
+2026-11-20 16:40:46.531 [T#77813][ INFO][manager.cpp:216]: Initializing MlvcManager from bundles dir: compute_unit=npu, enable_model_cache=1, session_preload_mode=at-init, versions=[v0.1]
+2026-11-20 16:40:46.531 [T#77813][ INFO][engine.mm:630]: CoreML initialized: compute_unit=npu, os_ver=27, os_build=26B131, env_hash=45345c6b
+2026-11-20 16:40:46.694 [T#77813][ INFO][manager.cpp:571]: MLVC Manager initialized with 1 bundle(s)
+manager: requested=npu resolved=npu
+encoder first-frame (init) ms: 19.711
+decoder first-frame (init) ms: 16.7709
+-- MLVC-S 540p duplex paced 30 fps
+2026-11-20 16:40:57.104 [T#77912][ INFO][manager.cpp:216]: Initializing MlvcManager from bundles dir: compute_unit=npu, enable_model_cache=1, session_preload_mode=at-init, versions=[v0.1]
+2026-11-20 16:40:57.104 [T#77912][ INFO][engine.mm:630]: CoreML initialized: compute_unit=npu, os_ver=27, os_build=26B131, env_hash=45345c6b
+2026-11-20 16:40:58.366 [T#77912][ INFO][manager.cpp:571]: MLVC Manager initialized with 1 bundle(s)
+manager: requested=npu resolved=npu
+encoder first-frame (init) ms: 19.2377
+decoder first-frame (init) ms: 15.9392
+
+== M1_smoke_turns  mode=turns size=640x360 qp=26 enc=npu dec=npu fps=0 deadline=33.333 ms
+  send: 51.4 fps | service mean 9.58 ms p95 9.92 p99 10.55 | latency p95 9.92 p99 10.55 | late+dropped 0.00% | infer 9.18 / call 9.58 ms | fails 0 | 99 kbps
+  recv: 51.3 fps | service mean 9.91 ms p95 10.29 p99 10.87 | latency p95 20.20 p99 21.21 | late+dropped 0.00% | infer 9.49 / call 9.90 ms | fails 0 | 279 kbps
+
+== M1_smoke_alone-enc  mode=alone-enc size=640x360 qp=26 enc=npu dec=npu fps=0 deadline=33.333 ms
+  send: 104.7 fps | service mean 9.55 ms p95 9.66 p99 9.70 | latency p95 9.66 p99 9.70 | late+dropped 0.00% | infer 9.16 / call 9.55 ms | fails 0 | 107 kbps
+
+== M1_smoke_alone-dec  mode=alone-dec size=640x360 qp=26 enc=npu dec=npu fps=0 deadline=33.333 ms
+  recv: 102.2 fps | service mean 9.78 ms p95 9.94 p99 10.21 | latency p95 9.94 p99 10.21 | late+dropped 0.00% | infer 9.37 / call 9.78 ms | fails 0 | 292 kbps
+
+== M1_smoke_duplex  mode=duplex size=640x360 qp=26 enc=npu dec=npu fps=0 deadline=33.333 ms
+  send: 58.0 fps | service mean 17.25 ms p95 17.63 p99 17.79 | latency p95 17.63 p99 17.79 | late+dropped 0.00% | infer 16.00 / call 17.25 ms | fails 0 | 115 kbps
+  recv: 58.0 fps | service mean 17.25 ms p95 17.43 p99 17.56 | latency p95 17.43 p99 17.56 | late+dropped 0.00% | infer 15.86 / call 17.25 ms | fails 0 | 287 kbps
+
+== M1_smoke_duplex30  mode=duplex size=640x360 qp=26 enc=npu dec=npu fps=30 deadline=33.3333333333333 ms
+  send: 30.1 fps | service mean 18.12 ms p95 25.47 p99 26.31 | latency p95 30.32 p99 31.16 | late+dropped 0.00% | infer 16.44 / call 18.12 ms | fails 0 | 80 kbps
+  recv: 30.0 fps | service mean 19.69 ms p95 24.49 p99 25.57 | latency p95 26.84 p99 28.18 | late+dropped 0.00% | infer 17.85 / call 19.69 ms | fails 0 | 276 kbps
+
+== M1S_smoke_duplex30  mode=duplex size=960x540 qp=22 enc=npu dec=npu fps=30 deadline=33.3333333333333 ms
+  send: 30.1 fps | service mean 17.12 ms p95 23.54 p99 25.42 | latency p95 28.08 p99 30.22 | late+dropped 0.37% | infer 15.18 / call 17.12 ms | fails 0 | 470 kbps
+  recv: 30.0 fps | service mean 17.86 ms p95 22.59 p99 24.77 | latency p95 25.85 p99 28.74 | late+dropped 0.37% | infer 15.68 / call 17.86 ms | fails 0 | 477 kbps
+send: alone call 9.55 ms, duplex call 17.25 ms -> kappa(call) 1.81, kappa(inference) 1.75; T_turns 19.49 ms, T 17.25 ms -> S 1.13
+recv: alone call 9.78 ms, duplex call 17.25 ms -> kappa(call) 1.76, kappa(inference) 1.69; T_turns 19.49 ms, T 17.25 ms -> S 1.13
+ceiling (t_enc + t_dec) / max(t_enc, t_dec) from alone runs: 1.98  (30 fps from T_turns needs S >= 0.58)
+
+== M1 SETUP END  Fri 20 Nov 2026 16:41:08 +04
+CHECK: no FAILED, every manager line says resolved=npu, all runs end, B* duplex 30 fps late ~0 % (if late > 1 % on the M1, that is itself the Day 2 finding).
+RESULT of Day 1 = 'MLVC runs on the M1': /Users/home/Downloads/duplexnvc-m1/runs/m1_setup/M1_machine.txt, /Users/home/Downloads/duplexnvc-m1/runs/m1_setup/M1_bundle_sha256.txt, /Users/home/Downloads/duplexnvc-m1/runs/m1_smoke/, /Users/home/Downloads/dm1/out_m1_setup.txt
+Next: ./m1_trace (optional, 5 min), then on Day 2 night: ./m1_quiet; ./m1_timing

@@ -1,0 +1,56 @@
+== M1 ENERGY (AC) START  Fri 20 Nov 2026 19:24:51 +04
+chip: Apple M1  memory: 8 GB  model: MacBookAir10,1
+ProductName:		macOS ProductVersion:		27.2.1 BuildVersion:		26B131 
+Now drawing from 'AC Power'
+[idle] 120 s, do not touch the laptop
+[1/5] 19:27:12 B* duplex 30 fps + power log
+[2/5] 19:29:44 B* duplex 30 fps + power log
+[3/5] 19:32:15 B* duplex 30 fps + power log
+[4/5] 19:34:47 B* duplex 30 fps + power log
+[5/5] 19:37:18 B* duplex 30 fps + power log
+== M1 ENERGY END  Fri 20 Nov 2026 19:39:51 +04
+./m1_energy: line 25: 19620 Terminated: 15          ( while true; do
+    sudo -n true 2> /dev/null; sleep 50;
+done )
+./m1_energy: line 25: 19621 Terminated: 15          "$TOOLS/thermal_log" >> "$E/thermal.csv"
+idle samples with ANE line: 1200
+-- run 1
+samples in window: 500 (56.0 s); frames (pairs) in steady window: 1737
+  cpu       run       79 mW  idle      36 mW  ->     1.5 mJ per frame pair,    2.6 J/min
+  gpu       run        0 mW  idle       2 mW  ->    -0.1 mJ per frame pair,   -0.1 J/min
+  ane       run     3593 mW  idle       0 mW  ->   119.8 mJ per frame pair,  215.6 J/min
+  combined  run     3673 mW  idle      38 mW  ->   121.1 mJ per frame pair,  218.1 J/min
+-- run 2
+samples in window: 496 (56.0 s); frames (pairs) in steady window: 1737
+  cpu       run       84 mW  idle      36 mW  ->     1.6 mJ per frame pair,    2.9 J/min
+  gpu       run        0 mW  idle       2 mW  ->    -0.1 mJ per frame pair,   -0.1 J/min
+  ane       run     3603 mW  idle       0 mW  ->   120.1 mJ per frame pair,  216.2 J/min
+  combined  run     3687 mW  idle      38 mW  ->   121.6 mJ per frame pair,  219.0 J/min
+-- run 3
+samples in window: 500 (56.1 s); frames (pairs) in steady window: 1737
+  cpu       run       79 mW  idle      36 mW  ->     1.4 mJ per frame pair,    2.6 J/min
+  gpu       run        0 mW  idle       2 mW  ->    -0.1 mJ per frame pair,   -0.1 J/min
+  ane       run     3594 mW  idle       0 mW  ->   119.8 mJ per frame pair,  215.6 J/min
+  combined  run     3673 mW  idle      38 mW  ->   121.2 mJ per frame pair,  218.1 J/min
+-- run 4
+samples in window: 491 (55.0 s); frames (pairs) in steady window: 1737
+  cpu       run       80 mW  idle      36 mW  ->     1.5 mJ per frame pair,    2.7 J/min
+  gpu       run        0 mW  idle       2 mW  ->    -0.1 mJ per frame pair,   -0.1 J/min
+  ane       run     3593 mW  idle       0 mW  ->   119.7 mJ per frame pair,  215.6 J/min
+  combined  run     3673 mW  idle      38 mW  ->   121.2 mJ per frame pair,  218.1 J/min
+-- run 5
+samples in window: 495 (56.0 s); frames (pairs) in steady window: 1737
+  cpu       run       87 mW  idle      36 mW  ->     1.7 mJ per frame pair,    3.1 J/min
+  gpu       run        0 mW  idle       2 mW  ->    -0.1 mJ per frame pair,   -0.1 J/min
+  ane       run     3609 mW  idle       0 mW  ->   120.3 mJ per frame pair,  216.6 J/min
+  combined  run     3696 mW  idle      38 mW  ->   121.9 mJ per frame pair,  219.5 J/min
+
+== M1 energy summary, 5 runs -> M1_energy_summary.csv, M1_energy_per_run.csv
+  processor        run mW  idle mW  mJ/pair      min      max    J/min
+  neural_engine    3594.2      0.0    119.8    119.8    120.3    215.7
+  cpu                79.8     35.6      1.5      1.4      1.7      2.7
+  gpu                 0.0      2.1     -0.1     -0.1     -0.1     -0.1
+  total            3674.0     37.7    121.2    121.2    121.9    218.1
+  M4 Pro reference (06_energy_experiment): total 65.3 mJ per frame pair (64.2-66.3), NE 63.4, CPU 1.9, GPU 0.0
+thermal states seen:  895 nominal 1 thermal_state 
+RESULT of Day 5 = 'M1 energy per frame pair': /Users/home/Downloads/duplexnvc-m1/runs/m1_energy/M1_energy_summary.csv

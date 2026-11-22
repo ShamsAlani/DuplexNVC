@@ -1,0 +1,26 @@
+metric,M1,M4_Pro,M3_Pro_paper,M1_over_M4Pro
+"encoder alone, call ms (unpaced)",9.47,5.86,7.72,1.62
+"decoder alone, call ms (unpaced)",9.72,5.94,8.14,1.64
+"encoder alone, network ms",9.09,5.57,,1.63
+"decoder alone, network ms",9.3,5.66,,1.64
+sum alone ms,19.19,11.8,15.86,1.63
+T_turns ms,19.19,11.81,,1.62
+T_shared ms (duplex on NE),17.24,10.68,,1.61
+S = T_turns / T_shared,1.11,1.11,,1.00
+S_max (ideal),1.97,1.99,,0.99
+kappa encoder,1.82,1.82,,1.00
+kappa decoder,1.77,1.8,,0.98
+B* send fps,30.01,30.01,,1.00
+B* send late or dropped %,7.14,0.0,,
+B* send mean call ms,17.71,12.44,,1.42
+B* send due-to-done p99 ms,37.18,29.27,,1.27
+B* receive fps,30.0,30.01,,1.00
+B* receive late or dropped %,1.32,0.0,,
+B* receive mean call ms,19.49,13.32,,1.46
+B* receive due-to-done p99 ms,33.47,28.93,,1.16
+B* send kbps,120.46,120.46,,1.00
+B* receive kbps,287.08,287.08,,1.00
+"energy, mJ per frame pair (total)",,65.32,,
+"energy, mJ per frame pair (NE)",,63.42,,
+"energy, mJ per frame pair (CPU)",,1.9,,
+"energy, mJ per frame pair (GPU)",,0.0,,

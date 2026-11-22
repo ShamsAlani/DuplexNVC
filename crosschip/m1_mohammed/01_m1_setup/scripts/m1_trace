@@ -1,0 +1,20 @@
+#!/bin/bash
+# DAY 1 (optional): where does each operation of full MLVC run on the M1's Neural Engine? (= baseline 07 placement trace)
+# No sudo, any conditions, ~5 min. Output: $RUNS/m1_setup/trace, out_m1_trace.txt
+D=$(cd "$(dirname "$0")" && pwd); . "$D/vm1"; m1log trace
+T="$RUNS/m1_setup/trace"; mkdir -p "$T"
+echo "== $TAG MLComputePlan trace  $(date)"; machine
+swiftc -O -parse-as-library "$TOOLS/mlplan.swift" -o "$TOOLS/mlplan" || { echo "BUILD FAILED"; exit 1; }
+for B in mlvc mlvc-s; do
+  for tarf in "$WORK/bundles/$B"/*.tar; do
+    name=$(basename "$tarf" .tar); X="$T/$name"; rm -rf "$X"; mkdir -p "$X"
+    tar -xf "$tarf" -C "$X"
+    for z in $(find "$X" -name "*.tar" -o -name "*.zip"); do
+      mkdir -p "$z.d"; case "$z" in *.zip) unzip -q "$z" -d "$z.d";; *) tar -xf "$z" -C "$z.d";; esac
+    done
+    models=$(find "$X" \( -name "*.mlpackage" -o -name "*.mlmodelc" -o -name "*.mlmodel" \) -prune -print | sort)
+    [ -z "$models" ] && echo "   no Core ML model found inside $name"
+    for m in $models; do "$TOOLS/mlplan" "$m" "$name/$(basename "$m")"; done
+  done
+done | tee "$T/${TAG}_trace.txt"
+echo "== done  $(date). M4 Pro reference (07_processor_experiment): full MLVC 313 of 316 operations on the NE, 100.0 % of cost."
