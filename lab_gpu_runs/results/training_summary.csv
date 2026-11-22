@@ -1,0 +1,3 @@
+run,compared_with,epochs,n_epochs,loss,bpp,psnr_db,loss_minus_control,loss_diff_sd_across_epochs,psnr_minus_control_db,bpp_vs_control_pct
+v1_control,,160-199,40,0.1528,0.1127,30.452,,,,
+v1_b1,v1_control,160-199,40,0.1552,0.1135,30.380,+0.0024,0.0002,-0.071,+0.64

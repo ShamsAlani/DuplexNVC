@@ -1,0 +1,12 @@
+id,source,license,url,start_s,src_size,src_fps,keep_every,master,frames,labelled_frames,people_max,people_median,frames_no_face,background_faces,candidate_events,smallest_face_360,largest_face_360,notes,faces_<32,faces_32-63,faces_64-127,faces_>=128
+ce4peo,classE,public domain,https://media.xiph.org/video/derf/,0,1280x720,60.0,2,1280x720,300,30,4,4.0,0,0,,29.0,48.5,4 people seated,5,113,0,0
+cejohn,classE,public domain,https://media.xiph.org/video/derf/,0,1280x720,60.0,2,1280x720,300,30,1,1.0,0,53,,108.0,115.0,1 person,0,0,30,0
+cekris,classE,public domain,https://media.xiph.org/video/derf/,0,1280x720,60.0,2,1280x720,300,30,2,2.0,0,15,70:2->1;100:1->2,59.5,85.0,2 people,0,9,48,0
+px2ent,pexels,Pexels License,https://www.pexels.com,2,4096x2160,25.0,1,1920x1080,300,30,2,0.0,16,0,250:0->1,15.3,18.7,man and boy enter; then a woman enters close to the camera,16,0,0,0
+pxentr,pexels,Pexels License,https://www.pexels.com,0,3840x2160,25.0,1,1920x1080,300,30,4,2.5,10,0,190:0->4,17.0,36.7,family of 3 enters through a door,54,8,0,0
+px4ppl,pexels,Pexels License,https://www.pexels.com,0,4096x2160,25.0,1,1920x1080,300,30,4,2.0,9,0,90:0->2,16.3,35.0,4 people enter an empty meeting room one by one,61,1,0,0
+px5ppl,pexels,Pexels License,https://www.pexels.com,0,1920x1080,25.0,1,1920x1080,300,30,4,3.0,0,0,200:3->4,25.3,40.0,5 people seated in a meeting,42,56,0,0
+px7ppl,pexels,Pexels License,https://www.pexels.com,0,1920x1080,25.0,1,1920x1080,300,30,4,3.0,0,0,60:4->3;130:3->2;220:2->3,22.3,61.0,7 people in a meeting,33,48,0,0
+pxcrwd,pexels,Pexels License,https://www.pexels.com,0,3840x2160,30.0,1,1920x1080,265,27,3,1,12,0,220:0->2,14.3,33.0,crowd walking in toward the camera through doors,26,1,0,0
+pxleav,pexels,Pexels License,https://www.pexels.com,0,3840x2160,25.0,1,1920x1080,148,15,1,0,13,0,,18.0,18.7,people leave walking away from the camera,2,0,0,0
+pxdown,pexels,Pexels License,https://www.pexels.com,0,3840x2160,25.0,1,1920x1080,182,19,1,0,12,0,110:0->1,21.0,30.7,3 people leave toward a door and stairs,7,0,0,0

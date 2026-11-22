@@ -1,0 +1,11 @@
+clip,frame,kind,people,note
+px2ent,20,enter,2,man and boy walk in far from the camera
+px2ent,250,enter,1,woman walks in close to the camera with her back to it
+pxentr,90,enter,3,family appears in the doorway after the agent opens the door (~frames 50-80)
+px4ppl,20,enter,1,woman enters from the right into an empty room
+px4ppl,70,enter,1,man enters from the left
+px4ppl,80,enter,1,man in white shirt enters from the right
+px4ppl,110,enter,1,woman in brown jacket enters from the left
+pxcrwd,60,enter,many,crowd starts walking out of the arrival doors toward the camera and keeps coming until the end
+pxleav,0,leave,several,people walk away from the camera into a cafe; seen from behind throughout
+pxdown,0,leave,3,three people walk away toward a door and stairs; seen from behind until the last second

@@ -1,0 +1,12 @@
+clip,bodies_max,bodies_median,body_events,body_false,face_events,face_false
+ce4peo,4,4.0,0,0,0,0
+cejohn,1,1.0,1,1,0,0
+cekris,2,2.0,2,2,2,2
+px2ent,5,2.0,3,2,1,0
+pxentr,4,3.0,3,2,1,0
+px4ppl,4,3.0,3,1,1,0
+px5ppl,3,2.0,0,0,1,1
+px7ppl,6,5.0,0,0,3,3
+pxcrwd,11,7,0,0,1,1
+pxleav,4,3,0,0,0,0
+pxdown,3,3,1,1,1,1
