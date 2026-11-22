@@ -1,0 +1,5 @@
+resolution,smallest_detected_face_h_360,smallest_detected_face_h_at_res,recall_50pct_from_face_h_360,recall_90pct_from_face_h_360,recall_100pct_from_face_h_360,largest_missed_face_h_360
+360p,14.3,14.3,12,16,32,29.7
+540p,14.3,21.4,12,12,32,29.7
+720p,14.3,28.6,12,12,40,37.0
+1080p,14.3,42.9,12,12,32,29.7

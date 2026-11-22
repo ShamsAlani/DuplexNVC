@@ -1,0 +1,209 @@
+clip,i,frame,resolution,x,y,w,h,face_h_360,kind
+cejohn,0,0,360p,752,38,52,52,26.0,poster face (excluded in Step 8)
+cejohn,1,10,360p,752,38,52,52,26.0,poster face (excluded in Step 8)
+cejohn,2,20,360p,752,40,52,52,26.0,poster face (excluded in Step 8)
+cejohn,3,30,360p,752,38,52,52,26.0,poster face (excluded in Step 8)
+cejohn,4,40,360p,752,38,52,52,26.0,poster face (excluded in Step 8)
+cejohn,5,50,360p,752,38,52,52,26.0,poster face (excluded in Step 8)
+cejohn,6,60,360p,752,38,52,52,26.0,poster face (excluded in Step 8)
+cejohn,7,70,360p,750,38,54,54,27.0,poster face (excluded in Step 8)
+cejohn,8,80,360p,752,38,52,52,26.0,poster face (excluded in Step 8)
+cejohn,8,80,360p,1048,292,46,46,23.0,poster face (excluded in Step 8)
+cejohn,9,90,360p,752,38,52,52,26.0,poster face (excluded in Step 8)
+cejohn,10,100,360p,752,38,54,54,27.0,poster face (excluded in Step 8)
+cejohn,11,110,360p,752,38,52,52,26.0,poster face (excluded in Step 8)
+cejohn,12,120,360p,752,36,54,54,27.0,poster face (excluded in Step 8)
+cejohn,13,130,360p,752,38,52,52,26.0,poster face (excluded in Step 8)
+cejohn,14,140,360p,750,36,52,52,26.0,poster face (excluded in Step 8)
+cejohn,15,150,360p,752,38,52,52,26.0,poster face (excluded in Step 8)
+cejohn,16,160,360p,752,38,52,52,26.0,poster face (excluded in Step 8)
+cejohn,17,170,360p,754,40,52,52,26.0,poster face (excluded in Step 8)
+cejohn,18,180,360p,752,38,52,52,26.0,poster face (excluded in Step 8)
+cejohn,19,190,360p,752,38,52,52,26.0,poster face (excluded in Step 8)
+cejohn,20,200,360p,752,40,52,52,26.0,poster face (excluded in Step 8)
+cejohn,21,210,360p,752,38,52,52,26.0,poster face (excluded in Step 8)
+cejohn,22,220,360p,752,38,52,52,26.0,poster face (excluded in Step 8)
+cejohn,23,230,360p,752,38,52,52,26.0,poster face (excluded in Step 8)
+cejohn,24,240,360p,752,38,52,52,26.0,poster face (excluded in Step 8)
+cejohn,25,250,360p,752,40,52,52,26.0,poster face (excluded in Step 8)
+cejohn,26,260,360p,752,38,52,52,26.0,poster face (excluded in Step 8)
+cejohn,27,270,360p,750,38,54,54,27.0,poster face (excluded in Step 8)
+cejohn,28,280,360p,752,36,52,52,26.0,poster face (excluded in Step 8)
+cejohn,29,290,360p,752,38,52,52,26.0,poster face (excluded in Step 8)
+cejohn,0,0,540p,753,39,49,49,24.5,poster face (excluded in Step 8)
+cejohn,1,10,540p,752,40,53,53,26.5,poster face (excluded in Step 8)
+cejohn,2,20,540p,752,39,52,52,26.0,poster face (excluded in Step 8)
+cejohn,2,20,540p,1049,295,44,44,22.0,poster face (excluded in Step 8)
+cejohn,3,30,540p,752,39,51,51,25.5,poster face (excluded in Step 8)
+cejohn,3,30,540p,1051,295,44,44,22.0,poster face (excluded in Step 8)
+cejohn,4,40,540p,752,39,51,51,25.5,poster face (excluded in Step 8)
+cejohn,4,40,540p,1049,293,44,44,22.0,poster face (excluded in Step 8)
+cejohn,5,50,540p,753,39,51,51,25.5,poster face (excluded in Step 8)
+cejohn,6,60,540p,753,39,51,51,25.5,poster face (excluded in Step 8)
+cejohn,7,70,540p,752,39,51,51,25.5,poster face (excluded in Step 8)
+cejohn,7,70,540p,1049,295,44,44,22.0,poster face (excluded in Step 8)
+cejohn,8,80,540p,752,39,51,51,25.5,poster face (excluded in Step 8)
+cejohn,8,80,540p,1051,293,44,44,22.0,poster face (excluded in Step 8)
+cejohn,9,90,540p,753,39,51,51,25.5,poster face (excluded in Step 8)
+cejohn,9,90,540p,1049,293,45,45,22.5,poster face (excluded in Step 8)
+cejohn,10,100,540p,753,40,51,51,25.5,poster face (excluded in Step 8)
+cejohn,11,110,540p,753,39,52,52,26.0,poster face (excluded in Step 8)
+cejohn,12,120,540p,752,37,52,52,26.0,poster face (excluded in Step 8)
+cejohn,13,130,540p,752,39,52,52,26.0,poster face (excluded in Step 8)
+cejohn,14,140,540p,753,39,51,51,25.5,poster face (excluded in Step 8)
+cejohn,15,150,540p,753,40,52,52,26.0,poster face (excluded in Step 8)
+cejohn,16,160,540p,752,39,51,51,25.5,poster face (excluded in Step 8)
+cejohn,17,170,540p,752,39,51,51,25.5,poster face (excluded in Step 8)
+cejohn,17,170,540p,1049,295,44,44,22.0,poster face (excluded in Step 8)
+cejohn,18,180,540p,752,40,51,51,25.5,poster face (excluded in Step 8)
+cejohn,19,190,540p,752,39,52,52,26.0,poster face (excluded in Step 8)
+cejohn,19,190,540p,1048,292,47,47,23.5,poster face (excluded in Step 8)
+cejohn,20,200,540p,753,39,52,52,26.0,poster face (excluded in Step 8)
+cejohn,21,210,540p,752,39,51,51,25.5,poster face (excluded in Step 8)
+cejohn,22,220,540p,752,40,52,52,26.0,poster face (excluded in Step 8)
+cejohn,22,220,540p,1051,295,43,43,21.5,poster face (excluded in Step 8)
+cejohn,23,230,540p,752,39,52,52,26.0,poster face (excluded in Step 8)
+cejohn,24,240,540p,753,39,51,51,25.5,poster face (excluded in Step 8)
+cejohn,25,250,540p,752,39,52,52,26.0,poster face (excluded in Step 8)
+cejohn,26,260,540p,753,39,52,52,26.0,poster face (excluded in Step 8)
+cejohn,26,260,540p,1051,295,41,41,20.5,poster face (excluded in Step 8)
+cejohn,27,270,540p,752,39,52,52,26.0,poster face (excluded in Step 8)
+cejohn,27,270,540p,1048,295,45,45,22.5,poster face (excluded in Step 8)
+cejohn,28,280,540p,752,39,51,51,25.5,poster face (excluded in Step 8)
+cejohn,29,290,540p,753,39,52,52,26.0,poster face (excluded in Step 8)
+cejohn,29,290,540p,1051,295,44,44,22.0,poster face (excluded in Step 8)
+cejohn,0,0,720p,752,40,50,50,25.0,poster face (excluded in Step 8)
+cejohn,1,10,720p,753,40,51,51,25.5,poster face (excluded in Step 8)
+cejohn,2,20,720p,753,39,51,51,25.5,poster face (excluded in Step 8)
+cejohn,2,20,720p,1049,294,45,45,22.5,poster face (excluded in Step 8)
+cejohn,3,30,720p,753,40,50,50,25.0,poster face (excluded in Step 8)
+cejohn,3,30,720p,1050,293,44,44,22.0,poster face (excluded in Step 8)
+cejohn,4,40,720p,752,40,50,50,25.0,poster face (excluded in Step 8)
+cejohn,4,40,720p,1050,293,44,44,22.0,poster face (excluded in Step 8)
+cejohn,5,50,720p,752,39,50,50,25.0,poster face (excluded in Step 8)
+cejohn,5,50,720p,1051,298,39,39,19.5,poster face (excluded in Step 8)
+cejohn,6,60,720p,753,39,51,51,25.5,poster face (excluded in Step 8)
+cejohn,6,60,720p,1051,296,42,42,21.0,poster face (excluded in Step 8)
+cejohn,7,70,720p,753,39,50,50,25.0,poster face (excluded in Step 8)
+cejohn,8,80,720p,752,38,51,51,25.5,poster face (excluded in Step 8)
+cejohn,8,80,720p,1053,295,41,41,20.5,poster face (excluded in Step 8)
+cejohn,9,90,720p,752,38,50,50,25.0,poster face (excluded in Step 8)
+cejohn,9,90,720p,1051,294,42,42,21.0,poster face (excluded in Step 8)
+cejohn,10,100,720p,752,40,51,51,25.5,poster face (excluded in Step 8)
+cejohn,10,100,720p,1051,294,43,43,21.5,no participant here
+cejohn,11,110,720p,752,39,53,53,26.5,poster face (excluded in Step 8)
+cejohn,11,110,720p,1050,293,44,44,22.0,no participant here
+cejohn,12,120,720p,752,40,50,50,25.0,poster face (excluded in Step 8)
+cejohn,13,130,720p,752,39,51,51,25.5,poster face (excluded in Step 8)
+cejohn,13,130,720p,1051,294,42,42,21.0,poster face (excluded in Step 8)
+cejohn,14,140,720p,752,39,51,51,25.5,poster face (excluded in Step 8)
+cejohn,14,140,720p,1050,293,45,45,22.5,poster face (excluded in Step 8)
+cejohn,15,150,720p,753,40,52,52,26.0,poster face (excluded in Step 8)
+cejohn,16,160,720p,753,40,50,50,25.0,poster face (excluded in Step 8)
+cejohn,17,170,720p,752,39,51,51,25.5,poster face (excluded in Step 8)
+cejohn,17,170,720p,1049,292,45,45,22.5,poster face (excluded in Step 8)
+cejohn,18,180,720p,752,39,52,52,26.0,poster face (excluded in Step 8)
+cejohn,19,190,720p,753,39,50,50,25.0,poster face (excluded in Step 8)
+cejohn,19,190,720p,1049,293,45,45,22.5,poster face (excluded in Step 8)
+cejohn,20,200,720p,752,40,51,51,25.5,poster face (excluded in Step 8)
+cejohn,20,200,720p,1048,292,47,47,23.5,poster face (excluded in Step 8)
+cejohn,21,210,720p,752,38,51,51,25.5,poster face (excluded in Step 8)
+cejohn,22,220,720p,752,40,51,51,25.5,poster face (excluded in Step 8)
+cejohn,22,220,720p,1048,293,46,46,23.0,poster face (excluded in Step 8)
+cejohn,23,230,720p,753,39,51,51,25.5,poster face (excluded in Step 8)
+cejohn,23,230,720p,1050,294,44,44,22.0,poster face (excluded in Step 8)
+cejohn,24,240,720p,752,39,51,51,25.5,poster face (excluded in Step 8)
+cejohn,25,250,720p,753,40,51,51,25.5,poster face (excluded in Step 8)
+cejohn,26,260,720p,753,39,51,51,25.5,poster face (excluded in Step 8)
+cejohn,26,260,720p,1049,294,45,45,22.5,poster face (excluded in Step 8)
+cejohn,27,270,720p,752,40,51,51,25.5,poster face (excluded in Step 8)
+cejohn,27,270,720p,1050,294,44,44,22.0,poster face (excluded in Step 8)
+cejohn,28,280,720p,752,39,52,52,26.0,poster face (excluded in Step 8)
+cejohn,29,290,720p,752,39,51,51,25.5,poster face (excluded in Step 8)
+cejohn,29,290,720p,1052,295,42,42,21.0,poster face (excluded in Step 8)
+cekris,0,0,360p,578,442,70,70,35.0,poster face (excluded in Step 8)
+cekris,1,10,360p,582,440,70,70,35.0,no participant here
+cekris,3,30,360p,578,442,70,70,35.0,no participant here
+cekris,4,40,360p,578,442,70,70,35.0,no participant here
+cekris,5,50,360p,582,444,66,66,33.0,poster face (excluded in Step 8)
+cekris,6,60,360p,578,442,72,72,36.0,poster face (excluded in Step 8)
+cekris,10,100,360p,580,444,68,68,34.0,poster face (excluded in Step 8)
+cekris,11,110,360p,580,442,68,68,34.0,poster face (excluded in Step 8)
+cekris,12,120,360p,580,440,70,70,35.0,poster face (excluded in Step 8)
+cekris,13,130,360p,578,442,70,70,35.0,no participant here
+cekris,14,140,360p,582,442,62,62,31.0,no participant here
+cekris,15,150,360p,580,442,68,68,34.0,poster face (excluded in Step 8)
+cekris,16,160,360p,576,442,72,72,36.0,no participant here
+cekris,17,170,360p,574,444,70,70,35.0,no participant here
+cekris,18,180,360p,580,444,72,72,36.0,poster face (excluded in Step 8)
+cekris,19,190,360p,576,442,70,70,35.0,poster face (excluded in Step 8)
+cekris,20,200,360p,580,444,68,68,34.0,poster face (excluded in Step 8)
+cekris,21,210,360p,578,442,70,70,35.0,poster face (excluded in Step 8)
+cekris,22,220,360p,580,442,68,68,34.0,no participant here
+cekris,23,230,360p,580,442,68,68,34.0,poster face (excluded in Step 8)
+cekris,24,240,360p,576,444,66,66,33.0,no participant here
+cekris,25,250,360p,574,444,68,68,34.0,no participant here
+cekris,26,260,360p,574,440,74,74,37.0,poster face (excluded in Step 8)
+cekris,27,270,360p,580,444,70,70,35.0,poster face (excluded in Step 8)
+cekris,28,280,360p,580,442,68,68,34.0,poster face (excluded in Step 8)
+cekris,29,290,360p,580,444,66,66,33.0,no participant here
+cekris,0,0,540p,581,443,67,67,33.5,poster face (excluded in Step 8)
+cekris,1,10,540p,580,443,67,67,33.5,no participant here
+cekris,5,50,540p,581,444,72,72,36.0,poster face (excluded in Step 8)
+cekris,6,60,540p,579,444,73,73,36.5,poster face (excluded in Step 8)
+cekris,10,100,540p,579,443,65,65,32.5,poster face (excluded in Step 8)
+cekris,11,110,540p,583,443,61,61,30.5,poster face (excluded in Step 8)
+cekris,12,120,540p,583,444,63,63,31.5,poster face (excluded in Step 8)
+cekris,13,130,540p,580,443,65,65,32.5,no participant here
+cekris,14,140,540p,583,441,60,60,30.0,no participant here
+cekris,15,150,540p,575,445,67,67,33.5,poster face (excluded in Step 8)
+cekris,16,160,540p,577,445,67,67,33.5,no participant here
+cekris,17,170,540p,572,445,69,69,34.5,no participant here
+cekris,18,180,540p,580,444,68,68,34.0,poster face (excluded in Step 8)
+cekris,19,190,540p,575,447,67,67,33.5,poster face (excluded in Step 8)
+cekris,20,200,540p,580,445,72,72,36.0,poster face (excluded in Step 8)
+cekris,21,210,540p,580,443,71,71,35.5,poster face (excluded in Step 8)
+cekris,22,220,540p,579,444,65,65,32.5,no participant here
+cekris,23,230,540p,576,443,69,69,34.5,poster face (excluded in Step 8)
+cekris,24,240,540p,577,444,67,67,33.5,no participant here
+cekris,25,250,540p,573,445,71,71,35.5,no participant here
+cekris,26,260,540p,575,447,67,67,33.5,poster face (excluded in Step 8)
+cekris,27,270,540p,576,444,68,68,34.0,poster face (excluded in Step 8)
+cekris,28,280,540p,583,443,64,64,32.0,poster face (excluded in Step 8)
+cekris,29,290,540p,580,444,72,72,36.0,no participant here
+cekris,1,10,720p,581,444,68,68,34.0,no participant here
+cekris,5,50,720p,579,443,70,70,35.0,poster face (excluded in Step 8)
+cekris,10,100,720p,575,447,66,66,33.0,poster face (excluded in Step 8)
+cekris,11,110,720p,578,444,67,67,33.5,poster face (excluded in Step 8)
+cekris,13,130,720p,579,444,67,67,33.5,no participant here
+cekris,14,140,720p,579,444,70,70,35.0,no participant here
+cekris,15,150,720p,573,445,69,69,34.5,poster face (excluded in Step 8)
+cekris,16,160,720p,573,445,67,67,33.5,no participant here
+cekris,18,180,720p,581,445,65,65,32.5,poster face (excluded in Step 8)
+cekris,19,190,720p,574,448,67,67,33.5,poster face (excluded in Step 8)
+cekris,20,200,720p,577,448,67,67,33.5,poster face (excluded in Step 8)
+cekris,21,210,720p,578,448,64,64,32.0,poster face (excluded in Step 8)
+cekris,23,230,720p,577,446,67,67,33.5,poster face (excluded in Step 8)
+cekris,27,270,720p,576,445,69,69,34.5,poster face (excluded in Step 8)
+cekris,28,280,720p,580,444,71,71,35.5,poster face (excluded in Step 8)
+px2ent,23,230,360p,171,429,48,48,16.0,no participant here
+px2ent,12,120,540p,1128,442,52,52,17.3,no participant here
+px2ent,23,230,540p,174,430,50,50,16.7,no participant here
+px2ent,23,230,720p,174,430,50,50,16.7,no participant here
+px2ent,21,210,1080p,1318,445,61,61,20.3,no participant here
+px2ent,23,230,1080p,173,429,50,50,16.7,no participant here
+pxentr,3,30,360p,876,408,51,51,17.0,no participant here
+pxentr,3,30,540p,880,410,46,46,15.3,no participant here
+pxentr,3,30,720p,879,410,48,48,16.0,no participant here
+pxentr,3,30,1080p,880,409,47,47,15.7,no participant here
+px4ppl,27,270,360p,747,504,66,66,22.0,no participant here
+px4ppl,7,70,540p,94,176,90,90,30.0,no participant here
+px4ppl,7,70,720p,93,176,88,88,29.3,no participant here
+px4ppl,8,80,720p,196,214,86,86,28.7,no participant here
+px7ppl,27,270,360p,618,414,99,99,33.0,no participant here
+pxcrwd,12,120,360p,516,279,54,54,18.0,no participant here
+pxcrwd,25,250,360p,204,216,57,57,19.0,no participant here
+pxcrwd,26,260,360p,201,216,57,57,19.0,no participant here
+pxcrwd,26,260,540p,200,216,56,56,18.7,no participant here
+pxcrwd,17,170,720p,1563,140,74,74,24.7,no participant here
+pxcrwd,26,260,720p,204,216,54,54,18.0,no participant here
