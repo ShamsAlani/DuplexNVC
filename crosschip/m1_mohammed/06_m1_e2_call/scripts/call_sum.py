@@ -46,7 +46,7 @@ if net:
 json.dump(summary, open(os.path.join(run, "summary.json"), "w"), indent=2)
 print(f"== call run {run}: peer {meta.get('incoming')}  rtt median {rtt:.2f} ms  clock offset {off:.2f} ms  peer bye seen: {meta.get('peer_bye_seen')}")
 print(f"  sent {summary['sent_frames']} frames (dropped by camera rule {summary['encoder_dropped']}); "
-      f"received {summary['received_frames']}, lost {summary['lost_frames']}, incomplete {summary['incomplete_frames']}, decode failures {summary['decode_failures']}")
+      f"received {summary['received_frames']}, lost {summary['lost_frames']} (of which {summary['incomplete_frames']} arrived incomplete), decode failures {summary['decode_failures']}")
 if E:
     print(f"  send: {E['achieved_fps']:.2f} fps | encode+send mean {E['service_ms_mean']:.2f} ms p99 {E['service_ms_p99']:.2f} | due-to-sent p99 {E['latency_ms_p99']:.2f} ms | late+dropped {E['late_or_dropped_pct']:.2f} % | {E['kbps']:.0f} kbps")
 if D:

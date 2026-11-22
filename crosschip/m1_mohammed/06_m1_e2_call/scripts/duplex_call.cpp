@@ -439,7 +439,7 @@ int main(int argc, char** argv)
          << "\nframes_received=" << received.size() << "\nframes_lost=" << lostFrames << "\nframes_incomplete=" << incomplete
          << "\nrtt_ms_median=" << rttMed << "\nclock_offset_ms_median=" << offMed << "\npeer_bye_seen=" << peerDone.load() << "\n";
     std::cerr << "done: sent " << outAus.size() << " frames, received " << received.size() << " (lost " << lostFrames
-              << ", incomplete " << incomplete << ", decode failures " << failures << "), rtt median " << rttMed
+              << ", of which " << incomplete << " arrived incomplete; decode failures " << failures << "), rtt median " << rttMed
               << " ms, clock offset " << offMed << " ms -> " << a.outDir << "\n";
     return 0;
 }

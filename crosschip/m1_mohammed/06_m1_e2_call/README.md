@@ -21,11 +21,15 @@ Calls: Day 9 loopback on the M1 and a first call with Shams; Day 11 three 60 s c
 |---|---|
 | `raw_data/m1_call/M1_call_<label>/frames.csv` | E rows: sent frames (due, encoded, sent); D rows: received frames (complete, decoded); plus `pkts, send_us, first_recv_us, complete_recv_us, lost_before` |
 | `raw_data/m1_call/M1_call_<label>/clock.csv` | Round trip and clock offset over the call |
-| `raw_data/m1_call/M1_call_<label>/run.txt` | Settings, peer, frames sent / received / lost / incomplete, decode failures, median round trip and offset |
+| `raw_data/m1_call/M1_call_<label>/run.txt` | Settings, peer, frames sent / received / lost (lost includes the frames that arrived incomplete), decode failures, median round trip and offset |
 | `results/M1_call_<label>_summary.json` | Send and receive statistics, network and end-to-end delay percentiles, loss |
 | `raw_data/logs/out_m1_call_build.txt`, `out_m1_call.txt` | Console output |
 
 (`received.mlvc` and `outgoing.mlvc` stay on the laptop; they are too large to ship.)
+
+## Tested before the Mac
+
+On 22 Nov the call program was built in a Linux container against a fake codec (same interface as libmlvc) and run as two endpoints over 127.0.0.1 for 6 s: both sides sent and received 182 of 182 frames, round trip 0.09 ms, clock offset 0.01 ms, and both ended on the peer's hang-up message. With 3 % of the packets dropped on purpose, the receiver decoded 164 frames and counted 18 lost, and 164 + 18 = 182 sent: the loss accounting is exact. That test also fixed two bugs before any Mac run: the first key frame used the same number as the hang-up message (every call would have ended at once), and frames the sender drops on purpose were counted as network losses (frames are now numbered by sequence, not by camera slot). Not tested there: the real codec, and Wi-Fi.
 
 ## Results
 
