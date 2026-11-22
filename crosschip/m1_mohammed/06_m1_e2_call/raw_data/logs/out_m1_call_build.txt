@@ -1,0 +1,7 @@
+== building the E2 call program  Sun 22 Nov 2026 17:16:20 +04
+[0/2] Re-checking globbed directories...
+[1/3] Building CXX object CMakeFiles/libmlvc_example.dir/main.cpp.o
+[2/3] Linking CXX executable libmlvc_example
+ok  /Users/home/Downloads/duplexnvc-m1/callharness/build/ninja-release/libmlvc_example
+usage: duplex_call --peer <ip> --port <p> --input cam.nv12 --size WxH --bundles <dir> [options]
+Next: ./m1_call loopback

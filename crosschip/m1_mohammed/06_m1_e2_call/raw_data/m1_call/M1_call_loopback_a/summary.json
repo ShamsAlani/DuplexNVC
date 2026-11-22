@@ -1,0 +1,66 @@
+{
+  "sent_frames": 582,
+  "received_frames": 583,
+  "lost_frames": 0,
+  "incomplete_frames": 0,
+  "decode_failures": 0,
+  "encoder_dropped": 20,
+  "rtt_ms_median": 2.977,
+  "clock_offset_ms_median": -0.0145,
+  "peer_bye_seen": "1",
+  "send": {
+    "frames": 518,
+    "achieved_fps": 28.934554840756608,
+    "frame_time_ms_mean": 34.49576402321083,
+    "service_ms_mean": 34.498130888030886,
+    "service_ms_p95": 35.38702,
+    "service_ms_p99": 36.98050799999999,
+    "infer_ms_mean": 31.5345527027027,
+    "call_ms_mean": 33.2049833976834,
+    "latency_ms_p95": 66.14486000000001,
+    "latency_ms_p99": 67.526233,
+    "late": 518,
+    "dropped": 20,
+    "late_or_dropped_pct": 100.0,
+    "failures": 0,
+    "kbps": 126.7491891891892,
+    "i_frames": 9,
+    "cpu_share_of_call_pct": 5.030662641732381
+  },
+  "recv": {
+    "frames": 519,
+    "achieved_fps": 29.01099343367746,
+    "frame_time_ms_mean": 34.465984555984555,
+    "service_ms_mean": 34.44511926782273,
+    "service_ms_p95": 34.82916,
+    "service_ms_p99": 35.293478,
+    "infer_ms_mean": 32.57398516377649,
+    "call_ms_mean": 34.44194161849711,
+    "latency_ms_p95": 40.9698,
+    "latency_ms_p99": 41.598586,
+    "late": 514,
+    "dropped": 0,
+    "late_or_dropped_pct": 99.03660886319845,
+    "failures": 0,
+    "kbps": 294.56369942196534,
+    "i_frames": 9,
+    "cpu_share_of_call_pct": 5.423493470290973
+  },
+  "network_ms": {
+    "mean": 1.7511430861632948,
+    "p50": 1.481689453125,
+    "p95": 3.4368408203125003,
+    "p99": 6.239741210937517
+  },
+  "send_to_decoded_ms": {
+    "mean": 41.28568122290462,
+    "p50": 41.224609375,
+    "p95": 42.1361328125,
+    "p99": 42.85645996093751
+  },
+  "reassembly_ms": {
+    "mean": 0.3176485917931118,
+    "p99": 4.716259765625003
+  },
+  "packets_per_frame_mean": 1.674373795761079
+}
