@@ -21,7 +21,9 @@ if [ "$1" = loopback ]; then
   "$CALL" --peer 127.0.0.1 --port 5600 --listen-port 5601 --input "$INCSRC" $COMMON --seconds 20 --start-at $START --out-dir ${TAG}_call_loopback_b 2> ${TAG}_call_loopback_b.log
   wait
   for e in a b; do echo "-- endpoint $e"; grep -E "resolved|init|call:|done:|FAILED|rror" ${TAG}_call_loopback_$e.log; "$PY" "$D/call_sum.py" ${TAG}_call_loopback_$e "$TOOLS"; done
-  echo "CHECK: both endpoints 'done', received ~= sent, lost 0, decode failures 0, rtt < 1 ms, end-to-end about 20-30 ms (two NE networks sharing one chip)."
+  echo "CHECK: both endpoints 'done'; received = sent; lost 0; incomplete 0; decode failures 0; rtt under 1 ms."
+  echo "On one Mac, FOUR networks (two encoders, two decoders) share one Neural Engine, so late frames, dropped camera"
+  echo "frames and a long end-to-end delay are expected here, above all on an M1: the loopback tests that the call works, not its speed."
   exit 0
 fi
 LABEL=$1; PEER=$2; SEC=${3:-60}
