@@ -1,0 +1,72 @@
+
+== M1 CALL  Sun 22 Nov 2026 17:08:55 +04
+chip: Apple M1  memory: 8 GB  model: MacBookAir10,1
+ProductName:		macOS ProductVersion:		27.2.1 BuildVersion:		26B131 
+-- loopback: endpoint a sends the camera clips to b on 5601, b sends the incoming clips to a on 5600 (20 s)
+-- endpoint a
+2026-11-22 17:08:55.947 [T#326531][ INFO][manager.cpp:216]: Initializing MlvcManager from bundles dir: compute_unit=npu, enable_model_cache=1, session_preload_mode=at-init, versions=[v0.1]
+2026-11-22 17:08:55.949 [T#326531][ INFO][engine.mm:630]: CoreML initialized: compute_unit=npu, os_ver=27, os_build=26B131, env_hash=45345c6b
+2026-11-22 17:08:56.240 [T#326531][ INFO][manager.cpp:571]: MLVC Manager initialized with 1 bundle(s)
+manager: requested=npu resolved=npu
+encoder first-frame (init) ms: 31.7132
+call: peer 127.0.0.1:5601, listening on 5600, start in 3.72755 s
+done: sent 584 frames, received 583 (lost 0, of which 0 arrived incomplete; decode failures 0), rtt median 16.5 ms, clock offset -0.0235 ms -> M1_call_loopback_a
+== call run M1_call_loopback_a: peer udp://127.0.0.1:5601  rtt median 16.50 ms  clock offset -0.02 ms  peer bye seen: 1
+  sent 584 frames (dropped by camera rule 18); received 583, lost 0 (of which 0 arrived incomplete), decode failures 0
+  send: 29.00 fps | encode+send mean 34.45 ms p99 35.79 | due-to-sent p99 67.86 ms | late+dropped 100.00 % | 127 kbps
+  recv: 29.04 fps | decode mean 34.00 ms p99 34.35 | complete-to-decoded p99 34.35 ms | late 98.27 % | 294 kbps
+  network (send -> complete, offset-corrected): mean 8.31 ms  p50 8.32  p95 8.72  p99 9.07
+  end-to-end (peer send -> decoded here):       mean 42.95 ms  p50 42.96  p95 43.49  p99 43.69   (1.7 packets per frame)
+-- endpoint b
+2026-11-22 17:08:55.951 [T#326532][ INFO][manager.cpp:216]: Initializing MlvcManager from bundles dir: compute_unit=npu, enable_model_cache=1, session_preload_mode=at-init, versions=[v0.1]
+2026-11-22 17:08:55.951 [T#326532][ INFO][engine.mm:630]: CoreML initialized: compute_unit=npu, os_ver=27, os_build=26B131, env_hash=45345c6b
+2026-11-22 17:08:56.240 [T#326532][ INFO][manager.cpp:571]: MLVC Manager initialized with 1 bundle(s)
+manager: requested=npu resolved=npu
+encoder first-frame (init) ms: 22.8142
+call: peer 127.0.0.1:5600, listening on 5601, start in 3.73647 s
+done: sent 583 frames, received 584 (lost 0, of which 0 arrived incomplete; decode failures 0), rtt median 16.375 ms, clock offset -0.0375 ms -> M1_call_loopback_b
+== call run M1_call_loopback_b: peer udp://127.0.0.1:5600  rtt median 16.38 ms  clock offset -0.04 ms  peer bye seen: 1
+  sent 583 frames (dropped by camera rule 19); received 584, lost 0 (of which 0 arrived incomplete), decode failures 0
+  send: 28.97 fps | encode+send mean 34.45 ms p99 38.88 | due-to-sent p99 68.14 ms | late+dropped 99.81 % | 294 kbps
+  recv: 29.05 fps | decode mean 34.05 ms p99 34.37 | complete-to-decoded p99 34.37 ms | late 99.81 % | 127 kbps
+  network (send -> complete, offset-corrected): mean 8.27 ms  p50 8.30  p95 8.56  p99 8.65
+  end-to-end (peer send -> decoded here):       mean 42.97 ms  p50 42.99  p95 43.50  p99 43.77   (1.2 packets per frame)
+CHECK: both endpoints 'done'; received = sent; lost 0; incomplete 0; decode failures 0; rtt under 1 ms.
+On one Mac, FOUR networks (two encoders, two decoders) share one Neural Engine, so late frames, dropped camera
+frames and a long end-to-end delay are expected here, above all on an M1: the loopback tests that the call works, not its speed.
+
+== M1 CALL  Sun 22 Nov 2026 17:16:23 +04
+chip: Apple M1  memory: 8 GB  model: MacBookAir10,1
+ProductName:		macOS ProductVersion:		27.2.1 BuildVersion:		26B131 
+-- loopback: endpoint a sends the camera clips to b on 5601, b sends the incoming clips to a on 5600 (20 s)
+-- endpoint a
+2026-11-22 17:16:23.707 [T#339660][ INFO][manager.cpp:216]: Initializing MlvcManager from bundles dir: compute_unit=npu, enable_model_cache=1, session_preload_mode=at-init, versions=[v0.1]
+2026-11-22 17:16:23.708 [T#339660][ INFO][engine.mm:630]: CoreML initialized: compute_unit=npu, os_ver=27, os_build=26B131, env_hash=45345c6b
+2026-11-22 17:16:23.971 [T#339660][ INFO][manager.cpp:571]: MLVC Manager initialized with 1 bundle(s)
+manager: requested=npu resolved=npu
+encoder first-frame (init) ms: 17.9818
+call: peer 127.0.0.1:5601, listening on 5600, start in 4.01006 s
+done: sent 582 frames, received 583 (lost 0, of which 0 arrived incomplete; decode failures 0), rtt median 2.977 ms, clock offset -0.0145 ms -> M1_call_loopback_a
+== call run M1_call_loopback_a: peer udp://127.0.0.1:5601  rtt median 2.98 ms  clock offset -0.01 ms  peer bye seen: 1
+  sent 582 frames (dropped by camera rule 20); received 583, lost 0 (of which 0 arrived incomplete), decode failures 0
+  send: 28.93 fps | encode+send mean 34.50 ms p99 36.98 | due-to-sent p99 67.53 ms | late+dropped 100.00 % | 127 kbps
+  recv: 29.01 fps | decode mean 34.45 ms p99 35.29 | complete-to-decoded p99 41.60 ms | late 99.04 % | 295 kbps
+  network (send -> complete, offset-corrected): mean 1.75 ms  p50 1.48  p95 3.44  p99 6.24
+  end-to-end (peer send -> decoded here):       mean 41.29 ms  p50 41.22  p95 42.14  p99 42.86   (1.7 packets per frame)
+-- endpoint b
+2026-11-22 17:16:23.722 [T#339661][ INFO][manager.cpp:216]: Initializing MlvcManager from bundles dir: compute_unit=npu, enable_model_cache=1, session_preload_mode=at-init, versions=[v0.1]
+2026-11-22 17:16:23.723 [T#339661][ INFO][engine.mm:630]: CoreML initialized: compute_unit=npu, os_ver=27, os_build=26B131, env_hash=45345c6b
+2026-11-22 17:16:23.971 [T#339661][ INFO][manager.cpp:571]: MLVC Manager initialized with 1 bundle(s)
+manager: requested=npu resolved=npu
+encoder first-frame (init) ms: 27.6725
+call: peer 127.0.0.1:5600, listening on 5601, start in 4.00038 s
+done: sent 583 frames, received 582 (lost 0, of which 0 arrived incomplete; decode failures 0), rtt median 2.859 ms, clock offset -0.0185 ms -> M1_call_loopback_b
+== call run M1_call_loopback_b: peer udp://127.0.0.1:5600  rtt median 2.86 ms  clock offset -0.02 ms  peer bye seen: 1
+  sent 583 frames (dropped by camera rule 19); received 582, lost 0 (of which 0 arrived incomplete), decode failures 0
+  send: 28.96 fps | encode+send mean 34.50 ms p99 39.42 | due-to-sent p99 67.34 ms | late+dropped 100.00 % | 295 kbps
+  recv: 28.99 fps | decode mean 34.48 ms p99 35.23 | complete-to-decoded p99 41.48 ms | late 99.81 % | 127 kbps
+  network (send -> complete, offset-corrected): mean 1.48 ms  p50 1.46  p95 2.00  p99 3.20
+  end-to-end (peer send -> decoded here):       mean 41.30 ms  p50 41.24  p95 42.04  p99 42.65   (1.1 packets per frame)
+CHECK: both endpoints 'done'; received = sent; lost 0; incomplete 0; decode failures 0; rtt under 1 ms.
+On one Mac, FOUR networks (two encoders, two decoders) share one Neural Engine, so late frames, dropped camera
+frames and a long end-to-end delay are expected here, above all on an M1: the loopback tests that the call works, not its speed.
