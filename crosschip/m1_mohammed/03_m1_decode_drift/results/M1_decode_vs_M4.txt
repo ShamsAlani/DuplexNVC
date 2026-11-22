@@ -1,0 +1,3 @@
+M1 NE decode of the M4 Pro stream: 0f8cf98d052a57e4301553827b418c69782632289dc12ce85ad71f2ea0a47f40
+M4 Pro NE decode (m4_hashes.txt):  0f8cf98d052a57e4301553827b418c69782632289dc12ce85ad71f2ea0a47f40
+cross-chip NE decode bit-identical: YES (no drift)
