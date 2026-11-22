@@ -26,7 +26,7 @@ If the plan falls behind, the drop order is A4, then **the M1 energy run (Day 5)
 | Day 3 · Decode drift | **done** Sun 22 Nov | **No cross-chip drift**: the M1 decodes Shams's M4 Pro stream into bit-identical pictures, and the two chips' encoders produce byte-identical bitstreams. GPU/CPU decoding drifts on the M1 exactly as on the M4 Pro | [`03_m1_decode_drift/README.md`](03_m1_decode_drift/README.md) |
 | Day 4 · Contention | **done** Fri 20 Nov, about 20:18–21:12 | 46 GB/s of memory traffic slows the NE by only **19 %**: the NE itself, not memory, limits sharing. A light background load **removes the pacing penalty**: B\* send call 17.6 → 11.3 ms, late frames 4 % → **0 %** | [`04_m1_contention/README.md`](04_m1_contention/README.md) |
 | Day 5 · Energy | **done** Fri 20 Nov, evening | B\* costs **121.2 mJ per frame pair** on the M1 against 65.3 on the M4 Pro (**1.86×**), 99 % on the NE (3.6 W vs 1.9 W) | [`05_m1_energy/README.md`](05_m1_energy/README.md) |
-| E2 · Real call | to do (Days 9, 11, 15) | — | [`06_m1_e2_call/README.md`](06_m1_e2_call/README.md) |
+| E2 · Real call | **in progress**: program built on the M1, loopback passed 22 Nov (all frames received, none lost, 2.9 ms round trip); calls with Shams and Warda to do | — | [`06_m1_e2_call/README.md`](06_m1_e2_call/README.md) |
 
 Machine: MacBook Air (MacBookAir10,1, fanless), Apple M1, 4 performance + 4 efficiency cores, 8 GB, macOS 27.2.1 (26B131). Reference: Shams's MacBook Pro, M4 Pro, 24 GB, macOS 26.6.
 

@@ -37,10 +37,13 @@ On 22 Nov the call program was built in a Linux container against a fake codec (
 
 | Call | Sent / received / lost | Round trip ms | End-to-end p50 / p99 ms | Late % send / receive | Decode failures |
 |---|---|---|---|---|---|
-| Loopback (M1 alone) | … | … | … | … | … |
+| Loopback 1 (M1 alone, old receiver), 22 Nov 17:08 | 584 / 583 / 0 and 583 / 584 / 0 | 16.5 (inflated, see above) | 43.0 / 43.7 | 100 / 98 % (expected) | 0 |
+| **Loopback 2 (M1 alone, fixed receiver), 22 Nov 17:16** | 582 / 583 / 0 and 583 / 582 / 0 | **2.9** | 41.2 / 42.9 | 100 / 99 % (expected) | 0 |
 | Shams's M4 Pro ↔ M1, B\*, r1–r3 | … | … | … | … | … |
 | Warda's M4 ↔ M1, B\*, r1–r3 | … | … | … | … | … |
 | With the controller / Tier B winner | … | … | … | … | … |
+
+Loopback reading: both endpoints run on the M1, so four networks (two encoders, two decoders) share one Neural Engine. Each encode and decode took about 34.5 ms, above the 33.3 ms frame time, so nearly every frame is late and the camera rule dropped 19–20 frames per side (about 3 %); that is expected and is not what the loopback tests. What it tests passed: every frame sent arrived and decoded, none lost, no decode failure, both ends saw the other hang up. With the fixed receiver the network time is 1.5–1.75 ms mean (thread wake-up on a fully loaded Mac; no Wi-Fi involved) and the round trip 2.9 ms.
 
 Offline drift of `received.mlvc` (decoded on the M1 NE vs the sender's NE decode): …
 
