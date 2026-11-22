@@ -6,7 +6,9 @@
 //   * every packet carries a send time and echoes the last time stamp it received, so each side measures the
 //     round trip and the clock offset to the peer (NTP-style) and can correct one-way delays (clock.csv);
 //   * lost and incomplete frames are counted; a frame that arrives after a gap is still given to the decoder, so
-//     the decoder's own recovery (fail until the next I-frame) is what the log shows.
+//     the decoder's own recovery (fail until the next I-frame) is what the log shows;
+//   * one thread receives and time-stamps packets on arrival, a second decodes, so a busy decoder never delays a
+//     time stamp (the round trip and network time are not inflated by decoding).
 // Usage (the same on both laptops, each with the other's address):
 //   duplex_call --peer 192.168.1.20 --port 5600 --input cam.nv12 --size 640x360 --qp 26 --iframe-period 64
 //               --bundles <dir> --enc-cu npu --dec-cu npu --fps 30 --seconds 60 --out-dir <dir> [--mtu 1200]
@@ -30,7 +32,9 @@
 #include <cmath>
 #include <cstdint>
 #include <cstdio>
+#include <condition_variable>
 #include <cstring>
+#include <deque>
 #include <filesystem>
 #include <fstream>
 #include <iostream>
@@ -346,11 +350,18 @@ int main(int argc, char** argv)
     };
 
     // ---- receiver: reassemble, decode in arrival order, count gaps ----
-    auto recvLoop = [&] {
+    // ---- receiver, part 1: the network thread reads every packet the moment it arrives, stamps it, reassembles the
+    //      frames and hands complete ones to the decoder thread. A busy decoder therefore never delays a time stamp, so
+    //      the round trip, the clock offset and the network time are measured on arrival, not after a decode. ----
+    struct Ready { int64_t id = 0; std::vector<std::byte> data; uint32_t nfrag = 0; uint64_t firstUs = 0, lastUs = 0, sendUs = 0; uint8_t ft = 0; long lostBefore = 0; };
+    std::deque<Ready> readyQ;
+    std::mutex qMu;
+    std::condition_variable qCv;
+    bool netDone = false;
+    auto netLoop = [&] {
         struct Pending { std::vector<std::byte> data; std::vector<bool> got; uint32_t have = 0, nfrag = 0; uint64_t firstUs = 0, sendUs = 0; uint8_t ft = 0; };
         std::map<int64_t, Pending> pending;  // sequence number -> fragments
-        int64_t lastDecoded = -1;            // the first frame expected is sequence number 0
-        long slot = 0;
+        int64_t lastComplete = -1;           // the first frame expected is sequence number 0
         std::vector<char> pkt(65536);
         const auto hardEnd = tEnd + std::chrono::seconds(3);
         while (!peerDone.load() && Clock::now() < hardEnd) {
@@ -370,7 +381,7 @@ int main(int argc, char** argv)
             }
             if (h.frame == BYE) { peerDone.store(true); break; }
             const int64_t id = static_cast<int64_t>(h.frame);
-            if (id <= lastDecoded) continue;  // a late fragment of a frame already decoded or given up
+            if (id <= lastComplete) continue;  // a late fragment of a frame already complete or given up
             auto& p = pending[id];
             if (p.nfrag == 0) { p.nfrag = h.nfrag; p.data.resize(h.len); p.got.assign(h.nfrag, false); p.firstUs = arrive; p.sendUs = h.sendUs; p.ft = h.frameType; }
             if (h.frag < p.nfrag && !p.got[h.frag]) {
@@ -379,18 +390,42 @@ int main(int argc, char** argv)
                 p.got[h.frag] = true; ++p.have;
             }
             if (p.have < p.nfrag) continue;
-            // complete: give up on older incomplete frames, decode this one
+            // complete: give up on older incomplete frames, hand this one to the decoder
             long gaveUp = 0;
             for (auto it = pending.begin(); it != pending.end();) {
                 if (it->first < id) { ++gaveUp; it = pending.erase(it); } else break;
             }
             incomplete += gaveUp;
-            // frames of the peer between the last decoded one and this one that never arrived at all
-            const long lost = static_cast<long>(std::max<int64_t>(0, id - lastDecoded - 1 - gaveUp));
+            // frames of the peer between the last complete one and this one that never arrived at all
+            const long lost = static_cast<long>(std::max<int64_t>(0, id - lastComplete - 1 - gaveUp));
             lostFrames += lost + gaveUp;
             Pending fr = std::move(pending[id]); pending.erase(id);
-            const auto sched = Clock::now();  // "due" = the moment the frame is complete and could be decoded
-            Rec r{ 'D', slot++, static_cast<long>(id), Ms(sched, t0), 0, 0, 0, 0, 0, 0, 0 };
+            {
+                std::lock_guard<std::mutex> g(qMu);
+                readyQ.push_back(Ready{ id, std::move(fr.data), fr.nfrag, fr.firstUs, arrive, fr.sendUs, fr.ft, lost + gaveUp });
+            }
+            qCv.notify_one();
+            lastComplete = id;
+        }
+        { std::lock_guard<std::mutex> g(qMu); netDone = true; }
+        qCv.notify_one();
+    };
+
+    // ---- receiver, part 2: the decoder thread decodes complete frames in order. "Due" is the moment the frame was
+    //      complete (its last fragment arrived), so latency = waiting behind earlier frames + decoding. ----
+    auto decLoop = [&] {
+        long slot = 0;
+        while (true) {
+            Ready fr;
+            {
+                std::unique_lock<std::mutex> lk(qMu);
+                qCv.wait(lk, [&] { return !readyQ.empty() || netDone; });
+                if (readyQ.empty()) break;
+                fr = std::move(readyQ.front());
+                readyQ.pop_front();
+            }
+            const double dueMs = static_cast<double>(fr.lastUs) / 1000.0 - t0EpochMs;
+            Rec r{ 'D', slot++, static_cast<long>(fr.id), dueMs, 0, 0, 0, 0, 0, 0, 0 };
             const auto s = Clock::now();
             auto res = dec.Decode(fr.data);
             const auto e = Clock::now();
@@ -398,17 +433,16 @@ int main(int argc, char** argv)
             r.ok = static_cast<bool>(res);
             if (res) r.frameType = static_cast<int>(res->info.frameType); else { r.frameType = fr.ft; ++failures; }
             r.bytes = fr.data.size(); r.pkts = static_cast<int>(fr.nfrag);
-            r.sendUs = fr.sendUs; r.firstUs = fr.firstUs; r.lastUs = arrive; r.lostBefore = lost + gaveUp;
+            r.sendUs = fr.sendUs; r.firstUs = fr.firstUs; r.lastUs = fr.lastUs; r.lostBefore = fr.lostBefore;
             r.inferMs = dec.GetStats().inference.LatestMs();
             r.totalMs = dec.GetStats().total.LatestMs();
             recvRecs.push_back(r);
             received.push_back(std::move(fr.data));
-            lastDecoded = id;
         }
     };
 
-    std::thread ts(sendLoop), tr(recvLoop);
-    ts.join(); tr.join();
+    std::thread ts(sendLoop), tn(netLoop), td(decLoop);
+    ts.join(); tn.join(); td.join();
 
     std::vector<Rec> all(sendRecs);
     all.insert(all.end(), recvRecs.begin(), recvRecs.end());
