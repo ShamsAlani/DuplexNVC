@@ -6,6 +6,7 @@ D=$(cd "$(dirname "$0")" && pwd); REPO=$(cd "$D/../.." && pwd); OUT="$REPO/detec
 WORK=~/Downloads/duplexnvc-baseline; PY=$WORK/.venv/bin/python; S7=$WORK/phase2/step7
 eval "$(/opt/homebrew/bin/brew shellenv 2>/dev/null)"
 stop () { echo; echo "STOPPED: $*"; exit 1; }
+mkdir -p "$S7"
 echo "== Step 7 detection recall  $(date)"
 [ -x "$PY" ] || stop "Python environment missing ($PY): this must run on the Mac that made Step 8."
 "$PY" -c "import cv2" 2>/dev/null || "$WORK/.venv/bin/pip" -q install opencv-python-headless numpy
