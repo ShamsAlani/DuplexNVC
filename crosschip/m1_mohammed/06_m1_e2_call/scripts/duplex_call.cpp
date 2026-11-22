@@ -101,7 +101,9 @@ static Args ParseArgs(int argc, char** argv)
 #pragma pack(push, 1)
 struct PktHdr {
     uint32_t magic;      // 'DNVC'
-    uint32_t frame;      // frame number of the sender (0xFFFFFFFF = bye)
+    uint32_t frame;      // sequence number of the access unit: 0 = the warm-up IDR, 1, 2, ... for every frame actually
+                         // encoded (frames the sender drops are never numbered, so a gap means a frame lost in the
+                         // network); 0xFFFFFFFF = bye
     uint16_t frag, nfrag;
     uint32_t len;        // whole access unit in bytes
     uint64_t sendUs;     // sender's system clock at send, epoch microseconds (t1 / t3)
@@ -279,11 +281,10 @@ int main(int argc, char** argv)
         const auto s = Clock::now();
         auto r = enc.Encode(Nv12FrameView(a.width, a.height, frames[0]), EncodeParams{ .qp = QpParams(a.qp) });
         std::cerr << "encoder first-frame (init) ms: " << Ms(Clock::now(), s) << (r ? "" : " FAILED") << "\n";
-        if (r) {
-            outAus.emplace_back(r->bitStream.begin(), r->bitStream.end());
-            Rec rec{ 'E', -1, 0, 0, 0, 0, 0, 0, static_cast<int>(r->info.frameType), r->bitStream.size(), 1 };
-            sendRecs.push_back(rec);  // sent at t0, below, so that the peer is listening
-        }
+        if (!r) { std::cerr << "the encoder could not encode the first frame\n"; return 1; }
+        outAus.emplace_back(r->bitStream.begin(), r->bitStream.end());
+        Rec rec{ 'E', -1, 0, 0, 0, 0, 0, 0, static_cast<int>(r->info.frameType), r->bitStream.size(), 1 };
+        sendRecs.push_back(rec);  // sent at t0, below, so that the peer is listening
     }
 
     // ---- start time: shared (--start-at) or 2 s from now ----
@@ -306,10 +307,11 @@ int main(int argc, char** argv)
     // ---- sender: the camera delivers frame k at t0 + k*period; missed frames are dropped (as in duplex_bench) ----
     auto sendLoop = [&] {
         std::this_thread::sleep_until(t0 - std::chrono::milliseconds(50));
-        {   // the warm-up IDR
-            auto [n, t] = sendAu(static_cast<uint32_t>(-1) /* slot -1 */, outAus[0], static_cast<uint8_t>(sendRecs[0].frameType));
+        {   // the warm-up IDR is sequence number 0
+            auto [n, t] = sendAu(0u, outAus[0], static_cast<uint8_t>(sendRecs[0].frameType));
             sendRecs[0].pkts = n; sendRecs[0].sendUs = t;
         }
+        uint32_t seq = 1;
         long k = 0;
         while (true) {
             auto now = Clock::now();
@@ -330,7 +332,7 @@ int main(int argc, char** argv)
                 r.frameType = static_cast<int>(res->info.frameType);
                 r.bytes = res->bitStream.size();
                 outAus.emplace_back(res->bitStream.begin(), res->bitStream.end());
-                auto [n, t] = sendAu(static_cast<uint32_t>(k), outAus.back(), static_cast<uint8_t>(r.frameType));
+                auto [n, t] = sendAu(seq++, outAus.back(), static_cast<uint8_t>(r.frameType));
                 r.pkts = n; r.sendUs = t;
             }
             r.endMs = Ms(Clock::now(), t0);  // end = encoded AND handed to the network
@@ -346,8 +348,8 @@ int main(int argc, char** argv)
     // ---- receiver: reassemble, decode in arrival order, count gaps ----
     auto recvLoop = [&] {
         struct Pending { std::vector<std::byte> data; std::vector<bool> got; uint32_t have = 0, nfrag = 0; uint64_t firstUs = 0, sendUs = 0; uint8_t ft = 0; };
-        std::map<int64_t, Pending> pending;  // frame number -> fragments (slot -1 is stored as -1)
-        int64_t lastDecoded = -2;
+        std::map<int64_t, Pending> pending;  // sequence number -> fragments
+        int64_t lastDecoded = -1;            // the first frame expected is sequence number 0
         long slot = 0;
         std::vector<char> pkt(65536);
         const auto hardEnd = tEnd + std::chrono::seconds(3);
@@ -367,7 +369,7 @@ int main(int argc, char** argv)
                     clockRows.push_back({ arrive / 1e6, rtt / 1000.0, off / 1000.0 });
             }
             if (h.frame == BYE) { peerDone.store(true); break; }
-            const int64_t id = h.frame == static_cast<uint32_t>(-1) ? -1 : static_cast<int64_t>(h.frame);
+            const int64_t id = static_cast<int64_t>(h.frame);
             if (id <= lastDecoded) continue;  // a late fragment of a frame already decoded or given up
             auto& p = pending[id];
             if (p.nfrag == 0) { p.nfrag = h.nfrag; p.data.resize(h.len); p.got.assign(h.nfrag, false); p.firstUs = arrive; p.sendUs = h.sendUs; p.ft = h.frameType; }
@@ -384,7 +386,7 @@ int main(int argc, char** argv)
             }
             incomplete += gaveUp;
             // frames of the peer between the last decoded one and this one that never arrived at all
-            const long lost = lastDecoded >= -1 ? static_cast<long>(std::max<int64_t>(0, id - lastDecoded - 1 - gaveUp)) : 0;
+            const long lost = static_cast<long>(std::max<int64_t>(0, id - lastDecoded - 1 - gaveUp));
             lostFrames += lost + gaveUp;
             Pending fr = std::move(pending[id]); pending.erase(id);
             const auto sched = Clock::now();  // "due" = the moment the frame is complete and could be decoded
