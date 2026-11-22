@@ -1,0 +1,11 @@
+clip,frame,kind,faces,bodies,or,and,max
+px2ent,20,enter,,50,50,,50
+px2ent,250,enter,250,,250,,
+pxentr,90,enter,190,90,90,,90
+px4ppl,20,enter,90,80,90,90,80
+px4ppl,70,enter,,150,150,,150
+px4ppl,80,enter,,,,,
+px4ppl,110,enter,,,,,
+pxcrwd,60,enter,,,,,
+pxleav,0,leave,,,,,
+pxdown,0,leave,,,,,

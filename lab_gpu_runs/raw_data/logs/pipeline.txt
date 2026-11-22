@@ -1,0 +1,416 @@
+start 11/19/2026 20:32:35
+data ready 11/19/2026 20:57:28
+control FAILED at 2
+b1 FAILED at 2
+both at epoch 2  11/19/2026 20:58:32
+control FAILED at 4
+b1 FAILED at 4
+both at epoch 4  11/19/2026 20:59:25
+control FAILED at 6
+b1 FAILED at 6
+both at epoch 6  11/19/2026 21:00:19
+control FAILED at 8
+b1 FAILED at 8
+both at epoch 8  11/19/2026 21:01:14
+control FAILED at 10
+b1 FAILED at 10
+both at epoch 10  11/19/2026 21:02:11
+control FAILED at 12
+b1 FAILED at 12
+both at epoch 12  11/19/2026 21:03:06
+control FAILED at 14
+b1 FAILED at 14
+both at epoch 14  11/19/2026 21:04:03
+control FAILED at 16
+b1 FAILED at 16
+both at epoch 16  11/19/2026 21:04:59
+control FAILED at 18
+b1 FAILED at 18
+both at epoch 18  11/19/2026 21:05:54
+control FAILED at 20
+b1 FAILED at 20
+both at epoch 20  11/19/2026 21:06:59
+control FAILED at 22
+b1 FAILED at 22
+both at epoch 22  11/19/2026 21:07:54
+control FAILED at 24
+b1 FAILED at 24
+both at epoch 24  11/19/2026 21:08:50
+control FAILED at 26
+b1 FAILED at 26
+both at epoch 26  11/19/2026 21:09:46
+control FAILED at 28
+b1 FAILED at 28
+both at epoch 28  11/19/2026 21:10:40
+control FAILED at 30
+b1 FAILED at 30
+both at epoch 30  11/19/2026 21:11:36
+control FAILED at 32
+b1 FAILED at 32
+both at epoch 32  11/19/2026 21:12:36
+control FAILED at 34
+b1 FAILED at 34
+both at epoch 34  11/19/2026 21:13:31
+control FAILED at 36
+b1 FAILED at 36
+both at epoch 36  11/19/2026 21:14:30
+control FAILED at 38
+b1 FAILED at 38
+both at epoch 38  11/19/2026 21:15:29
+control FAILED at 40
+b1 FAILED at 40
+both at epoch 40  11/19/2026 21:16:26
+control FAILED at 42
+b1 FAILED at 42
+both at epoch 42  11/19/2026 21:17:24
+control FAILED at 44
+b1 FAILED at 44
+both at epoch 44  11/19/2026 21:18:20
+control FAILED at 46
+b1 FAILED at 46
+both at epoch 46  11/19/2026 21:19:16
+control FAILED at 48
+b1 FAILED at 48
+both at epoch 48  11/19/2026 21:20:12
+control FAILED at 50
+b1 FAILED at 50
+both at epoch 50  11/19/2026 21:21:09
+control FAILED at 52
+b1 FAILED at 52
+both at epoch 52  11/19/2026 21:22:08
+control FAILED at 54
+b1 FAILED at 54
+both at epoch 54  11/19/2026 21:23:05
+control FAILED at 56
+b1 FAILED at 56
+both at epoch 56  11/19/2026 21:24:03
+control FAILED at 58
+b1 FAILED at 58
+both at epoch 58  11/19/2026 21:25:01
+control FAILED at 60
+b1 FAILED at 60
+both at epoch 60  11/19/2026 21:25:57
+control FAILED at 62
+b1 FAILED at 62
+both at epoch 62  11/19/2026 21:26:55
+control FAILED at 64
+b1 FAILED at 64
+both at epoch 64  11/19/2026 21:27:53
+control FAILED at 66
+b1 FAILED at 66
+both at epoch 66  11/19/2026 21:28:49
+control FAILED at 68
+b1 FAILED at 68
+both at epoch 68  11/19/2026 21:29:46
+control FAILED at 70
+b1 FAILED at 70
+both at epoch 70  11/19/2026 21:30:42
+control FAILED at 72
+b1 FAILED at 72
+both at epoch 72  11/19/2026 21:31:37
+control FAILED at 74
+b1 FAILED at 74
+both at epoch 74  11/19/2026 21:32:34
+control FAILED at 76
+b1 FAILED at 76
+both at epoch 76  11/19/2026 21:33:28
+control FAILED at 78
+b1 FAILED at 78
+both at epoch 78  11/19/2026 21:34:24
+control FAILED at 80
+b1 FAILED at 80
+both at epoch 80  11/19/2026 21:35:18
+control FAILED at 82
+b1 FAILED at 82
+both at epoch 82  11/19/2026 21:36:13
+control FAILED at 84
+b1 FAILED at 84
+both at epoch 84  11/19/2026 21:37:19
+control FAILED at 86
+b1 FAILED at 86
+both at epoch 86  11/19/2026 21:38:14
+control FAILED at 88
+b1 FAILED at 88
+both at epoch 88  11/19/2026 21:39:09
+control FAILED at 90
+b1 FAILED at 90
+both at epoch 90  11/19/2026 21:40:04
+control FAILED at 92
+b1 FAILED at 92
+both at epoch 92  11/19/2026 21:41:00
+control FAILED at 94
+b1 FAILED at 94
+both at epoch 94  11/19/2026 21:41:56
+control FAILED at 96
+b1 FAILED at 96
+both at epoch 96  11/19/2026 21:42:52
+control FAILED at 98
+b1 FAILED at 98
+both at epoch 98  11/19/2026 21:43:48
+control FAILED at 100
+b1 FAILED at 100
+both at epoch 100  11/19/2026 21:44:44
+control FAILED at 102
+b1 FAILED at 102
+both at epoch 102  11/19/2026 21:45:39
+control FAILED at 104
+b1 FAILED at 104
+both at epoch 104  11/19/2026 21:46:34
+control FAILED at 106
+b1 FAILED at 106
+both at epoch 106  11/19/2026 21:47:28
+control FAILED at 108
+b1 FAILED at 108
+both at epoch 108  11/19/2026 21:48:24
+control FAILED at 110
+b1 FAILED at 110
+both at epoch 110  11/19/2026 21:49:20
+control FAILED at 112
+b1 FAILED at 112
+both at epoch 112  11/19/2026 21:50:15
+control FAILED at 114
+b1 FAILED at 114
+both at epoch 114  11/19/2026 21:51:10
+control FAILED at 116
+b1 FAILED at 116
+both at epoch 116  11/19/2026 21:52:06
+control FAILED at 118
+b1 FAILED at 118
+both at epoch 118  11/19/2026 21:53:03
+control FAILED at 120
+b1 FAILED at 120
+both at epoch 120  11/19/2026 21:53:59
+control FAILED at 122
+b1 FAILED at 122
+both at epoch 122  11/19/2026 21:54:56
+control FAILED at 124
+b1 FAILED at 124
+both at epoch 124  11/19/2026 21:55:54
+control FAILED at 126
+b1 FAILED at 126
+both at epoch 126  11/19/2026 21:56:50
+control FAILED at 128
+b1 FAILED at 128
+both at epoch 128  11/19/2026 21:57:47
+control FAILED at 130
+b1 FAILED at 130
+both at epoch 130  11/19/2026 21:58:46
+control FAILED at 132
+b1 FAILED at 132
+both at epoch 132  11/19/2026 21:59:42
+control FAILED at 134
+b1 FAILED at 134
+both at epoch 134  11/19/2026 22:00:38
+control FAILED at 136
+b1 FAILED at 136
+both at epoch 136  11/19/2026 22:01:34
+control FAILED at 138
+b1 FAILED at 138
+both at epoch 138  11/19/2026 22:02:28
+control FAILED at 140
+b1 FAILED at 140
+both at epoch 140  11/19/2026 22:03:24
+control FAILED at 142
+b1 FAILED at 142
+both at epoch 142  11/19/2026 22:04:19
+control FAILED at 144
+b1 FAILED at 144
+both at epoch 144  11/19/2026 22:05:16
+control FAILED at 146
+b1 FAILED at 146
+both at epoch 146  11/19/2026 22:06:12
+control FAILED at 148
+b1 FAILED at 148
+both at epoch 148  11/19/2026 22:07:10
+control FAILED at 150
+b1 FAILED at 150
+both at epoch 150  11/19/2026 22:08:06
+control FAILED at 152
+b1 FAILED at 152
+both at epoch 152  11/19/2026 22:09:03
+control FAILED at 154
+b1 FAILED at 154
+both at epoch 154  11/19/2026 22:09:59
+control FAILED at 156
+b1 FAILED at 156
+both at epoch 156  11/19/2026 22:10:57
+control FAILED at 158
+b1 FAILED at 158
+both at epoch 158  11/19/2026 22:11:53
+control FAILED at 160
+b1 FAILED at 160
+both at epoch 160  11/19/2026 22:12:51
+control FAILED at 162
+b1 FAILED at 162
+both at epoch 162  11/19/2026 22:13:47
+control FAILED at 164
+b1 FAILED at 164
+both at epoch 164  11/19/2026 22:14:45
+control FAILED at 166
+b1 FAILED at 166
+both at epoch 166  11/19/2026 22:15:41
+control FAILED at 168
+b1 FAILED at 168
+both at epoch 168  11/19/2026 22:16:39
+control FAILED at 170
+b1 FAILED at 170
+both at epoch 170  11/19/2026 22:17:35
+control FAILED at 172
+b1 FAILED at 172
+both at epoch 172  11/19/2026 22:18:31
+control FAILED at 174
+b1 FAILED at 174
+both at epoch 174  11/19/2026 22:19:28
+control FAILED at 176
+b1 FAILED at 176
+both at epoch 176  11/19/2026 22:20:26
+control FAILED at 178
+b1 FAILED at 178
+both at epoch 178  11/19/2026 22:21:23
+control FAILED at 180
+b1 FAILED at 180
+both at epoch 180  11/19/2026 22:22:19
+control FAILED at 182
+b1 FAILED at 182
+both at epoch 182  11/19/2026 22:23:16
+control FAILED at 184
+b1 FAILED at 184
+both at epoch 184  11/19/2026 22:24:12
+control FAILED at 186
+b1 FAILED at 186
+both at epoch 186  11/19/2026 22:25:10
+control FAILED at 188
+b1 FAILED at 188
+both at epoch 188  11/19/2026 22:26:05
+control FAILED at 190
+b1 FAILED at 190
+both at epoch 190  11/19/2026 22:27:01
+control FAILED at 192
+b1 FAILED at 192
+both at epoch 192  11/19/2026 22:27:57
+control FAILED at 194
+b1 FAILED at 194
+both at epoch 194  11/19/2026 22:28:53
+control FAILED at 196
+b1 FAILED at 196
+both at epoch 196  11/19/2026 22:29:48
+control FAILED at 198
+b1 FAILED at 198
+both at epoch 198  11/19/2026 22:30:44
+control FAILED at 200
+b1 FAILED at 200
+both at epoch 200  11/19/2026 22:31:39
+ALL DONE 11/19/2026 22:31:54
+start 11/20/2026 13:09:16
+data ready 11/20/2026 13:09:31
+control FAILED at 2
+b1 FAILED at 2
+STOPPED: both runs crash, see control.txt 11/20/2026 13:14:24
+start 11/20/2026 13:26:05
+data ready 11/20/2026 13:26:46
+sequences listed 5411, fully extracted 0
+STOPPED: no usable clips, see prep.txt
+start 11/20/2026 13:30:48
+data ready 11/20/2026 21:21:00
+sequences listed 5411, fully extracted 5411
+both at epoch 2  11/20/2026 21:38:54
+both at epoch 4  11/20/2026 21:56:08
+both at epoch 6  11/20/2026 22:12:39
+both at epoch 8  11/20/2026 22:28:35
+both at epoch 10  11/20/2026 22:44:28
+both at epoch 12  11/20/2026 23:00:29
+both at epoch 14  11/20/2026 23:16:11
+both at epoch 16  11/20/2026 23:32:02
+both at epoch 18  11/20/2026 23:47:37
+both at epoch 20  11/21/2026 00:03:13
+both at epoch 22  11/21/2026 00:19:10
+both at epoch 24  11/21/2026 00:34:49
+both at epoch 26  11/21/2026 00:50:34
+both at epoch 28  11/21/2026 01:06:03
+both at epoch 30  11/21/2026 01:21:44
+both at epoch 32  11/21/2026 01:37:25
+both at epoch 34  11/21/2026 01:53:25
+both at epoch 36  11/21/2026 02:08:55
+both at epoch 38  11/21/2026 02:24:36
+both at epoch 40  11/21/2026 02:40:03
+both at epoch 42  11/21/2026 02:55:32
+both at epoch 44  11/21/2026 03:11:20
+both at epoch 46  11/21/2026 03:27:18
+both at epoch 48  11/21/2026 03:43:09
+both at epoch 50  11/21/2026 03:58:38
+both at epoch 52  11/21/2026 04:14:09
+both at epoch 54  11/21/2026 04:29:42
+both at epoch 56  11/21/2026 04:45:33
+both at epoch 58  11/21/2026 05:01:04
+both at epoch 60  11/21/2026 05:16:30
+both at epoch 62  11/21/2026 05:32:00
+both at epoch 64  11/21/2026 05:48:04
+both at epoch 66  11/21/2026 06:03:34
+both at epoch 68  11/21/2026 06:19:56
+both at epoch 70  11/21/2026 06:35:43
+both at epoch 72  11/21/2026 06:51:29
+both at epoch 74  11/21/2026 07:07:12
+both at epoch 76  11/21/2026 07:22:43
+both at epoch 78  11/21/2026 07:38:20
+both at epoch 80  11/21/2026 07:54:03
+both at epoch 82  11/21/2026 08:09:45
+both at epoch 84  11/21/2026 08:25:48
+both at epoch 86  11/21/2026 08:41:50
+both at epoch 88  11/21/2026 08:57:29
+both at epoch 90  11/21/2026 09:13:27
+both at epoch 92  11/21/2026 09:28:58
+both at epoch 94  11/21/2026 09:44:54
+both at epoch 96  11/21/2026 10:00:48
+both at epoch 98  11/21/2026 10:16:41
+both at epoch 100  11/21/2026 10:32:20
+both at epoch 102  11/21/2026 10:48:12
+both at epoch 104  11/21/2026 11:03:41
+both at epoch 106  11/21/2026 11:19:13
+both at epoch 108  11/21/2026 11:35:07
+both at epoch 110  11/21/2026 11:50:59
+both at epoch 112  11/21/2026 12:06:33
+both at epoch 114  11/21/2026 12:22:08
+both at epoch 116  11/21/2026 12:37:43
+both at epoch 118  11/21/2026 12:53:36
+both at epoch 120  11/21/2026 13:09:14
+both at epoch 122  11/21/2026 13:25:09
+both at epoch 124  11/21/2026 13:40:54
+both at epoch 126  11/21/2026 13:56:28
+both at epoch 128  11/21/2026 14:12:16
+both at epoch 130  11/21/2026 14:28:26
+both at epoch 132  11/21/2026 14:44:22
+both at epoch 134  11/21/2026 15:01:12
+both at epoch 136  11/21/2026 15:17:18
+both at epoch 138  11/21/2026 15:33:25
+both at epoch 140  11/21/2026 15:48:55
+both at epoch 142  11/21/2026 16:04:58
+both at epoch 144  11/21/2026 16:20:28
+both at epoch 146  11/21/2026 16:36:29
+both at epoch 148  11/21/2026 16:52:01
+both at epoch 150  11/21/2026 17:07:54
+both at epoch 152  11/21/2026 17:23:23
+both at epoch 154  11/21/2026 17:38:56
+both at epoch 156  11/21/2026 17:54:46
+both at epoch 158  11/21/2026 18:10:14
+both at epoch 160  11/21/2026 18:26:01
+both at epoch 162  11/21/2026 18:41:44
+both at epoch 164  11/21/2026 18:57:30
+both at epoch 166  11/21/2026 19:13:09
+both at epoch 168  11/21/2026 19:29:12
+both at epoch 170  11/21/2026 19:44:45
+both at epoch 172  11/21/2026 20:00:29
+both at epoch 174  11/21/2026 20:16:28
+both at epoch 176  11/21/2026 20:32:05
+both at epoch 178  11/21/2026 20:47:35
+both at epoch 180  11/21/2026 21:03:35
+both at epoch 182  11/21/2026 21:19:08
+both at epoch 184  11/21/2026 21:34:54
+both at epoch 186  11/21/2026 21:51:08
+both at epoch 188  11/21/2026 22:06:36
+both at epoch 190  11/21/2026 22:22:30
+both at epoch 192  11/21/2026 22:37:59
+both at epoch 194  11/21/2026 22:53:28
+both at epoch 196  11/21/2026 23:08:57
+both at epoch 198  11/21/2026 23:24:48
+both at epoch 200  11/21/2026 23:40:22
+ALL DONE 11/21/2026 23:40:35
