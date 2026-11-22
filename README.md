@@ -17,7 +17,6 @@ In a video call, every laptop does two jobs at once: it **encodes** its own came
 | [`baseline/`](baseline/) | The Phase 2 **baseline**, in ten experiments: smoke tests, Phase 1 check, timing of the core baseline B\*, correctness, quality, energy, processor, model conversion, placement and quality-per-setting experiments. Each experiment folder has its scripts, raw data, results and a README with what it shows and what we concluded |
 | [`reports/`](reports/) | Literature review, survey and Phase 2 baseline report (PDF) |
 | [`demo/`](demo/) | Demo video: MLVC-S encoding and decoding a talking-head clip, original and decoded side by side |
-| [`crosschip/`](crosschip/) | The cross-chip study of the plan to 3 December: the key baseline steps repeated on other chips (Mohammed's M1: `crosschip/m1_mohammed/`, every result prefixed `M1_`) and the real two-laptop call (E2) |
 | [`REPRODUCE.md`](REPRODUCE.md) | How to rerun everything and rebuild every result |
 
 The baseline took about **40 hours** of measurement (≈ 5.3 h for the core baseline B\*, ≈ 24 h for the processor, model conversion and placement experiments, including one run of 21.4 hours, and ≈ 10.7 h for quality and energy at every setting and QP), every timed run in the same fixed **quiet mode** (below).
@@ -105,7 +104,6 @@ DuplexNVC/
 ├── REPRODUCE.md                       how to rerun everything and rebuild every result
 ├── reports/                           literature review, survey and Phase 2 baseline report (PDF)
 ├── demo/                              demo video: MLVC-S encoding and decoding on the M4 Pro
-├── crosschip/m1_mohammed/             M1 cross-chip steps (setup, timing, decode drift, contention, energy) and the E2 call
 └── baseline/
     ├── README.md                      overview of the ten experiments and headline results
     ├── REPRODUCE.md                   setup, run order, conditions, expected values
