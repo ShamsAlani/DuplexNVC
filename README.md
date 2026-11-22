@@ -17,6 +17,7 @@ In a video call, every laptop does two jobs at once: it **encodes** its own came
 | [`baseline/`](baseline/) | The Phase 2 **baseline**, in fourteen experiments: smoke tests, Phase 1 check, timing of the core baseline B\*, correctness, quality, energy, processor, model conversion, placement, quality-per-setting, correctness and drift of every encoder/decoder pair, contention, the first codec-level mechanism (A1, key-frame bits) and the on-device HEVC anchor. Each experiment folder has its scripts, raw data, results and a README with what it shows and what we concluded |
 | [`lab_gpu_runs/`](lab_gpu_runs/) | **Tier B: changes to the MLVC network**, fine-tuned on a lab GPU (control, piecewise-linear memory gates B1, B1 + input gate, I-frame dropout B2, a second control for training noise). Scripts of the whole training pipeline, the input-gate patch, training logs, the measured cost of training and the first results |
 | [`controller_data/`](controller_data/) | **Step 8: controller data.** 11 multi-person clips (HEVC Class E, Pexels) with people entering and leaving, face labels and face-size groups, real events annotated manually, and a comparison of Apple Vision's face and body detectors (and their combinations) as scene-change triggers. Scripts, raw data, results and a README |
+| [`detection_recall/`](detection_recall/) | **Step 7: detection recall.** The smallest face the scene analyzer's face detector (Apple Vision) finds when it runs on the camera frame at the call resolution (360p, 540p, 720p) instead of the full-size original, by face size, on the Step 8 clips. Scripts, raw data, results, check images and a README |
 | [`reports/`](reports/) | Literature review, survey and Phase 2 baseline report (PDF) |
 | [`demo/`](demo/) | Demo video: MLVC-S encoding and decoding a talking-head clip, original and decoded side by side |
 | [`REPRODUCE.md`](REPRODUCE.md) | How to rerun everything and rebuild every result |
@@ -109,6 +110,18 @@ Energy at 287 kbps from experiment 10 (re-measured at five QPs; B\* 63 mJ, 3 % b
 
 Details: [`controller_data/`](controller_data/). Next: six video-conferencing clips of our own (joining, leaving, stepping away and two false-alarm cases) to evaluate the detectors in call scenes.
 
+### Step 7: detection recall (smallest face the scene analyzer detects)
+
+| Question | Answer |
+|---|---|
+| Method | The Step 8 frames scaled down with Lanczos to 360p, 540p and 720p (as the encoder input is made), Apple Vision face detection on each, compared with the same detector on the full-size originals: 560 faces in 11 clips, poster faces left out, match at IoU ≥ 0.5 |
+| Does detecting at the call resolution lose faces? | **No.** At 360p the detector finds **98.4 %** of the faces it finds at full size (98.0 % at 540p, 97.7 % at 720p). Re-running at the original's own size finds 96.9 %, so the few misses are small, hard faces near the detector's limit, not a loss from scaling down |
+| Smallest face | **Every face of 32 px or more at 360p is found** (96 px at 1080p; one 37 px face missed at 720p). Below 32 px about 1 in 20 is missed. The smallest face in the clips, 14 px at 360p, is still found, so the limit lies below that |
+| Hard cases | A crowd (small faces in profile, masked or blurred): 74–85 %. Poster faces are found at every resolution, so a call needs Step 8's size rule or the body detector to ignore them |
+| What it means for the controller | The scene analyzer can run on the frame the encoder already has, with no full-size copy. Face-size decisions are reliable from 32 px at 360p, and Step 8's 1 s persistence rule absorbs the occasional missed small face |
+
+Details: [`detection_recall/`](detection_recall/).
+
 ## Platform
 
 | | |
@@ -120,7 +133,7 @@ Details: [`controller_data/`](controller_data/). Next: six video-conferencing cl
 | Measurement program | `duplex_bench`, C++17 on `libmlvc` (alone, turns and duplex modes; unpaced or paced; per-frame timestamps) |
 | Power | `powermetrics` (`cpu_power`, `gpu_power`; NE included), idle subtracted |
 | Analysis | Python 3 (NumPy, OpenCV, `lpips`), Swift (Core ML `MLComputePlan`, Vision) |
-| Step 8 labelling | MacBook Pro 13-inch, Apple M1 (face and body detection do not depend on the chip; every label from the same Mac) |
+| Steps 7 and 8 (face and body detection) | MacBook Pro 13-inch, Apple M1, macOS 15.5 (face and body detection do not depend on the chip; every label and every Step 7 detection from the same Mac) |
 | Data | VCD video-conferencing dataset, scenario `s1`; Step 8: HEVC Class E (Xiph, public domain) and Pexels multi-person clips |
 
 ## Quiet mode
@@ -148,6 +161,11 @@ DuplexNVC/
 │   ├── scripts/                       s8_setup, s8_prep.py, s8_table.py, bodybox.swift, s8_bodies.py, s8_fusion.py
 │   ├── raw_data/                      clip list, face boxes, real events, poster rule
 │   └── results/                       dataset table, face-size groups, events, faces vs bodies, fusion
+├── detection_recall/                  Step 7: smallest face the scene analyzer detects, by face size and call resolution
+│   ├── README.md                      method, results, conclusion
+│   ├── scripts/                       s7_recall.py, s7_run
+│   ├── raw_data/                      face boxes at 360p/540p/720p/1080p, machine
+│   └── results/                       recall by size, recall curve, smallest face, per clip, extra boxes, check images
 ├── lab_gpu_runs/                      Tier B, network-level changes: lab GPU training pipeline, logs, results
 │   ├── README.md                      the runs, settings, problems met, results so far
 │   ├── REPRODUCE.md                   how to rerun the training and rebuild the results
@@ -182,4 +200,4 @@ Full guide: [`baseline/REPRODUCE.md`](baseline/REPRODUCE.md) (summary in [`REPRO
 
 ## Next steps
 
-The baseline is complete for timing and energy. Correctness of every encoder/decoder pairing (experiment 11) and the on-device HEVC anchor's quality (experiment 14) are done. Still to be measured: the HEVC anchor's energy; energy on battery and in Low Power Mode (plus a check against an external power meter, if hardware is provided); and the cost of face-based scene analysis. Multi-person data is done (Step 8, [`controller_data/`](controller_data/)); its next step is a small set of video-conferencing clips of our own to test the scene-change triggers in call scenes. DuplexNVC itself — a controller that chooses placement, schedule, resolution and model from the content and the energy state — will then be measured against B\* with exactly this protocol.
+The baseline is complete for timing and energy. Correctness of every encoder/decoder pairing (experiment 11) and the on-device HEVC anchor's quality (experiment 14) are done. Still to be measured: the HEVC anchor's energy; energy on battery and in Low Power Mode (plus a check against an external power meter, if hardware is provided); and the cost of face-based scene analysis. Multi-person data is done (Step 8, [`controller_data/`](controller_data/)), and so is the detector's recall at the call resolution (Step 7, [`detection_recall/`](detection_recall/): every face from 32 px at 360p is found); its next step is a small set of video-conferencing clips of our own to test the scene-change triggers in call scenes. DuplexNVC itself — a controller that chooses placement, schedule, resolution and model from the content and the energy state — will then be measured against B\* with exactly this protocol.
