@@ -1,6 +1,12 @@
 # 08 — Controller data: multi-person clips, face labels and face-size groups (Step 8)
 
+![Our recorded call clips, all playing at once: green = face counted as a participant, grey = someone passing by, not counted](showcase/call_clips_wall.gif)
+
+*Our recorded call clips with the face detector working live: green box = a face counted as a participant, grey box = someone passing by, not counted; white note = the real event. MacBook camera at call distance, 30 fps; faces from Apple Vision every 1/3 s (full size: [`showcase/call_clips_wall.mp4`](showcase/call_clips_wall.mp4)).*
+
 **Owner:** Warda · **Machine:** Warda's M1. Step 8 does not depend on the chip, and all face labels come from this one Mac.
+
+The data has two parts: **11 stock clips** (HEVC Class E and Pexels: groups, crowds, small faces, filmed like films) and **6 call clips we recorded ourselves** (a laptop camera at call distance, people joining, leaving and stepping away as in a real call; 7 windows of 10 s).
 
 **Questions.**
 1. Which multi-person clips, with people entering and leaving, will the controller, A3, A4 and E1 be tested on?
@@ -9,7 +15,7 @@
 
 The baseline's 20 evaluation clips are single VCD talking heads: every face is at least 32 px tall at 360p, and only 6 faces fall in 96–191 px at 1080p (experiment 10). Face-size groups and scene changes need new content.
 
-## Clips (11, run on 20 Nov 2026)
+## Stock clips (11, run on 20 Nov 2026)
 
 The set has three roles: **entries with faces toward the camera** (the face trigger should react), **people entering or leaving with their faces away from the camera** (only a frame-difference trigger can react; this happens often in real calls: someone walks off, or enters with their back turned), and **controls** where nobody enters or leaves (no trigger should fire).
 
@@ -81,26 +87,32 @@ Software versions are in `machine.txt` (ffmpeg 9.0.2, Python 3.12.16, NumPy 2.5.
 | `results/detector_summary.csv` | Per clip: bodies found (max, median), face and body events, events that were not real |
 | `results/fusion_summary.csv` | Five ways to combine faces and bodies: real events caught, automatic events, not real, median delay |
 | `results/fusion_events.csv` | One row per real event: the frame where each method caught it |
+| `results/calls_vs_stock.csv` | Every method (faces, bodies, or, and, max) scored separately on the stock clips and on our call clips |
+| `results/participant_rule.csv` | Faces with and without the participant rule, on both sets |
+| `results/participant_rule_events.csv` | Every automatic face event with and without the rule: when, from how many faces to how many, real or not |
+| `showcase/call_clips_wall.gif`, `.mp4` | Our call clips playing at once, with the faces counted (green) and not counted (grey) |
+| `scripts/rc_sheets.py`, `scripts/s8_rc_add` | One frame every 0.5 s of each recording (to read the event times); add the call clips and rerun everything |
+| `scripts/s8_calls.py`, `scripts/s8_wall.py` | Stock vs call clips and the participant rule; the video wall |
 | `machine.txt` | Hardware, macOS, ffmpeg and Python of the labelling Mac |
 
-## Recorded call clips (next)
+## Recorded call clips (6 recordings, 7 windows, run on 23 Nov 2026)
 
-**Next step: record a small video-conferencing dataset of our own, specific to our use case** (one laptop or iPad camera at call distance, people facing it as in a call), and run the face and body detectors and their combinations on it, together with the 11 stock clips, to see how they perform in the scenes that matter in a real call.
+The stock clips are filmed like films: the camera is across the room and people move about the scene. A video call is one laptop camera about 50–80 cm away, with people facing it. So we recorded the events of a real call ourselves, in that setting, and ran them through exactly the same scripts.
 
-The dataset has two parts. The **stock clips** above (HEVC Class E and Pexels) cover face sizes, groups of 4–7 and crowds, which would be hard to film ourselves. They are filmed like films, though: the camera is across the room and people move about the scene. A video call is one laptop camera about 50–80 cm away, with people facing it. The second part, **recorded call clips**, is filmed that way, so the events of a real call (someone joins, leaves or steps away) are tested as they happen in a call, and their times are known exactly instead of annotated afterwards from sampled frames.
+| id | Recording | Window | What happens | Role |
+|---|---|---|---|---|
+| `rcleav` | `rcleav.mov`, 11.4 s | 0–10 s | one person faces the camera, stands up at 3.0 s and leaves the frame; the empty chairs stay in view | leaving (1 → 0) |
+| `rc2to1` | `rc2to1.mov`, 32.0 s | 15–25 s | two people side by side; the one on the right stands up at 20.5 s and leaves; the other keeps talking | leaving (2 → 1) |
+| `rcbck1` | `rcback.mov`, 23.8 s | 3–13 s | two people; the one on the left stands up at 7.5 s and leaves | leaving (2 → 1) |
+| `rcbck2` | `rcback.mov` | 14–23.8 s | the same person comes back (arm in view at 17.5 s, seated facing the camera at 20.0 s) | joining (1 → 2) |
+| `rcjoin` | `rcjoin.mov`, 17.7 s | 3–13 s | one person talking; a second enters from the right at 7.5 s and sits down next to her | joining (1 → 2) |
+| `rclook` | `rclook.mov`, 12.4 s | 0–10 s | one person turns her head away at 1.0 s and talks in profile; she does not leave | false-alarm test |
+| `rcwalk` | `rcwalk.mov`, 11.0 s | 0–10 s | one person talking; someone walks past behind her from 4.0 to 6.5 s without joining | false-alarm test |
 
-| Clip | Scenario | Why it is needed |
-|---|---|---|
-| `rcleav` | One person faces the camera ~5 s, stands up and leaves the frame; the empty chair stays in view ~8 s | A true exit from the frame (1 face → 0): the moment the controller can lower the resolution and save energy. The stock leaving clips only show people walking away while staying in view |
-| `rc2to1` | Two people side by side; after ~5 s one leaves, the other stays and keeps talking | A partial exit (2 faces → 1): the controller adapts without stopping |
-| `rcback` | One person leaves (~4 s), stays away ~4 s, comes back and sits down facing the camera | An exit and a close, face-forward entry in one clip: does A3 force two key frames? |
-| `rcjoin` | One person talking; a second sits down next to them | A close entry, the usual way someone joins a call; the stock entries are all far from the camera |
-| `rclook` | One person looks down or away for a few seconds but does not leave | False-alarm test: no trigger should fire. Faces turning away caused most of the false face events above |
-| `rcwalk` | One person talking; someone walks past in the background without joining | False-alarm test for bodies and frame difference: a person passing behind should not count as a participant joining |
-
-**How they are recorded.** MacBook (QuickTime Player → File → New Movie Recording) or iPad (Camera app, front camera, landscape, on a stand; Center Stage and HDR video off). The camera stays still at normal call distance; 15–20 s per clip; plain background with no posters or photos of faces; good light on the faces. The second of every event is written down while recording, and becomes the clip's rows in `events_truth.csv`. Everyone who appears agrees to the clips being stored in the team's Drive and used in the report.
-
-**How they are added.** They are listed in `clips.csv` (source `recorded`) and run through the same scripts: `s8_prep.py`, `s8_table.py`, `s8_bodies.py`, `s8_fusion.py`. A MacBook recording is 720p, so its master is 1280×720, like Class E.
+- **How they were recorded:** MacBook camera (1080×720, 30 fps), camera effects off (Center Stage, Portrait, Studio Light, Reactions), the laptop still at call distance (50–80 cm; 80–100 cm for two people; the person walking past 2–3 m behind), a plain background with no posters or photos of faces. Everyone who appears agreed to the clips being stored and used in the report.
+- **Windows:** every clip is analysed over 10 s, as the stock clips are. `rcback`'s person is away for about 10 s, so its leaving and its return are two windows (`rcbck1`, `rcbck2`). The recordings are 1080×720 (3:2), so the masters are cropped in the centre to 16:9 and scaled to 1280×720; no face is cut.
+- **Real events:** the start of each event (the second someone stands up or first comes into view), read from one frame every 0.5 s of each full recording (`scripts/rc_sheets.py`), in `events_truth.csv`.
+- **Added with** `scripts/s8_rc_add` (rows in `clips.csv` and `events_truth.csv`, then `s8_prep.py`, `s8_table.py`, `s8_bodies.py`, `s8_fusion.py` on all 18 windows). `scripts/s8_calls.py` scores every method separately on the stock and the call clips and tests the participant rule; `scripts/s8_wall.py` makes the video wall.
 
 ## Where the videos are
 
@@ -108,12 +120,13 @@ The videos are not in git (the repo ignores `.mp4`, `.y4m` and `.nv12`). They ar
 
 | Drive folder | Contents |
 |---|---|
-| **[Step 8 master videos](https://drive.google.com/drive/folders/1Lve-EM16QhhRZU8_kebwevPCfzI3N87J?usp=drive_link)** | the 11 masters (`<id>_<width>x<height>_30.mp4`) and `meta.json` |
+| **[Step 8 master videos](https://drive.google.com/drive/folders/1Lve-EM16QhhRZU8_kebwevPCfzI3N87J?usp=drive_link)** | the masters (`<id>_<width>x<height>_30.mp4`) and `meta.json`: 11 stock clips and the 7 call-clip windows |
 | [Original source clips](https://drive.google.com/drive/folders/1oWpQzQQ0RcG-FsGjj5eCvFNP4mEe8kJ0) | the 11 original clips the masters were made from (names as in the clip table) |
+| [Our recorded call clips](https://drive.google.com/drive/folders/1nSD9B0X19jTrVycgy_M4HNL-9fU2dn3_?usp=drive_link) | the 6 recordings (`rc….mov`) |
 
 **Use the masters, not the sources, for every codec run.** All frame numbers in `raw_data/` and `results/` (face boxes, events) refer to the master frames. Download them into `~/Downloads/duplexnvc-baseline/phase2/step8/master/`; the encoder inputs at 360p/540p/720p are made from these files with the baseline's command.
 
-## Results
+## Results: stock clips
 
 **Faces.** 628 faces in 301 labelled frames: 560 participants and 68 poster faces (53 in `cejohn`, 15 in `cekris`).
 
@@ -189,10 +202,44 @@ Body detection took a median of 7.4 ms per full-size frame on the M1 (the cost o
 - **Max is the best single trigger:** as many real events as bodies, with the fewest events that are not real among the methods that still catch events. **Or** catches the most and fastest but more than doubles the false events; **and** almost never fires.
 - **No method catches the rest, because of what the clips contain:** in `px4ppl` the third and fourth people enter 1–3 s after the second, while the count is still changing, so the 1 s rule merges them into one change (one switch for a group arriving is the behaviour the controller needs); in `pxcrwd` people keep arriving, so the count never settles; in `pxleav` and `pxdown` people walk away but stay in view.
 
+## Results: our recorded call clips
+
+**Faces.** 257 faces in 210 labelled frames, all participants except the person walking past in `rcwalk`. Call distance gives the large faces the stock clips lack: 124 faces at 64–127 px and **129 at ≥ 128 px at 360p** (stock: 0). With them, the set has every face-size group: < 32 px 248 faces in 10 windows, 32–63 px 238 in 8, 64–127 px 202 in 9, ≥ 128 px 129 in 6.
+
+**Every method on the stock clips and on the call clips** (`results/calls_vs_stock.csv`; same detectors, same 1 s rule, same scoring):
+
+| Method | Stock: real events caught | Stock: not real | **Calls: real events caught** | **Calls: not real** | Calls: median delay |
+|---|---|---|---|---|---|
+| Faces | 3 of 10 | 8 | **5 of 5** | **2** | 0.7 s |
+| Bodies | 4 of 10 | 9 | 4 of 5 | 9 | 1.2 s |
+| Or | 5 of 10 | 17 | 5 of 5 | 12 | 0.5 s |
+| And | 1 of 10 | 1 | 2 of 5 | 1 | 1.2 s |
+| Max | 4 of 10 | 7 | 5 of 5 | 2 | 0.5 s |
+
+The delay is from the start of the real event to the labelled frame where the count changes; the controller acts once the new count has held for 1 s.
+
+**Per clip, faces:** `rcleav` leave caught 0.7 s after she stands up; `rc2to1` 0.8 s; `rcbck1` 0.2 s; `rcbck2` return 1.8 s; `rcjoin` 0.5 s. `rclook`: no event at all. `rcwalk`: 2 events that are not real (the person walking past counted as joining at 4.0 s and leaving at 6.0 s).
+
+**What is not real** (`results/participant_rule_events.csv`, `results/body_events.csv`):
+- **Faces (2):** both in `rcwalk`, the person walking past.
+- **Bodies (9):** 7 from bodies flickering on people who sit close to the camera and are cut off by the frame edge (`rc2to1` 2, `rcbck2` 4, `rcjoin` 1), 2 from the person walking past. Bodies also miss `rcleav`, where the seated person close to the camera is rarely boxed.
+
+**Turning away does not fool the face detector in a call.** In `rclook` she talks in profile for 9 s and the face is found in all 30 labelled frames (its box shrinks from 126 to about 74 px at 360p), so nothing fires. In the stock clips, heads turning away caused 5 of the 7 false face events (`events_checked.csv`): there the faces are small and far, and a turned head is lost. At call distance it is large enough to be found in profile.
+
+**Someone walking past behind (`rcwalk`) is the one case that fools the face count.** This is rare in a video call, where people usually sit alone or together in front of the laptop, but it happens (a family member, a colleague in an open office) and should not count as a participant joining. The passer-by and the people in the call differ in two ways: the passer-by's face is small (28–37 px at 360p against 116–169 px), and it is in view only briefly (about 2 s). `scripts/s8_calls.py` tests a **participant rule** that uses both: **a face counts as a participant when it is at least 30 % of the size of the largest face in the frame, or when it has stayed in view for 2 s** (so someone who sits down further back still counts once they stay).
+
+| Faces | Stock: caught | Stock: not real | Calls: caught | Calls: not real |
+|---|---|---|---|---|
+| 1 s rule (as above) | 3 of 10 | 8 | 5 of 5 | 2 |
+| **1 s rule + participant rule** | 3 of 10 | 8 | **5 of 5** | **0** |
+
+The rule removes both false events in `rcwalk` and changes nothing else on either set. The 30 % and the 2 s were chosen by looking at these clips, which contain one passer-by, so the rule has to be confirmed on new recordings (for example someone walking past closer to the camera). Size alone already removes the passer-by here; the 2 s condition is what keeps a small participant who stays. (Requiring every join to last 2 s instead also removes the passer-by, but loses real entries in the stock clips: 1 of 10 caught.)
+
 ## Conclusion
 
 1. **Every face-size group is covered** by this step and the baseline together: the new clips give the small groups (246 faces under 32 px in 9 clips, 236 in 32–63 px in 7 clips), which the baseline lacks; the baseline's talking heads give the large ones. This supports the controller rule "a face of this size needs at least this resolution".
 2. **Faces found are not people present.** In group clips Apple Vision finds about half of the people (median 3 of 7 in `px7ppl`, 3 of 5 in `px5ppl`), because faces turn away, look down or are hidden, and it also finds printed faces on a poster (68 boxes in two clips). The controller has to treat the face count as a lower bound and ignore faces that never move.
 3. **A face-count trigger alone is late and blind to faces turned away.** Of 11 automatic events, 4 are real, arriving 0–5.3 s after the first person enters; the distant entry and both leaving clips produce no face event at all. **The body detector does not fix this on its own:** it counts people far better when faces are away, but as a trigger it is as noisy as faces (4 of 10 real events caught, 9 false). Combined, the larger of the face and body counts is the best single trigger (4 of 10 caught, 7 not real, against 8 and 9 for each alone). The controller should use faces for face size (the resolution rule), the combined count for how many people are present and when that changes, and a frame-difference trigger as the backup for scenes whose count never settles (a crowd), with persistence (a change must last 1 s) on all of them.
 4. **Clips for the next steps:** `px4ppl`, `pxentr`, `px2ent` and `pxcrwd` for entries; `pxleav` and `pxdown` for leaving; `ce4peo`, `cejohn`, `cekris`, `px5ppl` and `px7ppl` as controls, where nothing should trigger.
-5. **Next: our own video-conferencing clips.** The stock clips are filmed like films; the next step records six call scenes of our own (leaving, joining, stepping away and back, and two false-alarm cases) and evaluates the face, body and combined detectors on them with the rest of the set (see "Recorded call clips").
+5. **In real call scenes the face detector is enough.** On our recorded call clips, faces catch every join and leave (5 of 5), 0.2–1.8 s after it starts, with 2 events that are not real against 8 on the stock clips. A head turned away is still found at call distance (`rclook`: no event). The body detector, which helped on the film-like stock clips, is worse in calls (4 of 5, 9 not real): bodies of people sitting close to the camera are cut off by the frame and flicker. So in call mode the controller should count people with faces and keep bodies only as a backup for scenes where faces are turned away or far.
+6. **Someone walking past behind is the remaining weakness, and it is rare in calls.** A participant rule using both face size and time in view (at least 30 % of the largest face, or in view for 2 s) removes both passer-by events and costs nothing on either set; it has to be confirmed on new recordings, since the thresholds were chosen on these clips.

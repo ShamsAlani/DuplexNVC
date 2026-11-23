@@ -1,0 +1,35 @@
+clip,set,method,frame,seconds,faces_before,faces_after,real
+cekris,stock clips,faces,70,2.3,2,1,no
+cekris,stock clips,faces,100,3.3,1,2,no
+cekris,stock clips,faces + participant rule,70,2.3,2,1,no
+cekris,stock clips,faces + participant rule,100,3.3,1,2,no
+px2ent,stock clips,faces,250,8.3,0,1,yes
+px2ent,stock clips,faces + participant rule,250,8.3,0,1,yes
+pxentr,stock clips,faces,190,6.3,0,4,yes
+pxentr,stock clips,faces + participant rule,190,6.3,0,4,yes
+px4ppl,stock clips,faces,90,3.0,0,2,yes
+px4ppl,stock clips,faces + participant rule,90,3.0,0,2,yes
+px5ppl,stock clips,faces,200,6.7,3,4,no
+px5ppl,stock clips,faces + participant rule,200,6.7,3,4,no
+px7ppl,stock clips,faces,60,2.0,4,3,no
+px7ppl,stock clips,faces,130,4.3,3,2,no
+px7ppl,stock clips,faces,220,7.3,2,3,no
+px7ppl,stock clips,faces + participant rule,60,2.0,4,3,no
+px7ppl,stock clips,faces + participant rule,130,4.3,3,2,no
+px7ppl,stock clips,faces + participant rule,220,7.3,2,3,no
+pxcrwd,stock clips,faces,220,7.3,0,2,no
+pxcrwd,stock clips,faces + participant rule,220,7.3,0,2,no
+pxdown,stock clips,faces,110,3.7,0,1,no
+pxdown,stock clips,faces + participant rule,110,3.7,0,1,no
+rcleav,recorded call clips,faces,110,3.7,1,0,yes
+rcleav,recorded call clips,faces + participant rule,110,3.7,1,0,yes
+rc2to1,recorded call clips,faces,190,6.3,2,1,yes
+rc2to1,recorded call clips,faces + participant rule,190,6.3,2,1,yes
+rcbck1,recorded call clips,faces,140,4.7,2,1,yes
+rcbck1,recorded call clips,faces + participant rule,140,4.7,2,1,yes
+rcbck2,recorded call clips,faces,160,5.3,1,2,yes
+rcbck2,recorded call clips,faces + participant rule,160,5.3,1,2,yes
+rcjoin,recorded call clips,faces,150,5.0,1,2,yes
+rcjoin,recorded call clips,faces + participant rule,150,5.0,1,2,yes
+rcwalk,recorded call clips,faces,120,4.0,1,2,no
+rcwalk,recorded call clips,faces,180,6.0,2,1,no

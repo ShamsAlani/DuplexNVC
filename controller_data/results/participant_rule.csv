@@ -1,0 +1,5 @@
+method,set,caught,real,automatic,not_real,median_delay_s
+"faces, 1 s rule (as before)",stock clips,3,10,11,8,2.3
+"faces, 1 s rule (as before)",recorded call clips,5,5,7,2,0.7
+"faces + participant rule (>= 30 % of the largest face, or in view >= 2 s)",stock clips,3,10,11,8,2.3
+"faces + participant rule (>= 30 % of the largest face, or in view >= 2 s)",recorded call clips,5,5,5,0,0.7
