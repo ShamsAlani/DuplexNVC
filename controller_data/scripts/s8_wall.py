@@ -3,11 +3,12 @@
     ~/Downloads/duplexnvc-baseline/.venv/bin/python s8_wall.py [repo]
 
 Uses the masters and face labels Step 8 already made (no new detection). Writes into <repo>/controller_data/showcase:
-  call_clips_wall.gif   4 x 2 grid, 480 px tiles... small enough for the README (10 fps)
+  call_clips_wall.webp  for the README: animated, full colour, 1280 px wide, 15 fps
   call_clips_wall.mp4   the same at 640 px tiles, 30 fps (for slides)
-Each tile: the clip, a green box on every face counted as a participant, a grey box on a face the participant
-rule leaves out (smaller than 30 % of the largest face and in view for less than 2 s: someone walking past),
-the number of people in the call, and a white note while a real event is happening.
+The video is lightened slightly for display (brighter, a little less warm); the masters and all data are untouched.
+Each tile: the clip, a green box on every face counted as a participant, a red "not a participant" label (no box)
+on a face the participant rule leaves out (someone walking past), the number of people in the call, and a white note while a real event
+is happening.
 """
 import csv, json, os, subprocess, sys
 
@@ -17,6 +18,7 @@ except ImportError:
     subprocess.run([sys.executable, "-m", "pip", "install", "-q", "pillow"], check=True)
     from PIL import Image, ImageDraw, ImageFont
 import cv2
+import numpy as np
 
 WORK = os.path.expanduser("~/Downloads/duplexnvc-baseline")
 S8 = f"{WORK}/phase2/step8"
@@ -25,6 +27,8 @@ OUT = f"{REPO}/controller_data/showcase"
 STEP, FPS, N = 10, 30, 300
 GREEN, INK, PAPER, MUTED, GREY = (27, 175, 122), (11, 11, 11), (252, 252, 251), (82, 81, 78), (150, 150, 146)
 SIZE, STAY = 0.30, 6   # the participant rule (s8_calls.py)
+# display only: slightly lighter and a little less warm (B, G, R gains); the masters and the data are untouched
+LIGHTEN = np.array([1.10, 1.07, 1.03], np.float32)
 NAMES = {"rcleav": "leaves the call", "rc2to1": "two people, one leaves", "rcbck1": "steps away",
          "rcbck2": "comes back", "rcjoin": "someone joins", "rclook": "looks away (stays)",
          "rcwalk": "someone walks past"}
@@ -72,7 +76,8 @@ def tiles(TW):
         while True:
             ok, fr = cap.read()
             if not ok: break
-            frames.append(cv2.resize(fr, (TW, TH), interpolation=cv2.INTER_AREA))
+            fr = cv2.resize(fr, (TW, TH), interpolation=cv2.INTER_AREA).astype(np.float32)
+            frames.append(np.clip(fr * LIGHTEN, 0, 255).astype(np.uint8))
         seq = []
         for n in range(N):
             k = min(n, len(frames) - 1)
@@ -82,10 +87,13 @@ def tiles(TW):
             ranked = sorted(faces[i], key=lambda b: -b[3])          # the largest faces are the participants
             for k2, (x, y, w, h) in enumerate(ranked):
                 ok = k2 < part[i]
-                d.rectangle([x * s, y * s, (x + w) * s, (y + h) * s], outline=GREEN if ok else GREY, width=max(2, TW // 160))
-                if not ok:
-                    b = d.textbbox((0, 0), "passing by", font=f)
-                    pill(d, min(max(0, x * s), TW - (b[2] - b[0]) - 16), max(0, y * s - f.size - 12), "passing by", GREY, f)
+                if ok:
+                    d.rectangle([x * s, y * s, (x + w) * s, (y + h) * s], outline=GREEN, width=max(2, TW // 160))
+                else:    # left out by the participant rule (someone walking past): no box, just a label on them
+                    b = d.textbbox((0, 0), "not a participant", font=f)
+                    tw = b[2] - b[0] + 12
+                    cx = (x + w / 2) * s
+                    pill(d, min(max(0, cx - tw / 2), TW - tw - 4), max(0, y * s - f.size - 14), "not a participant", (180, 40, 40), f)
             pill(d, 6, 6, f"{cid} · {NAMES.get(cid, '')}", INK, fb)
             pill(d, TW - 6, TH - 6 - fb.size - 10, f"in the call: {part[i]}", GREEN, fb, right=True)
             for tf, kind in truth.get(cid, []):
@@ -120,12 +128,19 @@ def main():
     for im in frames: p.stdin.write(im.tobytes())
     p.stdin.close(); p.wait()
     print(f"   call_clips_wall.mp4 ({WW}x{HH}, {os.path.getsize(f'{OUT}/call_clips_wall.mp4') // 1024} KB)", flush=True)
-    # GIF for the README, made from the MP4 by ffmpeg with a palette built from the whole video and dithering,
-    # so colours and skin tones stay natural (a single fixed palette made the frames look filtered)
-    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", f"{OUT}/call_clips_wall.mp4", "-vf",
-                    "fps=10,scale=1280:-1:flags=lanczos,split[a][b];[a]palettegen=max_colors=256:stats_mode=full[p];"
-                    "[b][p]paletteuse=dither=sierra2_4a", f"{OUT}/call_clips_wall.gif"], check=True)
-    print(f"   call_clips_wall.gif (1280 px wide, {os.path.getsize(f'{OUT}/call_clips_wall.gif') // 1024} KB)")
+    # animated WebP for the README: full colour (a GIF holds only 256 colours, which dulls skin and clothes).
+    # Written with Pillow, whose WebP support does not depend on how ffmpeg was built.
+    cap = cv2.VideoCapture(f"{OUT}/call_clips_wall.mp4"); webp = []; n = 0
+    while True:
+        ok, fr = cap.read()
+        if not ok: break
+        if n % 2 == 0:                                  # 30 -> 15 fps
+            im = Image.fromarray(cv2.cvtColor(fr, cv2.COLOR_BGR2RGB))
+            webp.append(im.resize((1280, round(1280 * im.height / im.width)), Image.LANCZOS))
+        n += 1
+    webp[0].save(f"{OUT}/call_clips_wall.webp", save_all=True, append_images=webp[1:], duration=67, loop=0,
+                 quality=80, method=4)
+    print(f"   call_clips_wall.webp (full colour, 1280 px wide, 15 fps, {os.path.getsize(f'{OUT}/call_clips_wall.webp') // 1024} KB)")
     print(f"\n-> {OUT}")
 
 

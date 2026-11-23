@@ -1,8 +1,8 @@
 # 08 — Controller data: multi-person clips, face labels and face-size groups (Step 8)
 
-![Our recorded call clips, all playing at once: green = face counted as a participant, grey = someone passing by, not counted](showcase/call_clips_wall.gif)
+![Our recorded call clips, all playing at once: green = a face counted as a participant; "not a participant" = someone walking past, not counted](showcase/call_clips_wall.webp)
 
-*Our recorded call clips with the face detector working live: green box = a face counted as a participant, grey box = someone passing by, not counted; white note = the real event. MacBook camera at call distance, 30 fps; faces from Apple Vision every 1/3 s (full size: [`showcase/call_clips_wall.mp4`](showcase/call_clips_wall.mp4)).*
+*Our recorded call clips with the face detector working live: green box = a face counted as a participant, "not a participant" = someone walking past behind (`rcwalk`), left out by the participant rule and not counted; white note = the real event. MacBook camera at call distance, 30 fps; faces from Apple Vision every 1/3 s. Lightened slightly for display; the masters and all data are untouched. Full-size MP4: `call_clips_wall.mp4` in the Drive folder [Our recorded call clips](https://drive.google.com/drive/folders/1nSD9B0X19jTrVycgy_M4HNL-9fU2dn3_?usp=drive_link).*
 
 **Owner:** Warda · **Machine:** Warda's M1. Step 8 does not depend on the chip, and all face labels come from this one Mac.
 
@@ -90,7 +90,7 @@ Software versions are in `machine.txt` (ffmpeg 9.0.2, Python 3.12.16, NumPy 2.5.
 | `results/calls_vs_stock.csv` | Every method (faces, bodies, or, and, max) scored separately on the stock clips and on our call clips |
 | `results/participant_rule.csv` | Faces with and without the participant rule, on both sets |
 | `results/participant_rule_events.csv` | Every automatic face event with and without the rule: when, from how many faces to how many, real or not |
-| `showcase/call_clips_wall.gif`, `.mp4` | Our call clips playing at once, with the faces counted (green) and not counted (grey) |
+| `showcase/call_clips_wall.webp` | Our call clips playing at once, with the faces counted as participants (green) and the person walking past labelled "not a participant"; the full-size MP4 is in the Drive folder of our recordings |
 | `scripts/rc_sheets.py`, `scripts/s8_rc_add` | One frame every 0.5 s of each recording (to read the event times); add the call clips and rerun everything |
 | `scripts/s8_calls.py`, `scripts/s8_wall.py` | Stock vs call clips and the participant rule; the video wall |
 | `machine.txt` | Hardware, macOS, ffmpeg and Python of the labelling Mac |
@@ -122,7 +122,7 @@ The videos are not in git (the repo ignores `.mp4`, `.y4m` and `.nv12`). They ar
 |---|---|
 | **[Step 8 master videos](https://drive.google.com/drive/folders/1Lve-EM16QhhRZU8_kebwevPCfzI3N87J?usp=drive_link)** | the masters (`<id>_<width>x<height>_30.mp4`) and `meta.json`: 11 stock clips and the 7 call-clip windows |
 | [Original source clips](https://drive.google.com/drive/folders/1oWpQzQQ0RcG-FsGjj5eCvFNP4mEe8kJ0) | the 11 original clips the masters were made from (names as in the clip table) |
-| [Our recorded call clips](https://drive.google.com/drive/folders/1nSD9B0X19jTrVycgy_M4HNL-9fU2dn3_?usp=drive_link) | the 6 recordings (`rc….mov`) |
+| [Our recorded call clips](https://drive.google.com/drive/folders/1nSD9B0X19jTrVycgy_M4HNL-9fU2dn3_?usp=drive_link) | the 6 recordings (`rc….mov`) and the video wall at full size (`call_clips_wall.mp4`) |
 
 **Use the masters, not the sources, for every codec run.** All frame numbers in `raw_data/` and `results/` (face boxes, events) refer to the master frames. Download them into `~/Downloads/duplexnvc-baseline/phase2/step8/master/`; the encoder inputs at 360p/540p/720p are made from these files with the baseline's command.
 

@@ -16,7 +16,7 @@ In a video call, every laptop does two jobs at once: it **encodes** its own came
 |---|---|
 | [`baseline/`](baseline/) | The Phase 2 **baseline**, in fourteen experiments: smoke tests, Phase 1 check, timing of the core baseline B\*, correctness, quality, energy, processor, model conversion, placement, quality-per-setting, correctness and drift of every encoder/decoder pair, contention, the first codec-level mechanism (A1, key-frame bits) and the on-device HEVC anchor. Each experiment folder has its scripts, raw data, results and a README with what it shows and what we concluded |
 | [`lab_gpu_runs/`](lab_gpu_runs/) | **Tier B: changes to the MLVC network**, fine-tuned on a lab GPU (control, piecewise-linear memory gates B1, B1 + input gate, I-frame dropout B2, a second control for training noise). Scripts of the whole training pipeline, the input-gate patch, training logs, the measured cost of training and the first results |
-| [`controller_data/`](controller_data/) | **Step 8: controller data.** 11 multi-person clips (HEVC Class E, Pexels) with people entering and leaving, face labels and face-size groups, real events annotated manually, and a comparison of Apple Vision's face and body detectors (and their combinations) as scene-change triggers. Scripts, raw data, results and a README |
+| [`controller_data/`](controller_data/) | **Step 8: controller data.** 11 stock multi-person clips (HEVC Class E, Pexels) and 6 video-call clips we recorded ourselves (people joining, leaving, stepping away, looking away, someone walking past), face labels and face-size groups, real events annotated manually, and a comparison of Apple Vision's face and body detectors (and their combinations) as scene-change triggers, on stock and call clips separately. Scripts, raw data, results, a video wall of the call clips and a README |
 | [`detection_recall/`](detection_recall/) | **Step 7: detection recall.** The smallest face the scene analyzer's face detector (Apple Vision) finds when it runs on the camera frame at the call resolution (360p, 540p, 720p) instead of the full-size original, by face size, on the Step 8 clips. Scripts, raw data, results, check images and a README |
 | [`reports/`](reports/) | Literature review, survey and Phase 2 baseline report (PDF) |
 | [`demo/`](demo/) | Demo video: MLVC-S encoding and decoding a talking-head clip, original and decoded side by side |
@@ -98,17 +98,21 @@ Energy at 287 kbps from experiment 10 (re-measured at five QPs; B\* 63 mJ, 3 % b
 | What does B1 (hard_tanh / hard_sigmoid gates) cost in quality? | **−0.07 dB PSNR** at +0.7 % bpp on training clips, vs a control trained the same way (first runs; being retrained, see [`lab_gpu_runs/`](lab_gpu_runs/)) |
 | Does B1 reduce drift on the GPU/CPU? | To be measured on the Mac |
 
-### Step 8: controller data (multi-person clips)
+### Step 8: controller data (multi-person clips and our own call clips)
+
+![Our recorded call clips with the face detector: green = a face counted as a participant; "not a participant" = someone walking past, not counted](controller_data/showcase/call_clips_wall.webp)
 
 | Question | Answer |
 |---|---|
-| Data | **11 clips**: 3 HEVC Class E (seated, controls) and 8 Pexels (people entering, walking away, groups of 5 and 7, a crowd); 628 faces labelled with Apple Vision on every 10th frame |
-| Face sizes | The new clips cover the **small faces** the baseline lacks (246 faces under 32 px and 236 at 32–63 px at 360p); the baseline's talking heads cover the large ones |
-| Faces as a people count | Face detection measures **visible faces, not people present**: about half the people in group scenes, plus faces printed on a poster (68, excluded) |
-| Best scene-change trigger | The **larger of the face and body counts**: 4 of 10 real events caught, 7 not real (faces alone 3 and 8, bodies alone 4 and 9); median 2.0 s late |
-| What it means for the controller | Faces for **face size** (the resolution rule), the combined count for **how many people** and when that changes, a frame-difference trigger as backup; a change must last 1 s before acting |
+| Data | **11 stock clips**: 3 HEVC Class E (seated, controls) and 8 Pexels (people entering, walking away, groups of 5 and 7, a crowd). **6 call clips we recorded** (MacBook camera at call distance; 7 windows of 10 s): someone leaves, one of two leaves, steps away and comes back, someone joins, looks away (stays), someone walks past behind. 885 faces labelled with Apple Vision on every 10th frame |
+| Face sizes | Every group is covered: the stock clips give the **small faces** (248 under 32 px, 238 at 32–63 px at 360p), our call clips the **large ones** (129 at ≥ 128 px, none in the stock clips) |
+| Faces as a people count | On the stock clips face detection measures **visible faces, not people present**: about half the people in group scenes, plus faces printed on a poster (68, excluded) |
+| Detectors on the stock clips | Faces 3 of 10 real events caught (8 not real), bodies 4 of 10 (9), **max of the two 4 of 10 (7)** |
+| **Detectors on our call clips** | **Faces 5 of 5 caught, 0.2–1.8 s after the event starts, 2 not real**; bodies 4 of 5 (9 not real: bodies of people close to the camera are cut off by the frame and flicker). Looking away causes no false event (the face is still found in profile); on the stock clips head turns caused 5 of the 7 false face events |
+| Someone walking past (rare in calls) | The only false face events in calls. A **participant rule** (a face counts if it is at least 30 % of the largest face, or has stayed in view for 2 s) removes both and changes nothing else; to be confirmed on new recordings |
+| What it means for the controller | In a call: count people with faces plus the participant rule, a change must last 1 s; faces also give face size (the resolution rule). Bodies and a frame-difference trigger only as backup for film-like scenes (faces turned away, crowds) |
 
-Details: [`controller_data/`](controller_data/). Next: six video-conferencing clips of our own (joining, leaving, stepping away and two false-alarm cases) to evaluate the detectors in call scenes.
+Details: [`controller_data/`](controller_data/).
 
 ### Step 7: detection recall (smallest face the scene analyzer detects)
 
@@ -134,7 +138,7 @@ Details: [`detection_recall/`](detection_recall/).
 | Power | `powermetrics` (`cpu_power`, `gpu_power`; NE included), idle subtracted |
 | Analysis | Python 3 (NumPy, OpenCV, `lpips`), Swift (Core ML `MLComputePlan`, Vision) |
 | Steps 7 and 8 (face and body detection) | MacBook Pro 13-inch, Apple M1, macOS 15.5 (face and body detection do not depend on the chip; every label and every Step 7 detection from the same Mac) |
-| Data | VCD video-conferencing dataset, scenario `s1`; Step 8: HEVC Class E (Xiph, public domain) and Pexels multi-person clips |
+| Data | VCD video-conferencing dataset, scenario `s1`; Step 8: HEVC Class E (Xiph, public domain) and Pexels multi-person clips, and 6 video-call clips we recorded with a MacBook camera (everyone in them agreed) |
 
 ## Quiet mode
 
@@ -157,10 +161,12 @@ DuplexNVC/
 ├── reports/                           literature review, survey and Phase 2 baseline report (PDF)
 ├── demo/                              demo video: MLVC-S encoding and decoding on the M4 Pro
 ├── controller_data/                   Step 8: multi-person clips, face and body labels, events, detector comparison
-│   ├── README.md                      clips, method, results, next step (our own call clips)
-│   ├── scripts/                       s8_setup, s8_prep.py, s8_table.py, bodybox.swift, s8_bodies.py, s8_fusion.py
+│   ├── README.md                      stock clips and our call clips: method, results, participant rule, conclusion
+│   ├── scripts/                       s8_setup, s8_prep.py, s8_table.py, bodybox.swift, s8_bodies.py, s8_fusion.py,
+│   │                                  rc_sheets.py, s8_rc_add, s8_calls.py, s8_wall.py
 │   ├── raw_data/                      clip list, face boxes, real events, poster rule
-│   └── results/                       dataset table, face-size groups, events, faces vs bodies, fusion
+│   ├── results/                       dataset table, face-size groups, events, faces vs bodies, fusion, calls vs stock, participant rule
+│   └── showcase/                      video wall of our call clips (animated WebP)
 ├── detection_recall/                  Step 7: smallest face the scene analyzer detects, by face size and call resolution
 │   ├── README.md                      method, results, conclusion
 │   ├── scripts/                       s7_recall.py, s7_run
@@ -200,4 +206,4 @@ Full guide: [`baseline/REPRODUCE.md`](baseline/REPRODUCE.md) (summary in [`REPRO
 
 ## Next steps
 
-The baseline is complete for timing and energy. Correctness of every encoder/decoder pairing (experiment 11) and the on-device HEVC anchor's quality (experiment 14) are done. Still to be measured: the HEVC anchor's energy; energy on battery and in Low Power Mode (plus a check against an external power meter, if hardware is provided); and the cost of face-based scene analysis. Multi-person data is done (Step 8, [`controller_data/`](controller_data/)), and so is the detector's recall at the call resolution (Step 7, [`detection_recall/`](detection_recall/): every face from 32 px at 360p is found); its next step is a small set of video-conferencing clips of our own to test the scene-change triggers in call scenes. DuplexNVC itself — a controller that chooses placement, schedule, resolution and model from the content and the energy state — will then be measured against B\* with exactly this protocol.
+The baseline is complete for timing and energy. Correctness of every encoder/decoder pairing (experiment 11) and the on-device HEVC anchor's quality (experiment 14) are done. Still to be measured: the HEVC anchor's energy; energy on battery and in Low Power Mode (plus a check against an external power meter, if hardware is provided); and the cost of face-based scene analysis. Multi-person data is done (Step 8, [`controller_data/`](controller_data/)), including six video-call clips we recorded (faces catch every join and leave in them; a participant rule handles someone walking past), and so is the detector's recall at the call resolution (Step 7, [`detection_recall/`](detection_recall/): every face from 32 px at 360p is found). DuplexNVC itself — a controller that chooses placement, schedule, resolution and model from the content and the energy state — will then be measured against B\* with exactly this protocol.
