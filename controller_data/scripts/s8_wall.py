@@ -120,11 +120,12 @@ def main():
     for im in frames: p.stdin.write(im.tobytes())
     p.stdin.close(); p.wait()
     print(f"   call_clips_wall.mp4 ({WW}x{HH}, {os.path.getsize(f'{OUT}/call_clips_wall.mp4') // 1024} KB)", flush=True)
-    frames, WW, HH = wall(300, 3, None)
-    pal = frames[len(frames) // 2].quantize(colors=160, method=Image.MEDIANCUT)
-    small = [im.quantize(palette=pal, dither=Image.Dither.NONE) for im in frames]
-    small[0].save(f"{OUT}/call_clips_wall.gif", save_all=True, append_images=small[1:], duration=100, loop=0, optimize=True)
-    print(f"   call_clips_wall.gif ({WW}x{HH}, {os.path.getsize(f'{OUT}/call_clips_wall.gif') // 1024} KB)")
+    # GIF for the README, made from the MP4 by ffmpeg with a palette built from the whole video and dithering,
+    # so colours and skin tones stay natural (a single fixed palette made the frames look filtered)
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", f"{OUT}/call_clips_wall.mp4", "-vf",
+                    "fps=10,scale=1280:-1:flags=lanczos,split[a][b];[a]palettegen=max_colors=256:stats_mode=full[p];"
+                    "[b][p]paletteuse=dither=sierra2_4a", f"{OUT}/call_clips_wall.gif"], check=True)
+    print(f"   call_clips_wall.gif (1280 px wide, {os.path.getsize(f'{OUT}/call_clips_wall.gif') // 1024} KB)")
     print(f"\n-> {OUT}")
 
 
