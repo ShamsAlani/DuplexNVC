@@ -9,3 +9,8 @@ px4ppl,110,enter,,,,,
 pxcrwd,60,enter,,,,,
 pxleav,0,leave,,,,,
 pxdown,0,leave,,,,,
+rcleav,90,leave,110,,110,,140
+rc2to1,165,leave,190,190,190,190,190
+rcbck1,135,leave,140,250,140,,140
+rcbck2,105,enter,160,100,100,,100
+rcjoin,135,enter,150,170,150,170,150

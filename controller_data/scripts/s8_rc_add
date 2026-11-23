@@ -1,0 +1,69 @@
+#!/bin/bash
+# Step 8: add the six recorded call clips, rerun every Step 8 script, copy everything into the repo and push.
+#     bash ~/DuplexNVC/controller_data/scripts/s8_rc_add
+# On the Mac that made Step 8 (Warda's M1). The clips must already be in phase2/step8/src (rc_sheets.py put them there).
+# Safe to run again: rows are added once, finished clips are skipped.
+REPO=~/DuplexNVC; SC=$REPO/controller_data/scripts
+WORK=~/Downloads/duplexnvc-baseline; PY=$WORK/.venv/bin/python; S8=$WORK/phase2/step8
+eval "$(/opt/homebrew/bin/brew shellenv 2>/dev/null)"
+stop () { echo; echo "STOPPED: $*"; exit 1; }
+for f in rcleav rc2to1 rcback rcjoin rclook rcwalk; do [ -f "$S8/src/$f.mov" ] || stop "$S8/src/$f.mov missing (run rc_sheets.py first)"; done
+
+echo "== 1/5 adding the recorded clips and their real events"
+"$PY" - "$S8" <<'PY'
+import csv, sys
+S8 = sys.argv[1]
+for p in (f"{S8}/clips.csv", f"{S8}/events_truth.csv"):  # make sure the file ends with a newline before appending
+    b = open(p, "rb").read()
+    if b and not b.endswith(b"\n"): open(p, "ab").write(b"\n")
+LIC = "own recording (everyone in it agreed)"
+clips = [
+ ("rcleav", "rcleav.mov", 0, "call scene: one person faces the camera, stands up at 3.0 s and leaves the frame; the empty chairs stay in view"),
+ ("rc2to1", "rc2to1.mov", 15, "call scene: two people side by side; the one on the right stands up at 20.5 s of the recording and leaves; the other keeps talking"),
+ ("rcbck1", "rcback.mov", 3, "call scene, first window of rcback: two people; the one on the left stands up at 7.5 s of the recording and leaves"),
+ ("rcbck2", "rcback.mov", 14, "call scene, second window of rcback: the person on the left comes back (17.5 s of the recording) and sits down facing the camera (20.0 s)"),
+ ("rcjoin", "rcjoin.mov", 3, "call scene: one person talking; a second enters from the right at 7.5 s of the recording and sits down next to her"),
+ ("rclook", "rclook.mov", 0, "call scene, false-alarm test: one person turns her head away at 1.0 s and talks in profile; she does not leave"),
+ ("rcwalk", "rcwalk.mov", 0, "call scene, false-alarm test: one person talking; someone walks past behind her from 4.0 to 6.5 s without joining"),
+]
+events = [
+ ("rcleav", 90, "leave", 1, "stands up at 3.0 s and is out of the frame at 5.0 s; the empty chairs stay in view"),
+ ("rc2to1", 165, "leave", 1, "the person on the right stands up at 20.5 s of the recording and is out of the frame at 22.0 s; the other keeps talking"),
+ ("rcbck1", 135, "leave", 1, "the person on the left stands up at 7.5 s of the recording and is out of the frame at 8.5 s"),
+ ("rcbck2", 105, "enter", 1, "the person on the left comes back: arm in view at 17.5 s of the recording, face at 19.5 s, seated facing the camera at 20.0 s"),
+ ("rcjoin", 135, "enter", 1, "a second person enters from the right at 7.5 s of the recording and sits down facing the camera at 8.5 s"),
+]
+p = f"{S8}/clips.csv"; rows = list(csv.DictReader(open(p))); have = {r["id"] for r in rows}
+with open(p, "a", newline="") as f:
+    w = csv.writer(f); n = 0
+    for cid, inp, st, note in clips:
+        if cid not in have: w.writerow([cid, "recorded", inp, st, LIC, "", note]); n += 1
+print(f"   clips.csv: {n} new rows ({len(have) + n} clips)")
+p = f"{S8}/events_truth.csv"; have = {(r["clip"], r["frame"]) for r in csv.DictReader(open(p))}
+with open(p, "a", newline="") as f:
+    w = csv.writer(f); n = 0
+    for cid, fr, kind, ppl, note in events:
+        if (cid, str(fr)) not in have: w.writerow([cid, fr, kind, ppl, note]); n += 1
+print(f"   events_truth.csv: {n} new rows (rclook and rcwalk have none on purpose: nothing real happens)")
+PY
+[ $? = 0 ] || stop "could not add the rows"
+
+echo; echo "== 2/5 masters and face labels (s8_prep.py)"
+"$PY" "$SC/s8_prep.py" || stop "s8_prep.py failed (see above)"
+echo; echo "== 3/5 tables and face events (s8_table.py)"
+"$PY" "$SC/s8_table.py" || stop "s8_table.py failed (see above)"
+echo; echo "== 4/5 bodies and fusion (s8_bodies.py, s8_fusion.py)"
+"$PY" "$SC/s8_bodies.py" || stop "s8_bodies.py failed (see above)"
+"$PY" "$SC/s8_fusion.py" || stop "s8_fusion.py failed (see above)"
+
+echo; echo "== 5/5 copying into the repo and pushing"
+D=$REPO/controller_data
+cp "$S8"/clips.csv "$S8"/events_truth.csv "$S8"/exclude.csv "$D/raw_data/"
+cp "$S8/master/meta.json" "$D/raw_data/meta.json"
+cp "$S8"/faces/*.json "$D/raw_data/faces/"
+cp "$S8"/results/*.csv "$D/results/"
+cp "$0" "$SC/s8_rc_add" 2>/dev/null; cp ~/Downloads/rc_sheets*.py "$SC/rc_sheets.py" 2>/dev/null
+cd "$REPO" && git pull -q origin main && git add controller_data \
+  && git commit -q -m "Step 8: six recorded call clips (seven 10 s windows) added; all Step 8 scripts rerun" \
+  && git push -q origin main && echo "   pushed" || echo "   NOT pushed: paste the lines above in the chat"
+echo; echo "== DONE. Paste everything from step 3/5 to the end in the chat."

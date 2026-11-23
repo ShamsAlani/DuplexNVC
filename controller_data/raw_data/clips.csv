@@ -10,3 +10,10 @@ px7ppl,pexels,7_people.mp4,0,Pexels License,https://www.pexels.com,7 people in a
 pxcrwd,pexels,people_entering.mp4,0,Pexels License,https://www.pexels.com,crowd walking in toward the camera through doors
 pxleav,pexels,people_leaving.mp4,0,Pexels License,https://www.pexels.com,people leave walking away from the camera
 pxdown,pexels,people_leaving_going_downstairs.mp4,0,Pexels License,https://www.pexels.com,3 people leave toward a door and stairs
+rcleav,recorded,rcleav.mov,0,own recording (everyone in it agreed),,"call scene: one person faces the camera, stands up at 3.0 s and leaves the frame; the empty chairs stay in view"
+rc2to1,recorded,rc2to1.mov,15,own recording (everyone in it agreed),,call scene: two people side by side; the one on the right stands up at 20.5 s of the recording and leaves; the other keeps talking
+rcbck1,recorded,rcback.mov,3,own recording (everyone in it agreed),,"call scene, first window of rcback: two people; the one on the left stands up at 7.5 s of the recording and leaves"
+rcbck2,recorded,rcback.mov,14,own recording (everyone in it agreed),,"call scene, second window of rcback: the person on the left comes back (17.5 s of the recording) and sits down facing the camera (20.0 s)"
+rcjoin,recorded,rcjoin.mov,3,own recording (everyone in it agreed),,call scene: one person talking; a second enters from the right at 7.5 s of the recording and sits down next to her
+rclook,recorded,rclook.mov,0,own recording (everyone in it agreed),,"call scene, false-alarm test: one person turns her head away at 1.0 s and talks in profile; she does not leave"
+rcwalk,recorded,rcwalk.mov,0,own recording (everyone in it agreed),,"call scene, false-alarm test: one person talking; someone walks past behind her from 4.0 to 6.5 s without joining"

@@ -10,3 +10,10 @@ px7ppl,130,3,2,leave
 px7ppl,220,2,3,enter
 pxcrwd,220,0,2,enter
 pxdown,110,0,1,enter
+rcleav,110,1,0,leave
+rc2to1,190,2,1,leave
+rcbck1,140,2,1,leave
+rcbck2,160,1,2,enter
+rcjoin,150,1,2,enter
+rcwalk,120,1,2,enter
+rcwalk,180,2,1,leave

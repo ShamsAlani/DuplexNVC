@@ -112,5 +112,82 @@
   "master_w": 1920,
   "master_h": 1080,
   "frames": 182
+ },
+ "rcleav": {
+  "src_w": 1080,
+  "src_h": 720,
+  "src_fps": 30.0,
+  "src_frames": 341,
+  "keep_every": 1,
+  "cropped_to_16x9": true,
+  "master_w": 1280,
+  "master_h": 720,
+  "frames": 300
+ },
+ "rc2to1": {
+  "src_w": 1080,
+  "src_h": 720,
+  "src_fps": 30.0,
+  "src_frames": 959,
+  "keep_every": 1,
+  "cropped_to_16x9": true,
+  "master_w": 1280,
+  "master_h": 720,
+  "frames": 300
+ },
+ "rcbck1": {
+  "src_w": 1080,
+  "src_h": 720,
+  "src_fps": 30.0,
+  "src_frames": 715,
+  "keep_every": 1,
+  "cropped_to_16x9": true,
+  "master_w": 1280,
+  "master_h": 720,
+  "frames": 300
+ },
+ "rcbck2": {
+  "src_w": 1080,
+  "src_h": 720,
+  "src_fps": 30.0,
+  "src_frames": 715,
+  "keep_every": 1,
+  "cropped_to_16x9": true,
+  "master_w": 1280,
+  "master_h": 720,
+  "frames": 294
+ },
+ "rcjoin": {
+  "src_w": 1080,
+  "src_h": 720,
+  "src_fps": 30.0,
+  "src_frames": 531,
+  "keep_every": 1,
+  "cropped_to_16x9": true,
+  "master_w": 1280,
+  "master_h": 720,
+  "frames": 300
+ },
+ "rclook": {
+  "src_w": 1080,
+  "src_h": 720,
+  "src_fps": 30.0,
+  "src_frames": 372,
+  "keep_every": 1,
+  "cropped_to_16x9": true,
+  "master_w": 1280,
+  "master_h": 720,
+  "frames": 300
+ },
+ "rcwalk": {
+  "src_w": 1080,
+  "src_h": 720,
+  "src_fps": 30.0,
+  "src_frames": 329,
+  "keep_every": 1,
+  "cropped_to_16x9": true,
+  "master_w": 1280,
+  "master_h": 720,
+  "frames": 300
  }
 }

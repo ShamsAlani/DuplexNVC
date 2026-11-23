@@ -12,3 +12,16 @@ px4ppl,80,1,3,enter
 px4ppl,150,3,4,enter
 px4ppl,240,4,3,leave
 pxdown,110,1,3,enter
+rc2to1,80,2,1,leave
+rc2to1,120,1,2,enter
+rc2to1,190,2,1,leave
+rcbck1,250,1,0,leave
+rcbck2,70,0,1,enter
+rcbck2,100,1,2,enter
+rcbck2,170,2,1,leave
+rcbck2,230,1,2,enter
+rcbck2,270,2,1,leave
+rcjoin,120,1,0,leave
+rcjoin,170,0,1,enter
+rcwalk,170,0,1,enter
+rcwalk,210,1,0,leave

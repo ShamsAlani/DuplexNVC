@@ -9,3 +9,8 @@ px4ppl,110,enter,1,,,,,woman in brown jacket enters from the left
 pxcrwd,60,enter,many,,,,,crowd starts walking out of the arrival doors toward the camera and keeps coming until the end
 pxleav,0,leave,several,,,,,people walk away from the camera into a cafe; seen from behind throughout
 pxdown,0,leave,3,,,,,three people walk away toward a door and stairs; seen from behind until the last second
+rcleav,90,leave,1,110,0.7,,,stands up at 3.0 s and is out of the frame at 5.0 s; the empty chairs stay in view
+rc2to1,165,leave,1,190,0.8,190,0.8,the person on the right stands up at 20.5 s of the recording and is out of the frame at 22.0 s; the other keeps talking
+rcbck1,135,leave,1,140,0.2,250,3.8,the person on the left stands up at 7.5 s of the recording and is out of the frame at 8.5 s
+rcbck2,105,enter,1,160,1.8,100,-0.2,"the person on the left comes back: arm in view at 17.5 s of the recording, face at 19.5 s, seated facing the camera at 20.0 s"
+rcjoin,135,enter,1,150,0.5,170,1.2,a second person enters from the right at 7.5 s of the recording and sits down facing the camera at 8.5 s
