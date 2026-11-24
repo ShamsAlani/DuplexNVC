@@ -19,6 +19,8 @@ MacBook Pro 14-inch M4 Pro, 24 GB, macOS 26.6.2 (25G83), libmlvc `eb5d60a`, norm
 
 **When:** main structure and A2 for full MLVC 360p / MLVC-S 720p 20 Nov 00:31–23:00 (1,120 jobs); A2 for the 30 fps settings 21 Nov 22:40 – 22 Nov 08:01 (960 jobs); multi-person 22 Nov 18:52–20:14 (132 jobs). Every job has 9 pairs: 2,212 jobs, 19,908 encoder → decoder pairs.
 
+**Interruptions.** The first start (20 Nov, 12:16 am) was stopped after 15 minutes and restarted; the script is resumable, so nothing was lost. The main run (20 Nov, 12:31 am – 11:00 pm, 22.5 h) then ended early: the `l16` structure (LTR period 8) failed on MLVC-S, because libmlvc requires the LTR start index (8 by default for MLVC-S) to be below the LTR period, and after 6 failures in a row the script stops a pass. The jobs already done were kept; `l16` was fixed with `--ltr-start-idx 0` (`raw_data/logs/out_all.txt` shows the failure and the fix), and the remaining A2 jobs ran on the following nights.
+
 **The default encoder configuration differs by model** (printed by `mlvc encode`, `raw_data/cfg/`): full MLVC uses **no LTRs** (LTR period 0); MLVC-S marks an LTR every 16 frames from frame 8 with recovery every 64 frames, which the I-frame every 64 frames always comes first. So in the default structure no frame is ever predicted from an LTR, for any setting. The first attempt of `l16` on MLVC-S stopped because libmlvc requires the LTR start index (MLVC-S default 8) to be smaller than the LTR period (8): `l16` therefore sets the start index to 0, which is also full MLVC's default (see the log).
 
 ## How to run

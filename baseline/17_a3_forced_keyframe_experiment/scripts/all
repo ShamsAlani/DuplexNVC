@@ -1,0 +1,34 @@
+#!/bin/bash
+# A3: forced key frame when the content changes, on the 11 Step 8 multi-person clips (step8_masters), B* and
+# MLVC-S 540p, 4 policies (none / truth / fused detector / frame difference) x QP 16/24/26/32/40 = 440 runs (~1.5 h).
+# Normal Mac use is fine (quality only); charger in, lid open. RESUMABLE: ./all again continues.
+#   1. rebuilds the measurement program in $WORK/harness_a1 if ../a1/duplex_bench.cpp changed (adds --force-idr)
+#   2. check: one clip at QP 26, all 8 runs; the "none" runs must have 0 forced I-frames
+#   3. the 440 runs (two passes, the second only retries failures), then the analysis (a3ana.py)
+# Output: ~/Downloads/duplexnvc-baseline/phase2/a3/ ; console: out_all.txt
+D=$(cd "$(dirname "$0")" && pwd); P=$(dirname "$D"); . "$P/v"; exec > >(tee -a "$D/out_all.txt") 2>&1
+H="$WORK/harness_a1"; O="$WORK/phase2/a3"; mkdir -p "$O"
+echo; echo "== A3 START  $(date)"; pmset -g batt | head -1
+for f in "$P/4b/q.py" "$P/4b/ana.py" "$P/a1/duplex_bench.cpp" "$D/data/events_truth.csv" "$D/data/faces_step8.csv" "$D/data/bodies_step8.csv" "$MLVC" "$PY"; do
+  [ -e "$f" ] || { echo "MISSING $f"; exit 1; }; done
+if ! cmp -s "$P/a1/duplex_bench.cpp" "$H/main.cpp" || [ ! -x "$H/build/ninja-release/libmlvc_example" ]; then
+  echo "== building the measurement program in $H (a few minutes)"
+  rm -rf "$H"; cp -R "$WORK/libmlvc/examples/minimal-fetchcontent" "$H"; cp "$P/a1/duplex_bench.cpp" "$H/main.cpp"
+  ( cd "$H" && cmake -S . -B build/ninja-release -G Ninja -DCMAKE_BUILD_TYPE=Release -DCMAKE_OSX_ARCHITECTURES=arm64 \
+      -DBUILD_SHARED_LIBS=OFF -DFETCHCONTENT_SOURCE_DIR_LIBMLVC="$WORK/libmlvc" > "$O/build.log" 2>&1 \
+    && cmake --build build/ninja-release >> "$O/build.log" 2>&1 ) || { echo "BUILD FAILED, see $O/build.log"; tail -20 "$O/build.log"; exit 1; }
+  echo "   built: $H/build/ninja-release/libmlvc_example"
+fi
+SRC=$(dirname "$(find ~/Downloads -maxdepth 4 -name 'pxleav_1920x1080_30.mp4' -not -path '*/duplexnvc-baseline/*' 2>/dev/null | head -1)")
+[ -n "$SRC" ] && [ "$SRC" != . ] || { echo "MISSING the Step 8 masters (pxleav_1920x1080_30.mp4) under ~/Downloads"; exit 1; }
+echo "   masters: $SRC ($(ls "$SRC"/*.mp4 | wc -l | tr -d ' ') clips)"
+echo; echo "== check (px2ent, QP 26, 8 runs)"
+caffeinate -ims "$PY" -u "$D/a3.py" "$SRC" check || exit 1
+F=$(tail -n +2 "$O"/flog/a3_none_*/px2ent_qp26.csv 2>/dev/null | awk -F, '$8==1' | wc -l | tr -d ' ')
+[ "$F" = 0 ] || { echo "== CHECK FAILED: forced I-frames without a trigger ($F)"; exit 1; }
+echo "   check OK: no forced I-frame without a trigger"
+for pass in 1 2; do echo; echo "== runs, pass $pass  $(date)"; caffeinate -ims "$PY" -u "$D/a3.py" "$SRC"; done
+echo; echo "== analysis  $(date)"
+"$PY" "$D/a3ana.py"
+cp "$D/out_all.txt" "$O/results/" 2>/dev/null
+echo "== A3 END  $(date)"

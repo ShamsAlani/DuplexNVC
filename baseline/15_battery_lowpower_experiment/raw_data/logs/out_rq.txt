@@ -1,0 +1,203 @@
+
+== RQ START  Tue Nov 24 20:59:10 +04 2026
+Now drawing from 'AC Power'
+   earlier AC part moved to phase2/bt_ac_attempt1
+
+== STEP 6 + 7 START  Tue Nov 24 20:59:10 +04 2026
+ProductName:		macOS ProductVersion:		26.6.2 BuildVersion:		25G83 
+-- password for Low Power Mode (pmset), asked once:
+   Low Power Mode 0  ()
+   Low Power Mode 0  ()
+
+== block step7 (Low Power Mode 0)  20:59  battery 97 %
+   Low Power Mode 0  ()
+   20:59:15 idle 120 s
+   [step7 r1] 21:01:28 v0  requested=npu resolved=npu   battery 98 %
+   [step7 r1] 21:04:25 v1  requested=npu resolved=npu va: 144 analyses (every 15 frames, default units), median 9.25 ms, p95 12.51 ms, per frame pair 0.617 ms  battery 99 %
+   [step7 r1] 21:07:25 v2  requested=npu resolved=npu va: 144 analyses (every 15 frames, CPU), median 32.72 ms, p95 36.14 ms, per frame pair 2.181 ms  battery 99 %
+   [step7 r1] 21:10:25 v3  requested=npu resolved=npu va: 72 analyses (every 30 frames, CPU), median 33.17 ms, p95 35.98 ms, per frame pair 1.106 ms  battery 100 %
+   [step7 r2] 21:13:25 v1  requested=npu resolved=npu va: 144 analyses (every 15 frames, default units), median 9.69 ms, p95 12.46 ms, per frame pair 0.646 ms  battery 100 %
+   [step7 r2] 21:16:25 v2  requested=npu resolved=npu va: 144 analyses (every 15 frames, CPU), median 32.62 ms, p95 35.71 ms, per frame pair 2.174 ms  battery 100 %
+   [step7 r2] 21:19:26 v3  requested=npu resolved=npu va: 72 analyses (every 30 frames, CPU), median 32.49 ms, p95 36.11 ms, per frame pair 1.083 ms  battery 100 %
+   [step7 r2] 21:22:26 v0  requested=npu resolved=npu   battery 100 %
+   [step7 r3] 21:25:26 v2  requested=npu resolved=npu va: 144 analyses (every 15 frames, CPU), median 33.02 ms, p95 35.51 ms, per frame pair 2.202 ms  battery 100 %
+   [step7 r3] 21:28:26 v3  requested=npu resolved=npu va: 72 analyses (every 30 frames, CPU), median 33.43 ms, p95 35.58 ms, per frame pair 1.114 ms  battery 100 %
+   [step7 r3] 21:31:26 v0  requested=npu resolved=npu   battery 100 %
+   [step7 r3] 21:34:26 v1  requested=npu resolved=npu va: 144 analyses (every 15 frames, default units), median 9.51 ms, p95 11.76 ms, per frame pair 0.634 ms  battery 100 %
+   [step7 r4] 21:37:26 v3  requested=npu resolved=npu va: 72 analyses (every 30 frames, CPU), median 33.45 ms, p95 36.76 ms, per frame pair 1.115 ms  battery 100 %
+   [step7 r4] 21:40:26 v0  requested=npu resolved=npu   battery 100 %
+   [step7 r4] 21:43:26 v1  requested=npu resolved=npu va: 144 analyses (every 15 frames, default units), median 9.51 ms, p95 12.51 ms, per frame pair 0.634 ms  battery 100 %
+   [step7 r4] 21:46:26 v2  requested=npu resolved=npu va: 144 analyses (every 15 frames, CPU), median 32.31 ms, p95 35.66 ms, per frame pair 2.154 ms  battery 100 %
+   [step7 r5] 21:49:27 v0  requested=npu resolved=npu   battery 100 %
+   [step7 r5] 21:52:27 v1  requested=npu resolved=npu va: 144 analyses (every 15 frames, default units), median 10.00 ms, p95 12.95 ms, per frame pair 0.667 ms  battery 100 %
+   [step7 r5] 21:55:27 v2  requested=npu resolved=npu va: 144 analyses (every 15 frames, CPU), median 32.89 ms, p95 35.94 ms, per frame pair 2.193 ms  battery 100 %
+   [step7 r5] 21:58:27 v3  requested=npu resolved=npu va: 72 analyses (every 30 frames, CPU), median 32.72 ms, p95 36.17 ms, per frame pair 1.091 ms  battery 100 %
+   Low Power Mode 0  ()
+
+== block ac (Low Power Mode 0)  22:01  battery 100 %
+   Low Power Mode 0  ()
+   22:01:27 idle 120 s
+   [ac r1] 22:03:45 bstar  requested=npu resolved=npu   battery 100 %
+   [ac r1] 22:06:45 s720  requested=gpu resolved=gpu requested=npu resolved=npu   battery 100 %
+   [ac r2] 22:09:45 s720  requested=gpu resolved=gpu requested=npu resolved=npu   battery 100 %
+   [ac r2] 22:12:46 bstar  requested=npu resolved=npu   battery 100 %
+   [ac r3] 22:15:46 bstar  requested=npu resolved=npu   battery 100 %
+   [ac r3] 22:18:46 s720  requested=gpu resolved=gpu requested=npu resolved=npu   battery 100 %
+   [ac r4] 22:21:47 s720  requested=gpu resolved=gpu requested=npu resolved=npu   battery 100 %
+   [ac r4] 22:24:48 bstar  requested=npu resolved=npu   battery 100 %
+   [ac r5] 22:27:48 bstar  requested=npu resolved=npu   battery 100 %
+   [ac r5] 22:30:48 s720  requested=gpu resolved=gpu requested=npu resolved=npu   battery 100 %
+   Low Power Mode 0  ()
+
+== block ac_lpm (Low Power Mode 1)  22:33  battery 100 %
+   Low Power Mode 1  ()
+   22:33:49 idle 120 s
+   [ac_lpm r1] 22:36:06 bstar  requested=npu resolved=npu   battery 100 %
+   [ac_lpm r1] 22:39:07 s720  requested=gpu resolved=gpu requested=npu resolved=npu   battery 100 %
+   [ac_lpm r2] 22:42:07 s720  requested=gpu resolved=gpu requested=npu resolved=npu   battery 100 %
+   [ac_lpm r2] 22:45:08 bstar  requested=npu resolved=npu   battery 100 %
+   [ac_lpm r3] 22:48:08 bstar  requested=npu resolved=npu   battery 100 %
+   [ac_lpm r3] 22:51:08 s720  requested=gpu resolved=gpu requested=npu resolved=npu   battery 100 %
+   [ac_lpm r4] 22:54:08 s720  requested=gpu resolved=gpu requested=npu resolved=npu   battery 100 %
+   [ac_lpm r4] 22:57:09 bstar  requested=npu resolved=npu   battery 100 %
+   [ac_lpm r5] 23:00:09 bstar  requested=npu resolved=npu   battery 100 %
+   [ac_lpm r5] 23:03:09 s720  requested=gpu resolved=gpu requested=npu resolved=npu   battery 100 %
+   Low Power Mode 0  ()
+
+== 30-min sustained B* call on AC  23:06
+   requested=npu resolved=npu   battery 100 %
+   Low Power Mode 0  ()
+
+== runs END  Tue Nov 24 23:37:21 +04 2026
+STEP 6 + 7: energy beyond AC power and the cost of the scene analyzer (paced 30 fps calls)
+
+== battery > 80 %: idle 372 mW (chip), 2.70 W (battery)
+                             chip mJ     (min-max)    CPU    GPU    ANE   DRAM  laptop mJ  late E/D %   p99 E/D ms  extra
+   B* (NE-NE)                   76.8 ( 76.3- 77.0)    1.1   -0.0   63.0   12.8      103.8   0.00/0.00    29.8/29.4  
+   MLVC-S 720p (GPU-NE)        756.0 (726.2-764.4)    3.4  688.7   37.4   25.8     1017.7   0.06/0.00    26.6/25.8  
+
+== battery > 80 %, Low Power Mode: idle 374 mW (chip), 4.28 W (battery)
+                             chip mJ     (min-max)    CPU    GPU    ANE   DRAM  laptop mJ  late E/D %   p99 E/D ms  extra
+   B* (NE-NE)                   71.7 ( 71.7- 71.9)    1.0   -0.0   58.0   12.8       38.8   0.00/0.00    29.3/28.8  
+   MLVC-S 720p (GPU-NE)        346.1 (340.4-357.3)    3.1  277.5   44.5   23.5      488.3  17.96/0.00    32.5/23.3  
+
+== battery < 30 %: idle 378 mW (chip), 4.60 W (battery)
+                             chip mJ     (min-max)    CPU    GPU    ANE   DRAM  laptop mJ  late E/D %   p99 E/D ms  extra
+   B* (NE-NE)                   76.9 ( 76.8- 77.2)    1.0    0.0   63.2   12.7       65.6   0.00/0.00    29.9/29.4  
+   MLVC-S 720p (GPU-NE)        739.7 (733.5-765.3)    3.3  673.0   37.5   26.3      886.1   0.00/0.00    26.7/25.8  
+
+== battery < 30 %, Low Power Mode: idle 379 mW (chip), 4.32 W (battery)
+                             chip mJ     (min-max)    CPU    GPU    ANE   DRAM  laptop mJ  late E/D %   p99 E/D ms  extra
+   B* (NE-NE)                   71.6 ( 71.6- 71.7)    0.9   -0.0   58.0   12.7       52.3   0.00/0.00    29.3/28.8  
+   MLVC-S 720p (GPU-NE)        346.9 (342.4-347.5)    3.1  282.5   37.3   24.0      460.1   1.32/0.00    31.8/25.3  
+
+== AC: idle 376 mW (chip)
+                             chip mJ     (min-max)    CPU    GPU    ANE   DRAM  laptop mJ  late E/D %   p99 E/D ms  extra
+   B* (NE-NE)                   76.8 ( 76.6- 76.9)    1.0   -0.0   62.9   12.8          -   0.00/0.06    29.5/29.1  
+   MLVC-S 720p (GPU-NE)        741.6 (728.8-768.5)    3.3  674.5   37.5   26.0          -   0.06/0.00    26.7/26.0  
+
+== AC, Low Power Mode: idle 371 mW (chip)
+                             chip mJ     (min-max)    CPU    GPU    ANE   DRAM  laptop mJ  late E/D %   p99 E/D ms  extra
+   B* (NE-NE)                   71.9 ( 71.8- 72.0)    1.1   -0.0   58.0   12.8          -   0.00/0.00    29.1/28.8  
+   MLVC-S 720p (GPU-NE)        346.4 (339.0-354.9)    3.2  279.2   42.2   23.2          -  19.69/0.00    32.4/24.8  
+
+== AC (Step 7): idle 371 mW (chip), -17.95 W (battery)
+                             chip mJ     (min-max)    CPU    GPU    ANE   DRAM  laptop mJ  late E/D %   p99 E/D ms  extra
+   V0 analyzer off              76.8 ( 76.4- 77.1)    1.1    0.0   62.8   12.8          -   0.00/0.00    29.6/29.0  
+   V1 every 15, default         61.2 ( 61.1- 61.4)    1.2    0.0   49.7   10.3          -   0.00/0.00    29.6/29.1  analyzer 9.51 ms per analysis
+   V2 every 15, CPU             64.5 ( 64.2- 65.2)    4.6    0.0   49.3   10.6          -   0.00/0.00    29.5/29.1  analyzer 32.72 ms per analysis
+   V3 every 30, CPU             62.5 ( 62.3- 62.7)    2.8    0.0   49.3   10.4          -   0.00/0.00    29.6/29.2  analyzer 33.17 ms per analysis
+
+== Step 7: what the analyzer adds to the B* call (vs V0; C4 = at most 2 ms per frame pair and no late frames)
+   V1 every 15, default     +-15.63 mJ per pair, analyzer 9.5055 ms per analysis = 0.634 ms per frame pair, late 0.00/0.00 %  -> C4 met
+   V2 every 15, CPU         +-12.32 mJ per pair, analyzer 32.718 ms per analysis = 2.181 ms per frame pair, late 0.00/0.00 %  -> C4 NOT met
+   V3 every 30, CPU         +-14.28 mJ per pair, analyzer 33.168 ms per analysis = 1.106 ms per frame pair, late 0.00/0.00 %  -> C4 met
+
+== drain60/bstar: 60 min, battery 69 -> 59 %
+     0-  5 min: chip   2653 mW, battery 7.42 W
+     5- 10 min: chip   2655 mW, battery 7.74 W
+    10- 15 min: chip   2656 mW, battery 7.75 W
+    15- 20 min: chip   2658 mW, battery 7.74 W
+    20- 25 min: chip   2657 mW, battery 7.75 W
+    25- 30 min: chip   2659 mW, battery 7.74 W
+    30- 35 min: chip   2657 mW, battery 7.74 W
+    35- 40 min: chip   2662 mW, battery 7.74 W
+    40- 45 min: chip   2661 mW, battery 7.73 W
+    45- 50 min: chip   2659 mW, battery 7.77 W
+    50- 55 min: chip   2659 mW, battery 7.78 W
+    55- 60 min: chip   2659 mW, battery 7.86 W
+   late %: E 0.00, D 0.00
+
+== sustained30/bstar: 30 min, battery 100 -> 100 %
+     0-  5 min: chip   2650 mW
+     5- 10 min: chip   2656 mW
+    10- 15 min: chip   2662 mW
+    15- 20 min: chip   2656 mW
+    20- 25 min: chip   2664 mW
+    25- 30 min: chip   2656 mW
+   late %: E 0.00, D 0.00
+
+== on battery: 80 % -> 1 % in 6.20 h (12.7 % per hour, display at maximum brightness)
+
+== results in /Users/shamsalani/Downloads/duplexnvc-baseline/phase2/bt/results
+== STEP 6 + 7 END  Tue Nov 24 23:37:51 +04 2026
+== Steps 6/7 AC part finished  Tue Nov 24 23:37:51 +04 2026
+
+== STEP 9 (energy) START  Tue Nov 24 23:37:51 +04 2026
+ProductName:		macOS ProductVersion:		26.6.2 BuildVersion:		25G83 
+Now drawing from 'AC Power'
+-- energy counters on this chip (channel, unit):
+AFR,mJ;AMCC,mJ;ANE,mJ;AVE,mJ;CPU Energy,mJ;DCS,mJ;DISP,mJ;DISPEXT,mJ;DRAM,mJ;EACC_CPM,mJ;EACC_CPM_SRAM,mJ;EACC_CPU,mJ;EACC_CPU0,mJ;EACC_CPU0_SRAM,mJ;EACC_CPU1,mJ;EACC_CPU1_SRAM,mJ;EACC_CPU2,mJ;EACC_CPU2_SRAM,mJ;EACC_CPU3,mJ;EACC_CPU3_SRAM,mJ;ECPUDTL00,mJ;ECPUDTL01,mJ;ECPUDTL02,mJ;ECPUDTL03,mJ;ECPUDTL04,mJ;ECPUDTL05,mJ;ECPUDTL06,mJ;ECPUDTL10,mJ;ECPUDTL11,mJ;ECPUDTL12,mJ;ECPUDTL13,mJ;ECPUDTL14,mJ;ECPUDTL15,mJ;ECPUDTL16,mJ;ECPUDTL20,mJ;ECPUDTL21,mJ;ECPUDTL22,mJ;ECPUDTL23,mJ;ECPUDTL24,mJ;ECPUDTL25,mJ;ECPUDTL26,mJ;ECPUDTL30,mJ;ECPUDTL31,mJ;ECPUDTL32,mJ;ECPUDTL33,mJ;ECPUDTL34,mJ;ECPUDTL35,mJ;ECPUDTL36,mJ;GPU Energy,nJ;GPU SRAM,mJ;GPU,mJ;ISP,mJ;MSR,mJ;PACC0_CPM,mJ;PACC0_CPM_SRAM,mJ;PACC0_CPU,mJ;PACC0_CPU0,mJ;PACC0_CPU0_SRAM,mJ;PACC0_CPU1,mJ;PACC0_CPU1_SRAM,mJ;PACC0_CPU2,mJ;PACC0_CPU2_SRAM,mJ;PACC0_CPU3,mJ;PACC0_CPU3_SRAM,mJ;PACC0_CPU4,mJ;PACC0_CPU4_SRAM,mJ;PACC0_CPU5,mJ;PACC0_CPU5_SRAM,mJ;PACC1_CPM,mJ;PACC1_CPM_SRAM,mJ;PACC1_CPU,mJ;PACC1_CPU0,mJ;PACC1_CPU0_SRAM,mJ;PACC1_CPU1,mJ;PACC1_CPU1_SRAM,mJ;PACC1_CPU2,mJ;PACC1_CPU2_SRAM,mJ;PACC1_CPU3,mJ;PACC1_CPU3_SRAM,mJ;PACC1_CPU4,mJ;PACC1_CPU4_SRAM,mJ;PACC1_CPU5,mJ;PACC1_CPU5_SRAM,mJ;PCIe Port 0 Energy,uJ;PCIe Port 1 Energy,uJ;PCPU1DTL00,mJ;PCPU1DTL01,mJ;PCPU1DTL010,mJ;PCPU1DTL011,mJ;PCPU1DTL012,mJ;PCPU1DTL02,mJ;PCPU1DTL03,mJ;PCPU1DTL04,mJ;PCPU1DTL05,mJ;PCPU1DTL06,mJ;PCPU1DTL07,mJ;PCPU1DTL08,mJ;PCPU1DTL09,mJ;PCPU1DTL0a,mJ;PCPU1DTL0b,mJ;PCPU1DTL0c,mJ;PCPU1DTL0d,mJ;PCPU1DTL0e,mJ;PCPU1DTL0f,mJ;PCPU1DTL10,mJ;PCPU1DTL11,mJ;PCPU1DTL110,mJ;PCPU1DTL111,mJ;PCPU1DTL112,mJ;PCPU1DTL12,mJ;PCPU1DTL13,mJ;PCPU1DTL14,mJ;PCPU1DTL15,mJ;PCPU1DTL16,mJ;PCPU1DTL17,mJ;PCPU1DTL18,mJ;PCPU1DTL19,mJ;PCPU1DTL1a,mJ;PCPU1DTL1b,mJ;PCPU1DTL1c,mJ;PCPU1DTL1d,mJ;PCPU1DTL1e,mJ;PCPU1DTL1f,mJ;PCPU1DTL20,mJ;PCPU1DTL21,mJ;PCPU1DTL210,mJ;PCPU1DTL211,mJ;PCPU1DTL212,mJ;PCPU1DTL22,mJ;PCPU1DTL23,mJ;PCPU1DTL24,mJ;PCPU1DTL25,mJ;PCPU1DTL26,mJ;PCPU1DTL27,mJ;PCPU1DTL28,mJ;PCPU1DTL29,mJ;PCPU1DTL2a,mJ;PCPU1DTL2b,mJ;PCPU1DTL2c,mJ;PCPU1DTL2d,mJ;PCPU1DTL2e,mJ;PCPU1DTL2f,mJ;PCPU1DTL30,mJ;PCPU1DTL31,mJ;PCPU1DTL310,mJ;PCPU1DTL311,mJ;PCPU1DTL312,mJ;PCPU1DTL32,mJ;PCPU1DTL33,mJ;PCPU1DTL34,mJ;PCPU1DTL35,mJ;PCPU1DTL36,mJ;PCPU1DTL37,mJ;PCPU1DTL38,mJ;PCPU1DTL39,mJ;PCPU1DTL3a,mJ;PCPU1DTL3b,mJ;PCPU1DTL3c,mJ;PCPU1DTL3d,mJ;PCPU1DTL3e,mJ;PCPU1DTL3f,mJ;PCPU1DTL40,mJ;PCPU1DTL41,mJ;PCPU1DTL410,mJ;PCPU1DTL411,mJ;PCPU1DTL412,mJ;PCPU1DTL42,mJ;PCPU1DTL43,mJ;PCPU1DTL44,mJ;PCPU1DTL45,mJ;PCPU1DTL46,mJ;PCPU1DTL47,mJ;PCPU1DTL48,mJ;PCPU1DTL49,mJ;PCPU1DTL4a,mJ;PCPU1DTL4b,mJ;PCPU1DTL4c,mJ;PCPU1DTL4d,mJ;PCPU1DTL4e,mJ;PCPU1DTL4f,mJ;PCPUDTL00,mJ;PCPUDTL01,mJ;PCPUDTL010,mJ;PCPUDTL011,mJ;PCPUDTL012,mJ;PCPUDTL02,mJ;PCPUDTL03,mJ;PCPUDTL04,mJ;PCPUDTL05,mJ;PCPUDTL06,mJ;PCPUDTL07,mJ;PCPUDTL08,mJ;PCPUDTL09,mJ;PCPUDTL0a,mJ;PCPUDTL0b,mJ;PCPUDTL0c,mJ;PCPUDTL0d,mJ;PCPUDTL0e,mJ;PCPUDTL0f,mJ;PCPUDTL10,mJ;PCPUDTL11,mJ;PCPUDTL110,mJ;PCPUDTL111,mJ;PCPUDTL112,mJ;PCPUDTL12,mJ;PCPUDTL13,mJ;PCPUDTL14,mJ;PCPUDTL15,mJ;PCPUDTL16,mJ;PCPUDTL17,mJ;PCPUDTL18,mJ;PCPUDTL19,mJ;PCPUDTL1a,mJ;PCPUDTL1b,mJ;PCPUDTL1c,mJ;PCPUDTL1d,mJ;PCPUDTL1e,mJ;PCPUDTL1f,mJ;PCPUDTL20,mJ;PCPUDTL21,mJ;PCPUDTL210,mJ;PCPUDTL211,mJ;PCPUDTL212,mJ;PCPUDTL22,mJ;PCPUDTL23,mJ;PCPUDTL24,mJ;PCPUDTL25,mJ;PCPUDTL26,mJ;PCPUDTL27,mJ;PCPUDTL28,mJ;PCPUDTL29,mJ;PCPUDTL2a,mJ;PCPUDTL2b,mJ;PCPUDTL2c,mJ;PCPUDTL2d,mJ;PCPUDTL2e,mJ;PCPUDTL2f,mJ;PCPUDTL30,mJ;PCPUDTL31,mJ;PCPUDTL310,mJ;PCPUDTL311,mJ;PCPUDTL312,mJ;PCPUDTL32,mJ;PCPUDTL33,mJ;PCPUDTL34,mJ;PCPUDTL35,mJ;PCPUDTL36,mJ;PCPUDTL37,mJ;PCPUDTL38,mJ;PCPUDTL39,mJ;PCPUDTL3a,mJ;PCPUDTL3b,mJ;PCPUDTL3c,mJ;PCPUDTL3d,mJ;PCPUDTL3e,mJ;PCPUDTL3f,mJ;PCPUDTL40,mJ;PCPUDTL41,mJ;PCPUDTL410,mJ;PCPUDTL411,mJ;PCPUDTL412,mJ;PCPUDTL42,mJ;PCPUDTL43,mJ;PCPUDTL44,mJ;PCPUDTL45,mJ;PCPUDTL46,mJ;PCPUDTL47,mJ;PCPUDTL48,mJ;PCPUDTL49,mJ;PCPUDTL4a,mJ;PCPUDTL4b,mJ;PCPUDTL4c,mJ;PCPUDTL4d,mJ;PCPUDTL4e,mJ;PCPUDTL4f,mJ;apciec0 Energy,uJ;apciec1 Energy,uJ;apciec2 Energy,uJ;
+-- incoming HEVC streams (hardware encoder, 1800 frames = 60 s at 30 fps, MP4 with 30 fps timestamps)
+   360p: target 287 kbps -> 307 kbps; frame rate, frames: 30/1,1800
+   720p: target 847 kbps -> 891 kbps; frame rate, frames: 30/1,1800
+   23:38:06 idle 120 s (start)
+[1/25] 23:40:24 hevc_360p r1  frames out frame=1800, in frame=1800
+[2/25] 23:43:07 mlvc_360p r1  requested=npu resolved=npu 
+[3/25] 00:00:58 hevc_720p r1  frames out frame=1800, in frame=1800
+[4/25] 00:03:41 mlvcs_720p r1  requested=gpu resolved=gpu requested=npu resolved=npu 
+[5/25] 00:06:23 mlvcs_540p r1  requested=npu resolved=npu 
+[6/25] 00:09:05 mlvc_360p r2  requested=npu resolved=npu 
+[7/25] 00:11:47 hevc_720p r2  frames out frame=1800, in frame=1800
+[8/25] 00:14:30 mlvcs_720p r2  requested=gpu resolved=gpu requested=npu resolved=npu 
+[9/25] 00:17:12 mlvcs_540p r2  requested=npu resolved=npu 
+[10/25] 00:19:54 hevc_360p r2  frames out frame=1800, in frame=1800
+[11/25] 00:22:37 hevc_720p r3  frames out frame=1800, in frame=1800
+[12/25] 00:25:20 mlvcs_720p r3  requested=gpu resolved=gpu requested=npu resolved=npu 
+[13/25] 00:28:02 mlvcs_540p r3  requested=npu resolved=npu 
+[14/25] 00:30:44 hevc_360p r3  frames out frame=1800, in frame=1800
+[15/25] 00:33:27 mlvc_360p r3  requested=npu resolved=npu 
+[16/25] 00:36:08 mlvcs_720p r4  requested=gpu resolved=gpu requested=npu resolved=npu 
+[17/25] 00:38:50 mlvcs_540p r4  requested=npu resolved=npu 
+[18/25] 00:41:32 hevc_360p r4  frames out frame=1800, in frame=1800
+[19/25] 00:44:15 mlvc_360p r4  requested=npu resolved=npu 
+[20/25] 00:46:56 hevc_720p r4  frames out frame=1800, in frame=1800
+[21/25] 00:49:39 mlvcs_540p r5  requested=npu resolved=npu 
+[22/25] 00:52:21 hevc_360p r5  frames out frame=1800, in frame=1800
+[23/25] 00:55:04 mlvc_360p r5  requested=npu resolved=npu 
+[24/25] 00:57:45 hevc_720p r5  frames out frame=1800, in frame=1800
+[25/25] 01:16:57 mlvcs_720p r5  requested=gpu resolved=gpu requested=npu resolved=npu 
+   01:19:39 idle 120 s (end)
+== runs END  Wed Nov 25 01:21:55 +04 2026
+STEP 9 (energy): paced 30 fps two-way call, energy per frame pair from the chip's counters (IOReport)
+idle power (mean of 2 recordings): total of grouped channels 1022 mW
+
+== energy per frame pair (mJ, median of runs, idle subtracted)
+                                  total      (min-max)    CPU    GPU    ANE   DRAM  media  late
+   HW HEVC 360p, 287 kbps          14.7 ( -5.5- 24.0)    7.0    2.0    3.3    2.0    0.4  
+   B* (full MLVC 360p, NE-NE)      89.7 (-33.0- 90.6)    4.5    2.3   66.3   14.3    1.0  
+   MLVC-S 540p (NE-NE)             65.7 ( 64.2- 68.6)    4.5    2.7   47.1   10.1    1.1  
+   HW HEVC 720p, 847 kbps          16.9 ( 11.0- 18.9)    5.3    2.0    4.7    2.1    0.7  
+   MLVC-S 720p (GPU-NE)           515.8 (512.1-521.0)   10.0  432.9   42.1   29.0    1.1  
+
+== every channel that changes by more than 0.17 mJ per pair (5 mW), for checking the grouping
+   HW HEVC 360p, 287 kbps: CPU Energy [CPU] 7.0; EACC_CPU [-] 5.4; ANE [ANE] 3.3; ECPUDTL16 [-] 2.1; EACC_CPU1 [-] 2.1; DRAM [DRAM] 2.0; ECPUDTL36 [-] 1.6; EACC_CPU3 [-] 1.6; PACC1_CPU [-] 1.6; ECPUDTL26 [-] 1.6; EACC_CPU2 [-] 1.6; GPU [GPU] 1.0; GPU Energy [GPU] 1.0; PACC1_CPU0 [-] 1.0; PACC1_CPU1 [-] 0.3; AMCC [-] 0.3; PCPU1DTL012 [-] 0.2; AVE [media] 0.2; ECPUDTL06 [-] 0.2; EACC_CPU0 [-] 0.2; MSR [media] 0.2; DISP [-] -0.2
+   B* (full MLVC 360p, NE-NE): ANE [ANE] 66.3; AMCC [-] 24.7; DRAM [DRAM] 14.3; DCS [-] 9.4; CPU Energy [CPU] 4.5; EACC_CPU [-] 4.1; ECPUDTL36 [-] 1.2; EACC_CPU3 [-] 1.2; ECPUDTL26 [-] 1.2; EACC_CPU2 [-] 1.2; GPU Energy [GPU] 1.1; GPU [GPU] 1.1; ECPUDTL16 [-] 1.0; EACC_CPU1 [-] 1.0; ECPUDTL06 [-] 0.8; EACC_CPU0 [-] 0.8; AVE [media] 0.6; PACC0_CPU [-] 0.6; PACC0_CPU0 [-] 0.4; MSR [media] 0.4; AFR [-] 0.2; PACC1_CPU [-] -0.2; DISP [-] -0.2; PACC1_CPU0 [-] -0.3
+   MLVC-S 540p (NE-NE): ANE [ANE] 47.1; AMCC [-] 20.2; DRAM [DRAM] 10.1; DCS [-] 6.7; CPU Energy [CPU] 4.5; EACC_CPU [-] 4.2; GPU [GPU] 1.3; GPU Energy [GPU] 1.3; ECPUDTL36 [-] 1.2; EACC_CPU3 [-] 1.2; ECPUDTL06 [-] 1.1; EACC_CPU0 [-] 1.1; EACC_CPU2 [-] 1.0; ECPUDTL26 [-] 1.0; ECPUDTL16 [-] 0.8; EACC_CPU1 [-] 0.8; AVE [media] 0.6; MSR [media] 0.4; PACC0_CPU [-] 0.4; PACC0_CPU0 [-] 0.3; AFR [-] 0.2; DISP [-] -0.2
+   HW HEVC 720p, 847 kbps: CPU Energy [CPU] 5.3; ANE [ANE] 4.7; EACC_CPU [-] 3.6; DRAM [DRAM] 2.1; PACC1_CPU [-] 1.7; ECPUDTL16 [-] 1.7; EACC_CPU1 [-] 1.7; AMCC [-] 1.4; ECPUDTL26 [-] 1.2; EACC_CPU2 [-] 1.2; ECPUDTL36 [-] 1.1; EACC_CPU3 [-] 1.1; PACC1_CPU0 [-] 1.0; GPU Energy [GPU] 1.0; GPU [GPU] 1.0; AVE [media] 0.4; MSR [media] 0.3; PCPU1DTL012 [-] 0.3; PACC1_CPU1 [-] 0.3; DISP [-] -0.2; EACC_CPU0 [-] -0.4; ECPUDTL06 [-] -0.4
+   MLVC-S 720p (GPU-NE): GPU [GPU] 225.7; GPU Energy [GPU] 207.2; DCS [-] 47.0; ANE [ANE] 42.1; AFR [-] 40.5; AMCC [-] 38.0; DRAM [DRAM] 29.0; CPU Energy [CPU] 10.0; EACC_CPU [-] 9.0; ECPUDTL16 [-] 2.6; EACC_CPU1 [-] 2.6; ECPUDTL26 [-] 2.3; EACC_CPU2 [-] 2.3; ECPUDTL36 [-] 2.3; EACC_CPU3 [-] 2.3; EACC_CPU0 [-] 1.8; ECPUDTL06 [-] 1.8; AVE [media] 0.8; PACC0_CPU [-] 0.7; PACC0_CPU0 [-] 0.4; MSR [media] 0.4; DISP [-] -0.2
+
+== results in /Users/shamsalani/Downloads/duplexnvc-baseline/phase2/he/results
+== STEP 9 (energy) END  Wed Nov 25 01:22:00 +04 2026
+== Step 9 energy finished  Wed Nov 25 01:22:00 +04 2026
+== RQ END  Wed Nov 25 01:22:00 +04 2026   next: ./u

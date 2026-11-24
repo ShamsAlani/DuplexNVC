@@ -62,11 +62,11 @@ powershell -ExecutionPolicy Bypass -File .\lab.ps1 <command>
 
 ## `analyze_training.py`: from logs to results
 
-**What it reads.** The training log of each run (`<run>.txt`: one line every 100 steps with loss, bpp, PSNR and time) and `pipeline.txt` (the time of every round).
+**What it reads.** The training log of each run (`<run>.txt` or `<run>.txt.gz`, UTF-8 or UTF-16: one line every 100 steps with loss, bpp, PSNR and time) and `pipeline.txt` (the time of every round).
 
-**What it writes** to [`../results/`](../results/): per-epoch means, a comparison of each run with its control, an even/odd-epoch and trend table, the training cost, and a figure. Each file is described in the results README.
+**What it writes** to [`../results/`](../results/): per-epoch means; each run against its control at the end of training and over the whole run; the same comparison in blocks of 20 epochs; even against odd epochs; the training cost; and two figures. Each file is described in the results README.
 
-**How it computes.** A step's numbers are averaged over the 10 log lines of an epoch; an epoch counts only if all 10 are present. Each run is compared with the control trained the same way (`v1_b1` with `v1_control`, later runs with `control`), over the epochs both have. The training cost uses only rounds in which no run failed.
+**How it computes.** An epoch's numbers are the mean of its 10 log lines; an epoch counts only if all 10 are present (a chunk that was resumed after a crash rewrites the same steps, and the last value is kept). Each run is compared with the control trained the same way (`v1_b1` with `v1_control`, later runs with `control`), epoch by epoch over the epochs both have; "end of training" is the last 40 of them. The training cost uses only rounds in which no run failed.
 
 **Run:**
 ```bash

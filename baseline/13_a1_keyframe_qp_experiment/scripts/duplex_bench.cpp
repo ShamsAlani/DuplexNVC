@@ -4,6 +4,8 @@
 //   alone-enc encoder only            alone-dec decoder only
 //   turns     encoder then decoder on ONE thread, frame by frame (best serial baseline)
 //   duplex    encoder thread + decoder thread at the same time (the call)
+// A3 (codec mechanism): --force-idr FILE (prepare) encodes the listed frames as I-frames (content-change trigger).
+// --ltr-period / --ltr-recovery-period / --ltr-start-idx override the model's LTR defaults.
 // A1 (codec mechanism): --qp-i-offset N / --qp-ltr-offset N add N to the QP of I-frames / of the other frames
 // the encoder marks as long-term references (LTR), in every mode. The QP goes in each frame header, so the
 // decoder needs no change. --frame-log FILE (prepare) writes one row per frame: index, type, LTR, QP, bytes.
@@ -44,6 +46,8 @@ struct Args {
     int qpIOffset = 0;           // A1: QP offset on I-frames (negative = more bits)
     int qpLtrOffset = 0;         // A1: QP offset on LTR-marked frames that are not I-frames
     std::string frameLog;        // prepare: per-frame log (index, type, LTR, QP, bytes)
+    std::string forceIdr;        // A3 (prepare): file with stream frame indices to encode as forced I-frames
+    int ltrPeriod = -1, ltrRecoveryPeriod = -1, ltrStartIdx = -1;  // override the model's LTR defaults if >= 0
     double fps = 30.0;           // 0 = unpaced (as fast as possible)
     double deadlineMs = 0.0;     // 0 = 1000/fps
     int seconds = 60;
@@ -80,6 +84,10 @@ static Args ParseArgs(int argc, char** argv)
         else if (k == "--qp-i-offset") a.qpIOffset = std::stoi(v);
         else if (k == "--qp-ltr-offset") a.qpLtrOffset = std::stoi(v);
         else if (k == "--frame-log") a.frameLog = v;
+        else if (k == "--force-idr") a.forceIdr = v;
+        else if (k == "--ltr-period") a.ltrPeriod = std::stoi(v);
+        else if (k == "--ltr-recovery-period") a.ltrRecoveryPeriod = std::stoi(v);
+        else if (k == "--ltr-start-idx") a.ltrStartIdx = std::stoi(v);
         else if (k == "--fps") a.fps = std::stod(v);
         else if (k == "--deadline-ms") a.deadlineMs = std::stod(v);
         else if (k == "--seconds") a.seconds = std::stoi(v);
@@ -154,9 +162,9 @@ struct QpPlanner {
     bool rootSet = false;
     int counter = 0, depth = 0;
     struct Out { int qp; int type; bool ltr; int idx; };
-    Out Next(const MlvcEncoder& enc)
+    Out Next(const MlvcEncoder& enc, bool force = false)
     {
-        auto info = enc.GetNextFrameInfo(EncodeParams{ .qp = QpParams(base) });
+        auto info = enc.GetNextFrameInfo(EncodeParams{ .qp = QpParams(base), .forceIdr = force });
         const FrameType t = info ? info->frameType : FrameType::I_FRAME;
         const int idx = info ? info->frameIdx : 0;
         const bool isI = t == FrameType::I_FRAME, isRec = t == FrameType::LTR_RECOVERY;
@@ -186,6 +194,9 @@ static MlvcEncoder MakeEncoder(const MlvcManager& m, const Args& a)
               << " -> using " << a.iframePeriod << "\n";
     cfg->SetSize(a.width, a.height);
     cfg->iframePeriod = a.iframePeriod;
+    if (a.ltrPeriod >= 0) cfg->ltrPeriod = a.ltrPeriod;
+    if (a.ltrRecoveryPeriod >= 0) cfg->ltrRecoveryPeriod = a.ltrRecoveryPeriod;
+    if (a.ltrStartIdx >= 0) cfg->ltrStartIdx = a.ltrStartIdx;
     gPlan = QpPlanner{};
     gPlan.base = a.qp; gPlan.dI = a.qpIOffset; gPlan.dL = a.qpLtrOffset; gPlan.cfg = cfg.value();
     std::cerr << "ltr: start=" << cfg->ltrStartIdx << " period=" << cfg->ltrPeriod << " slots=" << cfg->ltrNumSlots
@@ -302,17 +313,23 @@ int main(int argc, char** argv)
         auto enc = MakeEncoder(m, a);
         std::vector<std::vector<std::byte>> aus;
         std::ofstream flog;
-        if (!a.frameLog.empty()) { flog.open(a.frameLog); flog << "i,frame_idx,type,ltr,qp,type_actual,bytes\n"; }
+        if (!a.frameLog.empty()) { flog.open(a.frameLog); flog << "i,frame_idx,type,ltr,qp,type_actual,bytes,forced\n"; }
+        std::vector<char> forced(frames.size(), 0);
+        if (!a.forceIdr.empty()) {
+            std::ifstream ff(a.forceIdr);
+            for (long x; ff >> x;) if (x > 0 && x < static_cast<long>(frames.size())) forced[x] = 1;
+        }
         int nI = 0, nL = 0;
         for (size_t i = 0; i < frames.size(); ++i) {
-            const auto plan = gPlan.Next(enc);
-            auto res = enc.Encode(Nv12FrameView(a.width, a.height, frames[i]), EncodeParams{ .qp = QpParams(plan.qp) });
+            const auto plan = gPlan.Next(enc, forced[i]);
+            auto res = enc.Encode(Nv12FrameView(a.width, a.height, frames[i]),
+                                  EncodeParams{ .qp = QpParams(plan.qp), .forceIdr = forced[i] != 0 });
             if (!res) { std::cerr << "encode failed\n"; return 1; }
             const int ta = static_cast<int>(res->info.frameType);
             if (ta != plan.type) { std::cerr << "frame " << i << ": predicted type " << plan.type << " != " << ta << "\n"; return 1; }
             nI += plan.type == 0; nL += plan.ltr && plan.type != 0;
             if (flog) flog << i << ',' << plan.idx << ',' << plan.type << ',' << plan.ltr << ',' << plan.qp << ',' << ta
-                           << ',' << res->bitStream.size() << '\n';
+                           << ',' << res->bitStream.size() << ',' << int(forced[i]) << '\n';
             aus.emplace_back(res->bitStream.begin(), res->bitStream.end());
         }
         std::cerr << "frames: " << frames.size() << "  I-frames: " << nI << "  other LTR frames: " << nL << "\n";

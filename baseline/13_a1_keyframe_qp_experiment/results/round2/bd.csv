@@ -1,0 +1,49 @@
+comparison,reference,test,metric,bd_rate_pct,clip_median_pct,clips_gain,clips
+B*: I -6 (round 1),a1_o0,a1_b6,psnr_y,-1.2921116601520177,-0.6224190053298828,14,20
+B*: I -6 (round 1),a1_o0,a1_b6,psnr_y_display,-2.2080104665790357,-1.8744226743426462,17,20
+B*: I -6 (round 1),a1_o0,a1_b6,face_psnr_y,-1.323842926058838,-0.6463804025951703,14,20
+B*: I -6 (round 1),a1_o0,a1_b6,face_lpips,-3.540308387577784,-3.0726180181304907,18,20
+B*: I -8,a1_o0,a1b_mlvc_360p_i8,psnr_y,-1.196103784200142,-0.35998577159253586,12,20
+B*: I -8,a1_o0,a1b_mlvc_360p_i8,psnr_y_display,-2.219373824845272,-1.5972842421063171,14,20
+B*: I -8,a1_o0,a1b_mlvc_360p_i8,face_psnr_y,-1.2854065762374467,-0.1396574468376599,10,20
+B*: I -8,a1_o0,a1b_mlvc_360p_i8,face_lpips,-5.910922939569696,-5.10486740614528,20,20
+B*: I -10,a1_o0,a1b_mlvc_360p_i10,psnr_y,-0.25236929094494265,0.5359097914755973,8,20
+B*: I -10,a1_o0,a1b_mlvc_360p_i10,psnr_y_display,-1.154390670826999,-0.453405503921156,11,20
+B*: I -10,a1_o0,a1b_mlvc_360p_i10,face_psnr_y,-0.16400921643109356,1.6929524998684387,9,20
+B*: I -10,a1_o0,a1b_mlvc_360p_i10,face_lpips,-7.017012286200275,-6.017346009844331,18,20
+MLVC-S 540p: I -4,a1b_mlvcs_540p_o0,a1b_mlvcs_540p_i4,psnr_y,-2.0480681342496254,-2.083641960696847,20,20
+MLVC-S 540p: I -4,a1b_mlvcs_540p_o0,a1b_mlvcs_540p_i4,psnr_y_display,-2.6133736800505347,-2.7312840549602644,20,20
+MLVC-S 540p: I -4,a1b_mlvcs_540p_o0,a1b_mlvcs_540p_i4,face_psnr_y,-1.8879843122629358,-1.7920946938525417,19,20
+MLVC-S 540p: I -4,a1b_mlvcs_540p_o0,a1b_mlvcs_540p_i4,face_lpips,-3.6269264651076716,-3.278471569327257,18,20
+MLVC-S 540p: LTR -4,a1b_mlvcs_540p_o0,a1b_mlvcs_540p_l4,psnr_y,0.6848932773686478,0.8871186361407046,0,20
+MLVC-S 540p: LTR -4,a1b_mlvcs_540p_o0,a1b_mlvcs_540p_l4,psnr_y_display,0.11369333697817119,0.5872966052853479,4,20
+MLVC-S 540p: LTR -4,a1b_mlvcs_540p_o0,a1b_mlvcs_540p_l4,face_psnr_y,0.12049306831209972,0.3291321973292738,5,20
+MLVC-S 540p: LTR -4,a1b_mlvcs_540p_o0,a1b_mlvcs_540p_l4,face_lpips,0.782954883798137,0.9326248028885264,5,20
+MLVC-S 540p: I and LTR -4,a1b_mlvcs_540p_o0,a1b_mlvcs_540p_b4,psnr_y,-1.6141742790093838,-1.2747694065687099,17,20
+MLVC-S 540p: I and LTR -4,a1b_mlvcs_540p_o0,a1b_mlvcs_540p_b4,psnr_y_display,-2.817556054465742,-2.355858838138847,20,20
+MLVC-S 540p: I and LTR -4,a1b_mlvcs_540p_o0,a1b_mlvcs_540p_b4,face_psnr_y,-1.8638140606319742,-1.8155762242456908,17,20
+MLVC-S 540p: I and LTR -4,a1b_mlvcs_540p_o0,a1b_mlvcs_540p_b4,face_lpips,-3.3900117374724092,-2.838962794320593,18,20
+MLVC-S 540p: I -8,a1b_mlvcs_540p_o0,a1b_mlvcs_540p_i8,psnr_y,-2.600983781646593,-2.5421863547207044,17,20
+MLVC-S 540p: I -8,a1b_mlvcs_540p_o0,a1b_mlvcs_540p_i8,psnr_y_display,-3.474291118593875,-3.34866811860301,18,20
+MLVC-S 540p: I -8,a1b_mlvcs_540p_o0,a1b_mlvcs_540p_i8,face_psnr_y,-2.437687478781214,-2.2796917818695253,19,20
+MLVC-S 540p: I -8,a1b_mlvcs_540p_o0,a1b_mlvcs_540p_i8,face_lpips,-5.846839939340698,-5.371652659883619,20,20
+E4: LTR recovery every 32 (A2 cost),a1b_mlvcs_540p_o0,a1b_mlvcs_540p_r0,psnr_y,9.654615114848774,8.20636167946005,0,20
+E4: LTR recovery every 32 (A2 cost),a1b_mlvcs_540p_o0,a1b_mlvcs_540p_r0,psnr_y_display,9.789899533094303,7.8275239399106304,0,20
+E4: LTR recovery every 32 (A2 cost),a1b_mlvcs_540p_o0,a1b_mlvcs_540p_r0,face_psnr_y,12.040057372953505,11.056654427004297,0,20
+E4: LTR recovery every 32 (A2 cost),a1b_mlvcs_540p_o0,a1b_mlvcs_540p_r0,face_lpips,13.04890374173353,11.795627923694042,0,20
+"E4: + LTR -4, vs the bound",a1b_mlvcs_540p_r0,a1b_mlvcs_540p_rl4,psnr_y,0.876106956291367,1.169047664256051,1,20
+"E4: + LTR -4, vs the bound",a1b_mlvcs_540p_r0,a1b_mlvcs_540p_rl4,psnr_y_display,0.31406894265990637,0.7883671474100518,6,20
+"E4: + LTR -4, vs the bound",a1b_mlvcs_540p_r0,a1b_mlvcs_540p_rl4,face_psnr_y,0.33564815483528854,0.8039920439750436,6,20
+"E4: + LTR -4, vs the bound",a1b_mlvcs_540p_r0,a1b_mlvcs_540p_rl4,face_lpips,1.1450004035417072,1.499385046532653,5,20
+"E4: + I and LTR -4, vs the bound",a1b_mlvcs_540p_r0,a1b_mlvcs_540p_rb4,psnr_y,-1.8766097289253825,-1.5196549715246754,18,20
+"E4: + I and LTR -4, vs the bound",a1b_mlvcs_540p_r0,a1b_mlvcs_540p_rb4,psnr_y_display,-3.117012262447383,-2.627404841117703,20,20
+"E4: + I and LTR -4, vs the bound",a1b_mlvcs_540p_r0,a1b_mlvcs_540p_rb4,face_psnr_y,-2.1258023952116623,-2.0626513292826054,17,20
+"E4: + I and LTR -4, vs the bound",a1b_mlvcs_540p_r0,a1b_mlvcs_540p_rb4,face_lpips,-2.9715118425393316,-2.4500993241781455,18,20
+"E4: bound + LTR -4, vs default",a1b_mlvcs_540p_o0,a1b_mlvcs_540p_rl4,psnr_y,10.680041137338803,9.951278772578753,0,20
+"E4: bound + LTR -4, vs default",a1b_mlvcs_540p_o0,a1b_mlvcs_540p_rl4,psnr_y_display,10.2085546408208,9.10830866394563,0,20
+"E4: bound + LTR -4, vs default",a1b_mlvcs_540p_o0,a1b_mlvcs_540p_rl4,face_psnr_y,12.541545854412517,12.618727070450086,0,20
+"E4: bound + LTR -4, vs default",a1b_mlvcs_540p_o0,a1b_mlvcs_540p_rl4,face_lpips,14.434512899549157,14.643352045042256,0,20
+"E4: bound + I and LTR -4, vs default",a1b_mlvcs_540p_o0,a1b_mlvcs_540p_rb4,psnr_y,7.727202146567014,7.179397322309633,0,20
+"E4: bound + I and LTR -4, vs default",a1b_mlvcs_540p_o0,a1b_mlvcs_540p_rb4,psnr_y_display,6.53607877687572,5.909687949794917,0,20
+"E4: bound + I and LTR -4, vs default",a1b_mlvcs_540p_o0,a1b_mlvcs_540p_rb4,face_psnr_y,9.898065994252047,10.237900940363975,0,20
+"E4: bound + I and LTR -4, vs default",a1b_mlvcs_540p_o0,a1b_mlvcs_540p_rb4,face_lpips,9.925371094890266,10.56117842648715,1,20

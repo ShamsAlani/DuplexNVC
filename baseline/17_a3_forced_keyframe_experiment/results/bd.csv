@@ -1,0 +1,73 @@
+setting,group,trigger,metric,bd_rate_pct,clip_median_pct,clips_gain,clips
+mlvc_360p,all 11 clips,truth,psnr_y,1.5581965113527163,0.0,1,11
+mlvc_360p,all 11 clips,truth,psnr_y_display,3.1003386172690828,0.0,0,11
+mlvc_360p,all 11 clips,truth,face_psnr_y,2.24136303583482,0.0,1,11
+mlvc_360p,all 11 clips,truth,face_lpips,3.7328825028529966,0.0,1,11
+mlvc_360p,all 11 clips,fused,psnr_y,2.6574470043244203,0.0,0,11
+mlvc_360p,all 11 clips,fused,psnr_y_display,4.926804957230302,0.0,0,11
+mlvc_360p,all 11 clips,fused,face_psnr_y,4.3854993797451725,0.0,0,11
+mlvc_360p,all 11 clips,fused,face_lpips,4.718559989423099,0.0,0,11
+mlvc_360p,all 11 clips,diff,psnr_y,29.283076400388317,31.866693950132706,0,11
+mlvc_360p,all 11 clips,diff,psnr_y_display,45.94142529764041,42.817215074639094,0,11
+mlvc_360p,all 11 clips,diff,face_psnr_y,33.400893002722775,34.10879628897039,0,11
+mlvc_360p,all 11 clips,diff,face_lpips,36.483003705564855,35.559425621290174,1,11
+mlvc_360p,4 clips with real entries,truth,psnr_y,3.5558040109828326,6.690090127266057,1,4
+mlvc_360p,4 clips with real entries,truth,psnr_y_display,8.238580302742937,10.473036784248057,0,4
+mlvc_360p,4 clips with real entries,truth,face_psnr_y,5.724249067477838,9.289880560323184,1,4
+mlvc_360p,4 clips with real entries,truth,face_lpips,10.359300925974235,17.16844730746182,1,4
+mlvc_360p,4 clips with real entries,fused,psnr_y,4.3750879120970865,10.956428960752252,0,4
+mlvc_360p,4 clips with real entries,fused,psnr_y_display,9.69200040761471,17.459446482562935,0,4
+mlvc_360p,4 clips with real entries,fused,face_psnr_y,7.7311128349181635,15.098634003875487,0,4
+mlvc_360p,4 clips with real entries,fused,face_lpips,9.92987305632802,16.74017048935308,0,4
+mlvc_360p,4 clips with real entries,diff,psnr_y,24.53879471913909,27.27188855735253,0,4
+mlvc_360p,4 clips with real entries,diff,psnr_y_display,39.487061327583795,42.71528836390461,0,4
+mlvc_360p,4 clips with real entries,diff,face_psnr_y,22.71639013518827,22.823689117166204,0,4
+mlvc_360p,4 clips with real entries,diff,face_lpips,28.75319731781922,28.94645320644188,0,4
+mlvc_360p,7 clips without,truth,psnr_y,0.0,0.0,0,7
+mlvc_360p,7 clips without,truth,psnr_y_display,0.0,0.0,0,7
+mlvc_360p,7 clips without,truth,face_psnr_y,0.0,0.0,0,7
+mlvc_360p,7 clips without,truth,face_lpips,0.0,0.0,0,7
+mlvc_360p,7 clips without,fused,psnr_y,1.3011448715154694,0.0,0,7
+mlvc_360p,7 clips without,fused,psnr_y_display,2.04506800851747,0.0,0,7
+mlvc_360p,7 clips without,fused,face_psnr_y,2.249935532542935,0.0,0,7
+mlvc_360p,7 clips without,fused,face_lpips,1.6440438865958695,0.0,0,7
+mlvc_360p,7 clips without,diff,psnr_y,32.628807136146335,38.217654788714285,0,7
+mlvc_360p,7 clips without,diff,psnr_y_display,49.95377648306967,42.817215074639094,0,7
+mlvc_360p,7 clips without,diff,face_psnr_y,39.45001156359464,40.270869813891316,0,7
+mlvc_360p,7 clips without,diff,face_lpips,40.6987333322705,39.187418286945345,1,7
+mlvcs_540p,all 11 clips,truth,psnr_y,1.8338790744207634,0.0,0,11
+mlvcs_540p,all 11 clips,truth,psnr_y_display,3.1829141401296113,0.0,0,11
+mlvcs_540p,all 11 clips,truth,face_psnr_y,2.172582749751095,0.0,1,11
+mlvcs_540p,all 11 clips,truth,face_lpips,4.601893226425391,0.0,1,11
+mlvcs_540p,all 11 clips,fused,psnr_y,2.881046690511546,0.0,0,11
+mlvcs_540p,all 11 clips,fused,psnr_y_display,4.5965709128683585,0.0,0,11
+mlvcs_540p,all 11 clips,fused,face_psnr_y,2.8796199891666596,0.0,0,11
+mlvcs_540p,all 11 clips,fused,face_lpips,5.180910820206441,0.0,0,11
+mlvcs_540p,all 11 clips,diff,psnr_y,26.59843451666495,27.74843150163411,0,11
+mlvcs_540p,all 11 clips,diff,psnr_y_display,40.70741109907563,39.03528237269469,0,11
+mlvcs_540p,all 11 clips,diff,face_psnr_y,30.910112389947585,27.462174482698586,0,11
+mlvcs_540p,all 11 clips,diff,face_lpips,31.266023925569474,35.1971312537696,0,11
+mlvcs_540p,4 clips with real entries,truth,psnr_y,4.0648975879147065,6.116272708633508,0,4
+mlvcs_540p,4 clips with real entries,truth,psnr_y_display,8.317784579339893,9.444789521753005,0,4
+mlvcs_540p,4 clips with real entries,truth,face_psnr_y,5.099266577006767,9.373940609005205,1,4
+mlvcs_540p,4 clips with real entries,truth,face_lpips,11.196333860451158,14.098040615883288,1,4
+mlvcs_540p,4 clips with real entries,fused,psnr_y,4.890824293670648,10.70035400777829,0,4
+mlvcs_540p,4 clips with real entries,fused,psnr_y_display,9.315684275661496,16.456795489263108,0,4
+mlvcs_540p,4 clips with real entries,fused,face_psnr_y,4.161321083759484,9.498167961875271,0,4
+mlvcs_540p,4 clips with real entries,fused,face_lpips,9.251490528329365,16.403020697262527,0,4
+mlvcs_540p,4 clips with real entries,diff,psnr_y,23.611296920280324,24.77727643667191,0,4
+mlvcs_540p,4 clips with real entries,diff,psnr_y_display,38.56087412852474,42.04187434174683,0,4
+mlvcs_540p,4 clips with real entries,diff,face_psnr_y,20.46562643176568,20.1719500023979,0,4
+mlvcs_540p,4 clips with real entries,diff,face_lpips,24.165059216044437,27.1956517521314,0,4
+mlvcs_540p,7 clips without,truth,psnr_y,0.0,0.0,0,7
+mlvcs_540p,7 clips without,truth,psnr_y_display,0.0,0.0,0,7
+mlvcs_540p,7 clips without,truth,face_psnr_y,0.0,0.0,0,7
+mlvcs_540p,7 clips without,truth,face_lpips,0.0,0.0,0,7
+mlvcs_540p,7 clips without,fused,psnr_y,1.2454809613605011,0.0,0,7
+mlvcs_540p,7 clips without,fused,psnr_y_display,1.6975560602145334,0.0,0,7
+mlvcs_540p,7 clips without,fused,face_psnr_y,1.5341504695582708,0.0,0,7
+mlvcs_540p,7 clips without,fused,face_lpips,2.101614745944458,0.0,0,7
+mlvcs_540p,7 clips without,diff,psnr_y,28.77454072272021,35.963666770125634,0,7
+mlvcs_540p,7 clips without,diff,psnr_y_display,42.30978547690138,38.69751450208094,0,7
+mlvcs_540p,7 clips without,diff,face_psnr_y,36.89894126400184,36.97570460900137,0,7
+mlvcs_540p,7 clips without,diff,face_lpips,36.04727012597478,37.53691214491219,0,7

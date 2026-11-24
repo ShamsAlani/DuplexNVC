@@ -4,10 +4,17 @@
 |---|---|---|
 | [`pipeline.txt`](pipeline.txt) | `lab.ps1` | Every pipeline start, data step, finished round and failure, with date and time |
 | [`prep.txt`](prep.txt) | `lab.ps1` and MLVC's data scripts | Download, unzip, sequence selection and frame extraction (including the errors of the failed attempts) |
-| [`v1_control.txt`](v1_control.txt) | MLVC's `train_video.py` | Training log of the first control run (last 5,000 lines: epochs ≈ 155–199) |
-| [`v1_b1.txt`](v1_b1.txt) | MLVC's `train_video.py` | Training log of the first B1 run (last 5,000 lines: epochs ≈ 155–199) |
+| [`patch.txt`](patch.txt) | `patch_input_gate.py` | Which MLVC files received the input-gate option |
+| [`v1_control.txt.gz`](v1_control.txt.gz) | MLVC's `train_video.py` | Complete training log of the first control run, epochs 0–199 (replayed samples) |
+| [`v1_b1.txt.gz`](v1_b1.txt.gz) | MLVC's `train_video.py` | Complete training log of the first B1 run, epochs 0–199 (replayed samples) |
+| [`control.txt.gz`](control.txt.gz) | MLVC's `train_video.py` | Complete training log of Queue A's control, epochs 0–199 |
+| [`b1.txt.gz`](b1.txt.gz) | MLVC's `train_video.py` | Complete training log of Queue A's B1, epochs 0–199 |
 
-Logs of later runs are added under their run names (`control.txt`, `b1.txt`, `b1gate.txt`, `b2p25.txt`, `b2p75.txt`, `control_s2.txt`).
+Logs of the running queue (`b1gate`, `b2p25`, `b2p75`, `control_s2`) are added when it finishes.
+
+**Where the complete logs come from.**
+- **v1:** the log files themselves, from the lab PC (`v1_logs_full.zip` in release `models-20261122-1813`). PowerShell 5.1 writes them in UTF-16; they are stored here converted to UTF-8 and compressed (`gzip`; open with `gunzip -k` or any archive tool).
+- **Queue A:** during a run the pipeline pushes the last 5,000 lines of each log to GitHub every round. Every push is a commit, so the complete log was rebuilt by joining all pushed versions from 22 Nov 18:08 to 23 Nov 20:54 in order and keeping each line once. Every epoch 0–199 is complete (10 of 10 log lines). The upload of the lab PC's own copy (`logs_full.zip`) failed on 23 Nov and is repeated at the next upload.
 
 ## `pipeline.txt`
 
@@ -18,12 +25,12 @@ One line per event, times in the lab PC's local time (UTC+4):
 | `start <time>` | The pipeline was started (`lab.ps1 weekend`) |
 | `data ready <time>` | Download and extraction are done |
 | `sequences listed N, fully extracted M` | Of the N sequences in the dataset description, M have all 64 frames on disk; only those are used |
-| `both at epoch E <time>` / `Queue A at epoch E <time>` | Every run of the queue has finished epoch E (counting from 1); the time between two such lines is one round of 2 epochs per run |
+| `both at epoch E <time>` / `Queue A at epoch E <time>` / `Queue B+C at epoch E <time>` | Every run of the queue has finished epoch E (counting from 1); the time between two such lines is one round of 2 epochs per run |
 | `<run> FAILED at E` | That run crashed three times in that round |
 | `STOPPED: ...` | The pipeline stopped itself (every run crashed, or no usable data) |
 | `ALL DONE <time>` | Every planned epoch finished |
 
-The `FAILED` lines of 19 Nov (epochs 2–200 in about an hour) are the first start, when every training start was rejected by a setting MLVC does not support without `torch.compile`; nothing was trained then. The real training starts after `data ready 11/20/2026 21:21:00`.
+The `FAILED` lines of 19 Nov (epochs 2–200 in about an hour) are the first start, when every training start was rejected by a setting MLVC does not support without `torch.compile`; nothing was trained then. The first real training (v1) starts after `data ready 11/20/2026 21:21:00`; the `STOPPED` line of 22 Nov 18:04 is a script error, fixed within minutes (a variable named `$r` overwrote `$R`, PowerShell ignores case); Queue A starts at `start 11/22/2026 18:08:14`.
 
 ## `prep.txt`
 

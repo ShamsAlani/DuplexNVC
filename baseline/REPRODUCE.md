@@ -174,8 +174,12 @@ Run everything from `~/Downloads/d`, in this order. Each script saves its consol
 | 30 | `cd ct && ./all` | `12_contention_experiment` | Memory load 0/25/50/75 % against the encoder alone and the paced B\* call (24 runs), then `./sum` | 55 min | **quiet**; **resumable** |
 | 31 | `cd he && ./all` | `14_hevc_anchor_experiment` | Energy of hardware HEVC and MLVC calls from the chip's energy counters (25 runs) | 70 min | **quiet**; **resumable** |
 | 32 | `./u` | `common` | Quiet mode off | 1 min | — |
+| 33 | `cd a3 && ./all` | `17_a3_forced_keyframe_experiment` | Rebuilds `harness_a1` with `--force-idr`, finds the Step 8 masters, check, 440 runs, analysis | 30 min | any; **resumable** |
+| 34 | `cd a1 && ./allb` | `13_a1_keyframe_qp_experiment` | Round 2 and E4: check (identical to experiment 10), 1,000 runs, analysis (needs step 33's build) | 75 min | any; **resumable** |
+| 35 | `./p`, then `cd bt && ./all` | `15_battery_lowpower_experiment`, `16_scene_analyzer_cost_experiment` | Battery blocks (unplug when asked; stops at 15 %, waits for the charger), then on AC: the analyzer variants, AC and AC + Low Power Mode blocks, the 30-min call; `btana.py`, then `python3 ../15…/scripts/battery_side.py` | ≈ 4 h + 2.6 h | **quiet**, password; start fully charged with Optimized Battery Charging off; **resumable** |
+| 36 | `./u` | `common` | Quiet mode off | 1 min | — |
 
-Do not press Ctrl-C during `./x`, `./w` or `./1`; a rerun moves the old folder aside. `./all` (09–14), `./mp` (11) and `./en` (10) are the exceptions: interrupt them at any time and run them again, and they continue where they stopped.
+Do not press Ctrl-C during `./x`, `./w` or `./1`; a rerun moves the old folder aside. `./all` (09–17), `./allb` (13), `./mp` (11) and `./en` (10) are the exceptions: interrupt them at any time and run them again, and they continue where they stopped.
 
 Check that every run used the processor it asked for:
 ```bash
@@ -226,4 +230,10 @@ Key values to check:
 | Model conversion (`2a`) failed for every size | The 1080p MP4s are in `vcd_1080p/mp4/th/`, and the converter names the 1080p test clip `<id>_1920x1080_30.yuv`; `s2cfg` and `2a` use both |
 | A 22-hour run can be interrupted | `all` skips finished runs and appends to its log |
 | `sudo` expiring during long runs | `1`, `all` and `en` refresh `sudo` every 50 s in the background |
+| `l16` (LTR period 8) failed on MLVC-S and stopped experiment 11's passes | libmlvc needs the LTR start index below the LTR period; `c.py` passes `--ltr-start-idx 0` |
+| Experiment 15 run at 75 % screen brightness | Repeated at maximum (quiet mode, §3); the battery-side power depends on the screen |
+| Experiment 15's battery blocks started at 80 % | macOS's Optimized Battery Charging held the charge at 80 %; turn it off the day before (System Settings → Battery) |
+| The analyzer's timing file was missing (experiment 16) | `va` is no longer stopped with the call; it finishes 12 s later and writes `va.csv` |
+| The analyzer looked cheaper than no analyzer | `btana.py` ends the energy window with the call's last frame (`frames.csv`), not when the analyzer ends |
+| Battery-side power of 60 s calls reads low | The battery gauge averages its current over tens of seconds; `battery_side.py` takes steady values from the 60-min and 5-min calls |
 | `./en` started without `./p` | Run `./p` in a second Terminal tab before the first idle recording; the stream preparation at the start is not measured |

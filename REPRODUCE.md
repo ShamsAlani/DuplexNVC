@@ -1,21 +1,24 @@
 # Reproducing everything
 
-All baseline measurements are in [`baseline/`](baseline/), in fourteen experiment folders. The Lab GPU Runs (fine-tuning MLVC on a GPU) have their own guide: **[`lab_gpu_runs/REPRODUCE.md`](lab_gpu_runs/REPRODUCE.md)**. The complete guide — tools, downloads, builds, quiet mode, the run order of every script, expected values and known problems — is **[`baseline/REPRODUCE.md`](baseline/REPRODUCE.md)**.
+All baseline measurements are in [`baseline/`](baseline/), in seventeen experiment folders. The Lab GPU Runs (fine-tuning MLVC on a GPU) have their own guide: **[`lab_gpu_runs/REPRODUCE.md`](lab_gpu_runs/REPRODUCE.md)**. The complete guide — tools, downloads, builds, quiet mode, the run order of every script, expected values and known problems — is **[`baseline/REPRODUCE.md`](baseline/REPRODUCE.md)**.
 
 ## In short
 
 ```bash
 # one-time setup: see baseline/REPRODUCE.md §1–2, then install every script:
 mkdir -p ~/Downloads/d
-find <repo>/baseline -path '*/scripts/*' ! -path '*/1[0-4]_*_experiment/*' -type f ! -name README.md -exec cp {} ~/Downloads/d/ \;
-mkdir -p ~/Downloads/d/{4b,5,ct,a1,hv,he}
+find <repo>/baseline -path '*/scripts/*' ! -path '*/1[0-7]_*_experiment/*' -type f ! -name README.md -exec cp {} ~/Downloads/d/ \;
+mkdir -p ~/Downloads/d/{4b,5,ct,a1,hv,he,bt,a3/data}
 cp <repo>/baseline/10_quality_per_setting_experiment/scripts/* ~/Downloads/d/4b/
 cp <repo>/baseline/11_correctness_drift_experiment/scripts/* ~/Downloads/d/5/
 cp <repo>/baseline/12_contention_experiment/scripts/* ~/Downloads/d/ct/
 cp <repo>/baseline/13_a1_keyframe_qp_experiment/scripts/* ~/Downloads/d/a1/
 cp <repo>/baseline/14_hevc_anchor_experiment/scripts/{all,hv.py,hvana.py} ~/Downloads/d/hv/
 cp <repo>/baseline/14_hevc_anchor_experiment/scripts/energy/* ~/Downloads/d/he/
-cp <repo>/baseline/common/code/{mlplan.swift,thermal_log.swift} ~/Downloads/d/ && chmod +x ~/Downloads/d/* ~/Downloads/d/{4b,5,ct,a1,hv,he}/*
+cp <repo>/baseline/15_battery_lowpower_experiment/scripts/* <repo>/baseline/16_scene_analyzer_cost_experiment/scripts/* ~/Downloads/d/bt/
+cp <repo>/baseline/17_a3_forced_keyframe_experiment/scripts/* ~/Downloads/d/a3/
+cp <repo>/baseline/17_a3_forced_keyframe_experiment/raw_data/data/* ~/Downloads/d/a3/data/
+cp <repo>/baseline/common/code/{mlplan.swift,thermal_log.swift} ~/Downloads/d/ && chmod +x ~/Downloads/d/* ~/Downloads/d/{4b,5,ct,a1,hv,he,bt,a3}/*
 cd ~/Downloads/d
 
 ./s; ./m; ./t                  # 01 smoke tests, streams
@@ -32,6 +35,16 @@ cd ~/Downloads/d
 cd 4b && ./all                 # 10 Part A: quality per setting (3 h, any conditions, resumable)
 cd .. && ./p && cd 4b && ./en  # 10 Part B: energy at every QP (7.7 h, quiet, resumable)
 cd .. && ./u
+cd 5 && ./all && ./mp && cd ..  # 11 correctness and drift (≈ 33 h, any conditions, resumable)
+cd a1 && ./all && cd ..        # 13 A1 round 1 (50 min)
+cd a3 && ./all && cd ..        # 17 A3 (30 min; builds the program round 2 needs)
+cd a1 && ./allb && cd ..       # 13 A1 round 2 and E4 (75 min)
+cd hv && ./all && cd ..        # 14 HEVC anchor, quality (10 min)
+./p                            # quiet mode on
+cd ct && ./all && cd ..        # 12 contention (55 min)
+cd he && ./all && cd ..        # 14 HEVC anchor, energy (75 min)
+cd bt && ./all && cd ..        # 15 battery and Low Power Mode, 16 scene-analyzer cost (≈ 4 h on battery + 2.6 h on AC)
+./u
 ```
 
 ## Quiet mode (all timed runs)

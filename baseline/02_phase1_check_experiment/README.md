@@ -4,6 +4,8 @@
 
 **What was run.** MLVC-S at 540p, QP 22, on the NE: 5 interleaved rounds of 60 s runs of each mode (taking turns, encoder alone, decoder alone, sharing), with 60 s rest after each run, plus 3 paced runs of taking turns at 30 fps.
 
+**Runs, including one set aside.** The first start (10 Nov 2026, 5:44 pm) was stopped after about 5 minutes: Wi-Fi was still on and the screen brightness had not yet been fixed, so its timings would not have been comparable. Its files are kept but not used (`../03_timing_experiment/raw_data/_superseded/e3a_aborted/`). The experiment was then run again from the start in quiet mode, 10 Nov 2026, 5:53–6:39 pm (46 min); every result below comes from that run.
+
 ## How to run
 
 | Script | What | Time | Conditions |

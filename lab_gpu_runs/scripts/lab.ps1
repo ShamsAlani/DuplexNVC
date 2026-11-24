@@ -332,11 +332,11 @@ keep=[s for s in d if all(os.path.isfile(os.path.join(out,s["path"],f)) for f in
 json.dump(keep,open(os.path.join(out,"description.json"),"w"))
 print(f"sequences listed {len(d)}, fully extracted {len(keep)}")
 '@ | Set-Content "$R\fixdata.py"
-  Push-Location $C; $r = Uvr python "$R\fixdata.py" $OUT 2>&1 | Out-String; Pop-Location
-  return $r.Trim()
+  Push-Location $C; $fdout = Uvr python "$R\fixdata.py" $OUT 2>&1 | Out-String; Pop-Location
+  return $fdout.Trim()
 }
 
-function Upload-Models {   # puts selected checkpoints + full logs on a GitHub release (files too big for the repo)
+function Upload-Models($only = "") {   # puts selected checkpoints + full logs on a GitHub release (files too big for the repo)
   $tok = (Get-Content "$G\token" -Raw).Trim(); $repo = (Get-Content "$G\repo" -Raw).Trim()
   $hdr = @{ Authorization = "Bearer $tok"; "User-Agent" = "lab"; Accept = "application/vnd.github+json" }
   $tag = "models-" + (Get-Date -Format "yyyyMMdd-HHmm")
@@ -344,13 +344,17 @@ function Upload-Models {   # puts selected checkpoints + full logs on a GitHub r
     -Body (@{ tag_name = $tag; name = "Lab models $tag"; body = "Checkpoints (model weights only) and full training logs." } | ConvertTo-Json)
   "release $tag created"
   $files = @()
-  foreach ($n in "control", "b1", "b1gate", "b2p25", "b2p75", "control_s2", "v1_control", "v1_b1") {
+  $names = "control", "b1", "b1gate", "b2p25", "b2p75", "control_s2", "v1_control", "v1_b1"
+  if ($only) { $names = $only -split "," }   # e.g. upload control,b1
+  foreach ($n in $names) {
     foreach ($ep in 9, 24, 49, 99, 149, 199, 299, 399) {
       $f = "$R\job-outputs\checkpoints\$n\model_epo$ep.ckpt"
       if (Test-Path $f) { $files += @{ path = $f; name = "${n}_epo$ep.ckpt" } }
     }
   }
-  Compress-Archive -Path "$L\*.txt" -DestinationPath "$R\logs_full.zip" -Force
+  $tmp = "$R\logs_copy"; Remove-Item -Recurse -Force $tmp -ErrorAction SilentlyContinue; New-Item -ItemType Directory $tmp | Out-Null
+  Get-ChildItem "$L\*.txt" | ForEach-Object { Get-Content $_.FullName -Raw | Set-Content "$tmp\$($_.Name)" }   # copies: logs in use are locked
+  Compress-Archive -Path "$tmp\*.txt" -DestinationPath "$R\logs_full.zip" -Force
   $files += @{ path = "$R\logs_full.zip"; name = "logs_full.zip" }
   foreach ($x in $files) {
     $u = "https://uploads.github.com/repos/$repo/releases/$($rel.id)/assets?name=$($x.name)"
@@ -396,8 +400,8 @@ function Pipeline {
     for ($e = $CHUNK; $e -le $MAXEP; $e += $CHUNK) {   # the runs of a phase advance together, 2 epochs at a time
       $fails = 0
       foreach ($n in $ph.runs.Keys) {
-        $r = $ph.runs[$n]
-        if (-not (TrainTo $n $e $r[0] $r[1])) { $fails++; Log pipeline.txt "$n FAILED at $e" }
+        $cfg = $ph.runs[$n]
+        if (-not (TrainTo $n $e $cfg[0] $cfg[1])) { $fails++; Log pipeline.txt "$n FAILED at $e" }
       }
       if ($fails -eq $ph.runs.Count) { Log pipeline.txt "STOPPED: every run crashes, see the run logs $(Get-Date)"; Push-Results "STOPPED - training crashes" | Out-Null; return }
       Log pipeline.txt "$($ph.label) at epoch $e  $(Get-Date)"; Push-Results "$($ph.label) at epoch $e" | Out-Null
@@ -424,7 +428,7 @@ switch ($cmd) {
               "started in a minimized window. Do NOT close it. Lock the PC (Win+L), don't log out." }
   "_run"    { Pipeline }
   "push"    { Push-Results "manual" }
-  "upload"  { Upload-Models }
+  "upload"  { Upload-Models $a1 }
   "fixdata" { Fix-Data }
   "ffmpeg"  { Ensure-Ffmpeg; ffmpeg -version | Select-Object -First 1 }
   "status"  {

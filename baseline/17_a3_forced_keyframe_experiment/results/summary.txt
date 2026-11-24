@@ -1,0 +1,50 @@
+A3: forced I-frame when the content changes (Step 8 multi-person clips)
+
+== forced I-frames per policy (clip: frames); real events from Step 8 in brackets
+   ce4peo: truth []  fused []  diff ['35', '65', '95', '125', '155', '185', '215', '251']
+   cejohn: truth []  fused []  diff ['30', '124']
+   cekris: truth []  fused []  diff ['30', '60', '90', '120', '150', '180', '210', '240', '270']
+   px2ent: truth ['20', '250']  fused ['70', '120', '210']  diff ['30', '60', '90', '120', '150', '180', '211', '241', '271']
+   px4ppl: truth ['20', '70', '80', '110']  fused ['100', '170', '260']  diff ['30', '60', '90', '120', '150', '180', '210', '240', '270']
+   px5ppl: truth []  fused ['220']  diff ['30', '63', '93', '123', '153', '183', '213', '243', '273']
+   px7ppl: truth []  fused []  diff ['30', '60', '90', '120', '150', '180', '210', '240', '270']
+   pxcrwd: truth ['60']  fused []  diff ['30', '60', '90', '120', '150', '180', '210', '240']
+   pxdown: truth []  fused ['130']  diff ['30', '60', '90', '120', '150', '180']
+   pxentr: truth ['90']  fused ['110', '140', '210']  diff ['30', '124', '154', '184', '214', '244', '274']
+   pxleav: truth []  fused []  diff ['30', '60', '90', '120']
+
+== B* (full MLVC 360p): BD-rate vs no forced I-frame (negative = fewer bits for the same quality); per clip: median, clips that gain
+   all 11 clips
+     truth      coded Y: +1.56 % (+0.00, 1/11)      display Y: +3.10 % (+0.00, 0/11)         face Y: +2.24 % (+0.00, 1/11)     face LPIPS: +3.73 % (+0.00, 1/11)   
+     fused      coded Y: +2.66 % (+0.00, 0/11)      display Y: +4.93 % (+0.00, 0/11)         face Y: +4.39 % (+0.00, 0/11)     face LPIPS: +4.72 % (+0.00, 0/11)   
+     diff       coded Y: +29.28 % (+31.87, 0/11)    display Y: +45.94 % (+42.82, 0/11)       face Y: +33.40 % (+34.11, 0/11)   face LPIPS: +36.48 % (+35.56, 1/11) 
+   4 clips with real entries
+     truth      coded Y: +3.56 % (+6.69, 1/4)       display Y: +8.24 % (+10.47, 0/4)         face Y: +5.72 % (+9.29, 1/4)      face LPIPS: +10.36 % (+17.17, 1/4)  
+     fused      coded Y: +4.38 % (+10.96, 0/4)      display Y: +9.69 % (+17.46, 0/4)         face Y: +7.73 % (+15.10, 0/4)     face LPIPS: +9.93 % (+16.74, 0/4)   
+     diff       coded Y: +24.54 % (+27.27, 0/4)     display Y: +39.49 % (+42.72, 0/4)        face Y: +22.72 % (+22.82, 0/4)    face LPIPS: +28.75 % (+28.95, 0/4)  
+   7 clips without
+     truth      coded Y: +0.00 % (+0.00, 0/7)       display Y: +0.00 % (+0.00, 0/7)          face Y: +0.00 % (+0.00, 0/7)      face LPIPS: +0.00 % (+0.00, 0/7)    
+     fused      coded Y: +1.30 % (+0.00, 0/7)       display Y: +2.05 % (+0.00, 0/7)          face Y: +2.25 % (+0.00, 0/7)      face LPIPS: +1.64 % (+0.00, 0/7)    
+     diff       coded Y: +32.63 % (+38.22, 0/7)     display Y: +49.95 % (+42.82, 0/7)        face Y: +39.45 % (+40.27, 0/7)    face LPIPS: +40.70 % (+39.19, 1/7)  
+
+== MLVC-S 540p: BD-rate vs no forced I-frame (negative = fewer bits for the same quality); per clip: median, clips that gain
+   all 11 clips
+     truth      coded Y: +1.83 % (+0.00, 0/11)      display Y: +3.18 % (+0.00, 0/11)         face Y: +2.17 % (+0.00, 1/11)     face LPIPS: +4.60 % (+0.00, 1/11)   
+     fused      coded Y: +2.88 % (+0.00, 0/11)      display Y: +4.60 % (+0.00, 0/11)         face Y: +2.88 % (+0.00, 0/11)     face LPIPS: +5.18 % (+0.00, 0/11)   
+     diff       coded Y: +26.60 % (+27.75, 0/11)    display Y: +40.71 % (+39.04, 0/11)       face Y: +30.91 % (+27.46, 0/11)   face LPIPS: +31.27 % (+35.20, 0/11) 
+   4 clips with real entries
+     truth      coded Y: +4.06 % (+6.12, 0/4)       display Y: +8.32 % (+9.44, 0/4)          face Y: +5.10 % (+9.37, 1/4)      face LPIPS: +11.20 % (+14.10, 1/4)  
+     fused      coded Y: +4.89 % (+10.70, 0/4)      display Y: +9.32 % (+16.46, 0/4)         face Y: +4.16 % (+9.50, 0/4)      face LPIPS: +9.25 % (+16.40, 0/4)   
+     diff       coded Y: +23.61 % (+24.78, 0/4)     display Y: +38.56 % (+42.04, 0/4)        face Y: +20.47 % (+20.17, 0/4)    face LPIPS: +24.17 % (+27.20, 0/4)  
+   7 clips without
+     truth      coded Y: +0.00 % (+0.00, 0/7)       display Y: +0.00 % (+0.00, 0/7)          face Y: +0.00 % (+0.00, 0/7)      face LPIPS: +0.00 % (+0.00, 0/7)    
+     fused      coded Y: +1.25 % (+0.00, 0/7)       display Y: +1.70 % (+0.00, 0/7)          face Y: +1.53 % (+0.00, 0/7)      face LPIPS: +2.10 % (+0.00, 0/7)    
+     diff       coded Y: +28.77 % (+35.96, 0/7)     display Y: +42.31 % (+38.70, 0/7)        face Y: +36.90 % (+36.98, 0/7)    face LPIPS: +36.05 % (+37.54, 0/7)  
+
+== cost of a switch (QP 26): forced I-frame size / mean of the 10 P-frames before it; coded PSNR-Y in the 30 frames after each real event (truth) vs no forced I-frame
+   B* (full MLVC 360p)  truth  forced   8  I-frame size  15.0x a P-frame  PSNR-Y after real events -0.06 dB
+   B* (full MLVC 360p)  fused  forced  11  I-frame size  12.4x a P-frame  PSNR-Y after real events +0.03 dB
+   B* (full MLVC 360p)  diff   forced  80  I-frame size  14.6x a P-frame  PSNR-Y after real events -0.00 dB
+   MLVC-S 540p          truth  forced   8  I-frame size  11.9x a P-frame  PSNR-Y after real events -0.08 dB
+   MLVC-S 540p          fused  forced  11  I-frame size  10.6x a P-frame  PSNR-Y after real events +0.02 dB
+   MLVC-S 540p          diff   forced  80  I-frame size  11.2x a P-frame  PSNR-Y after real events -0.00 dB

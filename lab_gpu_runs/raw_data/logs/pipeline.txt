@@ -414,3 +414,114 @@ both at epoch 196  11/21/2026 23:08:57
 both at epoch 198  11/21/2026 23:24:48
 both at epoch 200  11/21/2026 23:40:22
 ALL DONE 11/21/2026 23:40:35
+start 11/22/2026 18:02:39
+data ready 11/22/2026 18:02:55
+sequences listed 5411, fully extracted 5411
+v1 control/b1 kept as v1_control, v1_b1 (repeated samples); retraining with a new seed per chunk
+control FAILED at 2
+b1 FAILED at 2
+STOPPED: every run crashes, see the run logs 11/22/2026 18:04:05
+start 11/22/2026 18:08:14
+data ready 11/22/2026 18:08:33
+sequences listed 5411, fully extracted 5411
+Queue A at epoch 2  11/22/2026 18:24:56
+Queue A at epoch 4  11/22/2026 18:40:53
+Queue A at epoch 6  11/22/2026 18:56:43
+Queue A at epoch 8  11/22/2026 19:12:42
+Queue A at epoch 10  11/22/2026 19:28:39
+Queue A at epoch 12  11/22/2026 19:44:28
+Queue A at epoch 14  11/22/2026 20:00:35
+Queue A at epoch 16  11/22/2026 20:16:28
+Queue A at epoch 18  11/22/2026 20:32:15
+Queue A at epoch 20  11/22/2026 20:48:17
+Queue A at epoch 22  11/22/2026 21:04:26
+Queue A at epoch 24  11/22/2026 21:20:19
+Queue A at epoch 26  11/22/2026 21:36:12
+Queue A at epoch 28  11/22/2026 21:52:09
+Queue A at epoch 30  11/22/2026 22:08:10
+Queue A at epoch 32  11/22/2026 22:24:07
+Queue A at epoch 34  11/22/2026 22:40:16
+Queue A at epoch 36  11/22/2026 22:56:23
+Queue A at epoch 38  11/22/2026 23:12:22
+Queue A at epoch 40  11/22/2026 23:28:27
+Queue A at epoch 42  11/22/2026 23:44:25
+Queue A at epoch 44  11/23/2026 00:00:39
+Queue A at epoch 46  11/23/2026 00:16:52
+Queue A at epoch 48  11/23/2026 00:33:05
+Queue A at epoch 50  11/23/2026 00:48:55
+Queue A at epoch 52  11/23/2026 01:04:48
+Queue A at epoch 54  11/23/2026 01:20:51
+Queue A at epoch 56  11/23/2026 01:36:52
+Queue A at epoch 58  11/23/2026 01:52:46
+Queue A at epoch 60  11/23/2026 02:08:45
+Queue A at epoch 62  11/23/2026 02:24:41
+Queue A at epoch 64  11/23/2026 02:40:31
+Queue A at epoch 66  11/23/2026 02:56:26
+Queue A at epoch 68  11/23/2026 03:12:19
+Queue A at epoch 70  11/23/2026 03:28:24
+Queue A at epoch 72  11/23/2026 03:44:11
+Queue A at epoch 74  11/23/2026 04:00:00
+Queue A at epoch 76  11/23/2026 04:15:54
+Queue A at epoch 78  11/23/2026 04:32:08
+Queue A at epoch 80  11/23/2026 04:48:16
+Queue A at epoch 82  11/23/2026 05:04:19
+Queue A at epoch 84  11/23/2026 05:20:23
+Queue A at epoch 86  11/23/2026 05:36:12
+Queue A at epoch 88  11/23/2026 05:52:13
+Queue A at epoch 90  11/23/2026 06:08:12
+Queue A at epoch 92  11/23/2026 06:24:14
+Queue A at epoch 94  11/23/2026 06:40:08
+Queue A at epoch 96  11/23/2026 06:56:01
+Queue A at epoch 98  11/23/2026 07:11:59
+Queue A at epoch 100  11/23/2026 07:27:55
+Queue A at epoch 102  11/23/2026 07:43:52
+Queue A at epoch 104  11/23/2026 07:59:57
+Queue A at epoch 106  11/23/2026 08:16:04
+Queue A at epoch 108  11/23/2026 08:32:17
+Queue A at epoch 110  11/23/2026 08:48:12
+Queue A at epoch 112  11/23/2026 09:04:23
+Queue A at epoch 114  11/23/2026 09:20:35
+Queue A at epoch 116  11/23/2026 09:36:24
+Queue A at epoch 118  11/23/2026 09:52:11
+Queue A at epoch 120  11/23/2026 10:08:21
+Queue A at epoch 122  11/23/2026 10:24:10
+Queue A at epoch 124  11/23/2026 10:39:56
+Queue A at epoch 126  11/23/2026 10:55:54
+Queue A at epoch 128  11/23/2026 11:11:59
+Queue A at epoch 130  11/23/2026 11:27:56
+Queue A at epoch 132  11/23/2026 11:43:55
+Queue A at epoch 134  11/23/2026 11:59:51
+Queue A at epoch 136  11/23/2026 12:15:55
+Queue A at epoch 138  11/23/2026 12:31:51
+Queue A at epoch 140  11/23/2026 12:47:37
+Queue A at epoch 142  11/23/2026 13:03:38
+Queue A at epoch 144  11/23/2026 13:19:48
+Queue A at epoch 146  11/23/2026 13:35:55
+Queue A at epoch 148  11/23/2026 13:51:45
+Queue A at epoch 150  11/23/2026 14:08:08
+Queue A at epoch 152  11/23/2026 14:24:11
+Queue A at epoch 154  11/23/2026 14:40:11
+Queue A at epoch 156  11/23/2026 14:56:01
+Queue A at epoch 158  11/23/2026 15:12:04
+Queue A at epoch 160  11/23/2026 15:27:58
+Queue A at epoch 162  11/23/2026 15:43:52
+Queue A at epoch 164  11/23/2026 15:59:51
+Queue A at epoch 166  11/23/2026 16:15:52
+Queue A at epoch 168  11/23/2026 16:31:48
+Queue A at epoch 170  11/23/2026 16:47:44
+Queue A at epoch 172  11/23/2026 17:03:37
+Queue A at epoch 174  11/23/2026 17:19:28
+Queue A at epoch 176  11/23/2026 17:35:46
+Queue A at epoch 178  11/23/2026 17:51:41
+Queue A at epoch 180  11/23/2026 18:07:46
+Queue A at epoch 182  11/23/2026 18:23:48
+Queue A at epoch 184  11/23/2026 18:39:42
+Queue A at epoch 186  11/23/2026 18:55:27
+Queue A at epoch 188  11/23/2026 19:11:16
+Queue A at epoch 190  11/23/2026 19:27:17
+Queue A at epoch 192  11/23/2026 19:43:11
+Queue A at epoch 194  11/23/2026 19:59:00
+Queue A at epoch 196  11/23/2026 20:15:02
+Queue A at epoch 198  11/23/2026 20:30:55
+Queue A at epoch 200  11/23/2026 20:47:02
+Queue B+C at epoch 2  11/23/2026 21:19:15

@@ -4,7 +4,7 @@ This folder holds DuplexNVC's **network-level** experiments: small changes to ML
 
 ## Why
 
-The baseline found that MLVC **drifts** when its decoder runs on the GPU or CPU instead of the Neural Engine (worst frame 38.5 dB, [`baseline/04_correctness_experiment`](../baseline/04_correctness_experiment/)), and that a GPU encoder costs about 4 % in bitrate ([`baseline/10_quality_per_setting_experiment`](../baseline/10_quality_per_setting_experiment/)). The codec-level mechanisms work around this without touching the network. These runs ask whether **changing the network itself**, in ways the MLVC paper never tested, removes the cause.
+The baseline found that MLVC **drifts** when encoder and decoder run on different processors: every pairing decodes correctly, but no two processors decode alike, and the difference grows until the next I-frame (worst frames 21–38 dB). Mixing the GPU and the Neural Engine costs 3–7 % in bitrate, the CPU 7–20 % ([`baseline/11_correctness_drift_experiment`](../baseline/11_correctness_drift_experiment/); first seen in [`04_correctness_experiment`](../baseline/04_correctness_experiment/)). The codec-level mechanisms work around this without touching the network. These runs ask whether **changing the network itself**, in ways the MLVC paper never tested, removes the cause.
 
 A changed network has to be retrained, and training needs a CUDA GPU, which the Mac does not have. So the work is split:
 
@@ -25,7 +25,7 @@ Every run fine-tunes MLVC from its released PSNR checkpoint (`mlvc-psnr-v1.ckpt`
 | 7 | `control_s2` | Control with other random seeds | **Training noise.** A change counts only if its effect is larger than the difference between two identical controls |
 | 6 | `b1` continued | B1 trained twice as long (epochs 200–399) | Does B1's small quality cost shrink with more training? |
 
-`v1_control` and `v1_b1` are the first runs of 1 and 2. They replayed the same training samples in every 2-epoch chunk (explained below and in [`results/`](results/)), so they are kept for reference and runs 1 and 2 are trained again.
+`v1_control` and `v1_b1` are the first runs of 1 and 2. They replayed the same training samples in every 2-epoch chunk (explained below and in [`results/`](results/)), so they are kept for reference only; runs 1 and 2 were trained again (Queue A).
 
 ## Setup
 
@@ -67,23 +67,33 @@ Every run fine-tunes MLVC from its released PSNR checkpoint (`mlvc-psnr-v1.ckpt`
 
 ## Results so far
 
-| Question | Answer | Details |
-|---|---|---|
-| What does it cost to fine-tune MLVC? | **0.22 s per step; 3.9 min per epoch; about 13 h for a 200-epoch run** on one RTX 3060 Ti. Data preparation, once: about 8 h | [`results/`](results/) |
-| What does B1 cost in quality? (first runs) | **−0.07 dB PSNR at +0.6 % bpp** on training clips, against a control trained on exactly the same samples; the same in every one of the last 40 epochs | [`results/`](results/) |
-| Are the first runs usable? | **For the comparison, yes; as models, with care.** Each 2-epoch chunk replayed the same ≈ 4,000 samples, so both probably over-fitted them | [`results/`](results/) |
-| Does B1 reduce drift? | Not yet known: drift is measured on the Mac | — |
+Full analysis: [`results/README.md`](results/README.md).
 
-## Status
+| Question | Answer |
+|---|---|
+| What does it cost to fine-tune MLVC? | **0.23 s per step; 4.0 min per epoch; 13.2 h for a 200-epoch run** on one RTX 3060 Ti; data preparation once, about 8 h |
+| Does the fix for replayed samples work? | **Yes.** The fixed even/odd gap of the first runs (0.003 in loss) is gone in Queue A |
+| What does fine-tuning do to the control? | **Very little.** With fresh samples the control's loss is flat after about 20 epochs (30.2–30.3 dB), so it stays close to the released MLVC. The first runs kept "improving" only by memorising their ≈ 4,000 samples, so they are not used |
+| What does B1 cost in quality? | **−0.06 dB PSNR at +0.23 % bitrate** (loss +1.0 %) after 200 epochs, against a control trained on the same samples. B1 starts 3.4 dB worse (new functions under trained weights) and recovers almost all of it; the gap still closes slowly (about 0.03 dB per 100 epochs) |
+| Does B1 reduce drift? | To be measured on the Mac |
 
-| Step | When | Status |
-|---|---|---|
-| Lab setup, data, training cost | 19–20 Nov 2026 | Done |
-| First control and B1 runs (`v1_control`, `v1_b1`), 200 epochs each | 20 Nov 21:21 – 21 Nov 23:40 | Done (kept for reference) |
-| Queue A: control and B1 with a seed per chunk | Next, about 26 h | — |
-| Queue B+C: B1 + input gate, I-frame dropout 0.25 and 0.75, control with other seeds | After Queue A, about 53 h | — |
-| Run 6: B1 to 400 epochs | Last, about 13 h | — |
-| Tests on the Mac (quality on VCD, drift across processors, speed, energy) and choice of the best model for the controller | After each queue | — |
+## Status, including the runs set aside
+
+Lab PC time (+04), from the pipeline log ([`raw_data/README.md`](raw_data/README.md)):
+
+| Step | When | Time | Status |
+|---|---|---|---|
+| First pipeline start | 19 Nov 2026, 8:32–9:22 pm | 0.8 h | Data downloaded and unpacked (kept). **Every training start then failed:** MLVC's `flat_parameters` needs `torch.compile`, which we turn off. Fixed (`flat_parameters` off); no training happened |
+| Fixing the frame extraction | 20 Nov 2026, 1:09–1:30 pm | 0.35 h | Three short restarts: ffmpeg missing, then an option removed from current ffmpeg. Fixed |
+| Frame extraction, 5,411 training sequences | 20 Nov 2026, 1:30–9:21 pm | 7.9 h | Done, used by every run |
+| First control and B1 runs (`v1_control`, `v1_b1`), 200 epochs each | 20 Nov 2026, 9:21 pm – 21 Nov, 11:40 pm | 26.3 h | **Set aside as models.** A fixed seed with a restart every 2 epochs replayed the same ≈ 4,000 samples in every chunk, so both runs memorised them (see Results). Kept for reference; the seed is now set per chunk and control and B1 were trained again |
+| Restart with the fix | 22 Nov 2026, 6:02–6:04 pm | 2 min | Stopped by a script error, fixed |
+| **Queue A: control and B1 with a seed per chunk** | 22 Nov 2026, 6:08 pm – 23 Nov, 8:47 pm | 26.7 h | **Done, used**; models in release `models-20261123-2054` |
+| Queue B+C: B1 + input gate, I-frame dropout 0.25 and 0.75, control with other seeds | 23 Nov 2026, 8:47 pm – about 26 Nov, 1:00 am | ≈ 53 h | Running |
+| Run 6: B1 to 400 epochs | About 26 Nov, 1:00 am – 2:00 pm | ≈ 13 h | Waiting |
+| Tests on the Mac (quality on VCD, drift across processors, speed, energy) and choice of the best model for the controller | After each queue | — | — |
+
+Up to Queue A, the lab ran about 62 GPU-hours: about 35 h are in the results, about 27 h were set aside (almost all of it the first control and B1 runs). Not counted: the lab visits to set the PC up, when downloads ran at 100–300 kB/s before the pipeline used 32 parallel connections.
 
 The success criterion is fixed before the Mac tests: a change helps only if it reduces drift by more than the difference between `control` and `control_s2`, at a quality cost on the VCD clips below about 0.2 dB. Earlier checkpoints (epochs 50–150) are tested too, in case later ones over-fit.
 

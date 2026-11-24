@@ -1,0 +1,16 @@
+t0_epoch_ms=1795483093195.94
+mode=duplex
+size=1280x720
+qp=26
+iframe_period=64
+fps=30
+deadline_ms=33.3333333333333
+seconds=60
+enc_cu=gpu
+dec_cu=npu
+warmup_frames=64
+bundles=/Users/shamsalani/Downloads/duplexnvc-baseline/bundles/mlvcs_720p
+input=/Users/shamsalani/Downloads/duplexnvc-baseline/data/nv12/cam_720p.nv12
+incoming=/Users/shamsalani/Downloads/duplexnvc-baseline/data/incoming/mlvcs_720p-qp26/incoming.aus
+encoder_dropped=0
+decoder_failures=0

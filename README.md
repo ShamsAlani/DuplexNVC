@@ -14,15 +14,15 @@ In a video call, every laptop does two jobs at once: it **encodes** its own came
 
 | Folder | Contents |
 |---|---|
-| [`baseline/`](baseline/) | The Phase 2 **baseline**, in fourteen experiments: smoke tests, Phase 1 check, timing of the core baseline B\*, correctness, quality, energy, processor, model conversion, placement, quality-per-setting, correctness and drift of every encoder/decoder pair, contention, the first codec-level mechanism (A1, key-frame bits) and the on-device HEVC anchor. Each experiment folder has its scripts, raw data, results and a README with what it shows and what we concluded |
-| [`lab_gpu_runs/`](lab_gpu_runs/) | **Tier B: changes to the MLVC network**, fine-tuned on a lab GPU (control, piecewise-linear memory gates B1, B1 + input gate, I-frame dropout B2, a second control for training noise). Scripts of the whole training pipeline, the input-gate patch, training logs, the measured cost of training and the first results |
+| [`baseline/`](baseline/) | The Phase 2 **baseline**, in seventeen experiments: smoke tests, Phase 1 check, timing of the core baseline B\*, correctness, quality, energy, processor, model conversion, placement, quality-per-setting, correctness and drift of every encoder/decoder pair, contention, codec-level mechanisms A1 (key-frame bits, with E4) and A3 (forced key frames), the on-device HEVC anchor, energy on battery and in Low Power Mode, and the cost of the scene analyzer. Each experiment folder has its scripts, raw data, results and a README with what it shows and what we concluded |
+| [`lab_gpu_runs/`](lab_gpu_runs/) | **Lab GPU Runs: changes to the MLVC network**, fine-tuned on a lab GPU (control, piecewise-linear memory gates B1, B1 + input gate, I-frame dropout B2, a second control for training noise). The whole training pipeline, the input-gate change, complete training logs, the cost of training and the results so far, each folder with its own README |
 | [`controller_data/`](controller_data/) | **Step 8: controller data.** 11 stock multi-person clips (HEVC Class E, Pexels) and 6 video-call clips we recorded ourselves (people joining, leaving, stepping away, looking away, someone walking past), face labels and face-size groups, real events annotated manually, and a comparison of Apple Vision's face and body detectors (and their combinations) as scene-change triggers, on stock and call clips separately. Scripts, raw data, results, a video wall of the call clips and a README |
 | [`detection_recall/`](detection_recall/) | **Step 7: detection recall.** The smallest face the scene analyzer's face detector (Apple Vision) finds when it runs on the camera frame at the call resolution (360p, 540p, 720p) instead of the full-size original, by face size, on the Step 8 stock clips and our recorded call clips. Scripts, raw data, results, check images and a README |
 | [`reports/`](reports/) | Literature review, survey and Phase 2 baseline report (PDF) |
 | [`demo/`](demo/) | Demo video: MLVC-S encoding and decoding a talking-head clip, original and decoded side by side |
 | [`REPRODUCE.md`](REPRODUCE.md) | How to rerun everything and rebuild every result |
 
-The baseline took about **75 hours** of measurement (≈ 5.3 h for the core baseline B\*, ≈ 24 h for the processor, model conversion and placement experiments, including one run of 21.4 hours, ≈ 10.7 h for quality and energy at every setting and QP, ≈ 33 h for correctness and drift of every encoder/decoder pair, and ≈ 2 h for contention, A1 and the HEVC anchor), every timed run in the same fixed **quiet mode** (below).
+The baseline took about **83 hours** of measurement (≈ 5.3 h for the core baseline B\*, ≈ 24 h for the processor, model conversion and placement experiments, including one run of 21.4 hours, ≈ 10.7 h for quality and energy at every setting and QP, ≈ 33 h for correctness and drift of every encoder/decoder pair, ≈ 4 h for contention, A1, A3 and the HEVC anchor, and ≈ 6.4 h for battery, Low Power Mode and the scene analyzer); about 10 more hours of runs were set aside and repeated, each explained in its experiment's README. Every timed run in the same fixed **quiet mode** (below).
 
 ## Key results
 
@@ -85,18 +85,26 @@ Energy at 287 kbps from experiment 10 (re-measured at five QPs; B\* 63 mJ, 3 % b
 - **Memory bandwidth does not limit the NE:** with 217 GB/s of competing traffic the encoder slows by only 4.4 % (the same test on an M1: 18.8 %).
 - **A background memory load makes paced calls faster:** 12.6 → 7.4 ms per frame. In the idle gaps of a paced call the chip lowers its clocks; keeping memory busy keeps them up (energy cost not yet measured).
 
-### Codec-level mechanism A1 and the HEVC anchor (experiments 13 and 14)
+### Codec-level mechanisms A1 and A3, and the HEVC anchor (experiments 13, 14 and 17)
 
-- **A1:** a lower QP on the I-frame saves 1.3 % (coded PSNR), 2.2 % (display PSNR) and 3.5 % (face LPIPS) of the bits at −6, still growing. Full MLVC uses no LTR frames by default, so the LTR half of A1 needs a structure with LTRs.
+- **A1:** a lower QP on the I-frame saves bits; **−8 is the best offset**: −1.2 % (B\*) and −2.6 % (MLVC-S 540p) on coded PSNR, about −6 % on face LPIPS. A lower QP on LTR frames never helps (MLVC-S, with and without a structure that uses the LTRs).
+- **E4 (A1 inside A2's drift bound):** the bound costs +9.7 % (the same as experiment 11 measured); the I-frame offset wins back about a fifth of it (+7.7 %).
+- **A3:** a key frame forced when people join or leave **does not pay** in MLVC: it costs 11–15 P-frames' worth of bits, and the picture after the event is no better. +1.6 % with a perfect trigger, +29 % with a frame-difference trigger. Scene events should change the setting, not force key frames.
 - **The Mac's real-time hardware HEVC needs +69 % more bits than B\*** (coded PSNR-Y) and more than twice full MLVC 720p's; only on face LPIPS does it match MLVC-S 720p. Its energy is measured next.
 
-### Tier B: network-level changes (in progress)
+### Energy on battery and in Low Power Mode, and the scene analyzer's cost (experiments 15 and 16)
+
+- **On battery the chip spends the same energy as on AC,** at high and low charge (B\* 76.8 mJ per frame pair). **Low Power Mode** saves 6.6 % for B\* with no late frames, but makes 18–20 % of a GPU encoder's frames late (MLVC-S 720p).
+- **A B\* call lasts about 10 hours on battery** (the whole laptop draws 7.8 W at maximum brightness, 1.5× the chip's share); MLVC-S 720p with its GPU encoder about 1.7 hours. No thermal drift in a 60-minute call.
+- **The scene analyzer fits inside the call:** Vision face and body detection every 15 frames costs 0.63 ms and +0.75 mJ (+1 %) per frame pair, with no late frames; pinning it to the CPU is slower and dearer.
+
+### Lab GPU Runs: changes to the MLVC network (in progress)
 
 | Question | Answer so far |
 |---|---|
-| What does a fine-tune of MLVC cost? (E5) | **0.22 s per step; ≈ 13 h for 200 epochs (200,000 steps)** on one RTX 3060 Ti (8 GB) |
-| What does B1 (hard_tanh / hard_sigmoid gates) cost in quality? | **−0.07 dB PSNR** at +0.7 % bpp on training clips, vs a control trained the same way (first runs; being retrained, see [`lab_gpu_runs/`](lab_gpu_runs/)) |
-| Does B1 reduce drift on the GPU/CPU? | To be measured on the Mac |
+| What does a fine-tune of MLVC cost? | **0.23 s per step; ≈ 13 h for 200 epochs (200,000 steps)** on one RTX 3060 Ti (8 GB) |
+| What does B1 (hard_tanh / hard_sigmoid gates) cost in quality? | **−0.06 dB PSNR at +0.23 % bitrate** on training clips after 200 epochs, against a control trained on the same samples; it starts 3.4 dB worse and recovers almost all of it ([`lab_gpu_runs/`](lab_gpu_runs/)) |
+| Does B1 reduce drift on the GPU/CPU? | To be measured on the Mac with the trained models |
 
 ### Step 8: controller data (multi-person clips and our own call clips)
 
@@ -159,8 +167,33 @@ Every timed and energy run used the same state:
 DuplexNVC/
 ├── README.md                          this file
 ├── REPRODUCE.md                       how to rerun everything and rebuild every result
-├── reports/                           literature review, survey and Phase 2 baseline report (PDF)
-├── demo/                              demo video: MLVC-S encoding and decoding on the M4 Pro
+├── baseline/
+│   ├── README.md                      overview of the seventeen experiments and headline results
+│   ├── REPRODUCE.md                   setup, run order, conditions, expected values
+│   ├── common/                        measurement program, analysis tools, shared scripts, rebuild scripts
+│   ├── 01_smoke_test_experiment/      S1, S2: does the pipeline work?
+│   ├── 02_phase1_check_experiment/    E3a: does the new program reproduce Phase 1?
+│   ├── 03_timing_experiment/          E1–E4, B*: speed, sharing the NE, real time at 30 fps
+│   ├── 04_correctness_experiment/     E5: decoding correctness and drift across processors
+│   ├── 05_quality_experiment/         E6: BD-rate, rate–distortion, display and face quality
+│   ├── 06_energy_experiment/          E7: energy of B* per frame pair
+│   ├── 07_processor_experiment/       X1: placement trace; each network alone on NE, GPU, CPU
+│   ├── 08_model_conversion_experiment/ X2: full MLVC and MLVC-S at 540p/720p/1080p
+│   ├── 09_placement_experiment/       X3: every setting × placement, table of feasible settings
+│   ├── 10_quality_per_setting_experiment/ quality of all 7 settings, energy at every QP, energy–quality Pareto
+│   ├── 11_correctness_drift_experiment/ Step 5 + A2: all 9 encoder→decoder pairs, drift, drift bounds, multi-person
+│   ├── 12_contention_experiment/       memory load vs the NE: is bandwidth the limit? why are paced calls slow?
+│   ├── 13_a1_keyframe_qp_experiment/   A1: lower QP on key frames; E4: A1 inside A2's drift bound
+│   ├── 14_hevc_anchor_experiment/      Step 9: the Mac's real-time hardware HEVC at MLVC's bitrates
+│   ├── 15_battery_lowpower_experiment/ Step 6: battery, Low Power Mode, 30- and 60-min calls
+│   ├── 16_scene_analyzer_cost_experiment/ Step 7: cost of face and body detection inside the call
+│   └── 17_a3_forced_keyframe_experiment/ A3: a forced key frame when people join or leave
+├── lab_gpu_runs/                      changes to the MLVC network, trained on a lab GPU
+│   ├── README.md                      why, the runs, setup, settings, problems met, results so far
+│   ├── REPRODUCE.md                   how to rerun the training and rebuild the results
+│   ├── scripts/                       lab.ps1 (pipeline), patch_input_gate.py, analyze_training.py (+ README)
+│   ├── raw_data/logs/                 pipeline, data and complete training logs (+ READMEs)
+│   └── results/                       tables, figures and analysis (+ README)
 ├── controller_data/                   Step 8: multi-person clips, face and body labels, events, detector comparison
 │   ├── README.md                      stock clips and our call clips: method, results, participant rule, conclusion
 │   ├── scripts/                       s8_setup, s8_prep.py, s8_table.py, bodybox.swift, s8_bodies.py, s8_fusion.py,
@@ -173,38 +206,16 @@ DuplexNVC/
 │   ├── scripts/                       s7_recall.py, s7_run
 │   ├── raw_data/                      face boxes at 360p/540p/720p/1080p, machine
 │   └── results/                       recall by size, recall curve, smallest face, per clip, extra boxes, check images
-├── lab_gpu_runs/                      Tier B, network-level changes: lab GPU training pipeline, logs, results
-│   ├── README.md                      the runs, settings, problems met, results so far
-│   ├── REPRODUCE.md                   how to rerun the training and rebuild the results
-│   ├── scripts/                       lab.ps1 (pipeline), patch_input_gate.py, analyze_training.py
-│   ├── raw_data/logs/                 training and pipeline logs
-│   └── results/                       per-epoch tables, run comparison, training cost, figure
-└── baseline/
-    ├── README.md                      overview of the fourteen experiments and headline results
-    ├── REPRODUCE.md                   setup, run order, conditions, expected values
-    ├── common/                        measurement program, analysis tools, shared scripts, rebuild scripts
-    ├── 01_smoke_test_experiment/      S1, S2: does the pipeline work?
-    ├── 02_phase1_check_experiment/    E3a: does the new program reproduce Phase 1?
-    ├── 03_timing_experiment/          E1–E4, B*: speed, sharing the NE, real time at 30 fps
-    ├── 04_correctness_experiment/     E5: decoding correctness and drift across processors
-    ├── 05_quality_experiment/         E6: BD-rate, rate–distortion, display and face quality
-    ├── 06_energy_experiment/          E7: energy of B* per frame pair
-    ├── 07_processor_experiment/       X1: placement trace; each network alone on NE, GPU, CPU
-    ├── 08_model_conversion_experiment/ X2: full MLVC and MLVC-S at 540p/720p/1080p
-    ├── 09_placement_experiment/       X3: every setting × placement, table of feasible settings
-    ├── 10_quality_per_setting_experiment/ quality of all 7 settings, energy at every QP, energy–quality Pareto
-    ├── 11_correctness_drift_experiment/ Step 5 + A2: all 9 encoder→decoder pairs, drift, drift bounds, multi-person
-    ├── 12_contention_experiment/       memory load vs the NE: is bandwidth the limit? why are paced calls slow?
-    ├── 13_a1_keyframe_qp_experiment/   A1: lower QP on key frames
-    └── 14_hevc_anchor_experiment/      Step 9: the Mac's real-time hardware HEVC at MLVC's bitrates
+├── reports/                           literature review, survey and Phase 2 baseline report (PDF)
+└── demo/                              demo video: MLVC-S encoding and decoding on the M4 Pro
 ```
 
 Each experiment folder holds `scripts/`, `raw_data/`, `results/` and a README.
 
 ## Reproducing
 
-Full guide: [`baseline/REPRODUCE.md`](baseline/REPRODUCE.md) (summary in [`REPRODUCE.md`](REPRODUCE.md)). Setup takes a few hours of downloads and builds; the fourteen experiments take about 75 hours, the longest being the resumable 21.4-hour placement experiment. Without a Mac, every table and figure can be rebuilt from the raw data with the three scripts in [`baseline/common/analysis/`](baseline/common/analysis/). Tier B training (Windows PC with an NVIDIA GPU) and its analysis: [`lab_gpu_runs/REPRODUCE.md`](lab_gpu_runs/REPRODUCE.md).
+Full guide: [`baseline/REPRODUCE.md`](baseline/REPRODUCE.md) (summary in [`REPRODUCE.md`](REPRODUCE.md)). Setup takes a few hours of downloads and builds; the seventeen experiments take about 83 hours, the longest being the resumable 21.4-hour placement experiment. Without a Mac, every table and figure can be rebuilt from the raw data with the three scripts in [`baseline/common/analysis/`](baseline/common/analysis/). Lab GPU Runs (Windows PC with an NVIDIA GPU) and their analysis: [`lab_gpu_runs/REPRODUCE.md`](lab_gpu_runs/REPRODUCE.md).
 
 ## Next steps
 
-The baseline is complete for timing and energy. Correctness of every encoder/decoder pairing (experiment 11) and the on-device HEVC anchor's quality (experiment 14) are done. Still to be measured: the HEVC anchor's energy; energy on battery and in Low Power Mode (plus a check against an external power meter, if hardware is provided); and the cost of face-based scene analysis. Multi-person data is done (Step 8, [`controller_data/`](controller_data/)), including six video-call clips we recorded (faces catch every join and leave in them; a participant rule handles someone walking past), and so is the detector's recall at the call resolution (Step 7, [`detection_recall/`](detection_recall/): every face from 32 px at 360p is found). DuplexNVC itself — a controller that chooses placement, schedule, resolution and model from the content and the energy state — will then be measured against B\* with exactly this protocol.
+The baseline is complete for timing and energy. Correctness of every encoder/decoder pairing (experiment 11) and the on-device HEVC anchor's quality (experiment 14) are done. Energy on battery and in Low Power Mode (experiment 15) and the cost of the scene analyzer (experiment 16) are done, and so are A1 with E4 (experiment 13) and A3 (experiment 17). Still to be measured: the HEVC anchor's energy, A0 (a check of libmlvc's per-frame controls), A4, E1–E3 and E6, and the Lab GPU models on the Mac. Multi-person data is done (Step 8, [`controller_data/`](controller_data/)), including six video-call clips we recorded (faces catch every join and leave in them; a participant rule handles someone walking past), and so is the detector's recall at the call resolution (Step 7, [`detection_recall/`](detection_recall/): every face from 32 px at 360p is found). DuplexNVC itself — a controller that chooses placement, schedule, resolution and model from the content and the energy state — will then be measured against B\* with exactly this protocol.

@@ -4,6 +4,8 @@
 
 **What was run.** 120 s of idle recording, then 5 paced B\* runs of 60 s, each with `powermetrics` (samplers `cpu_power` and `gpu_power`; the latter includes the NE) sampling about every 125 ms. Run power is averaged over a 56 s steady window (1 s inside each end of the timed part), idle power is subtracted, and the result is divided by the frame pairs completed.
 
+**Runs, including one set aside.** The first attempt (10 Nov 2026, 8:48–10:39 pm, about 1.8 h) recorded the idle power and the first run, then hung: the script's `wait` also waited for the background loop that keeps the password valid, which never ends. It was stopped and set aside (`../03_timing_experiment/raw_data/_superseded/bl_energy_old_223915/`), the script was fixed to wait only for the measurement (`wait $!`), and the experiment was run again from the start, 10 Nov 2026, 10:39–10:55 pm (16 min). Every result below comes from that run.
+
 ## How to run
 
 | Script | What | Time | Conditions |

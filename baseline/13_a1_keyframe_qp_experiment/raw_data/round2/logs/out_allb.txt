@@ -1,0 +1,1069 @@
+
+== A1b START  Tue Nov 24 16:43:36 +04 2026
+Now drawing from 'AC Power'
+
+== check (first clip, QP 26, o0 and r0)
+CHECK: 1 clips x 2 configurations x QP [26]; 2 runs to do
+/Users/shamsalani/Downloads/duplexnvc-baseline/.venv/lib/python3.13/site-packages/torchvision/models/_utils.py:207: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/Users/shamsalani/Downloads/duplexnvc-baseline/.venv/lib/python3.13/site-packages/torchvision/models/_utils.py:222: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=AlexNet_Weights.IMAGENET1K_V1`. You can also use `weights=AlexNet_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+== clip 1/1 08ee5e  16:43:38
+   [1/2] mlvcs_540p o0   qp26    270.6 kbps  Y 40.06  disp 36.45  face 39.25 / 0.164  I 5, LTR 19, recovery 0  same as exp. 10: YES  4 s  left ~0.0 h
+   [2/2] mlvcs_540p r0   qp26    305.0 kbps  Y 40.17  disp 36.51  face 39.23 / 0.166  I 5, LTR 19, recovery 5  4 s  left ~0.0 h
+== MLVC-S 540p offset 0 identical to experiment 10's bitstreams: 1 of 1
+== 2 runs, 0.1 min
+
+== runs, pass 1  Tue Nov 24 16:43:46 +04 2026
+FULL: 20 clips x 10 configurations x QP [16, 24, 26, 32, 40]; 998 runs to do
+/Users/shamsalani/Downloads/duplexnvc-baseline/.venv/lib/python3.13/site-packages/torchvision/models/_utils.py:207: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/Users/shamsalani/Downloads/duplexnvc-baseline/.venv/lib/python3.13/site-packages/torchvision/models/_utils.py:222: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=AlexNet_Weights.IMAGENET1K_V1`. You can also use `weights=AlexNet_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+== clip 1/20 08ee5e  16:43:47
+   [1/998] mlvc_360p  i8   qp16    332.4 kbps  Y 41.87  disp 34.27  face 39.29 / 0.173  I 5, LTR 0, recovery 0  4 s  left ~1.3 h
+   [2/998] mlvc_360p  i8   qp24    191.6 kbps  Y 40.30  disp 33.83  face 38.20 / 0.197  I 5, LTR 0, recovery 0  4 s  left ~1.2 h
+   [3/998] mlvc_360p  i8   qp26    163.4 kbps  Y 39.69  disp 33.63  face 37.75 / 0.207  I 5, LTR 0, recovery 0  4 s  left ~1.2 h
+   [4/998] mlvc_360p  i8   qp32     92.7 kbps  Y 37.15  disp 32.56  face 35.87 / 0.238  I 5, LTR 0, recovery 0  4 s  left ~1.2 h
+   [5/998] mlvc_360p  i8   qp40     40.1 kbps  Y 32.91  disp 30.03  face 32.70 / 0.303  I 5, LTR 0, recovery 0  4 s  left ~1.2 h
+   [6/998] mlvc_360p  i10  qp16    332.4 kbps  Y 41.87  disp 34.27  face 39.29 / 0.173  I 5, LTR 0, recovery 0  4 s  left ~1.2 h
+   [7/998] mlvc_360p  i10  qp24    191.6 kbps  Y 40.30  disp 33.83  face 38.20 / 0.197  I 5, LTR 0, recovery 0  4 s  left ~1.2 h
+   [8/998] mlvc_360p  i10  qp26    163.4 kbps  Y 39.69  disp 33.63  face 37.75 / 0.207  I 5, LTR 0, recovery 0  4 s  left ~1.2 h
+   [9/998] mlvc_360p  i10  qp32     97.6 kbps  Y 37.34  disp 32.65  face 36.05 / 0.233  I 5, LTR 0, recovery 0  4 s  left ~1.2 h
+   [10/998] mlvc_360p  i10  qp40     43.5 kbps  Y 33.31  disp 30.31  face 32.95 / 0.290  I 5, LTR 0, recovery 0  4 s  left ~1.2 h
+   [11/998] mlvcs_540p o0   qp16    800.0 kbps  Y 42.39  disp 37.71  face 41.51 / 0.120  I 5, LTR 19, recovery 0  same as exp. 10: YES  4 s  left ~1.2 h
+   [12/998] mlvcs_540p o0   qp24    336.7 kbps  Y 40.72  disp 36.84  face 39.90 / 0.151  I 5, LTR 19, recovery 0  same as exp. 10: YES  4 s  left ~1.2 h
+   [13/998] mlvcs_540p o0   qp32    146.3 kbps  Y 37.35  disp 34.64  face 36.76 / 0.212  I 5, LTR 19, recovery 0  same as exp. 10: YES  4 s  left ~1.2 h
+   [14/998] mlvcs_540p o0   qp40     64.5 kbps  Y 32.83  disp 30.93  face 32.96 / 0.283  I 5, LTR 19, recovery 0  same as exp. 10: YES  4 s  left ~1.2 h
+   [15/998] mlvcs_540p i4   qp16    800.2 kbps  Y 42.39  disp 37.71  face 41.51 / 0.120  I 5, LTR 19, recovery 0  4 s  left ~1.2 h
+   [16/998] mlvcs_540p i4   qp24    344.0 kbps  Y 40.79  disp 36.89  face 40.00 / 0.146  I 5, LTR 19, recovery 0  4 s  left ~1.2 h
+   [17/998] mlvcs_540p i4   qp26    276.1 kbps  Y 40.18  disp 36.52  face 39.35 / 0.160  I 5, LTR 19, recovery 0  4 s  left ~1.1 h
+   [18/998] mlvcs_540p i4   qp32    145.8 kbps  Y 37.54  disp 34.77  face 37.03 / 0.205  I 5, LTR 19, recovery 0  4 s  left ~1.1 h
+   [19/998] mlvcs_540p i4   qp40     66.0 kbps  Y 33.41  disp 31.44  face 33.37 / 0.271  I 5, LTR 19, recovery 0  4 s  left ~1.1 h
+   [20/998] mlvcs_540p l4   qp16    800.0 kbps  Y 42.39  disp 37.71  face 41.51 / 0.120  I 5, LTR 19, recovery 0  4 s  left ~1.1 h
+   [21/998] mlvcs_540p l4   qp24    362.3 kbps  Y 40.88  disp 36.94  face 40.13 / 0.144  I 5, LTR 19, recovery 0  4 s  left ~1.1 h
+   [22/998] mlvcs_540p l4   qp26    289.4 kbps  Y 40.25  disp 36.57  face 39.57 / 0.156  I 5, LTR 19, recovery 0  4 s  left ~1.1 h
+   [23/998] mlvcs_540p l4   qp32    158.8 kbps  Y 37.66  disp 34.86  face 37.09 / 0.206  I 5, LTR 19, recovery 0  4 s  left ~1.1 h
+   [24/998] mlvcs_540p l4   qp40     67.7 kbps  Y 33.01  disp 31.09  face 33.32 / 0.281  I 5, LTR 19, recovery 0  4 s  left ~1.1 h
+   [25/998] mlvcs_540p b4   qp16    800.2 kbps  Y 42.39  disp 37.71  face 41.51 / 0.120  I 5, LTR 19, recovery 0  4 s  left ~1.1 h
+   [26/998] mlvcs_540p b4   qp24    369.9 kbps  Y 40.95  disp 36.99  face 40.21 / 0.142  I 5, LTR 19, recovery 0  4 s  left ~1.1 h
+   [27/998] mlvcs_540p b4   qp26    296.3 kbps  Y 40.37  disp 36.65  face 39.63 / 0.151  I 5, LTR 19, recovery 0  4 s  left ~1.1 h
+   [28/998] mlvcs_540p b4   qp32    157.4 kbps  Y 37.83  disp 34.99  face 37.25 / 0.201  I 5, LTR 19, recovery 0  4 s  left ~1.1 h
+   [29/998] mlvcs_540p b4   qp40     68.1 kbps  Y 33.54  disp 31.56  face 33.52 / 0.270  I 5, LTR 19, recovery 0  4 s  left ~1.1 h
+   [30/998] mlvcs_540p i8   qp16    800.3 kbps  Y 42.39  disp 37.71  face 41.51 / 0.120  I 5, LTR 19, recovery 0  4 s  left ~1.1 h
+   [31/998] mlvcs_540p i8   qp24    349.0 kbps  Y 40.82  disp 36.91  face 40.01 / 0.147  I 5, LTR 19, recovery 0  4 s  left ~1.1 h
+   [32/998] mlvcs_540p i8   qp26    284.8 kbps  Y 40.25  disp 36.57  face 39.44 / 0.158  I 5, LTR 19, recovery 0  4 s  left ~1.1 h
+   [33/998] mlvcs_540p i8   qp32    149.2 kbps  Y 37.77  disp 34.95  face 37.29 / 0.202  I 5, LTR 19, recovery 0  4 s  left ~1.1 h
+   [34/998] mlvcs_540p i8   qp40     68.7 kbps  Y 33.90  disp 31.87  face 33.77 / 0.257  I 5, LTR 19, recovery 0  4 s  left ~1.1 h
+   [35/998] mlvcs_540p r0   qp16    996.3 kbps  Y 42.53  disp 37.76  face 41.49 / 0.120  I 5, LTR 19, recovery 5  4 s  left ~1.1 h
+   [36/998] mlvcs_540p r0   qp24    393.4 kbps  Y 40.85  disp 36.91  face 39.89 / 0.152  I 5, LTR 19, recovery 5  4 s  left ~1.1 h
+   [37/998] mlvcs_540p r0   qp32    156.9 kbps  Y 37.47  disp 34.71  face 36.74 / 0.216  I 5, LTR 19, recovery 5  4 s  left ~1.1 h
+   [38/998] mlvcs_540p r0   qp40     67.7 kbps  Y 32.96  disp 31.03  face 32.95 / 0.288  I 5, LTR 19, recovery 5  4 s  left ~1.1 h
+   [39/998] mlvcs_540p rl4  qp16    996.3 kbps  Y 42.53  disp 37.76  face 41.49 / 0.120  I 5, LTR 19, recovery 5  4 s  left ~1.1 h
+   [40/998] mlvcs_540p rl4  qp24    431.0 kbps  Y 41.02  disp 37.01  face 40.11 / 0.146  I 5, LTR 19, recovery 5  4 s  left ~1.1 h
+   [41/998] mlvcs_540p rl4  qp26    334.2 kbps  Y 40.39  disp 36.65  face 39.53 / 0.159  I 5, LTR 19, recovery 5  4 s  left ~1.1 h
+   [42/998] mlvcs_540p rl4  qp32    177.6 kbps  Y 37.86  disp 35.00  face 37.15 / 0.209  I 5, LTR 19, recovery 5  4 s  left ~1.1 h
+   [43/998] mlvcs_540p rl4  qp40     73.0 kbps  Y 33.22  disp 31.26  face 33.35 / 0.285  I 5, LTR 19, recovery 5  4 s  left ~1.1 h
+   [44/998] mlvcs_540p rb4  qp16    996.5 kbps  Y 42.53  disp 37.76  face 41.49 / 0.120  I 5, LTR 19, recovery 5  4 s  left ~1.1 h
+   [45/998] mlvcs_540p rb4  qp24    438.0 kbps  Y 41.09  disp 37.05  face 40.21 / 0.143  I 5, LTR 19, recovery 5  4 s  left ~1.1 h
+   [46/998] mlvcs_540p rb4  qp26    341.4 kbps  Y 40.51  disp 36.72  face 39.64 / 0.153  I 5, LTR 19, recovery 5  4 s  left ~1.1 h
+   [47/998] mlvcs_540p rb4  qp32    175.5 kbps  Y 38.02  disp 35.12  face 37.29 / 0.206  I 5, LTR 19, recovery 5  4 s  left ~1.1 h
+   [48/998] mlvcs_540p rb4  qp40     72.4 kbps  Y 33.74  disp 31.73  face 33.62 / 0.273  I 5, LTR 19, recovery 5  4 s  left ~1.1 h
+== clip 2/20 104c93  16:47:00
+   [49/998] mlvc_360p  i8   qp16    388.3 kbps  Y 41.65  disp 34.08  face 34.73 / 0.169  I 5, LTR 0, recovery 0  5 s  left ~1.1 h
+   [50/998] mlvc_360p  i8   qp24    227.0 kbps  Y 39.77  disp 33.53  face 33.47 / 0.189  I 5, LTR 0, recovery 0  4 s  left ~1.1 h
+   [51/998] mlvc_360p  i8   qp26    193.7 kbps  Y 39.08  disp 33.28  face 33.04 / 0.198  I 5, LTR 0, recovery 0  4 s  left ~1.1 h
+   [52/998] mlvc_360p  i8   qp32    107.6 kbps  Y 36.40  disp 32.08  face 31.13 / 0.239  I 5, LTR 0, recovery 0  4 s  left ~1.1 h
+   [53/998] mlvc_360p  i8   qp40     46.7 kbps  Y 32.37  disp 29.60  face 28.12 / 0.328  I 5, LTR 0, recovery 0  4 s  left ~1.1 h
+   [54/998] mlvc_360p  i10  qp16    388.3 kbps  Y 41.65  disp 34.08  face 34.73 / 0.169  I 5, LTR 0, recovery 0  4 s  left ~1.1 h
+   [55/998] mlvc_360p  i10  qp24    227.0 kbps  Y 39.77  disp 33.53  face 33.47 / 0.189  I 5, LTR 0, recovery 0  4 s  left ~1.1 h
+   [56/998] mlvc_360p  i10  qp26    193.7 kbps  Y 39.08  disp 33.28  face 33.04 / 0.198  I 5, LTR 0, recovery 0  4 s  left ~1.1 h
+   [57/998] mlvc_360p  i10  qp32    113.0 kbps  Y 36.53  disp 32.15  face 31.18 / 0.238  I 5, LTR 0, recovery 0  4 s  left ~1.1 h
+   [58/998] mlvc_360p  i10  qp40     50.3 kbps  Y 32.63  disp 29.79  face 28.24 / 0.315  I 5, LTR 0, recovery 0  4 s  left ~1.1 h
+   [59/998] mlvcs_540p o0   qp16    732.8 kbps  Y 42.41  disp 37.46  face 37.06 / 0.098  I 5, LTR 19, recovery 0  same as exp. 10: YES  4 s  left ~1.1 h
+   [60/998] mlvcs_540p o0   qp24    400.1 kbps  Y 40.46  disp 36.50  face 35.48 / 0.117  I 5, LTR 19, recovery 0  same as exp. 10: YES  4 s  left ~1.1 h
+   [61/998] mlvcs_540p o0   qp26    333.2 kbps  Y 39.72  disp 36.08  face 34.87 / 0.127  I 5, LTR 19, recovery 0  same as exp. 10: YES  4 s  left ~1.1 h
+   [62/998] mlvcs_540p o0   qp32    177.3 kbps  Y 36.78  disp 34.11  face 32.48 / 0.173  I 5, LTR 19, recovery 0  same as exp. 10: YES  4 s  left ~1.1 h
+   [63/998] mlvcs_540p o0   qp40     74.5 kbps  Y 32.20  disp 30.38  face 28.68 / 0.291  I 5, LTR 19, recovery 0  same as exp. 10: YES  4 s  left ~1.1 h
+   [64/998] mlvcs_540p i4   qp16    733.0 kbps  Y 42.41  disp 37.46  face 37.06 / 0.098  I 5, LTR 19, recovery 0  4 s  left ~1.1 h
+   [65/998] mlvcs_540p i4   qp24    409.0 kbps  Y 40.53  disp 36.54  face 35.57 / 0.116  I 5, LTR 19, recovery 0  4 s  left ~1.1 h
+   [66/998] mlvcs_540p i4   qp26    340.1 kbps  Y 39.81  disp 36.14  face 34.93 / 0.125  I 5, LTR 19, recovery 0  4 s  left ~1.1 h
+   [67/998] mlvcs_540p i4   qp32    180.6 kbps  Y 36.99  disp 34.28  face 32.58 / 0.173  I 5, LTR 19, recovery 0  4 s  left ~1.1 h
+   [68/998] mlvcs_540p i4   qp40     77.4 kbps  Y 32.72  disp 30.85  face 28.98 / 0.278  I 5, LTR 19, recovery 0  4 s  left ~1.1 h
+   [69/998] mlvcs_540p l4   qp16    732.8 kbps  Y 42.41  disp 37.46  face 37.06 / 0.098  I 5, LTR 19, recovery 0  4 s  left ~1.0 h
+   [70/998] mlvcs_540p l4   qp24    420.4 kbps  Y 40.65  disp 36.61  face 35.58 / 0.116  I 5, LTR 19, recovery 0  4 s  left ~1.0 h
+   [71/998] mlvcs_540p l4   qp26    351.7 kbps  Y 39.95  disp 36.21  face 35.00 / 0.125  I 5, LTR 19, recovery 0  4 s  left ~1.0 h
+   [72/998] mlvcs_540p l4   qp32    190.7 kbps  Y 37.08  disp 34.34  face 32.64 / 0.173  I 5, LTR 19, recovery 0  4 s  left ~1.0 h
+   [73/998] mlvcs_540p l4   qp40     79.8 kbps  Y 32.48  disp 30.62  face 28.90 / 0.283  I 5, LTR 19, recovery 0  4 s  left ~1.0 h
+   [74/998] mlvcs_540p b4   qp16    733.0 kbps  Y 42.41  disp 37.46  face 37.06 / 0.098  I 5, LTR 19, recovery 0  4 s  left ~1.0 h
+   [75/998] mlvcs_540p b4   qp24    429.7 kbps  Y 40.71  disp 36.65  face 35.69 / 0.115  I 5, LTR 19, recovery 0  4 s  left ~1.0 h
+   [76/998] mlvcs_540p b4   qp26    359.5 kbps  Y 40.04  disp 36.28  face 35.05 / 0.124  I 5, LTR 19, recovery 0  4 s  left ~1.0 h
+   [77/998] mlvcs_540p b4   qp32    193.1 kbps  Y 37.28  disp 34.50  face 32.77 / 0.167  I 5, LTR 19, recovery 0  4 s  left ~1.0 h
+   [78/998] mlvcs_540p b4   qp40     81.8 kbps  Y 32.94  disp 31.04  face 29.19 / 0.271  I 5, LTR 19, recovery 0  4 s  left ~1.0 h
+   [79/998] mlvcs_540p i8   qp16    733.1 kbps  Y 42.41  disp 37.46  face 37.06 / 0.098  I 5, LTR 19, recovery 0  4 s  left ~1.0 h
+   [80/998] mlvcs_540p i8   qp24    414.9 kbps  Y 40.56  disp 36.56  face 35.57 / 0.116  I 5, LTR 19, recovery 0  4 s  left ~1.0 h
+   [81/998] mlvcs_540p i8   qp26    350.2 kbps  Y 39.88  disp 36.18  face 34.97 / 0.126  I 5, LTR 19, recovery 0  4 s  left ~1.0 h
+   [82/998] mlvcs_540p i8   qp32    186.7 kbps  Y 37.16  disp 34.41  face 32.75 / 0.169  I 5, LTR 19, recovery 0  4 s  left ~1.0 h
+   [83/998] mlvcs_540p i8   qp40     82.1 kbps  Y 33.11  disp 31.21  face 29.15 / 0.265  I 5, LTR 19, recovery 0  4 s  left ~1.0 h
+   [84/998] mlvcs_540p r0   qp16    837.0 kbps  Y 42.44  disp 37.48  face 37.02 / 0.099  I 5, LTR 19, recovery 5  4 s  left ~1.0 h
+   [85/998] mlvcs_540p r0   qp24    452.9 kbps  Y 40.54  disp 36.56  face 35.48 / 0.118  I 5, LTR 19, recovery 5  4 s  left ~1.0 h
+   [86/998] mlvcs_540p r0   qp26    377.0 kbps  Y 39.81  disp 36.15  face 34.83 / 0.129  I 5, LTR 19, recovery 5  4 s  left ~1.0 h
+   [87/998] mlvcs_540p r0   qp32    201.4 kbps  Y 36.88  disp 34.21  face 32.44 / 0.175  I 5, LTR 19, recovery 5  4 s  left ~1.0 h
+   [88/998] mlvcs_540p r0   qp40     85.2 kbps  Y 32.33  disp 30.51  face 28.68 / 0.291  I 5, LTR 19, recovery 5  4 s  left ~1.0 h
+   [89/998] mlvcs_540p rl4  qp16    837.0 kbps  Y 42.44  disp 37.48  face 37.02 / 0.099  I 5, LTR 19, recovery 5  4 s  left ~1.0 h
+   [90/998] mlvcs_540p rl4  qp24    478.2 kbps  Y 40.73  disp 36.67  face 35.59 / 0.116  I 5, LTR 19, recovery 5  4 s  left ~1.0 h
+   [91/998] mlvcs_540p rl4  qp26    399.5 kbps  Y 40.04  disp 36.30  face 35.00 / 0.126  I 5, LTR 19, recovery 5  4 s  left ~1.0 h
+   [92/998] mlvcs_540p rl4  qp32    218.7 kbps  Y 37.24  disp 34.48  face 32.68 / 0.172  I 5, LTR 19, recovery 5  4 s  left ~1.0 h
+   [93/998] mlvcs_540p rl4  qp40     92.0 kbps  Y 32.64  disp 30.79  face 28.92 / 0.284  I 5, LTR 19, recovery 5  4 s  left ~1.0 h
+   [94/998] mlvcs_540p rb4  qp16    837.2 kbps  Y 42.44  disp 37.48  face 37.02 / 0.099  I 5, LTR 19, recovery 5  4 s  left ~1.0 h
+   [95/998] mlvcs_540p rb4  qp24    487.2 kbps  Y 40.79  disp 36.71  face 35.68 / 0.116  I 5, LTR 19, recovery 5  4 s  left ~1.0 h
+   [96/998] mlvcs_540p rb4  qp26    406.8 kbps  Y 40.12  disp 36.35  face 35.09 / 0.123  I 5, LTR 19, recovery 5  4 s  left ~1.0 h
+   [97/998] mlvcs_540p rb4  qp32    220.2 kbps  Y 37.41  disp 34.62  face 32.80 / 0.166  I 5, LTR 19, recovery 5  4 s  left ~1.0 h
+   [98/998] mlvcs_540p rb4  qp40     93.6 kbps  Y 33.09  disp 31.19  face 29.17 / 0.273  I 5, LTR 19, recovery 5  4 s  left ~1.0 h
+== clip 3/20 1e8830  16:50:23
+   [99/998] mlvc_360p  i8   qp16    511.4 kbps  Y 36.89  disp 25.33  face 30.27 / 0.284  I 5, LTR 0, recovery 0  5 s  left ~1.0 h
+   [100/998] mlvc_360p  i8   qp24    317.1 kbps  Y 35.90  disp 25.22  face 29.81 / 0.309  I 5, LTR 0, recovery 0  4 s  left ~1.0 h
+   [101/998] mlvc_360p  i8   qp26    273.1 kbps  Y 35.46  disp 25.17  face 29.64 / 0.315  I 5, LTR 0, recovery 0  4 s  left ~1.0 h
+   [102/998] mlvc_360p  i8   qp32    160.4 kbps  Y 33.54  disp 24.84  face 28.80 / 0.356  I 5, LTR 0, recovery 0  4 s  left ~1.0 h
+   [103/998] mlvc_360p  i8   qp40     72.8 kbps  Y 29.76  disp 23.81  face 27.11 / 0.419  I 5, LTR 0, recovery 0  4 s  left ~1.0 h
+   [104/998] mlvc_360p  i10  qp16    511.4 kbps  Y 36.89  disp 25.33  face 30.27 / 0.284  I 5, LTR 0, recovery 0  4 s  left ~1.0 h
+   [105/998] mlvc_360p  i10  qp24    317.1 kbps  Y 35.90  disp 25.22  face 29.81 / 0.309  I 5, LTR 0, recovery 0  4 s  left ~1.0 h
+   [106/998] mlvc_360p  i10  qp26    273.1 kbps  Y 35.46  disp 25.17  face 29.64 / 0.315  I 5, LTR 0, recovery 0  4 s  left ~1.0 h
+   [107/998] mlvc_360p  i10  qp32    164.6 kbps  Y 33.65  disp 24.87  face 28.88 / 0.349  I 5, LTR 0, recovery 0  4 s  left ~1.0 h
+   [108/998] mlvc_360p  i10  qp40     78.0 kbps  Y 30.04  disp 23.91  face 27.24 / 0.406  I 5, LTR 0, recovery 0  4 s  left ~1.0 h
+   [109/998] mlvcs_540p o0   qp16   1119.1 kbps  Y 35.95  disp 27.68  face 32.64 / 0.172  I 5, LTR 19, recovery 0  same as exp. 10: YES  4 s  left ~1.0 h
+   [110/998] mlvcs_540p o0   qp24    590.7 kbps  Y 35.19  disp 27.50  face 31.93 / 0.203  I 5, LTR 19, recovery 0  same as exp. 10: YES  4 s  left ~1.0 h
+   [111/998] mlvcs_540p o0   qp26    486.8 kbps  Y 34.83  disp 27.41  face 31.60 / 0.219  I 5, LTR 19, recovery 0  same as exp. 10: YES  4 s  left ~1.0 h
+   [112/998] mlvcs_540p o0   qp32    271.5 kbps  Y 33.06  disp 26.87  face 30.21 / 0.283  I 5, LTR 19, recovery 0  same as exp. 10: YES  4 s  left ~1.0 h
+   [113/998] mlvcs_540p o0   qp40    126.8 kbps  Y 29.37  disp 25.24  face 27.82 / 0.393  I 5, LTR 19, recovery 0  same as exp. 10: YES  4 s  left ~1.0 h
+   [114/998] mlvcs_540p i4   qp16   1119.2 kbps  Y 35.95  disp 27.68  face 32.64 / 0.172  I 5, LTR 19, recovery 0  4 s  left ~1.0 h
+   [115/998] mlvcs_540p i4   qp24    606.6 kbps  Y 35.24  disp 27.51  face 31.97 / 0.201  I 5, LTR 19, recovery 0  4 s  left ~1.0 h
+   [116/998] mlvcs_540p i4   qp26    500.8 kbps  Y 34.88  disp 27.43  face 31.66 / 0.214  I 5, LTR 19, recovery 0  4 s  left ~1.0 h
+   [117/998] mlvcs_540p i4   qp32    277.4 kbps  Y 33.19  disp 26.92  face 30.35 / 0.274  I 5, LTR 19, recovery 0  4 s  left ~1.0 h
+   [118/998] mlvcs_540p i4   qp40    127.2 kbps  Y 29.69  disp 25.42  face 28.13 / 0.369  I 5, LTR 19, recovery 0  4 s  left ~1.0 h
+   [119/998] mlvcs_540p l4   qp16   1119.1 kbps  Y 35.95  disp 27.68  face 32.64 / 0.172  I 5, LTR 19, recovery 0  4 s  left ~1.0 h
+   [120/998] mlvcs_540p l4   qp24    616.7 kbps  Y 35.25  disp 27.52  face 32.00 / 0.201  I 5, LTR 19, recovery 0  4 s  left ~1.0 h
+   [121/998] mlvcs_540p l4   qp26    507.3 kbps  Y 34.91  disp 27.43  face 31.68 / 0.215  I 5, LTR 19, recovery 0  4 s  left ~1.0 h
+   [122/998] mlvcs_540p l4   qp32    288.6 kbps  Y 33.24  disp 26.93  face 30.37 / 0.276  I 5, LTR 19, recovery 0  4 s  left ~1.0 h
+   [123/998] mlvcs_540p l4   qp40    133.3 kbps  Y 29.53  disp 25.33  face 27.94 / 0.390  I 5, LTR 19, recovery 0  4 s  left ~1.0 h
+   [124/998] mlvcs_540p b4   qp16   1119.2 kbps  Y 35.95  disp 27.68  face 32.64 / 0.172  I 5, LTR 19, recovery 0  4 s  left ~1.0 h
+   [125/998] mlvcs_540p b4   qp24    632.4 kbps  Y 35.29  disp 27.53  face 32.04 / 0.199  I 5, LTR 19, recovery 0  4 s  left ~1.0 h
+   [126/998] mlvcs_540p b4   qp26    521.9 kbps  Y 34.96  disp 27.45  face 31.74 / 0.213  I 5, LTR 19, recovery 0  4 s  left ~1.0 h
+   [127/998] mlvcs_540p b4   qp32    293.8 kbps  Y 33.36  disp 26.98  face 30.51 / 0.267  I 5, LTR 19, recovery 0  4 s  left ~1.0 h
+   [128/998] mlvcs_540p b4   qp40    132.2 kbps  Y 29.82  disp 25.49  face 28.28 / 0.366  I 5, LTR 19, recovery 0  4 s  left ~1.0 h
+   [129/998] mlvcs_540p i8   qp16   1119.3 kbps  Y 35.95  disp 27.68  face 32.64 / 0.172  I 5, LTR 19, recovery 0  4 s  left ~1.0 h
+   [130/998] mlvcs_540p i8   qp24    614.6 kbps  Y 35.25  disp 27.52  face 31.98 / 0.201  I 5, LTR 19, recovery 0  4 s  left ~1.0 h
+   [131/998] mlvcs_540p i8   qp26    516.1 kbps  Y 34.92  disp 27.44  face 31.70 / 0.213  I 5, LTR 19, recovery 0  4 s  left ~1.0 h
+   [132/998] mlvcs_540p i8   qp32    285.0 kbps  Y 33.28  disp 26.95  face 30.47 / 0.267  I 5, LTR 19, recovery 0  4 s  left ~1.0 h
+   [133/998] mlvcs_540p i8   qp40    130.8 kbps  Y 30.00  disp 25.58  face 28.38 / 0.352  I 5, LTR 19, recovery 0  4 s  left ~1.0 h
+   [134/998] mlvcs_540p r0   qp16   1403.7 kbps  Y 35.98  disp 27.68  face 32.58 / 0.176  I 5, LTR 19, recovery 5  4 s  left ~1.0 h
+   [135/998] mlvcs_540p r0   qp24    705.9 kbps  Y 35.24  disp 27.51  face 31.93 / 0.205  I 5, LTR 19, recovery 5  4 s  left ~1.0 h
+   [136/998] mlvcs_540p r0   qp26    568.7 kbps  Y 34.89  disp 27.42  face 31.60 / 0.221  I 5, LTR 19, recovery 5  4 s  left ~1.0 h
+   [137/998] mlvcs_540p r0   qp32    298.5 kbps  Y 33.13  disp 26.89  face 30.18 / 0.288  I 5, LTR 19, recovery 5  4 s  left ~1.0 h
+   [138/998] mlvcs_540p r0   qp40    134.4 kbps  Y 29.44  disp 25.27  face 27.74 / 0.398  I 5, LTR 19, recovery 5  4 s  left ~1.0 h
+   [139/998] mlvcs_540p rl4  qp16   1403.7 kbps  Y 35.98  disp 27.68  face 32.58 / 0.176  I 5, LTR 19, recovery 5  4 s  left ~1.0 h
+   [140/998] mlvcs_540p rl4  qp24    740.6 kbps  Y 35.31  disp 27.53  face 31.98 / 0.202  I 5, LTR 19, recovery 5  4 s  left ~1.0 h
+   [141/998] mlvcs_540p rl4  qp26    598.3 kbps  Y 34.97  disp 27.45  face 31.70 / 0.217  I 5, LTR 19, recovery 5  4 s  left ~1.0 h
+   [142/998] mlvcs_540p rl4  qp32    327.3 kbps  Y 33.37  disp 26.98  face 30.36 / 0.280  I 5, LTR 19, recovery 5  4 s  left ~1.0 h
+   [143/998] mlvcs_540p rl4  qp40    145.7 kbps  Y 29.66  disp 25.39  face 27.90 / 0.395  I 5, LTR 19, recovery 5  4 s  left ~1.0 h
+   [144/998] mlvcs_540p rb4  qp16   1403.9 kbps  Y 35.98  disp 27.68  face 32.58 / 0.176  I 5, LTR 19, recovery 5  4 s  left ~1.0 h
+   [145/998] mlvcs_540p rb4  qp24    755.4 kbps  Y 35.34  disp 27.54  face 32.03 / 0.201  I 5, LTR 19, recovery 5  4 s  left ~1.0 h
+   [146/998] mlvcs_540p rb4  qp26    612.6 kbps  Y 35.02  disp 27.46  face 31.73 / 0.215  I 5, LTR 19, recovery 5  4 s  left ~1.0 h
+   [147/998] mlvcs_540p rb4  qp32    331.6 kbps  Y 33.48  disp 27.02  face 30.47 / 0.272  I 5, LTR 19, recovery 5  4 s  left ~1.0 h
+   [148/998] mlvcs_540p rb4  qp40    142.1 kbps  Y 29.92  disp 25.54  face 28.23 / 0.374  I 5, LTR 19, recovery 5  4 s  left ~1.0 h
+== clip 4/20 38a418  16:53:46
+   [149/998] mlvc_360p  i8   qp16    310.1 kbps  Y 42.29  disp 34.06  face 30.75 / 0.260  I 5, LTR 0, recovery 0  4 s  left ~1.0 h
+   [150/998] mlvc_360p  i8   qp24    191.7 kbps  Y 40.47  disp 33.60  face 30.17 / 0.279  I 5, LTR 0, recovery 0  4 s  left ~1.0 h
+   [151/998] mlvc_360p  i8   qp26    167.2 kbps  Y 39.81  disp 33.40  face 29.94 / 0.285  I 5, LTR 0, recovery 0  4 s  left ~1.0 h
+   [152/998] mlvc_360p  i8   qp32     97.7 kbps  Y 37.26  disp 32.39  face 28.82 / 0.313  I 5, LTR 0, recovery 0  4 s  left ~1.0 h
+   [153/998] mlvc_360p  i8   qp40     44.8 kbps  Y 33.15  disp 30.06  face 26.54 / 0.378  I 5, LTR 0, recovery 0  4 s  left ~1.0 h
+   [154/998] mlvc_360p  i10  qp16    310.1 kbps  Y 42.29  disp 34.06  face 30.75 / 0.260  I 5, LTR 0, recovery 0  4 s  left ~1.0 h
+   [155/998] mlvc_360p  i10  qp24    191.7 kbps  Y 40.47  disp 33.60  face 30.17 / 0.279  I 5, LTR 0, recovery 0  4 s  left ~1.0 h
+   [156/998] mlvc_360p  i10  qp26    167.2 kbps  Y 39.81  disp 33.40  face 29.94 / 0.285  I 5, LTR 0, recovery 0  4 s  left ~0.9 h
+   [157/998] mlvc_360p  i10  qp32    103.4 kbps  Y 37.38  disp 32.45  face 28.90 / 0.308  I 5, LTR 0, recovery 0  4 s  left ~0.9 h
+   [158/998] mlvc_360p  i10  qp40     48.5 kbps  Y 33.41  disp 30.25  face 26.76 / 0.367  I 5, LTR 0, recovery 0  4 s  left ~0.9 h
+   [159/998] mlvcs_540p o0   qp16    597.9 kbps  Y 42.95  disp 37.99  face 33.68 / 0.150  I 5, LTR 19, recovery 0  same as exp. 10: YES  4 s  left ~0.9 h
+   [160/998] mlvcs_540p o0   qp24    328.6 kbps  Y 41.10  disp 37.07  face 32.70 / 0.178  I 5, LTR 19, recovery 0  same as exp. 10: YES  4 s  left ~0.9 h
+   [161/998] mlvcs_540p o0   qp26    275.3 kbps  Y 40.36  disp 36.65  face 32.30 / 0.191  I 5, LTR 19, recovery 0  same as exp. 10: YES  4 s  left ~0.9 h
+   [162/998] mlvcs_540p o0   qp32    158.3 kbps  Y 37.58  disp 34.78  face 30.52 / 0.236  I 5, LTR 19, recovery 0  same as exp. 10: YES  4 s  left ~0.9 h
+   [163/998] mlvcs_540p o0   qp40     71.3 kbps  Y 33.13  disp 31.21  face 27.41 / 0.331  I 5, LTR 19, recovery 0  same as exp. 10: YES  4 s  left ~0.9 h
+   [164/998] mlvcs_540p i4   qp16    598.1 kbps  Y 42.95  disp 37.99  face 33.68 / 0.150  I 5, LTR 19, recovery 0  4 s  left ~0.9 h
+   [165/998] mlvcs_540p i4   qp24    337.5 kbps  Y 41.18  disp 37.12  face 32.76 / 0.175  I 5, LTR 19, recovery 0  4 s  left ~0.9 h
+   [166/998] mlvcs_540p i4   qp26    282.9 kbps  Y 40.47  disp 36.73  face 32.36 / 0.186  I 5, LTR 19, recovery 0  4 s  left ~0.9 h
+   [167/998] mlvcs_540p i4   qp32    159.6 kbps  Y 37.76  disp 34.95  face 30.67 / 0.228  I 5, LTR 19, recovery 0  4 s  left ~0.9 h
+   [168/998] mlvcs_540p i4   qp40     74.5 kbps  Y 33.50  disp 31.55  face 27.75 / 0.314  I 5, LTR 19, recovery 0  4 s  left ~0.9 h
+   [169/998] mlvcs_540p l4   qp16    597.9 kbps  Y 42.95  disp 37.99  face 33.68 / 0.150  I 5, LTR 19, recovery 0  4 s  left ~0.9 h
+   [170/998] mlvcs_540p l4   qp24    346.4 kbps  Y 41.30  disp 37.19  face 32.79 / 0.175  I 5, LTR 19, recovery 0  4 s  left ~0.9 h
+   [171/998] mlvcs_540p l4   qp26    292.8 kbps  Y 40.61  disp 36.80  face 32.40 / 0.188  I 5, LTR 19, recovery 0  4 s  left ~0.9 h
+   [172/998] mlvcs_540p l4   qp32    170.0 kbps  Y 37.90  disp 35.02  face 30.71 / 0.231  I 5, LTR 19, recovery 0  4 s  left ~0.9 h
+   [173/998] mlvcs_540p l4   qp40     75.2 kbps  Y 33.37  disp 31.42  face 27.63 / 0.326  I 5, LTR 19, recovery 0  4 s  left ~0.9 h
+   [174/998] mlvcs_540p b4   qp16    598.1 kbps  Y 42.95  disp 37.99  face 33.68 / 0.150  I 5, LTR 19, recovery 0  4 s  left ~0.9 h
+   [175/998] mlvcs_540p b4   qp24    355.7 kbps  Y 41.37  disp 37.24  face 32.84 / 0.173  I 5, LTR 19, recovery 0  4 s  left ~0.9 h
+   [176/998] mlvcs_540p b4   qp26    300.4 kbps  Y 40.72  disp 36.88  face 32.46 / 0.183  I 5, LTR 19, recovery 0  4 s  left ~0.9 h
+   [177/998] mlvcs_540p b4   qp32    170.9 kbps  Y 38.07  disp 35.17  face 30.87 / 0.226  I 5, LTR 19, recovery 0  4 s  left ~0.9 h
+   [178/998] mlvcs_540p b4   qp40     77.7 kbps  Y 33.71  disp 31.75  face 27.98 / 0.311  I 5, LTR 19, recovery 0  4 s  left ~0.9 h
+   [179/998] mlvcs_540p i8   qp16    598.2 kbps  Y 42.95  disp 37.99  face 33.68 / 0.150  I 5, LTR 19, recovery 0  4 s  left ~0.9 h
+   [180/998] mlvcs_540p i8   qp24    342.7 kbps  Y 41.20  disp 37.14  face 32.77 / 0.174  I 5, LTR 19, recovery 0  4 s  left ~0.9 h
+   [181/998] mlvcs_540p i8   qp26    293.4 kbps  Y 40.55  disp 36.78  face 32.41 / 0.184  I 5, LTR 19, recovery 0  4 s  left ~0.9 h
+   [182/998] mlvcs_540p i8   qp32    164.8 kbps  Y 37.93  disp 35.09  face 30.80 / 0.224  I 5, LTR 19, recovery 0  4 s  left ~0.9 h
+   [183/998] mlvcs_540p i8   qp40     79.5 kbps  Y 33.92  disp 31.93  face 28.07 / 0.299  I 5, LTR 19, recovery 0  4 s  left ~0.9 h
+   [184/998] mlvcs_540p r0   qp16    682.0 kbps  Y 43.00  disp 38.02  face 33.58 / 0.153  I 5, LTR 19, recovery 5  4 s  left ~0.9 h
+   [185/998] mlvcs_540p r0   qp24    367.8 kbps  Y 41.19  disp 37.14  face 32.69 / 0.180  I 5, LTR 19, recovery 5  4 s  left ~0.9 h
+   [186/998] mlvcs_540p r0   qp26    307.9 kbps  Y 40.46  disp 36.72  face 32.28 / 0.192  I 5, LTR 19, recovery 5  4 s  left ~0.9 h
+   [187/998] mlvcs_540p r0   qp32    175.9 kbps  Y 37.71  disp 34.89  face 30.57 / 0.235  I 5, LTR 19, recovery 5  4 s  left ~0.9 h
+   [188/998] mlvcs_540p r0   qp40     78.7 kbps  Y 33.27  disp 31.34  face 27.34 / 0.336  I 5, LTR 19, recovery 5  4 s  left ~0.9 h
+   [189/998] mlvcs_540p rl4  qp16    682.0 kbps  Y 43.00  disp 38.02  face 33.58 / 0.153  I 5, LTR 19, recovery 5  4 s  left ~0.9 h
+   [190/998] mlvcs_540p rl4  qp24    392.5 kbps  Y 41.41  disp 37.27  face 32.79 / 0.177  I 5, LTR 19, recovery 5  4 s  left ~0.9 h
+   [191/998] mlvcs_540p rl4  qp26    331.9 kbps  Y 40.74  disp 36.90  face 32.42 / 0.189  I 5, LTR 19, recovery 5  4 s  left ~0.9 h
+   [192/998] mlvcs_540p rl4  qp32    192.7 kbps  Y 38.09  disp 35.19  face 30.80 / 0.231  I 5, LTR 19, recovery 5  4 s  left ~0.9 h
+   [193/998] mlvcs_540p rl4  qp40     84.5 kbps  Y 33.56  disp 31.61  face 27.64 / 0.331  I 5, LTR 19, recovery 5  4 s  left ~0.9 h
+   [194/998] mlvcs_540p rb4  qp16    682.1 kbps  Y 43.00  disp 38.02  face 33.58 / 0.153  I 5, LTR 19, recovery 5  4 s  left ~0.9 h
+   [195/998] mlvcs_540p rb4  qp24    400.9 kbps  Y 41.48  disp 37.31  face 32.83 / 0.176  I 5, LTR 19, recovery 5  4 s  left ~0.9 h
+   [196/998] mlvcs_540p rb4  qp26    338.8 kbps  Y 40.86  disp 36.98  face 32.49 / 0.185  I 5, LTR 19, recovery 5  4 s  left ~0.9 h
+   [197/998] mlvcs_540p rb4  qp32    193.6 kbps  Y 38.25  disp 35.32  face 30.92 / 0.227  I 5, LTR 19, recovery 5  4 s  left ~0.9 h
+   [198/998] mlvcs_540p rb4  qp40     86.5 kbps  Y 33.90  disp 31.91  face 27.96 / 0.318  I 5, LTR 19, recovery 5  4 s  left ~0.9 h
+== clip 5/20 40fe4d  16:57:05
+   [199/998] mlvc_360p  i8   qp16    670.8 kbps  Y 38.57  disp 33.52  face 36.03 / 0.304  I 5, LTR 0, recovery 0  5 s  left ~0.9 h
+   [200/998] mlvc_360p  i8   qp24    362.5 kbps  Y 37.10  disp 32.86  face 34.91 / 0.321  I 5, LTR 0, recovery 0  4 s  left ~0.9 h
+   [201/998] mlvc_360p  i8   qp26    299.8 kbps  Y 36.54  disp 32.57  face 34.48 / 0.326  I 5, LTR 0, recovery 0  4 s  left ~0.9 h
+   [202/998] mlvc_360p  i8   qp32    162.2 kbps  Y 34.31  disp 31.25  face 32.65 / 0.353  I 5, LTR 0, recovery 0  5 s  left ~0.9 h
+   [203/998] mlvc_360p  i8   qp40     70.6 kbps  Y 30.38  disp 28.37  face 29.46 / 0.404  I 5, LTR 0, recovery 0  4 s  left ~0.9 h
+   [204/998] mlvc_360p  i10  qp16    670.8 kbps  Y 38.57  disp 33.52  face 36.03 / 0.304  I 5, LTR 0, recovery 0  5 s  left ~0.9 h
+   [205/998] mlvc_360p  i10  qp24    362.5 kbps  Y 37.10  disp 32.86  face 34.91 / 0.321  I 5, LTR 0, recovery 0  5 s  left ~0.9 h
+   [206/998] mlvc_360p  i10  qp26    299.8 kbps  Y 36.54  disp 32.57  face 34.48 / 0.326  I 5, LTR 0, recovery 0  5 s  left ~0.9 h
+   [207/998] mlvc_360p  i10  qp32    167.6 kbps  Y 34.42  disp 31.32  face 32.74 / 0.351  I 5, LTR 0, recovery 0  5 s  left ~0.9 h
+   [208/998] mlvc_360p  i10  qp40     75.6 kbps  Y 30.75  disp 28.67  face 29.69 / 0.394  I 5, LTR 0, recovery 0  5 s  left ~0.9 h
+   [209/998] mlvcs_540p o0   qp16   1441.2 kbps  Y 39.44  disp 36.25  face 37.54 / 0.259  I 5, LTR 19, recovery 0  same as exp. 10: YES  4 s  left ~0.9 h
+   [210/998] mlvcs_540p o0   qp24    681.6 kbps  Y 37.96  disp 35.29  face 36.13 / 0.287  I 5, LTR 19, recovery 0  same as exp. 10: YES  4 s  left ~0.9 h
+   [211/998] mlvcs_540p o0   qp26    537.5 kbps  Y 37.37  disp 34.87  face 35.62 / 0.295  I 5, LTR 19, recovery 0  same as exp. 10: YES  4 s  left ~0.9 h
+   [212/998] mlvcs_540p o0   qp32    264.8 kbps  Y 35.04  disp 33.05  face 33.50 / 0.331  I 5, LTR 19, recovery 0  same as exp. 10: YES  4 s  left ~0.9 h
+   [213/998] mlvcs_540p o0   qp40    121.1 kbps  Y 31.08  disp 29.58  face 30.04 / 0.390  I 5, LTR 19, recovery 0  same as exp. 10: YES  4 s  left ~0.9 h
+   [214/998] mlvcs_540p i4   qp16   1441.4 kbps  Y 39.44  disp 36.25  face 37.54 / 0.259  I 5, LTR 19, recovery 0  4 s  left ~0.9 h
+   [215/998] mlvcs_540p i4   qp24    695.6 kbps  Y 38.01  disp 35.34  face 36.20 / 0.286  I 5, LTR 19, recovery 0  4 s  left ~0.9 h
+   [216/998] mlvcs_540p i4   qp26    548.9 kbps  Y 37.44  disp 34.93  face 35.69 / 0.295  I 5, LTR 19, recovery 0  4 s  left ~0.9 h
+   [217/998] mlvcs_540p i4   qp32    267.6 kbps  Y 35.18  disp 33.19  face 33.65 / 0.327  I 5, LTR 19, recovery 0  4 s  left ~0.9 h
+   [218/998] mlvcs_540p i4   qp40    121.2 kbps  Y 31.39  disp 29.89  face 30.36 / 0.381  I 5, LTR 19, recovery 0  4 s  left ~0.9 h
+   [219/998] mlvcs_540p l4   qp16   1441.2 kbps  Y 39.44  disp 36.25  face 37.54 / 0.259  I 5, LTR 19, recovery 0  4 s  left ~0.9 h
+   [220/998] mlvcs_540p l4   qp24    717.8 kbps  Y 38.06  disp 35.38  face 36.29 / 0.284  I 5, LTR 19, recovery 0  4 s  left ~0.9 h
+   [221/998] mlvcs_540p l4   qp26    567.6 kbps  Y 37.48  disp 34.98  face 35.77 / 0.293  I 5, LTR 19, recovery 0  4 s  left ~0.9 h
+   [222/998] mlvcs_540p l4   qp32    282.7 kbps  Y 35.25  disp 33.26  face 33.72 / 0.326  I 5, LTR 19, recovery 0  4 s  left ~0.9 h
+   [223/998] mlvcs_540p l4   qp40    127.1 kbps  Y 31.27  disp 29.78  face 30.31 / 0.386  I 5, LTR 19, recovery 0  4 s  left ~0.9 h
+   [224/998] mlvcs_540p b4   qp16   1441.3 kbps  Y 39.44  disp 36.25  face 37.54 / 0.259  I 5, LTR 19, recovery 0  4 s  left ~0.9 h
+   [225/998] mlvcs_540p b4   qp24    731.9 kbps  Y 38.11  disp 35.42  face 36.33 / 0.283  I 5, LTR 19, recovery 0  4 s  left ~0.9 h
+   [226/998] mlvcs_540p b4   qp26    579.1 kbps  Y 37.55  disp 35.03  face 35.82 / 0.292  I 5, LTR 19, recovery 0  4 s  left ~0.9 h
+   [227/998] mlvcs_540p b4   qp32    285.5 kbps  Y 35.39  disp 33.38  face 33.88 / 0.323  I 5, LTR 19, recovery 0  4 s  left ~0.9 h
+   [228/998] mlvcs_540p b4   qp40    126.4 kbps  Y 31.58  disp 30.09  face 30.57 / 0.377  I 5, LTR 19, recovery 0  4 s  left ~0.9 h
+   [229/998] mlvcs_540p i8   qp16   1441.4 kbps  Y 39.44  disp 36.25  face 37.54 / 0.259  I 5, LTR 19, recovery 0  4 s  left ~0.9 h
+   [230/998] mlvcs_540p i8   qp24    702.5 kbps  Y 38.02  disp 35.35  face 36.23 / 0.286  I 5, LTR 19, recovery 0  4 s  left ~0.9 h
+   [231/998] mlvcs_540p i8   qp26    561.8 kbps  Y 37.47  disp 34.97  face 35.77 / 0.294  I 5, LTR 19, recovery 0  4 s  left ~0.9 h
+   [232/998] mlvcs_540p i8   qp32    274.2 kbps  Y 35.30  disp 33.28  face 33.76 / 0.325  I 5, LTR 19, recovery 0  4 s  left ~0.9 h
+   [233/998] mlvcs_540p i8   qp40    123.9 kbps  Y 31.75  disp 30.20  face 30.60 / 0.374  I 5, LTR 19, recovery 0  4 s  left ~0.9 h
+   [234/998] mlvcs_540p r0   qp16   1640.3 kbps  Y 39.49  disp 36.27  face 37.50 / 0.258  I 5, LTR 19, recovery 5  4 s  left ~0.9 h
+   [235/998] mlvcs_540p r0   qp24    795.6 kbps  Y 38.10  disp 35.40  face 36.20 / 0.286  I 5, LTR 19, recovery 5  4 s  left ~0.9 h
+   [236/998] mlvcs_540p r0   qp26    622.2 kbps  Y 37.52  disp 35.01  face 35.69 / 0.293  I 5, LTR 19, recovery 5  4 s  left ~0.9 h
+   [237/998] mlvcs_540p r0   qp32    297.5 kbps  Y 35.19  disp 33.22  face 33.63 / 0.328  I 5, LTR 19, recovery 5  4 s  left ~0.9 h
+   [238/998] mlvcs_540p r0   qp40    133.1 kbps  Y 31.20  disp 29.72  face 30.14 / 0.390  I 5, LTR 19, recovery 5  4 s  left ~0.9 h
+   [239/998] mlvcs_540p rl4  qp16   1640.3 kbps  Y 39.49  disp 36.27  face 37.50 / 0.258  I 5, LTR 19, recovery 5  4 s  left ~0.9 h
+   [240/998] mlvcs_540p rl4  qp24    840.9 kbps  Y 38.21  disp 35.49  face 36.33 / 0.283  I 5, LTR 19, recovery 5  4 s  left ~0.9 h
+   [241/998] mlvcs_540p rl4  qp26    660.4 kbps  Y 37.66  disp 35.11  face 35.84 / 0.291  I 5, LTR 19, recovery 5  4 s  left ~0.9 h
+   [242/998] mlvcs_540p rl4  qp32    322.7 kbps  Y 35.46  disp 33.44  face 33.88 / 0.324  I 5, LTR 19, recovery 5  4 s  left ~0.9 h
+   [243/998] mlvcs_540p rl4  qp40    142.6 kbps  Y 31.46  disp 29.97  face 30.47 / 0.384  I 5, LTR 19, recovery 5  4 s  left ~0.8 h
+   [244/998] mlvcs_540p rb4  qp16   1640.4 kbps  Y 39.49  disp 36.27  face 37.50 / 0.258  I 5, LTR 19, recovery 5  4 s  left ~0.8 h
+   [245/998] mlvcs_540p rb4  qp24    853.0 kbps  Y 38.26  disp 35.53  face 36.38 / 0.282  I 5, LTR 19, recovery 5  4 s  left ~0.8 h
+   [246/998] mlvcs_540p rb4  qp26    670.8 kbps  Y 37.73  disp 35.16  face 35.92 / 0.291  I 5, LTR 19, recovery 5  4 s  left ~0.8 h
+   [247/998] mlvcs_540p rb4  qp32    325.4 kbps  Y 35.60  disp 33.56  face 34.05 / 0.320  I 5, LTR 19, recovery 5  4 s  left ~0.8 h
+   [248/998] mlvcs_540p rb4  qp40    140.9 kbps  Y 31.74  disp 30.23  face 30.69 / 0.378  I 5, LTR 19, recovery 5  4 s  left ~0.8 h
+== clip 6/20 45bb89  17:00:31
+   [249/998] mlvc_360p  i8   qp16    276.3 kbps  Y 42.02  disp 34.32  face 39.33 / 0.160  I 5, LTR 0, recovery 0  4 s  left ~0.8 h
+   [250/998] mlvc_360p  i8   qp24    160.2 kbps  Y 40.39  disp 33.87  face 37.80 / 0.168  I 5, LTR 0, recovery 0  4 s  left ~0.8 h
+   [251/998] mlvc_360p  i8   qp26    136.7 kbps  Y 39.75  disp 33.66  face 37.23 / 0.171  I 5, LTR 0, recovery 0  4 s  left ~0.8 h
+   [252/998] mlvc_360p  i8   qp32     77.5 kbps  Y 37.32  disp 32.65  face 34.85 / 0.185  I 5, LTR 0, recovery 0  4 s  left ~0.8 h
+   [253/998] mlvc_360p  i8   qp40     37.0 kbps  Y 33.37  disp 30.35  face 31.00 / 0.229  I 5, LTR 0, recovery 0  4 s  left ~0.8 h
+   [254/998] mlvc_360p  i10  qp16    276.3 kbps  Y 42.02  disp 34.32  face 39.33 / 0.160  I 5, LTR 0, recovery 0  4 s  left ~0.8 h
+   [255/998] mlvc_360p  i10  qp24    160.2 kbps  Y 40.39  disp 33.87  face 37.80 / 0.168  I 5, LTR 0, recovery 0  4 s  left ~0.8 h
+   [256/998] mlvc_360p  i10  qp26    136.7 kbps  Y 39.75  disp 33.66  face 37.23 / 0.171  I 5, LTR 0, recovery 0  4 s  left ~0.8 h
+   [257/998] mlvc_360p  i10  qp32     80.7 kbps  Y 37.45  disp 32.71  face 34.89 / 0.184  I 5, LTR 0, recovery 0  4 s  left ~0.8 h
+   [258/998] mlvc_360p  i10  qp40     39.1 kbps  Y 33.68  disp 30.56  face 31.20 / 0.220  I 5, LTR 0, recovery 0  4 s  left ~0.8 h
+   [259/998] mlvcs_540p o0   qp16    591.2 kbps  Y 42.25  disp 37.30  face 40.64 / 0.128  I 5, LTR 19, recovery 0  same as exp. 10: YES  4 s  left ~0.8 h
+   [260/998] mlvcs_540p o0   qp24    281.9 kbps  Y 40.54  disp 36.46  face 38.96 / 0.140  I 5, LTR 19, recovery 0  same as exp. 10: YES  4 s  left ~0.8 h
+   [261/998] mlvcs_540p o0   qp26    229.9 kbps  Y 39.87  disp 36.08  face 38.33 / 0.146  I 5, LTR 19, recovery 0  same as exp. 10: YES  4 s  left ~0.8 h
+   [262/998] mlvcs_540p o0   qp32    119.7 kbps  Y 37.30  disp 34.39  face 35.63 / 0.165  I 5, LTR 19, recovery 0  same as exp. 10: YES  4 s  left ~0.8 h
+   [263/998] mlvcs_540p o0   qp40     55.0 kbps  Y 33.32  disp 31.24  face 31.45 / 0.212  I 5, LTR 19, recovery 0  same as exp. 10: YES  4 s  left ~0.8 h
+   [264/998] mlvcs_540p i4   qp16    591.4 kbps  Y 42.25  disp 37.30  face 40.64 / 0.128  I 5, LTR 19, recovery 0  4 s  left ~0.8 h
+   [265/998] mlvcs_540p i4   qp24    288.7 kbps  Y 40.63  disp 36.52  face 39.07 / 0.141  I 5, LTR 19, recovery 0  4 s  left ~0.8 h
+   [266/998] mlvcs_540p i4   qp26    234.3 kbps  Y 40.00  disp 36.16  face 38.44 / 0.144  I 5, LTR 19, recovery 0  4 s  left ~0.8 h
+   [267/998] mlvcs_540p i4   qp32    122.1 kbps  Y 37.51  disp 34.56  face 35.83 / 0.164  I 5, LTR 19, recovery 0  4 s  left ~0.8 h
+   [268/998] mlvcs_540p i4   qp40     56.6 kbps  Y 33.65  disp 31.55  face 31.81 / 0.207  I 5, LTR 19, recovery 0  4 s  left ~0.8 h
+   [269/998] mlvcs_540p l4   qp16    591.2 kbps  Y 42.25  disp 37.30  face 40.64 / 0.128  I 5, LTR 19, recovery 0  4 s  left ~0.8 h
+   [270/998] mlvcs_540p l4   qp24    302.2 kbps  Y 40.73  disp 36.56  face 39.09 / 0.139  I 5, LTR 19, recovery 0  4 s  left ~0.8 h
+   [271/998] mlvcs_540p l4   qp26    248.1 kbps  Y 40.12  disp 36.23  face 38.52 / 0.144  I 5, LTR 19, recovery 0  4 s  left ~0.8 h
+   [272/998] mlvcs_540p l4   qp32    129.9 kbps  Y 37.60  disp 34.61  face 36.00 / 0.164  I 5, LTR 19, recovery 0  4 s  left ~0.8 h
+   [273/998] mlvcs_540p l4   qp40     58.1 kbps  Y 33.56  disp 31.46  face 31.87 / 0.205  I 5, LTR 19, recovery 0  4 s  left ~0.8 h
+   [274/998] mlvcs_540p b4   qp16    591.4 kbps  Y 42.25  disp 37.30  face 40.64 / 0.128  I 5, LTR 19, recovery 0  4 s  left ~0.8 h
+   [275/998] mlvcs_540p b4   qp24    309.5 kbps  Y 40.82  disp 36.62  face 39.22 / 0.139  I 5, LTR 19, recovery 0  4 s  left ~0.8 h
+   [276/998] mlvcs_540p b4   qp26    252.5 kbps  Y 40.24  disp 36.31  face 38.61 / 0.143  I 5, LTR 19, recovery 0  4 s  left ~0.8 h
+   [277/998] mlvcs_540p b4   qp32    131.6 kbps  Y 37.79  disp 34.75  face 36.07 / 0.160  I 5, LTR 19, recovery 0  4 s  left ~0.8 h
+   [278/998] mlvcs_540p b4   qp40     58.9 kbps  Y 33.86  disp 31.72  face 32.16 / 0.205  I 5, LTR 19, recovery 0  4 s  left ~0.8 h
+   [279/998] mlvcs_540p i8   qp16    591.5 kbps  Y 42.25  disp 37.30  face 40.64 / 0.128  I 5, LTR 19, recovery 0  4 s  left ~0.8 h
+   [280/998] mlvcs_540p i8   qp24    293.6 kbps  Y 40.66  disp 36.53  face 39.07 / 0.140  I 5, LTR 19, recovery 0  4 s  left ~0.8 h
+   [281/998] mlvcs_540p i8   qp26    243.2 kbps  Y 40.09  disp 36.22  face 38.51 / 0.144  I 5, LTR 19, recovery 0  4 s  left ~0.8 h
+   [282/998] mlvcs_540p i8   qp32    125.3 kbps  Y 37.70  disp 34.69  face 35.96 / 0.159  I 5, LTR 19, recovery 0  4 s  left ~0.8 h
+   [283/998] mlvcs_540p i8   qp40     59.2 kbps  Y 34.05  disp 31.88  face 32.10 / 0.203  I 5, LTR 19, recovery 0  4 s  left ~0.8 h
+   [284/998] mlvcs_540p r0   qp16    708.7 kbps  Y 42.40  disp 37.36  face 40.62 / 0.128  I 5, LTR 19, recovery 5  4 s  left ~0.8 h
+   [285/998] mlvcs_540p r0   qp24    321.7 kbps  Y 40.69  disp 36.54  face 38.97 / 0.140  I 5, LTR 19, recovery 5  4 s  left ~0.8 h
+   [286/998] mlvcs_540p r0   qp26    258.8 kbps  Y 40.01  disp 36.16  face 38.33 / 0.146  I 5, LTR 19, recovery 5  4 s  left ~0.8 h
+   [287/998] mlvcs_540p r0   qp32    131.9 kbps  Y 37.43  disp 34.49  face 35.67 / 0.165  I 5, LTR 19, recovery 5  4 s  left ~0.8 h
+   [288/998] mlvcs_540p r0   qp40     60.2 kbps  Y 33.47  disp 31.38  face 31.53 / 0.214  I 5, LTR 19, recovery 5  4 s  left ~0.8 h
+   [289/998] mlvcs_540p rl4  qp16    708.8 kbps  Y 42.40  disp 37.36  face 40.62 / 0.128  I 5, LTR 19, recovery 5  4 s  left ~0.8 h
+   [290/998] mlvcs_540p rl4  qp24    347.5 kbps  Y 40.89  disp 36.65  face 39.15 / 0.139  I 5, LTR 19, recovery 5  4 s  left ~0.8 h
+   [291/998] mlvcs_540p rl4  qp26    282.8 kbps  Y 40.28  disp 36.32  face 38.58 / 0.144  I 5, LTR 19, recovery 5  4 s  left ~0.8 h
+   [292/998] mlvcs_540p rl4  qp32    147.0 kbps  Y 37.81  disp 34.76  face 36.09 / 0.163  I 5, LTR 19, recovery 5  4 s  left ~0.8 h
+   [293/998] mlvcs_540p rl4  qp40     64.5 kbps  Y 33.76  disp 31.61  face 31.93 / 0.208  I 5, LTR 19, recovery 5  4 s  left ~0.8 h
+   [294/998] mlvcs_540p rb4  qp16    708.9 kbps  Y 42.40  disp 37.36  face 40.62 / 0.128  I 5, LTR 19, recovery 5  4 s  left ~0.8 h
+   [295/998] mlvcs_540p rb4  qp24    355.1 kbps  Y 40.98  disp 36.71  face 39.26 / 0.139  I 5, LTR 19, recovery 5  4 s  left ~0.8 h
+   [296/998] mlvcs_540p rb4  qp26    287.4 kbps  Y 40.41  disp 36.40  face 38.67 / 0.143  I 5, LTR 19, recovery 5  4 s  left ~0.8 h
+   [297/998] mlvcs_540p rb4  qp32    148.6 kbps  Y 37.98  disp 34.89  face 36.13 / 0.162  I 5, LTR 19, recovery 5  4 s  left ~0.8 h
+   [298/998] mlvcs_540p rb4  qp40     64.9 kbps  Y 34.04  disp 31.87  face 32.30 / 0.206  I 5, LTR 19, recovery 5  4 s  left ~0.8 h
+== clip 7/20 4d8ffe  17:03:51
+   [299/998] mlvc_360p  i8   qp16    794.5 kbps  Y 34.03  disp 25.56  face 34.46 / 0.209  I 5, LTR 0, recovery 0  5 s  left ~0.8 h
+   [300/998] mlvc_360p  i8   qp24    422.8 kbps  Y 33.01  disp 25.33  face 33.48 / 0.231  I 5, LTR 0, recovery 0  4 s  left ~0.8 h
+   [301/998] mlvc_360p  i8   qp26    344.7 kbps  Y 32.59  disp 25.22  face 33.17 / 0.238  I 5, LTR 0, recovery 0  4 s  left ~0.8 h
+   [302/998] mlvc_360p  i8   qp32    173.4 kbps  Y 30.94  disp 24.72  face 31.66 / 0.279  I 5, LTR 0, recovery 0  4 s  left ~0.8 h
+   [303/998] mlvc_360p  i8   qp40     64.1 kbps  Y 27.79  disp 23.39  face 29.18 / 0.360  I 5, LTR 0, recovery 0  4 s  left ~0.8 h
+   [304/998] mlvc_360p  i10  qp16    794.5 kbps  Y 34.03  disp 25.56  face 34.46 / 0.209  I 5, LTR 0, recovery 0  4 s  left ~0.8 h
+   [305/998] mlvc_360p  i10  qp24    422.8 kbps  Y 33.01  disp 25.33  face 33.48 / 0.231  I 5, LTR 0, recovery 0  4 s  left ~0.8 h
+   [306/998] mlvc_360p  i10  qp26    344.7 kbps  Y 32.59  disp 25.22  face 33.17 / 0.238  I 5, LTR 0, recovery 0  4 s  left ~0.8 h
+   [307/998] mlvc_360p  i10  qp32    178.2 kbps  Y 31.02  disp 24.75  face 31.73 / 0.276  I 5, LTR 0, recovery 0  4 s  left ~0.8 h
+   [308/998] mlvc_360p  i10  qp40     73.0 kbps  Y 28.19  disp 23.58  face 29.37 / 0.348  I 5, LTR 0, recovery 0  4 s  left ~0.8 h
+   [309/998] mlvcs_540p o0   qp16   1772.3 kbps  Y 33.73  disp 28.56  face 36.35 / 0.149  I 5, LTR 19, recovery 0  same as exp. 10: YES  4 s  left ~0.8 h
+   [310/998] mlvcs_540p o0   qp24    965.5 kbps  Y 32.91  disp 28.19  face 35.08 / 0.177  I 5, LTR 19, recovery 0  same as exp. 10: YES  4 s  left ~0.8 h
+   [311/998] mlvcs_540p o0   qp26    772.7 kbps  Y 32.51  disp 27.99  face 34.59 / 0.188  I 5, LTR 19, recovery 0  same as exp. 10: YES  4 s  left ~0.8 h
+   [312/998] mlvcs_540p o0   qp32    360.3 kbps  Y 30.61  disp 26.94  face 32.63 / 0.242  I 5, LTR 19, recovery 0  same as exp. 10: YES  4 s  left ~0.8 h
+   [313/998] mlvcs_540p o0   qp40    124.8 kbps  Y 27.00  disp 24.45  face 29.47 / 0.356  I 5, LTR 19, recovery 0  same as exp. 10: YES  4 s  left ~0.8 h
+   [314/998] mlvcs_540p i4   qp16   1772.5 kbps  Y 33.73  disp 28.56  face 36.35 / 0.149  I 5, LTR 19, recovery 0  4 s  left ~0.8 h
+   [315/998] mlvcs_540p i4   qp24    984.7 kbps  Y 32.95  disp 28.21  face 35.17 / 0.175  I 5, LTR 19, recovery 0  4 s  left ~0.8 h
+   [316/998] mlvcs_540p i4   qp26    788.5 kbps  Y 32.56  disp 28.02  face 34.65 / 0.187  I 5, LTR 19, recovery 0  4 s  left ~0.8 h
+   [317/998] mlvcs_540p i4   qp32    369.8 kbps  Y 30.76  disp 27.03  face 32.80 / 0.238  I 5, LTR 19, recovery 0  4 s  left ~0.8 h
+   [318/998] mlvcs_540p i4   qp40    130.9 kbps  Y 27.40  disp 24.76  face 29.77 / 0.345  I 5, LTR 19, recovery 0  4 s  left ~0.8 h
+   [319/998] mlvcs_540p l4   qp16   1772.3 kbps  Y 33.73  disp 28.56  face 36.35 / 0.149  I 5, LTR 19, recovery 0  4 s  left ~0.8 h
+   [320/998] mlvcs_540p l4   qp24   1004.0 kbps  Y 32.97  disp 28.22  face 35.21 / 0.174  I 5, LTR 19, recovery 0  4 s  left ~0.8 h
+   [321/998] mlvcs_540p l4   qp26    807.5 kbps  Y 32.59  disp 28.04  face 34.73 / 0.185  I 5, LTR 19, recovery 0  4 s  left ~0.8 h
+   [322/998] mlvcs_540p l4   qp32    382.6 kbps  Y 30.78  disp 27.05  face 32.82 / 0.236  I 5, LTR 19, recovery 0  4 s  left ~0.8 h
+   [323/998] mlvcs_540p l4   qp40    134.2 kbps  Y 27.17  disp 24.58  face 29.65 / 0.350  I 5, LTR 19, recovery 0  4 s  left ~0.8 h
+   [324/998] mlvcs_540p b4   qp16   1772.5 kbps  Y 33.73  disp 28.56  face 36.35 / 0.149  I 5, LTR 19, recovery 0  4 s  left ~0.8 h
+   [325/998] mlvcs_540p b4   qp24   1021.5 kbps  Y 33.00  disp 28.24  face 35.27 / 0.173  I 5, LTR 19, recovery 0  4 s  left ~0.8 h
+   [326/998] mlvcs_540p b4   qp26    824.8 kbps  Y 32.63  disp 28.06  face 34.77 / 0.185  I 5, LTR 19, recovery 0  4 s  left ~0.8 h
+   [327/998] mlvcs_540p b4   qp32    391.2 kbps  Y 30.90  disp 27.12  face 32.96 / 0.232  I 5, LTR 19, recovery 0  4 s  left ~0.8 h
+   [328/998] mlvcs_540p b4   qp40    139.2 kbps  Y 27.56  disp 24.88  face 29.89 / 0.340  I 5, LTR 19, recovery 0  4 s  left ~0.8 h
+   [329/998] mlvcs_540p i8   qp16   1772.5 kbps  Y 33.73  disp 28.56  face 36.35 / 0.149  I 5, LTR 19, recovery 0  4 s  left ~0.8 h
+   [330/998] mlvcs_540p i8   qp24    992.7 kbps  Y 32.95  disp 28.20  face 35.17 / 0.175  I 5, LTR 19, recovery 0  4 s  left ~0.8 h
+   [331/998] mlvcs_540p i8   qp26    803.2 kbps  Y 32.58  disp 28.03  face 34.71 / 0.186  I 5, LTR 19, recovery 0  4 s  left ~0.8 h
+   [332/998] mlvcs_540p i8   qp32    383.0 kbps  Y 30.85  disp 27.09  face 32.90 / 0.230  I 5, LTR 19, recovery 0  4 s  left ~0.7 h
+   [333/998] mlvcs_540p i8   qp40    139.1 kbps  Y 27.69  disp 24.97  face 30.04 / 0.332  I 5, LTR 19, recovery 0  4 s  left ~0.7 h
+   [334/998] mlvcs_540p r0   qp16   2041.6 kbps  Y 33.71  disp 28.54  face 36.25 / 0.152  I 5, LTR 19, recovery 5  4 s  left ~0.7 h
+   [335/998] mlvcs_540p r0   qp24   1147.8 kbps  Y 32.98  disp 28.21  face 35.04 / 0.179  I 5, LTR 19, recovery 5  4 s  left ~0.7 h
+   [336/998] mlvcs_540p r0   qp26    919.3 kbps  Y 32.60  disp 28.03  face 34.54 / 0.190  I 5, LTR 19, recovery 5  4 s  left ~0.7 h
+   [337/998] mlvcs_540p r0   qp32    423.8 kbps  Y 30.72  disp 27.01  face 32.60 / 0.243  I 5, LTR 19, recovery 5  4 s  left ~0.7 h
+   [338/998] mlvcs_540p r0   qp40    142.9 kbps  Y 27.10  disp 24.53  face 29.51 / 0.356  I 5, LTR 19, recovery 5  4 s  left ~0.7 h
+   [339/998] mlvcs_540p rl4  qp16   2041.6 kbps  Y 33.71  disp 28.54  face 36.25 / 0.152  I 5, LTR 19, recovery 5  4 s  left ~0.7 h
+   [340/998] mlvcs_540p rl4  qp24   1196.0 kbps  Y 33.04  disp 28.24  face 35.19 / 0.175  I 5, LTR 19, recovery 5  4 s  left ~0.7 h
+   [341/998] mlvcs_540p rl4  qp26    965.9 kbps  Y 32.69  disp 28.07  face 34.70 / 0.186  I 5, LTR 19, recovery 5  4 s  left ~0.7 h
+   [342/998] mlvcs_540p rl4  qp32    454.6 kbps  Y 30.92  disp 27.12  face 32.86 / 0.235  I 5, LTR 19, recovery 5  4 s  left ~0.7 h
+   [343/998] mlvcs_540p rl4  qp40    158.8 kbps  Y 27.34  disp 24.71  face 29.76 / 0.346  I 5, LTR 19, recovery 5  4 s  left ~0.7 h
+   [344/998] mlvcs_540p rb4  qp16   2041.7 kbps  Y 33.71  disp 28.54  face 36.25 / 0.152  I 5, LTR 19, recovery 5  4 s  left ~0.7 h
+   [345/998] mlvcs_540p rb4  qp24   1213.4 kbps  Y 33.07  disp 28.25  face 35.21 / 0.174  I 5, LTR 19, recovery 5  4 s  left ~0.7 h
+   [346/998] mlvcs_540p rb4  qp26    982.0 kbps  Y 32.73  disp 28.09  face 34.75 / 0.185  I 5, LTR 19, recovery 5  4 s  left ~0.7 h
+   [347/998] mlvcs_540p rb4  qp32    462.1 kbps  Y 31.04  disp 27.19  face 33.03 / 0.230  I 5, LTR 19, recovery 5  4 s  left ~0.7 h
+   [348/998] mlvcs_540p rb4  qp40    162.8 kbps  Y 27.72  disp 25.00  face 29.94 / 0.339  I 5, LTR 19, recovery 5  4 s  left ~0.7 h
+== clip 8/20 6aa9cf  17:07:19
+   [349/998] mlvc_360p  i8   qp16    238.7 kbps  Y 44.55  disp 41.01  face 39.99 / 0.137  I 5, LTR 0, recovery 0  5 s  left ~0.7 h
+   [350/998] mlvc_360p  i8   qp24    136.1 kbps  Y 42.50  disp 39.69  face 38.54 / 0.153  I 5, LTR 0, recovery 0  5 s  left ~0.7 h
+   [351/998] mlvc_360p  i8   qp26    116.9 kbps  Y 41.80  disp 39.21  face 37.95 / 0.159  I 5, LTR 0, recovery 0  5 s  left ~0.7 h
+   [352/998] mlvc_360p  i8   qp32     67.9 kbps  Y 39.13  disp 37.13  face 35.80 / 0.190  I 5, LTR 0, recovery 0  5 s  left ~0.7 h
+   [353/998] mlvc_360p  i8   qp40     33.9 kbps  Y 35.15  disp 33.58  face 32.27 / 0.250  I 5, LTR 0, recovery 0  5 s  left ~0.7 h
+   [354/998] mlvc_360p  i10  qp16    238.7 kbps  Y 44.55  disp 41.01  face 39.99 / 0.137  I 5, LTR 0, recovery 0  5 s  left ~0.7 h
+   [355/998] mlvc_360p  i10  qp24    136.1 kbps  Y 42.50  disp 39.69  face 38.54 / 0.153  I 5, LTR 0, recovery 0  5 s  left ~0.7 h
+   [356/998] mlvc_360p  i10  qp26    116.9 kbps  Y 41.80  disp 39.21  face 37.95 / 0.159  I 5, LTR 0, recovery 0  5 s  left ~0.7 h
+   [357/998] mlvc_360p  i10  qp32     70.4 kbps  Y 39.28  disp 37.24  face 35.89 / 0.186  I 5, LTR 0, recovery 0  5 s  left ~0.7 h
+   [358/998] mlvc_360p  i10  qp40     35.6 kbps  Y 35.36  disp 33.78  face 32.44 / 0.243  I 5, LTR 0, recovery 0  5 s  left ~0.7 h
+   [359/998] mlvcs_540p o0   qp16    510.9 kbps  Y 45.17  disp 42.50  face 41.66 / 0.104  I 5, LTR 19, recovery 0  same as exp. 10: YES  4 s  left ~0.7 h
+   [360/998] mlvcs_540p o0   qp24    262.5 kbps  Y 43.18  disp 40.99  face 40.02 / 0.122  I 5, LTR 19, recovery 0  same as exp. 10: YES  4 s  left ~0.7 h
+   [361/998] mlvcs_540p o0   qp26    214.9 kbps  Y 42.45  disp 40.37  face 39.36 / 0.128  I 5, LTR 19, recovery 0  same as exp. 10: YES  4 s  left ~0.7 h
+   [362/998] mlvcs_540p o0   qp32    113.2 kbps  Y 39.74  disp 38.02  face 36.85 / 0.160  I 5, LTR 19, recovery 0  same as exp. 10: YES  4 s  left ~0.7 h
+   [363/998] mlvcs_540p o0   qp40     54.9 kbps  Y 35.63  disp 34.16  face 32.98 / 0.222  I 5, LTR 19, recovery 0  same as exp. 10: YES  4 s  left ~0.7 h
+   [364/998] mlvcs_540p i4   qp16    511.1 kbps  Y 45.17  disp 42.50  face 41.66 / 0.104  I 5, LTR 19, recovery 0  4 s  left ~0.7 h
+   [365/998] mlvcs_540p i4   qp24    267.3 kbps  Y 43.24  disp 41.04  face 40.02 / 0.121  I 5, LTR 19, recovery 0  4 s  left ~0.7 h
+   [366/998] mlvcs_540p i4   qp26    219.8 kbps  Y 42.55  disp 40.48  face 39.40 / 0.127  I 5, LTR 19, recovery 0  4 s  left ~0.7 h
+   [367/998] mlvcs_540p i4   qp32    115.0 kbps  Y 39.88  disp 38.17  face 36.99 / 0.157  I 5, LTR 19, recovery 0  4 s  left ~0.7 h
+   [368/998] mlvcs_540p i4   qp40     56.4 kbps  Y 35.88  disp 34.42  face 33.17 / 0.217  I 5, LTR 19, recovery 0  4 s  left ~0.7 h
+   [369/998] mlvcs_540p l4   qp16    510.9 kbps  Y 45.17  disp 42.50  face 41.66 / 0.104  I 5, LTR 19, recovery 0  4 s  left ~0.7 h
+   [370/998] mlvcs_540p l4   qp24    279.3 kbps  Y 43.35  disp 41.15  face 40.20 / 0.119  I 5, LTR 19, recovery 0  4 s  left ~0.7 h
+   [371/998] mlvcs_540p l4   qp26    228.8 kbps  Y 42.66  disp 40.58  face 39.56 / 0.126  I 5, LTR 19, recovery 0  4 s  left ~0.7 h
+   [372/998] mlvcs_540p l4   qp32    120.8 kbps  Y 39.99  disp 38.29  face 37.07 / 0.156  I 5, LTR 19, recovery 0  4 s  left ~0.7 h
+   [373/998] mlvcs_540p l4   qp40     57.5 kbps  Y 35.87  disp 34.42  face 33.18 / 0.219  I 5, LTR 19, recovery 0  4 s  left ~0.7 h
+   [374/998] mlvcs_540p b4   qp16    511.0 kbps  Y 45.17  disp 42.50  face 41.66 / 0.104  I 5, LTR 19, recovery 0  4 s  left ~0.7 h
+   [375/998] mlvcs_540p b4   qp24    284.2 kbps  Y 43.42  disp 41.22  face 40.21 / 0.118  I 5, LTR 19, recovery 0  4 s  left ~0.7 h
+   [376/998] mlvcs_540p b4   qp26    233.5 kbps  Y 42.74  disp 40.66  face 39.60 / 0.125  I 5, LTR 19, recovery 0  4 s  left ~0.7 h
+   [377/998] mlvcs_540p b4   qp32    122.5 kbps  Y 40.13  disp 38.45  face 37.21 / 0.153  I 5, LTR 19, recovery 0  4 s  left ~0.7 h
+   [378/998] mlvcs_540p b4   qp40     58.9 kbps  Y 36.12  disp 34.69  face 33.34 / 0.213  I 5, LTR 19, recovery 0  4 s  left ~0.7 h
+   [379/998] mlvcs_540p i8   qp16    511.1 kbps  Y 45.17  disp 42.50  face 41.66 / 0.104  I 5, LTR 19, recovery 0  4 s  left ~0.7 h
+   [380/998] mlvcs_540p i8   qp24    270.6 kbps  Y 43.28  disp 41.08  face 40.08 / 0.121  I 5, LTR 19, recovery 0  4 s  left ~0.7 h
+   [381/998] mlvcs_540p i8   qp26    225.3 kbps  Y 42.62  disp 40.55  face 39.46 / 0.126  I 5, LTR 19, recovery 0  4 s  left ~0.7 h
+   [382/998] mlvcs_540p i8   qp32    118.9 kbps  Y 40.06  disp 38.34  face 37.14 / 0.153  I 5, LTR 19, recovery 0  4 s  left ~0.7 h
+   [383/998] mlvcs_540p i8   qp40     58.7 kbps  Y 36.15  disp 34.70  face 33.44 / 0.208  I 5, LTR 19, recovery 0  4 s  left ~0.7 h
+   [384/998] mlvcs_540p r0   qp16    562.5 kbps  Y 45.18  disp 42.49  face 41.59 / 0.104  I 5, LTR 19, recovery 5  4 s  left ~0.7 h
+   [385/998] mlvcs_540p r0   qp24    294.3 kbps  Y 43.22  disp 41.01  face 39.97 / 0.122  I 5, LTR 19, recovery 5  4 s  left ~0.7 h
+   [386/998] mlvcs_540p r0   qp26    241.4 kbps  Y 42.51  disp 40.42  face 39.31 / 0.129  I 5, LTR 19, recovery 5  4 s  left ~0.7 h
+   [387/998] mlvcs_540p r0   qp32    128.1 kbps  Y 39.81  disp 38.06  face 36.76 / 0.163  I 5, LTR 19, recovery 5  4 s  left ~0.7 h
+   [388/998] mlvcs_540p r0   qp40     62.0 kbps  Y 35.76  disp 34.27  face 32.95 / 0.228  I 5, LTR 19, recovery 5  4 s  left ~0.7 h
+   [389/998] mlvcs_540p rl4  qp16    562.5 kbps  Y 45.18  disp 42.49  face 41.59 / 0.104  I 5, LTR 19, recovery 5  4 s  left ~0.7 h
+   [390/998] mlvcs_540p rl4  qp24    313.2 kbps  Y 43.42  disp 41.21  face 40.18 / 0.119  I 5, LTR 19, recovery 5  4 s  left ~0.7 h
+   [391/998] mlvcs_540p rl4  qp26    257.7 kbps  Y 42.74  disp 40.66  face 39.57 / 0.126  I 5, LTR 19, recovery 5  4 s  left ~0.7 h
+   [392/998] mlvcs_540p rl4  qp32    137.3 kbps  Y 40.11  disp 38.40  face 37.12 / 0.157  I 5, LTR 19, recovery 5  4 s  left ~0.7 h
+   [393/998] mlvcs_540p rl4  qp40     65.6 kbps  Y 36.06  disp 34.62  face 33.26 / 0.222  I 5, LTR 19, recovery 5  4 s  left ~0.7 h
+   [394/998] mlvcs_540p rb4  qp16    562.6 kbps  Y 45.18  disp 42.49  face 41.59 / 0.104  I 5, LTR 19, recovery 5  4 s  left ~0.7 h
+   [395/998] mlvcs_540p rb4  qp24    317.7 kbps  Y 43.47  disp 41.27  face 40.18 / 0.119  I 5, LTR 19, recovery 5  4 s  left ~0.7 h
+   [396/998] mlvcs_540p rb4  qp26    262.1 kbps  Y 42.82  disp 40.73  face 39.61 / 0.125  I 5, LTR 19, recovery 5  4 s  left ~0.7 h
+   [397/998] mlvcs_540p rb4  qp32    138.7 kbps  Y 40.25  disp 38.56  face 37.21 / 0.155  I 5, LTR 19, recovery 5  4 s  left ~0.7 h
+   [398/998] mlvcs_540p rb4  qp40     66.9 kbps  Y 36.29  disp 34.88  face 33.48 / 0.217  I 5, LTR 19, recovery 5  4 s  left ~0.7 h
+== clip 9/20 6eb39d  17:10:57
+   [399/998] mlvc_360p  i8   qp16    541.3 kbps  Y 41.08  disp 38.32  face 40.93 / 0.146  I 5, LTR 0, recovery 0  5 s  left ~0.7 h
+   [400/998] mlvc_360p  i8   qp24    285.4 kbps  Y 38.75  disp 36.56  face 38.97 / 0.164  I 5, LTR 0, recovery 0  5 s  left ~0.7 h
+   [401/998] mlvc_360p  i8   qp26    235.6 kbps  Y 38.01  disp 35.96  face 38.26 / 0.172  I 5, LTR 0, recovery 0  5 s  left ~0.7 h
+   [402/998] mlvc_360p  i8   qp32    118.9 kbps  Y 35.29  disp 33.64  face 35.76 / 0.200  I 5, LTR 0, recovery 0  5 s  left ~0.7 h
+   [403/998] mlvc_360p  i8   qp40     46.0 kbps  Y 31.33  disp 29.93  face 32.04 / 0.260  I 5, LTR 0, recovery 0  5 s  left ~0.7 h
+   [404/998] mlvc_360p  i10  qp16    541.3 kbps  Y 41.08  disp 38.32  face 40.93 / 0.146  I 5, LTR 0, recovery 0  5 s  left ~0.7 h
+   [405/998] mlvc_360p  i10  qp24    285.4 kbps  Y 38.75  disp 36.56  face 38.97 / 0.164  I 5, LTR 0, recovery 0  5 s  left ~0.7 h
+   [406/998] mlvc_360p  i10  qp26    235.6 kbps  Y 38.01  disp 35.96  face 38.26 / 0.172  I 5, LTR 0, recovery 0  5 s  left ~0.7 h
+   [407/998] mlvc_360p  i10  qp32    122.8 kbps  Y 35.34  disp 33.67  face 35.82 / 0.199  I 5, LTR 0, recovery 0  5 s  left ~0.7 h
+   [408/998] mlvc_360p  i10  qp40     48.7 kbps  Y 31.45  disp 30.04  face 32.05 / 0.259  I 5, LTR 0, recovery 0  5 s  left ~0.7 h
+   [409/998] mlvcs_540p o0   qp16   1062.7 kbps  Y 42.14  disp 39.97  face 42.03 / 0.126  I 5, LTR 19, recovery 0  same as exp. 10: YES  4 s  left ~0.7 h
+   [410/998] mlvcs_540p o0   qp24    572.3 kbps  Y 39.73  disp 37.99  face 39.80 / 0.149  I 5, LTR 19, recovery 0  same as exp. 10: YES  4 s  left ~0.7 h
+   [411/998] mlvcs_540p o0   qp26    472.6 kbps  Y 38.89  disp 37.25  face 39.05 / 0.156  I 5, LTR 19, recovery 0  same as exp. 10: YES  4 s  left ~0.7 h
+   [412/998] mlvcs_540p o0   qp32    246.4 kbps  Y 35.90  disp 34.49  face 36.30 / 0.193  I 5, LTR 19, recovery 0  same as exp. 10: YES  4 s  left ~0.7 h
+   [413/998] mlvcs_540p o0   qp40     98.5 kbps  Y 31.66  disp 30.37  face 32.16 / 0.253  I 5, LTR 19, recovery 0  same as exp. 10: YES  4 s  left ~0.7 h
+   [414/998] mlvcs_540p i4   qp16   1062.8 kbps  Y 42.14  disp 39.97  face 42.03 / 0.126  I 5, LTR 19, recovery 0  4 s  left ~0.7 h
+   [415/998] mlvcs_540p i4   qp24    581.9 kbps  Y 39.78  disp 38.03  face 39.88 / 0.147  I 5, LTR 19, recovery 0  4 s  left ~0.7 h
+   [416/998] mlvcs_540p i4   qp26    480.8 kbps  Y 38.95  disp 37.32  face 39.17 / 0.155  I 5, LTR 19, recovery 0  4 s  left ~0.7 h
+   [417/998] mlvcs_540p i4   qp32    250.5 kbps  Y 35.99  disp 34.57  face 36.35 / 0.190  I 5, LTR 19, recovery 0  4 s  left ~0.7 h
+   [418/998] mlvcs_540p i4   qp40    101.1 kbps  Y 31.82  disp 30.55  face 32.37 / 0.246  I 5, LTR 19, recovery 0  4 s  left ~0.7 h
+   [419/998] mlvcs_540p l4   qp16   1062.7 kbps  Y 42.14  disp 39.97  face 42.03 / 0.126  I 5, LTR 19, recovery 0  4 s  left ~0.7 h
+   [420/998] mlvcs_540p l4   qp24    600.2 kbps  Y 39.87  disp 38.19  face 39.99 / 0.147  I 5, LTR 19, recovery 0  4 s  left ~0.7 h
+   [421/998] mlvcs_540p l4   qp26    497.1 kbps  Y 39.04  disp 37.48  face 39.27 / 0.155  I 5, LTR 19, recovery 0  4 s  left ~0.7 h
+   [422/998] mlvcs_540p l4   qp32    260.1 kbps  Y 36.09  disp 34.76  face 36.50 / 0.190  I 5, LTR 19, recovery 0  4 s  left ~0.7 h
+   [423/998] mlvcs_540p l4   qp40    104.6 kbps  Y 31.86  disp 30.64  face 32.49 / 0.246  I 5, LTR 19, recovery 0  4 s  left ~0.7 h
+   [424/998] mlvcs_540p b4   qp16   1062.8 kbps  Y 42.14  disp 39.97  face 42.03 / 0.126  I 5, LTR 19, recovery 0  4 s  left ~0.7 h
+   [425/998] mlvcs_540p b4   qp24    609.7 kbps  Y 39.92  disp 38.23  face 40.10 / 0.146  I 5, LTR 19, recovery 0  4 s  left ~0.7 h
+   [426/998] mlvcs_540p b4   qp26    504.5 kbps  Y 39.10  disp 37.53  face 39.31 / 0.154  I 5, LTR 19, recovery 0  4 s  left ~0.7 h
+   [427/998] mlvcs_540p b4   qp32    263.9 kbps  Y 36.19  disp 34.85  face 36.64 / 0.187  I 5, LTR 19, recovery 0  4 s  left ~0.7 h
+   [428/998] mlvcs_540p b4   qp40    107.3 kbps  Y 32.03  disp 30.80  face 32.57 / 0.242  I 5, LTR 19, recovery 0  4 s  left ~0.7 h
+   [429/998] mlvcs_540p i8   qp16   1062.9 kbps  Y 42.14  disp 39.97  face 42.03 / 0.126  I 5, LTR 19, recovery 0  4 s  left ~0.6 h
+   [430/998] mlvcs_540p i8   qp24    587.1 kbps  Y 39.79  disp 38.04  face 39.95 / 0.147  I 5, LTR 19, recovery 0  4 s  left ~0.6 h
+   [431/998] mlvcs_540p i8   qp26    490.2 kbps  Y 38.98  disp 37.33  face 39.21 / 0.155  I 5, LTR 19, recovery 0  4 s  left ~0.6 h
+   [432/998] mlvcs_540p i8   qp32    256.3 kbps  Y 36.07  disp 34.65  face 36.44 / 0.189  I 5, LTR 19, recovery 0  4 s  left ~0.6 h
+   [433/998] mlvcs_540p i8   qp40    105.3 kbps  Y 31.99  disp 30.69  face 32.63 / 0.242  I 5, LTR 19, recovery 0  4 s  left ~0.6 h
+   [434/998] mlvcs_540p r0   qp16   1108.5 kbps  Y 42.12  disp 39.91  face 42.04 / 0.127  I 5, LTR 19, recovery 5  4 s  left ~0.6 h
+   [435/998] mlvcs_540p r0   qp24    607.6 kbps  Y 39.74  disp 37.96  face 39.86 / 0.148  I 5, LTR 19, recovery 5  4 s  left ~0.6 h
+   [436/998] mlvcs_540p r0   qp26    505.3 kbps  Y 38.92  disp 37.24  face 39.09 / 0.156  I 5, LTR 19, recovery 5  4 s  left ~0.6 h
+   [437/998] mlvcs_540p r0   qp32    270.9 kbps  Y 35.99  disp 34.53  face 36.35 / 0.191  I 5, LTR 19, recovery 5  4 s  left ~0.6 h
+   [438/998] mlvcs_540p r0   qp40    111.0 kbps  Y 31.82  disp 30.48  face 32.24 / 0.248  I 5, LTR 19, recovery 5  4 s  left ~0.6 h
+   [439/998] mlvcs_540p rl4  qp16   1108.5 kbps  Y 42.12  disp 39.91  face 42.04 / 0.127  I 5, LTR 19, recovery 5  4 s  left ~0.6 h
+   [440/998] mlvcs_540p rl4  qp24    636.5 kbps  Y 39.90  disp 38.15  face 40.08 / 0.146  I 5, LTR 19, recovery 5  4 s  left ~0.6 h
+   [441/998] mlvcs_540p rl4  qp26    529.8 kbps  Y 39.09  disp 37.47  face 39.36 / 0.154  I 5, LTR 19, recovery 5  4 s  left ~0.6 h
+   [442/998] mlvcs_540p rl4  qp32    284.6 kbps  Y 36.22  disp 34.81  face 36.70 / 0.186  I 5, LTR 19, recovery 5  4 s  left ~0.6 h
+   [443/998] mlvcs_540p rl4  qp40    118.3 kbps  Y 32.08  disp 30.79  face 32.62 / 0.240  I 5, LTR 19, recovery 5  4 s  left ~0.6 h
+   [444/998] mlvcs_540p rb4  qp16   1108.6 kbps  Y 42.12  disp 39.91  face 42.04 / 0.127  I 5, LTR 19, recovery 5  4 s  left ~0.6 h
+   [445/998] mlvcs_540p rb4  qp24    645.4 kbps  Y 39.94  disp 38.19  face 40.15 / 0.145  I 5, LTR 19, recovery 5  4 s  left ~0.6 h
+   [446/998] mlvcs_540p rb4  qp26    537.7 kbps  Y 39.14  disp 37.52  face 39.51 / 0.152  I 5, LTR 19, recovery 5  4 s  left ~0.6 h
+   [447/998] mlvcs_540p rb4  qp32    288.5 kbps  Y 36.31  disp 34.90  face 36.87 / 0.183  I 5, LTR 19, recovery 5  4 s  left ~0.6 h
+   [448/998] mlvcs_540p rb4  qp40    120.9 kbps  Y 32.24  disp 30.93  face 32.72 / 0.237  I 5, LTR 19, recovery 5  4 s  left ~0.6 h
+== clip 10/20 73f232  17:14:30
+   [449/998] mlvc_360p  i8   qp16    443.1 kbps  Y 42.23  disp 35.76  face 33.65 / 0.232  I 5, LTR 0, recovery 0  5 s  left ~0.6 h
+   [450/998] mlvc_360p  i8   qp24    246.9 kbps  Y 40.03  disp 34.99  face 32.18 / 0.247  I 5, LTR 0, recovery 0  4 s  left ~0.6 h
+   [451/998] mlvc_360p  i8   qp26    209.7 kbps  Y 39.29  disp 34.67  face 31.59 / 0.255  I 5, LTR 0, recovery 0  5 s  left ~0.6 h
+   [452/998] mlvc_360p  i8   qp32    114.0 kbps  Y 36.48  disp 33.15  face 29.51 / 0.282  I 5, LTR 0, recovery 0  5 s  left ~0.6 h
+   [453/998] mlvc_360p  i8   qp40     49.9 kbps  Y 32.34  disp 30.19  face 26.19 / 0.351  I 5, LTR 0, recovery 0  5 s  left ~0.6 h
+   [454/998] mlvc_360p  i10  qp16    443.1 kbps  Y 42.23  disp 35.76  face 33.65 / 0.232  I 5, LTR 0, recovery 0  5 s  left ~0.6 h
+   [455/998] mlvc_360p  i10  qp24    246.9 kbps  Y 40.03  disp 34.99  face 32.18 / 0.247  I 5, LTR 0, recovery 0  5 s  left ~0.6 h
+   [456/998] mlvc_360p  i10  qp26    209.7 kbps  Y 39.29  disp 34.67  face 31.59 / 0.255  I 5, LTR 0, recovery 0  5 s  left ~0.6 h
+   [457/998] mlvc_360p  i10  qp32    119.3 kbps  Y 36.57  disp 33.22  face 29.56 / 0.282  I 5, LTR 0, recovery 0  5 s  left ~0.6 h
+   [458/998] mlvc_360p  i10  qp40     53.2 kbps  Y 32.53  disp 30.35  face 26.28 / 0.347  I 5, LTR 0, recovery 0  5 s  left ~0.6 h
+   [459/998] mlvcs_540p o0   qp16    864.1 kbps  Y 42.99  disp 37.09  face 34.92 / 0.188  I 5, LTR 19, recovery 0  same as exp. 10: YES  5 s  left ~0.6 h
+   [460/998] mlvcs_540p o0   qp24    457.2 kbps  Y 40.90  disp 36.26  face 33.54 / 0.205  I 5, LTR 19, recovery 0  same as exp. 10: YES  5 s  left ~0.6 h
+   [461/998] mlvcs_540p o0   qp26    373.9 kbps  Y 40.16  disp 35.90  face 32.96 / 0.213  I 5, LTR 19, recovery 0  same as exp. 10: YES  4 s  left ~0.6 h
+   [462/998] mlvcs_540p o0   qp32    196.5 kbps  Y 37.41  disp 34.33  face 30.71 / 0.244  I 5, LTR 19, recovery 0  same as exp. 10: YES  4 s  left ~0.6 h
+   [463/998] mlvcs_540p o0   qp40     85.9 kbps  Y 33.08  disp 31.11  face 27.05 / 0.318  I 5, LTR 19, recovery 0  same as exp. 10: YES  5 s  left ~0.6 h
+   [464/998] mlvcs_540p i4   qp16    864.2 kbps  Y 42.99  disp 37.09  face 34.92 / 0.188  I 5, LTR 19, recovery 0  5 s  left ~0.6 h
+   [465/998] mlvcs_540p i4   qp24    466.3 kbps  Y 40.95  disp 36.29  face 33.60 / 0.205  I 5, LTR 19, recovery 0  5 s  left ~0.6 h
+   [466/998] mlvcs_540p i4   qp26    382.2 kbps  Y 40.21  disp 35.94  face 32.99 / 0.211  I 5, LTR 19, recovery 0  5 s  left ~0.6 h
+   [467/998] mlvcs_540p i4   qp32    199.6 kbps  Y 37.49  disp 34.39  face 30.76 / 0.242  I 5, LTR 19, recovery 0  4 s  left ~0.6 h
+   [468/998] mlvcs_540p i4   qp40     88.9 kbps  Y 33.37  disp 31.37  face 27.20 / 0.312  I 5, LTR 19, recovery 0  4 s  left ~0.6 h
+   [469/998] mlvcs_540p l4   qp16    864.1 kbps  Y 42.99  disp 37.09  face 34.92 / 0.188  I 5, LTR 19, recovery 0  5 s  left ~0.6 h
+   [470/998] mlvcs_540p l4   qp24    479.7 kbps  Y 41.06  disp 36.35  face 33.66 / 0.203  I 5, LTR 19, recovery 0  5 s  left ~0.6 h
+   [471/998] mlvcs_540p l4   qp26    394.8 kbps  Y 40.33  disp 36.01  face 33.08 / 0.211  I 5, LTR 19, recovery 0  4 s  left ~0.6 h
+   [472/998] mlvcs_540p l4   qp32    208.3 kbps  Y 37.64  disp 34.51  face 30.93 / 0.241  I 5, LTR 19, recovery 0  5 s  left ~0.6 h
+   [473/998] mlvcs_540p l4   qp40     91.8 kbps  Y 33.35  disp 31.36  face 27.36 / 0.311  I 5, LTR 19, recovery 0  5 s  left ~0.6 h
+   [474/998] mlvcs_540p b4   qp16    864.2 kbps  Y 42.99  disp 37.09  face 34.92 / 0.188  I 5, LTR 19, recovery 0  5 s  left ~0.6 h
+   [475/998] mlvcs_540p b4   qp24    489.4 kbps  Y 41.10  disp 36.38  face 33.70 / 0.203  I 5, LTR 19, recovery 0  5 s  left ~0.6 h
+   [476/998] mlvcs_540p b4   qp26    402.0 kbps  Y 40.39  disp 36.04  face 33.13 / 0.209  I 5, LTR 19, recovery 0  5 s  left ~0.6 h
+   [477/998] mlvcs_540p b4   qp32    212.3 kbps  Y 37.74  disp 34.58  face 30.99 / 0.240  I 5, LTR 19, recovery 0  4 s  left ~0.6 h
+   [478/998] mlvcs_540p b4   qp40     94.2 kbps  Y 33.60  disp 31.58  face 27.48 / 0.306  I 5, LTR 19, recovery 0  4 s  left ~0.6 h
+   [479/998] mlvcs_540p i8   qp16    864.3 kbps  Y 42.99  disp 37.09  face 34.92 / 0.188  I 5, LTR 19, recovery 0  5 s  left ~0.6 h
+   [480/998] mlvcs_540p i8   qp24    471.9 kbps  Y 40.97  disp 36.30  face 33.60 / 0.204  I 5, LTR 19, recovery 0  5 s  left ~0.6 h
+   [481/998] mlvcs_540p i8   qp26    391.9 kbps  Y 40.27  disp 35.97  face 33.05 / 0.211  I 5, LTR 19, recovery 0  4 s  left ~0.6 h
+   [482/998] mlvcs_540p i8   qp32    206.6 kbps  Y 37.59  disp 34.47  face 30.83 / 0.240  I 5, LTR 19, recovery 0  5 s  left ~0.6 h
+   [483/998] mlvcs_540p i8   qp40     92.4 kbps  Y 33.59  disp 31.56  face 27.45 / 0.308  I 5, LTR 19, recovery 0  5 s  left ~0.6 h
+   [484/998] mlvcs_540p r0   qp16    936.5 kbps  Y 43.02  disp 37.10  face 34.88 / 0.189  I 5, LTR 19, recovery 5  5 s  left ~0.6 h
+   [485/998] mlvcs_540p r0   qp24    508.9 kbps  Y 40.99  disp 36.30  face 33.55 / 0.205  I 5, LTR 19, recovery 5  4 s  left ~0.6 h
+   [486/998] mlvcs_540p r0   qp26    418.8 kbps  Y 40.25  disp 35.95  face 32.96 / 0.212  I 5, LTR 19, recovery 5  5 s  left ~0.6 h
+   [487/998] mlvcs_540p r0   qp32    222.9 kbps  Y 37.56  disp 34.43  face 30.80 / 0.243  I 5, LTR 19, recovery 5  5 s  left ~0.6 h
+   [488/998] mlvcs_540p r0   qp40     99.4 kbps  Y 33.31  disp 31.30  face 27.19 / 0.314  I 5, LTR 19, recovery 5  4 s  left ~0.6 h
+   [489/998] mlvcs_540p rl4  qp16    936.5 kbps  Y 43.02  disp 37.10  face 34.88 / 0.189  I 5, LTR 19, recovery 5  4 s  left ~0.6 h
+   [490/998] mlvcs_540p rl4  qp24    534.9 kbps  Y 41.13  disp 36.38  face 33.64 / 0.203  I 5, LTR 19, recovery 5  4 s  left ~0.6 h
+   [491/998] mlvcs_540p rl4  qp26    441.8 kbps  Y 40.42  disp 36.05  face 33.07 / 0.211  I 5, LTR 19, recovery 5  5 s  left ~0.6 h
+   [492/998] mlvcs_540p rl4  qp32    236.1 kbps  Y 37.81  disp 34.61  face 30.97 / 0.240  I 5, LTR 19, recovery 5  5 s  left ~0.6 h
+   [493/998] mlvcs_540p rl4  qp40    106.0 kbps  Y 33.59  disp 31.56  face 27.50 / 0.308  I 5, LTR 19, recovery 5  5 s  left ~0.6 h
+   [494/998] mlvcs_540p rb4  qp16    936.7 kbps  Y 43.02  disp 37.10  face 34.88 / 0.189  I 5, LTR 19, recovery 5  5 s  left ~0.6 h
+   [495/998] mlvcs_540p rb4  qp24    544.2 kbps  Y 41.18  disp 36.41  face 33.67 / 0.203  I 5, LTR 19, recovery 5  5 s  left ~0.6 h
+   [496/998] mlvcs_540p rb4  qp26    448.4 kbps  Y 40.48  disp 36.09  face 33.14 / 0.209  I 5, LTR 19, recovery 5  5 s  left ~0.6 h
+   [497/998] mlvcs_540p rb4  qp32    239.7 kbps  Y 37.90  disp 34.67  face 31.01 / 0.238  I 5, LTR 19, recovery 5  5 s  left ~0.6 h
+   [498/998] mlvcs_540p rb4  qp40    108.3 kbps  Y 33.85  disp 31.79  face 27.68 / 0.304  I 5, LTR 19, recovery 5  5 s  left ~0.6 h
+== clip 11/20 99b38e  17:18:21
+   [499/998] mlvc_360p  i8   qp16    177.7 kbps  Y 44.81  disp 40.89  face 39.22 / 0.190  I 5, LTR 0, recovery 0  5 s  left ~0.6 h
+   [500/998] mlvc_360p  i8   qp24     99.3 kbps  Y 42.97  disp 39.79  face 37.85 / 0.216  I 5, LTR 0, recovery 0  5 s  left ~0.6 h
+   [501/998] mlvc_360p  i8   qp26     85.6 kbps  Y 42.35  disp 39.38  face 37.36 / 0.226  I 5, LTR 0, recovery 0  5 s  left ~0.6 h
+   [502/998] mlvc_360p  i8   qp32     48.3 kbps  Y 39.85  disp 37.55  face 35.30 / 0.276  I 5, LTR 0, recovery 0  5 s  left ~0.6 h
+   [503/998] mlvc_360p  i8   qp40     23.1 kbps  Y 36.08  disp 34.36  face 32.18 / 0.358  I 5, LTR 0, recovery 0  5 s  left ~0.6 h
+   [504/998] mlvc_360p  i10  qp16    177.7 kbps  Y 44.81  disp 40.89  face 39.22 / 0.190  I 5, LTR 0, recovery 0  5 s  left ~0.6 h
+   [505/998] mlvc_360p  i10  qp24     99.3 kbps  Y 42.97  disp 39.79  face 37.85 / 0.216  I 5, LTR 0, recovery 0  5 s  left ~0.6 h
+   [506/998] mlvc_360p  i10  qp26     85.6 kbps  Y 42.35  disp 39.38  face 37.36 / 0.226  I 5, LTR 0, recovery 0  5 s  left ~0.6 h
+   [507/998] mlvc_360p  i10  qp32     51.3 kbps  Y 40.05  disp 37.71  face 35.46 / 0.270  I 5, LTR 0, recovery 0  5 s  left ~0.6 h
+   [508/998] mlvc_360p  i10  qp40     24.7 kbps  Y 36.41  disp 34.65  face 32.43 / 0.350  I 5, LTR 0, recovery 0  5 s  left ~0.6 h
+   [509/998] mlvcs_540p o0   qp16    469.4 kbps  Y 45.49  disp 42.83  face 41.04 / 0.124  I 5, LTR 19, recovery 0  same as exp. 10: YES  5 s  left ~0.6 h
+   [510/998] mlvcs_540p o0   qp24    213.1 kbps  Y 43.47  disp 41.26  face 39.26 / 0.159  I 5, LTR 19, recovery 0  same as exp. 10: YES  5 s  left ~0.6 h
+   [511/998] mlvcs_540p o0   qp26    171.7 kbps  Y 42.72  disp 40.63  face 38.55 / 0.174  I 5, LTR 19, recovery 0  same as exp. 10: YES  5 s  left ~0.6 h
+   [512/998] mlvcs_540p o0   qp32     83.8 kbps  Y 39.74  disp 38.03  face 36.04 / 0.241  I 5, LTR 19, recovery 0  same as exp. 10: YES  4 s  left ~0.6 h
+   [513/998] mlvcs_540p o0   qp40     37.7 kbps  Y 35.85  disp 34.40  face 32.54 / 0.335  I 5, LTR 19, recovery 0  same as exp. 10: YES  5 s  left ~0.6 h
+   [514/998] mlvcs_540p i4   qp16    469.6 kbps  Y 45.49  disp 42.83  face 41.04 / 0.124  I 5, LTR 19, recovery 0  4 s  left ~0.6 h
+   [515/998] mlvcs_540p i4   qp24    217.5 kbps  Y 43.60  disp 41.37  face 39.32 / 0.158  I 5, LTR 19, recovery 0  5 s  left ~0.6 h
+   [516/998] mlvcs_540p i4   qp26    175.2 kbps  Y 42.88  disp 40.78  face 38.70 / 0.170  I 5, LTR 19, recovery 0  5 s  left ~0.6 h
+   [517/998] mlvcs_540p i4   qp32     87.3 kbps  Y 40.11  disp 38.37  face 36.28 / 0.230  I 5, LTR 19, recovery 0  4 s  left ~0.6 h
+   [518/998] mlvcs_540p i4   qp40     39.7 kbps  Y 36.24  disp 34.78  face 32.85 / 0.327  I 5, LTR 19, recovery 0  4 s  left ~0.6 h
+   [519/998] mlvcs_540p l4   qp16    469.4 kbps  Y 45.49  disp 42.83  face 41.04 / 0.124  I 5, LTR 19, recovery 0  5 s  left ~0.6 h
+   [520/998] mlvcs_540p l4   qp24    231.0 kbps  Y 43.75  disp 41.50  face 39.47 / 0.155  I 5, LTR 19, recovery 0  5 s  left ~0.6 h
+   [521/998] mlvcs_540p l4   qp26    186.0 kbps  Y 43.04  disp 40.91  face 38.83 / 0.166  I 5, LTR 19, recovery 0  4 s  left ~0.6 h
+   [522/998] mlvcs_540p l4   qp32     91.6 kbps  Y 40.10  disp 38.37  face 36.31 / 0.233  I 5, LTR 19, recovery 0  4 s  left ~0.6 h
+   [523/998] mlvcs_540p l4   qp40     39.7 kbps  Y 36.09  disp 34.64  face 32.76 / 0.331  I 5, LTR 19, recovery 0  5 s  left ~0.6 h
+   [524/998] mlvcs_540p b4   qp16    469.5 kbps  Y 45.49  disp 42.83  face 41.04 / 0.124  I 5, LTR 19, recovery 0  5 s  left ~0.6 h
+   [525/998] mlvcs_540p b4   qp24    234.6 kbps  Y 43.85  disp 41.59  face 39.55 / 0.152  I 5, LTR 19, recovery 0  5 s  left ~0.6 h
+   [526/998] mlvcs_540p b4   qp26    189.4 kbps  Y 43.17  disp 41.03  face 38.93 / 0.164  I 5, LTR 19, recovery 0  5 s  left ~0.5 h
+   [527/998] mlvcs_540p b4   qp32     94.4 kbps  Y 40.43  disp 38.67  face 36.48 / 0.225  I 5, LTR 19, recovery 0  5 s  left ~0.5 h
+   [528/998] mlvcs_540p b4   qp40     41.6 kbps  Y 36.46  disp 35.01  face 33.07 / 0.320  I 5, LTR 19, recovery 0  4 s  left ~0.5 h
+   [529/998] mlvcs_540p i8   qp16    469.6 kbps  Y 45.49  disp 42.83  face 41.04 / 0.124  I 5, LTR 19, recovery 0  5 s  left ~0.5 h
+   [530/998] mlvcs_540p i8   qp24    222.3 kbps  Y 43.67  disp 41.43  face 39.43 / 0.156  I 5, LTR 19, recovery 0  5 s  left ~0.5 h
+   [531/998] mlvcs_540p i8   qp26    182.7 kbps  Y 43.04  disp 40.93  face 38.84 / 0.166  I 5, LTR 19, recovery 0  5 s  left ~0.5 h
+   [532/998] mlvcs_540p i8   qp32     91.5 kbps  Y 40.41  disp 38.66  face 36.49 / 0.222  I 5, LTR 19, recovery 0  5 s  left ~0.5 h
+   [533/998] mlvcs_540p i8   qp40     43.0 kbps  Y 36.71  disp 35.25  face 33.20 / 0.309  I 5, LTR 19, recovery 0  5 s  left ~0.5 h
+   [534/998] mlvcs_540p r0   qp16    541.2 kbps  Y 45.49  disp 42.82  face 40.97 / 0.126  I 5, LTR 19, recovery 5  4 s  left ~0.5 h
+   [535/998] mlvcs_540p r0   qp24    243.1 kbps  Y 43.49  disp 41.25  face 39.16 / 0.162  I 5, LTR 19, recovery 5  4 s  left ~0.5 h
+   [536/998] mlvcs_540p r0   qp26    194.8 kbps  Y 42.73  disp 40.62  face 38.45 / 0.178  I 5, LTR 19, recovery 5  5 s  left ~0.5 h
+   [537/998] mlvcs_540p r0   qp32     94.6 kbps  Y 39.76  disp 38.02  face 35.94 / 0.245  I 5, LTR 19, recovery 5  4 s  left ~0.5 h
+   [538/998] mlvcs_540p r0   qp40     42.4 kbps  Y 35.88  disp 34.41  face 32.54 / 0.339  I 5, LTR 19, recovery 5  5 s  left ~0.5 h
+   [539/998] mlvcs_540p rl4  qp16    541.2 kbps  Y 45.49  disp 42.82  face 40.97 / 0.126  I 5, LTR 19, recovery 5  5 s  left ~0.5 h
+   [540/998] mlvcs_540p rl4  qp24    265.2 kbps  Y 43.76  disp 41.49  face 39.42 / 0.156  I 5, LTR 19, recovery 5  4 s  left ~0.5 h
+   [541/998] mlvcs_540p rl4  qp26    212.9 kbps  Y 43.06  disp 40.91  face 38.74 / 0.170  I 5, LTR 19, recovery 5  4 s  left ~0.5 h
+   [542/998] mlvcs_540p rl4  qp32    104.3 kbps  Y 40.18  disp 38.42  face 36.34 / 0.233  I 5, LTR 19, recovery 5  4 s  left ~0.5 h
+   [543/998] mlvcs_540p rl4  qp40     45.3 kbps  Y 36.16  disp 34.68  face 32.82 / 0.333  I 5, LTR 19, recovery 5  4 s  left ~0.5 h
+   [544/998] mlvcs_540p rb4  qp16    541.4 kbps  Y 45.49  disp 42.82  face 40.97 / 0.126  I 5, LTR 19, recovery 5  4 s  left ~0.5 h
+   [545/998] mlvcs_540p rb4  qp24    268.7 kbps  Y 43.87  disp 41.59  face 39.50 / 0.155  I 5, LTR 19, recovery 5  4 s  left ~0.5 h
+   [546/998] mlvcs_540p rb4  qp26    215.9 kbps  Y 43.20  disp 41.05  face 38.90 / 0.165  I 5, LTR 19, recovery 5  4 s  left ~0.5 h
+   [547/998] mlvcs_540p rb4  qp32    106.6 kbps  Y 40.49  disp 38.71  face 36.47 / 0.227  I 5, LTR 19, recovery 5  5 s  left ~0.5 h
+   [548/998] mlvcs_540p rb4  qp40     46.9 kbps  Y 36.52  disp 35.04  face 33.06 / 0.325  I 5, LTR 19, recovery 5  5 s  left ~0.5 h
+== clip 12/20 a17620  17:22:12
+   [549/998] mlvc_360p  i8   qp16    235.6 kbps  Y 43.04  disp 35.77  face 34.37 / 0.219  I 5, LTR 0, recovery 0  5 s  left ~0.5 h
+   [550/998] mlvc_360p  i8   qp24    143.6 kbps  Y 41.47  disp 35.28  face 33.51 / 0.243  I 5, LTR 0, recovery 0  5 s  left ~0.5 h
+   [551/998] mlvc_360p  i8   qp26    124.9 kbps  Y 40.88  disp 35.06  face 33.17 / 0.253  I 5, LTR 0, recovery 0  5 s  left ~0.5 h
+   [552/998] mlvc_360p  i8   qp32     71.3 kbps  Y 38.50  disp 33.99  face 31.73 / 0.291  I 5, LTR 0, recovery 0  5 s  left ~0.5 h
+   [553/998] mlvc_360p  i8   qp40     33.2 kbps  Y 34.57  disp 31.59  face 29.24 / 0.367  I 5, LTR 0, recovery 0  5 s  left ~0.5 h
+   [554/998] mlvc_360p  i10  qp16    235.6 kbps  Y 43.04  disp 35.77  face 34.37 / 0.219  I 5, LTR 0, recovery 0  5 s  left ~0.5 h
+   [555/998] mlvc_360p  i10  qp24    143.6 kbps  Y 41.47  disp 35.28  face 33.51 / 0.243  I 5, LTR 0, recovery 0  5 s  left ~0.5 h
+   [556/998] mlvc_360p  i10  qp26    124.9 kbps  Y 40.88  disp 35.06  face 33.17 / 0.253  I 5, LTR 0, recovery 0  5 s  left ~0.5 h
+   [557/998] mlvc_360p  i10  qp32     75.5 kbps  Y 38.62  disp 34.06  face 31.81 / 0.286  I 5, LTR 0, recovery 0  5 s  left ~0.5 h
+   [558/998] mlvc_360p  i10  qp40     36.0 kbps  Y 34.93  disp 31.85  face 29.43 / 0.354  I 5, LTR 0, recovery 0  5 s  left ~0.5 h
+   [559/998] mlvcs_540p o0   qp16    487.6 kbps  Y 43.72  disp 39.35  face 37.27 / 0.128  I 5, LTR 19, recovery 0  same as exp. 10: YES  5 s  left ~0.5 h
+   [560/998] mlvcs_540p o0   qp24    244.9 kbps  Y 42.00  disp 38.38  face 35.86 / 0.165  I 5, LTR 19, recovery 0  same as exp. 10: YES  5 s  left ~0.5 h
+   [561/998] mlvcs_540p o0   qp26    203.0 kbps  Y 41.34  disp 37.96  face 35.30 / 0.178  I 5, LTR 19, recovery 0  same as exp. 10: YES  5 s  left ~0.5 h
+   [562/998] mlvcs_540p o0   qp32    111.5 kbps  Y 38.71  disp 36.10  face 33.17 / 0.233  I 5, LTR 19, recovery 0  same as exp. 10: YES  5 s  left ~0.5 h
+   [563/998] mlvcs_540p o0   qp40     50.3 kbps  Y 34.41  disp 32.51  face 29.80 / 0.338  I 5, LTR 19, recovery 0  same as exp. 10: YES  5 s  left ~0.5 h
+   [564/998] mlvcs_540p i4   qp16    487.7 kbps  Y 43.72  disp 39.35  face 37.27 / 0.128  I 5, LTR 19, recovery 0  5 s  left ~0.5 h
+   [565/998] mlvcs_540p i4   qp24    252.8 kbps  Y 42.10  disp 38.45  face 35.92 / 0.163  I 5, LTR 19, recovery 0  5 s  left ~0.5 h
+   [566/998] mlvcs_540p i4   qp26    209.0 kbps  Y 41.47  disp 38.05  face 35.37 / 0.176  I 5, LTR 19, recovery 0  5 s  left ~0.5 h
+   [567/998] mlvcs_540p i4   qp32    113.1 kbps  Y 38.97  disp 36.30  face 33.29 / 0.226  I 5, LTR 19, recovery 0  5 s  left ~0.5 h
+   [568/998] mlvcs_540p i4   qp40     52.4 kbps  Y 34.86  disp 32.91  face 30.03 / 0.322  I 5, LTR 19, recovery 0  5 s  left ~0.5 h
+   [569/998] mlvcs_540p l4   qp16    487.6 kbps  Y 43.72  disp 39.35  face 37.27 / 0.128  I 5, LTR 19, recovery 0  5 s  left ~0.5 h
+   [570/998] mlvcs_540p l4   qp24    259.9 kbps  Y 42.20  disp 38.51  face 36.02 / 0.160  I 5, LTR 19, recovery 0  5 s  left ~0.5 h
+   [571/998] mlvcs_540p l4   qp26    216.5 kbps  Y 41.59  disp 38.13  face 35.51 / 0.172  I 5, LTR 19, recovery 0  5 s  left ~0.5 h
+   [572/998] mlvcs_540p l4   qp32    120.6 kbps  Y 39.05  disp 36.36  face 33.44 / 0.226  I 5, LTR 19, recovery 0  5 s  left ~0.5 h
+   [573/998] mlvcs_540p l4   qp40     53.2 kbps  Y 34.65  disp 32.72  face 30.03 / 0.331  I 5, LTR 19, recovery 0  5 s  left ~0.5 h
+   [574/998] mlvcs_540p b4   qp16    487.7 kbps  Y 43.72  disp 39.35  face 37.27 / 0.128  I 5, LTR 19, recovery 0  5 s  left ~0.5 h
+   [575/998] mlvcs_540p b4   qp24    267.3 kbps  Y 42.30  disp 38.57  face 36.09 / 0.159  I 5, LTR 19, recovery 0  5 s  left ~0.5 h
+   [576/998] mlvcs_540p b4   qp26    222.5 kbps  Y 41.71  disp 38.21  face 35.57 / 0.169  I 5, LTR 19, recovery 0  5 s  left ~0.5 h
+   [577/998] mlvcs_540p b4   qp32    121.6 kbps  Y 39.30  disp 36.55  face 33.55 / 0.222  I 5, LTR 19, recovery 0  5 s  left ~0.5 h
+   [578/998] mlvcs_540p b4   qp40     54.5 kbps  Y 35.07  disp 33.10  face 30.28 / 0.317  I 5, LTR 19, recovery 0  5 s  left ~0.5 h
+   [579/998] mlvcs_540p i8   qp16    487.8 kbps  Y 43.72  disp 39.35  face 37.27 / 0.128  I 5, LTR 19, recovery 0  5 s  left ~0.5 h
+   [580/998] mlvcs_540p i8   qp24    257.6 kbps  Y 42.13  disp 38.46  face 35.94 / 0.163  I 5, LTR 19, recovery 0  5 s  left ~0.5 h
+   [581/998] mlvcs_540p i8   qp26    218.2 kbps  Y 41.57  disp 38.11  face 35.42 / 0.175  I 5, LTR 19, recovery 0  5 s  left ~0.5 h
+   [582/998] mlvcs_540p i8   qp32    117.3 kbps  Y 39.16  disp 36.44  face 33.49 / 0.220  I 5, LTR 19, recovery 0  5 s  left ~0.5 h
+   [583/998] mlvcs_540p i8   qp40     55.8 kbps  Y 35.38  disp 33.38  face 30.44 / 0.305  I 5, LTR 19, recovery 0  5 s  left ~0.5 h
+   [584/998] mlvcs_540p r0   qp16    577.6 kbps  Y 43.81  disp 39.40  face 37.24 / 0.127  I 5, LTR 19, recovery 5  5 s  left ~0.5 h
+   [585/998] mlvcs_540p r0   qp24    275.6 kbps  Y 42.14  disp 38.47  face 35.98 / 0.162  I 5, LTR 19, recovery 5  5 s  left ~0.5 h
+   [586/998] mlvcs_540p r0   qp26    225.5 kbps  Y 41.48  disp 38.06  face 35.44 / 0.176  I 5, LTR 19, recovery 5  5 s  left ~0.5 h
+   [587/998] mlvcs_540p r0   qp32    119.7 kbps  Y 38.86  disp 36.22  face 33.33 / 0.231  I 5, LTR 19, recovery 5  5 s  left ~0.5 h
+   [588/998] mlvcs_540p r0   qp40     52.3 kbps  Y 34.52  disp 32.61  face 29.93 / 0.338  I 5, LTR 19, recovery 5  5 s  left ~0.5 h
+   [589/998] mlvcs_540p rl4  qp16    577.6 kbps  Y 43.81  disp 39.40  face 37.24 / 0.127  I 5, LTR 19, recovery 5  5 s  left ~0.5 h
+   [590/998] mlvcs_540p rl4  qp24    295.8 kbps  Y 42.34  disp 38.60  face 36.13 / 0.157  I 5, LTR 19, recovery 5  5 s  left ~0.5 h
+   [591/998] mlvcs_540p rl4  qp26    244.8 kbps  Y 41.75  disp 38.24  face 35.60 / 0.171  I 5, LTR 19, recovery 5  5 s  left ~0.5 h
+   [592/998] mlvcs_540p rl4  qp32    133.7 kbps  Y 39.25  disp 36.52  face 33.57 / 0.225  I 5, LTR 19, recovery 5  5 s  left ~0.5 h
+   [593/998] mlvcs_540p rl4  qp40     56.9 kbps  Y 34.81  disp 32.87  face 30.15 / 0.331  I 5, LTR 19, recovery 5  5 s  left ~0.5 h
+   [594/998] mlvcs_540p rb4  qp16    577.7 kbps  Y 43.81  disp 39.40  face 37.24 / 0.127  I 5, LTR 19, recovery 5  5 s  left ~0.5 h
+   [595/998] mlvcs_540p rb4  qp24    303.5 kbps  Y 42.42  disp 38.66  face 36.18 / 0.156  I 5, LTR 19, recovery 5  5 s  left ~0.5 h
+   [596/998] mlvcs_540p rb4  qp26    249.8 kbps  Y 41.86  disp 38.31  face 35.67 / 0.169  I 5, LTR 19, recovery 5  5 s  left ~0.5 h
+   [597/998] mlvcs_540p rb4  qp32    134.4 kbps  Y 39.49  disp 36.70  face 33.71 / 0.219  I 5, LTR 19, recovery 5  5 s  left ~0.5 h
+   [598/998] mlvcs_540p rb4  qp40     57.7 kbps  Y 35.22  disp 33.23  face 30.40 / 0.319  I 5, LTR 19, recovery 5  5 s  left ~0.5 h
+== clip 13/20 b2d792  17:26:10
+   [599/998] mlvc_360p  i8   qp16    251.8 kbps  Y 42.50  disp 37.86  face 34.97 / 0.250  I 5, LTR 0, recovery 0  5 s  left ~0.5 h
+   [600/998] mlvc_360p  i8   qp24    137.4 kbps  Y 40.78  disp 37.01  face 34.01 / 0.269  I 5, LTR 0, recovery 0  5 s  left ~0.5 h
+   [601/998] mlvc_360p  i8   qp26    116.6 kbps  Y 40.21  disp 36.70  face 33.66 / 0.273  I 5, LTR 0, recovery 0  5 s  left ~0.5 h
+   [602/998] mlvc_360p  i8   qp32     63.6 kbps  Y 38.02  disp 35.32  face 32.15 / 0.301  I 5, LTR 0, recovery 0  5 s  left ~0.5 h
+   [603/998] mlvc_360p  i8   qp40     29.2 kbps  Y 34.67  disp 32.79  face 29.40 / 0.367  I 5, LTR 0, recovery 0  5 s  left ~0.5 h
+   [604/998] mlvc_360p  i10  qp16    251.8 kbps  Y 42.50  disp 37.86  face 34.97 / 0.250  I 5, LTR 0, recovery 0  5 s  left ~0.5 h
+   [605/998] mlvc_360p  i10  qp24    137.4 kbps  Y 40.78  disp 37.01  face 34.01 / 0.269  I 5, LTR 0, recovery 0  5 s  left ~0.5 h
+   [606/998] mlvc_360p  i10  qp26    116.6 kbps  Y 40.21  disp 36.70  face 33.66 / 0.273  I 5, LTR 0, recovery 0  5 s  left ~0.5 h
+   [607/998] mlvc_360p  i10  qp32     67.1 kbps  Y 38.15  disp 35.40  face 32.26 / 0.298  I 5, LTR 0, recovery 0  5 s  left ~0.5 h
+   [608/998] mlvc_360p  i10  qp40     31.3 kbps  Y 34.91  disp 32.99  face 29.63 / 0.355  I 5, LTR 0, recovery 0  5 s  left ~0.5 h
+   [609/998] mlvcs_540p o0   qp16    549.8 kbps  Y 42.67  disp 39.76  face 36.70 / 0.198  I 5, LTR 19, recovery 0  same as exp. 10: YES  5 s  left ~0.5 h
+   [610/998] mlvcs_540p o0   qp24    274.9 kbps  Y 40.97  disp 38.59  face 35.42 / 0.229  I 5, LTR 19, recovery 0  same as exp. 10: YES  5 s  left ~0.5 h
+   [611/998] mlvcs_540p o0   qp26    221.2 kbps  Y 40.34  disp 38.12  face 34.93 / 0.240  I 5, LTR 19, recovery 0  same as exp. 10: YES  5 s  left ~0.5 h
+   [612/998] mlvcs_540p o0   qp32    107.6 kbps  Y 38.00  disp 36.23  face 33.06 / 0.274  I 5, LTR 19, recovery 0  same as exp. 10: YES  5 s  left ~0.5 h
+   [613/998] mlvcs_540p o0   qp40     47.2 kbps  Y 34.60  disp 33.21  face 29.94 / 0.350  I 5, LTR 19, recovery 0  same as exp. 10: YES  5 s  left ~0.5 h
+   [614/998] mlvcs_540p i4   qp16    550.0 kbps  Y 42.67  disp 39.76  face 36.70 / 0.198  I 5, LTR 19, recovery 0  4 s  left ~0.5 h
+   [615/998] mlvcs_540p i4   qp24    281.3 kbps  Y 41.05  disp 38.65  face 35.51 / 0.227  I 5, LTR 19, recovery 0  5 s  left ~0.5 h
+   [616/998] mlvcs_540p i4   qp26    227.5 kbps  Y 40.44  disp 38.19  face 35.03 / 0.237  I 5, LTR 19, recovery 0  5 s  left ~0.5 h
+   [617/998] mlvcs_540p i4   qp32    111.7 kbps  Y 38.19  disp 36.40  face 33.24 / 0.270  I 5, LTR 19, recovery 0  5 s  left ~0.5 h
+   [618/998] mlvcs_540p i4   qp40     49.4 kbps  Y 34.86  disp 33.45  face 30.22 / 0.340  I 5, LTR 19, recovery 0  5 s  left ~0.5 h
+   [619/998] mlvcs_540p l4   qp16    549.9 kbps  Y 42.67  disp 39.76  face 36.70 / 0.198  I 5, LTR 19, recovery 0  5 s  left ~0.4 h
+   [620/998] mlvcs_540p l4   qp24    292.0 kbps  Y 41.12  disp 38.71  face 35.53 / 0.227  I 5, LTR 19, recovery 0  5 s  left ~0.4 h
+   [621/998] mlvcs_540p l4   qp26    236.2 kbps  Y 40.51  disp 38.25  face 35.08 / 0.236  I 5, LTR 19, recovery 0  5 s  left ~0.4 h
+   [622/998] mlvcs_540p l4   qp32    115.2 kbps  Y 38.20  disp 36.41  face 33.25 / 0.271  I 5, LTR 19, recovery 0  5 s  left ~0.4 h
+   [623/998] mlvcs_540p l4   qp40     49.9 kbps  Y 34.82  disp 33.41  face 30.16 / 0.347  I 5, LTR 19, recovery 0  5 s  left ~0.4 h
+   [624/998] mlvcs_540p b4   qp16    550.0 kbps  Y 42.67  disp 39.76  face 36.70 / 0.198  I 5, LTR 19, recovery 0  5 s  left ~0.4 h
+   [625/998] mlvcs_540p b4   qp24    298.5 kbps  Y 41.18  disp 38.76  face 35.59 / 0.225  I 5, LTR 19, recovery 0  5 s  left ~0.4 h
+   [626/998] mlvcs_540p b4   qp26    242.5 kbps  Y 40.61  disp 38.33  face 35.14 / 0.235  I 5, LTR 19, recovery 0  5 s  left ~0.4 h
+   [627/998] mlvcs_540p b4   qp32    118.8 kbps  Y 38.37  disp 36.56  face 33.39 / 0.267  I 5, LTR 19, recovery 0  5 s  left ~0.4 h
+   [628/998] mlvcs_540p b4   qp40     51.9 kbps  Y 35.08  disp 33.66  face 30.40 / 0.336  I 5, LTR 19, recovery 0  5 s  left ~0.4 h
+   [629/998] mlvcs_540p i8   qp16    550.1 kbps  Y 42.67  disp 39.76  face 36.70 / 0.198  I 5, LTR 19, recovery 0  5 s  left ~0.4 h
+   [630/998] mlvcs_540p i8   qp24    285.9 kbps  Y 41.06  disp 38.66  face 35.51 / 0.227  I 5, LTR 19, recovery 0  5 s  left ~0.4 h
+   [631/998] mlvcs_540p i8   qp26    235.6 kbps  Y 40.49  disp 38.23  face 35.09 / 0.235  I 5, LTR 19, recovery 0  5 s  left ~0.4 h
+   [632/998] mlvcs_540p i8   qp32    116.5 kbps  Y 38.35  disp 36.53  face 33.36 / 0.267  I 5, LTR 19, recovery 0  5 s  left ~0.4 h
+   [633/998] mlvcs_540p i8   qp40     52.9 kbps  Y 35.17  disp 33.74  face 30.46 / 0.320  I 5, LTR 19, recovery 0  5 s  left ~0.4 h
+   [634/998] mlvcs_540p r0   qp16    625.7 kbps  Y 42.65  disp 39.71  face 36.64 / 0.199  I 5, LTR 19, recovery 5  5 s  left ~0.4 h
+   [635/998] mlvcs_540p r0   qp24    318.8 kbps  Y 41.03  disp 38.59  face 35.42 / 0.228  I 5, LTR 19, recovery 5  5 s  left ~0.4 h
+   [636/998] mlvcs_540p r0   qp26    258.2 kbps  Y 40.40  disp 38.12  face 34.95 / 0.239  I 5, LTR 19, recovery 5  5 s  left ~0.4 h
+   [637/998] mlvcs_540p r0   qp32    126.9 kbps  Y 38.08  disp 36.25  face 33.06 / 0.273  I 5, LTR 19, recovery 5  5 s  left ~0.4 h
+   [638/998] mlvcs_540p r0   qp40     55.7 kbps  Y 34.72  disp 33.26  face 29.96 / 0.351  I 5, LTR 19, recovery 5  5 s  left ~0.4 h
+   [639/998] mlvcs_540p rl4  qp16    625.8 kbps  Y 42.65  disp 39.71  face 36.64 / 0.199  I 5, LTR 19, recovery 5  5 s  left ~0.4 h
+   [640/998] mlvcs_540p rl4  qp24    339.2 kbps  Y 41.19  disp 38.73  face 35.56 / 0.226  I 5, LTR 19, recovery 5  5 s  left ~0.4 h
+   [641/998] mlvcs_540p rl4  qp26    275.6 kbps  Y 40.59  disp 38.28  face 35.09 / 0.236  I 5, LTR 19, recovery 5  5 s  left ~0.4 h
+   [642/998] mlvcs_540p rl4  qp32    136.3 kbps  Y 38.32  disp 36.48  face 33.29 / 0.270  I 5, LTR 19, recovery 5  5 s  left ~0.4 h
+   [643/998] mlvcs_540p rl4  qp40     59.3 kbps  Y 35.00  disp 33.54  face 30.22 / 0.346  I 5, LTR 19, recovery 5  5 s  left ~0.4 h
+   [644/998] mlvcs_540p rb4  qp16    625.9 kbps  Y 42.65  disp 39.71  face 36.64 / 0.199  I 5, LTR 19, recovery 5  5 s  left ~0.4 h
+   [645/998] mlvcs_540p rb4  qp24    344.7 kbps  Y 41.24  disp 38.78  face 35.62 / 0.224  I 5, LTR 19, recovery 5  5 s  left ~0.4 h
+   [646/998] mlvcs_540p rb4  qp26    281.5 kbps  Y 40.68  disp 38.35  face 35.18 / 0.234  I 5, LTR 19, recovery 5  5 s  left ~0.4 h
+   [647/998] mlvcs_540p rb4  qp32    139.9 kbps  Y 38.49  disp 36.64  face 33.45 / 0.266  I 5, LTR 19, recovery 5  4 s  left ~0.4 h
+   [648/998] mlvcs_540p rb4  qp40     61.2 kbps  Y 35.22  disp 33.76  face 30.40 / 0.336  I 5, LTR 19, recovery 5  4 s  left ~0.4 h
+== clip 14/20 b8893c  17:30:07
+   [649/998] mlvc_360p  i8   qp16    302.3 kbps  Y 42.92  disp 38.59  face 37.02 / 0.335  I 5, LTR 0, recovery 0  5 s  left ~0.4 h
+   [650/998] mlvc_360p  i8   qp24    148.8 kbps  Y 41.34  disp 37.71  face 35.97 / 0.349  I 5, LTR 0, recovery 0  5 s  left ~0.4 h
+   [651/998] mlvc_360p  i8   qp26    122.2 kbps  Y 40.76  disp 37.36  face 35.59 / 0.352  I 5, LTR 0, recovery 0  5 s  left ~0.4 h
+   [652/998] mlvc_360p  i8   qp32     66.0 kbps  Y 38.41  disp 35.78  face 33.80 / 0.377  I 5, LTR 0, recovery 0  5 s  left ~0.4 h
+   [653/998] mlvc_360p  i8   qp40     30.6 kbps  Y 34.54  disp 32.72  face 30.70 / 0.435  I 5, LTR 0, recovery 0  5 s  left ~0.4 h
+   [654/998] mlvc_360p  i10  qp16    302.3 kbps  Y 42.92  disp 38.59  face 37.02 / 0.335  I 5, LTR 0, recovery 0  5 s  left ~0.4 h
+   [655/998] mlvc_360p  i10  qp24    148.8 kbps  Y 41.34  disp 37.71  face 35.97 / 0.349  I 5, LTR 0, recovery 0  5 s  left ~0.4 h
+   [656/998] mlvc_360p  i10  qp26    122.2 kbps  Y 40.76  disp 37.36  face 35.59 / 0.352  I 5, LTR 0, recovery 0  5 s  left ~0.4 h
+   [657/998] mlvc_360p  i10  qp32     69.0 kbps  Y 38.57  disp 35.90  face 33.98 / 0.372  I 5, LTR 0, recovery 0  5 s  left ~0.4 h
+   [658/998] mlvc_360p  i10  qp40     32.6 kbps  Y 34.91  disp 33.02  face 31.04 / 0.426  I 5, LTR 0, recovery 0  5 s  left ~0.4 h
+   [659/998] mlvcs_540p o0   qp16    805.5 kbps  Y 43.43  disp 40.59  face 38.97 / 0.283  I 5, LTR 19, recovery 0  same as exp. 10: YES  4 s  left ~0.4 h
+   [660/998] mlvcs_540p o0   qp24    307.7 kbps  Y 41.74  disp 39.33  face 37.56 / 0.308  I 5, LTR 19, recovery 0  same as exp. 10: YES  5 s  left ~0.4 h
+   [661/998] mlvcs_540p o0   qp26    229.9 kbps  Y 41.12  disp 38.85  face 37.05 / 0.316  I 5, LTR 19, recovery 0  same as exp. 10: YES  5 s  left ~0.4 h
+   [662/998] mlvcs_540p o0   qp32    106.6 kbps  Y 38.53  disp 36.69  face 34.94 / 0.341  I 5, LTR 19, recovery 0  same as exp. 10: YES  4 s  left ~0.4 h
+   [663/998] mlvcs_540p o0   qp40     47.9 kbps  Y 34.60  disp 33.13  face 31.17 / 0.407  I 5, LTR 19, recovery 0  same as exp. 10: YES  5 s  left ~0.4 h
+   [664/998] mlvcs_540p i4   qp16    805.6 kbps  Y 43.43  disp 40.59  face 38.97 / 0.283  I 5, LTR 19, recovery 0  5 s  left ~0.4 h
+   [665/998] mlvcs_540p i4   qp24    317.6 kbps  Y 41.84  disp 39.42  face 37.65 / 0.307  I 5, LTR 19, recovery 0  5 s  left ~0.4 h
+   [666/998] mlvcs_540p i4   qp26    236.2 kbps  Y 41.24  disp 38.95  face 37.16 / 0.314  I 5, LTR 19, recovery 0  4 s  left ~0.4 h
+   [667/998] mlvcs_540p i4   qp32    108.7 kbps  Y 38.79  disp 36.93  face 35.06 / 0.338  I 5, LTR 19, recovery 0  4 s  left ~0.4 h
+   [668/998] mlvcs_540p i4   qp40     49.4 kbps  Y 35.05  disp 33.56  face 31.49 / 0.397  I 5, LTR 19, recovery 0  4 s  left ~0.4 h
+   [669/998] mlvcs_540p l4   qp16    805.5 kbps  Y 43.43  disp 40.59  face 38.97 / 0.283  I 5, LTR 19, recovery 0  5 s  left ~0.4 h
+   [670/998] mlvcs_540p l4   qp24    333.8 kbps  Y 41.92  disp 39.49  face 37.71 / 0.307  I 5, LTR 19, recovery 0  5 s  left ~0.4 h
+   [671/998] mlvcs_540p l4   qp26    251.3 kbps  Y 41.33  disp 39.03  face 37.22 / 0.313  I 5, LTR 19, recovery 0  5 s  left ~0.4 h
+   [672/998] mlvcs_540p l4   qp32    116.1 kbps  Y 38.82  disp 36.95  face 35.16 / 0.339  I 5, LTR 19, recovery 0  5 s  left ~0.4 h
+   [673/998] mlvcs_540p l4   qp40     50.4 kbps  Y 34.83  disp 33.37  face 31.41 / 0.403  I 5, LTR 19, recovery 0  4 s  left ~0.4 h
+   [674/998] mlvcs_540p b4   qp16    805.6 kbps  Y 43.43  disp 40.59  face 38.97 / 0.283  I 5, LTR 19, recovery 0  5 s  left ~0.4 h
+   [675/998] mlvcs_540p b4   qp24    342.9 kbps  Y 42.00  disp 39.56  face 37.80 / 0.305  I 5, LTR 19, recovery 0  4 s  left ~0.4 h
+   [676/998] mlvcs_540p b4   qp26    257.6 kbps  Y 41.44  disp 39.13  face 37.33 / 0.312  I 5, LTR 19, recovery 0  5 s  left ~0.4 h
+   [677/998] mlvcs_540p b4   qp32    117.4 kbps  Y 39.07  disp 37.18  face 35.29 / 0.336  I 5, LTR 19, recovery 0  4 s  left ~0.4 h
+   [678/998] mlvcs_540p b4   qp40     51.6 kbps  Y 35.24  disp 33.77  face 31.72 / 0.393  I 5, LTR 19, recovery 0  5 s  left ~0.4 h
+   [679/998] mlvcs_540p i8   qp16    805.7 kbps  Y 43.43  disp 40.59  face 38.97 / 0.283  I 5, LTR 19, recovery 0  5 s  left ~0.4 h
+   [680/998] mlvcs_540p i8   qp24    322.3 kbps  Y 41.87  disp 39.44  face 37.65 / 0.306  I 5, LTR 19, recovery 0  4 s  left ~0.4 h
+   [681/998] mlvcs_540p i8   qp26    246.2 kbps  Y 41.34  disp 39.04  face 37.23 / 0.312  I 5, LTR 19, recovery 0  4 s  left ~0.4 h
+   [682/998] mlvcs_540p i8   qp32    113.3 kbps  Y 39.09  disp 37.20  face 35.24 / 0.337  I 5, LTR 19, recovery 0  5 s  left ~0.4 h
+   [683/998] mlvcs_540p i8   qp40     52.4 kbps  Y 35.49  disp 34.00  face 31.97 / 0.383  I 5, LTR 19, recovery 0  5 s  left ~0.4 h
+   [684/998] mlvcs_540p r0   qp16    897.1 kbps  Y 43.47  disp 40.61  face 38.97 / 0.282  I 5, LTR 19, recovery 5  5 s  left ~0.4 h
+   [685/998] mlvcs_540p r0   qp24    356.0 kbps  Y 41.82  disp 39.39  face 37.59 / 0.308  I 5, LTR 19, recovery 5  5 s  left ~0.4 h
+   [686/998] mlvcs_540p r0   qp26    262.0 kbps  Y 41.20  disp 38.90  face 37.04 / 0.317  I 5, LTR 19, recovery 5  5 s  left ~0.4 h
+   [687/998] mlvcs_540p r0   qp32    115.4 kbps  Y 38.61  disp 36.74  face 34.93 / 0.341  I 5, LTR 19, recovery 5  4 s  left ~0.4 h
+   [688/998] mlvcs_540p r0   qp40     51.1 kbps  Y 34.73  disp 33.25  face 31.34 / 0.404  I 5, LTR 19, recovery 5  5 s  left ~0.4 h
+   [689/998] mlvcs_540p rl4  qp16    897.1 kbps  Y 43.47  disp 40.61  face 38.97 / 0.282  I 5, LTR 19, recovery 5  5 s  left ~0.4 h
+   [690/998] mlvcs_540p rl4  qp24    387.4 kbps  Y 42.00  disp 39.55  face 37.75 / 0.306  I 5, LTR 19, recovery 5  5 s  left ~0.4 h
+   [691/998] mlvcs_540p rl4  qp26    290.0 kbps  Y 41.42  disp 39.10  face 37.23 / 0.314  I 5, LTR 19, recovery 5  4 s  left ~0.4 h
+   [692/998] mlvcs_540p rl4  qp32    129.4 kbps  Y 38.96  disp 37.06  face 35.19 / 0.338  I 5, LTR 19, recovery 5  5 s  left ~0.4 h
+   [693/998] mlvcs_540p rl4  qp40     54.5 kbps  Y 35.00  disp 33.52  face 31.59 / 0.400  I 5, LTR 19, recovery 5  4 s  left ~0.4 h
+   [694/998] mlvcs_540p rb4  qp16    897.3 kbps  Y 43.47  disp 40.61  face 38.97 / 0.282  I 5, LTR 19, recovery 5  4 s  left ~0.4 h
+   [695/998] mlvcs_540p rb4  qp24    396.3 kbps  Y 42.09  disp 39.63  face 37.80 / 0.304  I 5, LTR 19, recovery 5  4 s  left ~0.4 h
+   [696/998] mlvcs_540p rb4  qp26    294.8 kbps  Y 41.52  disp 39.20  face 37.34 / 0.312  I 5, LTR 19, recovery 5  4 s  left ~0.4 h
+   [697/998] mlvcs_540p rb4  qp32    130.8 kbps  Y 39.20  disp 37.28  face 35.28 / 0.336  I 5, LTR 19, recovery 5  5 s  left ~0.4 h
+   [698/998] mlvcs_540p rb4  qp40     55.4 kbps  Y 35.40  disp 33.91  face 31.85 / 0.394  I 5, LTR 19, recovery 5  5 s  left ~0.4 h
+== clip 15/20 b91038  17:33:57
+   [699/998] mlvc_360p  i8   qp16    302.1 kbps  Y 40.32  disp 34.27  face 31.48 / 0.209  I 5, LTR 0, recovery 0  5 s  left ~0.4 h
+   [700/998] mlvc_360p  i8   qp24    176.9 kbps  Y 39.00  disp 33.76  face 30.74 / 0.226  I 5, LTR 0, recovery 0  5 s  left ~0.4 h
+   [701/998] mlvc_360p  i8   qp26    150.5 kbps  Y 38.49  disp 33.53  face 30.43 / 0.233  I 5, LTR 0, recovery 0  5 s  left ~0.4 h
+   [702/998] mlvc_360p  i8   qp32     85.0 kbps  Y 36.24  disp 32.38  face 29.18 / 0.262  I 5, LTR 0, recovery 0  5 s  left ~0.4 h
+   [703/998] mlvc_360p  i8   qp40     37.9 kbps  Y 32.49  disp 29.89  face 26.62 / 0.339  I 5, LTR 0, recovery 0  5 s  left ~0.4 h
+   [704/998] mlvc_360p  i10  qp16    302.1 kbps  Y 40.32  disp 34.27  face 31.48 / 0.209  I 5, LTR 0, recovery 0  5 s  left ~0.4 h
+   [705/998] mlvc_360p  i10  qp24    176.9 kbps  Y 39.00  disp 33.76  face 30.74 / 0.226  I 5, LTR 0, recovery 0  5 s  left ~0.4 h
+   [706/998] mlvc_360p  i10  qp26    150.5 kbps  Y 38.49  disp 33.53  face 30.43 / 0.233  I 5, LTR 0, recovery 0  5 s  left ~0.4 h
+   [707/998] mlvc_360p  i10  qp32     90.5 kbps  Y 36.51  disp 32.54  face 29.27 / 0.254  I 5, LTR 0, recovery 0  5 s  left ~0.3 h
+   [708/998] mlvc_360p  i10  qp40     41.8 kbps  Y 32.95  disp 30.24  face 26.97 / 0.314  I 5, LTR 0, recovery 0  5 s  left ~0.3 h
+   [709/998] mlvcs_540p o0   qp16    727.4 kbps  Y 41.60  disp 37.83  face 35.13 / 0.105  I 5, LTR 19, recovery 0  same as exp. 10: YES  4 s  left ~0.3 h
+   [710/998] mlvcs_540p o0   qp24    325.7 kbps  Y 40.09  disp 36.90  face 33.94 / 0.122  I 5, LTR 19, recovery 0  same as exp. 10: YES  4 s  left ~0.3 h
+   [711/998] mlvcs_540p o0   qp26    259.5 kbps  Y 39.46  disp 36.46  face 33.38 / 0.131  I 5, LTR 19, recovery 0  same as exp. 10: YES  4 s  left ~0.3 h
+   [712/998] mlvcs_540p o0   qp32    136.2 kbps  Y 36.83  disp 34.50  face 31.22 / 0.178  I 5, LTR 19, recovery 0  same as exp. 10: YES  4 s  left ~0.3 h
+   [713/998] mlvcs_540p o0   qp40     56.7 kbps  Y 32.40  disp 30.67  face 27.77 / 0.285  I 5, LTR 19, recovery 0  same as exp. 10: YES  5 s  left ~0.3 h
+   [714/998] mlvcs_540p i4   qp16    727.6 kbps  Y 41.60  disp 37.83  face 35.13 / 0.105  I 5, LTR 19, recovery 0  4 s  left ~0.3 h
+   [715/998] mlvcs_540p i4   qp24    333.5 kbps  Y 40.19  disp 36.96  face 34.02 / 0.121  I 5, LTR 19, recovery 0  4 s  left ~0.3 h
+   [716/998] mlvcs_540p i4   qp26    266.4 kbps  Y 39.58  disp 36.56  face 33.45 / 0.130  I 5, LTR 19, recovery 0  4 s  left ~0.3 h
+   [717/998] mlvcs_540p i4   qp32    136.9 kbps  Y 37.10  disp 34.72  face 31.32 / 0.176  I 5, LTR 19, recovery 0  4 s  left ~0.3 h
+   [718/998] mlvcs_540p i4   qp40     59.1 kbps  Y 33.04  disp 31.28  face 28.28 / 0.261  I 5, LTR 19, recovery 0  4 s  left ~0.3 h
+   [719/998] mlvcs_540p l4   qp16    727.4 kbps  Y 41.60  disp 37.83  face 35.13 / 0.105  I 5, LTR 19, recovery 0  4 s  left ~0.3 h
+   [720/998] mlvcs_540p l4   qp24    348.5 kbps  Y 40.26  disp 37.01  face 34.07 / 0.121  I 5, LTR 19, recovery 0  5 s  left ~0.3 h
+   [721/998] mlvcs_540p l4   qp26    278.5 kbps  Y 39.67  disp 36.62  face 33.54 / 0.129  I 5, LTR 19, recovery 0  4 s  left ~0.3 h
+   [722/998] mlvcs_540p l4   qp32    147.3 kbps  Y 37.12  disp 34.74  face 31.49 / 0.172  I 5, LTR 19, recovery 0  4 s  left ~0.3 h
+   [723/998] mlvcs_540p l4   qp40     60.2 kbps  Y 32.59  disp 30.85  face 28.02 / 0.278  I 5, LTR 19, recovery 0  5 s  left ~0.3 h
+   [724/998] mlvcs_540p b4   qp16    727.6 kbps  Y 41.60  disp 37.83  face 35.13 / 0.105  I 5, LTR 19, recovery 0  4 s  left ~0.3 h
+   [725/998] mlvcs_540p b4   qp24    356.7 kbps  Y 40.35  disp 37.08  face 34.10 / 0.119  I 5, LTR 19, recovery 0  4 s  left ~0.3 h
+   [726/998] mlvcs_540p b4   qp26    285.4 kbps  Y 39.78  disp 36.70  face 33.60 / 0.127  I 5, LTR 19, recovery 0  5 s  left ~0.3 h
+   [727/998] mlvcs_540p b4   qp32    147.7 kbps  Y 37.38  disp 34.95  face 31.59 / 0.170  I 5, LTR 19, recovery 0  4 s  left ~0.3 h
+   [728/998] mlvcs_540p b4   qp40     61.4 kbps  Y 33.18  disp 31.40  face 28.43 / 0.257  I 5, LTR 19, recovery 0  4 s  left ~0.3 h
+   [729/998] mlvcs_540p i8   qp16    727.6 kbps  Y 41.60  disp 37.83  face 35.13 / 0.105  I 5, LTR 19, recovery 0  5 s  left ~0.3 h
+   [730/998] mlvcs_540p i8   qp24    339.1 kbps  Y 40.22  disp 36.99  face 33.99 / 0.122  I 5, LTR 19, recovery 0  4 s  left ~0.3 h
+   [731/998] mlvcs_540p i8   qp26    274.4 kbps  Y 39.66  disp 36.62  face 33.49 / 0.130  I 5, LTR 19, recovery 0  4 s  left ~0.3 h
+   [732/998] mlvcs_540p i8   qp32    140.4 kbps  Y 37.33  disp 34.91  face 31.45 / 0.171  I 5, LTR 19, recovery 0  4 s  left ~0.3 h
+   [733/998] mlvcs_540p i8   qp40     62.3 kbps  Y 33.60  disp 31.78  face 28.57 / 0.249  I 5, LTR 19, recovery 0  4 s  left ~0.3 h
+   [734/998] mlvcs_540p r0   qp16    895.6 kbps  Y 41.67  disp 37.85  face 35.09 / 0.105  I 5, LTR 19, recovery 5  4 s  left ~0.3 h
+   [735/998] mlvcs_540p r0   qp24    383.8 kbps  Y 40.22  disp 36.97  face 34.03 / 0.121  I 5, LTR 19, recovery 5  4 s  left ~0.3 h
+   [736/998] mlvcs_540p r0   qp26    294.5 kbps  Y 39.57  disp 36.53  face 33.47 / 0.130  I 5, LTR 19, recovery 5  4 s  left ~0.3 h
+   [737/998] mlvcs_540p r0   qp32    143.1 kbps  Y 36.93  disp 34.58  face 31.39 / 0.176  I 5, LTR 19, recovery 5  4 s  left ~0.3 h
+   [738/998] mlvcs_540p r0   qp40     57.8 kbps  Y 32.46  disp 30.73  face 27.93 / 0.282  I 5, LTR 19, recovery 5  4 s  left ~0.3 h
+   [739/998] mlvcs_540p rl4  qp16    895.6 kbps  Y 41.67  disp 37.85  face 35.09 / 0.105  I 5, LTR 19, recovery 5  4 s  left ~0.3 h
+   [740/998] mlvcs_540p rl4  qp24    417.1 kbps  Y 40.39  disp 37.08  face 34.13 / 0.120  I 5, LTR 19, recovery 5  4 s  left ~0.3 h
+   [741/998] mlvcs_540p rl4  qp26    323.2 kbps  Y 39.79  disp 36.70  face 33.63 / 0.128  I 5, LTR 19, recovery 5  4 s  left ~0.3 h
+   [742/998] mlvcs_540p rl4  qp32    162.0 kbps  Y 37.31  disp 34.88  face 31.66 / 0.170  I 5, LTR 19, recovery 5  5 s  left ~0.3 h
+   [743/998] mlvcs_540p rl4  qp40     63.2 kbps  Y 32.70  disp 30.95  face 28.17 / 0.274  I 5, LTR 19, recovery 5  4 s  left ~0.3 h
+   [744/998] mlvcs_540p rb4  qp16    895.8 kbps  Y 41.67  disp 37.85  face 35.09 / 0.105  I 5, LTR 19, recovery 5  4 s  left ~0.3 h
+   [745/998] mlvcs_540p rb4  qp24    423.8 kbps  Y 40.47  disp 37.15  face 34.17 / 0.119  I 5, LTR 19, recovery 5  4 s  left ~0.3 h
+   [746/998] mlvcs_540p rb4  qp26    328.4 kbps  Y 39.91  disp 36.78  face 33.67 / 0.127  I 5, LTR 19, recovery 5  4 s  left ~0.3 h
+   [747/998] mlvcs_540p rb4  qp32    161.0 kbps  Y 37.56  disp 35.09  face 31.79 / 0.167  I 5, LTR 19, recovery 5  4 s  left ~0.3 h
+   [748/998] mlvcs_540p rb4  qp40     63.6 kbps  Y 33.28  disp 31.49  face 28.59 / 0.253  I 5, LTR 19, recovery 5  4 s  left ~0.3 h
+== clip 16/20 c33648  17:37:45
+   [749/998] mlvc_360p  i8   qp16    408.8 kbps  Y 41.59  disp 35.09  face 35.66 / 0.229  I 5, LTR 0, recovery 0  5 s  left ~0.3 h
+   [750/998] mlvc_360p  i8   qp24    205.9 kbps  Y 40.04  disp 34.54  face 34.70 / 0.250  I 5, LTR 0, recovery 0  5 s  left ~0.3 h
+   [751/998] mlvc_360p  i8   qp26    169.1 kbps  Y 39.49  disp 34.31  face 34.32 / 0.256  I 5, LTR 0, recovery 0  5 s  left ~0.3 h
+   [752/998] mlvc_360p  i8   qp32     88.0 kbps  Y 37.22  disp 33.22  face 32.66 / 0.292  I 5, LTR 0, recovery 0  5 s  left ~0.3 h
+   [753/998] mlvc_360p  i8   qp40     39.2 kbps  Y 33.66  disp 30.94  face 29.98 / 0.364  I 5, LTR 0, recovery 0  5 s  left ~0.3 h
+   [754/998] mlvc_360p  i10  qp16    408.8 kbps  Y 41.59  disp 35.09  face 35.66 / 0.229  I 5, LTR 0, recovery 0  5 s  left ~0.3 h
+   [755/998] mlvc_360p  i10  qp24    205.9 kbps  Y 40.04  disp 34.54  face 34.70 / 0.250  I 5, LTR 0, recovery 0  5 s  left ~0.3 h
+   [756/998] mlvc_360p  i10  qp26    169.1 kbps  Y 39.49  disp 34.31  face 34.32 / 0.256  I 5, LTR 0, recovery 0  5 s  left ~0.3 h
+   [757/998] mlvc_360p  i10  qp32     92.4 kbps  Y 37.34  disp 33.28  face 32.85 / 0.286  I 5, LTR 0, recovery 0  5 s  left ~0.3 h
+   [758/998] mlvc_360p  i10  qp40     41.7 kbps  Y 33.94  disp 31.14  face 30.22 / 0.357  I 5, LTR 0, recovery 0  5 s  left ~0.3 h
+   [759/998] mlvcs_540p o0   qp16    984.4 kbps  Y 41.94  disp 37.70  face 37.76 / 0.168  I 5, LTR 19, recovery 0  same as exp. 10: YES  4 s  left ~0.3 h
+   [760/998] mlvcs_540p o0   qp24    458.0 kbps  Y 40.37  disp 36.82  face 36.51 / 0.196  I 5, LTR 19, recovery 0  same as exp. 10: YES  5 s  left ~0.3 h
+   [761/998] mlvcs_540p o0   qp26    355.2 kbps  Y 39.77  disp 36.44  face 36.01 / 0.207  I 5, LTR 19, recovery 0  same as exp. 10: YES  4 s  left ~0.3 h
+   [762/998] mlvcs_540p o0   qp32    161.3 kbps  Y 37.43  disp 34.79  face 34.00 / 0.247  I 5, LTR 19, recovery 0  same as exp. 10: YES  4 s  left ~0.3 h
+   [763/998] mlvcs_540p o0   qp40     68.6 kbps  Y 33.59  disp 31.64  face 30.60 / 0.330  I 5, LTR 19, recovery 0  same as exp. 10: YES  5 s  left ~0.3 h
+   [764/998] mlvcs_540p i4   qp16    984.6 kbps  Y 41.94  disp 37.70  face 37.76 / 0.168  I 5, LTR 19, recovery 0  5 s  left ~0.3 h
+   [765/998] mlvcs_540p i4   qp24    467.8 kbps  Y 40.44  disp 36.87  face 36.58 / 0.195  I 5, LTR 19, recovery 0  4 s  left ~0.3 h
+   [766/998] mlvcs_540p i4   qp26    362.7 kbps  Y 39.84  disp 36.49  face 36.09 / 0.203  I 5, LTR 19, recovery 0  4 s  left ~0.3 h
+   [767/998] mlvcs_540p i4   qp32    164.8 kbps  Y 37.60  disp 34.95  face 34.21 / 0.243  I 5, LTR 19, recovery 0  5 s  left ~0.3 h
+   [768/998] mlvcs_540p i4   qp40     70.7 kbps  Y 33.94  disp 31.97  face 30.90 / 0.323  I 5, LTR 19, recovery 0  5 s  left ~0.3 h
+   [769/998] mlvcs_540p l4   qp16    984.4 kbps  Y 41.94  disp 37.70  face 37.76 / 0.168  I 5, LTR 19, recovery 0  5 s  left ~0.3 h
+   [770/998] mlvcs_540p l4   qp24    485.3 kbps  Y 40.50  disp 36.91  face 36.66 / 0.192  I 5, LTR 19, recovery 0  5 s  left ~0.3 h
+   [771/998] mlvcs_540p l4   qp26    379.0 kbps  Y 39.92  disp 36.55  face 36.17 / 0.203  I 5, LTR 19, recovery 0  5 s  left ~0.3 h
+   [772/998] mlvcs_540p l4   qp32    174.6 kbps  Y 37.64  disp 34.97  face 34.23 / 0.244  I 5, LTR 19, recovery 0  5 s  left ~0.3 h
+   [773/998] mlvcs_540p l4   qp40     73.6 kbps  Y 33.79  disp 31.84  face 30.80 / 0.327  I 5, LTR 19, recovery 0  4 s  left ~0.3 h
+   [774/998] mlvcs_540p b4   qp16    984.6 kbps  Y 41.94  disp 37.70  face 37.76 / 0.168  I 5, LTR 19, recovery 0  5 s  left ~0.3 h
+   [775/998] mlvcs_540p b4   qp24    494.2 kbps  Y 40.55  disp 36.95  face 36.68 / 0.192  I 5, LTR 19, recovery 0  5 s  left ~0.3 h
+   [776/998] mlvcs_540p b4   qp26    387.2 kbps  Y 39.98  disp 36.60  face 36.24 / 0.200  I 5, LTR 19, recovery 0  5 s  left ~0.3 h
+   [777/998] mlvcs_540p b4   qp32    177.9 kbps  Y 37.79  disp 35.10  face 34.41 / 0.239  I 5, LTR 19, recovery 0  5 s  left ~0.3 h
+   [778/998] mlvcs_540p b4   qp40     74.9 kbps  Y 34.10  disp 32.12  face 31.06 / 0.319  I 5, LTR 19, recovery 0  5 s  left ~0.3 h
+   [779/998] mlvcs_540p i8   qp16    984.6 kbps  Y 41.94  disp 37.70  face 37.76 / 0.168  I 5, LTR 19, recovery 0  4 s  left ~0.3 h
+   [780/998] mlvcs_540p i8   qp24    472.4 kbps  Y 40.46  disp 36.88  face 36.57 / 0.195  I 5, LTR 19, recovery 0  5 s  left ~0.3 h
+   [781/998] mlvcs_540p i8   qp26    372.9 kbps  Y 39.90  disp 36.54  face 36.14 / 0.203  I 5, LTR 19, recovery 0  4 s  left ~0.3 h
+   [782/998] mlvcs_540p i8   qp32    168.6 kbps  Y 37.71  disp 35.03  face 34.28 / 0.242  I 5, LTR 19, recovery 0  5 s  left ~0.3 h
+   [783/998] mlvcs_540p i8   qp40     73.6 kbps  Y 34.31  disp 32.31  face 31.32 / 0.309  I 5, LTR 19, recovery 0  5 s  left ~0.3 h
+   [784/998] mlvcs_540p r0   qp16   1045.7 kbps  Y 41.94  disp 37.70  face 37.73 / 0.168  I 5, LTR 19, recovery 5  5 s  left ~0.3 h
+   [785/998] mlvcs_540p r0   qp24    517.6 kbps  Y 40.50  disp 36.90  face 36.56 / 0.195  I 5, LTR 19, recovery 5  5 s  left ~0.3 h
+   [786/998] mlvcs_540p r0   qp26    406.4 kbps  Y 39.93  disp 36.55  face 36.08 / 0.207  I 5, LTR 19, recovery 5  4 s  left ~0.3 h
+   [787/998] mlvcs_540p r0   qp32    183.0 kbps  Y 37.63  disp 34.96  face 34.17 / 0.247  I 5, LTR 19, recovery 5  4 s  left ~0.3 h
+   [788/998] mlvcs_540p r0   qp40     76.0 kbps  Y 33.81  disp 31.86  face 30.81 / 0.327  I 5, LTR 19, recovery 5  5 s  left ~0.3 h
+   [789/998] mlvcs_540p rl4  qp16   1045.7 kbps  Y 41.94  disp 37.70  face 37.73 / 0.168  I 5, LTR 19, recovery 5  4 s  left ~0.3 h
+   [790/998] mlvcs_540p rl4  qp24    545.8 kbps  Y 40.62  disp 36.98  face 36.70 / 0.192  I 5, LTR 19, recovery 5  5 s  left ~0.3 h
+   [791/998] mlvcs_540p rl4  qp26    431.3 kbps  Y 40.07  disp 36.66  face 36.24 / 0.203  I 5, LTR 19, recovery 5  5 s  left ~0.2 h
+   [792/998] mlvcs_540p rl4  qp32    198.8 kbps  Y 37.86  disp 35.15  face 34.42 / 0.243  I 5, LTR 19, recovery 5  5 s  left ~0.2 h
+   [793/998] mlvcs_540p rl4  qp40     82.9 kbps  Y 34.06  disp 32.10  face 31.03 / 0.320  I 5, LTR 19, recovery 5  4 s  left ~0.2 h
+   [794/998] mlvcs_540p rb4  qp16   1045.8 kbps  Y 41.94  disp 37.70  face 37.73 / 0.168  I 5, LTR 19, recovery 5  5 s  left ~0.2 h
+   [795/998] mlvcs_540p rb4  qp24    553.3 kbps  Y 40.67  disp 37.03  face 36.75 / 0.191  I 5, LTR 19, recovery 5  5 s  left ~0.2 h
+   [796/998] mlvcs_540p rb4  qp26    438.7 kbps  Y 40.14  disp 36.71  face 36.32 / 0.199  I 5, LTR 19, recovery 5  4 s  left ~0.2 h
+   [797/998] mlvcs_540p rb4  qp32    201.5 kbps  Y 38.02  disp 35.29  face 34.56 / 0.239  I 5, LTR 19, recovery 5  5 s  left ~0.2 h
+   [798/998] mlvcs_540p rb4  qp40     83.8 kbps  Y 34.38  disp 32.37  face 31.31 / 0.316  I 5, LTR 19, recovery 5  5 s  left ~0.2 h
+== clip 17/20 c52d75  17:41:38
+   [799/998] mlvc_360p  i8   qp16    349.3 kbps  Y 40.12  disp 31.16  face 31.90 / 0.306  I 5, LTR 0, recovery 0  5 s  left ~0.2 h
+   [800/998] mlvc_360p  i8   qp24    185.7 kbps  Y 38.61  disp 30.84  face 31.21 / 0.327  I 5, LTR 0, recovery 0  5 s  left ~0.2 h
+   [801/998] mlvc_360p  i8   qp26    156.9 kbps  Y 38.06  disp 30.71  face 30.97 / 0.333  I 5, LTR 0, recovery 0  5 s  left ~0.2 h
+   [802/998] mlvc_360p  i8   qp32     87.2 kbps  Y 35.92  disp 30.03  face 29.80 / 0.364  I 5, LTR 0, recovery 0  5 s  left ~0.2 h
+   [803/998] mlvc_360p  i8   qp40     39.7 kbps  Y 32.37  disp 28.40  face 27.58 / 0.424  I 5, LTR 0, recovery 0  5 s  left ~0.2 h
+   [804/998] mlvc_360p  i10  qp16    349.3 kbps  Y 40.12  disp 31.16  face 31.90 / 0.306  I 5, LTR 0, recovery 0  5 s  left ~0.2 h
+   [805/998] mlvc_360p  i10  qp24    185.7 kbps  Y 38.61  disp 30.84  face 31.21 / 0.327  I 5, LTR 0, recovery 0  5 s  left ~0.2 h
+   [806/998] mlvc_360p  i10  qp26    156.9 kbps  Y 38.06  disp 30.71  face 30.97 / 0.333  I 5, LTR 0, recovery 0  5 s  left ~0.2 h
+   [807/998] mlvc_360p  i10  qp32     92.4 kbps  Y 36.02  disp 30.06  face 29.89 / 0.360  I 5, LTR 0, recovery 0  5 s  left ~0.2 h
+   [808/998] mlvc_360p  i10  qp40     43.8 kbps  Y 32.67  disp 28.58  face 27.80 / 0.412  I 5, LTR 0, recovery 0  5 s  left ~0.2 h
+   [809/998] mlvcs_540p o0   qp16    846.9 kbps  Y 39.90  disp 34.29  face 33.90 / 0.217  I 5, LTR 19, recovery 0  same as exp. 10: YES  5 s  left ~0.2 h
+   [810/998] mlvcs_540p o0   qp24    401.7 kbps  Y 38.52  disp 33.68  face 33.06 / 0.243  I 5, LTR 19, recovery 0  same as exp. 10: YES  5 s  left ~0.2 h
+   [811/998] mlvcs_540p o0   qp26    321.4 kbps  Y 37.92  disp 33.37  face 32.68 / 0.254  I 5, LTR 19, recovery 0  same as exp. 10: YES  4 s  left ~0.2 h
+   [812/998] mlvcs_540p o0   qp32    162.8 kbps  Y 35.51  disp 31.95  face 31.08 / 0.309  I 5, LTR 19, recovery 0  same as exp. 10: YES  4 s  left ~0.2 h
+   [813/998] mlvcs_540p o0   qp40     72.2 kbps  Y 31.59  disp 29.13  face 28.27 / 0.387  I 5, LTR 19, recovery 0  same as exp. 10: YES  4 s  left ~0.2 h
+   [814/998] mlvcs_540p i4   qp16    847.1 kbps  Y 39.90  disp 34.29  face 33.90 / 0.217  I 5, LTR 19, recovery 0  5 s  left ~0.2 h
+   [815/998] mlvcs_540p i4   qp24    412.5 kbps  Y 38.56  disp 33.71  face 33.09 / 0.241  I 5, LTR 19, recovery 0  5 s  left ~0.2 h
+   [816/998] mlvcs_540p i4   qp26    330.0 kbps  Y 37.99  disp 33.41  face 32.74 / 0.252  I 5, LTR 19, recovery 0  5 s  left ~0.2 h
+   [817/998] mlvcs_540p i4   qp32    168.3 kbps  Y 35.67  disp 32.06  face 31.23 / 0.303  I 5, LTR 19, recovery 0  4 s  left ~0.2 h
+   [818/998] mlvcs_540p i4   qp40     76.0 kbps  Y 31.96  disp 29.43  face 28.61 / 0.376  I 5, LTR 19, recovery 0  5 s  left ~0.2 h
+   [819/998] mlvcs_540p l4   qp16    846.9 kbps  Y 39.90  disp 34.29  face 33.90 / 0.217  I 5, LTR 19, recovery 0  5 s  left ~0.2 h
+   [820/998] mlvcs_540p l4   qp24    424.5 kbps  Y 38.63  disp 33.75  face 33.15 / 0.242  I 5, LTR 19, recovery 0  5 s  left ~0.2 h
+   [821/998] mlvcs_540p l4   qp26    342.2 kbps  Y 38.08  disp 33.47  face 32.80 / 0.251  I 5, LTR 19, recovery 0  4 s  left ~0.2 h
+   [822/998] mlvcs_540p l4   qp32    172.5 kbps  Y 35.72  disp 32.11  face 31.26 / 0.304  I 5, LTR 19, recovery 0  5 s  left ~0.2 h
+   [823/998] mlvcs_540p l4   qp40     75.9 kbps  Y 31.79  disp 29.32  face 28.53 / 0.381  I 5, LTR 19, recovery 0  4 s  left ~0.2 h
+   [824/998] mlvcs_540p b4   qp16    847.1 kbps  Y 39.90  disp 34.29  face 33.90 / 0.217  I 5, LTR 19, recovery 0  5 s  left ~0.2 h
+   [825/998] mlvcs_540p b4   qp24    435.3 kbps  Y 38.68  disp 33.78  face 33.21 / 0.240  I 5, LTR 19, recovery 0  5 s  left ~0.2 h
+   [826/998] mlvcs_540p b4   qp26    350.0 kbps  Y 38.14  disp 33.50  face 32.86 / 0.250  I 5, LTR 19, recovery 0  5 s  left ~0.2 h
+   [827/998] mlvcs_540p b4   qp32    177.7 kbps  Y 35.85  disp 32.20  face 31.38 / 0.298  I 5, LTR 19, recovery 0  5 s  left ~0.2 h
+   [828/998] mlvcs_540p b4   qp40     78.9 kbps  Y 32.11  disp 29.58  face 28.79 / 0.372  I 5, LTR 19, recovery 0  4 s  left ~0.2 h
+   [829/998] mlvcs_540p i8   qp16    847.1 kbps  Y 39.90  disp 34.29  face 33.90 / 0.217  I 5, LTR 19, recovery 0  5 s  left ~0.2 h
+   [830/998] mlvcs_540p i8   qp24    417.4 kbps  Y 38.58  disp 33.71  face 33.12 / 0.242  I 5, LTR 19, recovery 0  5 s  left ~0.2 h
+   [831/998] mlvcs_540p i8   qp26    340.4 kbps  Y 38.03  disp 33.44  face 32.77 / 0.251  I 5, LTR 19, recovery 0  5 s  left ~0.2 h
+   [832/998] mlvcs_540p i8   qp32    174.6 kbps  Y 35.78  disp 32.11  face 31.38 / 0.295  I 5, LTR 19, recovery 0  4 s  left ~0.2 h
+   [833/998] mlvcs_540p i8   qp40     81.0 kbps  Y 32.26  disp 29.64  face 28.89 / 0.364  I 5, LTR 19, recovery 0  5 s  left ~0.2 h
+   [834/998] mlvcs_540p r0   qp16    917.1 kbps  Y 39.88  disp 34.27  face 33.82 / 0.219  I 5, LTR 19, recovery 5  4 s  left ~0.2 h
+   [835/998] mlvcs_540p r0   qp24    447.8 kbps  Y 38.61  disp 33.71  face 33.00 / 0.243  I 5, LTR 19, recovery 5  5 s  left ~0.2 h
+   [836/998] mlvcs_540p r0   qp26    357.8 kbps  Y 38.04  disp 33.42  face 32.63 / 0.255  I 5, LTR 19, recovery 5  5 s  left ~0.2 h
+   [837/998] mlvcs_540p r0   qp32    179.1 kbps  Y 35.73  disp 32.09  face 31.03 / 0.311  I 5, LTR 19, recovery 5  4 s  left ~0.2 h
+   [838/998] mlvcs_540p r0   qp40     78.5 kbps  Y 31.84  disp 29.31  face 28.30 / 0.387  I 5, LTR 19, recovery 5  4 s  left ~0.2 h
+   [839/998] mlvcs_540p rl4  qp16    917.1 kbps  Y 39.88  disp 34.27  face 33.82 / 0.219  I 5, LTR 19, recovery 5  5 s  left ~0.2 h
+   [840/998] mlvcs_540p rl4  qp24    475.0 kbps  Y 38.71  disp 33.77  face 33.09 / 0.242  I 5, LTR 19, recovery 5  5 s  left ~0.2 h
+   [841/998] mlvcs_540p rl4  qp26    383.1 kbps  Y 38.20  disp 33.52  face 32.75 / 0.251  I 5, LTR 19, recovery 5  5 s  left ~0.2 h
+   [842/998] mlvcs_540p rl4  qp32    191.8 kbps  Y 35.98  disp 32.25  face 31.21 / 0.306  I 5, LTR 19, recovery 5  5 s  left ~0.2 h
+   [843/998] mlvcs_540p rl4  qp40     83.7 kbps  Y 32.09  disp 29.52  face 28.50 / 0.382  I 5, LTR 19, recovery 5  4 s  left ~0.2 h
+   [844/998] mlvcs_540p rb4  qp16    917.3 kbps  Y 39.88  disp 34.27  face 33.82 / 0.219  I 5, LTR 19, recovery 5  5 s  left ~0.2 h
+   [845/998] mlvcs_540p rb4  qp24    485.2 kbps  Y 38.76  disp 33.80  face 33.14 / 0.240  I 5, LTR 19, recovery 5  5 s  left ~0.2 h
+   [846/998] mlvcs_540p rb4  qp26    390.2 kbps  Y 38.26  disp 33.54  face 32.81 / 0.251  I 5, LTR 19, recovery 5  5 s  left ~0.2 h
+   [847/998] mlvcs_540p rb4  qp32    196.3 kbps  Y 36.11  disp 32.33  face 31.34 / 0.300  I 5, LTR 19, recovery 5  4 s  left ~0.2 h
+   [848/998] mlvcs_540p rb4  qp40     86.4 kbps  Y 32.44  disp 29.80  face 28.76 / 0.372  I 5, LTR 19, recovery 5  5 s  left ~0.2 h
+== clip 18/20 cd6bc1  17:45:31
+   [849/998] mlvc_360p  i8   qp16    419.0 kbps  Y 39.76  disp 32.49  face 30.72 / 0.261  I 5, LTR 0, recovery 0  5 s  left ~0.2 h
+   [850/998] mlvc_360p  i8   qp24    238.4 kbps  Y 38.31  disp 32.04  face 30.19 / 0.275  I 5, LTR 0, recovery 0  5 s  left ~0.2 h
+   [851/998] mlvc_360p  i8   qp26    201.9 kbps  Y 37.76  disp 31.84  face 29.98 / 0.280  I 5, LTR 0, recovery 0  5 s  left ~0.2 h
+   [852/998] mlvc_360p  i8   qp32    113.8 kbps  Y 35.53  disp 30.88  face 29.01 / 0.302  I 5, LTR 0, recovery 0  5 s  left ~0.2 h
+   [853/998] mlvc_360p  i8   qp40     52.3 kbps  Y 31.48  disp 28.48  face 27.05 / 0.345  I 5, LTR 0, recovery 0  5 s  left ~0.2 h
+   [854/998] mlvc_360p  i10  qp16    419.0 kbps  Y 39.76  disp 32.49  face 30.72 / 0.261  I 5, LTR 0, recovery 0  5 s  left ~0.2 h
+   [855/998] mlvc_360p  i10  qp24    238.4 kbps  Y 38.31  disp 32.04  face 30.19 / 0.275  I 5, LTR 0, recovery 0  5 s  left ~0.2 h
+   [856/998] mlvc_360p  i10  qp26    201.9 kbps  Y 37.76  disp 31.84  face 29.98 / 0.280  I 5, LTR 0, recovery 0  5 s  left ~0.2 h
+   [857/998] mlvc_360p  i10  qp32    119.7 kbps  Y 35.69  disp 30.97  face 29.08 / 0.301  I 5, LTR 0, recovery 0  5 s  left ~0.2 h
+   [858/998] mlvc_360p  i10  qp40     56.6 kbps  Y 31.82  disp 28.71  face 27.17 / 0.339  I 5, LTR 0, recovery 0  5 s  left ~0.2 h
+   [859/998] mlvcs_540p o0   qp16    966.7 kbps  Y 40.24  disp 35.30  face 33.54 / 0.174  I 5, LTR 19, recovery 0  same as exp. 10: YES  5 s  left ~0.2 h
+   [860/998] mlvcs_540p o0   qp24    431.0 kbps  Y 38.58  disp 34.48  face 32.74 / 0.196  I 5, LTR 19, recovery 0  same as exp. 10: YES  5 s  left ~0.2 h
+   [861/998] mlvcs_540p o0   qp26    339.6 kbps  Y 37.98  disp 34.15  face 32.37 / 0.204  I 5, LTR 19, recovery 0  same as exp. 10: YES  5 s  left ~0.2 h
+   [862/998] mlvcs_540p o0   qp32    177.9 kbps  Y 35.82  disp 32.77  face 30.88 / 0.240  I 5, LTR 19, recovery 0  same as exp. 10: YES  5 s  left ~0.2 h
+   [863/998] mlvcs_540p o0   qp40     83.4 kbps  Y 31.83  disp 29.69  face 28.12 / 0.301  I 5, LTR 19, recovery 0  same as exp. 10: YES  5 s  left ~0.2 h
+   [864/998] mlvcs_540p i4   qp16    966.9 kbps  Y 40.24  disp 35.30  face 33.54 / 0.174  I 5, LTR 19, recovery 0  5 s  left ~0.2 h
+   [865/998] mlvcs_540p i4   qp24    443.4 kbps  Y 38.65  disp 34.52  face 32.77 / 0.195  I 5, LTR 19, recovery 0  5 s  left ~0.2 h
+   [866/998] mlvcs_540p i4   qp26    349.3 kbps  Y 38.08  disp 34.21  face 32.42 / 0.203  I 5, LTR 19, recovery 0  5 s  left ~0.2 h
+   [867/998] mlvcs_540p i4   qp32    180.6 kbps  Y 35.97  disp 32.88  face 30.96 / 0.237  I 5, LTR 19, recovery 0  5 s  left ~0.2 h
+   [868/998] mlvcs_540p i4   qp40     84.9 kbps  Y 32.30  disp 30.10  face 28.41 / 0.293  I 5, LTR 19, recovery 0  5 s  left ~0.2 h
+   [869/998] mlvcs_540p l4   qp16    966.8 kbps  Y 40.24  disp 35.30  face 33.54 / 0.174  I 5, LTR 19, recovery 0  5 s  left ~0.2 h
+   [870/998] mlvcs_540p l4   qp24    465.4 kbps  Y 38.74  disp 34.57  face 32.81 / 0.193  I 5, LTR 19, recovery 0  5 s  left ~0.2 h
+   [871/998] mlvcs_540p l4   qp26    365.5 kbps  Y 38.16  disp 34.25  face 32.48 / 0.202  I 5, LTR 19, recovery 0  5 s  left ~0.2 h
+   [872/998] mlvcs_540p l4   qp32    193.1 kbps  Y 36.07  disp 32.95  face 31.06 / 0.236  I 5, LTR 19, recovery 0  5 s  left ~0.2 h
+   [873/998] mlvcs_540p l4   qp40     88.4 kbps  Y 32.05  disp 29.89  face 28.30 / 0.296  I 5, LTR 19, recovery 0  5 s  left ~0.2 h
+   [874/998] mlvcs_540p b4   qp16    966.9 kbps  Y 40.24  disp 35.30  face 33.54 / 0.174  I 5, LTR 19, recovery 0  5 s  left ~0.2 h
+   [875/998] mlvcs_540p b4   qp24    479.6 kbps  Y 38.81  disp 34.61  face 32.85 / 0.192  I 5, LTR 19, recovery 0  5 s  left ~0.1 h
+   [876/998] mlvcs_540p b4   qp26    376.8 kbps  Y 38.26  disp 34.31  face 32.51 / 0.201  I 5, LTR 19, recovery 0  5 s  left ~0.1 h
+   [877/998] mlvcs_540p b4   qp32    195.1 kbps  Y 36.22  disp 33.06  face 31.15 / 0.233  I 5, LTR 19, recovery 0  5 s  left ~0.1 h
+   [878/998] mlvcs_540p b4   qp40     88.2 kbps  Y 32.45  disp 30.23  face 28.57 / 0.289  I 5, LTR 19, recovery 0  5 s  left ~0.1 h
+   [879/998] mlvcs_540p i8   qp16    967.0 kbps  Y 40.24  disp 35.30  face 33.54 / 0.174  I 5, LTR 19, recovery 0  5 s  left ~0.1 h
+   [880/998] mlvcs_540p i8   qp24    449.6 kbps  Y 38.67  disp 34.54  face 32.77 / 0.194  I 5, LTR 19, recovery 0  5 s  left ~0.1 h
+   [881/998] mlvcs_540p i8   qp26    362.9 kbps  Y 38.14  disp 34.24  face 32.44 / 0.202  I 5, LTR 19, recovery 0  5 s  left ~0.1 h
+   [882/998] mlvcs_540p i8   qp32    187.4 kbps  Y 36.14  disp 33.01  face 31.07 / 0.232  I 5, LTR 19, recovery 0  5 s  left ~0.1 h
+   [883/998] mlvcs_540p i8   qp40     88.3 kbps  Y 32.66  disp 30.41  face 28.58 / 0.286  I 5, LTR 19, recovery 0  5 s  left ~0.1 h
+   [884/998] mlvcs_540p r0   qp16   1154.0 kbps  Y 40.34  disp 35.33  face 33.48 / 0.175  I 5, LTR 19, recovery 5  5 s  left ~0.1 h
+   [885/998] mlvcs_540p r0   qp24    520.0 kbps  Y 38.76  disp 34.57  face 32.73 / 0.195  I 5, LTR 19, recovery 5  5 s  left ~0.1 h
+   [886/998] mlvcs_540p r0   qp26    397.2 kbps  Y 38.14  disp 34.24  face 32.39 / 0.204  I 5, LTR 19, recovery 5  5 s  left ~0.1 h
+   [887/998] mlvcs_540p r0   qp32    196.3 kbps  Y 35.94  disp 32.85  face 30.93 / 0.239  I 5, LTR 19, recovery 5  5 s  left ~0.1 h
+   [888/998] mlvcs_540p r0   qp40     88.2 kbps  Y 31.92  disp 29.78  face 28.18 / 0.299  I 5, LTR 19, recovery 5  5 s  left ~0.1 h
+   [889/998] mlvcs_540p rl4  qp16   1154.0 kbps  Y 40.34  disp 35.33  face 33.48 / 0.175  I 5, LTR 19, recovery 5  5 s  left ~0.1 h
+   [890/998] mlvcs_540p rl4  qp24    565.1 kbps  Y 38.92  disp 34.66  face 32.80 / 0.192  I 5, LTR 19, recovery 5  5 s  left ~0.1 h
+   [891/998] mlvcs_540p rl4  qp26    434.9 kbps  Y 38.34  disp 34.34  face 32.48 / 0.201  I 5, LTR 19, recovery 5  5 s  left ~0.1 h
+   [892/998] mlvcs_540p rl4  qp32    221.5 kbps  Y 36.28  disp 33.07  face 31.11 / 0.234  I 5, LTR 19, recovery 5  5 s  left ~0.1 h
+   [893/998] mlvcs_540p rl4  qp40     95.8 kbps  Y 32.22  disp 30.03  face 28.45 / 0.293  I 5, LTR 19, recovery 5  5 s  left ~0.1 h
+   [894/998] mlvcs_540p rb4  qp16   1154.2 kbps  Y 40.34  disp 35.33  face 33.48 / 0.175  I 5, LTR 19, recovery 5  5 s  left ~0.1 h
+   [895/998] mlvcs_540p rb4  qp24    577.3 kbps  Y 38.98  disp 34.70  face 32.83 / 0.192  I 5, LTR 19, recovery 5  5 s  left ~0.1 h
+   [896/998] mlvcs_540p rb4  qp26    445.0 kbps  Y 38.42  disp 34.39  face 32.52 / 0.200  I 5, LTR 19, recovery 5  5 s  left ~0.1 h
+   [897/998] mlvcs_540p rb4  qp32    222.9 kbps  Y 36.42  disp 33.18  face 31.19 / 0.231  I 5, LTR 19, recovery 5  5 s  left ~0.1 h
+   [898/998] mlvcs_540p rb4  qp40     94.6 kbps  Y 32.60  disp 30.36  face 28.72 / 0.286  I 5, LTR 19, recovery 5  5 s  left ~0.1 h
+== clip 19/20 db623c  17:49:31
+   [899/998] mlvc_360p  i8   qp16    253.8 kbps  Y 39.70  disp 32.34  face 32.19 / 0.282  I 5, LTR 0, recovery 0  5 s  left ~0.1 h
+   [900/998] mlvc_360p  i8   qp24    165.0 kbps  Y 38.71  disp 32.06  face 31.48 / 0.305  I 5, LTR 0, recovery 0  5 s  left ~0.1 h
+   [901/998] mlvc_360p  i8   qp26    143.7 kbps  Y 38.28  disp 31.92  face 31.22 / 0.313  I 5, LTR 0, recovery 0  5 s  left ~0.1 h
+   [902/998] mlvc_360p  i8   qp32     86.2 kbps  Y 36.37  disp 31.19  face 29.96 / 0.344  I 5, LTR 0, recovery 0  5 s  left ~0.1 h
+   [903/998] mlvc_360p  i8   qp40     39.4 kbps  Y 32.60  disp 29.19  face 27.82 / 0.401  I 5, LTR 0, recovery 0  5 s  left ~0.1 h
+   [904/998] mlvc_360p  i10  qp16    253.8 kbps  Y 39.70  disp 32.34  face 32.19 / 0.282  I 5, LTR 0, recovery 0  5 s  left ~0.1 h
+   [905/998] mlvc_360p  i10  qp24    165.0 kbps  Y 38.71  disp 32.06  face 31.48 / 0.305  I 5, LTR 0, recovery 0  5 s  left ~0.1 h
+   [906/998] mlvc_360p  i10  qp26    143.7 kbps  Y 38.28  disp 31.92  face 31.22 / 0.313  I 5, LTR 0, recovery 0  5 s  left ~0.1 h
+   [907/998] mlvc_360p  i10  qp32     89.9 kbps  Y 36.47  disp 31.23  face 30.08 / 0.340  I 5, LTR 0, recovery 0  5 s  left ~0.1 h
+   [908/998] mlvc_360p  i10  qp40     42.8 kbps  Y 32.99  disp 29.43  face 27.97 / 0.392  I 5, LTR 0, recovery 0  5 s  left ~0.1 h
+   [909/998] mlvcs_540p o0   qp16    519.2 kbps  Y 40.31  disp 35.68  face 35.06 / 0.174  I 5, LTR 19, recovery 0  same as exp. 10: YES  4 s  left ~0.1 h
+   [910/998] mlvcs_540p o0   qp24    288.4 kbps  Y 39.36  disp 35.20  face 33.99 / 0.210  I 5, LTR 19, recovery 0  same as exp. 10: YES  4 s  left ~0.1 h
+   [911/998] mlvcs_540p o0   qp26    240.1 kbps  Y 38.90  disp 34.95  face 33.52 / 0.226  I 5, LTR 19, recovery 0  same as exp. 10: YES  5 s  left ~0.1 h
+   [912/998] mlvcs_540p o0   qp32    132.3 kbps  Y 36.77  disp 33.63  face 31.54 / 0.284  I 5, LTR 19, recovery 0  same as exp. 10: YES  5 s  left ~0.1 h
+   [913/998] mlvcs_540p o0   qp40     64.2 kbps  Y 32.77  disp 30.61  face 28.47 / 0.371  I 5, LTR 19, recovery 0  same as exp. 10: YES  5 s  left ~0.1 h
+   [914/998] mlvcs_540p i4   qp16    519.4 kbps  Y 40.31  disp 35.68  face 35.06 / 0.174  I 5, LTR 19, recovery 0  5 s  left ~0.1 h
+   [915/998] mlvcs_540p i4   qp24    295.2 kbps  Y 39.42  disp 35.23  face 34.05 / 0.208  I 5, LTR 19, recovery 0  5 s  left ~0.1 h
+   [916/998] mlvcs_540p i4   qp26    246.5 kbps  Y 39.00  disp 35.01  face 33.61 / 0.221  I 5, LTR 19, recovery 0  5 s  left ~0.1 h
+   [917/998] mlvcs_540p i4   qp32    135.4 kbps  Y 36.99  disp 33.78  face 31.76 / 0.280  I 5, LTR 19, recovery 0  5 s  left ~0.1 h
+   [918/998] mlvcs_540p i4   qp40     63.8 kbps  Y 33.14  disp 30.91  face 28.75 / 0.358  I 5, LTR 19, recovery 0  5 s  left ~0.1 h
+   [919/998] mlvcs_540p l4   qp16    519.2 kbps  Y 40.31  disp 35.68  face 35.06 / 0.174  I 5, LTR 19, recovery 0  5 s  left ~0.1 h
+   [920/998] mlvcs_540p l4   qp24    301.4 kbps  Y 39.46  disp 35.25  face 34.10 / 0.207  I 5, LTR 19, recovery 0  5 s  left ~0.1 h
+   [921/998] mlvcs_540p l4   qp26    252.3 kbps  Y 39.03  disp 35.02  face 33.64 / 0.222  I 5, LTR 19, recovery 0  5 s  left ~0.1 h
+   [922/998] mlvcs_540p l4   qp32    140.6 kbps  Y 37.00  disp 33.79  face 31.76 / 0.280  I 5, LTR 19, recovery 0  5 s  left ~0.1 h
+   [923/998] mlvcs_540p l4   qp40     68.2 kbps  Y 33.00  disp 30.80  face 28.68 / 0.366  I 5, LTR 19, recovery 0  4 s  left ~0.1 h
+   [924/998] mlvcs_540p b4   qp16    519.4 kbps  Y 40.31  disp 35.68  face 35.06 / 0.174  I 5, LTR 19, recovery 0  5 s  left ~0.1 h
+   [925/998] mlvcs_540p b4   qp24    308.2 kbps  Y 39.51  disp 35.29  face 34.14 / 0.205  I 5, LTR 19, recovery 0  5 s  left ~0.1 h
+   [926/998] mlvcs_540p b4   qp26    258.3 kbps  Y 39.12  disp 35.08  face 33.72 / 0.218  I 5, LTR 19, recovery 0  5 s  left ~0.1 h
+   [927/998] mlvcs_540p b4   qp32    143.1 kbps  Y 37.19  disp 33.91  face 31.91 / 0.274  I 5, LTR 19, recovery 0  5 s  left ~0.1 h
+   [928/998] mlvcs_540p b4   qp40     67.0 kbps  Y 33.32  disp 31.06  face 28.94 / 0.354  I 5, LTR 19, recovery 0  5 s  left ~0.1 h
+   [929/998] mlvcs_540p i8   qp16    519.5 kbps  Y 40.31  disp 35.68  face 35.06 / 0.174  I 5, LTR 19, recovery 0  5 s  left ~0.1 h
+   [930/998] mlvcs_540p i8   qp24    300.0 kbps  Y 39.45  disp 35.25  face 34.05 / 0.208  I 5, LTR 19, recovery 0  5 s  left ~0.1 h
+   [931/998] mlvcs_540p i8   qp26    254.8 kbps  Y 39.05  disp 35.04  face 33.65 / 0.220  I 5, LTR 19, recovery 0  5 s  left ~0.1 h
+   [932/998] mlvcs_540p i8   qp32    139.9 kbps  Y 37.14  disp 33.88  face 31.95 / 0.270  I 5, LTR 19, recovery 0  5 s  left ~0.1 h
+   [933/998] mlvcs_540p i8   qp40     66.1 kbps  Y 33.54  disp 31.24  face 29.15 / 0.344  I 5, LTR 19, recovery 0  4 s  left ~0.1 h
+   [934/998] mlvcs_540p r0   qp16    627.7 kbps  Y 40.35  disp 35.69  face 34.99 / 0.176  I 5, LTR 19, recovery 5  5 s  left ~0.1 h
+   [935/998] mlvcs_540p r0   qp24    338.0 kbps  Y 39.44  disp 35.23  face 34.01 / 0.210  I 5, LTR 19, recovery 5  5 s  left ~0.1 h
+   [936/998] mlvcs_540p r0   qp26    276.6 kbps  Y 38.98  disp 34.99  face 33.55 / 0.226  I 5, LTR 19, recovery 5  5 s  left ~0.1 h
+   [937/998] mlvcs_540p r0   qp32    143.7 kbps  Y 36.87  disp 33.70  face 31.60 / 0.284  I 5, LTR 19, recovery 5  5 s  left ~0.1 h
+   [938/998] mlvcs_540p r0   qp40     66.8 kbps  Y 32.85  disp 30.67  face 28.57 / 0.370  I 5, LTR 19, recovery 5  5 s  left ~0.1 h
+   [939/998] mlvcs_540p rl4  qp16    627.7 kbps  Y 40.35  disp 35.69  face 34.99 / 0.176  I 5, LTR 19, recovery 5  5 s  left ~0.1 h
+   [940/998] mlvcs_540p rl4  qp24    356.1 kbps  Y 39.54  disp 35.30  face 34.12 / 0.206  I 5, LTR 19, recovery 5  5 s  left ~0.1 h
+   [941/998] mlvcs_540p rl4  qp26    293.9 kbps  Y 39.14  disp 35.08  face 33.69 / 0.222  I 5, LTR 19, recovery 5  5 s  left ~0.1 h
+   [942/998] mlvcs_540p rl4  qp32    157.0 kbps  Y 37.17  disp 33.90  face 31.85 / 0.278  I 5, LTR 19, recovery 5  5 s  left ~0.1 h
+   [943/998] mlvcs_540p rl4  qp40     74.3 kbps  Y 33.16  disp 30.92  face 28.81 / 0.366  I 5, LTR 19, recovery 5  5 s  left ~0.1 h
+   [944/998] mlvcs_540p rb4  qp16    627.8 kbps  Y 40.35  disp 35.69  face 34.99 / 0.176  I 5, LTR 19, recovery 5  5 s  left ~0.1 h
+   [945/998] mlvcs_540p rb4  qp24    362.6 kbps  Y 39.60  disp 35.33  face 34.17 / 0.205  I 5, LTR 19, recovery 5  5 s  left ~0.1 h
+   [946/998] mlvcs_540p rb4  qp26    299.1 kbps  Y 39.23  disp 35.14  face 33.77 / 0.218  I 5, LTR 19, recovery 5  5 s  left ~0.1 h
+   [947/998] mlvcs_540p rb4  qp32    159.0 kbps  Y 37.34  disp 34.02  face 32.00 / 0.274  I 5, LTR 19, recovery 5  5 s  left ~0.1 h
+   [948/998] mlvcs_540p rb4  qp40     72.3 kbps  Y 33.47  disp 31.18  face 29.08 / 0.357  I 5, LTR 19, recovery 5  5 s  left ~0.1 h
+== clip 20/20 fda953  17:53:27
+   [949/998] mlvc_360p  i8   qp16    480.0 kbps  Y 41.15  disp 36.28  face 38.68 / 0.130  I 5, LTR 0, recovery 0  5 s  left ~0.1 h
+   [950/998] mlvc_360p  i8   qp24    237.0 kbps  Y 38.99  disp 35.18  face 36.95 / 0.154  I 5, LTR 0, recovery 0  5 s  left ~0.1 h
+   [951/998] mlvc_360p  i8   qp26    193.1 kbps  Y 38.26  disp 34.75  face 36.33 / 0.164  I 5, LTR 0, recovery 0  5 s  left ~0.1 h
+   [952/998] mlvc_360p  i8   qp32     94.3 kbps  Y 35.56  disp 32.92  face 33.89 / 0.213  I 5, LTR 0, recovery 0  5 s  left ~0.1 h
+   [953/998] mlvc_360p  i8   qp40     37.5 kbps  Y 31.98  disp 30.06  face 30.24 / 0.311  I 5, LTR 0, recovery 0  5 s  left ~0.1 h
+   [954/998] mlvc_360p  i10  qp16    480.0 kbps  Y 41.15  disp 36.28  face 38.68 / 0.130  I 5, LTR 0, recovery 0  5 s  left ~0.1 h
+   [955/998] mlvc_360p  i10  qp24    237.0 kbps  Y 38.99  disp 35.18  face 36.95 / 0.154  I 5, LTR 0, recovery 0  5 s  left ~0.1 h
+   [956/998] mlvc_360p  i10  qp26    193.1 kbps  Y 38.26  disp 34.75  face 36.33 / 0.164  I 5, LTR 0, recovery 0  5 s  left ~0.1 h
+   [957/998] mlvc_360p  i10  qp32     99.8 kbps  Y 35.73  disp 33.06  face 34.04 / 0.207  I 5, LTR 0, recovery 0  5 s  left ~0.1 h
+   [958/998] mlvc_360p  i10  qp40     41.4 kbps  Y 32.26  disp 30.30  face 30.55 / 0.296  I 5, LTR 0, recovery 0  5 s  left ~0.0 h
+   [959/998] mlvcs_540p o0   qp16   1007.9 kbps  Y 42.55  disp 39.28  face 41.00 / 0.079  I 5, LTR 19, recovery 0  same as exp. 10: YES  5 s  left ~0.0 h
+   [960/998] mlvcs_540p o0   qp24    485.0 kbps  Y 40.29  disp 37.74  face 38.84 / 0.107  I 5, LTR 19, recovery 0  same as exp. 10: YES  5 s  left ~0.0 h
+   [961/998] mlvcs_540p o0   qp26    381.6 kbps  Y 39.44  disp 37.09  face 38.07 / 0.119  I 5, LTR 19, recovery 0  same as exp. 10: YES  5 s  left ~0.0 h
+   [962/998] mlvcs_540p o0   qp32    169.5 kbps  Y 36.31  disp 34.46  face 35.20 / 0.174  I 5, LTR 19, recovery 0  same as exp. 10: YES  5 s  left ~0.0 h
+   [963/998] mlvcs_540p o0   qp40     65.9 kbps  Y 32.19  disp 30.69  face 30.93 / 0.287  I 5, LTR 19, recovery 0  same as exp. 10: YES  5 s  left ~0.0 h
+   [964/998] mlvcs_540p i4   qp16   1008.1 kbps  Y 42.55  disp 39.28  face 41.00 / 0.079  I 5, LTR 19, recovery 0  5 s  left ~0.0 h
+   [965/998] mlvcs_540p i4   qp24    496.1 kbps  Y 40.36  disp 37.81  face 38.90 / 0.106  I 5, LTR 19, recovery 0  5 s  left ~0.0 h
+   [966/998] mlvcs_540p i4   qp26    391.7 kbps  Y 39.52  disp 37.18  face 38.19 / 0.117  I 5, LTR 19, recovery 0  5 s  left ~0.0 h
+   [967/998] mlvcs_540p i4   qp32    176.0 kbps  Y 36.51  disp 34.68  face 35.39 / 0.168  I 5, LTR 19, recovery 0  5 s  left ~0.0 h
+   [968/998] mlvcs_540p i4   qp40     69.7 kbps  Y 32.59  disp 31.09  face 31.17 / 0.281  I 5, LTR 19, recovery 0  5 s  left ~0.0 h
+   [969/998] mlvcs_540p l4   qp16   1007.9 kbps  Y 42.55  disp 39.28  face 41.00 / 0.079  I 5, LTR 19, recovery 0  5 s  left ~0.0 h
+   [970/998] mlvcs_540p l4   qp24    510.9 kbps  Y 40.45  disp 37.91  face 39.06 / 0.104  I 5, LTR 19, recovery 0  5 s  left ~0.0 h
+   [971/998] mlvcs_540p l4   qp26    403.7 kbps  Y 39.64  disp 37.29  face 38.30 / 0.115  I 5, LTR 19, recovery 0  5 s  left ~0.0 h
+   [972/998] mlvcs_540p l4   qp32    182.3 kbps  Y 36.57  disp 34.75  face 35.53 / 0.168  I 5, LTR 19, recovery 0  5 s  left ~0.0 h
+   [973/998] mlvcs_540p l4   qp40     70.2 kbps  Y 32.44  disp 30.97  face 31.26 / 0.278  I 5, LTR 19, recovery 0  5 s  left ~0.0 h
+   [974/998] mlvcs_540p b4   qp16   1008.1 kbps  Y 42.55  disp 39.28  face 41.00 / 0.079  I 5, LTR 19, recovery 0  5 s  left ~0.0 h
+   [975/998] mlvcs_540p b4   qp24    521.9 kbps  Y 40.50  disp 37.97  face 39.14 / 0.102  I 5, LTR 19, recovery 0  5 s  left ~0.0 h
+   [976/998] mlvcs_540p b4   qp26    413.8 kbps  Y 39.71  disp 37.38  face 38.43 / 0.113  I 5, LTR 19, recovery 0  5 s  left ~0.0 h
+   [977/998] mlvcs_540p b4   qp32    188.7 kbps  Y 36.78  disp 34.96  face 35.76 / 0.159  I 5, LTR 19, recovery 0  5 s  left ~0.0 h
+   [978/998] mlvcs_540p b4   qp40     73.6 kbps  Y 32.82  disp 31.36  face 31.61 / 0.270  I 5, LTR 19, recovery 0  5 s  left ~0.0 h
+   [979/998] mlvcs_540p i8   qp16   1008.1 kbps  Y 42.55  disp 39.28  face 41.00 / 0.079  I 5, LTR 19, recovery 0  5 s  left ~0.0 h
+   [980/998] mlvcs_540p i8   qp24    501.5 kbps  Y 40.36  disp 37.82  face 38.96 / 0.105  I 5, LTR 19, recovery 0  5 s  left ~0.0 h
+   [981/998] mlvcs_540p i8   qp26    401.4 kbps  Y 39.58  disp 37.22  face 38.23 / 0.115  I 5, LTR 19, recovery 0  5 s  left ~0.0 h
+   [982/998] mlvcs_540p i8   qp32    184.5 kbps  Y 36.66  disp 34.83  face 35.53 / 0.164  I 5, LTR 19, recovery 0  5 s  left ~0.0 h
+   [983/998] mlvcs_540p i8   qp40     75.1 kbps  Y 32.93  disp 31.42  face 31.56 / 0.263  I 5, LTR 19, recovery 0  5 s  left ~0.0 h
+   [984/998] mlvcs_540p r0   qp16   1104.4 kbps  Y 42.49  disp 39.23  face 40.95 / 0.079  I 5, LTR 19, recovery 5  5 s  left ~0.0 h
+   [985/998] mlvcs_540p r0   qp24    568.9 kbps  Y 40.31  disp 37.74  face 38.82 / 0.107  I 5, LTR 19, recovery 5  5 s  left ~0.0 h
+   [986/998] mlvcs_540p r0   qp26    452.0 kbps  Y 39.47  disp 37.11  face 38.05 / 0.120  I 5, LTR 19, recovery 5  5 s  left ~0.0 h
+   [987/998] mlvcs_540p r0   qp32    201.5 kbps  Y 36.26  disp 34.42  face 35.11 / 0.177  I 5, LTR 19, recovery 5  5 s  left ~0.0 h
+   [988/998] mlvcs_540p r0   qp40     76.1 kbps  Y 32.18  disp 30.69  face 30.88 / 0.292  I 5, LTR 19, recovery 5  5 s  left ~0.0 h
+   [989/998] mlvcs_540p rl4  qp16   1104.4 kbps  Y 42.49  disp 39.23  face 40.95 / 0.079  I 5, LTR 19, recovery 5  5 s  left ~0.0 h
+   [990/998] mlvcs_540p rl4  qp24    596.4 kbps  Y 40.49  disp 37.92  face 39.08 / 0.104  I 5, LTR 19, recovery 5  5 s  left ~0.0 h
+   [991/998] mlvcs_540p rl4  qp26    477.5 kbps  Y 39.69  disp 37.32  face 38.32 / 0.115  I 5, LTR 19, recovery 5  5 s  left ~0.0 h
+   [992/998] mlvcs_540p rl4  qp32    217.4 kbps  Y 36.59  disp 34.75  face 35.51 / 0.169  I 5, LTR 19, recovery 5  5 s  left ~0.0 h
+   [993/998] mlvcs_540p rl4  qp40     81.2 kbps  Y 32.46  disp 30.99  face 31.24 / 0.281  I 5, LTR 19, recovery 5  5 s  left ~0.0 h
+   [994/998] mlvcs_540p rb4  qp16   1104.6 kbps  Y 42.49  disp 39.23  face 40.95 / 0.079  I 5, LTR 19, recovery 5  5 s  left ~0.0 h
+   [995/998] mlvcs_540p rb4  qp24    606.7 kbps  Y 40.55  disp 37.99  face 39.13 / 0.102  I 5, LTR 19, recovery 5  5 s  left ~0.0 h
+   [996/998] mlvcs_540p rb4  qp26    487.4 kbps  Y 39.76  disp 37.40  face 38.42 / 0.113  I 5, LTR 19, recovery 5  5 s  left ~0.0 h
+   [997/998] mlvcs_540p rb4  qp32    223.9 kbps  Y 36.77  disp 34.94  face 35.72 / 0.162  I 5, LTR 19, recovery 5  5 s  left ~0.0 h
+   [998/998] mlvcs_540p rb4  qp40     84.7 kbps  Y 32.80  disp 31.33  face 31.52 / 0.277  I 5, LTR 19, recovery 5  5 s  left ~0.0 h
+== MLVC-S 540p offset 0 identical to experiment 10's bitstreams: 99 of 99
+== 998 runs, 73.7 min
+
+== runs, pass 2  Tue Nov 24 17:57:30 +04 2026
+FULL: 20 clips x 10 configurations x QP [16, 24, 26, 32, 40]; 0 runs to do
+/Users/shamsalani/Downloads/duplexnvc-baseline/.venv/lib/python3.13/site-packages/torchvision/models/_utils.py:207: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/Users/shamsalani/Downloads/duplexnvc-baseline/.venv/lib/python3.13/site-packages/torchvision/models/_utils.py:222: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=AlexNet_Weights.IMAGENET1K_V1`. You can also use `weights=AlexNet_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+== 0 runs, 0.0 min
+
+== analysis  Tue Nov 24 17:57:32 +04 2026
+A1 round 2 + E4: BD-rate (negative = fewer bits for the same quality); per clip: median, clips that gain
+                                                              coded Y                 display Y                    face Y                face LPIPS
+   B*: I -6 (round 1)                          -1.29 % (-0.62, 14/20)    -2.21 % (-1.87, 17/20)    -1.32 % (-0.65, 14/20)    -3.54 % (-3.07, 18/20)
+   B*: I -8                                    -1.20 % (-0.36, 12/20)    -2.22 % (-1.60, 14/20)    -1.29 % (-0.14, 10/20)    -5.91 % (-5.10, 20/20)
+   B*: I -10                                    -0.25 % (+0.54, 8/20)    -1.15 % (-0.45, 11/20)     -0.16 % (+1.69, 9/20)    -7.02 % (-6.02, 18/20)
+   MLVC-S 540p: I -4                           -2.05 % (-2.08, 20/20)    -2.61 % (-2.73, 20/20)    -1.89 % (-1.79, 19/20)    -3.63 % (-3.28, 18/20)
+   MLVC-S 540p: LTR -4                          +0.68 % (+0.89, 0/20)     +0.11 % (+0.59, 4/20)     +0.12 % (+0.33, 5/20)     +0.78 % (+0.93, 5/20)
+   MLVC-S 540p: I and LTR -4                   -1.61 % (-1.27, 17/20)    -2.82 % (-2.36, 20/20)    -1.86 % (-1.82, 17/20)    -3.39 % (-2.84, 18/20)
+   MLVC-S 540p: I -8                           -2.60 % (-2.54, 17/20)    -3.47 % (-3.35, 18/20)    -2.44 % (-2.28, 19/20)    -5.85 % (-5.37, 20/20)
+   E4: LTR recovery every 32 (A2 cost)          +9.65 % (+8.21, 0/20)     +9.79 % (+7.83, 0/20)   +12.04 % (+11.06, 0/20)   +13.05 % (+11.80, 0/20)
+   E4: + LTR -4, vs the bound                   +0.88 % (+1.17, 1/20)     +0.31 % (+0.79, 6/20)     +0.34 % (+0.80, 6/20)     +1.15 % (+1.50, 5/20)
+   E4: + I and LTR -4, vs the bound            -1.88 % (-1.52, 18/20)    -3.12 % (-2.63, 20/20)    -2.13 % (-2.06, 17/20)    -2.97 % (-2.45, 18/20)
+   E4: bound + LTR -4, vs default              +10.68 % (+9.95, 0/20)    +10.21 % (+9.11, 0/20)   +12.54 % (+12.62, 0/20)   +14.43 % (+14.64, 0/20)
+   E4: bound + I and LTR -4, vs default         +7.73 % (+7.18, 0/20)     +6.54 % (+5.91, 0/20)    +9.90 % (+10.24, 0/20)    +9.93 % (+10.56, 1/20)
+
+== results in /Users/shamsalani/Downloads/duplexnvc-baseline/phase2/a1b/results
+== A1b END  Tue Nov 24 17:57:33 +04 2026

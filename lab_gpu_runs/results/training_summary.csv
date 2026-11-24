@@ -1,3 +1,9 @@
-run,compared_with,epochs,n_epochs,loss,bpp,psnr_db,loss_minus_control,loss_diff_sd_across_epochs,psnr_minus_control_db,bpp_vs_control_pct
-v1_control,,160-199,40,0.1528,0.1127,30.452,,,,
-v1_b1,v1_control,160-199,40,0.1552,0.1135,30.380,+0.0024,0.0002,-0.071,+0.64
+run,compared_with,span,epochs,n_epochs,loss,bpp,psnr_db,loss_minus_control,loss_diff_sd,psnr_minus_control_db,bpp_vs_control_pct
+v1_control,,end,160-199,40,0.1528,0.1127,30.452,,,,
+v1_control,,all,0-199,200,0.1566,0.1151,30.355,,,,
+v1_b1,v1_control,end,160-199,40,0.1552,0.1135,30.380,+0.0024,0.0002,-0.071,+0.64
+v1_b1,v1_control,all,0-199,200,0.1614,0.1159,30.189,+0.0048,0.0109,-0.165,+0.68
+control,,end,160-199,40,0.1623,0.1178,30.290,,,,
+control,,all,0-199,200,0.1634,0.1186,30.266,,,,
+b1,control,end,160-199,40,0.1640,0.1181,30.232,+0.0017,0.0002,-0.058,+0.24
+b1,control,all,0-199,200,0.1677,0.1191,30.112,+0.0043,0.0117,-0.155,+0.39

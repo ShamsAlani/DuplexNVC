@@ -1,19 +1,23 @@
 #!/usr/bin/env python3
-"""Lab GPU runs: training curves, run comparison and training cost (E5) from the lab logs.
+"""Lab GPU runs: training curves, run comparisons and training cost from the lab logs.
 
-Reads the training logs written by lab.ps1 (one per run, e.g. control.txt, b1.txt) and pipeline.txt,
+Reads the training log of every run (<run>.txt or <run>.txt.gz; UTF-8 or UTF-16) and pipeline.txt,
 and writes to ../results:
-  training_per_epoch.csv   per run and epoch: mean loss, bpp (y + z), PSNR and seconds per 100 steps
-  training_summary.csv     per run, over the epochs every run has completed: means and the difference to control
-  training_cost.csv        E5: seconds per step, minutes per epoch, hours per 200-epoch run
-  training_parity.csv      per run: even vs odd epochs, and first vs last five epochs of each (detects replayed samples, trend)
-  training_curves.png      loss and PSNR per epoch for every run, and each run minus control
+
+  training_per_epoch.csv     per run and epoch: mean loss, bpp (latent + hyperprior), PSNR, seconds per 100 steps
+  training_summary.csv       per run, end of training (last 40 epochs both runs have) and whole run, vs its control
+  training_gap_by_block.csv  per run vs its control, in blocks of 20 epochs: how the difference develops
+  training_parity.csv        per run: even vs odd epochs (detects replayed samples)
+  training_cost.csv          seconds per step, minutes per epoch, hours per 200-epoch run
+  training_curves.png        loss and PSNR per epoch, every run
+  training_gap.png           each run minus its control, per epoch
 
 Usage:  python3 analyze_training.py [log folder]   (default: ../raw_data/logs)
-Only the Python standard library and matplotlib are needed.
+Needs Python 3.9+; numpy and matplotlib for the figures.
 """
 import csv
 import datetime as dt
+import gzip
 import os
 import re
 import statistics as st
@@ -22,14 +26,11 @@ import sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 LOGS = sys.argv[1] if len(sys.argv) > 1 else os.path.join(HERE, "..", "raw_data", "logs")
 OUT = os.path.join(HERE, "..", "results")
-RUNS = ["control", "b1", "b1gate", "b2p25", "b2p75", "control_s2", "v1_control", "v1_b1"]
-
-
-def ref_of(name):
-    """Each run is compared with the control trained the same way (v1 runs with v1_control)."""
-    return "v1_control" if name.startswith("v1_") else "control"
-STEPS_PER_EPOCH = 1000          # train.dataset.desired_length 2000 / batch size 2
-WINDOWS_PER_EPOCH = 10          # MLVC logs every 100 steps
+RUNS = ["v1_control", "v1_b1", "control", "b1", "b1gate", "b2p25", "b2p75", "control_s2"]
+STEPS_PER_EPOCH = 1000          # 2,000 samples per epoch / batch 2
+WINDOWS = 10                    # MLVC logs every 100 steps
+END = 40                        # "end of training" = the last 40 epochs both runs have
+BLOCK = 20
 
 LINE = re.compile(
     r"Epoch (\d+): \[(\d+)/(\d+).*?time: ([\d.]+)s,\s+loss: ([\d.]+) .*?bpp_y: ([\d.]+) .*?"
@@ -37,22 +38,42 @@ LINE = re.compile(
 )
 
 
+def ref_of(name):
+    """Each run is compared with the control trained the same way."""
+    return "v1_control" if name.startswith("v1_") else "control"
+
+
+def open_log(path):
+    raw = gzip.open(path, "rb").read() if path.endswith(".gz") else open(path, "rb").read()
+    enc = "utf-16" if raw[:2] in (b"\xff\xfe", b"\xfe\xff") else "utf-8"   # PowerShell 5.1 writes UTF-16
+    return raw.decode(enc, errors="ignore").splitlines()
+
+
 def read_run(name):
-    path = os.path.join(LOGS, f"{name}.txt")
-    if not os.path.exists(path):
+    path = next((p for p in (os.path.join(LOGS, f"{name}.txt.gz"), os.path.join(LOGS, f"{name}.txt")) if os.path.exists(p)), None)
+    if path is None:
         return None
     epochs = {}
-    for line in open(path, encoding="utf-8", errors="ignore"):
+    for line in open_log(path):
         m = LINE.search(line)
         if m:
-            e = int(m[1])
             t, loss, by, bz, psnr = (float(x) for x in m.groups()[3:])
-            epochs.setdefault(e, {})[int(m[2])] = (t, loss, by + bz, psnr)   # keyed by step: a restart rewrites it
-    return {e: list(w.values()) for e, w in epochs.items() if len(w) == WINDOWS_PER_EPOCH}
+            epochs.setdefault(int(m[1]), {})[int(m[2])] = (loss, by + bz, psnr, t)   # by step: a resumed chunk rewrites it
+    # epoch means of (loss, bpp, psnr, seconds per 100 steps); complete epochs only
+    return {e: [st.mean(v[i] for v in w.values()) for i in range(4)]
+            for e, w in epochs.items() if len(w) == WINDOWS}
 
 
-def mean_cols(rows):
-    return [st.mean(r[i] for r in rows) for i in range(4)]
+def mean_over(d, es, i):
+    return st.mean(d[e][i] for e in es)
+
+
+def compare(d, ref, es):
+    dl = [d[e][0] - ref[e][0] for e in es]
+    return {"loss_minus_control": f"{st.mean(dl):+.4f}",
+            "loss_diff_sd": f"{st.stdev(dl):.4f}" if len(dl) > 1 else "",
+            "psnr_minus_control_db": f"{st.mean(d[e][2] - ref[e][2] for e in es):+.3f}",
+            "bpp_vs_control_pct": f"{100 * st.mean(d[e][1] / ref[e][1] - 1 for e in es):+.2f}"}
 
 
 def main():
@@ -66,58 +87,56 @@ def main():
         w.writerow(["run", "epoch", "loss", "bpp", "psnr_db", "s_per_100_steps"])
         for n, d in data.items():
             for e in sorted(d):
-                t, loss, bpp, psnr = mean_cols(d[e])
+                loss, bpp, psnr, t = d[e]
                 w.writerow([n, e, f"{loss:.5f}", f"{bpp:.5f}", f"{psnr:.3f}", f"{t:.2f}"])
 
-    rows = []
+    rows, blocks = [], []
     for n, d in data.items():
         rn = ref_of(n)
         ref = data.get(rn) if rn != n else None
         common = sorted(set(d) & set(ref)) if ref else sorted(d)
         if not common:
             continue
-        per = {e: mean_cols(d[e]) for e in common}
-        row = {"run": n, "compared_with": rn if ref else "", "epochs": f"{common[0]}-{common[-1]}", "n_epochs": len(common),
-               "loss": f"{st.mean(v[1] for v in per.values()):.4f}", "bpp": f"{st.mean(v[2] for v in per.values()):.4f}",
-               "psnr_db": f"{st.mean(v[3] for v in per.values()):.3f}"}
+        for label, es in (("end", common[-END:]), ("all", common)):
+            row = {"run": n, "compared_with": rn if ref else "", "span": label, "epochs": f"{es[0]}-{es[-1]}",
+                   "n_epochs": len(es), "loss": f"{mean_over(d, es, 0):.4f}", "bpp": f"{mean_over(d, es, 1):.4f}",
+                   "psnr_db": f"{mean_over(d, es, 2):.3f}"}
+            if ref:
+                row.update(compare(d, ref, es))
+            rows.append(row)
         if ref:
-            rv = {e: mean_cols(ref[e]) for e in common}
-            dl = [per[e][1] - rv[e][1] for e in common]
-            dp = [per[e][3] - rv[e][3] for e in common]
-            db = [per[e][2] / rv[e][2] - 1 for e in common]
-            row.update({"loss_minus_control": f"{st.mean(dl):+.4f}",
-                        "loss_diff_sd_across_epochs": f"{st.stdev(dl):.4f}" if len(dl) > 1 else "",
-                        "psnr_minus_control_db": f"{st.mean(dp):+.3f}",
-                        "bpp_vs_control_pct": f"{100 * st.mean(db):+.2f}"})
-        rows.append(row)
-    keys = ["run", "compared_with", "epochs", "n_epochs", "loss", "bpp", "psnr_db", "loss_minus_control",
-            "loss_diff_sd_across_epochs", "psnr_minus_control_db", "bpp_vs_control_pct"]
+            for lo in range(0, common[-1] + 1, BLOCK):
+                es = [e for e in common if lo <= e < lo + BLOCK]
+                if es:
+                    blocks.append({"run": n, "compared_with": rn, "epochs": f"{es[0]}-{es[-1]}",
+                                   "control_psnr_db": f"{mean_over(ref, es, 2):.3f}", "run_psnr_db": f"{mean_over(d, es, 2):.3f}",
+                                   **compare(d, ref, es)})
+    keys = ["run", "compared_with", "span", "epochs", "n_epochs", "loss", "bpp", "psnr_db",
+            "loss_minus_control", "loss_diff_sd", "psnr_minus_control_db", "bpp_vs_control_pct"]
     with open(os.path.join(OUT, "training_summary.csv"), "w", newline="") as f:
         w = csv.DictWriter(f, keys); w.writeheader(); w.writerows(rows)
+    with open(os.path.join(OUT, "training_gap_by_block.csv"), "w", newline="") as f:
+        w = csv.DictWriter(f, ["run", "compared_with", "epochs", "control_psnr_db", "run_psnr_db", "loss_minus_control",
+                               "loss_diff_sd", "psnr_minus_control_db", "bpp_vs_control_pct"])
+        w.writeheader(); w.writerows(blocks)
 
-    # Parity and trend: with replayed samples, even and odd epochs are two fixed sample sets, so they differ
-    # systematically; comparing first and last five epochs of the same parity shows whether training still improves.
+    # Replayed samples show up as a fixed difference between even and odd epochs.
     with open(os.path.join(OUT, "training_parity.csv"), "w", newline="") as f:
         w = csv.writer(f)
-        w.writerow(["run", "parity", "epochs", "mean_loss", "mean_psnr_db", "first5_loss", "last5_loss", "first5_psnr_db", "last5_psnr_db"])
+        w.writerow(["run", "epochs", "even_loss", "odd_loss", "odd_minus_even_loss", "even_psnr_db", "odd_psnr_db"])
         for n, d in data.items():
-            for par, name in ((0, "even"), (1, "odd")):
-                es = sorted(e for e in d if e % 2 == par)
-                if len(es) < 10:
-                    continue
-                v = {e: mean_cols(d[e]) for e in es}
-                f5, l5 = es[:5], es[-5:]
-                w.writerow([n, name, f"{es[0]}-{es[-1]}", f"{st.mean(v[e][1] for e in es):.4f}", f"{st.mean(v[e][3] for e in es):.3f}",
-                            f"{st.mean(v[e][1] for e in f5):.4f}", f"{st.mean(v[e][1] for e in l5):.4f}",
-                            f"{st.mean(v[e][3] for e in f5):.3f}", f"{st.mean(v[e][3] for e in l5):.3f}"])
+            ev = [e for e in d if e % 2 == 0]; od = [e for e in d if e % 2 == 1]
+            if len(ev) >= 5 and len(od) >= 5:
+                w.writerow([n, f"{min(d)}-{max(d)}", f"{mean_over(d, ev, 0):.4f}", f"{mean_over(d, od, 0):.4f}",
+                            f"{mean_over(d, od, 0) - mean_over(d, ev, 0):+.4f}", f"{mean_over(d, ev, 2):.3f}", f"{mean_over(d, od, 2):.3f}"])
 
-    # E5: training cost. Step time from the logs; wall time per round (both runs advance 2 epochs) from pipeline.txt
-    t100 = st.median(v[0] for d in data.values() for rows_ in d.values() for v in rows_)
+    # Training cost: step time from the logs; wall time per round (2 runs x 2 epochs) from pipeline.txt
+    t100 = st.median(v[3] for n in ("control", "b1", "v1_control", "v1_b1") if n in data for v in data[n].values())
     rounds = []
     pp = os.path.join(LOGS, "pipeline.txt")
     if os.path.exists(pp):
-        prev, failed = None, False          # a round counts only if no run failed in it
-        for line in open(pp, encoding="utf-8", errors="ignore"):
+        prev, failed = None, False
+        for line in open_log(pp):
             if "FAILED" in line or line.startswith(("start", "STOPPED")):
                 failed = True
                 if line.startswith(("start", "STOPPED")):
@@ -133,39 +152,54 @@ def main():
     with open(os.path.join(OUT, "training_cost.csv"), "w", newline="") as f:
         w = csv.writer(f)
         w.writerow(["quantity", "value", "note"])
-        w.writerow(["seconds_per_step", f"{t100 / 100:.3f}", "median over all logged 100-step windows; batch 2 x 4 frames, 256x256 patches"])
+        w.writerow(["seconds_per_step", f"{t100 / 100:.3f}", "median over every logged 100-step window of control and B1; batch 2 x 4 frames, 256x256"])
         w.writerow(["minutes_per_epoch_compute", f"{t100 * STEPS_PER_EPOCH / 100 / 60:.2f}", f"{STEPS_PER_EPOCH} steps"])
         if rounds:
-            per_epoch = st.median(rounds) / (2 * 2) / 60   # control + B1 rounds: 2 runs x 2 epochs
-            w.writerow(["minutes_per_epoch_wall", f"{per_epoch:.2f}", "median control+B1 round time / (2 runs x 2 epochs); includes the restart every 2 epochs"])
-            w.writerow(["hours_per_200_epoch_run", f"{per_epoch * 200 / 60:.1f}", "one fine-tune of 200 epochs (200k steps)"])
-            w.writerow(["rounds_measured", len(rounds), "from pipeline.txt"])
+            per_epoch = st.median(rounds) / 4 / 60
+            w.writerow(["minutes_per_epoch_wall", f"{per_epoch:.2f}", "median round time / (2 runs x 2 epochs); includes the restart every 2 epochs"])
+            w.writerow(["hours_per_200_epoch_run", f"{per_epoch * 200 / 60:.1f}", "one fine-tune of 200 epochs (200,000 steps)"])
+            w.writerow(["rounds_measured", len(rounds), "rounds without a failure, from pipeline.txt"])
 
     try:
         import matplotlib
         matplotlib.use("Agg")
         import matplotlib.pyplot as plt
+        import numpy as np
     except ImportError:
-        print("matplotlib not installed: CSVs written, figure skipped"); return
-    fig, ax = plt.subplots(2, 2, figsize=(11, 7), sharex=True)
+        print("matplotlib/numpy not installed: CSVs written, figures skipped"); return
+
+    def smooth(y, k=5):
+        y = np.asarray(y, float)
+        return np.convolve(np.pad(y, (k // 2, k // 2), mode="edge"), np.ones(k) / k, mode="valid") if len(y) >= k else y
+
+    style = {"v1_control": ("tab:blue", ":"), "v1_b1": ("tab:orange", ":"), "control": ("tab:blue", "-"), "b1": ("tab:orange", "-"),
+             "b1gate": ("tab:green", "-"), "b2p25": ("tab:purple", "-"), "b2p75": ("tab:brown", "-"), "control_s2": ("tab:gray", "-")}
+    fig, ax = plt.subplots(1, 2, figsize=(12, 4.5))
     for n, d in data.items():
-        es = sorted(d); v = [mean_cols(d[e]) for e in es]
-        ax[0][0].plot(es, [x[1] for x in v], label=n); ax[1][0].plot(es, [x[3] for x in v], label=n)
-        rn = ref_of(n)
-        if rn != n and rn in data:
-            ce = [e for e in es if e in data[rn]]
-            ax[0][1].plot(ce, [mean_cols(d[e])[1] - mean_cols(data[rn][e])[1] for e in ce], label=f"{n} - {rn}")
-            ax[1][1].plot(ce, [mean_cols(d[e])[3] - mean_cols(data[rn][e])[3] for e in ce], label=f"{n} - {rn}")
-    ax[0][0].set_ylabel("training loss (epoch mean)"); ax[1][0].set_ylabel("training PSNR (dB)")
-    ax[0][1].set_ylabel("loss difference"); ax[1][1].set_ylabel("PSNR difference (dB)")
-    for a in ax.flat:
-        a.grid(alpha=0.3); a.legend(fontsize=8)
-    for a in ax[1]:
-        a.set_xlabel("epoch (1000 steps)")
-    for a in ax[:, 1]:
-        a.axhline(0, color="k", lw=0.8)
-    fig.suptitle("Fine-tuning MLVC on the lab GPU (training clips, not the test set)")
+        es = sorted(d); c, ls = style.get(n, (None, "-"))
+        ax[0].plot(es, smooth([d[e][0] for e in es]), color=c, ls=ls, label=n)
+        ax[1].plot(es, smooth([d[e][2] for e in es]), color=c, ls=ls, label=n)
+    ax[0].set_ylabel("training loss (epoch mean, 5-epoch moving average)"); ax[1].set_ylabel("training PSNR (dB, 5-epoch moving average)")
+    for a in ax:
+        a.set_xlabel("epoch (1,000 steps)"); a.grid(alpha=0.3); a.legend(fontsize=8)
+    ax[0].set_ylim(top=0.185); ax[1].set_ylim(bottom=29.4)
+    fig.suptitle("Fine-tuning MLVC on the lab GPU: training samples, not the test set (dotted: v1, replayed samples)")
     fig.tight_layout(); fig.savefig(os.path.join(OUT, "training_curves.png"), dpi=150)
+
+    fig, ax = plt.subplots(1, 2, figsize=(12, 4.5))
+    for n, d in data.items():
+        rn = ref_of(n)
+        if rn == n or rn not in data:
+            continue
+        es = sorted(set(d) & set(data[rn])); c, ls = style.get(n, (None, "-"))
+        ax[0].plot(es, smooth([d[e][2] - data[rn][e][2] for e in es]), color=c, ls=ls, label=f"{n} - {rn}")
+        ax[1].plot(es, smooth([100 * (d[e][1] / data[rn][e][1] - 1) for e in es]), color=c, ls=ls, label=f"{n} - {rn}")
+    ax[0].set_ylabel("PSNR difference to control (dB)"); ax[1].set_ylabel("bitrate difference to control (%)")
+    ax[0].set_ylim(-0.8, 0.1)
+    for a in ax:
+        a.axhline(0, color="k", lw=0.8); a.set_xlabel("epoch (1,000 steps)"); a.grid(alpha=0.3); a.legend(fontsize=8)
+    fig.suptitle("Cost of each change against the control trained on the same samples (5-epoch moving average)")
+    fig.tight_layout(); fig.savefig(os.path.join(OUT, "training_gap.png"), dpi=150)
     print("written to", os.path.abspath(OUT))
 
 

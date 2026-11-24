@@ -1,0 +1,1 @@
+va: 144 analyses (every 15 frames, CPU), median 32.89 ms, p95 35.94 ms, per frame pair 2.193 ms
