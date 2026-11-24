@@ -1,4 +1,4 @@
-# 13 — A1 experiment: more bits for key frames (QP offset on I-frames and LTR frames), with E4
+# A1 — More bits for key frames (QP offset on I-frames and LTR frames), with E4
 
 **Question.** Every later frame is predicted from the I-frame (and, where they are used, from long-term reference frames, LTRs), so their quality carries forward. Classical codecs give these frames a lower QP. MLVC has a fixed built-in QP pattern that does not know which frames are I-frames or LTRs, and our own proposal assumed "the key frame is coded at full quality" without testing it. **Does a lower QP on I-frames and LTR frames save bits at the same quality?** This is the first codec-level mechanism (A1); it changes how MLVC spends bits, with no retraining and no change to the decoder (each frame header carries its QP).
 
@@ -8,14 +8,14 @@ Two rounds: round 1 tested offsets on B\*; round 2 went further on B\*, repeated
 
 **22 Nov 2026, 8:14–9:01 pm (+04)**, MacBook Pro 14-inch M4 Pro, macOS 26.6.2 (25G83), normal use (quality only).
 
-- **Setting:** B\* (full MLVC 360p, encoder and decoder on the NE, an I-frame every 64 frames), the 20 evaluation clips, QP 16/24/26/32/40, with exactly the inputs and metrics of experiment 10 (coded PSNR-Y/YUV on all frames; display PSNR-Y, face PSNR-Y and face LPIPS on every 10th frame).
+- **Setting:** B\* (full MLVC 360p, encoder and decoder on the NE, an I-frame every 64 frames), the 20 evaluation clips, QP 16/24/26/32/40, with exactly the inputs and metrics of baseline experiment 10 (coded PSNR-Y/YUV on all frames; display PSNR-Y, face PSNR-Y and face LPIPS on every 10th frame).
 - **Six configurations** (QP offset on I-frames / on the other LTR-marked frames): `o0` 0 / 0 (control); `b2`, `b4`, `b6` −2, −4, −6 on both; `i4` −4 on I-frames only; `l4` −4 on LTR frames only. 600 runs.
 - **How:** the measurement program (`scripts/duplex_bench.cpp`, built separately as `harness_a1`, the baseline's program is not touched) sets the QP of every frame (`EncodeParams.qp`). Before each frame it asks libmlvc for the frame's type (`GetNextFrameInfo`) and works out whether libmlvc will mark it as an LTR with libmlvc's own internal marking rule. A per-frame log (`raw_data/flog/`) records index, type, LTR flag, QP and size.
-- **Checks before the runs:** with no offset the bitstreams are byte-identical to experiment 10's (**99 of 99**); every predicted frame type matched the type libmlvc produced (the program stops otherwise). libmlvc's trace log does not print LTR marking in this build, so the LTR prediction could not be checked against it; in B\* there are no LTRs to predict (below).
+- **Checks before the runs:** with no offset the bitstreams are byte-identical to baseline experiment 10's (**99 of 99**); every predicted frame type matched the type libmlvc produced (the program stops otherwise). libmlvc's trace log does not print LTR marking in this build, so the LTR prediction could not be checked against it; in B\* there are no LTRs to predict (below).
 
 ## What was run (round 2 and E4)
 
-**24 Nov 2026, 4:43–5:57 pm (+04)**, same laptop, same inputs and metrics, 1,000 runs (10 configurations × 20 clips × 5 QPs). The measurement program was rebuilt with two more options (`--force-idr` for experiment 17, and `--ltr-period` / `--ltr-recovery-period` / `--ltr-start-idx` to override the LTR structure); with no option set it is byte-identical to round 1 (check: MLVC-S 540p without offset gives experiment 10's bitstreams, **99 of 99**).
+**24 Nov 2026, 4:43–5:57 pm (+04)**, same laptop, same inputs and metrics, 1,000 runs (10 configurations × 20 clips × 5 QPs). The measurement program was rebuilt with two more options (`--force-idr` for [A3](../A3_forced_keyframe/), and `--ltr-period` / `--ltr-recovery-period` / `--ltr-start-idx` to override the LTR structure); with no option set it is byte-identical to round 1 (check: MLVC-S 540p without offset gives baseline experiment 10's bitstreams, **99 of 99**).
 
 | Model | Name | Offset on I-frames / LTR frames | LTR structure |
 |---|---|---|---|
@@ -29,7 +29,7 @@ B\*'s new offsets are compared with round 1's `o0`; MLVC-S's with its own `o0`; 
 
 ## How to run
 
-The scripts live in `~/Downloads/d/a1/` (they use experiment 10's `q.py` and `ana.py` from `../4b/`). Normal Mac, charger in, lid open; resumable.
+The scripts live in `~/Downloads/d/a1/` (they use baseline experiment 10's `q.py` and `ana.py` from `../4b/`). Normal Mac, charger in, lid open; resumable.
 
 | Script | What | Time |
 |---|---|---|
@@ -37,16 +37,16 @@ The scripts live in `~/Downloads/d/a1/` (they use experiment 10's `q.py` and `an
 | `scripts/a1.py` | The runs (`check` = first clip, QP 26, `o0` and `b4`) | — |
 | `scripts/a1ana.py` | Mean rate–distortion, BD-rate against `o0` (mean curves and per clip), share of the bits per frame role | 1 min |
 | `scripts/duplex_bench.cpp` | The measurement program with `--qp-i-offset`, `--qp-ltr-offset`, `--frame-log` (all modes), and since round 2 `--force-idr`, `--ltr-period`, `--ltr-recovery-period`, `--ltr-start-idx` | — |
-| `scripts/allb` | Round 2 and E4: check (MLVC-S `o0` identical to experiment 10), the 1,000 runs (2 passes), the analysis | ≈ 75 min |
+| `scripts/allb` | Round 2 and E4: check (MLVC-S `o0` identical to baseline experiment 10), the 1,000 runs (2 passes), the analysis | ≈ 75 min |
 | `scripts/a1b.py`, `scripts/a1bana.py` | Round 2 runs; BD-rate of every comparison (mean curves and per clip) | — |
 
-Output: `~/Downloads/duplexnvc-baseline/phase2/a1/` (round 1) and `phase2/a1b/` (round 2). Round 2 needs the program built by experiment 17's `all` (it rebuilds `harness_a1` when `duplex_bench.cpp` changes).
+Output: `~/Downloads/duplexnvc-baseline/phase2/a1/` (round 1) and `phase2/a1b/` (round 2). Round 2 needs the program built by A3's `all` (it rebuilds `harness_a1` when `duplex_bench.cpp` changes).
 
 ## Files
 
 | Path | Contents |
 |---|---|
-| `raw_data/q.csv`, `raw_data/faces.csv` | One row per configuration × clip × QP (as experiment 10), one row per scored face |
+| `raw_data/q.csv`, `raw_data/faces.csv` | One row per configuration × clip × QP (as baseline experiment 10), one row per scored face |
 | `raw_data/flog/<cfg>/<clip>_qp<QP>.csv` | Per frame: index, type, LTR flag, QP used, bytes |
 | `raw_data/frames/` | Per-frame PSNR of every run |
 | `raw_data/logs/` | Console log, build log |
@@ -56,7 +56,7 @@ Output: `~/Downloads/duplexnvc-baseline/phase2/a1/` (round 1) and `phase2/a1b/` 
 
 ## Results (round 1)
 
-**B\* has no LTR frames.** The default encoder configuration of every full MLVC model has LTR marking switched off (LTR period 0, see experiment 11), so in B\* the only key frames are the I-frames (5 per 300-frame clip). The "LTR" part of A1 therefore had nothing to act on: `l4` is identical to `o0`, and `b4` is identical to `i4`.
+**B\* has no LTR frames.** The default encoder configuration of every full MLVC model has LTR marking switched off (LTR period 0, see baseline experiment 11), so in B\* the only key frames are the I-frames (5 per 300-frame clip). The "LTR" part of A1 therefore had nothing to act on: `l4` is identical to `o0`, and `b4` is identical to `i4`.
 
 **BD-rate against no offset** (negative = fewer bits for the same quality; in brackets the per-clip median and the clips that gain):
 
@@ -92,13 +92,13 @@ Output: `~/Downloads/duplexnvc-baseline/phase2/a1/` (round 1) and `phase2/a1b/` 
 - **B\* peaks between −6 and −8.** Beyond −8 the coded and face PSNR gains fall away (−10: −0.25 %, and most clips lose on PSNR), while face LPIPS keeps improving; −8 keeps the PSNR gain of −6 and adds 2.4 points of LPIPS.
 - **MLVC-S gains more than B\*** from the same offset (−2.6 % vs −1.2 % coded at −8), and almost every clip gains.
 - **Lower QP on LTR frames does not pay,** not even inside the drift bound, where every second LTR is used as a reference: +0.7 % alone, +0.9 % inside the bound. The I-frame offset alone does better than both offsets together.
-- **E4 cross-check:** the drift bound costs +9.65 %, the same as experiment 11 measured independently for the same structure (+9.6 %).
+- **E4 cross-check:** the drift bound costs +9.65 %, the same as baseline experiment 11 measured independently for the same structure (+9.6 %).
 
 ## Conclusion (round 1)
 
 1. **More bits for the I-frame pay off, a little.** At −6 the same quality needs 1.3 % fewer bits on coded PSNR, 2.2 % on display PSNR and 3.5 % on face LPIPS, and most clips gain. The gain grows with the offset and has not peaked at −6, so larger offsets are worth testing.
 2. **The proposal's "key frame coded at full quality" is not what MLVC does,** and spending more on it is a small, real improvement, with no change to the decoder.
-3. **The LTR half of A1 needs a structure that uses LTRs.** B\* has none, and MLVC-S marks LTRs but never predicts from them before the next I-frame (experiment 11). A1 on LTR frames is therefore only meaningful together with LTR recovery (A2's drift bound) or content-adaptive LTRs (A4); that combination was tested in round 2 (E4, below).
+3. **The LTR half of A1 needs a structure that uses LTRs.** B\* has none, and MLVC-S marks LTRs but never predicts from them before the next I-frame (baseline experiment 11). A1 on LTR frames is therefore only meaningful together with LTR recovery (A2's drift bound) or content-adaptive LTRs (A4); that combination was tested in round 2 (E4, below).
 
 ## Conclusion (round 2 and E4)
 

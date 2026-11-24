@@ -92,16 +92,13 @@ uv run convert.py bundle --model-version dmc61sbr_reglu \
 **Step 4. The measurement program and tools.**
 ```bash
 cp <repo>/baseline/common/code/* "$TOOLS/"
-find <repo>/baseline -path '*/scripts/*' ! -path '*/1[0-4]_*_experiment/*' -type f ! -name README.md -exec cp {} ~/Downloads/d/ \;
-mkdir -p ~/Downloads/d/{4b,5,ct,a1,hv,he}
+find <repo>/baseline -path '*/scripts/*' ! -path '*/1[0-2]_*_experiment/*' -type f ! -name README.md -exec cp {} ~/Downloads/d/ \;
+mkdir -p ~/Downloads/d/{4b,5,ct}
 cp <repo>/baseline/10_quality_per_setting_experiment/scripts/* ~/Downloads/d/4b/
 cp <repo>/baseline/11_correctness_drift_experiment/scripts/* ~/Downloads/d/5/
 cp <repo>/baseline/12_contention_experiment/scripts/* ~/Downloads/d/ct/
-cp <repo>/baseline/13_a1_keyframe_qp_experiment/scripts/* ~/Downloads/d/a1/
-cp <repo>/baseline/14_hevc_anchor_experiment/scripts/{all,hv.py,hvana.py} ~/Downloads/d/hv/
-cp <repo>/baseline/14_hevc_anchor_experiment/scripts/energy/* ~/Downloads/d/he/
 cp <repo>/baseline/common/code/{mlplan.swift,thermal_log.swift} ~/Downloads/d/
-chmod +x ~/Downloads/d/* ~/Downloads/d/{4b,5,ct,a1,hv,he}/*
+chmod +x ~/Downloads/d/* ~/Downloads/d/{4b,5,ct}/*
 cp -R "$WORK/libmlvc/examples/minimal-fetchcontent" "$WORK/harness"
 cp "$TOOLS/duplex_bench.cpp" "$WORK/harness/main.cpp"
 cd "$WORK/harness"
@@ -166,20 +163,13 @@ Run everything from `~/Downloads/d`, in this order. Each script saves its consol
 | 22 | `cd .. && ./p` | `common` | Quiet mode on | 1 min | see §3 |
 | 23 | `cd 4b && ./en` | `10_quality_per_setting_experiment` | Part B: energy of the 7 best placements at 5 QPs (175 runs), then `es.py` and `ana.py` | 7.7 h | **quiet**, password; **resumable** |
 | 24 | `cd .. && ./u` | `common` | Quiet mode off | 1 min | — |
-| 25 | `cd 5 && ./all` | `11_correctness_drift_experiment` | All 9 encoder→decoder pairs × 7 settings × 20 clips × 4 QPs, drift bounds (A2), analysis (`PHASE=main\|a2`, `ONLY=…`) | main ≈ 17 h; A2 ≈ 10 h (30 fps settings) + ≈ 43 h (others) | any (charger in, lid open); **resumable** |
+| 25 | `cd 5 && ./all` | `11_correctness_drift_experiment` | All 9 encoder→decoder pairs × 7 settings × 20 clips × 4 QPs, and, in the same run, the A2 drift bounds of [`algorithm_enhancements/`](../algorithm_enhancements/A2_drift_bounds/), analysis (`PHASE=main\|a2`, `ONLY=…`) | main ≈ 17 h; A2 ≈ 10 h (30 fps settings) + ≈ 43 h (others) | any (charger in, lid open); **resumable** |
 | 26 | `cd 5 && ./mp` | `11_correctness_drift_experiment` | Multi-person check (needs the Step 8 masters, `controller_data/`) | 1.4 h | any; **resumable** |
-| 27 | `cd a1 && ./all` | `13_a1_keyframe_qp_experiment` | Builds `harness_a1`, checks, 600 runs, analysis | 50 min | any; **resumable** |
-| 28 | `cd hv && ./all` | `14_hevc_anchor_experiment` | Hardware HEVC at MLVC's bitrates (200 runs), BD-rate | 10 min | any; **resumable** |
-| 29 | `./p` | `common` | Quiet mode on | 1 min | see §3 |
-| 30 | `cd ct && ./all` | `12_contention_experiment` | Memory load 0/25/50/75 % against the encoder alone and the paced B\* call (24 runs), then `./sum` | 55 min | **quiet**; **resumable** |
-| 31 | `cd he && ./all` | `14_hevc_anchor_experiment` | Energy of hardware HEVC and MLVC calls from the chip's energy counters (25 runs) | 70 min | **quiet**; **resumable** |
-| 32 | `./u` | `common` | Quiet mode off | 1 min | — |
-| 33 | `cd a3 && ./all` | `17_a3_forced_keyframe_experiment` | Rebuilds `harness_a1` with `--force-idr`, finds the Step 8 masters, check, 440 runs, analysis | 30 min | any; **resumable** |
-| 34 | `cd a1 && ./allb` | `13_a1_keyframe_qp_experiment` | Round 2 and E4: check (identical to experiment 10), 1,000 runs, analysis (needs step 33's build) | 75 min | any; **resumable** |
-| 35 | `./p`, then `cd bt && ./all` | `15_battery_lowpower_experiment`, `16_scene_analyzer_cost_experiment` | Battery blocks (unplug when asked; stops at 15 %, waits for the charger), then on AC: the analyzer variants, AC and AC + Low Power Mode blocks, the 30-min call; `btana.py`, then `python3 ../15…/scripts/battery_side.py` | ≈ 4 h + 2.6 h | **quiet**, password; start fully charged with Optimized Battery Charging off; **resumable** |
-| 36 | `./u` | `common` | Quiet mode off | 1 min | — |
+| 27 | `./p` | `common` | Quiet mode on | 1 min | see §3 |
+| 28 | `cd ct && ./all` | `12_contention_experiment` | Memory load 0/25/50/75 % against the encoder alone and the paced B\* call (24 runs), then `./sum` | 55 min | **quiet**; **resumable** |
+| 29 | `./u` | `common` | Quiet mode off | 1 min | — |
 
-Do not press Ctrl-C during `./x`, `./w` or `./1`; a rerun moves the old folder aside. `./all` (09–17), `./allb` (13), `./mp` (11) and `./en` (10) are the exceptions: interrupt them at any time and run them again, and they continue where they stopped.
+Do not press Ctrl-C during `./x`, `./w` or `./1`; a rerun moves the old folder aside. `./all` (09–12), `./mp` (11) and `./en` (10) are the exceptions: interrupt them at any time and run them again, and they continue where they stopped.
 
 Check that every run used the processor it asked for:
 ```bash
@@ -231,9 +221,4 @@ Key values to check:
 | A 22-hour run can be interrupted | `all` skips finished runs and appends to its log |
 | `sudo` expiring during long runs | `1`, `all` and `en` refresh `sudo` every 50 s in the background |
 | `l16` (LTR period 8) failed on MLVC-S and stopped experiment 11's passes | libmlvc needs the LTR start index below the LTR period; `c.py` passes `--ltr-start-idx 0` |
-| Experiment 15 run at 75 % screen brightness | Repeated at maximum (quiet mode, §3); the battery-side power depends on the screen |
-| Experiment 15's battery blocks started at 80 % | macOS's Optimized Battery Charging held the charge at 80 %; turn it off the day before (System Settings → Battery) |
-| The analyzer's timing file was missing (experiment 16) | `va` is no longer stopped with the call; it finishes 12 s later and writes `va.csv` |
-| The analyzer looked cheaper than no analyzer | `btana.py` ends the energy window with the call's last frame (`frames.csv`), not when the analyzer ends |
-| Battery-side power of 60 s calls reads low | The battery gauge averages its current over tens of seconds; `battery_side.py` takes steady values from the 60-min and 5-min calls |
 | `./en` started without `./p` | Run `./p` in a second Terminal tab before the first idle recording; the stream preparation at the start is not measured |

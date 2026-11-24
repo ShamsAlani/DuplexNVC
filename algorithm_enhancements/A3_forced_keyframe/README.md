@@ -1,4 +1,4 @@
-# 17 — A3 experiment: a forced key frame when the content changes
+# A3 — A forced key frame when the content changes
 
 **Question.** MLVC sends an I-frame every 64 frames, whatever happens in the picture. When people join or leave a call, the frames the encoder predicts from no longer match the scene until the next scheduled I-frame. Classical encoders insert a key frame at a scene change, and our proposal planned the same for DuplexNVC's controller (mechanism A3), triggered by the scene analyzer. **Does a key frame forced at a content change save bits or improve the picture, and does it matter which trigger fires it?** Like A1, this changes how MLVC codes the stream, with no retraining and no change to the decoder.
 
@@ -17,13 +17,13 @@
 | `fused` | Step 8's best detector: people = max(participant faces, bodies) on every 10th frame; a new count that holds for 3 labelled frames (1 s) is an event, and the key frame is forced when it is confirmed |
 | `diff` | Frame difference: mean absolute luma difference (360p, 0–255) between the frame and the last key frame above 6, at least 30 frames after it (a trigger with no detector) |
 
-- **How:** the measurement program of experiment 13 with a new option `--force-idr <file>`: before each listed frame it asks libmlvc for an I-frame (`EncodeParams.forceIdr`); the 64-frame period restarts from it. A per-frame log records type, QP, size and whether the frame was forced.
-- **Metrics:** as experiment 10 (coded PSNR-Y on every frame; display PSNR-Y, face PSNR-Y and face LPIPS on every 10th frame against the 1080p originals; the 720p Class E masters are upscaled losslessly to 1080p for the display metrics). BD-rate of each policy against `none`. **Cost of a switch** at QP 26: size of each forced I-frame against the mean of the 10 P-frames before it, and the coded PSNR-Y in the 30 frames after each real event compared with `none`.
+- **How:** the measurement program of [A1](../A1_keyframe_qp/) with a new option `--force-idr <file>`: before each listed frame it asks libmlvc for an I-frame (`EncodeParams.forceIdr`); the 64-frame period restarts from it. A per-frame log records type, QP, size and whether the frame was forced.
+- **Metrics:** as baseline experiment 10 (coded PSNR-Y on every frame; display PSNR-Y, face PSNR-Y and face LPIPS on every 10th frame against the 1080p originals; the 720p Class E masters are upscaled losslessly to 1080p for the display metrics). BD-rate of each policy against `none`. **Cost of a switch** at QP 26: size of each forced I-frame against the mean of the 10 P-frames before it, and the coded PSNR-Y in the 30 frames after each real event compared with `none`.
 - **Check before the runs:** one clip, QP 26, all 8 combinations; the `none` runs contain no forced frame.
 
 ## How to run
 
-The scripts live in `~/Downloads/d/a3/`; they use experiment 10's `q.py` and `ana.py` (`../4b/`), the measurement program source in `../a1/duplex_bench.cpp` (experiment 13) and the Step 8 data in `data/`. Normal Mac, charger in, lid open; resumable.
+The scripts live in `~/Downloads/d/a3/`; they use baseline experiment 10's `q.py` and `ana.py` (`../4b/`), the measurement program source in `../a1/duplex_bench.cpp` (A1) and the Step 8 data in `data/`. Normal Mac, charger in, lid open; resumable.
 
 | Script | What | Time |
 |---|---|---|

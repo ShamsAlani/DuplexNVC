@@ -1,4 +1,4 @@
-# 16 — Scene-analyzer cost experiment: what does face and body detection cost inside the call? (Step 7, cost)
+# Step 7 (cost) — Scene analyzer: what does face and body detection cost inside the call?
 
 **Question.** DuplexNVC's controller reacts to the people in the frame, so a scene analyzer (Apple Vision face and body detection) has to run on the camera frames during the call, on the same chip as the encoder and decoder. If the analyzer slows the codec or costs much energy, adapting is not worth it. The plan sets the limit (C4): **at most 2 ms per frame pair on average and no late frames**. Which way of running the analyzer stays inside it?
 
@@ -6,24 +6,24 @@ How small a face the analyzer can find at the call resolution is the other half 
 
 ## What was run
 
-**24 Nov 2026, 8:59–10:01 pm (+04)**, MacBook Pro 14-inch M4 Pro, macOS 26.6.2 (25G83), AC power, quiet mode (Wi-Fi and Bluetooth off, screen at maximum brightness, no other apps), as the first block of the run of experiment 15.
+**24 Nov 2026, 8:59–10:01 pm (+04)**, MacBook Pro 14-inch M4 Pro, macOS 26.6.2 (25G83), AC power, quiet mode (Wi-Fi and Bluetooth off, screen at maximum brightness, no other apps), as the first block of the run of Step 6.
 
-- **Call:** B\* (full MLVC 360p, encoder and decoder on the NE), paced at 30 fps for 60 s, as in experiments 03 and 15.
+- **Call:** B\* (full MLVC 360p, encoder and decoder on the NE), paced at 30 fps for 60 s, as in baseline experiments 03 and 14.
 - **Analyzer** (`scripts/va.swift`, a separate process started with the call): reads the 360p camera frames the encoder gets, at the call's pace, and runs `VNDetectFaceRectanglesRequest` and `VNDetectHumanRectanglesRequest` on every Nth frame. It logs the time of every analysis and the faces and bodies found.
 - **Variants:** V0 no analyzer; V1 every 15 frames (2 per second), Vision's default processors; V2 every 15 frames, pinned to the CPU; V3 every 30 frames, pinned to the CPU.
 - **Rounds:** 120 s of idle, then 5 interleaved rounds of the four variants, 60 s rest after each call.
-- **Measured:** chip energy per frame pair (IOReport counters over the last 49 s of the call, idle subtracted, as experiments 14 and 15); late frames and p99 latency per direction; the analyzer's time per analysis (median of the run), and per frame pair = time per analysis / N.
+- **Measured:** chip energy per frame pair (IOReport counters over the last 49 s of the call, idle subtracted, as Step 9 and Step 6); late frames and p99 latency per direction; the analyzer's time per analysis (median of the run), and per frame pair = time per analysis / N.
 
-**Runs, including the ones set aside.** The variants were first run on 23 Nov 2026, 9:45–10:47 pm, as part of experiment 15's first run. That run is set aside: the analyzer was stopped when the call ended, before it wrote its timing file, so the time per analysis was missing; and the screen was at 75 % brightness instead of the quiet-mode maximum. The analyzer was changed to finish on its own (12 s after the call) and always write its file, and the block was run again on 24 Nov. In the first analysis of the repeat, the energy window ended at the analyzer's end instead of the call's, so it took in about 10 s of quiet after the call and every variant came out cheaper than no analyzer; `btana.py` now ends the window with the call's last frame (`frames.csv`), and the numbers below come from that analysis of the same run.
+**Runs, including the ones set aside.** The variants were first run on 23 Nov 2026, 9:45–10:47 pm, as part of Step 6's first run. That run is set aside: the analyzer was stopped when the call ended, before it wrote its timing file, so the time per analysis was missing; and the screen was at 75 % brightness instead of the quiet-mode maximum. The analyzer was changed to finish on its own (12 s after the call) and always write its file, and the block was run again on 24 Nov. In the first analysis of the repeat, the energy window ended at the analyzer's end instead of the call's, so it took in about 10 s of quiet after the call and every variant came out cheaper than no analyzer; `btana.py` now ends the window with the call's last frame (`frames.csv`), and the numbers below come from that analysis of the same run.
 
 ## How to run
 
-The analyzer is built and the variants are run by experiment 15's `scripts/all` (`~/Downloads/d/bt/`), Part B; `btana.py` there writes the tables below.
+The analyzer is built and the variants are run by Step 6's `scripts/all` (`~/Downloads/d/bt/`), Part B; `btana.py` there writes the tables below.
 
 | Script | What |
 |---|---|
 | `scripts/va.swift` | The analyzer: `va <camera.nv12> <w> <h> <every> <cpu 0/1> <seconds> <out.csv>`; paced at 30 fps, face and body requests, prints the median time per analysis |
-| `../15_battery_lowpower_experiment/scripts/all`, `btana.py` | Runs the variants with the call and the energy counters; the analysis |
+| `../step6_battery_lowpower/scripts/all`, `btana.py` | Runs the variants with the call and the energy counters; the analysis |
 
 ## Files
 

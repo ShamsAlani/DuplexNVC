@@ -1,22 +1,22 @@
-# 14 — HEVC anchor experiment: is a learned codec worth it against the Mac's own hardware HEVC? (Step 9)
+# Step 9 — HEVC anchor: is a learned codec worth it against the Mac's own hardware HEVC?
 
-**Question.** Every Mac has a hardware HEVC encoder and decoder (Apple VideoToolbox, in dedicated video blocks of the chip). A learned codec on the NE only makes sense for calls if it beats that at equal bitrate, or costs little enough energy to justify itself. Experiment 05 compared B\* with Intel's hardware HEVC encoder in an offline file mode; this experiment uses the real-time hardware encoder on the measurement laptop itself, at MLVC's own bitrates, with the same metrics as experiment 10 and, in a second part, the energy of a two-way call measured over the same chip blocks.
+**Question.** Every Mac has a hardware HEVC encoder and decoder (Apple VideoToolbox, in dedicated video blocks of the chip). A learned codec on the NE only makes sense for calls if it beats that at equal bitrate, or costs little enough energy to justify itself. Experiment 05 compared B\* with Intel's hardware HEVC encoder in an offline file mode; this experiment uses the real-time hardware encoder on the measurement laptop itself, at MLVC's own bitrates, with the same metrics as baseline experiment 10 and, in a second part, the energy of a two-way call measured over the same chip blocks.
 
 ## What was run
 
 ### Part A — quality (22 Nov 2026, 21:01–21:06 (+04), normal use)
 
 - **Encoder:** `hevc_videotoolbox` through ffmpeg 9.0.2, **hardware only** (`-allow_sw 0`), real-time mode (`-realtime 1`), no B-frames (`-bf 0`), an I-frame every 64 frames (`-g 64`, as B\*), average bitrate (`-b:v`). Decoder: ffmpeg's HEVC decoder (bit-exact by the standard).
-- **Targets:** for each clip, MLVC's own bitrates for that clip at QP 16/24/26/32/40 from experiment 10: at 360p those of B\*, at 720p those of MLVC-S 720p. 20 evaluation clips × 2 sizes × 5 targets = 200 runs.
-- **Inputs and metrics:** exactly experiment 10's (Lanczos input from the 1080p MP4; coded PSNR-Y on all frames; display PSNR-Y, face PSNR-Y and face LPIPS on every 10th frame), through the same code (`q.py`), with the MLVC encode and decode replaced. BD-rate (PCHIP on log rate, overlapping range only) of HEVC against B\* at 360p, and against MLVC-S 720p and full MLVC 720p at 720p.
+- **Targets:** for each clip, MLVC's own bitrates for that clip at QP 16/24/26/32/40 from baseline experiment 10: at 360p those of B\*, at 720p those of MLVC-S 720p. 20 evaluation clips × 2 sizes × 5 targets = 200 runs.
+- **Inputs and metrics:** exactly baseline experiment 10's (Lanczos input from the 1080p MP4; coded PSNR-Y on all frames; display PSNR-Y, face PSNR-Y and face LPIPS on every 10th frame), through the same code (`q.py`), with the MLVC encode and decode replaced. BD-rate (PCHIP on log rate, overlapping range only) of HEVC against B\* at 360p, and against MLVC-S 720p and full MLVC 720p at 720p.
 
 ### Part B — energy (quiet mode, scheduled for the night of 22–23 Nov)
 
-A paced 30 fps two-way call for 60 s (camera encoded and incoming stream decoded at the same time, same clips as experiments 03 and 09): hardware HEVC at 360p (287 kbps, B\*'s rate) and 720p (847 kbps, MLVC-S 720p's rate), B\*, MLVC-S 540p (NE–NE) and MLVC-S 720p (GPU–NE), 5 interleaved rounds, 120 s idle at the start and the end. Energy is read from the chip's own counters (IOReport "Energy Model": CPU, GPU, NE, DRAM and the video encoder/decoder blocks, which powermetrics does not report), so the HEVC and MLVC calls are measured over the same parts of the chip. Results will be added here.
+A paced 30 fps two-way call for 60 s (camera encoded and incoming stream decoded at the same time, same clips as baseline experiments 03 and 09): hardware HEVC at 360p (287 kbps, B\*'s rate) and 720p (847 kbps, MLVC-S 720p's rate), B\*, MLVC-S 540p (NE–NE) and MLVC-S 720p (GPU–NE), 5 interleaved rounds, 120 s idle at the start and the end. Energy is read from the chip's own counters (IOReport "Energy Model": CPU, GPU, NE, DRAM and the video encoder/decoder blocks, which powermetrics does not report), so the HEVC and MLVC calls are measured over the same parts of the chip. Results will be added here.
 
 ## How to run
 
-The scripts live in `~/Downloads/d/hv/` (Part A; they use experiment 10's `q.py` and `ana.py` from `../4b/`) and `~/Downloads/d/he/` (Part B, from `scripts/energy/`).
+The scripts live in `~/Downloads/d/hv/` (Part A; they use baseline experiment 10's `q.py` and `ana.py` from `../4b/`) and `~/Downloads/d/he/` (Part B, from `scripts/energy/`).
 
 | Script | What | Time | Conditions |
 |---|---|---|---|
@@ -29,7 +29,7 @@ The scripts live in `~/Downloads/d/hv/` (Part A; they use experiment 10's `q.py`
 
 | Path | Contents |
 |---|---|
-| `raw_data/q.csv`, `raw_data/faces.csv`, `raw_data/frames/` | As experiment 10, one row per size × clip × target (column `qp` = the MLVC QP whose bitrate was the target; `enc_resolved` holds the target in kbps) |
+| `raw_data/q.csv`, `raw_data/faces.csv`, `raw_data/frames/` | As baseline experiment 10, one row per size × clip × target (column `qp` = the MLVC QP whose bitrate was the target; `enc_resolved` holds the target in kbps) |
 | `raw_data/ffmpeg_version.txt`, `raw_data/logs/` | ffmpeg version; console log |
 | `results/rd_mean.csv`, `bd.csv`, `summary.txt` | Mean rate–distortion per size and target; BD-rate of HEVC against MLVC |
 
@@ -49,7 +49,7 @@ At B\*'s QP 26 rate (170 kbps target) HEVC delivers 204 kbps at 37.20 dB coded P
 
 ## Conclusion (Part A)
 
-1. **In a real-time call setting, MLVC needs far fewer bits than the Mac's hardware HEVC**: B\* saves about 40 % of the bits on coded PSNR (HEVC +69 %) and about half on display and face PSNR. Full MLVC 720p needs less than half of HEVC's bits. This is a larger margin than experiment 05's −31 % against Intel's offline hardware HEVC, most likely because a call needs the real-time mode without B-frames, the least efficient way to run a hardware encoder.
+1. **In a real-time call setting, MLVC needs far fewer bits than the Mac's hardware HEVC**: B\* saves about 40 % of the bits on coded PSNR (HEVC +69 %) and about half on display and face PSNR. Full MLVC 720p needs less than half of HEVC's bits. This is a larger margin than baseline experiment 05's −31 % against Intel's offline hardware HEVC, most likely because a call needs the real-time mode without B-frames, the least efficient way to run a hardware encoder.
 2. **On perceptual face quality the gap closes for MLVC-S:** at 720p hardware HEVC matches MLVC-S on face LPIPS (−1.2 %, 11 of 20 clips), while full MLVC 720p keeps a 19 % lead.
 3. **Hardware HEVC cannot go as low as MLVC:** below about 115 kbps (360p) it overshoots its target, so for very low-bitrate calls MLVC is the only option of the two.
 4. Whether MLVC's bit saving is worth its energy is Part B's question (pending).

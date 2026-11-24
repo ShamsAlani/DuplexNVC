@@ -1,8 +1,8 @@
 # DuplexNVC Baseline
 
-The baseline is the fixed reference against which every later DuplexNVC change is measured. It was built in seventeen experiments, each in its own folder with its scripts, raw data, results and a README that explains what was run, what it shows and what we concluded.
+The baseline is the fixed reference against which every later DuplexNVC change is measured. It was built in twelve experiments, the ones in our submitted baseline report, each in its own folder with its scripts, raw data, results and a README that explains what was run, what it shows and what we concluded.
 
-**The core baseline B\*:** full MLVC (`dmc61sbr_reglu`, PSNR weights, Core ML fp16) at 640×360, encoder **and** decoder on the Apple Neural Engine (NE), full duplex at 30 fps (33.3 ms deadline), QP 26, an I-frame every 64 frames, VCD talking-head content. Experiments 07–09 then extend it to the GPU and CPU, to the seven model/resolution settings of our survey, and to every placement of the encoder and the decoder; experiment 10 measures the quality of every setting and its energy at every QP; experiment 11 the correctness and drift of every encoder/decoder pair; experiment 12 whether memory bandwidth limits the NE; experiment 13 the first codec-level mechanism (A1); experiment 14 the Mac's own hardware HEVC as the reference.
+**The core baseline B\*:** full MLVC (`dmc61sbr_reglu`, PSNR weights, Core ML fp16) at 640×360, encoder **and** decoder on the Apple Neural Engine (NE), full duplex at 30 fps (33.3 ms deadline), QP 26, an I-frame every 64 frames, VCD talking-head content. Experiments 07–09 then extend it to the GPU and CPU, to the seven model/resolution settings of our survey, and to every placement of the encoder and the decoder; experiment 10 measures the quality of every setting and its energy at every QP; experiment 11 the correctness and drift of every encoder/decoder pair; experiment 12 whether memory bandwidth limits the NE. Later measurements and our own changes to MLVC are outside this folder (see below).
 
 **Device:** MacBook Pro 14-inch, Apple M4 Pro, 24 GB, macOS 26.6 · **Codec:** `libmlvc` 0.1.0, commit `eb5d60a`.
 
@@ -20,16 +20,11 @@ The baseline is the fixed reference against which every later DuplexNVC change i
 | [`08_model_conversion_experiment`](08_model_conversion_experiment/) | X2 | Full MLVC and MLVC-S at 540p/720p/1080p: conversion, placement, input streams | 7 bundles | 0.5 h |
 | [`09_placement_experiment`](09_placement_experiment/) | X3 | Every setting × every encoder/decoder placement: which meet 30 fps, at what energy? | 584 | 21.4 h |
 | [`10_quality_per_setting_experiment`](10_quality_per_setting_experiment/) | Step 4b | Quality of every setting at screen size and on faces; energy at every QP; which settings are on the energy–quality Pareto front at equal bitrate? | 900 + 175 | 3.0 h + 7.7 h |
-| [`11_correctness_drift_experiment`](11_correctness_drift_experiment/) | Step 5 + A2 | All 9 encoder→decoder pairs on every setting: failures, determinism, drift, BD-rate (H4); I-frame vs LTR recovery as drift bounds; multi-person content | 2,212 jobs × 9 pairs | ≈ 33 h |
+| [`11_correctness_drift_experiment`](11_correctness_drift_experiment/) | Step 5 | All 9 encoder→decoder pairs on every setting: failures, determinism, drift, BD-rate (H4); multi-person content (the A2 drift bounds of the same run are in [`algorithm_enhancements/`](../algorithm_enhancements/)) | 2,212 jobs × 9 pairs | ≈ 33 h (with A2) |
 | [`12_contention_experiment`](12_contention_experiment/) | Contention | Is the NE limited by memory bandwidth? Why does a paced call take twice the unpaced time per frame? | 24 + peak | 55 min |
-| [`13_a1_keyframe_qp_experiment`](13_a1_keyframe_qp_experiment/) | A1 + E4 | Does a lower QP on I-frames and LTR frames save bits, on B\* and MLVC-S, and inside A2's drift bound? | 600 + 1,000 | 50 min + 75 min |
-| [`14_hevc_anchor_experiment`](14_hevc_anchor_experiment/) | Step 9 | The Mac's real-time hardware HEVC at MLVC's bitrates: quality (and energy, pending) | 200 (+25) | 10 min (+70 min) |
-| [`15_battery_lowpower_experiment`](15_battery_lowpower_experiment/) | Step 6 | Does a call cost the same on battery, at low charge and in Low Power Mode? Whole-laptop power, call time on a charge, 30- and 60-min calls | 80 + 3 long calls | 3.8 h + 1.6 h |
-| [`16_scene_analyzer_cost_experiment`](16_scene_analyzer_cost_experiment/) | Step 7 (cost) | Does face and body detection fit inside the B\* call (≤ 2 ms per frame pair, no late frames)? | 20 | 1 h |
-| [`17_a3_forced_keyframe_experiment`](17_a3_forced_keyframe_experiment/) | A3 | Does a key frame forced when people join or leave save bits or improve the picture? | 440 | 30 min |
 | [`common`](common/) | — | Measurement program, analysis tools, shared scripts, rebuild scripts, setup logs | — | — |
 
-In total about **83 hours** of measurement that the results come from, plus about 10 hours of runs that were set aside and repeated (each experiment's README says which, why, and what was fixed); every timed and energy run in quiet mode (quality runs do not depend on timing).
+In total about **74 hours** of measurement that the results come from (including the A2 runs that shared experiment 11's run), plus about 2 hours of runs that were set aside and repeated (experiments 02, 06 and 11 say which, why, and what was fixed); every timed and energy run in quiet mode (quality runs do not depend on timing). Everything measured after the report is ours and kept apart: further measurements of the duplex system (Steps 6, 7 and 9) in [`system_measurements/`](../system_measurements/), our changes to MLVC's coding algorithm (the Algorithm Enhancements A1–A4, with the A2 drift bounds measured alongside experiment 11) in [`algorithm_enhancements/`](../algorithm_enhancements/), and the network-level changes in [`lab_gpu_runs/`](../lab_gpu_runs/).
 
 ## Headline results
 
@@ -50,26 +45,19 @@ In total about **83 hours** of measurement that the results come from, plus abou
 | Full MLVC 540p | **Not worth its energy**: 14–15× MLVC-S 540p for +0.4–0.6 dB; MLVC-S 720p (GPU–NE) matches it at half the energy | 10 |
 | 30 fps energy–quality front | **MLVC-S 540p (NE–NE)** and **MLVC-S 720p (GPU–NE)**; a GPU encoder with an NE decoder costs ≈ 4 % in bitrate | 10 |
 | Correctness on every processor pair (H4) | **Deterministic, no failures, but H4 fails for every mismatched pair**: +3–7 % bitrate GPU/NE, +7–20 % with the CPU; about twice that on multi-person clips | 11 |
-| Cheapest drift bound | **LTR recovery every 32 frames**: same worst frame as an I-frame every 32 (37–39 dB) for a quarter of the bits on MLVC-S (+9.6 %) | 11 |
 | Is the NE limited by memory bandwidth? | **No**: 217 GB/s of competing traffic slows the encoder by only 4.4 % (M1: 18.8 %); the NE itself limits sharing | 12 |
 | Why are paced calls slow? | **Clocks drop between frames**: a background memory load cuts the paced B\* call from 12.6 to 7.4 ms per frame | 12 |
-| More bits for the I-frame (A1) | **−1.3 % (coded) to −3.5 % (face LPIPS) BD-rate** at QP offset −6; full MLVC has no LTR frames by default | 13 |
-| Mac's real-time hardware HEVC vs B\* | **HEVC needs +69 % more bits** (coded PSNR-Y); matches MLVC-S 720p only on face LPIPS | 14 |
-| A1 round 2 and E4 | **I-frames −8 is the best offset**: −1.2 % (B\*) and −2.6 % (MLVC-S 540p) coded, ≈ −6 % face LPIPS; a lower QP on LTR frames never helps; inside A2's drift bound the I-frame offset wins back 1.9 points (+9.7 % → +7.7 %) | 13 |
-| Battery, Low Power Mode (Step 6) | **Same chip energy on battery and AC**, at high and low charge (B\* 76.8 mJ); Low Power Mode saves 6.6 % for B\* with no late frames but makes 18–20 % of a GPU encoder's frames late; a B\* call lasts ≈ 10 h on battery (7.8 W for the whole laptop), MLVC-S 720p ≈ 1.7 h; no thermal drift in 60 min | 15 |
-| Scene-analyzer cost (Step 7) | **Fits**: Vision every 15 frames on its default processors costs 0.63 ms and +0.75 mJ (+1 %) per frame pair, no late frames; pinning it to the CPU is slower and dearer | 16 |
-| Forced key frame on content change (A3) | **Does not pay**: a forced I-frame costs 11–15 P-frames and the picture after the event is no better; +1.6 % with a perfect trigger, +29 % with frame difference | 17 |
 
 ## Quiet mode
 
-Every timed run used the same state: AC power and Low Power Mode off (except in experiment 15, where battery and Low Power Mode are what is measured); **Wi-Fi and Bluetooth off**; screen brightness fixed at **maximum** with automatic brightness and True Tone off; `caffeinate -dims`; no other apps; 60 s rest after every 60 s run; modes interleaved in rounds; first 64 frames of each direction discarded; medians over repeated runs. The idle power recordings, which are subtracted, use the same state.
+Every timed run used the same state: AC power and Low Power Mode off; **Wi-Fi and Bluetooth off**; screen brightness fixed at **maximum** with automatic brightness and True Tone off; `caffeinate -dims`; no other apps; 60 s rest after every 60 s run; modes interleaved in rounds; first 64 frames of each direction discarded; medians over repeated runs. The idle power recordings, which are subtracted, use the same state.
 
 ## Folder layout of each experiment
 
 ```
 NN_<name>_experiment/
 ├── README.md     question, what was run, how to run it, files, results, conclusion
-├── scripts/      the scripts that ran it (run from ~/Downloads/d; experiment 10's from ~/Downloads/d/4b, 11's from d/5, 12's from d/ct, 13's from d/a1, 14's from d/hv and d/he, 15's and 16's from d/bt, 17's from d/a3)
+├── scripts/      the scripts that ran it (run from ~/Downloads/d; experiment 10's from ~/Downloads/d/4b, 11's from d/5, 12's from d/ct)
 ├── raw_data/     per-run records (frames.csv, run.txt, power.txt) and console logs (logs/)
 └── results/      result tables (CSV) and figures (PNG, PDF)
 ```
