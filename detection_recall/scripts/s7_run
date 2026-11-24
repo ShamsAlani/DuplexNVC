@@ -22,6 +22,6 @@ cp "$S7"/faces/*.json "$OUT/raw_data/faces/"; cp "$S7/out_s7.txt" "$OUT/raw_data
 echo "   $(ls "$OUT/results" | wc -l | tr -d ' ') result files, $(ls "$OUT/raw_data/faces" | wc -l | tr -d ' ') face files"
 
 echo; echo "== pushing to GitHub"
-cd "$REPO" && git pull -q origin main && git add detection_recall && git commit -q -m "Step 7: detection recall by face size and resolution" \
+cd "$REPO" && git pull -q origin main && git add detection_recall && git commit -q -m "Step 7: detection recall on our recorded call clips too (stock and call clips reported separately)" \
   && git push -q origin main && echo "   pushed: detection_recall/" || echo "   NOT pushed: copy the lines above to the chat"
 echo; echo "== DONE. Paste everything from 'Detection recall by face size' to the chat."

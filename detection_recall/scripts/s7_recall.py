@@ -11,6 +11,7 @@ master size, overlaps it with IoU >= 0.5 (one-to-one, best overlap first). IoU >
 
 Reads  ~/Downloads/duplexnvc-baseline/phase2/step8/{clips.csv, exclude.csv, master/, faces/}
 Writes ~/Downloads/duplexnvc-baseline/phase2/step7/{frames/, faces/, results/}
+  (every table is given for the stock clips, our recorded call clips, and all clips together)
   results/recall_by_size.csv     resolution x face-size group (<32, 32-63, 64-127, >=128 px at 360p): faces, detected, recall
   results/recall_curve.csv       resolution x 4-px size bins (face height at 360p): recall
   results/smallest_face.csv      per resolution: smallest face detected; size from which every 4-px bin has recall >= 50 / 90 / 100 %
@@ -67,7 +68,9 @@ def main():
         if not os.path.exists(p):
             sys.exit(f"MISSING {p}  (this must run on the Mac that made Step 8)")
     os.makedirs(f"{RES}/check", exist_ok=True)
-    clips = [r["id"].strip() for r in csv.DictReader(open(f"{S8}/clips.csv")) if r["id"].strip()]
+    rows_c = [r for r in csv.DictReader(open(f"{S8}/clips.csv")) if r["id"].strip()]
+    clips = [r["id"].strip() for r in rows_c]
+    cset = {r["id"].strip(): ("recorded call clips" if r.get("source") == "recorded" else "stock clips") for r in rows_c}
     meta = json.load(open(f"{S8}/master/meta.json"))
     excl = {r["clip"]: float(r["min_face_360"]) for r in csv.DictReader(open(f"{S8}/exclude.csv"))} if os.path.exists(f"{S8}/exclude.csv") else {}
 
@@ -103,7 +106,7 @@ def main():
                     h360 = b[3] * 360 / H
                     det = k in strict
                     misses += not det
-                    face_rows.append(dict(clip=cid, i=i, frame=i * STEP, resolution=res, face_h_360=round(h360, 1), group=group(h360),
+                    face_rows.append(dict(clip=cid, set=cset[cid], i=i, frame=i * STEP, resolution=res, face_h_360=round(h360, 1), group=group(h360),
                                           face_h_at_res=round(b[3] / s, 1), detected=int(det), iou=round(strict[k][1], 3) if det else "",
                                           detected_iou03=int(k in loose)))
                 nref += len(boxes); ndet += len(strict)
@@ -112,12 +115,12 @@ def main():
                 pm = match(poster, left, IOU)
                 for j, t in enumerate(left):
                     kind = "poster face (excluded in Step 8)" if j in {jj for jj, _ in pm.values()} else "no participant here"
-                    extra_rows.append(dict(clip=cid, i=i, frame=i * STEP, resolution=res, x=t[0], y=t[1], w=t[2], h=t[3],
+                    extra_rows.append(dict(clip=cid, set=cset[cid], i=i, frame=i * STEP, resolution=res, x=t[0], y=t[1], w=t[2], h=t[3],
                                            face_h_360=round(t[3] * 360 / H, 1), kind=kind))
                     nextra += kind == "no participant here"
                 if res == "360p" and misses > worst[0]:
                     worst = (misses, i, boxes, strict)
-            clip_rows.append(dict(clip=cid, resolution=res, master=f"{W}x{H}", faces=nref, detected=ndet,
+            clip_rows.append(dict(clip=cid, set=cset[cid], resolution=res, master=f"{W}x{H}", faces=nref, detected=ndet,
                                   recall_pct=round(100 * ndet / nref, 1) if nref else "", extra_boxes=nextra))
             if res == "360p" and worst[1] is not None:
                 _, i, boxes, strict = worst
@@ -138,51 +141,60 @@ def main():
             wr = csv.DictWriter(f, fieldnames=list(rows[0].keys())); wr.writeheader(); wr.writerows(rows)
 
     write("faces_step7.csv", face_rows); write("recall_by_clip.csv", clip_rows)
-    write("extra_boxes.csv", extra_rows or [dict(clip="", i="", frame="", resolution="", x="", y="", w="", h="", face_h_360="", kind="")])
-    resl = [r for r, _, _ in SIZES if any(f["resolution"] == r for f in face_rows)]
+    write("extra_boxes.csv", extra_rows or [dict(clip="", set="", i="", frame="", resolution="", x="", y="", w="", h="", face_h_360="", kind="")])
     by_size, curve, small = [], [], []
-    print("\n== Detection recall by face size (face height at 360p), IoU >= 0.5")
-    print("   resolution " + "".join(f"{g:>16s}" for g, _, _ in GROUPS) + "      all")
-    for r in resl:
-        fr = [f for f in face_rows if f["resolution"] == r]
-        line = f"   {r:10s} "
-        for g, _, _ in GROUPS:
-            x = [f for f in fr if f["group"] == g]
-            d, dl = sum(f["detected"] for f in x), sum(f["detected_iou03"] for f in x)
-            by_size.append(dict(resolution=r, group=g, faces=len(x), detected=d, recall_pct=round(100 * d / len(x), 1) if x else "",
-                                recall_pct_iou03=round(100 * dl / len(x), 1) if x else "", clips=len({f["clip"] for f in x})))
-            line += f"{(f'{100 * d / len(x):5.1f} % of {len(x):4d}') if x else '-':>16s}"
-        tot = sum(f["detected"] for f in fr)
-        print(line + f"   {100 * tot / len(fr):5.1f} % of {len(fr)}")
-        for lo in range(0, 132, 4):
-            x = [f for f in fr if lo <= f["face_h_360"] < lo + 4]
-            if x:
-                curve.append(dict(resolution=r, face_h_360_from=lo, face_h_360_to=lo + 4, faces=len(x),
-                                  detected=sum(f["detected"] for f in x), recall_pct=round(100 * sum(f["detected"] for f in x) / len(x), 1)))
-        det = sorted(f["face_h_360"] for f in fr if f["detected"])
+    sets = [x for x in ("stock clips", "recorded call clips") if any(f["set"] == x for f in face_rows)] + ["all clips"]
+    for st in sets:
+        fs = face_rows if st == "all clips" else [f for f in face_rows if f["set"] == st]
+        resl = [r for r, _, _ in SIZES if any(f["resolution"] == r for f in fs)]
+        print(f"\n== {st}: detection recall by face size (face height at 360p), IoU >= 0.5")
+        print("   resolution " + "".join(f"{g:>16s}" for g, _, _ in GROUPS) + "      all")
+        for r in resl:
+            fr = [f for f in fs if f["resolution"] == r]
+            line = f"   {r:10s} "
+            for g, _, _ in GROUPS:
+                x = [f for f in fr if f["group"] == g]
+                d, dl = sum(f["detected"] for f in x), sum(f["detected_iou03"] for f in x)
+                by_size.append(dict(set=st, resolution=r, group=g, faces=len(x), detected=d,
+                                    recall_pct=round(100 * d / len(x), 1) if x else "",
+                                    recall_pct_iou03=round(100 * dl / len(x), 1) if x else "", clips=len({f["clip"] for f in x})))
+                line += f"{(f'{100 * d / len(x):5.1f} % of {len(x):4d}') if x else '-':>16s}"
+            tot = sum(f["detected"] for f in fr)
+            print(line + f"   {100 * tot / len(fr):5.1f} % of {len(fr)}")
+            bins = []
+            for lo in range(0, 260, 4):
+                x = [f for f in fr if lo <= f["face_h_360"] < lo + 4]
+                if x:
+                    bins.append(dict(set=st, resolution=r, face_h_360_from=lo, face_h_360_to=lo + 4, faces=len(x),
+                                     detected=sum(f["detected"] for f in x),
+                                     recall_pct=round(100 * sum(f["detected"] for f in x) / len(x), 1)))
+            curve += bins
+            det = sorted(f["face_h_360"] for f in fr if f["detected"])
 
-        bins = [c for c in curve if c["resolution"] == r]
-
-        def size_for(target):  # lowest 4-px bin from which EVERY bin upward has recall >= target
-            for k, c in enumerate(bins):
-                if all(b["recall_pct"] >= 100 * target for b in bins[k:]):
-                    return c["face_h_360_from"]
-            return ""
-        h, = [hh for rr, _, hh in SIZES if rr == r]
-        small.append(dict(resolution=r, smallest_detected_face_h_360=det[0] if det else "",
-                          smallest_detected_face_h_at_res=round(det[0] * h / 360, 1) if det else "",
-                          recall_50pct_from_face_h_360=size_for(0.5), recall_90pct_from_face_h_360=size_for(0.9),
-                          recall_100pct_from_face_h_360=size_for(1.0),
-                          largest_missed_face_h_360=max((f["face_h_360"] for f in fr if not f["detected"]), default="")))
+            def size_for(target):  # lowest 4-px bin from which EVERY bin upward has recall >= target
+                for k, c in enumerate(bins):
+                    if all(b["recall_pct"] >= 100 * target for b in bins[k:]):
+                        return c["face_h_360_from"]
+                return ""
+            h, = [hh for rr, _, hh in SIZES if rr == r]
+            small.append(dict(set=st, resolution=r, faces=len(fr), smallest_face_h_360=min(f["face_h_360"] for f in fr),
+                              smallest_detected_face_h_360=det[0] if det else "",
+                              smallest_detected_face_h_at_res=round(det[0] * h / 360, 1) if det else "",
+                              recall_50pct_from_face_h_360=size_for(0.5), recall_90pct_from_face_h_360=size_for(0.9),
+                              recall_100pct_from_face_h_360=size_for(1.0),
+                              largest_missed_face_h_360=max((f["face_h_360"] for f in fr if not f["detected"]), default="")))
+        print(f"   smallest face the analyzer detects ({st}, face height at 360p):")
+        for x in [y for y in small if y["set"] == st]:
+            print(f"   {x['resolution']:6s} smallest detected {x['smallest_detected_face_h_360']} px (smallest present {x['smallest_face_h_360']}); "
+                  f"every size from {x['recall_90pct_from_face_h_360']} px: >= 90 % found, from {x['recall_100pct_from_face_h_360']} px: all; "
+                  f"largest missed {x['largest_missed_face_h_360']} px")
     write("recall_by_size.csv", by_size); write("recall_curve.csv", curve); write("smallest_face.csv", small)
-    print("\n== Smallest face the analyzer detects (face height at 360p)")
-    for s in small:
-        print(f"   {s['resolution']:6s} smallest detected {s['smallest_detected_face_h_360']} px; "
-              f"every size from {s['recall_50pct_from_face_h_360']} px up: >= 50 % found, from {s['recall_90pct_from_face_h_360']} px: >= 90 %, from {s['recall_100pct_from_face_h_360']} px: all; "
-              f"largest missed {s['largest_missed_face_h_360']} px")
     ne = {}
     for e in extra_rows: ne[(e["resolution"], e["kind"])] = ne.get((e["resolution"], e["kind"]), 0) + 1
     print("\n== Boxes at the lower resolution that match no participant: " + (", ".join(f"{r} {k}: {n}" for (r, k), n in sorted(ne.items())) or "none"))
+    for cid in clips:
+        if cset[cid] == "recorded call clips":
+            print("   " + cid + ": " + ", ".join(f"{c['resolution']} {c['detected']}/{c['faces']}" for c in clip_rows if c["clip"] == cid))
     print(f"\n-> {RES}/")
 
 

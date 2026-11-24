@@ -1,0 +1,66 @@
+   rcleav 360p: frames + face detection
+   rcleav 540p: frames + face detection
+   rcleav 720p: frames + face detection
+   rc2to1 360p: frames + face detection
+   rc2to1 540p: frames + face detection
+   rc2to1 720p: frames + face detection
+   rcbck1 360p: frames + face detection
+   rcbck1 540p: frames + face detection
+   rcbck1 720p: frames + face detection
+   rcbck2 360p: frames + face detection
+   rcbck2 540p: frames + face detection
+   rcbck2 720p: frames + face detection
+   rcjoin 360p: frames + face detection
+   rcjoin 540p: frames + face detection
+   rcjoin 720p: frames + face detection
+   rclook 360p: frames + face detection
+   rclook 540p: frames + face detection
+   rclook 720p: frames + face detection
+   rcwalk 360p: frames + face detection
+   rcwalk 540p: frames + face detection
+   rcwalk 720p: frames + face detection
+
+== stock clips: detection recall by face size (face height at 360p), IoU >= 0.5
+   resolution              <32           32-63          64-127           >=128      all
+   360p         96.3 % of  246 100.0 % of  236 100.0 % of   78               -    98.4 % of 560
+   540p         95.5 % of  246 100.0 % of  236 100.0 % of   78               -    98.0 % of 560
+   720p         95.1 % of  246  99.6 % of  236 100.0 % of   78               -    97.7 % of 560
+   1080p        95.4 % of  241 100.0 % of  114               -               -    96.9 % of 355
+   smallest face the analyzer detects (stock clips, face height at 360p):
+   360p   smallest detected 14.3 px (smallest present 14.3); every size from 16 px: >= 90 % found, from 32 px: all; largest missed 29.7 px
+   540p   smallest detected 14.3 px (smallest present 14.3); every size from 12 px: >= 90 % found, from 32 px: all; largest missed 29.7 px
+   720p   smallest detected 14.3 px (smallest present 14.3); every size from 12 px: >= 90 % found, from 40 px: all; largest missed 37.0 px
+   1080p  smallest detected 14.3 px (smallest present 14.3); every size from 12 px: >= 90 % found, from 32 px: all; largest missed 29.7 px
+
+== recorded call clips: detection recall by face size (face height at 360p), IoU >= 0.5
+   resolution              <32           32-63          64-127           >=128      all
+   360p        100.0 % of    2 100.0 % of    2 100.0 % of  124 100.0 % of  129   100.0 % of 257
+   540p        100.0 % of    2 100.0 % of    2 100.0 % of  124 100.0 % of  129   100.0 % of 257
+   720p         50.0 % of    2 100.0 % of    2 100.0 % of  124 100.0 % of  129    99.6 % of 257
+   smallest face the analyzer detects (recorded call clips, face height at 360p):
+   360p   smallest detected 28.0 px (smallest present 28.0); every size from 28 px: >= 90 % found, from 28 px: all; largest missed  px
+   540p   smallest detected 28.0 px (smallest present 28.0); every size from 28 px: >= 90 % found, from 28 px: all; largest missed  px
+   720p   smallest detected 29.0 px (smallest present 28.0); every size from 32 px: >= 90 % found, from 32 px: all; largest missed 28.0 px
+
+== all clips: detection recall by face size (face height at 360p), IoU >= 0.5
+   resolution              <32           32-63          64-127           >=128      all
+   360p         96.4 % of  248 100.0 % of  238 100.0 % of  202 100.0 % of  129    98.9 % of 817
+   540p         95.6 % of  248 100.0 % of  238 100.0 % of  202 100.0 % of  129    98.7 % of 817
+   720p         94.8 % of  248  99.6 % of  238 100.0 % of  202 100.0 % of  129    98.3 % of 817
+   1080p        95.4 % of  241 100.0 % of  114               -               -    96.9 % of 355
+   smallest face the analyzer detects (all clips, face height at 360p):
+   360p   smallest detected 14.3 px (smallest present 14.3); every size from 16 px: >= 90 % found, from 32 px: all; largest missed 29.7 px
+   540p   smallest detected 14.3 px (smallest present 14.3); every size from 12 px: >= 90 % found, from 32 px: all; largest missed 29.7 px
+   720p   smallest detected 14.3 px (smallest present 14.3); every size from 12 px: >= 90 % found, from 40 px: all; largest missed 37.0 px
+   1080p  smallest detected 14.3 px (smallest present 14.3); every size from 12 px: >= 90 % found, from 32 px: all; largest missed 29.7 px
+
+== Boxes at the lower resolution that match no participant: 1080p no participant here: 3, 360p no participant here: 18, 360p poster face (excluded in Step 8): 46, 540p no participant here: 14, 540p poster face (excluded in Step 8): 57, 720p no participant here: 12, 720p poster face (excluded in Step 8): 58
+   rcleav: 360p 11/11, 540p 11/11, 720p 11/11
+   rc2to1: 360p 49/49, 540p 49/49, 720p 49/49
+   rcbck1: 360p 44/44, 540p 44/44, 720p 44/44
+   rcbck2: 360p 44/44, 540p 44/44, 720p 44/44
+   rcjoin: 360p 45/45, 540p 45/45, 720p 45/45
+   rclook: 360p 30/30, 540p 30/30, 720p 30/30
+   rcwalk: 360p 34/34, 540p 34/34, 720p 33/34
+
+-> /Users/isham993/Downloads/duplexnvc-baseline/phase2/step7/results/

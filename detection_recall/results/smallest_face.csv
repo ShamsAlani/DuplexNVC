@@ -1,5 +1,12 @@
-resolution,smallest_detected_face_h_360,smallest_detected_face_h_at_res,recall_50pct_from_face_h_360,recall_90pct_from_face_h_360,recall_100pct_from_face_h_360,largest_missed_face_h_360
-360p,14.3,14.3,12,16,32,29.7
-540p,14.3,21.4,12,12,32,29.7
-720p,14.3,28.6,12,12,40,37.0
-1080p,14.3,42.9,12,12,32,29.7
+set,resolution,faces,smallest_face_h_360,smallest_detected_face_h_360,smallest_detected_face_h_at_res,recall_50pct_from_face_h_360,recall_90pct_from_face_h_360,recall_100pct_from_face_h_360,largest_missed_face_h_360
+stock clips,360p,560,14.3,14.3,14.3,12,16,32,29.7
+stock clips,540p,560,14.3,14.3,21.4,12,12,32,29.7
+stock clips,720p,560,14.3,14.3,28.6,12,12,40,37.0
+stock clips,1080p,355,14.3,14.3,42.9,12,12,32,29.7
+recorded call clips,360p,257,28.0,28.0,28.0,28,28,28,
+recorded call clips,540p,257,28.0,28.0,42.0,28,28,28,
+recorded call clips,720p,257,28.0,29.0,58.0,28,32,32,28.0
+all clips,360p,817,14.3,14.3,14.3,12,16,32,29.7
+all clips,540p,817,14.3,14.3,21.4,12,12,32,29.7
+all clips,720p,817,14.3,14.3,28.6,12,12,40,37.0
+all clips,1080p,355,14.3,14.3,42.9,12,12,32,29.7
