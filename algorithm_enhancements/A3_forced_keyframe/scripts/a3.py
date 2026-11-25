@@ -9,7 +9,7 @@ period restarts from it. Four policies, B* (full MLVC 360p, NE-NE) and MLVC-S 54
          for 3 labelled frames (1 s) is an event; the I-frame is forced when the event is confirmed (causal)
   diff   frame difference: mean absolute luma difference (360p) between the frame and the last I-frame > 6 (0-255),
          at least 30 frames after the last I-frame
-Same inputs and metrics as experiment 10 (q.py), with display-size originals at 1080p (the 720p Class E masters are
+Same inputs and metrics as experiment 10 (quality_runner.py), with display-size originals at 1080p (the 720p Class E masters are
 upscaled losslessly). usage: a3.py <folder with the Step 8 masters> [check]   RESUMABLE.
 Output: ~/Downloads/duplexnvc-baseline/phase2/a3/ (q.csv, faces.csv, frames/, flog/, trig/, bits/)
 """
@@ -17,7 +17,7 @@ import csv, os, subprocess, sys, time
 import numpy as np
 D = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(D, "..", "4b"))
-import q
+import quality_runner as q
 
 SRC = sys.argv[1]
 CHECK = len(sys.argv) > 2 and sys.argv[2] == "check"
@@ -42,7 +42,7 @@ q.run = run
 
 
 def stage():
-    """display-size masters named as q.py expects: 1080p Pexels linked, 720p Class E upscaled losslessly"""
+    """display-size masters named as quality_runner.py expects: 1080p Pexels linked, 720p Class E upscaled losslessly"""
     os.makedirs(q.MP4, exist_ok=True)
     for c in IDS:
         dst = f"{q.MP4}/{c}_1920x1080_30.mp4"

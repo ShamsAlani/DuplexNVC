@@ -1,8 +1,16 @@
 # 09 — raw data
 
-The per-run records of X1 (experiment 07) and X3 (experiment 09) are on the measurement laptop under `~/Downloads/duplexnvc-baseline/phase2/` and are added here as a compressed archive.
+The per-run records of X3 are here as two archives (split so that each stays under GitHub's 100 MB file limit); X1's (experiment 07) are in [`../../07_processor_experiment/raw_data/`](../../07_processor_experiment/raw_data/).
 
-Layout on the laptop:
+| Path | Contents |
+|---|---|
+| `exp09_per_run_records_part1.zip` (54 MB) | `step4/` except the MLVC-S runs: `alone/`, `idle/`, every `mlvc_<size>_<enc>-<dec>/` folder, `table_feasible.csv`, `thermal.csv` |
+| `exp09_per_run_records_part2.zip` (44 MB) | `step4/mlvcs_<size>_<enc>-<dec>/`: every MLVC-S run |
+| `logs/` | Console logs (recorded under the scripts' old names: `out_all.txt`, `out_4r.txt`) |
+
+Unzip both into the same folder to get the whole `step4/`. Part A of X3 (NE alone per bundle, peak memory; `step2/` on the laptop) is summarised in `logs/out_all.txt` and not archived.
+
+Layout on the laptop (`~/Downloads/duplexnvc-baseline/phase2/`):
 
 | Folder | Contents |
 |---|---|

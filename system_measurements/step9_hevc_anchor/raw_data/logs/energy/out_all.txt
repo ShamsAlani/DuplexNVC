@@ -1,0 +1,4309 @@
+
+== STEP 9 (energy) START  Mon Nov 23 02:02:48 +04 2026
+ProductName:		macOS ProductVersion:		26.6.2 BuildVersion:		25G83 
+Now drawing from 'AC Power'
+   WARNING: Wi-Fi is on (quiet mode wants it off)
+-- energy counters on this chip (channel, unit):
+AFR,mJ;AMCC,mJ;ANE,mJ;AVE,mJ;CPU Energy,mJ;DCS,mJ;DISP,mJ;DISPEXT,mJ;DRAM,mJ;EACC_CPM,mJ;EACC_CPM_SRAM,mJ;EACC_CPU,mJ;EACC_CPU0,mJ;EACC_CPU0_SRAM,mJ;EACC_CPU1,mJ;EACC_CPU1_SRAM,mJ;EACC_CPU2,mJ;EACC_CPU2_SRAM,mJ;EACC_CPU3,mJ;EACC_CPU3_SRAM,mJ;ECPUDTL00,mJ;ECPUDTL01,mJ;ECPUDTL02,mJ;ECPUDTL03,mJ;ECPUDTL04,mJ;ECPUDTL05,mJ;ECPUDTL06,mJ;ECPUDTL10,mJ;ECPUDTL11,mJ;ECPUDTL12,mJ;ECPUDTL13,mJ;ECPUDTL14,mJ;ECPUDTL15,mJ;ECPUDTL16,mJ;ECPUDTL20,mJ;ECPUDTL21,mJ;ECPUDTL22,mJ;ECPUDTL23,mJ;ECPUDTL24,mJ;ECPUDTL25,mJ;ECPUDTL26,mJ;ECPUDTL30,mJ;ECPUDTL31,mJ;ECPUDTL32,mJ;ECPUDTL33,mJ;ECPUDTL34,mJ;ECPUDTL35,mJ;ECPUDTL36,mJ;GPU Energy,nJ;GPU SRAM,mJ;GPU,mJ;ISP,mJ;MSR,mJ;PACC0_CPM,mJ;PACC0_CPM_SRAM,mJ;PACC0_CPU,mJ;PACC0_CPU0,mJ;PACC0_CPU0_SRAM,mJ;PACC0_CPU1,mJ;PACC0_CPU1_SRAM,mJ;PACC0_CPU2,mJ;PACC0_CPU2_SRAM,mJ;PACC0_CPU3,mJ;PACC0_CPU3_SRAM,mJ;PACC0_CPU4,mJ;PACC0_CPU4_SRAM,mJ;PACC0_CPU5,mJ;PACC0_CPU5_SRAM,mJ;PACC1_CPM,mJ;PACC1_CPM_SRAM,mJ;PACC1_CPU,mJ;PACC1_CPU0,mJ;PACC1_CPU0_SRAM,mJ;PACC1_CPU1,mJ;PACC1_CPU1_SRAM,mJ;PACC1_CPU2,mJ;PACC1_CPU2_SRAM,mJ;PACC1_CPU3,mJ;PACC1_CPU3_SRAM,mJ;PACC1_CPU4,mJ;PACC1_CPU4_SRAM,mJ;PACC1_CPU5,mJ;PACC1_CPU5_SRAM,mJ;PCIe Port 0 Energy,uJ;PCIe Port 1 Energy,uJ;PCPU1DTL00,mJ;PCPU1DTL01,mJ;PCPU1DTL010,mJ;PCPU1DTL011,mJ;PCPU1DTL012,mJ;PCPU1DTL02,mJ;PCPU1DTL03,mJ;PCPU1DTL04,mJ;PCPU1DTL05,mJ;PCPU1DTL06,mJ;PCPU1DTL07,mJ;PCPU1DTL08,mJ;PCPU1DTL09,mJ;PCPU1DTL0a,mJ;PCPU1DTL0b,mJ;PCPU1DTL0c,mJ;PCPU1DTL0d,mJ;PCPU1DTL0e,mJ;PCPU1DTL0f,mJ;PCPU1DTL10,mJ;PCPU1DTL11,mJ;PCPU1DTL110,mJ;PCPU1DTL111,mJ;PCPU1DTL112,mJ;PCPU1DTL12,mJ;PCPU1DTL13,mJ;PCPU1DTL14,mJ;PCPU1DTL15,mJ;PCPU1DTL16,mJ;PCPU1DTL17,mJ;PCPU1DTL18,mJ;PCPU1DTL19,mJ;PCPU1DTL1a,mJ;PCPU1DTL1b,mJ;PCPU1DTL1c,mJ;PCPU1DTL1d,mJ;PCPU1DTL1e,mJ;PCPU1DTL1f,mJ;PCPU1DTL20,mJ;PCPU1DTL21,mJ;PCPU1DTL210,mJ;PCPU1DTL211,mJ;PCPU1DTL212,mJ;PCPU1DTL22,mJ;PCPU1DTL23,mJ;PCPU1DTL24,mJ;PCPU1DTL25,mJ;PCPU1DTL26,mJ;PCPU1DTL27,mJ;PCPU1DTL28,mJ;PCPU1DTL29,mJ;PCPU1DTL2a,mJ;PCPU1DTL2b,mJ;PCPU1DTL2c,mJ;PCPU1DTL2d,mJ;PCPU1DTL2e,mJ;PCPU1DTL2f,mJ;PCPU1DTL30,mJ;PCPU1DTL31,mJ;PCPU1DTL310,mJ;PCPU1DTL311,mJ;PCPU1DTL312,mJ;PCPU1DTL32,mJ;PCPU1DTL33,mJ;PCPU1DTL34,mJ;PCPU1DTL35,mJ;PCPU1DTL36,mJ;PCPU1DTL37,mJ;PCPU1DTL38,mJ;PCPU1DTL39,mJ;PCPU1DTL3a,mJ;PCPU1DTL3b,mJ;PCPU1DTL3c,mJ;PCPU1DTL3d,mJ;PCPU1DTL3e,mJ;PCPU1DTL3f,mJ;PCPU1DTL40,mJ;PCPU1DTL41,mJ;PCPU1DTL410,mJ;PCPU1DTL411,mJ;PCPU1DTL412,mJ;PCPU1DTL42,mJ;PCPU1DTL43,mJ;PCPU1DTL44,mJ;PCPU1DTL45,mJ;PCPU1DTL46,mJ;PCPU1DTL47,mJ;PCPU1DTL48,mJ;PCPU1DTL49,mJ;PCPU1DTL4a,mJ;PCPU1DTL4b,mJ;PCPU1DTL4c,mJ;PCPU1DTL4d,mJ;PCPU1DTL4e,mJ;PCPU1DTL4f,mJ;PCPUDTL00,mJ;PCPUDTL01,mJ;PCPUDTL010,mJ;PCPUDTL011,mJ;PCPUDTL012,mJ;PCPUDTL02,mJ;PCPUDTL03,mJ;PCPUDTL04,mJ;PCPUDTL05,mJ;PCPUDTL06,mJ;PCPUDTL07,mJ;PCPUDTL08,mJ;PCPUDTL09,mJ;PCPUDTL0a,mJ;PCPUDTL0b,mJ;PCPUDTL0c,mJ;PCPUDTL0d,mJ;PCPUDTL0e,mJ;PCPUDTL0f,mJ;PCPUDTL10,mJ;PCPUDTL11,mJ;PCPUDTL110,mJ;PCPUDTL111,mJ;PCPUDTL112,mJ;PCPUDTL12,mJ;PCPUDTL13,mJ;PCPUDTL14,mJ;PCPUDTL15,mJ;PCPUDTL16,mJ;PCPUDTL17,mJ;PCPUDTL18,mJ;PCPUDTL19,mJ;PCPUDTL1a,mJ;PCPUDTL1b,mJ;PCPUDTL1c,mJ;PCPUDTL1d,mJ;PCPUDTL1e,mJ;PCPUDTL1f,mJ;PCPUDTL20,mJ;PCPUDTL21,mJ;PCPUDTL210,mJ;PCPUDTL211,mJ;PCPUDTL212,mJ;PCPUDTL22,mJ;PCPUDTL23,mJ;PCPUDTL24,mJ;PCPUDTL25,mJ;PCPUDTL26,mJ;PCPUDTL27,mJ;PCPUDTL28,mJ;PCPUDTL29,mJ;PCPUDTL2a,mJ;PCPUDTL2b,mJ;PCPUDTL2c,mJ;PCPUDTL2d,mJ;PCPUDTL2e,mJ;PCPUDTL2f,mJ;PCPUDTL30,mJ;PCPUDTL31,mJ;PCPUDTL310,mJ;PCPUDTL311,mJ;PCPUDTL312,mJ;PCPUDTL32,mJ;PCPUDTL33,mJ;PCPUDTL34,mJ;PCPUDTL35,mJ;PCPUDTL36,mJ;PCPUDTL37,mJ;PCPUDTL38,mJ;PCPUDTL39,mJ;PCPUDTL3a,mJ;PCPUDTL3b,mJ;PCPUDTL3c,mJ;PCPUDTL3d,mJ;PCPUDTL3e,mJ;PCPUDTL3f,mJ;PCPUDTL40,mJ;PCPUDTL41,mJ;PCPUDTL410,mJ;PCPUDTL411,mJ;PCPUDTL412,mJ;PCPUDTL42,mJ;PCPUDTL43,mJ;PCPUDTL44,mJ;PCPUDTL45,mJ;PCPUDTL46,mJ;PCPUDTL47,mJ;PCPUDTL48,mJ;PCPUDTL49,mJ;PCPUDTL4a,mJ;PCPUDTL4b,mJ;PCPUDTL4c,mJ;PCPUDTL4d,mJ;PCPUDTL4e,mJ;PCPUDTL4f,mJ;apciec0 Energy,uJ;apciec1 Energy,uJ;apciec2 Energy,uJ;
+-- incoming HEVC streams (hardware encoder, 600 frames)
+   360p: target 287 kbps -> 325 kbps
+   720p: target 847 kbps -> 944 kbps
+   02:02:54 idle 120 s (start)
+[1/25] 02:05:07 hevc_360p r1     FFMPEG FAILED (0/255): ==> /Users/shamsalani/Downloads/duplexnvc-baseline/phase2/he/hevc_360p/r1/enc.log <== 048KiB time=00:00:59.63 bitrate= 281.3kbits/s speed=   1x elapsed=0:00:59.43    frame= 1800 fps= 30 q=-0.0 Lsize=    2171KiB time=00:00:59.96 bitrate= 296.5kbits/s speed=1.01x elapsed=0:00:59.53      ==> /Users/shamsalani/Downloads/duplexnvc-baseline/phase2/he/hevc_360p/r1/dec.log <== mitted) [in#0/hevc @ 0x74cc1c000] Terminating thread with return code -1 (Operation not permitted) frame=  600 fps=374 q=-0.0 Lsize=N/A time=00:00:19.96 bitrate=N/A speed=12.4x elapsed=0:00:01.60     
+frames out frame=1800, in frame=600
+[2/25] 02:07:47 mlvc_360p r1  requested=npu resolved=npu 
+[3/25] 02:10:29 hevc_720p r1     FFMPEG FAILED (0/255): ==> /Users/shamsalani/Downloads/duplexnvc-baseline/phase2/he/hevc_720p/r1/enc.log <== 144KiB time=00:00:59.46 bitrate= 846.4kbits/s speed=   1x elapsed=0:00:59.25    frame= 1800 fps= 30 q=-0.0 Lsize=    6337KiB time=00:00:59.96 bitrate= 865.8kbits/s speed=1.01x elapsed=0:00:59.54      ==> /Users/shamsalani/Downloads/duplexnvc-baseline/phase2/he/hevc_720p/r1/dec.log <== mitted) [in#0/hevc @ 0x82ac20000] Terminating thread with return code -1 (Operation not permitted) frame=  600 fps=280 q=-0.0 Lsize=N/A time=00:00:19.96 bitrate=N/A speed=9.33x elapsed=0:00:02.14     
+frames out frame=1800, in frame=600
+[4/25] 02:13:12 mlvcs_720p r1  requested=gpu resolved=gpu requested=npu resolved=npu 
+[5/25] 02:15:55 mlvcs_540p r1  requested=npu resolved=npu 
+[6/25] 02:18:38  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[7/25] 02:19:41  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[8/25] 02:20:44  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[9/25] 02:21:47  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[10/25] 02:22:50  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[11/25] 02:23:54  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[12/25] 02:24:57  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[13/25] 02:26:00  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[14/25] 02:27:03  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[15/25] 02:28:06  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[16/25] 02:29:09  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[17/25] 02:30:12  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[18/25] 02:31:15  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[19/25] 02:32:18  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[20/25] 02:33:21  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[21/25] 02:34:25  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[22/25] 02:35:28  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[23/25] 02:36:31  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[24/25] 02:37:34  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[25/25] 02:38:37  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[26/25] 02:39:40  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[27/25] 02:40:43  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[28/25] 02:41:46  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[29/25] 02:42:49  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[30/25] 02:43:53  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[31/25] 02:44:56  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[32/25] 02:45:59  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[33/25] 02:47:02  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[34/25] 02:48:05  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[35/25] 02:49:08  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[36/25] 02:50:11  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[37/25] 02:51:14  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[38/25] 02:52:17  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[39/25] 02:53:20  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[40/25] 02:54:24  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[41/25] 02:55:27  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[42/25] 02:56:30  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[43/25] 02:57:33  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[44/25] 02:58:36  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[45/25] 02:59:39  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[46/25] 03:00:42  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[47/25] 03:01:45  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[48/25] 03:02:48  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[49/25] 03:03:51  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[50/25] 03:04:55  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[51/25] 03:05:58  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[52/25] 03:07:01  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[53/25] 03:08:04  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[54/25] 03:09:07  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[55/25] 03:10:10  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[56/25] 03:11:13  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[57/25] 03:12:16  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[58/25] 03:13:19  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[59/25] 03:14:23  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[60/25] 03:15:26  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[61/25] 03:16:29  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[62/25] 03:17:32  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[63/25] 03:18:35  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[64/25] 03:19:38  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[65/25] 03:20:41  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[66/25] 03:21:44  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[67/25] 03:22:47  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[68/25] 03:23:50  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[69/25] 03:24:54  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[70/25] 03:25:57  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[71/25] 03:27:00  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[72/25] 03:28:03  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[73/25] 03:29:06  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[74/25] 03:30:09  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[75/25] 03:31:12  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[76/25] 03:32:15  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[77/25] 03:33:18  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[78/25] 03:34:22  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[79/25] 03:35:25  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[80/25] 03:36:28  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[81/25] 03:37:31  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[82/25] 03:38:34  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[83/25] 03:39:37  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[84/25] 03:40:40  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[85/25] 03:41:43  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[86/25] 03:42:46  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[87/25] 03:43:49  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[88/25] 03:44:53  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[89/25] 03:45:56  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[90/25] 03:46:59  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[91/25] 03:48:02  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[92/25] 03:49:05  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[93/25] 03:50:08  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[94/25] 03:51:11  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[95/25] 03:52:14  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[96/25] 03:53:17  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[97/25] 03:54:21  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[98/25] 03:55:24  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[99/25] 03:56:27  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[100/25] 03:57:30  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[101/25] 03:58:33  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[102/25] 03:59:36  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[103/25] 04:00:39  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[104/25] 04:01:42  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[105/25] 04:02:45  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[106/25] 04:03:48  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[107/25] 04:04:52  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[108/25] 04:05:55  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[109/25] 04:06:58  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[110/25] 04:08:01  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[111/25] 04:09:04  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[112/25] 04:10:07  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[113/25] 04:11:10  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[114/25] 04:12:13  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[115/25] 04:13:16  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[116/25] 04:14:19  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[117/25] 04:15:23  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[118/25] 04:16:26  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[119/25] 04:17:29  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[120/25] 04:18:32  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[121/25] 04:19:35  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[122/25] 04:20:38  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[123/25] 04:21:41  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[124/25] 04:22:44  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[125/25] 04:23:47  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[126/25] 04:24:51  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[127/25] 04:25:54  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[128/25] 04:26:57  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[129/25] 04:28:00  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[130/25] 04:29:03  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[131/25] 04:30:06  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[132/25] 04:31:09  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[133/25] 04:32:12  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[134/25] 04:33:15  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[135/25] 04:34:18  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[136/25] 04:35:22  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[137/25] 04:36:25  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[138/25] 04:37:28  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[139/25] 04:38:31  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[140/25] 04:39:34  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[141/25] 04:40:37  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[142/25] 04:41:40  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[143/25] 04:42:43  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[144/25] 04:43:46  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[145/25] 04:44:49  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[146/25] 04:45:53  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[147/25] 04:46:56  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[148/25] 04:47:59  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[149/25] 04:49:02  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[150/25] 04:50:05  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[151/25] 04:51:08  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[152/25] 04:52:11  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[153/25] 04:53:14  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[154/25] 04:54:17  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[155/25] 04:55:21  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[156/25] 04:56:24  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[157/25] 04:57:27  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[158/25] 04:58:30  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[159/25] 04:59:33  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[160/25] 05:00:36  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[161/25] 05:01:39  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[162/25] 05:02:42  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[163/25] 05:03:45  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[164/25] 05:04:49  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[165/25] 05:05:52  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[166/25] 05:06:55  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[167/25] 05:07:58  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[168/25] 05:09:01  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[169/25] 05:10:04  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[170/25] 05:11:07  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[171/25] 05:12:10  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[172/25] 05:13:13  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[173/25] 05:14:16  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[174/25] 05:15:20  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[175/25] 05:16:23  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[176/25] 05:17:26  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[177/25] 05:18:29  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[178/25] 05:19:32  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[179/25] 05:20:35  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[180/25] 05:21:38  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[181/25] 05:22:41  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[182/25] 05:23:44  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[183/25] 05:24:47  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[184/25] 05:25:51  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[185/25] 05:26:54  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[186/25] 05:27:57  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[187/25] 05:29:00  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[188/25] 05:30:03  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[189/25] 05:31:06  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[190/25] 05:32:09  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[191/25] 05:33:12  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[192/25] 05:34:15  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[193/25] 05:35:19  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[194/25] 05:36:22  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[195/25] 05:37:25  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[196/25] 05:38:28  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[197/25] 05:39:31  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[198/25] 05:40:34  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[199/25] 05:41:37  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[200/25] 05:42:40  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[201/25] 05:43:43  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[202/25] 05:44:46  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[203/25] 05:45:50  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[204/25] 05:46:53  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[205/25] 05:47:56  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[206/25] 05:48:59  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[207/25] 05:50:02  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[208/25] 05:51:05  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[209/25] 05:52:08  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[210/25] 05:53:11  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[211/25] 05:54:14  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[212/25] 05:55:17  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[213/25] 05:56:21  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[214/25] 05:57:24  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[215/25] 05:58:27  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[216/25] 05:59:30  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[217/25] 06:00:33  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[218/25] 06:01:36  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[219/25] 06:02:39  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[220/25] 06:03:42  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[221/25] 06:04:45  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[222/25] 06:05:49  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[223/25] 06:06:52  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[224/25] 06:07:55  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[225/25] 06:08:58  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[226/25] 06:10:01  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[227/25] 06:11:04  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[228/25] 06:12:07  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[229/25] 06:13:10  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[230/25] 06:14:13  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[231/25] 06:15:16  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[232/25] 06:16:20  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[233/25] 06:17:23  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[234/25] 06:18:26  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[235/25] 06:19:29  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[236/25] 06:20:32  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[237/25] 06:21:35  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[238/25] 06:22:38  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[239/25] 06:23:41  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[240/25] 06:24:44  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[241/25] 06:25:47  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[242/25] 06:26:51  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[243/25] 06:27:54  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[244/25] 06:28:57  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[245/25] 06:30:00  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[246/25] 06:31:03  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[247/25] 06:32:06  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[248/25] 06:33:09  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[249/25] 06:34:12  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[250/25] 06:35:15  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[251/25] 06:36:19  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[252/25] 06:37:22  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[253/25] 06:38:25  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[254/25] 06:39:28  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[255/25] 06:40:31  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[256/25] 06:41:34  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[257/25] 06:42:37  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[258/25] 06:43:40  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[259/25] 06:44:43  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[260/25] 06:45:46  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[261/25] 06:46:50  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[262/25] 06:47:53  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[263/25] 06:48:56  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[264/25] 06:49:59  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[265/25] 06:51:02  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[266/25] 06:52:05  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[267/25] 06:53:08  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[268/25] 06:54:11  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[269/25] 06:55:14  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[270/25] 06:56:17  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[271/25] 06:57:21  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[272/25] 06:58:24  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[273/25] 06:59:27  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[274/25] 07:00:30  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[275/25] 07:01:33  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[276/25] 07:02:36  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[277/25] 07:03:39  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[278/25] 07:04:42  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[279/25] 07:05:45  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[280/25] 07:06:49  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[281/25] 07:07:52  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[282/25] 07:08:55  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[283/25] 07:09:58  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[284/25] 07:11:01  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[285/25] 07:12:04  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[286/25] 07:13:07  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[287/25] 07:14:10  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[288/25] 07:15:13  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[289/25] 07:16:16  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[290/25] 07:17:20  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[291/25] 07:18:23  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[292/25] 07:19:26  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[293/25] 07:20:29  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[294/25] 07:21:32  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[295/25] 07:22:35  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[296/25] 07:23:38  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[297/25] 07:24:41  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[298/25] 07:25:44  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[299/25] 07:26:47  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[300/25] 07:27:50  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[301/25] 07:28:53  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[302/25] 07:29:57  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[303/25] 07:31:00  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[304/25] 07:32:03  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[305/25] 07:33:06  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[306/25] 07:34:09  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[307/25] 07:35:12  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[308/25] 07:36:15  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[309/25] 07:37:18  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[310/25] 07:38:21  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[311/25] 07:39:25  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[312/25] 07:40:28  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[313/25] 07:41:31  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[314/25] 07:42:34  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[315/25] 07:43:37  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[316/25] 07:44:40  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[317/25] 07:45:43  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[318/25] 07:46:46  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[319/25] 07:47:49  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[320/25] 07:48:53  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[321/25] 07:49:56  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[322/25] 07:50:59  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[323/25] 07:52:02  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[324/25] 07:53:05  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[325/25] 07:54:08  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[326/25] 07:55:11  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[327/25] 07:56:14  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[328/25] 07:57:17  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[329/25] 07:58:20  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[330/25] 07:59:24  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[331/25] 08:00:27  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[332/25] 08:01:30  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[333/25] 08:02:33  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[334/25] 08:03:36  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[335/25] 08:04:39  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[336/25] 08:05:42  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[337/25] 08:06:45  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[338/25] 08:07:48  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[339/25] 08:08:51  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[340/25] 08:09:55  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[341/25] 08:10:58  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[342/25] 08:12:01  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[343/25] 08:13:04  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[344/25] 08:14:07  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[345/25] 08:15:10  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[346/25] 08:16:13  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[347/25] 08:17:16  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[348/25] 08:18:19  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[349/25] 08:19:23  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[350/25] 08:20:26  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[351/25] 08:21:29  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[352/25] 08:22:32  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[353/25] 08:23:35  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[354/25] 08:24:38  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[355/25] 08:25:41  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[356/25] 08:26:44  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[357/25] 08:27:47  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[358/25] 08:28:50  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[359/25] 08:29:54  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[360/25] 08:30:57  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[361/25] 08:32:00  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[362/25] 08:33:03  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[363/25] 08:34:06  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[364/25] 08:35:09  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[365/25] 08:36:12  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[366/25] 08:37:15  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[367/25] 08:38:18  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[368/25] 08:39:22  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[369/25] 08:40:25  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[370/25] 08:41:28  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[371/25] 08:42:31  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[372/25] 08:43:34  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[373/25] 08:44:37  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[374/25] 08:45:40  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[375/25] 08:46:43  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[376/25] 08:47:46  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[377/25] 08:48:50  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[378/25] 08:49:53  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[379/25] 08:50:56  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[380/25] 08:51:59  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[381/25] 08:53:02  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[382/25] 08:54:05  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[383/25] 08:55:08  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[384/25] 08:56:11  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[385/25] 08:57:14  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[386/25] 08:58:18  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[387/25] 08:59:21  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[388/25] 09:00:24  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[389/25] 09:01:27  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[390/25] 09:02:30  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[391/25] 09:03:33  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[392/25] 09:04:36  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[393/25] 09:05:39  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[394/25] 09:06:42  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[395/25] 09:07:45  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[396/25] 09:08:49  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[397/25] 09:09:52  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[398/25] 09:10:55  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[399/25] 09:11:58  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[400/25] 09:13:01  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[401/25] 09:14:04  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[402/25] 09:15:07  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[403/25] 09:16:10  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[404/25] 09:17:13  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[405/25] 09:18:17  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[406/25] 09:19:20  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[407/25] 09:20:23  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[408/25] 09:21:26  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[409/25] 09:22:29  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[410/25] 09:23:32  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[411/25] 09:24:35  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[412/25] 09:25:38  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[413/25] 09:26:41  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[414/25] 09:27:44  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[415/25] 09:28:48  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[416/25] 09:29:51  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[417/25] 09:30:54  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[418/25] 09:31:57  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[419/25] 09:33:00  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[420/25] 09:34:03  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[421/25] 09:35:06  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[422/25] 09:36:09  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[423/25] 09:37:12  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[424/25] 09:38:16  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[425/25] 09:39:19  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[426/25] 09:40:22  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[427/25] 09:41:25  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[428/25] 09:42:28  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[429/25] 09:43:31  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[430/25] 09:44:34  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[431/25] 09:45:37  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[432/25] 09:46:40  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[433/25] 09:47:43  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[434/25] 09:48:47  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[435/25] 09:49:50  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[436/25] 09:50:53  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[437/25] 09:51:56  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[438/25] 09:52:59  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[439/25] 09:54:02  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[440/25] 09:55:05  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[441/25] 09:56:08  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[442/25] 09:57:11  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[443/25] 09:58:14  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[444/25] 09:59:18  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[445/25] 10:00:21  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[446/25] 10:01:24  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[447/25] 10:02:27  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[448/25] 10:03:30  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[449/25] 10:04:33  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[450/25] 10:05:36  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[451/25] 10:06:39  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[452/25] 10:07:42  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[453/25] 10:08:45  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[454/25] 10:09:49  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[455/25] 10:10:52  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[456/25] 10:11:55  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[457/25] 10:12:58  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[458/25] 10:14:01  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[459/25] 10:15:04  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[460/25] 10:16:07  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[461/25] 10:17:10  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[462/25] 10:18:13  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[463/25] 10:19:17  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[464/25] 10:20:20  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[465/25] 10:21:23  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[466/25] 10:22:26  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[467/25] 10:23:29  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[468/25] 10:24:32  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[469/25] 10:25:35  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[470/25] 10:26:38  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[471/25] 10:27:41  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[472/25] 10:28:45  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[473/25] 10:29:48  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[474/25] 10:30:51  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[475/25] 10:31:54  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[476/25] 10:32:57  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[477/25] 10:34:00  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[478/25] 10:35:03  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[479/25] 10:36:06  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[480/25] 10:37:09  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[481/25] 10:38:13  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[482/25] 10:39:16  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[483/25] 10:40:19  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[484/25] 10:41:22  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[485/25] 10:42:25  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[486/25] 10:43:28  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[487/25] 10:44:31  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[488/25] 10:45:34  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[489/25] 10:46:37  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[490/25] 10:47:41  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[491/25] 10:48:44  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[492/25] 10:49:47  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[493/25] 10:50:50  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[494/25] 10:51:53  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[495/25] 10:52:56  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[496/25] 10:53:59  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[497/25] 10:55:02  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[498/25] 10:56:05  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[499/25] 10:57:08  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[500/25] 10:58:12  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[501/25] 10:59:15  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[502/25] 11:00:18  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[503/25] 11:01:21  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[504/25] 11:02:24  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[505/25] 11:03:27  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[506/25] 11:04:30  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[507/25] 11:05:33  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[508/25] 11:06:36  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[509/25] 11:07:40  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[510/25] 11:08:43  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[511/25] 11:09:46  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[512/25] 11:10:49  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[513/25] 11:11:52  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[514/25] 11:12:55  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[515/25] 11:13:58  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[516/25] 11:15:01  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[517/25] 11:16:04  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[518/25] 11:17:07  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[519/25] 11:18:11  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[520/25] 11:19:14  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[521/25] 11:20:17  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[522/25] 11:21:20  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[523/25] 11:22:23  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[524/25] 11:23:26  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[525/25] 11:24:29  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[526/25] 11:25:32  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[527/25] 11:26:35  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[528/25] 11:27:39  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[529/25] 11:28:42  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[530/25] 11:29:45  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[531/25] 11:30:48  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[532/25] 11:31:51  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[533/25] 11:32:54  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[534/25] 11:33:57  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[535/25] 11:35:00  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[536/25] 11:36:03  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[537/25] 11:37:07  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[538/25] 11:38:10  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[539/25] 11:39:13  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[540/25] 11:40:16  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[541/25] 11:41:19  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[542/25] 11:42:22  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[543/25] 11:43:25  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[544/25] 11:44:28  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[545/25] 11:45:31  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[546/25] 11:46:34  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[547/25] 11:47:38  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[548/25] 11:48:41  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[549/25] 11:49:44  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[550/25] 11:50:47  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[551/25] 11:51:50  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[552/25] 11:52:53  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[553/25] 11:53:56  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[554/25] 11:54:59  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[555/25] 11:56:02  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[556/25] 11:57:06  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[557/25] 11:58:09  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[558/25] 11:59:12  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[559/25] 12:00:15  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[560/25] 12:01:18  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[561/25] 12:02:21  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[562/25] 12:03:24  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[563/25] 12:04:27  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[564/25] 12:05:30  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[565/25] 12:06:33  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[566/25] 12:07:37  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[567/25] 12:08:40  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[568/25] 12:09:43  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[569/25] 12:10:46  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[570/25] 12:11:49  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[571/25] 12:12:52  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[572/25] 12:13:55  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[573/25] 12:14:58  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[574/25] 12:16:01  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[575/25] 12:17:05  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[576/25] 12:18:08  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[577/25] 12:19:11  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[578/25] 12:20:14  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[579/25] 12:21:17  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[580/25] 12:22:20  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[581/25] 12:23:23  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[582/25] 12:24:26  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[583/25] 12:25:29  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[584/25] 12:26:33  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[585/25] 12:27:36  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[586/25] 12:28:39  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[587/25] 12:29:42  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[588/25] 12:30:45  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[589/25] 12:31:48  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[590/25] 12:32:51  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[591/25] 12:33:54  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[592/25] 12:34:57  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[593/25] 12:36:00  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[594/25] 12:37:04  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[595/25] 12:38:07  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[596/25] 12:39:10  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[597/25] 12:40:13  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[598/25] 12:41:16  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[599/25] 12:42:19  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[600/25] 12:43:22  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[601/25] 12:44:25  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[602/25] 12:45:28  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[603/25] 12:46:31  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[604/25] 12:47:35  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[605/25] 12:48:38  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[606/25] 12:49:41  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[607/25] 12:50:44  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[608/25] 12:51:47  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[609/25] 12:52:50  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[610/25] 12:53:53  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[611/25] 12:54:56  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[612/25] 12:55:59  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[613/25] 12:57:03  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[614/25] 12:58:06  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[615/25] 12:59:09  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[616/25] 13:00:12  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[617/25] 13:01:15  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[618/25] 13:02:18  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[619/25] 13:03:21  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[620/25] 13:04:24  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[621/25] 13:05:27  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[622/25] 13:06:30  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[623/25] 13:07:34  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[624/25] 13:08:37  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[625/25] 13:09:40  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[626/25] 13:10:43  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[627/25] 13:11:46  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[628/25] 13:12:49  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[629/25] 13:13:52  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[630/25] 13:14:55  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[631/25] 13:15:58  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[632/25] 13:17:01  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[633/25] 13:18:05  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[634/25] 13:19:08  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[635/25] 13:20:11  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[636/25] 13:21:14  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[637/25] 13:22:17  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[638/25] 13:23:20  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[639/25] 13:24:23  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[640/25] 13:25:26  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[641/25] 13:26:29  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[642/25] 13:27:33  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[643/25] 13:28:36  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[644/25] 13:29:39  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[645/25] 13:30:42  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[646/25] 13:31:45  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[647/25] 13:32:48  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[648/25] 13:33:51  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[649/25] 13:34:54  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[650/25] 13:35:57  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[651/25] 13:37:00  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[652/25] 13:38:04  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[653/25] 13:39:07  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[654/25] 13:40:10  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[655/25] 13:41:13  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[656/25] 13:42:16  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[657/25] 13:43:19  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[658/25] 13:44:22  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[659/25] 13:45:25  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[660/25] 13:46:28  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[661/25] 13:47:31  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[662/25] 13:48:35  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[663/25] 13:49:38  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[664/25] 13:50:41  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[665/25] 13:51:44  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[666/25] 13:52:47  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[667/25] 13:53:50  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[668/25] 13:54:53  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[669/25] 13:55:56  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[670/25] 13:56:59  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[671/25] 13:58:03  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[672/25] 13:59:06  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[673/25] 14:00:09  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[674/25] 14:01:12  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[675/25] 14:02:15  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[676/25] 14:03:18  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[677/25] 14:04:21  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[678/25] 14:05:24  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[679/25] 14:06:27  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[680/25] 14:07:30  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[681/25] 14:08:34  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[682/25] 14:09:37  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[683/25] 14:10:40  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[684/25] 14:11:43  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[685/25] 14:12:46  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[686/25] 14:13:49  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[687/25] 14:14:52  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[688/25] 14:15:55  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[689/25] 14:16:58  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[690/25] 14:18:02  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[691/25] 14:19:05  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[692/25] 14:20:08  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[693/25] 14:21:11  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[694/25] 14:22:14  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[695/25] 14:23:17  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[696/25] 14:24:20  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[697/25] 14:25:23  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[698/25] 14:26:26  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[699/25] 14:27:29  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[700/25] 14:28:33  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[701/25] 14:29:36  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[702/25] 14:30:39  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[703/25] 14:31:42  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[704/25] 14:32:45  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[705/25] 14:33:48  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[706/25] 14:34:51  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[707/25] 14:35:54  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[708/25] 14:36:57  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[709/25] 14:38:01  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[710/25] 14:39:04  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[711/25] 14:40:07  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[712/25] 14:41:10  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[713/25] 14:42:13  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[714/25] 14:43:16  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[715/25] 14:44:19  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[716/25] 14:45:22  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[717/25] 14:46:25  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[718/25] 14:47:29  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[719/25] 14:48:32  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[720/25] 14:49:35  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[721/25] 14:50:38  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[722/25] 14:51:41  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[723/25] 14:52:44  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[724/25] 14:53:47  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[725/25] 14:54:50  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[726/25] 14:55:53  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[727/25] 14:56:56  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[728/25] 14:58:00  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[729/25] 14:59:03  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[730/25] 15:00:06  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[731/25] 15:01:09  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[732/25] 15:02:12  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[733/25] 15:03:15  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[734/25] 15:04:18  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[735/25] 15:05:21  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[736/25] 15:06:24  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[737/25] 15:07:27  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[738/25] 15:08:31  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[739/25] 15:09:34  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[740/25] 15:10:37  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[741/25] 15:11:40  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[742/25] 15:12:43  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[743/25] 15:13:46  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[744/25] 15:14:49  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[745/25] 15:15:52  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[746/25] 15:16:55  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[747/25] 15:17:59  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[748/25] 15:19:02  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[749/25] 15:20:05  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[750/25] 15:21:08  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[751/25] 15:22:11  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[752/25] 15:23:14  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[753/25] 15:24:17  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[754/25] 15:25:20  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[755/25] 15:26:23  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[756/25] 15:27:26  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[757/25] 15:28:30  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[758/25] 15:29:33  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[759/25] 15:30:36  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[760/25] 15:31:39  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[761/25] 15:32:42  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[762/25] 15:33:45  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[763/25] 15:34:48  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[764/25] 15:35:51  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[765/25] 15:36:54  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[766/25] 15:37:58  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[767/25] 15:39:01  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[768/25] 15:40:04  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[769/25] 15:41:07  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[770/25] 15:42:10  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[771/25] 15:43:13  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[772/25] 15:44:16  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[773/25] 15:45:19  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[774/25] 15:46:22  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[775/25] 15:47:25  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[776/25] 15:48:29  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[777/25] 15:49:32  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[778/25] 15:50:35  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[779/25] 15:51:38  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[780/25] 15:52:41  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[781/25] 15:53:44  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[782/25] 15:54:47  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[783/25] 15:55:50  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[784/25] 15:56:53  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[785/25] 15:57:57  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[786/25] 15:59:00  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[787/25] 16:00:03  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[788/25] 16:01:06  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[789/25] 16:02:09  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[790/25] 16:03:12  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[791/25] 16:04:15  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[792/25] 16:05:18  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[793/25] 16:06:21  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[794/25] 16:07:24  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[795/25] 16:08:28  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[796/25] 16:09:31  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[797/25] 16:10:34  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[798/25] 16:11:37  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[799/25] 16:12:40  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[800/25] 16:13:43  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[801/25] 16:14:46  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[802/25] 16:15:49  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+[803/25] 16:16:52  r1  mkdir: : No such file or directory
+ioe: Read-only file system
+./all: line 37: /t.txt: Read-only file system
+./all: line 52: /t.txt: Read-only file system
+
+== stopped Mon Nov 23 16:17:43 +04 2026 - run ./all again to continue
+
+== STEP 9 (energy) START  Mon Nov 23 16:23:31 +04 2026
+ProductName:		macOS ProductVersion:		26.6.2 BuildVersion:		25G83 
+Now drawing from 'AC Power'
+-- energy counters on this chip (channel, unit):
+AFR,mJ;AMCC,mJ;ANE,mJ;AVE,mJ;CPU Energy,mJ;DCS,mJ;DISP,mJ;DISPEXT,mJ;DRAM,mJ;EACC_CPM,mJ;EACC_CPM_SRAM,mJ;EACC_CPU,mJ;EACC_CPU0,mJ;EACC_CPU0_SRAM,mJ;EACC_CPU1,mJ;EACC_CPU1_SRAM,mJ;EACC_CPU2,mJ;EACC_CPU2_SRAM,mJ;EACC_CPU3,mJ;EACC_CPU3_SRAM,mJ;ECPUDTL00,mJ;ECPUDTL01,mJ;ECPUDTL02,mJ;ECPUDTL03,mJ;ECPUDTL04,mJ;ECPUDTL05,mJ;ECPUDTL06,mJ;ECPUDTL10,mJ;ECPUDTL11,mJ;ECPUDTL12,mJ;ECPUDTL13,mJ;ECPUDTL14,mJ;ECPUDTL15,mJ;ECPUDTL16,mJ;ECPUDTL20,mJ;ECPUDTL21,mJ;ECPUDTL22,mJ;ECPUDTL23,mJ;ECPUDTL24,mJ;ECPUDTL25,mJ;ECPUDTL26,mJ;ECPUDTL30,mJ;ECPUDTL31,mJ;ECPUDTL32,mJ;ECPUDTL33,mJ;ECPUDTL34,mJ;ECPUDTL35,mJ;ECPUDTL36,mJ;GPU Energy,nJ;GPU SRAM,mJ;GPU,mJ;ISP,mJ;MSR,mJ;PACC0_CPM,mJ;PACC0_CPM_SRAM,mJ;PACC0_CPU,mJ;PACC0_CPU0,mJ;PACC0_CPU0_SRAM,mJ;PACC0_CPU1,mJ;PACC0_CPU1_SRAM,mJ;PACC0_CPU2,mJ;PACC0_CPU2_SRAM,mJ;PACC0_CPU3,mJ;PACC0_CPU3_SRAM,mJ;PACC0_CPU4,mJ;PACC0_CPU4_SRAM,mJ;PACC0_CPU5,mJ;PACC0_CPU5_SRAM,mJ;PACC1_CPM,mJ;PACC1_CPM_SRAM,mJ;PACC1_CPU,mJ;PACC1_CPU0,mJ;PACC1_CPU0_SRAM,mJ;PACC1_CPU1,mJ;PACC1_CPU1_SRAM,mJ;PACC1_CPU2,mJ;PACC1_CPU2_SRAM,mJ;PACC1_CPU3,mJ;PACC1_CPU3_SRAM,mJ;PACC1_CPU4,mJ;PACC1_CPU4_SRAM,mJ;PACC1_CPU5,mJ;PACC1_CPU5_SRAM,mJ;PCIe Port 0 Energy,uJ;PCIe Port 1 Energy,uJ;PCPU1DTL00,mJ;PCPU1DTL01,mJ;PCPU1DTL010,mJ;PCPU1DTL011,mJ;PCPU1DTL012,mJ;PCPU1DTL02,mJ;PCPU1DTL03,mJ;PCPU1DTL04,mJ;PCPU1DTL05,mJ;PCPU1DTL06,mJ;PCPU1DTL07,mJ;PCPU1DTL08,mJ;PCPU1DTL09,mJ;PCPU1DTL0a,mJ;PCPU1DTL0b,mJ;PCPU1DTL0c,mJ;PCPU1DTL0d,mJ;PCPU1DTL0e,mJ;PCPU1DTL0f,mJ;PCPU1DTL10,mJ;PCPU1DTL11,mJ;PCPU1DTL110,mJ;PCPU1DTL111,mJ;PCPU1DTL112,mJ;PCPU1DTL12,mJ;PCPU1DTL13,mJ;PCPU1DTL14,mJ;PCPU1DTL15,mJ;PCPU1DTL16,mJ;PCPU1DTL17,mJ;PCPU1DTL18,mJ;PCPU1DTL19,mJ;PCPU1DTL1a,mJ;PCPU1DTL1b,mJ;PCPU1DTL1c,mJ;PCPU1DTL1d,mJ;PCPU1DTL1e,mJ;PCPU1DTL1f,mJ;PCPU1DTL20,mJ;PCPU1DTL21,mJ;PCPU1DTL210,mJ;PCPU1DTL211,mJ;PCPU1DTL212,mJ;PCPU1DTL22,mJ;PCPU1DTL23,mJ;PCPU1DTL24,mJ;PCPU1DTL25,mJ;PCPU1DTL26,mJ;PCPU1DTL27,mJ;PCPU1DTL28,mJ;PCPU1DTL29,mJ;PCPU1DTL2a,mJ;PCPU1DTL2b,mJ;PCPU1DTL2c,mJ;PCPU1DTL2d,mJ;PCPU1DTL2e,mJ;PCPU1DTL2f,mJ;PCPU1DTL30,mJ;PCPU1DTL31,mJ;PCPU1DTL310,mJ;PCPU1DTL311,mJ;PCPU1DTL312,mJ;PCPU1DTL32,mJ;PCPU1DTL33,mJ;PCPU1DTL34,mJ;PCPU1DTL35,mJ;PCPU1DTL36,mJ;PCPU1DTL37,mJ;PCPU1DTL38,mJ;PCPU1DTL39,mJ;PCPU1DTL3a,mJ;PCPU1DTL3b,mJ;PCPU1DTL3c,mJ;PCPU1DTL3d,mJ;PCPU1DTL3e,mJ;PCPU1DTL3f,mJ;PCPU1DTL40,mJ;PCPU1DTL41,mJ;PCPU1DTL410,mJ;PCPU1DTL411,mJ;PCPU1DTL412,mJ;PCPU1DTL42,mJ;PCPU1DTL43,mJ;PCPU1DTL44,mJ;PCPU1DTL45,mJ;PCPU1DTL46,mJ;PCPU1DTL47,mJ;PCPU1DTL48,mJ;PCPU1DTL49,mJ;PCPU1DTL4a,mJ;PCPU1DTL4b,mJ;PCPU1DTL4c,mJ;PCPU1DTL4d,mJ;PCPU1DTL4e,mJ;PCPU1DTL4f,mJ;PCPUDTL00,mJ;PCPUDTL01,mJ;PCPUDTL010,mJ;PCPUDTL011,mJ;PCPUDTL012,mJ;PCPUDTL02,mJ;PCPUDTL03,mJ;PCPUDTL04,mJ;PCPUDTL05,mJ;PCPUDTL06,mJ;PCPUDTL07,mJ;PCPUDTL08,mJ;PCPUDTL09,mJ;PCPUDTL0a,mJ;PCPUDTL0b,mJ;PCPUDTL0c,mJ;PCPUDTL0d,mJ;PCPUDTL0e,mJ;PCPUDTL0f,mJ;PCPUDTL10,mJ;PCPUDTL11,mJ;PCPUDTL110,mJ;PCPUDTL111,mJ;PCPUDTL112,mJ;PCPUDTL12,mJ;PCPUDTL13,mJ;PCPUDTL14,mJ;PCPUDTL15,mJ;PCPUDTL16,mJ;PCPUDTL17,mJ;PCPUDTL18,mJ;PCPUDTL19,mJ;PCPUDTL1a,mJ;PCPUDTL1b,mJ;PCPUDTL1c,mJ;PCPUDTL1d,mJ;PCPUDTL1e,mJ;PCPUDTL1f,mJ;PCPUDTL20,mJ;PCPUDTL21,mJ;PCPUDTL210,mJ;PCPUDTL211,mJ;PCPUDTL212,mJ;PCPUDTL22,mJ;PCPUDTL23,mJ;PCPUDTL24,mJ;PCPUDTL25,mJ;PCPUDTL26,mJ;PCPUDTL27,mJ;PCPUDTL28,mJ;PCPUDTL29,mJ;PCPUDTL2a,mJ;PCPUDTL2b,mJ;PCPUDTL2c,mJ;PCPUDTL2d,mJ;PCPUDTL2e,mJ;PCPUDTL2f,mJ;PCPUDTL30,mJ;PCPUDTL31,mJ;PCPUDTL310,mJ;PCPUDTL311,mJ;PCPUDTL312,mJ;PCPUDTL32,mJ;PCPUDTL33,mJ;PCPUDTL34,mJ;PCPUDTL35,mJ;PCPUDTL36,mJ;PCPUDTL37,mJ;PCPUDTL38,mJ;PCPUDTL39,mJ;PCPUDTL3a,mJ;PCPUDTL3b,mJ;PCPUDTL3c,mJ;PCPUDTL3d,mJ;PCPUDTL3e,mJ;PCPUDTL3f,mJ;PCPUDTL40,mJ;PCPUDTL41,mJ;PCPUDTL410,mJ;PCPUDTL411,mJ;PCPUDTL412,mJ;PCPUDTL42,mJ;PCPUDTL43,mJ;PCPUDTL44,mJ;PCPUDTL45,mJ;PCPUDTL46,mJ;PCPUDTL47,mJ;PCPUDTL48,mJ;PCPUDTL49,mJ;PCPUDTL4a,mJ;PCPUDTL4b,mJ;PCPUDTL4c,mJ;PCPUDTL4d,mJ;PCPUDTL4e,mJ;PCPUDTL4f,mJ;apciec0 Energy,uJ;apciec1 Energy,uJ;apciec2 Energy,uJ;
+-- incoming HEVC streams (hardware encoder, 600 frames)
+   360p: target 287 kbps -> 325 kbps
+   720p: target 847 kbps -> 944 kbps
+   16:23:36 idle 120 s (start)
+== stopped Mon Nov 23 16:24:00 +04 2026 - run ./all again to continue
+
+== STEP 9 (energy) START  Mon Nov 23 16:24:14 +04 2026
+ProductName:		macOS ProductVersion:		26.6.2 BuildVersion:		25G83 
+Now drawing from 'AC Power'
+-- energy counters on this chip (channel, unit):
+AFR,mJ;AMCC,mJ;ANE,mJ;AVE,mJ;CPU Energy,mJ;DCS,mJ;DISP,mJ;DISPEXT,mJ;DRAM,mJ;EACC_CPM,mJ;EACC_CPM_SRAM,mJ;EACC_CPU,mJ;EACC_CPU0,mJ;EACC_CPU0_SRAM,mJ;EACC_CPU1,mJ;EACC_CPU1_SRAM,mJ;EACC_CPU2,mJ;EACC_CPU2_SRAM,mJ;EACC_CPU3,mJ;EACC_CPU3_SRAM,mJ;ECPUDTL00,mJ;ECPUDTL01,mJ;ECPUDTL02,mJ;ECPUDTL03,mJ;ECPUDTL04,mJ;ECPUDTL05,mJ;ECPUDTL06,mJ;ECPUDTL10,mJ;ECPUDTL11,mJ;ECPUDTL12,mJ;ECPUDTL13,mJ;ECPUDTL14,mJ;ECPUDTL15,mJ;ECPUDTL16,mJ;ECPUDTL20,mJ;ECPUDTL21,mJ;ECPUDTL22,mJ;ECPUDTL23,mJ;ECPUDTL24,mJ;ECPUDTL25,mJ;ECPUDTL26,mJ;ECPUDTL30,mJ;ECPUDTL31,mJ;ECPUDTL32,mJ;ECPUDTL33,mJ;ECPUDTL34,mJ;ECPUDTL35,mJ;ECPUDTL36,mJ;GPU Energy,nJ;GPU SRAM,mJ;GPU,mJ;ISP,mJ;MSR,mJ;PACC0_CPM,mJ;PACC0_CPM_SRAM,mJ;PACC0_CPU,mJ;PACC0_CPU0,mJ;PACC0_CPU0_SRAM,mJ;PACC0_CPU1,mJ;PACC0_CPU1_SRAM,mJ;PACC0_CPU2,mJ;PACC0_CPU2_SRAM,mJ;PACC0_CPU3,mJ;PACC0_CPU3_SRAM,mJ;PACC0_CPU4,mJ;PACC0_CPU4_SRAM,mJ;PACC0_CPU5,mJ;PACC0_CPU5_SRAM,mJ;PACC1_CPM,mJ;PACC1_CPM_SRAM,mJ;PACC1_CPU,mJ;PACC1_CPU0,mJ;PACC1_CPU0_SRAM,mJ;PACC1_CPU1,mJ;PACC1_CPU1_SRAM,mJ;PACC1_CPU2,mJ;PACC1_CPU2_SRAM,mJ;PACC1_CPU3,mJ;PACC1_CPU3_SRAM,mJ;PACC1_CPU4,mJ;PACC1_CPU4_SRAM,mJ;PACC1_CPU5,mJ;PACC1_CPU5_SRAM,mJ;PCIe Port 0 Energy,uJ;PCIe Port 1 Energy,uJ;PCPU1DTL00,mJ;PCPU1DTL01,mJ;PCPU1DTL010,mJ;PCPU1DTL011,mJ;PCPU1DTL012,mJ;PCPU1DTL02,mJ;PCPU1DTL03,mJ;PCPU1DTL04,mJ;PCPU1DTL05,mJ;PCPU1DTL06,mJ;PCPU1DTL07,mJ;PCPU1DTL08,mJ;PCPU1DTL09,mJ;PCPU1DTL0a,mJ;PCPU1DTL0b,mJ;PCPU1DTL0c,mJ;PCPU1DTL0d,mJ;PCPU1DTL0e,mJ;PCPU1DTL0f,mJ;PCPU1DTL10,mJ;PCPU1DTL11,mJ;PCPU1DTL110,mJ;PCPU1DTL111,mJ;PCPU1DTL112,mJ;PCPU1DTL12,mJ;PCPU1DTL13,mJ;PCPU1DTL14,mJ;PCPU1DTL15,mJ;PCPU1DTL16,mJ;PCPU1DTL17,mJ;PCPU1DTL18,mJ;PCPU1DTL19,mJ;PCPU1DTL1a,mJ;PCPU1DTL1b,mJ;PCPU1DTL1c,mJ;PCPU1DTL1d,mJ;PCPU1DTL1e,mJ;PCPU1DTL1f,mJ;PCPU1DTL20,mJ;PCPU1DTL21,mJ;PCPU1DTL210,mJ;PCPU1DTL211,mJ;PCPU1DTL212,mJ;PCPU1DTL22,mJ;PCPU1DTL23,mJ;PCPU1DTL24,mJ;PCPU1DTL25,mJ;PCPU1DTL26,mJ;PCPU1DTL27,mJ;PCPU1DTL28,mJ;PCPU1DTL29,mJ;PCPU1DTL2a,mJ;PCPU1DTL2b,mJ;PCPU1DTL2c,mJ;PCPU1DTL2d,mJ;PCPU1DTL2e,mJ;PCPU1DTL2f,mJ;PCPU1DTL30,mJ;PCPU1DTL31,mJ;PCPU1DTL310,mJ;PCPU1DTL311,mJ;PCPU1DTL312,mJ;PCPU1DTL32,mJ;PCPU1DTL33,mJ;PCPU1DTL34,mJ;PCPU1DTL35,mJ;PCPU1DTL36,mJ;PCPU1DTL37,mJ;PCPU1DTL38,mJ;PCPU1DTL39,mJ;PCPU1DTL3a,mJ;PCPU1DTL3b,mJ;PCPU1DTL3c,mJ;PCPU1DTL3d,mJ;PCPU1DTL3e,mJ;PCPU1DTL3f,mJ;PCPU1DTL40,mJ;PCPU1DTL41,mJ;PCPU1DTL410,mJ;PCPU1DTL411,mJ;PCPU1DTL412,mJ;PCPU1DTL42,mJ;PCPU1DTL43,mJ;PCPU1DTL44,mJ;PCPU1DTL45,mJ;PCPU1DTL46,mJ;PCPU1DTL47,mJ;PCPU1DTL48,mJ;PCPU1DTL49,mJ;PCPU1DTL4a,mJ;PCPU1DTL4b,mJ;PCPU1DTL4c,mJ;PCPU1DTL4d,mJ;PCPU1DTL4e,mJ;PCPU1DTL4f,mJ;PCPUDTL00,mJ;PCPUDTL01,mJ;PCPUDTL010,mJ;PCPUDTL011,mJ;PCPUDTL012,mJ;PCPUDTL02,mJ;PCPUDTL03,mJ;PCPUDTL04,mJ;PCPUDTL05,mJ;PCPUDTL06,mJ;PCPUDTL07,mJ;PCPUDTL08,mJ;PCPUDTL09,mJ;PCPUDTL0a,mJ;PCPUDTL0b,mJ;PCPUDTL0c,mJ;PCPUDTL0d,mJ;PCPUDTL0e,mJ;PCPUDTL0f,mJ;PCPUDTL10,mJ;PCPUDTL11,mJ;PCPUDTL110,mJ;PCPUDTL111,mJ;PCPUDTL112,mJ;PCPUDTL12,mJ;PCPUDTL13,mJ;PCPUDTL14,mJ;PCPUDTL15,mJ;PCPUDTL16,mJ;PCPUDTL17,mJ;PCPUDTL18,mJ;PCPUDTL19,mJ;PCPUDTL1a,mJ;PCPUDTL1b,mJ;PCPUDTL1c,mJ;PCPUDTL1d,mJ;PCPUDTL1e,mJ;PCPUDTL1f,mJ;PCPUDTL20,mJ;PCPUDTL21,mJ;PCPUDTL210,mJ;PCPUDTL211,mJ;PCPUDTL212,mJ;PCPUDTL22,mJ;PCPUDTL23,mJ;PCPUDTL24,mJ;PCPUDTL25,mJ;PCPUDTL26,mJ;PCPUDTL27,mJ;PCPUDTL28,mJ;PCPUDTL29,mJ;PCPUDTL2a,mJ;PCPUDTL2b,mJ;PCPUDTL2c,mJ;PCPUDTL2d,mJ;PCPUDTL2e,mJ;PCPUDTL2f,mJ;PCPUDTL30,mJ;PCPUDTL31,mJ;PCPUDTL310,mJ;PCPUDTL311,mJ;PCPUDTL312,mJ;PCPUDTL32,mJ;PCPUDTL33,mJ;PCPUDTL34,mJ;PCPUDTL35,mJ;PCPUDTL36,mJ;PCPUDTL37,mJ;PCPUDTL38,mJ;PCPUDTL39,mJ;PCPUDTL3a,mJ;PCPUDTL3b,mJ;PCPUDTL3c,mJ;PCPUDTL3d,mJ;PCPUDTL3e,mJ;PCPUDTL3f,mJ;PCPUDTL40,mJ;PCPUDTL41,mJ;PCPUDTL410,mJ;PCPUDTL411,mJ;PCPUDTL412,mJ;PCPUDTL42,mJ;PCPUDTL43,mJ;PCPUDTL44,mJ;PCPUDTL45,mJ;PCPUDTL46,mJ;PCPUDTL47,mJ;PCPUDTL48,mJ;PCPUDTL49,mJ;PCPUDTL4a,mJ;PCPUDTL4b,mJ;PCPUDTL4c,mJ;PCPUDTL4d,mJ;PCPUDTL4e,mJ;PCPUDTL4f,mJ;apciec0 Energy,uJ;apciec1 Energy,uJ;apciec2 Energy,uJ;
+-- incoming HEVC streams (hardware encoder, 600 frames)
+   360p: target 287 kbps -> 325 kbps
+   720p: target 847 kbps -> 944 kbps
+[1/25] 16:24:15 hevc_360p r1  == stopped Mon Nov 23 16:24:25 +04 2026 - run ./all again to continue
+
+== STEP 9 (energy) START  Tue Nov 24 00:23:40 +04 2026
+ProductName:		macOS ProductVersion:		26.6.2 BuildVersion:		25G83 
+Now drawing from 'AC Power'
+-- energy counters on this chip (channel, unit):
+AFR,mJ;AMCC,mJ;ANE,mJ;AVE,mJ;CPU Energy,mJ;DCS,mJ;DISP,mJ;DISPEXT,mJ;DRAM,mJ;EACC_CPM,mJ;EACC_CPM_SRAM,mJ;EACC_CPU,mJ;EACC_CPU0,mJ;EACC_CPU0_SRAM,mJ;EACC_CPU1,mJ;EACC_CPU1_SRAM,mJ;EACC_CPU2,mJ;EACC_CPU2_SRAM,mJ;EACC_CPU3,mJ;EACC_CPU3_SRAM,mJ;ECPUDTL00,mJ;ECPUDTL01,mJ;ECPUDTL02,mJ;ECPUDTL03,mJ;ECPUDTL04,mJ;ECPUDTL05,mJ;ECPUDTL06,mJ;ECPUDTL10,mJ;ECPUDTL11,mJ;ECPUDTL12,mJ;ECPUDTL13,mJ;ECPUDTL14,mJ;ECPUDTL15,mJ;ECPUDTL16,mJ;ECPUDTL20,mJ;ECPUDTL21,mJ;ECPUDTL22,mJ;ECPUDTL23,mJ;ECPUDTL24,mJ;ECPUDTL25,mJ;ECPUDTL26,mJ;ECPUDTL30,mJ;ECPUDTL31,mJ;ECPUDTL32,mJ;ECPUDTL33,mJ;ECPUDTL34,mJ;ECPUDTL35,mJ;ECPUDTL36,mJ;GPU Energy,nJ;GPU SRAM,mJ;GPU,mJ;ISP,mJ;MSR,mJ;PACC0_CPM,mJ;PACC0_CPM_SRAM,mJ;PACC0_CPU,mJ;PACC0_CPU0,mJ;PACC0_CPU0_SRAM,mJ;PACC0_CPU1,mJ;PACC0_CPU1_SRAM,mJ;PACC0_CPU2,mJ;PACC0_CPU2_SRAM,mJ;PACC0_CPU3,mJ;PACC0_CPU3_SRAM,mJ;PACC0_CPU4,mJ;PACC0_CPU4_SRAM,mJ;PACC0_CPU5,mJ;PACC0_CPU5_SRAM,mJ;PACC1_CPM,mJ;PACC1_CPM_SRAM,mJ;PACC1_CPU,mJ;PACC1_CPU0,mJ;PACC1_CPU0_SRAM,mJ;PACC1_CPU1,mJ;PACC1_CPU1_SRAM,mJ;PACC1_CPU2,mJ;PACC1_CPU2_SRAM,mJ;PACC1_CPU3,mJ;PACC1_CPU3_SRAM,mJ;PACC1_CPU4,mJ;PACC1_CPU4_SRAM,mJ;PACC1_CPU5,mJ;PACC1_CPU5_SRAM,mJ;PCIe Port 0 Energy,uJ;PCIe Port 1 Energy,uJ;PCPU1DTL00,mJ;PCPU1DTL01,mJ;PCPU1DTL010,mJ;PCPU1DTL011,mJ;PCPU1DTL012,mJ;PCPU1DTL02,mJ;PCPU1DTL03,mJ;PCPU1DTL04,mJ;PCPU1DTL05,mJ;PCPU1DTL06,mJ;PCPU1DTL07,mJ;PCPU1DTL08,mJ;PCPU1DTL09,mJ;PCPU1DTL0a,mJ;PCPU1DTL0b,mJ;PCPU1DTL0c,mJ;PCPU1DTL0d,mJ;PCPU1DTL0e,mJ;PCPU1DTL0f,mJ;PCPU1DTL10,mJ;PCPU1DTL11,mJ;PCPU1DTL110,mJ;PCPU1DTL111,mJ;PCPU1DTL112,mJ;PCPU1DTL12,mJ;PCPU1DTL13,mJ;PCPU1DTL14,mJ;PCPU1DTL15,mJ;PCPU1DTL16,mJ;PCPU1DTL17,mJ;PCPU1DTL18,mJ;PCPU1DTL19,mJ;PCPU1DTL1a,mJ;PCPU1DTL1b,mJ;PCPU1DTL1c,mJ;PCPU1DTL1d,mJ;PCPU1DTL1e,mJ;PCPU1DTL1f,mJ;PCPU1DTL20,mJ;PCPU1DTL21,mJ;PCPU1DTL210,mJ;PCPU1DTL211,mJ;PCPU1DTL212,mJ;PCPU1DTL22,mJ;PCPU1DTL23,mJ;PCPU1DTL24,mJ;PCPU1DTL25,mJ;PCPU1DTL26,mJ;PCPU1DTL27,mJ;PCPU1DTL28,mJ;PCPU1DTL29,mJ;PCPU1DTL2a,mJ;PCPU1DTL2b,mJ;PCPU1DTL2c,mJ;PCPU1DTL2d,mJ;PCPU1DTL2e,mJ;PCPU1DTL2f,mJ;PCPU1DTL30,mJ;PCPU1DTL31,mJ;PCPU1DTL310,mJ;PCPU1DTL311,mJ;PCPU1DTL312,mJ;PCPU1DTL32,mJ;PCPU1DTL33,mJ;PCPU1DTL34,mJ;PCPU1DTL35,mJ;PCPU1DTL36,mJ;PCPU1DTL37,mJ;PCPU1DTL38,mJ;PCPU1DTL39,mJ;PCPU1DTL3a,mJ;PCPU1DTL3b,mJ;PCPU1DTL3c,mJ;PCPU1DTL3d,mJ;PCPU1DTL3e,mJ;PCPU1DTL3f,mJ;PCPU1DTL40,mJ;PCPU1DTL41,mJ;PCPU1DTL410,mJ;PCPU1DTL411,mJ;PCPU1DTL412,mJ;PCPU1DTL42,mJ;PCPU1DTL43,mJ;PCPU1DTL44,mJ;PCPU1DTL45,mJ;PCPU1DTL46,mJ;PCPU1DTL47,mJ;PCPU1DTL48,mJ;PCPU1DTL49,mJ;PCPU1DTL4a,mJ;PCPU1DTL4b,mJ;PCPU1DTL4c,mJ;PCPU1DTL4d,mJ;PCPU1DTL4e,mJ;PCPU1DTL4f,mJ;PCPUDTL00,mJ;PCPUDTL01,mJ;PCPUDTL010,mJ;PCPUDTL011,mJ;PCPUDTL012,mJ;PCPUDTL02,mJ;PCPUDTL03,mJ;PCPUDTL04,mJ;PCPUDTL05,mJ;PCPUDTL06,mJ;PCPUDTL07,mJ;PCPUDTL08,mJ;PCPUDTL09,mJ;PCPUDTL0a,mJ;PCPUDTL0b,mJ;PCPUDTL0c,mJ;PCPUDTL0d,mJ;PCPUDTL0e,mJ;PCPUDTL0f,mJ;PCPUDTL10,mJ;PCPUDTL11,mJ;PCPUDTL110,mJ;PCPUDTL111,mJ;PCPUDTL112,mJ;PCPUDTL12,mJ;PCPUDTL13,mJ;PCPUDTL14,mJ;PCPUDTL15,mJ;PCPUDTL16,mJ;PCPUDTL17,mJ;PCPUDTL18,mJ;PCPUDTL19,mJ;PCPUDTL1a,mJ;PCPUDTL1b,mJ;PCPUDTL1c,mJ;PCPUDTL1d,mJ;PCPUDTL1e,mJ;PCPUDTL1f,mJ;PCPUDTL20,mJ;PCPUDTL21,mJ;PCPUDTL210,mJ;PCPUDTL211,mJ;PCPUDTL212,mJ;PCPUDTL22,mJ;PCPUDTL23,mJ;PCPUDTL24,mJ;PCPUDTL25,mJ;PCPUDTL26,mJ;PCPUDTL27,mJ;PCPUDTL28,mJ;PCPUDTL29,mJ;PCPUDTL2a,mJ;PCPUDTL2b,mJ;PCPUDTL2c,mJ;PCPUDTL2d,mJ;PCPUDTL2e,mJ;PCPUDTL2f,mJ;PCPUDTL30,mJ;PCPUDTL31,mJ;PCPUDTL310,mJ;PCPUDTL311,mJ;PCPUDTL312,mJ;PCPUDTL32,mJ;PCPUDTL33,mJ;PCPUDTL34,mJ;PCPUDTL35,mJ;PCPUDTL36,mJ;PCPUDTL37,mJ;PCPUDTL38,mJ;PCPUDTL39,mJ;PCPUDTL3a,mJ;PCPUDTL3b,mJ;PCPUDTL3c,mJ;PCPUDTL3d,mJ;PCPUDTL3e,mJ;PCPUDTL3f,mJ;PCPUDTL40,mJ;PCPUDTL41,mJ;PCPUDTL410,mJ;PCPUDTL411,mJ;PCPUDTL412,mJ;PCPUDTL42,mJ;PCPUDTL43,mJ;PCPUDTL44,mJ;PCPUDTL45,mJ;PCPUDTL46,mJ;PCPUDTL47,mJ;PCPUDTL48,mJ;PCPUDTL49,mJ;PCPUDTL4a,mJ;PCPUDTL4b,mJ;PCPUDTL4c,mJ;PCPUDTL4d,mJ;PCPUDTL4e,mJ;PCPUDTL4f,mJ;apciec0 Energy,uJ;apciec1 Energy,uJ;apciec2 Energy,uJ;
+-- incoming HEVC streams (hardware encoder, 600 frames)
+   360p: target 287 kbps -> 325 kbps
+   720p: target 847 kbps -> 944 kbps
+   00:23:40 idle 120 s (start)
+[1/25] 00:25:58 hevc_360p r1  frames out frame=1800, in frame=21050
+[2/25] 00:28:41 mlvc_360p r1  requested=npu resolved=npu 
+[3/25] 00:31:23 hevc_720p r1  frames out frame=1800, in frame=21050
+[4/25] 00:34:05 mlvcs_720p r1  requested=gpu resolved=gpu requested=npu resolved=npu 
+[5/25] 00:36:48 mlvcs_540p r1  requested=npu resolved=npu 
+[6/25] 00:39:31 mlvc_360p r2  requested=npu resolved=npu 
+[7/25] 00:42:13 hevc_720p r2  frames out frame=1800, in frame=21050
+[8/25] 00:44:56 mlvcs_720p r2  requested=gpu resolved=gpu requested=npu resolved=npu 
+[9/25] 00:47:39 mlvcs_540p r2  requested=npu resolved=npu 
+[10/25] 00:50:21 hevc_360p r2  frames out frame=1800, in frame=21050
+[11/25] 00:53:04 hevc_720p r3  frames out frame=1800, in frame=21050
+[12/25] 00:55:46 mlvcs_720p r3  requested=gpu resolved=gpu requested=npu resolved=npu 
+[13/25] 00:58:29 mlvcs_540p r3  requested=npu resolved=npu 
+[14/25] 01:01:12 hevc_360p r3  frames out frame=1800, in frame=21050
+[15/25] 01:03:55 mlvc_360p r3  requested=npu resolved=npu 
+[16/25] 01:06:37 mlvcs_720p r4  requested=gpu resolved=gpu requested=npu resolved=npu 
+[17/25] 01:09:20 mlvcs_540p r4  requested=npu resolved=npu 
+[18/25] 01:12:03 hevc_360p r4  frames out frame=1800, in frame=21050
+[19/25] 01:14:46 mlvc_360p r4  requested=npu resolved=npu 
+[20/25] 01:17:28 hevc_720p r4  frames out frame=1800, in frame=21050
+[21/25] 01:20:11 mlvcs_540p r5  requested=npu resolved=npu 
+[22/25] 01:22:53 hevc_360p r5  frames out frame=1800, in frame=21050
+[23/25] 01:25:36 mlvc_360p r5  requested=npu resolved=npu 
+[24/25] 01:28:18 hevc_720p r5  frames out frame=1800, in frame=21050
+[25/25] 01:31:01 mlvcs_720p r5  requested=gpu resolved=gpu requested=npu resolved=npu 
+   01:33:44 idle 120 s (end)
+== runs END  Tue Nov 24 01:36:01 +04 2026
+STEP 9 (energy): paced 30 fps two-way call, energy per frame pair from the chip's counters (IOReport)
+idle power (mean of 2 recordings): total of grouped channels 337 mW
+
+== energy per frame pair (mJ, median of runs, idle subtracted)
+                                  total      (min-max)    CPU    GPU    ANE   DRAM  media  late
+   HW HEVC 360p, 287 kbps           7.6 (  7.3-  8.4)    5.2   -0.0    0.0    1.7    0.7  
+   B* (full MLVC 360p, NE-NE)      76.8 ( 76.7- 77.0)    1.0   -0.0   62.9   13.0    0.0  
+   MLVC-S 540p (NE-NE)             52.6 ( 52.4- 52.7)    1.1    0.0   43.6    8.0    0.0  
+   HW HEVC 720p, 847 kbps           7.6 (  7.6-  7.7)    2.4   -0.0    0.0    4.0    1.3  
+   MLVC-S 720p (GPU-NE)           736.3 (729.7-743.8)    2.8  671.5   37.3   25.1    0.1  
+
+== every channel that changes by more than 0.17 mJ per pair (5 mW), for checking the grouping
+   HW HEVC 360p, 287 kbps: CPU Energy [CPU] 5.2; PACC1_CPU [-] 4.6; AMCC [-] 3.1; PACC1_CPU0 [-] 1.8; DRAM [DRAM] 1.7; PACC1_CPU1 [-] 1.7; DCS [-] 1.5; ECPUDTL16 [-] 1.0; EACC_CPU1 [-] 1.0; ECPUDTL36 [-] 0.6; EACC_CPU3 [-] 0.6; PACC1_CPU2 [-] 0.6; EACC_CPU [-] 0.6; ECPUDTL26 [-] 0.5; EACC_CPU2 [-] 0.5; PCPU1DTL04 [-] 0.5; PCPU1DTL14 [-] 0.5; AVE [media] 0.5; PCPU1DTL03 [-] 0.5; PCPU1DTL13 [-] 0.4; PACC1_CPU3 [-] 0.4; PCPU1DTL02 [-] 0.4; PCPU1DTL12 [-] 0.3; MSR [media] 0.2; PACC1_CPU4 [-] 0.2; PCPU1DTL24 [-] 0.2; ECPUDTL06 [-] -1.4; EACC_CPU0 [-] -1.4
+   B* (full MLVC 360p, NE-NE): ANE [ANE] 62.9; AMCC [-] 13.0; DRAM [DRAM] 13.0; DCS [-] 7.1; ECPUDTL36 [-] 1.8; EACC_CPU3 [-] 1.8; EACC_CPU2 [-] 1.1; ECPUDTL26 [-] 1.1; CPU Energy [CPU] 1.0; EACC_CPU [-] 1.0; ECPUDTL16 [-] -0.4; EACC_CPU1 [-] -0.4; ECPUDTL06 [-] -1.4; EACC_CPU0 [-] -1.4
+   MLVC-S 540p (NE-NE): ANE [ANE] 43.6; DRAM [DRAM] 8.0; AMCC [-] 6.8; DCS [-] 2.8; ECPUDTL36 [-] 1.2; EACC_CPU3 [-] 1.2; CPU Energy [CPU] 1.1; EACC_CPU [-] 1.1; EACC_CPU2 [-] 1.0; ECPUDTL26 [-] 1.0; ECPUDTL16 [-] 0.4; EACC_CPU1 [-] 0.4; ECPUDTL06 [-] -1.5; EACC_CPU0 [-] -1.5
+   HW HEVC 720p, 847 kbps: AMCC [-] 6.5; DRAM [DRAM] 4.0; CPU Energy [CPU] 2.4; EACC_CPU [-] 2.0; DCS [-] 1.8; ECPUDTL16 [-] 1.1; EACC_CPU1 [-] 1.1; MSR [media] 0.8; ECPUDTL26 [-] 0.6; EACC_CPU2 [-] 0.6; AVE [media] 0.5; ECPUDTL36 [-] 0.5; EACC_CPU3 [-] 0.5; PACC1_CPU [-] 0.3; ECPUDTL06 [-] -0.4; EACC_CPU0 [-] -0.4
+   MLVC-S 720p (GPU-NE): GPU [GPU] 370.8; GPU Energy [GPU] 300.7; DCS [-] 44.3; AFR [-] 41.4; ANE [ANE] 37.3; AMCC [-] 32.5; DRAM [DRAM] 25.1; CPU Energy [CPU] 2.8; EACC_CPU [-] 2.1; ECPUDTL06 [-] 1.3; EACC_CPU0 [-] 1.3; EACC_CPU2 [-] 0.7; ECPUDTL26 [-] 0.7; PACC1_CPU [-] 0.6; PACC1_CPU0 [-] 0.4; ECPUDTL36 [-] 0.4; EACC_CPU3 [-] 0.4; PACC1_CPU1 [-] 0.2; ECPUDTL16 [-] -0.2; EACC_CPU1 [-] -0.2
+
+== results in /Users/shamsalani/Downloads/duplexnvc-baseline/phase2/he/results
+== STEP 9 (energy) END  Tue Nov 24 01:36:06 +04 2026
+
+== STEP 9 (energy) START  Tue Nov 24 23:37:51 +04 2026
+ProductName:		macOS ProductVersion:		26.6.2 BuildVersion:		25G83 
+Now drawing from 'AC Power'
+-- energy counters on this chip (channel, unit):
+AFR,mJ;AMCC,mJ;ANE,mJ;AVE,mJ;CPU Energy,mJ;DCS,mJ;DISP,mJ;DISPEXT,mJ;DRAM,mJ;EACC_CPM,mJ;EACC_CPM_SRAM,mJ;EACC_CPU,mJ;EACC_CPU0,mJ;EACC_CPU0_SRAM,mJ;EACC_CPU1,mJ;EACC_CPU1_SRAM,mJ;EACC_CPU2,mJ;EACC_CPU2_SRAM,mJ;EACC_CPU3,mJ;EACC_CPU3_SRAM,mJ;ECPUDTL00,mJ;ECPUDTL01,mJ;ECPUDTL02,mJ;ECPUDTL03,mJ;ECPUDTL04,mJ;ECPUDTL05,mJ;ECPUDTL06,mJ;ECPUDTL10,mJ;ECPUDTL11,mJ;ECPUDTL12,mJ;ECPUDTL13,mJ;ECPUDTL14,mJ;ECPUDTL15,mJ;ECPUDTL16,mJ;ECPUDTL20,mJ;ECPUDTL21,mJ;ECPUDTL22,mJ;ECPUDTL23,mJ;ECPUDTL24,mJ;ECPUDTL25,mJ;ECPUDTL26,mJ;ECPUDTL30,mJ;ECPUDTL31,mJ;ECPUDTL32,mJ;ECPUDTL33,mJ;ECPUDTL34,mJ;ECPUDTL35,mJ;ECPUDTL36,mJ;GPU Energy,nJ;GPU SRAM,mJ;GPU,mJ;ISP,mJ;MSR,mJ;PACC0_CPM,mJ;PACC0_CPM_SRAM,mJ;PACC0_CPU,mJ;PACC0_CPU0,mJ;PACC0_CPU0_SRAM,mJ;PACC0_CPU1,mJ;PACC0_CPU1_SRAM,mJ;PACC0_CPU2,mJ;PACC0_CPU2_SRAM,mJ;PACC0_CPU3,mJ;PACC0_CPU3_SRAM,mJ;PACC0_CPU4,mJ;PACC0_CPU4_SRAM,mJ;PACC0_CPU5,mJ;PACC0_CPU5_SRAM,mJ;PACC1_CPM,mJ;PACC1_CPM_SRAM,mJ;PACC1_CPU,mJ;PACC1_CPU0,mJ;PACC1_CPU0_SRAM,mJ;PACC1_CPU1,mJ;PACC1_CPU1_SRAM,mJ;PACC1_CPU2,mJ;PACC1_CPU2_SRAM,mJ;PACC1_CPU3,mJ;PACC1_CPU3_SRAM,mJ;PACC1_CPU4,mJ;PACC1_CPU4_SRAM,mJ;PACC1_CPU5,mJ;PACC1_CPU5_SRAM,mJ;PCIe Port 0 Energy,uJ;PCIe Port 1 Energy,uJ;PCPU1DTL00,mJ;PCPU1DTL01,mJ;PCPU1DTL010,mJ;PCPU1DTL011,mJ;PCPU1DTL012,mJ;PCPU1DTL02,mJ;PCPU1DTL03,mJ;PCPU1DTL04,mJ;PCPU1DTL05,mJ;PCPU1DTL06,mJ;PCPU1DTL07,mJ;PCPU1DTL08,mJ;PCPU1DTL09,mJ;PCPU1DTL0a,mJ;PCPU1DTL0b,mJ;PCPU1DTL0c,mJ;PCPU1DTL0d,mJ;PCPU1DTL0e,mJ;PCPU1DTL0f,mJ;PCPU1DTL10,mJ;PCPU1DTL11,mJ;PCPU1DTL110,mJ;PCPU1DTL111,mJ;PCPU1DTL112,mJ;PCPU1DTL12,mJ;PCPU1DTL13,mJ;PCPU1DTL14,mJ;PCPU1DTL15,mJ;PCPU1DTL16,mJ;PCPU1DTL17,mJ;PCPU1DTL18,mJ;PCPU1DTL19,mJ;PCPU1DTL1a,mJ;PCPU1DTL1b,mJ;PCPU1DTL1c,mJ;PCPU1DTL1d,mJ;PCPU1DTL1e,mJ;PCPU1DTL1f,mJ;PCPU1DTL20,mJ;PCPU1DTL21,mJ;PCPU1DTL210,mJ;PCPU1DTL211,mJ;PCPU1DTL212,mJ;PCPU1DTL22,mJ;PCPU1DTL23,mJ;PCPU1DTL24,mJ;PCPU1DTL25,mJ;PCPU1DTL26,mJ;PCPU1DTL27,mJ;PCPU1DTL28,mJ;PCPU1DTL29,mJ;PCPU1DTL2a,mJ;PCPU1DTL2b,mJ;PCPU1DTL2c,mJ;PCPU1DTL2d,mJ;PCPU1DTL2e,mJ;PCPU1DTL2f,mJ;PCPU1DTL30,mJ;PCPU1DTL31,mJ;PCPU1DTL310,mJ;PCPU1DTL311,mJ;PCPU1DTL312,mJ;PCPU1DTL32,mJ;PCPU1DTL33,mJ;PCPU1DTL34,mJ;PCPU1DTL35,mJ;PCPU1DTL36,mJ;PCPU1DTL37,mJ;PCPU1DTL38,mJ;PCPU1DTL39,mJ;PCPU1DTL3a,mJ;PCPU1DTL3b,mJ;PCPU1DTL3c,mJ;PCPU1DTL3d,mJ;PCPU1DTL3e,mJ;PCPU1DTL3f,mJ;PCPU1DTL40,mJ;PCPU1DTL41,mJ;PCPU1DTL410,mJ;PCPU1DTL411,mJ;PCPU1DTL412,mJ;PCPU1DTL42,mJ;PCPU1DTL43,mJ;PCPU1DTL44,mJ;PCPU1DTL45,mJ;PCPU1DTL46,mJ;PCPU1DTL47,mJ;PCPU1DTL48,mJ;PCPU1DTL49,mJ;PCPU1DTL4a,mJ;PCPU1DTL4b,mJ;PCPU1DTL4c,mJ;PCPU1DTL4d,mJ;PCPU1DTL4e,mJ;PCPU1DTL4f,mJ;PCPUDTL00,mJ;PCPUDTL01,mJ;PCPUDTL010,mJ;PCPUDTL011,mJ;PCPUDTL012,mJ;PCPUDTL02,mJ;PCPUDTL03,mJ;PCPUDTL04,mJ;PCPUDTL05,mJ;PCPUDTL06,mJ;PCPUDTL07,mJ;PCPUDTL08,mJ;PCPUDTL09,mJ;PCPUDTL0a,mJ;PCPUDTL0b,mJ;PCPUDTL0c,mJ;PCPUDTL0d,mJ;PCPUDTL0e,mJ;PCPUDTL0f,mJ;PCPUDTL10,mJ;PCPUDTL11,mJ;PCPUDTL110,mJ;PCPUDTL111,mJ;PCPUDTL112,mJ;PCPUDTL12,mJ;PCPUDTL13,mJ;PCPUDTL14,mJ;PCPUDTL15,mJ;PCPUDTL16,mJ;PCPUDTL17,mJ;PCPUDTL18,mJ;PCPUDTL19,mJ;PCPUDTL1a,mJ;PCPUDTL1b,mJ;PCPUDTL1c,mJ;PCPUDTL1d,mJ;PCPUDTL1e,mJ;PCPUDTL1f,mJ;PCPUDTL20,mJ;PCPUDTL21,mJ;PCPUDTL210,mJ;PCPUDTL211,mJ;PCPUDTL212,mJ;PCPUDTL22,mJ;PCPUDTL23,mJ;PCPUDTL24,mJ;PCPUDTL25,mJ;PCPUDTL26,mJ;PCPUDTL27,mJ;PCPUDTL28,mJ;PCPUDTL29,mJ;PCPUDTL2a,mJ;PCPUDTL2b,mJ;PCPUDTL2c,mJ;PCPUDTL2d,mJ;PCPUDTL2e,mJ;PCPUDTL2f,mJ;PCPUDTL30,mJ;PCPUDTL31,mJ;PCPUDTL310,mJ;PCPUDTL311,mJ;PCPUDTL312,mJ;PCPUDTL32,mJ;PCPUDTL33,mJ;PCPUDTL34,mJ;PCPUDTL35,mJ;PCPUDTL36,mJ;PCPUDTL37,mJ;PCPUDTL38,mJ;PCPUDTL39,mJ;PCPUDTL3a,mJ;PCPUDTL3b,mJ;PCPUDTL3c,mJ;PCPUDTL3d,mJ;PCPUDTL3e,mJ;PCPUDTL3f,mJ;PCPUDTL40,mJ;PCPUDTL41,mJ;PCPUDTL410,mJ;PCPUDTL411,mJ;PCPUDTL412,mJ;PCPUDTL42,mJ;PCPUDTL43,mJ;PCPUDTL44,mJ;PCPUDTL45,mJ;PCPUDTL46,mJ;PCPUDTL47,mJ;PCPUDTL48,mJ;PCPUDTL49,mJ;PCPUDTL4a,mJ;PCPUDTL4b,mJ;PCPUDTL4c,mJ;PCPUDTL4d,mJ;PCPUDTL4e,mJ;PCPUDTL4f,mJ;apciec0 Energy,uJ;apciec1 Energy,uJ;apciec2 Energy,uJ;
+-- incoming HEVC streams (hardware encoder, 1800 frames = 60 s at 30 fps, MP4 with 30 fps timestamps)
+   360p: target 287 kbps -> 307 kbps; frame rate, frames: 30/1,1800
+   720p: target 847 kbps -> 891 kbps; frame rate, frames: 30/1,1800
+   23:38:06 idle 120 s (start)
+[1/25] 23:40:24 hevc_360p r1  frames out frame=1800, in frame=1800
+[2/25] 23:43:07 mlvc_360p r1  requested=npu resolved=npu 
+[3/25] 00:00:58 hevc_720p r1  frames out frame=1800, in frame=1800
+[4/25] 00:03:41 mlvcs_720p r1  requested=gpu resolved=gpu requested=npu resolved=npu 
+[5/25] 00:06:23 mlvcs_540p r1  requested=npu resolved=npu 
+[6/25] 00:09:05 mlvc_360p r2  requested=npu resolved=npu 
+[7/25] 00:11:47 hevc_720p r2  frames out frame=1800, in frame=1800
+[8/25] 00:14:30 mlvcs_720p r2  requested=gpu resolved=gpu requested=npu resolved=npu 
+[9/25] 00:17:12 mlvcs_540p r2  requested=npu resolved=npu 
+[10/25] 00:19:54 hevc_360p r2  frames out frame=1800, in frame=1800
+[11/25] 00:22:37 hevc_720p r3  frames out frame=1800, in frame=1800
+[12/25] 00:25:20 mlvcs_720p r3  requested=gpu resolved=gpu requested=npu resolved=npu 
+[13/25] 00:28:02 mlvcs_540p r3  requested=npu resolved=npu 
+[14/25] 00:30:44 hevc_360p r3  frames out frame=1800, in frame=1800
+[15/25] 00:33:27 mlvc_360p r3  requested=npu resolved=npu 
+[16/25] 00:36:08 mlvcs_720p r4  requested=gpu resolved=gpu requested=npu resolved=npu 
+[17/25] 00:38:50 mlvcs_540p r4  requested=npu resolved=npu 
+[18/25] 00:41:32 hevc_360p r4  frames out frame=1800, in frame=1800
+[19/25] 00:44:15 mlvc_360p r4  requested=npu resolved=npu 
+[20/25] 00:46:56 hevc_720p r4  frames out frame=1800, in frame=1800
+[21/25] 00:49:39 mlvcs_540p r5  requested=npu resolved=npu 
+[22/25] 00:52:21 hevc_360p r5  frames out frame=1800, in frame=1800
+[23/25] 00:55:04 mlvc_360p r5  requested=npu resolved=npu 
+[24/25] 00:57:45 hevc_720p r5  frames out frame=1800, in frame=1800
+[25/25] 01:16:57 mlvcs_720p r5  requested=gpu resolved=gpu requested=npu resolved=npu 
+   01:19:39 idle 120 s (end)
+== runs END  Wed Nov 25 01:21:55 +04 2026
+STEP 9 (energy): paced 30 fps two-way call, energy per frame pair from the chip's counters (IOReport)
+idle power (mean of 2 recordings): total of grouped channels 1022 mW
+
+== energy per frame pair (mJ, median of runs, idle subtracted)
+                                  total      (min-max)    CPU    GPU    ANE   DRAM  media  late
+   HW HEVC 360p, 287 kbps          14.7 ( -5.5- 24.0)    7.0    2.0    3.3    2.0    0.4  
+   B* (full MLVC 360p, NE-NE)      89.7 (-33.0- 90.6)    4.5    2.3   66.3   14.3    1.0  
+   MLVC-S 540p (NE-NE)             65.7 ( 64.2- 68.6)    4.5    2.7   47.1   10.1    1.1  
+   HW HEVC 720p, 847 kbps          16.9 ( 11.0- 18.9)    5.3    2.0    4.7    2.1    0.7  
+   MLVC-S 720p (GPU-NE)           515.8 (512.1-521.0)   10.0  432.9   42.1   29.0    1.1  
+
+== every channel that changes by more than 0.17 mJ per pair (5 mW), for checking the grouping
+   HW HEVC 360p, 287 kbps: CPU Energy [CPU] 7.0; EACC_CPU [-] 5.4; ANE [ANE] 3.3; ECPUDTL16 [-] 2.1; EACC_CPU1 [-] 2.1; DRAM [DRAM] 2.0; ECPUDTL36 [-] 1.6; EACC_CPU3 [-] 1.6; PACC1_CPU [-] 1.6; ECPUDTL26 [-] 1.6; EACC_CPU2 [-] 1.6; GPU [GPU] 1.0; GPU Energy [GPU] 1.0; PACC1_CPU0 [-] 1.0; PACC1_CPU1 [-] 0.3; AMCC [-] 0.3; PCPU1DTL012 [-] 0.2; AVE [media] 0.2; ECPUDTL06 [-] 0.2; EACC_CPU0 [-] 0.2; MSR [media] 0.2; DISP [-] -0.2
+   B* (full MLVC 360p, NE-NE): ANE [ANE] 66.3; AMCC [-] 24.7; DRAM [DRAM] 14.3; DCS [-] 9.4; CPU Energy [CPU] 4.5; EACC_CPU [-] 4.1; ECPUDTL36 [-] 1.2; EACC_CPU3 [-] 1.2; ECPUDTL26 [-] 1.2; EACC_CPU2 [-] 1.2; GPU Energy [GPU] 1.1; GPU [GPU] 1.1; ECPUDTL16 [-] 1.0; EACC_CPU1 [-] 1.0; ECPUDTL06 [-] 0.8; EACC_CPU0 [-] 0.8; AVE [media] 0.6; PACC0_CPU [-] 0.6; PACC0_CPU0 [-] 0.4; MSR [media] 0.4; AFR [-] 0.2; PACC1_CPU [-] -0.2; DISP [-] -0.2; PACC1_CPU0 [-] -0.3
+   MLVC-S 540p (NE-NE): ANE [ANE] 47.1; AMCC [-] 20.2; DRAM [DRAM] 10.1; DCS [-] 6.7; CPU Energy [CPU] 4.5; EACC_CPU [-] 4.2; GPU [GPU] 1.3; GPU Energy [GPU] 1.3; ECPUDTL36 [-] 1.2; EACC_CPU3 [-] 1.2; ECPUDTL06 [-] 1.1; EACC_CPU0 [-] 1.1; EACC_CPU2 [-] 1.0; ECPUDTL26 [-] 1.0; ECPUDTL16 [-] 0.8; EACC_CPU1 [-] 0.8; AVE [media] 0.6; MSR [media] 0.4; PACC0_CPU [-] 0.4; PACC0_CPU0 [-] 0.3; AFR [-] 0.2; DISP [-] -0.2
+   HW HEVC 720p, 847 kbps: CPU Energy [CPU] 5.3; ANE [ANE] 4.7; EACC_CPU [-] 3.6; DRAM [DRAM] 2.1; PACC1_CPU [-] 1.7; ECPUDTL16 [-] 1.7; EACC_CPU1 [-] 1.7; AMCC [-] 1.4; ECPUDTL26 [-] 1.2; EACC_CPU2 [-] 1.2; ECPUDTL36 [-] 1.1; EACC_CPU3 [-] 1.1; PACC1_CPU0 [-] 1.0; GPU Energy [GPU] 1.0; GPU [GPU] 1.0; AVE [media] 0.4; MSR [media] 0.3; PCPU1DTL012 [-] 0.3; PACC1_CPU1 [-] 0.3; DISP [-] -0.2; EACC_CPU0 [-] -0.4; ECPUDTL06 [-] -0.4
+   MLVC-S 720p (GPU-NE): GPU [GPU] 225.7; GPU Energy [GPU] 207.2; DCS [-] 47.0; ANE [ANE] 42.1; AFR [-] 40.5; AMCC [-] 38.0; DRAM [DRAM] 29.0; CPU Energy [CPU] 10.0; EACC_CPU [-] 9.0; ECPUDTL16 [-] 2.6; EACC_CPU1 [-] 2.6; ECPUDTL26 [-] 2.3; EACC_CPU2 [-] 2.3; ECPUDTL36 [-] 2.3; EACC_CPU3 [-] 2.3; EACC_CPU0 [-] 1.8; ECPUDTL06 [-] 1.8; AVE [media] 0.8; PACC0_CPU [-] 0.7; PACC0_CPU0 [-] 0.4; MSR [media] 0.4; DISP [-] -0.2
+
+== results in /Users/shamsalani/Downloads/duplexnvc-baseline/phase2/he/results
+== STEP 9 (energy) END  Wed Nov 25 01:22:00 +04 2026
+
+== STEP 9 (energy) START  Wed Nov 25 02:33:52 +04 2026
+ProductName:		macOS ProductVersion:		26.6.2 BuildVersion:		25G83 
+Now drawing from 'AC Power'
+-- energy counters on this chip (channel, unit):
+AFR,mJ;AMCC,mJ;ANE,mJ;AVE,mJ;CPU Energy,mJ;DCS,mJ;DISP,mJ;DISPEXT,mJ;DRAM,mJ;EACC_CPM,mJ;EACC_CPM_SRAM,mJ;EACC_CPU,mJ;EACC_CPU0,mJ;EACC_CPU0_SRAM,mJ;EACC_CPU1,mJ;EACC_CPU1_SRAM,mJ;EACC_CPU2,mJ;EACC_CPU2_SRAM,mJ;EACC_CPU3,mJ;EACC_CPU3_SRAM,mJ;ECPUDTL00,mJ;ECPUDTL01,mJ;ECPUDTL02,mJ;ECPUDTL03,mJ;ECPUDTL04,mJ;ECPUDTL05,mJ;ECPUDTL06,mJ;ECPUDTL10,mJ;ECPUDTL11,mJ;ECPUDTL12,mJ;ECPUDTL13,mJ;ECPUDTL14,mJ;ECPUDTL15,mJ;ECPUDTL16,mJ;ECPUDTL20,mJ;ECPUDTL21,mJ;ECPUDTL22,mJ;ECPUDTL23,mJ;ECPUDTL24,mJ;ECPUDTL25,mJ;ECPUDTL26,mJ;ECPUDTL30,mJ;ECPUDTL31,mJ;ECPUDTL32,mJ;ECPUDTL33,mJ;ECPUDTL34,mJ;ECPUDTL35,mJ;ECPUDTL36,mJ;GPU Energy,nJ;GPU SRAM,mJ;GPU,mJ;ISP,mJ;MSR,mJ;PACC0_CPM,mJ;PACC0_CPM_SRAM,mJ;PACC0_CPU,mJ;PACC0_CPU0,mJ;PACC0_CPU0_SRAM,mJ;PACC0_CPU1,mJ;PACC0_CPU1_SRAM,mJ;PACC0_CPU2,mJ;PACC0_CPU2_SRAM,mJ;PACC0_CPU3,mJ;PACC0_CPU3_SRAM,mJ;PACC0_CPU4,mJ;PACC0_CPU4_SRAM,mJ;PACC0_CPU5,mJ;PACC0_CPU5_SRAM,mJ;PACC1_CPM,mJ;PACC1_CPM_SRAM,mJ;PACC1_CPU,mJ;PACC1_CPU0,mJ;PACC1_CPU0_SRAM,mJ;PACC1_CPU1,mJ;PACC1_CPU1_SRAM,mJ;PACC1_CPU2,mJ;PACC1_CPU2_SRAM,mJ;PACC1_CPU3,mJ;PACC1_CPU3_SRAM,mJ;PACC1_CPU4,mJ;PACC1_CPU4_SRAM,mJ;PACC1_CPU5,mJ;PACC1_CPU5_SRAM,mJ;PCIe Port 0 Energy,uJ;PCIe Port 1 Energy,uJ;PCPU1DTL00,mJ;PCPU1DTL01,mJ;PCPU1DTL010,mJ;PCPU1DTL011,mJ;PCPU1DTL012,mJ;PCPU1DTL02,mJ;PCPU1DTL03,mJ;PCPU1DTL04,mJ;PCPU1DTL05,mJ;PCPU1DTL06,mJ;PCPU1DTL07,mJ;PCPU1DTL08,mJ;PCPU1DTL09,mJ;PCPU1DTL0a,mJ;PCPU1DTL0b,mJ;PCPU1DTL0c,mJ;PCPU1DTL0d,mJ;PCPU1DTL0e,mJ;PCPU1DTL0f,mJ;PCPU1DTL10,mJ;PCPU1DTL11,mJ;PCPU1DTL110,mJ;PCPU1DTL111,mJ;PCPU1DTL112,mJ;PCPU1DTL12,mJ;PCPU1DTL13,mJ;PCPU1DTL14,mJ;PCPU1DTL15,mJ;PCPU1DTL16,mJ;PCPU1DTL17,mJ;PCPU1DTL18,mJ;PCPU1DTL19,mJ;PCPU1DTL1a,mJ;PCPU1DTL1b,mJ;PCPU1DTL1c,mJ;PCPU1DTL1d,mJ;PCPU1DTL1e,mJ;PCPU1DTL1f,mJ;PCPU1DTL20,mJ;PCPU1DTL21,mJ;PCPU1DTL210,mJ;PCPU1DTL211,mJ;PCPU1DTL212,mJ;PCPU1DTL22,mJ;PCPU1DTL23,mJ;PCPU1DTL24,mJ;PCPU1DTL25,mJ;PCPU1DTL26,mJ;PCPU1DTL27,mJ;PCPU1DTL28,mJ;PCPU1DTL29,mJ;PCPU1DTL2a,mJ;PCPU1DTL2b,mJ;PCPU1DTL2c,mJ;PCPU1DTL2d,mJ;PCPU1DTL2e,mJ;PCPU1DTL2f,mJ;PCPU1DTL30,mJ;PCPU1DTL31,mJ;PCPU1DTL310,mJ;PCPU1DTL311,mJ;PCPU1DTL312,mJ;PCPU1DTL32,mJ;PCPU1DTL33,mJ;PCPU1DTL34,mJ;PCPU1DTL35,mJ;PCPU1DTL36,mJ;PCPU1DTL37,mJ;PCPU1DTL38,mJ;PCPU1DTL39,mJ;PCPU1DTL3a,mJ;PCPU1DTL3b,mJ;PCPU1DTL3c,mJ;PCPU1DTL3d,mJ;PCPU1DTL3e,mJ;PCPU1DTL3f,mJ;PCPU1DTL40,mJ;PCPU1DTL41,mJ;PCPU1DTL410,mJ;PCPU1DTL411,mJ;PCPU1DTL412,mJ;PCPU1DTL42,mJ;PCPU1DTL43,mJ;PCPU1DTL44,mJ;PCPU1DTL45,mJ;PCPU1DTL46,mJ;PCPU1DTL47,mJ;PCPU1DTL48,mJ;PCPU1DTL49,mJ;PCPU1DTL4a,mJ;PCPU1DTL4b,mJ;PCPU1DTL4c,mJ;PCPU1DTL4d,mJ;PCPU1DTL4e,mJ;PCPU1DTL4f,mJ;PCPUDTL00,mJ;PCPUDTL01,mJ;PCPUDTL010,mJ;PCPUDTL011,mJ;PCPUDTL012,mJ;PCPUDTL02,mJ;PCPUDTL03,mJ;PCPUDTL04,mJ;PCPUDTL05,mJ;PCPUDTL06,mJ;PCPUDTL07,mJ;PCPUDTL08,mJ;PCPUDTL09,mJ;PCPUDTL0a,mJ;PCPUDTL0b,mJ;PCPUDTL0c,mJ;PCPUDTL0d,mJ;PCPUDTL0e,mJ;PCPUDTL0f,mJ;PCPUDTL10,mJ;PCPUDTL11,mJ;PCPUDTL110,mJ;PCPUDTL111,mJ;PCPUDTL112,mJ;PCPUDTL12,mJ;PCPUDTL13,mJ;PCPUDTL14,mJ;PCPUDTL15,mJ;PCPUDTL16,mJ;PCPUDTL17,mJ;PCPUDTL18,mJ;PCPUDTL19,mJ;PCPUDTL1a,mJ;PCPUDTL1b,mJ;PCPUDTL1c,mJ;PCPUDTL1d,mJ;PCPUDTL1e,mJ;PCPUDTL1f,mJ;PCPUDTL20,mJ;PCPUDTL21,mJ;PCPUDTL210,mJ;PCPUDTL211,mJ;PCPUDTL212,mJ;PCPUDTL22,mJ;PCPUDTL23,mJ;PCPUDTL24,mJ;PCPUDTL25,mJ;PCPUDTL26,mJ;PCPUDTL27,mJ;PCPUDTL28,mJ;PCPUDTL29,mJ;PCPUDTL2a,mJ;PCPUDTL2b,mJ;PCPUDTL2c,mJ;PCPUDTL2d,mJ;PCPUDTL2e,mJ;PCPUDTL2f,mJ;PCPUDTL30,mJ;PCPUDTL31,mJ;PCPUDTL310,mJ;PCPUDTL311,mJ;PCPUDTL312,mJ;PCPUDTL32,mJ;PCPUDTL33,mJ;PCPUDTL34,mJ;PCPUDTL35,mJ;PCPUDTL36,mJ;PCPUDTL37,mJ;PCPUDTL38,mJ;PCPUDTL39,mJ;PCPUDTL3a,mJ;PCPUDTL3b,mJ;PCPUDTL3c,mJ;PCPUDTL3d,mJ;PCPUDTL3e,mJ;PCPUDTL3f,mJ;PCPUDTL40,mJ;PCPUDTL41,mJ;PCPUDTL410,mJ;PCPUDTL411,mJ;PCPUDTL412,mJ;PCPUDTL42,mJ;PCPUDTL43,mJ;PCPUDTL44,mJ;PCPUDTL45,mJ;PCPUDTL46,mJ;PCPUDTL47,mJ;PCPUDTL48,mJ;PCPUDTL49,mJ;PCPUDTL4a,mJ;PCPUDTL4b,mJ;PCPUDTL4c,mJ;PCPUDTL4d,mJ;PCPUDTL4e,mJ;PCPUDTL4f,mJ;apciec0 Energy,uJ;apciec1 Energy,uJ;apciec2 Energy,uJ;
+-- incoming HEVC streams (hardware encoder, 1800 frames = 60 s at 30 fps, MP4 with 30 fps timestamps)
+   360p: target 287 kbps -> 307 kbps; frame rate, frames: 30/1,1800
+   720p: target 847 kbps -> 891 kbps; frame rate, frames: 30/1,1800
+[1/25] skip (done) hevc_360p r1
+[2/25] skip (done) mlvc_360p r1
+[3/25] skip (done) hevc_720p r1
+[4/25] skip (done) mlvcs_720p r1
+[5/25] skip (done) mlvcs_540p r1
+[6/25] skip (done) mlvc_360p r2
+[7/25] skip (done) hevc_720p r2
+[8/25] skip (done) mlvcs_720p r2
+[9/25] skip (done) mlvcs_540p r2
+[10/25] skip (done) hevc_360p r2
+[11/25] skip (done) hevc_720p r3
+[12/25] skip (done) mlvcs_720p r3
+[13/25] skip (done) mlvcs_540p r3
+[14/25] skip (done) hevc_360p r3
+[15/25] skip (done) mlvc_360p r3
+[16/25] skip (done) mlvcs_720p r4
+[17/25] skip (done) mlvcs_540p r4
+[18/25] skip (done) hevc_360p r4
+[19/25] skip (done) mlvc_360p r4
+[20/25] skip (done) hevc_720p r4
+[21/25] skip (done) mlvcs_540p r5
+[22/25] skip (done) hevc_360p r5
+[23/25] skip (done) mlvc_360p r5
+[24/25] skip (done) hevc_720p r5
+[25/25] skip (done) mlvcs_720p r5
+== runs END  Wed Nov 25 02:33:55 +04 2026
+   idle_start: grouped 418 mW, all channels 1735 mW; CPU 391, GPU 0, ANE 0, DRAM 22, media 4
+   idle_end: grouped 1626 mW, all channels 5208 mW; CPU 802, GPU 193, ANE 335, DRAM 246, media 51
+STEP 9 (energy): paced 30 fps two-way call, energy per frame pair from the chip's counters (IOReport)
+idle power (start+end): total of grouped channels 1022 mW
+   hevc_360p r1: 857 mW grouped
+   hevc_360p r2: 1424 mW grouped
+   hevc_360p r3: 1588 mW grouped
+   hevc_360p r4: 1463 mW grouped
+   hevc_360p r5: 1740 mW grouped
+   EXCLUDED mlvc_360p r1: run took 955 s (the Mac stalled during the run)
+   mlvc_360p r2: 3721 mW grouped
+   mlvc_360p r3: 3740 mW grouped
+   mlvc_360p r4: 3655 mW grouped
+   mlvc_360p r5: 3713 mW grouped
+   mlvcs_540p r1: 3020 mW grouped
+   mlvcs_540p r2: 2966 mW grouped
+   mlvcs_540p r3: 2994 mW grouped
+   mlvcs_540p r4: 2947 mW grouped
+   mlvcs_540p r5: 3080 mW grouped
+   hevc_720p r1: 1528 mW grouped
+   hevc_720p r2: 1353 mW grouped
+   hevc_720p r3: 1455 mW grouped
+   hevc_720p r4: 1546 mW grouped
+   hevc_720p r5: 1589 mW grouped
+   mlvcs_720p r1: 16496 mW grouped
+   mlvcs_720p r2: 16443 mW grouped
+   mlvcs_720p r3: 16385 mW grouped
+   mlvcs_720p r4: 16653 mW grouped
+   mlvcs_720p r5: 16523 mW grouped
+
+== energy per frame pair (mJ, median of runs, idle subtracted)
+                                  total      (min-max)    CPU    GPU    ANE   DRAM  media  late
+   HW HEVC 360p, 287 kbps          14.7 ( -5.5- 24.0)    7.0    2.0    3.3    2.0    0.4  
+   B* (full MLVC 360p, NE-NE)      89.8 ( 87.8- 90.6)    4.9    2.4   66.7   14.4    1.0  
+   MLVC-S 540p (NE-NE)             65.7 ( 64.2- 68.6)    4.5    2.7   47.1   10.1    1.1  
+   HW HEVC 720p, 847 kbps          16.9 ( 11.0- 18.9)    5.3    2.0    4.7    2.1    0.7  
+   MLVC-S 720p (GPU-NE)           515.8 (512.1-521.0)   10.0  432.9   42.1   29.0    1.1  
+
+== every channel that changes by more than 0.17 mJ per pair (5 mW), for checking the grouping
+   HW HEVC 360p, 287 kbps: CPU Energy [CPU] 7.0; EACC_CPU [-] 5.4; ANE [ANE] 3.3; ECPUDTL16 [-] 2.1; EACC_CPU1 [-] 2.1; DRAM [DRAM] 2.0; ECPUDTL36 [-] 1.6; EACC_CPU3 [-] 1.6; PACC1_CPU [-] 1.6; ECPUDTL26 [-] 1.6; EACC_CPU2 [-] 1.6; GPU [GPU] 1.0; GPU Energy [GPU] 1.0; PACC1_CPU0 [-] 1.0; PACC1_CPU1 [-] 0.3; AMCC [-] 0.3; PCPU1DTL012 [-] 0.2; AVE [media] 0.2; ECPUDTL06 [-] 0.2; EACC_CPU0 [-] 0.2; MSR [media] 0.2; DISP [-] -0.2
+   B* (full MLVC 360p, NE-NE): ANE [ANE] 66.7; AMCC [-] 24.7; DRAM [DRAM] 14.4; DCS [-] 9.6; CPU Energy [CPU] 4.9; EACC_CPU [-] 4.6; ECPUDTL36 [-] 1.3; EACC_CPU3 [-] 1.3; ECPUDTL26 [-] 1.2; EACC_CPU2 [-] 1.2; GPU Energy [GPU] 1.2; GPU [GPU] 1.2; ECPUDTL16 [-] 1.1; EACC_CPU1 [-] 1.1; ECPUDTL06 [-] 0.9; EACC_CPU0 [-] 0.9; AVE [media] 0.6; PACC0_CPU [-] 0.6; PACC0_CPU0 [-] 0.4; MSR [media] 0.4; AFR [-] 0.2; PACC1_CPU [-] -0.2; DISP [-] -0.2; PACC1_CPU0 [-] -0.3
+   MLVC-S 540p (NE-NE): ANE [ANE] 47.1; AMCC [-] 20.2; DRAM [DRAM] 10.1; DCS [-] 6.7; CPU Energy [CPU] 4.5; EACC_CPU [-] 4.2; GPU [GPU] 1.3; GPU Energy [GPU] 1.3; ECPUDTL36 [-] 1.2; EACC_CPU3 [-] 1.2; ECPUDTL06 [-] 1.1; EACC_CPU0 [-] 1.1; EACC_CPU2 [-] 1.0; ECPUDTL26 [-] 1.0; ECPUDTL16 [-] 0.8; EACC_CPU1 [-] 0.8; AVE [media] 0.6; MSR [media] 0.4; PACC0_CPU [-] 0.4; PACC0_CPU0 [-] 0.3; AFR [-] 0.2; DISP [-] -0.2
+   HW HEVC 720p, 847 kbps: CPU Energy [CPU] 5.3; ANE [ANE] 4.7; EACC_CPU [-] 3.6; DRAM [DRAM] 2.1; PACC1_CPU [-] 1.7; ECPUDTL16 [-] 1.7; EACC_CPU1 [-] 1.7; AMCC [-] 1.4; ECPUDTL26 [-] 1.2; EACC_CPU2 [-] 1.2; ECPUDTL36 [-] 1.1; EACC_CPU3 [-] 1.1; PACC1_CPU0 [-] 1.0; GPU Energy [GPU] 1.0; GPU [GPU] 1.0; AVE [media] 0.4; MSR [media] 0.3; PCPU1DTL012 [-] 0.3; PACC1_CPU1 [-] 0.3; DISP [-] -0.2; EACC_CPU0 [-] -0.4; ECPUDTL06 [-] -0.4
+   MLVC-S 720p (GPU-NE): GPU [GPU] 225.7; GPU Energy [GPU] 207.2; DCS [-] 47.0; ANE [ANE] 42.1; AFR [-] 40.5; AMCC [-] 38.0; DRAM [DRAM] 29.0; CPU Energy [CPU] 10.0; EACC_CPU [-] 9.0; ECPUDTL16 [-] 2.6; EACC_CPU1 [-] 2.6; ECPUDTL26 [-] 2.3; EACC_CPU2 [-] 2.3; ECPUDTL36 [-] 2.3; EACC_CPU3 [-] 2.3; EACC_CPU0 [-] 1.8; ECPUDTL06 [-] 1.8; AVE [media] 0.8; PACC0_CPU [-] 0.7; PACC0_CPU0 [-] 0.4; MSR [media] 0.4; DISP [-] -0.2
+
+== results in /Users/shamsalani/Downloads/duplexnvc-baseline/phase2/he/results
+== STEP 9 (energy) END  Wed Nov 25 02:34:00 +04 2026
+
+== STEP 9 (energy) START  Wed Nov 25 02:37:40 +04 2026
+ProductName:		macOS ProductVersion:		26.6.2 BuildVersion:		25G83 
+Now drawing from 'AC Power'
+-- energy counters on this chip (channel, unit):
+AFR,mJ;AMCC,mJ;ANE,mJ;AVE,mJ;CPU Energy,mJ;DCS,mJ;DISP,mJ;DISPEXT,mJ;DRAM,mJ;EACC_CPM,mJ;EACC_CPM_SRAM,mJ;EACC_CPU,mJ;EACC_CPU0,mJ;EACC_CPU0_SRAM,mJ;EACC_CPU1,mJ;EACC_CPU1_SRAM,mJ;EACC_CPU2,mJ;EACC_CPU2_SRAM,mJ;EACC_CPU3,mJ;EACC_CPU3_SRAM,mJ;ECPUDTL00,mJ;ECPUDTL01,mJ;ECPUDTL02,mJ;ECPUDTL03,mJ;ECPUDTL04,mJ;ECPUDTL05,mJ;ECPUDTL06,mJ;ECPUDTL10,mJ;ECPUDTL11,mJ;ECPUDTL12,mJ;ECPUDTL13,mJ;ECPUDTL14,mJ;ECPUDTL15,mJ;ECPUDTL16,mJ;ECPUDTL20,mJ;ECPUDTL21,mJ;ECPUDTL22,mJ;ECPUDTL23,mJ;ECPUDTL24,mJ;ECPUDTL25,mJ;ECPUDTL26,mJ;ECPUDTL30,mJ;ECPUDTL31,mJ;ECPUDTL32,mJ;ECPUDTL33,mJ;ECPUDTL34,mJ;ECPUDTL35,mJ;ECPUDTL36,mJ;GPU Energy,nJ;GPU SRAM,mJ;GPU,mJ;ISP,mJ;MSR,mJ;PACC0_CPM,mJ;PACC0_CPM_SRAM,mJ;PACC0_CPU,mJ;PACC0_CPU0,mJ;PACC0_CPU0_SRAM,mJ;PACC0_CPU1,mJ;PACC0_CPU1_SRAM,mJ;PACC0_CPU2,mJ;PACC0_CPU2_SRAM,mJ;PACC0_CPU3,mJ;PACC0_CPU3_SRAM,mJ;PACC0_CPU4,mJ;PACC0_CPU4_SRAM,mJ;PACC0_CPU5,mJ;PACC0_CPU5_SRAM,mJ;PACC1_CPM,mJ;PACC1_CPM_SRAM,mJ;PACC1_CPU,mJ;PACC1_CPU0,mJ;PACC1_CPU0_SRAM,mJ;PACC1_CPU1,mJ;PACC1_CPU1_SRAM,mJ;PACC1_CPU2,mJ;PACC1_CPU2_SRAM,mJ;PACC1_CPU3,mJ;PACC1_CPU3_SRAM,mJ;PACC1_CPU4,mJ;PACC1_CPU4_SRAM,mJ;PACC1_CPU5,mJ;PACC1_CPU5_SRAM,mJ;PCIe Port 0 Energy,uJ;PCIe Port 1 Energy,uJ;PCPU1DTL00,mJ;PCPU1DTL01,mJ;PCPU1DTL010,mJ;PCPU1DTL011,mJ;PCPU1DTL012,mJ;PCPU1DTL02,mJ;PCPU1DTL03,mJ;PCPU1DTL04,mJ;PCPU1DTL05,mJ;PCPU1DTL06,mJ;PCPU1DTL07,mJ;PCPU1DTL08,mJ;PCPU1DTL09,mJ;PCPU1DTL0a,mJ;PCPU1DTL0b,mJ;PCPU1DTL0c,mJ;PCPU1DTL0d,mJ;PCPU1DTL0e,mJ;PCPU1DTL0f,mJ;PCPU1DTL10,mJ;PCPU1DTL11,mJ;PCPU1DTL110,mJ;PCPU1DTL111,mJ;PCPU1DTL112,mJ;PCPU1DTL12,mJ;PCPU1DTL13,mJ;PCPU1DTL14,mJ;PCPU1DTL15,mJ;PCPU1DTL16,mJ;PCPU1DTL17,mJ;PCPU1DTL18,mJ;PCPU1DTL19,mJ;PCPU1DTL1a,mJ;PCPU1DTL1b,mJ;PCPU1DTL1c,mJ;PCPU1DTL1d,mJ;PCPU1DTL1e,mJ;PCPU1DTL1f,mJ;PCPU1DTL20,mJ;PCPU1DTL21,mJ;PCPU1DTL210,mJ;PCPU1DTL211,mJ;PCPU1DTL212,mJ;PCPU1DTL22,mJ;PCPU1DTL23,mJ;PCPU1DTL24,mJ;PCPU1DTL25,mJ;PCPU1DTL26,mJ;PCPU1DTL27,mJ;PCPU1DTL28,mJ;PCPU1DTL29,mJ;PCPU1DTL2a,mJ;PCPU1DTL2b,mJ;PCPU1DTL2c,mJ;PCPU1DTL2d,mJ;PCPU1DTL2e,mJ;PCPU1DTL2f,mJ;PCPU1DTL30,mJ;PCPU1DTL31,mJ;PCPU1DTL310,mJ;PCPU1DTL311,mJ;PCPU1DTL312,mJ;PCPU1DTL32,mJ;PCPU1DTL33,mJ;PCPU1DTL34,mJ;PCPU1DTL35,mJ;PCPU1DTL36,mJ;PCPU1DTL37,mJ;PCPU1DTL38,mJ;PCPU1DTL39,mJ;PCPU1DTL3a,mJ;PCPU1DTL3b,mJ;PCPU1DTL3c,mJ;PCPU1DTL3d,mJ;PCPU1DTL3e,mJ;PCPU1DTL3f,mJ;PCPU1DTL40,mJ;PCPU1DTL41,mJ;PCPU1DTL410,mJ;PCPU1DTL411,mJ;PCPU1DTL412,mJ;PCPU1DTL42,mJ;PCPU1DTL43,mJ;PCPU1DTL44,mJ;PCPU1DTL45,mJ;PCPU1DTL46,mJ;PCPU1DTL47,mJ;PCPU1DTL48,mJ;PCPU1DTL49,mJ;PCPU1DTL4a,mJ;PCPU1DTL4b,mJ;PCPU1DTL4c,mJ;PCPU1DTL4d,mJ;PCPU1DTL4e,mJ;PCPU1DTL4f,mJ;PCPUDTL00,mJ;PCPUDTL01,mJ;PCPUDTL010,mJ;PCPUDTL011,mJ;PCPUDTL012,mJ;PCPUDTL02,mJ;PCPUDTL03,mJ;PCPUDTL04,mJ;PCPUDTL05,mJ;PCPUDTL06,mJ;PCPUDTL07,mJ;PCPUDTL08,mJ;PCPUDTL09,mJ;PCPUDTL0a,mJ;PCPUDTL0b,mJ;PCPUDTL0c,mJ;PCPUDTL0d,mJ;PCPUDTL0e,mJ;PCPUDTL0f,mJ;PCPUDTL10,mJ;PCPUDTL11,mJ;PCPUDTL110,mJ;PCPUDTL111,mJ;PCPUDTL112,mJ;PCPUDTL12,mJ;PCPUDTL13,mJ;PCPUDTL14,mJ;PCPUDTL15,mJ;PCPUDTL16,mJ;PCPUDTL17,mJ;PCPUDTL18,mJ;PCPUDTL19,mJ;PCPUDTL1a,mJ;PCPUDTL1b,mJ;PCPUDTL1c,mJ;PCPUDTL1d,mJ;PCPUDTL1e,mJ;PCPUDTL1f,mJ;PCPUDTL20,mJ;PCPUDTL21,mJ;PCPUDTL210,mJ;PCPUDTL211,mJ;PCPUDTL212,mJ;PCPUDTL22,mJ;PCPUDTL23,mJ;PCPUDTL24,mJ;PCPUDTL25,mJ;PCPUDTL26,mJ;PCPUDTL27,mJ;PCPUDTL28,mJ;PCPUDTL29,mJ;PCPUDTL2a,mJ;PCPUDTL2b,mJ;PCPUDTL2c,mJ;PCPUDTL2d,mJ;PCPUDTL2e,mJ;PCPUDTL2f,mJ;PCPUDTL30,mJ;PCPUDTL31,mJ;PCPUDTL310,mJ;PCPUDTL311,mJ;PCPUDTL312,mJ;PCPUDTL32,mJ;PCPUDTL33,mJ;PCPUDTL34,mJ;PCPUDTL35,mJ;PCPUDTL36,mJ;PCPUDTL37,mJ;PCPUDTL38,mJ;PCPUDTL39,mJ;PCPUDTL3a,mJ;PCPUDTL3b,mJ;PCPUDTL3c,mJ;PCPUDTL3d,mJ;PCPUDTL3e,mJ;PCPUDTL3f,mJ;PCPUDTL40,mJ;PCPUDTL41,mJ;PCPUDTL410,mJ;PCPUDTL411,mJ;PCPUDTL412,mJ;PCPUDTL42,mJ;PCPUDTL43,mJ;PCPUDTL44,mJ;PCPUDTL45,mJ;PCPUDTL46,mJ;PCPUDTL47,mJ;PCPUDTL48,mJ;PCPUDTL49,mJ;PCPUDTL4a,mJ;PCPUDTL4b,mJ;PCPUDTL4c,mJ;PCPUDTL4d,mJ;PCPUDTL4e,mJ;PCPUDTL4f,mJ;apciec0 Energy,uJ;apciec1 Energy,uJ;apciec2 Energy,uJ;
+-- incoming HEVC streams (hardware encoder, 1800 frames = 60 s at 30 fps, MP4 with 30 fps timestamps)
+   360p: target 287 kbps -> 307 kbps; frame rate, frames: 30/1,1800
+   720p: target 847 kbps -> 891 kbps; frame rate, frames: 30/1,1800
+   02:37:56 idle 120 s (start)
+[1/25] 02:40:09 hevc_360p r1  frames out frame=1800, in frame=1800
+[2/25] 02:42:49 mlvc_360p r1  requested=npu resolved=npu 
+[3/25] 02:45:31 hevc_720p r1  frames out frame=1800, in frame=1800
+[4/25] 02:48:14 mlvcs_720p r1  requested=gpu resolved=gpu requested=npu resolved=npu 
+[5/25] 02:50:56 mlvcs_540p r1  requested=npu resolved=npu 
+[6/25] 02:53:39 mlvc_360p r2  requested=npu resolved=npu 
+[7/25] 02:56:21 hevc_720p r2  frames out frame=1800, in frame=1800
+[8/25] 02:59:04 mlvcs_720p r2  requested=gpu resolved=gpu requested=npu resolved=npu 
+[9/25] 03:01:47 mlvcs_540p r2  requested=npu resolved=npu 
+[10/25] 03:04:30 hevc_360p r2  frames out frame=1800, in frame=1800
+[11/25] 03:07:13 hevc_720p r3  frames out frame=1800, in frame=1800
+[12/25] 03:09:55 mlvcs_720p r3  requested=gpu resolved=gpu requested=npu resolved=npu 
+[13/25] 03:12:38 mlvcs_540p r3  requested=npu resolved=npu 
+[14/25] 03:15:21 hevc_360p r3  frames out frame=1800, in frame=1800
+[15/25] 03:18:04 mlvc_360p r3  requested=npu resolved=npu 
+[16/25] 03:20:46 mlvcs_720p r4  requested=gpu resolved=gpu requested=npu resolved=npu 
+[17/25] 03:23:29 mlvcs_540p r4  requested=npu resolved=npu 
+[18/25] 03:26:11 hevc_360p r4  frames out frame=1800, in frame=1800
+[19/25] 03:28:54 mlvc_360p r4  requested=npu resolved=npu 
+[20/25] 03:31:37 hevc_720p r4  frames out frame=1800, in frame=1800
+[21/25] 03:34:19 mlvcs_540p r5  requested=npu resolved=npu 
+[22/25] 03:37:02 hevc_360p r5  frames out frame=1800, in frame=1800
+[23/25] 03:39:45 mlvc_360p r5  requested=npu resolved=npu 
+[24/25] 03:42:27 hevc_720p r5  frames out frame=1800, in frame=1800
+[25/25] 03:45:10 mlvcs_720p r5  requested=gpu resolved=gpu requested=npu resolved=npu 
+   03:47:53 idle 120 s (end)
+== runs END  Wed Nov 25 03:50:10 +04 2026
+   idle_start: grouped 346 mW, all channels 1463 mW; CPU 330, GPU 0, ANE 0, DRAM 12, media 4
+   idle_end: grouped 340 mW, all channels 1435 mW; CPU 324, GPU 0, ANE 0, DRAM 11, media 4
+STEP 9 (energy): paced 30 fps two-way call, energy per frame pair from the chip's counters (IOReport)
+idle power (start+end): total of grouped channels 343 mW
+   hevc_360p r1: 394 mW grouped
+   hevc_360p r2: 391 mW grouped
+   hevc_360p r3: 391 mW grouped
+   hevc_360p r4: 392 mW grouped
+   hevc_360p r5: 386 mW grouped
+   mlvc_360p r1: 2645 mW grouped
+   mlvc_360p r2: 2646 mW grouped
+   mlvc_360p r3: 2640 mW grouped
+   mlvc_360p r4: 2647 mW grouped
+   mlvc_360p r5: 2643 mW grouped
+   mlvcs_540p r1: 1926 mW grouped
+   mlvcs_540p r2: 1918 mW grouped
+   mlvcs_540p r3: 1911 mW grouped
+   mlvcs_540p r4: 1920 mW grouped
+   mlvcs_540p r5: 1919 mW grouped
+   hevc_720p r1: 426 mW grouped
+   hevc_720p r2: 423 mW grouped
+   hevc_720p r3: 422 mW grouped
+   hevc_720p r4: 422 mW grouped
+   hevc_720p r5: 422 mW grouped
+   mlvcs_720p r1: 22291 mW grouped
+   mlvcs_720p r2: 22336 mW grouped
+   mlvcs_720p r3: 22519 mW grouped
+   mlvcs_720p r4: 22518 mW grouped
+   mlvcs_720p r5: 22650 mW grouped
+
+== energy per frame pair (mJ, median of runs, idle subtracted)
+                                  total      (min-max)    CPU    GPU    ANE   DRAM  media  late
+   HW HEVC 360p, 287 kbps           1.6 (  1.4-  1.7)    0.4   -0.0   -0.0    0.6    0.6  
+   B* (full MLVC 360p, NE-NE)      76.7 ( 76.6- 76.8)    1.0   -0.0   62.9   12.8   -0.0  
+   MLVC-S 540p (NE-NE)             52.5 ( 52.3- 52.8)    1.1   -0.0   43.6    7.8   -0.0  
+   HW HEVC 720p, 847 kbps           2.6 (  2.6-  2.8)    0.5   -0.0   -0.0    1.3    0.8  
+   MLVC-S 720p (GPU-NE)           739.2 (731.6-743.6)    2.8  672.3   37.3   25.0    0.1  
+
+== every channel that changes by more than 0.17 mJ per pair (5 mW), for checking the grouping
+   HW HEVC 360p, 287 kbps: EACC_CPU1 [-] 2.1; ECPUDTL16 [-] 2.1; AMCC [-] 0.9; DRAM [DRAM] 0.6; AVE [media] 0.6; ECPUDTL36 [-] 0.5; EACC_CPU3 [-] 0.5; CPU Energy [CPU] 0.4; EACC_CPU [-] 0.3; DCS [-] 0.2; ECPUDTL26 [-] 0.2; EACC_CPU2 [-] 0.2; EACC_CPU0 [-] -2.6; ECPUDTL06 [-] -2.6
+   B* (full MLVC 360p, NE-NE): ANE [ANE] 62.9; AMCC [-] 12.9; DRAM [DRAM] 12.8; DCS [-] 7.0; ECPUDTL36 [-] 1.5; EACC_CPU3 [-] 1.5; EACC_CPU [-] 1.0; CPU Energy [CPU] 1.0; ECPUDTL26 [-] 0.9; EACC_CPU2 [-] 0.9; EACC_CPU1 [-] 0.6; ECPUDTL16 [-] 0.6; ECPUDTL06 [-] -2.0; EACC_CPU0 [-] -2.0
+   MLVC-S 540p (NE-NE): ANE [ANE] 43.6; DRAM [DRAM] 7.8; AMCC [-] 6.8; DCS [-] 2.8; ECPUDTL36 [-] 1.4; EACC_CPU3 [-] 1.4; CPU Energy [CPU] 1.1; EACC_CPU [-] 1.1; EACC_CPU1 [-] 0.9; ECPUDTL16 [-] 0.9; ECPUDTL26 [-] 0.9; EACC_CPU2 [-] 0.9; ECPUDTL06 [-] -2.0; EACC_CPU0 [-] -2.0
+   HW HEVC 720p, 847 kbps: EACC_CPU1 [-] 1.9; ECPUDTL16 [-] 1.9; AMCC [-] 1.8; DRAM [DRAM] 1.3; AVE [media] 0.8; ECPUDTL36 [-] 0.6; EACC_CPU3 [-] 0.6; CPU Energy [CPU] 0.5; DCS [-] 0.5; EACC_CPU [-] 0.4; ECPUDTL26 [-] 0.3; EACC_CPU2 [-] 0.3; EACC_CPU0 [-] -2.5; ECPUDTL06 [-] -2.5
+   MLVC-S 720p (GPU-NE): GPU [GPU] 372.9; GPU Energy [GPU] 299.4; DCS [-] 44.5; AFR [-] 41.4; ANE [ANE] 37.3; AMCC [-] 32.8; DRAM [DRAM] 25.0; CPU Energy [CPU] 2.8; EACC_CPU [-] 2.1; ECPUDTL26 [-] 0.8; EACC_CPU2 [-] 0.8; PACC1_CPU [-] 0.7; EACC_CPU0 [-] 0.5; ECPUDTL06 [-] 0.5; EACC_CPU1 [-] 0.5; ECPUDTL16 [-] 0.5; PACC1_CPU0 [-] 0.4; ECPUDTL36 [-] 0.3; EACC_CPU3 [-] 0.3; PACC1_CPU1 [-] 0.2
+
+== results in /Users/shamsalani/Downloads/duplexnvc-baseline/phase2/he/results

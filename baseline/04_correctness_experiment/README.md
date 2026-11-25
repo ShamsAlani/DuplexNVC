@@ -8,7 +8,15 @@
 
 | Script | What | Time | Conditions |
 |---|---|---|---|
-| `scripts/c` | The four decodes, determinism check and drift | 5 min | any (after `03_timing_experiment`) |
+| `scripts/correctness_check.sh` | The four decodes, determinism check and drift | 5 min | any (after `03_timing_experiment`) |
+
+### Script names
+
+The scripts were renamed from short names to descriptive ones after the runs; the code is unchanged apart from the names it calls and the log it writes. The console logs in `raw_data/` were recorded before the rename and keep the old names (`out_<old name>.txt`).
+
+| Old name | New name | Console log written now |
+|---|---|---|
+| `scripts/c` | `scripts/correctness_check.sh` | `out_correctness_check.txt` |
 
 ## Files
 

@@ -6,7 +6,7 @@ usage: a1ana.py   reads phase2/a1/q.csv and flog/, writes phase2/a1/results/
 import csv, os, statistics as st, sys
 D = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(D, "..", "4b"))
-import ana  # experiment 10's analysis (bd, PCHIP)
+import quality_tables as ana  # experiment 10's analysis (bd, PCHIP)
 
 WORK = os.path.expanduser("~/Downloads/duplexnvc-baseline")
 OUT = f"{WORK}/phase2/a1"; RES = f"{OUT}/results"

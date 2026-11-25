@@ -1,0 +1,45 @@
+#!/bin/bash
+# CONTENTION TEST on the M4 Pro (quiet). Same test as m1_contention on the M1 (cross-chip study), so the two chips compare directly:
+#   memstress loads the unified memory at 0 / 25 / 50 / 75 % duty while (a) the encoder alone runs unpaced on the NE and
+#   (b) the B* call runs paced at 30 fps on the NE. 3 interleaved rounds x 4 loads x 2 modes = 24 runs of 60 s + 60 s rest
+#   (~55 min), plus a 10 s peak-bandwidth run. memstress uses one thread per performance core (M1: 4).
+# QUIET MAC (../quiet_mode_on.sh first). RESUMABLE: finished runs are skipped. Output: $WORK/phase2/ct/ ; console: out_contention_runs.txt
+D=$(cd "$(dirname "$0")" && pwd); . "$D/../settings.sh"; exec > >(tee -a "$D/out_contention_runs.txt") 2>&1
+TAG=M4
+R="$WORK/phase2/ct"; mkdir -p "$R"; cd "$R"
+THREADS=${THREADS:-$(sysctl -n hw.perflevel0.physicalcpu 2>/dev/null || echo 10)}
+MB=${MB:-256}
+echo; echo "== $TAG CONTENTION START  $(date)  threads=$THREADS  buffer_MB=$MB"
+echo "chip: $(sysctl -n machdep.cpu.brand_string)  memory: $(( $(sysctl -n hw.memsize) / 1073741824 )) GB  model: $(sysctl -n hw.model)"; sw_vers | tr '\n' ' '; echo
+pmset -g batt | head -1
+for f in "$BENCH" "$TOOLS/analyze_run.py" "$TOOLS/thermal_log" "$CAM" "$BINC/incoming.aus"; do [ -e "$f" ] || { echo "MISSING $f"; exit 1; }; done
+[ -x "$TOOLS/memstress" ] || cc -O2 -o "$TOOLS/memstress" "$D/memstress.c" -lpthread || exit 1
+"$TOOLS/thermal_log" >> "$R/thermal.csv" & THERM=$!
+trap 'kill $THERM 2>/dev/null; echo "== stopped $(date) - run ./contention_runs.sh again to continue"; exit 1' INT TERM
+if [ ! -s "${TAG}_memstress_peak.txt" ]; then
+  echo "-- memstress alone at 100 % for 10 s (peak bandwidth of this thread set)"
+  "$TOOLS/memstress" 100 10 $THREADS $MB | tee "${TAG}_memstress_peak.txt"; sleep 20
+fi
+done_run () { [ -s "$1/frames.csv" ] && [ -s "$1/memstress.txt" ]; }
+n=0; N=24
+for r in 1 2 3; do
+  for load in 0 25 50 75; do
+    for kind in alone-enc duplex30; do
+      n=$((n+1)); O="${TAG}_load${load}_${kind}_r$r"
+      if done_run "$O"; then echo "[$n/$N] skip (done) $O"; continue; fi
+      echo "[$n/$N] $(date +%H:%M:%S) $O"; mkdir -p "$O"
+      "$TOOLS/memstress" $load 75 $THREADS $MB > "$O/memstress.txt" & MS=$!
+      sleep 5
+      if [ $kind = alone-enc ]; then "$BENCH" alone-enc $BL --fps 0 --seconds 60 --out-dir "$O" 2> "$O.log"
+      else "$BENCH" duplex $BL --fps 30 --seconds 60 --out-dir "$O" 2> "$O.log"; fi
+      pmset -g therm 2>/dev/null | grep -iE "speed_limit|warning" | tr -s ' \n' ' ' > "$O.therm"
+      wait $MS; cat "$O/memstress.txt"
+      grep -E "resolved|FAILED|rror" "$O.log" | sort -u | tr '\n' ' '; echo
+      sleep 60
+    done
+  done
+done
+kill $THERM 2>/dev/null
+echo "== $TAG CONTENTION END  $(date)"
+echo "thermal states seen: $(cut -d, -f2 "$R/thermal.csv" | sort | uniq -c | tr -s ' \n' ' ')"
+"$D/contention_summary.sh"

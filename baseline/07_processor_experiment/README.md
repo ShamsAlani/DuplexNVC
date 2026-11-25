@@ -12,9 +12,19 @@
 
 | Script | What | Time | Conditions |
 |---|---|---|---|
-| `scripts/1t` | Placement trace of full MLVC 360p and MLVC-S 540p (compiles `common/code/mlplan.swift`) | 2 min | any |
-| `scripts/1` | The 72 runs | 2 h 20 min | Quiet mode (see [`../README.md`](../README.md#quiet-mode)), `./p` run first; asks for the password once (`powermetrics` needs `sudo`) |
-| `scripts/1r` | Summary (`step1_sum.py`) | 1 min | any |
+| `scripts/processor_placement_trace.sh` | Placement trace of full MLVC 360p and MLVC-S 540p (compiles `common/code/mlplan.swift`) | 2 min | any |
+| `scripts/processor_runs.sh` | The 72 runs | 2 h 20 min | Quiet mode (see [`../README.md`](../README.md#quiet-mode)), `./quiet_mode_on.sh` run first; asks for the password once (`powermetrics` needs `sudo`) |
+| `scripts/processor_summary.sh` | Summary (`step1_sum.py`) | 1 min | any |
+
+### Script names
+
+The scripts were renamed from short names to descriptive ones after the runs; the code is unchanged apart from the names it calls and the log it writes. The console logs in `raw_data/` were recorded before the rename and keep the old names (`out_<old name>.txt`).
+
+| Old name | New name | Console log written now |
+|---|---|---|
+| `scripts/1` | `scripts/processor_runs.sh` | `out_processor_runs.txt` |
+| `scripts/1r` | `scripts/processor_summary.sh` | `out_processor_summary.txt` |
+| `scripts/1t` | `scripts/processor_placement_trace.sh` | `out_processor_placement_trace.txt` |
 
 ## Files
 
@@ -24,7 +34,7 @@
 | `raw_data/logs/out_1r.txt` | Summary: median time per network and processor, paced vs unpaced, power |
 | `scripts/step1_sum.py` | The summary code |
 
-The per-run records are on the measurement laptop under `phase2/step1/` (see [`../09_placement_experiment/raw_data/README.md`](../09_placement_experiment/raw_data/README.md) for how they are packed).
+The per-run records of all 72 runs are in [`raw_data/exp07_per_run_records.zip`](raw_data/exp07_per_run_records.zip); [`raw_data/README.md`](raw_data/README.md) describes the layout.
 
 ## Results
 

@@ -14,7 +14,7 @@ faces.csv, frames/, bits/ (raw HEVC streams, .mlvc name kept by the shared code)
 import csv, json, os, subprocess, sys, time
 D = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(D, "..", "4b"))
-import q  # experiment 10's quality code
+import quality_runner as q  # experiment 10's quality code
 
 OUT = f"{q.WORK}/phase2/hv"
 REF = {"360p": "mlvc_360p_npu-npu", "720p": "mlvcs_720p_npu-npu"}

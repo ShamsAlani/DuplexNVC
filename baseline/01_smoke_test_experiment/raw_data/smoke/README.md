@@ -1,7 +1,7 @@
 # smoke/: S1 smoke test, MLVC-S 540p
 
 **Purpose:** check that every mode runs, that the networks are placed on the NE, and that paced runs keep up. This is not data for the report's conclusions.
-**Script:** `scripts/s`.
+**Script:** `scripts/smoke_test_mlvcs_540p.sh`.
 **Log:** `../logs/out_s.txt`.
 **Settings:** MLVC-S (`dmc61sbr_mini_reglu`, perceptual), 960×540, QP 22, I-frame every 64 frames, NE/NE, 10 s per run. The clip is libmlvc's `VCD_s1_0380a3_960x540`.
 

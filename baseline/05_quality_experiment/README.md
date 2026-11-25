@@ -13,10 +13,21 @@
 
 | Script | What | Time | Conditions |
 |---|---|---|---|
-| `scripts/f` | Downloads the 40 talking-head clips at 1080p (MP4) | 10 min | Wi-Fi on |
-| `scripts/q` | `mlvc validate` (BD-rate) and rate–distortion on the timing clips | 5 min | any |
-| `scripts/g` | Split, then rate–distortion, display and face quality on the 20 evaluation clips (uses `rd.py`) | 20 min | 360p VCD archive downloaded |
-| `scripts/rd.py` | Per clip and QP: encode (NE), decode (NE), coded PSNR, 1080p frames, face boxes, display/face PSNR and LPIPS → `rd_eval.csv` | — | — |
+| `scripts/make_1080p_references.sh` | Downloads the 40 talking-head clips at 1080p (MP4) | 10 min | Wi-Fi on |
+| `scripts/bdrate_vs_hevc.sh` | `mlvc validate` (BD-rate) and rate–distortion on the timing clips | 5 min | any |
+| `scripts/quality_rd_faces.sh` | Split, then rate–distortion, display and face quality on the 20 evaluation clips (uses `rd_points.py`) | 20 min | 360p VCD archive downloaded |
+| `scripts/rd_points.py` | Per clip and QP: encode (NE), decode (NE), coded PSNR, 1080p frames, face boxes, display/face PSNR and LPIPS → `rd_eval.csv` | — | — |
+
+### Script names
+
+The scripts were renamed from short names to descriptive ones after the runs; the code is unchanged apart from the names it calls and the log it writes. The console logs in `raw_data/` were recorded before the rename and keep the old names (`out_<old name>.txt`).
+
+| Old name | New name | Console log written now |
+|---|---|---|
+| `scripts/f` | `scripts/make_1080p_references.sh` | `out_make_1080p_references.txt` |
+| `scripts/q` | `scripts/bdrate_vs_hevc.sh` | `out_bdrate_vs_hevc.txt` |
+| `scripts/g` | `scripts/quality_rd_faces.sh` | `out_quality_rd_faces.txt` |
+| `scripts/rd.py` | `scripts/rd_points.py` | — |
 
 ## Files
 

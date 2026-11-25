@@ -1,6 +1,6 @@
 # quality_shipped/: E6, BD-rate vs HEVC and R-D on the timing clips
 
-**Script:** `scripts/q`.
+**Script:** `scripts/bdrate_vs_hevc.sh`.
 **Log:** `../logs/out_q.txt`.
 
 | File | Contents |

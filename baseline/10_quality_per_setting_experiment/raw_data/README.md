@@ -7,8 +7,8 @@
 | `run.txt` | Date, macOS version and build, libmlvc commit of Part A |
 | `energy/energy_qp.csv` | Part B: one row per setting × QP (35 rows): energy per frame pair (median, min, max of 5 runs; total, NE, GPU, CPU), late share, frame rate, p99 and bitrate per direction |
 | `energy/thermal.csv` | Part B: thermal state and Low Power Mode once a second (27,565 rows; *nominal* and off throughout) |
-| `logs/out_all.txt` | Full console log of Part A (`scripts/all`): pre-flight checks, every run with its result and the unit the encoder used, and the analysis printout |
-| `logs/out_en.txt` | Full console log of Part B (`scripts/en`): pre-flight, the bitrate of each incoming stream, every run with the units it resolved to, the energy table (`es.py`) and the analysis printout |
+| `logs/out_all.txt` | Full console log of Part A (`scripts/quality_per_setting_runs.sh`): pre-flight checks, every run with its result and the unit the encoder used, and the analysis printout |
+| `logs/out_en.txt` | Full console log of Part B (`scripts/energy_per_qp_runs.sh`): pre-flight, the bitrate of each incoming stream, every run with the units it resolved to, the energy table (`energy_per_qp_table.py`) and the analysis printout |
 
 Columns of `q.csv`: `cfg` = `<setting>_<encoder unit>-<decoder unit>`; `kbps` at 30 fps over the 300 frames; `psnr_y`, `psnr_yuv` = (6Y+U+V)/8 at the coded size against the encoder input; `psnr_y_display` = decode upscaled with Lanczos to 1920×1080 against the 1080p original, every 10th frame; `face_psnr_y`, `face_lpips` inside the Apple Vision face boxes of the original, every 10th frame.
 

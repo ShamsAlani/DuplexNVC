@@ -1,6 +1,6 @@
 # bl_bstar/: the baseline B* (E1, E2, E3, E4, B*, E5)
 
-**Script:** `scripts/x` (all timed runs, in the order below, 65 min, quiet Mac), then `scripts/c` (E5) and `scripts/y` (summary).
+**Script:** `scripts/timing_runs.sh` (all timed runs, in the order below, 65 min, quiet Mac), then `scripts/correctness_check.sh` (E5) and `scripts/timing_summary.sh` (summary).
 **Logs:** `../logs/out_x4.txt`, `out_y.txt`; the E5 log `out_c.txt` is in `../../../04_correctness_experiment/raw_data/logs/`.
 **Settings:** full MLVC `dmc61sbr_reglu` with `psnr_v1` weights, 640×360, QP 26, I-frame every 64 frames, NE/NE.
 **Streams:**

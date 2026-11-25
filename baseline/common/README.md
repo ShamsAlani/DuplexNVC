@@ -5,7 +5,7 @@ Everything shared by the fourteen experiments.
 | Folder | Contents |
 |---|---|
 | [`code/`](code/) | The measurement program `duplex_bench.cpp` (C++17 on `libmlvc`) and the analysis tools: `analyze_run.py` (timing, latency, speedup, κ, energy), `quality_tools.py` (PSNR, drift, BD-rate), `face_metrics.py` and `facebox.swift` (display-scale and face quality), `mlplan.swift` (placement trace), `thermal_log.swift` (thermal state) |
-| [`scripts/`](scripts/) | Shared settings (`v`, `s2cfg`), build (`b`), stream preparation (`m`), quiet mode on/off (`p`, `u`), helpers, and the install command for every experiment's scripts |
+| [`scripts/`](scripts/) | Shared settings (`settings.sh`, `settings_phase2.sh`), build (`build_measurement_program.sh`), stream preparation (`make_baseline_streams.sh`), quiet mode on/off (`quiet_mode_on.sh`, `quiet_mode_off.sh`), helpers, and the install command for every experiment's scripts |
 | [`analysis/`](analysis/) | Rebuild every result from the raw data: `recompute_all.py` (tables of experiments 01–06), `make_figures.py` (their figures), `make_tables_x3.py` (tables of experiment 09); `summary_baseline.json` holds the headline numbers |
 | [`setup/`](setup/) | Logs of the one-time setup: build check, quiet-mode check, stream preparation, the full setup and model-conversion terminal log, and the pinned `libmlvc` commit (`eb5d60a`) |
 

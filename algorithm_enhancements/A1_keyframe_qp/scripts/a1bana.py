@@ -9,7 +9,7 @@ usage: a1bana.py   reads phase2/a1b/ and phase2/a1/, writes phase2/a1b/results/
 import csv, os, statistics as st, sys
 D = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(D, "..", "4b"))
-import ana
+import quality_tables as ana
 
 WORK = os.path.expanduser("~/Downloads/duplexnvc-baseline")
 OUT = f"{WORK}/phase2/a1b"; RES = f"{OUT}/results"

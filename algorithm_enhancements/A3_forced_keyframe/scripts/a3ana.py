@@ -7,7 +7,7 @@ usage: a3ana.py   reads phase2/a3/, writes phase2/a3/results/
 import csv, os, statistics as st, sys
 D = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(D, "..", "4b"))
-import ana
+import quality_tables as ana
 
 WORK = os.path.expanduser("~/Downloads/duplexnvc-baseline")
 OUT = f"{WORK}/phase2/a3"; RES = f"{OUT}/results"

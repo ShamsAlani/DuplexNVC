@@ -46,14 +46,22 @@ Two calls, each a paced 30 fps two-way call (camera encoded and incoming stream 
 
 ## How to run
 
-The scripts live in `~/Downloads/d/bt/` and use `../he/ioe.c` (Step 9) and the shared settings in `../v` and `../s2cfg`.
+The scripts live in `~/Downloads/d/bt/` and use `../he/ioe.c` (Step 9) and the shared settings in `../settings.sh` and `../settings_phase2.sh`.
 
 | Script | What | Time | Conditions |
 |---|---|---|---|
-| `scripts/all` | Part A on battery (asks you to unplug, runs the battery blocks, stops at 15 %, waits for the charger), then Part B on AC (the analyzer blocks of Step 7 (cost), `ac`, `ac_lpm`, the 30-min call), then `btana.py` | ≈ 4 h on battery + ≈ 2.6 h on AC | **quiet**, password once; resumable (finished runs are skipped) |
+| `scripts/battery_lowpower_runs.sh` | Part A on battery (asks you to unplug, runs the battery blocks, stops at 15 %, waits for the charger), then Part B on AC (the analyzer blocks of Step 7 (cost), `ac`, `ac_lpm`, the 30-min call), then `btana.py` | ≈ 4 h on battery + ≈ 2.6 h on AC | **quiet**, password once; resumable (finished runs are skipped) |
 | `scripts/bat.py` | Battery logger: time, %, mV, mA, W, external power, charging, temperature, Low Power Mode, once a second | — | — |
 | `scripts/btana.py` | Chip energy per frame pair per block and call (over the last 49 s of the call itself), late frames and p99, long-call drift | — | — |
 | `scripts/battery_side.py` | Whole-laptop power from `battery.csv` (idle from the rests between calls; steady values from the long calls) | — | — |
+
+### Script names
+
+The scripts were renamed from short names to descriptive ones after the runs; the code is unchanged apart from the names it calls and the log it writes. The console logs in `raw_data/` were recorded before the rename and keep the old names (`out_<old name>.txt`).
+
+| Old name | New name | Console log written now |
+|---|---|---|
+| `scripts/all` | `scripts/battery_lowpower_runs.sh` | `out_battery_lowpower_runs.txt` |
 
 ## Files
 

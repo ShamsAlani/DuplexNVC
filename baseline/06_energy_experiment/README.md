@@ -10,7 +10,15 @@
 
 | Script | What | Time | Conditions |
 |---|---|---|---|
-| `scripts/w` | Idle recording, 5 paced runs with `powermetrics`, energy analysis | 15 min | Quiet mode (see [`../README.md`](../README.md#quiet-mode)): AC power, Wi-Fi and Bluetooth off, brightness at maximum with automatic brightness and True Tone off, no other apps, `./p` run first. Asks for the password (`powermetrics` needs `sudo`). The idle recording must use the same conditions, because it is subtracted |
+| `scripts/energy_runs.sh` | Idle recording, 5 paced runs with `powermetrics`, energy analysis | 15 min | Quiet mode (see [`../README.md`](../README.md#quiet-mode)): AC power, Wi-Fi and Bluetooth off, brightness at maximum with automatic brightness and True Tone off, no other apps, `./quiet_mode_on.sh` run first. Asks for the password (`powermetrics` needs `sudo`). The idle recording must use the same conditions, because it is subtracted |
+
+### Script names
+
+The scripts were renamed from short names to descriptive ones after the runs; the code is unchanged apart from the names it calls and the log it writes. The console logs in `raw_data/` were recorded before the rename and keep the old names (`out_<old name>.txt`).
+
+| Old name | New name | Console log written now |
+|---|---|---|
+| `scripts/w` | `scripts/energy_runs.sh` | `out_energy_runs.txt` |
 
 ## Files
 

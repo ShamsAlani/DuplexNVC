@@ -1,0 +1,85 @@
+
+== A0 START  Wed Nov 25 04:17:06 +04 2026
+== building the A0 program in /Users/shamsalani/Downloads/duplexnvc-baseline/harness_a0
+
+t1_forced_key_frames: frames 120, I 4, recovery 0, longest chain 54 | requested structure applied: 120/120 | decoded: 120/120 | decoder info = encoder info: 120/120 | NE decode deterministic: 120/120 | header QP = requested: 120/120 -> PASS
+t2_external_ltr: frames 120, I 1, recovery 3, longest chain 50 | requested structure applied: 119/120 | decoded: 120/120 | decoder info = encoder info: 120/120 | NE decode deterministic: 120/120 | header QP = requested: 120/120 -> FAIL
+t3_per_frame_qp: frames 120, I 2, recovery 0, longest chain 63 | requested structure applied: 120/120 | decoded: 120/120 | decoder info = encoder info: 120/120 | NE decode deterministic: 120/120 | header QP = requested: 120/120 -> PASS
+A0: SOME CHECKS FAILED (see the lines above and the CSV files)
+manager: requested=npu resolved=npu
+manager: requested=gpu resolved=gpu
+model v0.1: default iframe_period 64, ltr mode internal, ltr period 0, slots 4, max LTR slots 8
+== t1_forced_key_frames
+   frame 0 (scheduled): enc I ref 0 chain 0 qp 26 | dec I ref 0 chain 0 qp 26 | psnr 37.8901 dB
+   frame 20 force_idr: enc I ref 0 chain 0 qp 26 | dec I ref 0 chain 0 qp 26 | psnr 37.9331 dB
+   frame 45 force_idr: enc I ref 0 chain 0 qp 26 | dec I ref 0 chain 0 qp 26 | psnr 37.9067 dB
+   frame 100 force_idr: enc I ref 0 chain 0 qp 26 | dec I ref 0 chain 0 qp 26 | psnr 37.7674 dB
+== t2_external_ltr
+   frame 0 (scheduled): enc I ref 0 chain 0 qp 26 | dec I ref 0 chain 0 qp 26 | psnr 37.8901 dB
+   frame 10 mark_slot1: enc P ref 9 chain 10 qp 26 | dec P ref 9 chain 10 qp 26 | psnr 40.8487 dB
+   frame 30 recover_slot1: enc R ref 10 chain 11 qp 26 | dec R ref 10 chain 11 qp 26 | psnr 37.8036 dB
+   frame 40 mark_slot2: enc P ref 39 chain 21 qp 26 | dec P ref 39 chain 21 qp 26 | psnr 41.499 dB
+   frame 70 recover_slot2: enc R ref 40 chain 22 qp 26 | dec R ref 40 chain 22 qp 26 | psnr 40.8022 dB
+   frame 90 recover_slot1: enc R ref 10 chain 11 qp 26 | dec R ref 10 chain 11 qp 26 | psnr 37.5907 dB
+   frame 110 recover_slot2: enc P ref 109 chain 31 qp 26 | dec P ref 109 chain 31 qp 26 | psnr 41.4172 dB
+== t3_per_frame_qp
+   frame 0 (scheduled): enc I ref 0 chain 0 qp 18 | dec I ref 0 chain 0 qp 18 | psnr 40.8443 dB
+   frame 64 (scheduled): enc I ref 0 chain 0 qp 22 | dec I ref 0 chain 0 qp 22 | psnr 39.4616 dB
+== A0 END  Wed Nov 25 04:17:59 +04 2026  exit 3   (results: /Users/shamsalani/Downloads/duplexnvc-baseline/phase2/a0/summary.txt and the three CSV files)
+
+== A0 START  Wed Nov 25 04:19:47 +04 2026
+
+t1_forced_key_frames: frames 120, I 4, recovery 0, longest chain 54 | requested structure applied: 120/120 | decoded: 120/120 | decoder info = encoder info: 120/120 | NE decode deterministic: 120/120 | header QP = requested: 120/120 -> PASS
+t2_external_ltr: frames 120, I 1, recovery 3, longest chain 50 | requested structure applied: 119/120 | decoded: 120/120 | decoder info = encoder info: 120/120 | NE decode deterministic: 120/120 | header QP = requested: 120/120 -> FAIL
+t3_per_frame_qp: frames 120, I 2, recovery 0, longest chain 63 | requested structure applied: 120/120 | decoded: 120/120 | decoder info = encoder info: 120/120 | NE decode deterministic: 120/120 | header QP = requested: 120/120 -> PASS
+A0: SOME CHECKS FAILED (see the lines above and the CSV files)
+manager: requested=npu resolved=npu
+manager: requested=gpu resolved=gpu
+model v0.1: default iframe_period 64, ltr mode internal, ltr period 0, slots 4, max LTR slots 8
+== t1_forced_key_frames
+   frame 0 (scheduled): enc I ref 0 chain 0 qp 26 | dec I ref 0 chain 0 qp 26 | psnr 37.8901 dB
+   frame 20 force_idr: enc I ref 0 chain 0 qp 26 | dec I ref 0 chain 0 qp 26 | psnr 37.9331 dB
+   frame 45 force_idr: enc I ref 0 chain 0 qp 26 | dec I ref 0 chain 0 qp 26 | psnr 37.9067 dB
+   frame 100 force_idr: enc I ref 0 chain 0 qp 26 | dec I ref 0 chain 0 qp 26 | psnr 37.7674 dB
+== t2_external_ltr
+   frame 0 (scheduled): enc I ref 0 chain 0 qp 26 | dec I ref 0 chain 0 qp 26 | psnr 37.8901 dB
+   frame 10 mark_slot1: enc P ref 9 chain 10 qp 26 | dec P ref 9 chain 10 qp 26 | psnr 40.8487 dB
+   frame 30 recover_slot1: enc R ref 10 chain 11 qp 26 | dec R ref 10 chain 11 qp 26 | psnr 37.8036 dB
+   frame 40 mark_slot2: enc P ref 39 chain 21 qp 26 | dec P ref 39 chain 21 qp 26 | psnr 41.499 dB
+   frame 70 recover_slot2: enc R ref 40 chain 22 qp 26 | dec R ref 40 chain 22 qp 26 | psnr 40.8022 dB
+   frame 90 recover_slot1: enc R ref 10 chain 11 qp 26 | dec R ref 10 chain 11 qp 26 | psnr 37.5907 dB
+   frame 110 recover_slot2: enc P ref 109 chain 31 qp 26 | dec P ref 109 chain 31 qp 26 | psnr 41.4172 dB
+== t3_per_frame_qp
+   frame 0 (scheduled): enc I ref 0 chain 0 qp 18 | dec I ref 0 chain 0 qp 18 | psnr 40.8443 dB
+   frame 64 (scheduled): enc I ref 0 chain 0 qp 22 | dec I ref 0 chain 0 qp 22 | psnr 39.4616 dB
+== A0 END  Wed Nov 25 04:19:59 +04 2026  exit 3   (results: /Users/shamsalani/Downloads/duplexnvc-baseline/phase2/a0/summary.txt and the three CSV files)
+
+== A0 START  Wed Nov 25 04:20:51 +04 2026
+== building the A0 program in /Users/shamsalani/Downloads/duplexnvc-baseline/harness_a0
+
+t1_forced_key_frames: frames 120, I 4, recovery 0, longest chain 54 | requested structure applied: 120/120 | decoded: 120/120 | decoder info = encoder info: 120/120 | NE decode deterministic: 120/120 | header QP = requested: 120/120 -> PASS
+t2_external_ltr: frames 120, I 1, recovery 5, longest chain 50 | requested structure applied: 120/120 | decoded: 120/120 | decoder info = encoder info: 120/120 | NE decode deterministic: 120/120 | header QP = requested: 120/120 -> PASS
+t3_per_frame_qp: frames 120, I 2, recovery 0, longest chain 63 | requested structure applied: 120/120 | decoded: 120/120 | decoder info = encoder info: 120/120 | NE decode deterministic: 120/120 | header QP = requested: 120/120 -> PASS
+A0: ALL PASS
+manager: requested=npu resolved=npu
+manager: requested=gpu resolved=gpu
+model v0.1: default iframe_period 64, ltr mode internal, ltr period 0, slots 4, max LTR slots 8
+== t1_forced_key_frames
+   frame 0 (scheduled): enc I ref 0 chain 0 qp 26 | dec I ref 0 chain 0 qp 26 | psnr 37.8901 dB
+   frame 20 force_idr: enc I ref 0 chain 0 qp 26 | dec I ref 0 chain 0 qp 26 | psnr 37.9331 dB
+   frame 45 force_idr: enc I ref 0 chain 0 qp 26 | dec I ref 0 chain 0 qp 26 | psnr 37.9067 dB
+   frame 100 force_idr: enc I ref 0 chain 0 qp 26 | dec I ref 0 chain 0 qp 26 | psnr 37.7674 dB
+== t2_external_ltr
+   frame 0 (scheduled): enc I ref 0 chain 0 qp 26 | dec I ref 0 chain 0 qp 26 | psnr 37.8901 dB
+   frame 10 mark_slot1: enc P ref 9 chain 10 qp 26 | dec P ref 9 chain 10 qp 26 | psnr 40.8487 dB
+   frame 30 recover_slot1 [expected R from 10]: enc R ref 10 chain 11 qp 26 | dec R ref 10 chain 11 qp 26 | psnr 37.8036 dB
+   frame 40 mark_slot2: enc P ref 39 chain 21 qp 26 | dec P ref 39 chain 21 qp 26 | psnr 41.499 dB
+   frame 70 recover_slot2 [expected R from 40]: enc R ref 40 chain 22 qp 26 | dec R ref 40 chain 22 qp 26 | psnr 40.8022 dB
+   frame 90 recover_slot1 [expected R from 10]: enc R ref 10 chain 11 qp 26 | dec R ref 10 chain 11 qp 26 | psnr 37.5907 dB
+   frame 95 mark_slot2: enc P ref 94 chain 16 qp 26 | dec P ref 94 chain 16 qp 26 | psnr 40.8278 dB
+   frame 110 recover_slot2 [expected R from 95]: enc R ref 95 chain 17 qp 26 | dec R ref 95 chain 17 qp 26 | psnr 39.7974 dB
+   frame 115 recover_slot2 [expected R from 95]: enc R ref 95 chain 17 qp 26 | dec R ref 95 chain 17 qp 26 | psnr 39.8207 dB
+== t3_per_frame_qp
+   frame 0 (scheduled): enc I ref 0 chain 0 qp 18 | dec I ref 0 chain 0 qp 18 | psnr 40.8443 dB
+   frame 64 (scheduled): enc I ref 0 chain 0 qp 22 | dec I ref 0 chain 0 qp 22 | psnr 39.4616 dB
+== A0 END  Wed Nov 25 04:21:58 +04 2026  exit 0   (results: /Users/shamsalani/Downloads/duplexnvc-baseline/phase2/a0/summary.txt and the three CSV files)

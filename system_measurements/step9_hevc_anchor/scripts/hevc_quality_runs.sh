@@ -1,0 +1,20 @@
+#!/bin/bash
+# STEP 9, quality part: Apple's hardware HEVC (VideoToolbox) at MLVC's bitrates on the 20 evaluation clips, 360p and
+# 720p (200 runs, ~40-60 min), measured like MLVC in experiment 10, then BD-rate against MLVC on 4 metrics.
+# Normal Mac use is fine (quality only); charger in, lid open. RESUMABLE. The energy part (quiet) comes separately.
+# Output: ~/Downloads/duplexnvc-baseline/phase2/hv/ ; console: out_hevc_quality_runs.txt
+D=$(cd "$(dirname "$0")" && pwd); . "$D/../settings.sh"; exec > >(tee -a "$D/out_hevc_quality_runs.txt") 2>&1
+O="$WORK/phase2/hv"; mkdir -p "$O"
+echo; echo "== STEP 9 (HEVC quality) START  $(date)"; sw_vers | tr '\n' ' '; echo; pmset -g batt | head -1
+ffmpeg -version | head -1 | tee "$O/ffmpeg_version.txt"
+for f in "$D/../4b/quality_runner.py" "$D/../4b/quality_tables.py" "$WORK/phase2/4b/q.csv" "$WORK/phase2/4b/cache" "$PY"; do
+  [ -e "$f" ] || { echo "MISSING $f"; exit 1; }; done
+echo "-- hardware HEVC encoder test (60 frames, hardware only)"
+ffmpeg -v error -y -f lavfi -i testsrc2=size=640x360:rate=30 -frames:v 60 -pix_fmt nv12 -c:v hevc_videotoolbox -allow_sw 0 \
+  -realtime 1 -bf 0 -g 64 -b:v 200000 -f hevc /tmp/hvtest.hevc && echo "   ok  hevc_videotoolbox (hardware), $(wc -c < /tmp/hvtest.hevc) bytes" \
+  || { echo "   hevc_videotoolbox FAILED with these options"; exit 1; }
+echo; echo "== check (first clip, 360p, 2 targets)"; caffeinate -ims "$PY" -u "$D/hv.py" check || exit 1
+for pass in 1 2; do echo; echo "== runs, pass $pass  $(date)"; caffeinate -ims "$PY" -u "$D/hv.py"; done
+echo; echo "== analysis  $(date)"; "$PY" "$D/hvana.py"
+cp "$D/out_hevc_quality_runs.txt" "$O/results/" 2>/dev/null
+echo "== STEP 9 (HEVC quality) END  $(date)"

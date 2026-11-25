@@ -10,8 +10,17 @@
 
 | Script | What | Time | Conditions |
 |---|---|---|---|
-| `scripts/e` | The 5 rounds and 3 paced runs | 45 min | Quiet mode (see [`../README.md`](../README.md#quiet-mode)): AC power, Wi-Fi and Bluetooth off, brightness at maximum with automatic brightness and True Tone off, no other apps, `./p` run first. |
-| `scripts/r` | Summary and comparison with Phase 1 | 1 min | any |
+| `scripts/phase1_check_runs.sh` | The 5 rounds and 3 paced runs | 45 min | Quiet mode (see [`../README.md`](../README.md#quiet-mode)): AC power, Wi-Fi and Bluetooth off, brightness at maximum with automatic brightness and True Tone off, no other apps, `./quiet_mode_on.sh` run first. |
+| `scripts/phase1_check_summary.sh` | Summary and comparison with Phase 1 | 1 min | any |
+
+### Script names
+
+The scripts were renamed from short names to descriptive ones after the runs; the code is unchanged apart from the names it calls and the log it writes. The console logs in `raw_data/` were recorded before the rename and keep the old names (`out_<old name>.txt`).
+
+| Old name | New name | Console log written now |
+|---|---|---|
+| `scripts/e` | `scripts/phase1_check_runs.sh` | `out_phase1_check_runs.txt` |
+| `scripts/r` | `scripts/phase1_check_summary.sh` | `out_phase1_check_summary.txt` |
 
 ## Files
 

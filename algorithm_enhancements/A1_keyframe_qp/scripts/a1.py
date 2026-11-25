@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """A1: more bits for key frames and LTR frames. B* (full MLVC 360p, encoder and decoder on the NE), 20 evaluation
-clips, QP 16/24/26/32/40, the method of experiment 10 (q.py: Lanczos input from the 1080p MP4, coded, display and
+clips, QP 16/24/26/32/40, the method of experiment 10 (quality_runner.py: Lanczos input from the 1080p MP4, coded, display and
 face quality), with a QP offset on I-frames and on the frames libmlvc marks as long-term references (LTR).
 
 Configurations (offset on I-frames / on the other LTR frames):
@@ -15,7 +15,7 @@ LTR, QP, bytes), bits/, frames/. Face boxes and originals are reused from experi
 import csv, filecmp, json, os, sys, time
 D = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(D, "..", "4b"))
-import q  # experiment 10's quality code
+import quality_runner as q  # experiment 10's quality code
 
 BENCH_A1 = f"{q.WORK}/harness_a1/build/ninja-release/libmlvc_example"
 CFGS = {"o0": (0, 0), "b2": (-2, -2), "b4": (-4, -4), "b6": (-6, -6), "i4": (-4, 0), "l4": (0, -4)}

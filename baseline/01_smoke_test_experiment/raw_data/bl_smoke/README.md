@@ -1,7 +1,7 @@
 # bl_smoke/: S2 smoke test, full MLVC 360p
 
 **Purpose:** check the baseline pipeline before the long runs.
-**Script:** `scripts/t`.
+**Script:** `scripts/smoke_test_mlvc_360p.sh`.
 **Log:** `../logs/out_t.txt`.
 **Settings:** B\* settings (full MLVC `psnr_v1`, 640×360, QP 26, I-frame every 64 frames, NE/NE), 10 s per run.
 

@@ -10,7 +10,7 @@ Experiment 05 measured quality at 360p only; experiment 09 measured timing and e
 
 ## What was run
 
-**Part A — quality (14 Nov 2026, 01:23–04:26, 900 runs, 0 failures, 3.0 h).** `scripts/all`, normal Mac use (quality does not depend on timing):
+**Part A — quality (14 Nov 2026, 01:23–04:26, 900 runs, 0 failures, 3.0 h).** `scripts/quality_per_setting_runs.sh`, normal Mac use (quality does not depend on timing):
 
 - **Clips:** the 20 evaluation clips of experiment 05 (VCD talking heads, scenario s1, seed 694), 300 frames each.
 - **Input:** each clip's 1080p MP4 scaled with ffmpeg's Lanczos filter to the setting's size (640×360, 960×540, 1280×720, 1920×1080), as the streams of experiment 08. 360p was rerun from the MP4 as well; experiment 05 used the VCD 360p YUV files, kept as a cross-check.
@@ -23,7 +23,7 @@ Experiment 05 measured quality at 360p only; experiment 09 measured timing and e
   - face PSNR-Y (faces ≥ 8 px) and LPIPS (AlexNet, faces ≥ 32 px) inside the Apple Vision face boxes found on the original, every 10th frame.
 - **Equal bitrate:** PCHIP on log bitrate (the BD-rate convention), only where curves overlap, no extrapolation. BD-rate against B\* on display PSNR-Y, face PSNR-Y and face LPIPS.
 
-**Part B — energy at every QP (19 Nov 2026, 01:20–09:03, 175 runs, 7.7 h).** `scripts/en`, quiet mode:
+**Part B — energy at every QP (19 Nov 2026, 01:20–09:03, 175 runs, 7.7 h).** `scripts/energy_per_qp_runs.sh`, quiet mode:
 
 - **Configurations:** the best placement of each setting from experiment 09 (the points of the Pareto plot): full MLVC 360p NE–NE (B\*), MLVC-S 540p NE–NE, full MLVC 540p GPU–NE, MLVC-S 720p GPU–NE, full MLVC 720p NE–NE, MLVC-S 1080p NE–NE, full MLVC 1080p NE–NE.
 - **Streams:** incoming streams at QP 16/24/26/32/40, made from the same source clips as experiment 09 (encoder on the NE).
@@ -32,18 +32,31 @@ Experiment 05 measured quality at 360p only; experiment 09 measured timing and e
 
 ## How to run
 
-These scripts live in `~/Downloads/d/4b/` (one level below the other scripts; they read `../v` and `../s2cfg`).
+These scripts live in `~/Downloads/d/4b/` (one level below the other scripts; they read `../settings.sh` and `../settings_phase2.sh`).
 
 | Script | What | Time | Conditions |
 |---|---|---|---|
-| `scripts/chk` | Read-only inventory of the experiment 05 pipeline, inputs and the table of experiment 09 | 1 min | any |
-| `scripts/all` | Part A: pre-flight, `q.py` (up to 3 passes, so failed runs are retried), then `ana.py`. **Resumable** | 3 h | any; charger in, lid open |
-| `scripts/q.py` | The 900 quality runs (called by `all`) | — | — |
-| `scripts/en` | Part B: incoming streams at each QP, 175 paced runs with `powermetrics`, then `es.py` and `ana.py`. **Resumable** | 7.7 h | **quiet mode** (see [`../README.md`](../README.md#quiet-mode)), `../p` first, `../u` afterwards; password once |
-| `scripts/es.py` | Energy per setting and QP (same calculation as experiment 09) | 1 min | any |
-| `scripts/ana.py` | All tables and figures (adds the Part B ones when `energy_qp.csv` exists) | 1 min | any |
+| `scripts/check_quality_inputs.sh` | Read-only inventory of the experiment 05 pipeline, inputs and the table of experiment 09 | 1 min | any |
+| `scripts/quality_per_setting_runs.sh` | Part A: pre-flight, `quality_runner.py` (up to 3 passes, so failed runs are retried), then `quality_tables.py`. **Resumable** | 3 h | any; charger in, lid open |
+| `scripts/quality_runner.py` | The 900 quality runs (called by `quality_per_setting_runs.sh`) | — | — |
+| `scripts/energy_per_qp_runs.sh` | Part B: incoming streams at each QP, 175 paced runs with `powermetrics`, then `energy_per_qp_table.py` and `quality_tables.py`. **Resumable** | 7.7 h | **quiet mode** (see [`../README.md`](../README.md#quiet-mode)), `../quiet_mode_on.sh` first, `../quiet_mode_off.sh` afterwards; password once |
+| `scripts/energy_per_qp_table.py` | Energy per setting and QP (same calculation as experiment 09) | 1 min | any |
+| `scripts/quality_tables.py` | All tables and figures (adds the Part B ones when `energy_qp.csv` exists) | 1 min | any |
 
-Order: `cd ~/Downloads/d/4b && ./all`, then `cd ~/Downloads/d && ./p`, `cd 4b && ./en`, `cd .. && ./u`. Results go to `~/Downloads/duplexnvc-baseline/phase2/4b/`.
+Order: `cd ~/Downloads/d/4b && ./quality_per_setting_runs.sh`, then `cd ~/Downloads/d && ./quiet_mode_on.sh`, `cd 4b && ./energy_per_qp_runs.sh`, `cd .. && ./quiet_mode_off.sh`. Results go to `~/Downloads/duplexnvc-baseline/phase2/4b/`.
+
+### Script names
+
+The scripts were renamed from short names to descriptive ones after the runs; the code is unchanged apart from the names it calls and the log it writes. The console logs in `raw_data/` were recorded before the rename and keep the old names (`out_<old name>.txt`).
+
+| Old name | New name | Console log written now |
+|---|---|---|
+| `scripts/all` | `scripts/quality_per_setting_runs.sh` | `out_quality_per_setting_runs.txt` |
+| `scripts/en` | `scripts/energy_per_qp_runs.sh` | `out_energy_per_qp_runs.txt` |
+| `scripts/chk` | `scripts/check_quality_inputs.sh` | `out_check_quality_inputs.txt` |
+| `scripts/q.py` | `scripts/quality_runner.py` | — |
+| `scripts/ana.py` | `scripts/quality_tables.py` | — |
+| `scripts/es.py` | `scripts/energy_per_qp_table.py` | — |
 
 ## Files
 

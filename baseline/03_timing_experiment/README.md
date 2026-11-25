@@ -14,8 +14,17 @@
 
 | Script | What | Time | Conditions |
 |---|---|---|---|
-| `scripts/x` | All of the above; calls `y` at the end | 65 min | Quiet mode (see [`../README.md`](../README.md#quiet-mode)): AC power, Wi-Fi and Bluetooth off, brightness at maximum with automatic brightness and True Tone off, no other apps, `./p` run first. |
-| `scripts/y` | Summary (uses `common/scripts/sum.py`) | 1 min | any |
+| `scripts/timing_runs.sh` | All of the above; calls `timing_summary.sh` at the end | 65 min | Quiet mode (see [`../README.md`](../README.md#quiet-mode)): AC power, Wi-Fi and Bluetooth off, brightness at maximum with automatic brightness and True Tone off, no other apps, `./quiet_mode_on.sh` run first. |
+| `scripts/timing_summary.sh` | Summary (uses `common/scripts/sum.py`) | 1 min | any |
+
+### Script names
+
+The scripts were renamed from short names to descriptive ones after the runs; the code is unchanged apart from the names it calls and the log it writes. The console logs in `raw_data/` were recorded before the rename and keep the old names (`out_<old name>.txt`).
+
+| Old name | New name | Console log written now |
+|---|---|---|
+| `scripts/x` | `scripts/timing_runs.sh` | `out_timing_runs.txt` |
+| `scripts/y` | `scripts/timing_summary.sh` | `out_timing_summary.txt` |
 
 ## Files
 

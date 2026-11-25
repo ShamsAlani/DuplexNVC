@@ -1,6 +1,6 @@
 # Reproducing the baseline
 
-This guide reruns all fourteen experiments from scratch on an Apple Silicon Mac and rebuilds every result. Paths assume the scripts live in `~/Downloads/d` and the work folder is `~/Downloads/duplexnvc-baseline` (`$WORK`). Change both in `common/scripts/v` if yours differ.
+This guide reruns all fourteen experiments from scratch on an Apple Silicon Mac and rebuilds every result. Paths assume the scripts live in `~/Downloads/d` and the work folder is `~/Downloads/duplexnvc-baseline` (`$WORK`). Change both in `common/scripts/settings.sh` if yours differ.
 
 Total laptop time: about **75 hours** of runs (experiments 01–06 ≈ 5.3 h, 07 ≈ 2.3 h, 08 ≈ 0.5 h, 09 ≈ 21.4 h, 10 ≈ 10.7 h, 11 ≈ 33 h, 12 ≈ 0.9 h, 13 ≈ 0.8 h, 14 ≈ 0.2 h + 1.2 h), plus downloads.
 
@@ -24,9 +24,9 @@ Total laptop time: about **75 hours** of runs (experiments 01–06 ≈ 5.3 h, 07
 | libmlvc, commit `eb5d60a` | `github.com/microsoft/libmlvc` (Git LFS) | Codec runtime, MLVC-S bundle, 4 test clips, HEVC anchor for BD-rate |
 | mlvc-tools | `github.com/microsoft/mlvc` (cloned as `mlvc-tools`) | Converting full MLVC to Core ML |
 | Full MLVC PSNR weights | `https://mlvideopub.blob.core.windows.net/mlvc/models/mlvc-psnr-v1.ckpt` (70 MB) | The baseline model |
-| MLVC-S PSNR weights | `https://mlvideopub.blob.core.windows.net/mlvc/models/mlvc-s-psnr-v1.ckpt` (downloaded by `2a`) | MLVC-S rows of experiments 08–09 |
+| MLVC-S PSNR weights | `https://mlvideopub.blob.core.windows.net/mlvc/models/mlvc-s-psnr-v1.ckpt` (downloaded by `convert_models.sh`) | MLVC-S rows of experiments 08–09 |
 | VCD 360p raw YUV | `https://mlvideopub.blob.core.windows.net/mlvc/datasets/VCD/640x360_30fps.tar` | Quality evaluation clips (scenario s1) |
-| VCD 1080p MP4 | `github.com/microsoft/VCD` list, `vcdpublic.blob.core.windows.net` (script `./f`) | Display-scale reference |
+| VCD 1080p MP4 | `github.com/microsoft/VCD` list, `vcdpublic.blob.core.windows.net` (script `./make_1080p_references.sh`) | Display-scale reference |
 | LPIPS AlexNet weights | `https://download.pytorch.org/models/alexnet-owt-7be5be79.pth` | Face LPIPS |
 
 ---
@@ -92,7 +92,7 @@ uv run convert.py bundle --model-version dmc61sbr_reglu \
 **Step 4. The measurement program and tools.**
 ```bash
 cp <repo>/baseline/common/code/* "$TOOLS/"
-find <repo>/baseline -path '*/scripts/*' ! -path '*/1[0-2]_*_experiment/*' -type f ! -name README.md -exec cp {} ~/Downloads/d/ \;
+find <repo>/baseline -path '*/scripts/*' ! -path '*/1[0-2]_*_experiment/*' ! -path '*/installers/*' -type f ! -name README.md -exec cp {} ~/Downloads/d/ \;
 mkdir -p ~/Downloads/d/{4b,5,ct}
 cp <repo>/baseline/10_quality_per_setting_experiment/scripts/* ~/Downloads/d/4b/
 cp <repo>/baseline/11_correctness_drift_experiment/scripts/* ~/Downloads/d/5/
@@ -107,7 +107,7 @@ cmake -S . -B build/ninja-release -G Ninja -DCMAKE_BUILD_TYPE=Release \
       -DFETCHCONTENT_SOURCE_DIR_LIBMLVC="$WORK/libmlvc"
 cmake --build build/ninja-release
 swiftc -O "$TOOLS/facebox.swift" -o "$TOOLS/facebox"
-cd ~/Downloads/d && ./b                 # must print "fixed-version check (must be 13): 13"
+cd ~/Downloads/d && ./build_measurement_program.sh                 # must print "fixed-version check (must be 13): 13"
 ```
 
 **Step 5. 360p VCD clips** (Wi-Fi on). This takes a while; `-C -` resumes an interrupted download.
@@ -116,10 +116,9 @@ cd ~/mlvc/data/VCD/yuv
 curl -C - -L -o 640x360_30fps.tar https://mlvideopub.blob.core.windows.net/mlvc/datasets/VCD/640x360_30fps.tar
 ```
 
-All paths the scripts use are set in `~/Downloads/d/v` (from `baseline/common/scripts/v`). Change them there if your folders differ.
+All paths the scripts use are set in `~/Downloads/d/settings.sh` (from `baseline/common/scripts/settings.sh`). Change them there if your folders differ.
 
 ---
-
 
 ## 3. Quiet mode
 
@@ -129,7 +128,7 @@ Every **timed** experiment (02, 03, 06, 07, 09, and Part B of 10) runs in quiet 
 2. **Wi-Fi off** and **Bluetooth off** (on only between experiments, to download data or copy results).
 3. System Settings → Displays: **automatic brightness off**, **True Tone off**, brightness at **maximum**.
 4. Quit every app except Terminal, and leave the Mac alone during the runs.
-5. `cd ~/Downloads/d && ./p` (keep-awake, Spotlight paused); `./u` afterwards undoes it.
+5. `cd ~/Downloads/d && ./quiet_mode_on.sh` (keep-awake, Spotlight paused); `./quiet_mode_off.sh` afterwards undoes it.
 
 Every timed run is followed by a rest of equal length (60 s), modes are interleaved in rounds, and the first 64 frames of each direction are discarded.
 
@@ -139,37 +138,37 @@ Run everything from `~/Downloads/d`, in this order. Each script saves its consol
 
 | Order | Command | Experiment folder | What | Time | Conditions |
 |---|---|---|---|---|---|
-| 1 | `./s` | `01_smoke_test_experiment` | S1: smoke test, MLVC-S 540p | 3 min | any |
-| 2 | `./m` | `common` | 360p camera and incoming streams; incoming at QP 26 | 2 min | any |
-| 3 | `./t` | `01_smoke_test_experiment` | S2: smoke test, full MLVC 360p | 3 min | any |
-| 4 | `./f` | `05_quality_experiment` | Download 40 talking-head clips at 1080p | 10 min | Wi-Fi on |
-| 5 | `./q` | `05_quality_experiment` | BD-rate vs Intel HW HEVC; R-D on the 4 timing clips | 5 min | any |
-| 6 | `./g` | `05_quality_experiment` | Split (seed 694); R-D, display and face quality on 20 evaluation clips | 20 min | 360p archive downloaded |
-| 7 | `./p` | `common` | Quiet mode on | 1 min | see §3 |
-| 8 | `./e` then `./r` | `02_phase1_check_experiment` | E3a: MLVC-S 540p, 5 rounds + 3 paced, comparison with Phase 1 | 45 min | **quiet** |
-| 9 | `./w` | `06_energy_experiment` | E7: 120 s idle + 5 paced B\* runs with `powermetrics` | 15 min | **quiet**, password |
-| 10 | `./x` | `03_timing_experiment` | E1–E4 and B\*: 5 unpaced rounds, 5 paced duplex, 3 paced turns, 3 CLI; summary `./y` | 65 min | **quiet** |
-| 11 | `./c` | `04_correctness_experiment` | E5: decode B\*'s stream on NE (×2), GPU, CPU; drift | 5 min | any |
-| 12 | `./1t` | `07_processor_experiment` | Core ML placement trace | 2 min | any |
-| 13 | `./1` then `./1r` | `07_processor_experiment` | X1: 72 runs, each network alone on NE, GPU, CPU, unpaced and paced | 2 h 20 min | **quiet**, password |
-| 14 | `./u` | `common` | Quiet mode off (Wi-Fi on for the next step) | 1 min | — |
-| 15 | `./2a` | `08_model_conversion_experiment` | X2: convert 6 new bundles + multi-size, trace | 30–45 min | Wi-Fi on |
-| 16 | `./2b` | `08_model_conversion_experiment` | X2: streams per resolution; incoming at QP 26 | 15 min | any |
-| 17 | `./p` | `common` | Quiet mode on | 1 min | see §3 |
-| 18 | `./all` | `09_placement_experiment` | X3: 584 runs, every setting × placement (calls `./2r`) | 21.4 h | **quiet**, password; **resumable** |
-| 19 | `./4r` | `09_placement_experiment` | Table of feasible settings | 1 min | any |
-| 20 | `./u`, `./z` | `common` | Quiet mode off; collect raw results | 2 min | any |
-| 21 | `cd 4b && ./all` | `10_quality_per_setting_experiment` | Part A: quality of 9 configurations × 20 clips × 5 QPs (900 runs) and analysis | 3.0 h | any (charger in, lid open); **resumable** |
-| 22 | `cd .. && ./p` | `common` | Quiet mode on | 1 min | see §3 |
-| 23 | `cd 4b && ./en` | `10_quality_per_setting_experiment` | Part B: energy of the 7 best placements at 5 QPs (175 runs), then `es.py` and `ana.py` | 7.7 h | **quiet**, password; **resumable** |
-| 24 | `cd .. && ./u` | `common` | Quiet mode off | 1 min | — |
-| 25 | `cd 5 && ./all` | `11_correctness_drift_experiment` | All 9 encoder→decoder pairs × 7 settings × 20 clips × 4 QPs, and, in the same run, the A2 drift bounds of [`algorithm_enhancements/`](../algorithm_enhancements/A2_drift_bounds/), analysis (`PHASE=main\|a2`, `ONLY=…`) | main ≈ 17 h; A2 ≈ 10 h (30 fps settings) + ≈ 43 h (others) | any (charger in, lid open); **resumable** |
-| 26 | `cd 5 && ./mp` | `11_correctness_drift_experiment` | Multi-person check (needs the Step 8 masters, `controller_data/`) | 1.4 h | any; **resumable** |
-| 27 | `./p` | `common` | Quiet mode on | 1 min | see §3 |
-| 28 | `cd ct && ./all` | `12_contention_experiment` | Memory load 0/25/50/75 % against the encoder alone and the paced B\* call (24 runs), then `./sum` | 55 min | **quiet**; **resumable** |
-| 29 | `./u` | `common` | Quiet mode off | 1 min | — |
+| 1 | `./smoke_test_mlvcs_540p.sh` | `01_smoke_test_experiment` | S1: smoke test, MLVC-S 540p | 3 min | any |
+| 2 | `./make_baseline_streams.sh` | `common` | 360p camera and incoming streams; incoming at QP 26 | 2 min | any |
+| 3 | `./smoke_test_mlvc_360p.sh` | `01_smoke_test_experiment` | S2: smoke test, full MLVC 360p | 3 min | any |
+| 4 | `./make_1080p_references.sh` | `05_quality_experiment` | Download 40 talking-head clips at 1080p | 10 min | Wi-Fi on |
+| 5 | `./bdrate_vs_hevc.sh` | `05_quality_experiment` | BD-rate vs Intel HW HEVC; R-D on the 4 timing clips | 5 min | any |
+| 6 | `./quality_rd_faces.sh` | `05_quality_experiment` | Split (seed 694); R-D, display and face quality on 20 evaluation clips | 20 min | 360p archive downloaded |
+| 7 | `./quiet_mode_on.sh` | `common` | Quiet mode on | 1 min | see §3 |
+| 8 | `./phase1_check_runs.sh` then `./phase1_check_summary.sh` | `02_phase1_check_experiment` | E3a: MLVC-S 540p, 5 rounds + 3 paced, comparison with Phase 1 | 45 min | **quiet** |
+| 9 | `./energy_runs.sh` | `06_energy_experiment` | E7: 120 s idle + 5 paced B\* runs with `powermetrics` | 15 min | **quiet**, password |
+| 10 | `./timing_runs.sh` | `03_timing_experiment` | E1–E4 and B\*: 5 unpaced rounds, 5 paced duplex, 3 paced turns, 3 CLI; summary `./timing_summary.sh` | 65 min | **quiet** |
+| 11 | `./correctness_check.sh` | `04_correctness_experiment` | E5: decode B\*'s stream on NE (×2), GPU, CPU; drift | 5 min | any |
+| 12 | `./processor_placement_trace.sh` | `07_processor_experiment` | Core ML placement trace | 2 min | any |
+| 13 | `./processor_runs.sh` then `./processor_summary.sh` | `07_processor_experiment` | X1: 72 runs, each network alone on NE, GPU, CPU, unpaced and paced | 2 h 20 min | **quiet**, password |
+| 14 | `./quiet_mode_off.sh` | `common` | Quiet mode off (Wi-Fi on for the next step) | 1 min | — |
+| 15 | `./convert_models.sh` | `08_model_conversion_experiment` | X2: convert 6 new bundles + multi-size, trace | 30–45 min | Wi-Fi on |
+| 16 | `./make_streams_per_setting.sh` | `08_model_conversion_experiment` | X2: streams per resolution; incoming at QP 26 | 15 min | any |
+| 17 | `./quiet_mode_on.sh` | `common` | Quiet mode on | 1 min | see §3 |
+| 18 | `./placement_runs.sh` | `09_placement_experiment` | X3: 584 runs, every setting × placement (calls `./conversion_summary.sh`) | 21.4 h | **quiet**, password; **resumable** |
+| 19 | `./placement_summary.sh` | `09_placement_experiment` | Table of feasible settings | 1 min | any |
+| 20 | `./quiet_mode_off.sh`, `./collect_raw_results.sh` | `common` | Quiet mode off; collect raw results | 2 min | any |
+| 21 | `cd 4b && ./quality_per_setting_runs.sh` | `10_quality_per_setting_experiment` | Part A: quality of 9 configurations × 20 clips × 5 QPs (900 runs) and analysis | 3.0 h | any (charger in, lid open); **resumable** |
+| 22 | `cd .. && ./quiet_mode_on.sh` | `common` | Quiet mode on | 1 min | see §3 |
+| 23 | `cd 4b && ./energy_per_qp_runs.sh` | `10_quality_per_setting_experiment` | Part B: energy of the 7 best placements at 5 QPs (175 runs), then `energy_per_qp_table.py` and `quality_tables.py` | 7.7 h | **quiet**, password; **resumable** |
+| 24 | `cd .. && ./quiet_mode_off.sh` | `common` | Quiet mode off | 1 min | — |
+| 25 | `cd 5 && ./drift_runs.sh` | `11_correctness_drift_experiment` | All 9 encoder→decoder pairs × 7 settings × 20 clips × 4 QPs, and, in the same run, the A2 drift bounds of [`algorithm_enhancements/`](../algorithm_enhancements/A2_drift_bounds/), analysis (`PHASE=main\|a2`, `ONLY=…`) | main ≈ 17 h; A2 ≈ 10 h (30 fps settings) + ≈ 43 h (others) | any (charger in, lid open); **resumable** |
+| 26 | `cd 5 && ./multi_person_runs.sh` | `11_correctness_drift_experiment` | Multi-person check (needs the Step 8 masters, `controller_data/`) | 1.4 h | any; **resumable** |
+| 27 | `./quiet_mode_on.sh` | `common` | Quiet mode on | 1 min | see §3 |
+| 28 | `cd ct && ./contention_runs.sh` | `12_contention_experiment` | Memory load 0/25/50/75 % against the encoder alone and the paced B\* call (24 runs), then `./contention_summary.sh` | 55 min | **quiet**; **resumable** |
+| 29 | `./quiet_mode_off.sh` | `common` | Quiet mode off | 1 min | — |
 
-Do not press Ctrl-C during `./x`, `./w` or `./1`; a rerun moves the old folder aside. `./all` (09–12), `./mp` (11) and `./en` (10) are the exceptions: interrupt them at any time and run them again, and they continue where they stopped.
+Do not press Ctrl-C during `./timing_runs.sh`, `./energy_runs.sh` or `./processor_runs.sh`; a rerun moves the old folder aside. `./placement_runs.sh` (09), `./quality_per_setting_runs.sh` and `./energy_per_qp_runs.sh` (10), `./drift_runs.sh` and `./multi_person_runs.sh` (11) and `./contention_runs.sh` (12) are the exceptions: interrupt them at any time and run them again, and they continue where they stopped.
 
 Check that every run used the processor it asked for:
 ```bash
@@ -187,7 +186,7 @@ Our run: `844 unit reports, 0 mismatches`.
    python3 make_figures.py         # figures of 03–06
    python3 make_tables_x3.py       # tables of 09
    ```
-   Experiment 10's tables and figures are rebuilt on the Mac by `~/Downloads/d/4b/ana.py` (from `$WORK/phase2/4b/q.csv` and `energy/energy_qp.csv`).
+   Experiment 10's tables and figures are rebuilt on the Mac by `~/Downloads/d/4b/quality_tables.py` (from `$WORK/phase2/4b/q.csv` and `energy/energy_qp.csv`).
 3. Compare with each experiment's README. On an M4 Pro (24 GB, macOS 26.6), timing should agree within about 2 % and energy within about 5 %; quality values should be identical. On another Apple Silicon chip the milliseconds differ, but the conclusions should hold.
 
 Key values to check:
@@ -209,16 +208,16 @@ Key values to check:
 
 | Problem | Fix (already in this package) |
 |---|---|
-| Unpaced runs never ended | `duplex_bench.cpp` schedules unpaced frames at the current time; `./b` checks the fixed version (13 occurrences of `Clock::now()`) |
+| Unpaced runs never ended | `duplex_bench.cpp` schedules unpaced frames at the current time; `./build_measurement_program.sh` checks the fixed version (13 occurrences of `Clock::now()`) |
 | First frame slow (model load) | The program warms up before t0; the first 64 frames are excluded from statistics |
 | Xcode generator missing | The harness is built with Ninja (Step 4) |
 | Interrupted git clone | Clone with `GIT_LFS_SKIP_SMUDGE=1`, then `git lfs pull` |
 | Full-MLVC conversion needs a VCD clip | Created from libmlvc's NV12 clip (Step 3) |
 | LPIPS weights SSL error | Weights downloaded into the torch cache (Step 1) |
-| `./w` hung after the runs | `wait $!` instead of `wait` (fixed in `scripts/w`) |
+| `./energy_runs.sh` hung after the runs | `wait $!` instead of `wait` (fixed in `scripts/energy_runs.sh`) |
 | zsh treats `#` as text | `setopt interactivecomments` |
-| Model conversion (`2a`) failed for every size | The 1080p MP4s are in `vcd_1080p/mp4/th/`, and the converter names the 1080p test clip `<id>_1920x1080_30.yuv`; `s2cfg` and `2a` use both |
-| A 22-hour run can be interrupted | `all` skips finished runs and appends to its log |
-| `sudo` expiring during long runs | `1`, `all` and `en` refresh `sudo` every 50 s in the background |
-| `l16` (LTR period 8) failed on MLVC-S and stopped experiment 11's passes | libmlvc needs the LTR start index below the LTR period; `c.py` passes `--ltr-start-idx 0` |
-| `./en` started without `./p` | Run `./p` in a second Terminal tab before the first idle recording; the stream preparation at the start is not measured |
+| Model conversion (`convert_models.sh`) failed for every size | The 1080p MP4s are in `vcd_1080p/mp4/th/`, and the converter names the 1080p test clip `<id>_1920x1080_30.yuv`; `settings_phase2.sh` and `convert_models.sh` use both |
+| A 22-hour run can be interrupted | `placement_runs.sh` skips finished runs and appends to its log |
+| `sudo` expiring during long runs | `processor_runs.sh`, `placement_runs.sh` and `energy_per_qp_runs.sh` refresh `sudo` every 50 s in the background |
+| `l16` (LTR period 8) failed on MLVC-S and stopped experiment 11's passes | libmlvc needs the LTR start index below the LTR period; `drift_runner.py` passes `--ltr-start-idx 0` |
+| `./energy_per_qp_runs.sh` started without `./quiet_mode_on.sh` | Run `./quiet_mode_on.sh` in a second Terminal tab before the first idle recording; the stream preparation at the start is not measured |

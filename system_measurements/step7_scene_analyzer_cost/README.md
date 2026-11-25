@@ -18,12 +18,12 @@ How small a face the analyzer can find at the call resolution is the other half 
 
 ## How to run
 
-The analyzer is built and the variants are run by Step 6's `scripts/all` (`~/Downloads/d/bt/`), Part B; `btana.py` there writes the tables below.
+The analyzer is built and the variants are run by Step 6's `scripts/battery_lowpower_runs.sh` (`~/Downloads/d/bt/`), Part B; `btana.py` there writes the tables below.
 
 | Script | What |
 |---|---|
 | `scripts/va.swift` | The analyzer: `va <camera.nv12> <w> <h> <every> <cpu 0/1> <seconds> <out.csv>`; paced at 30 fps, face and body requests, prints the median time per analysis |
-| `../step6_battery_lowpower/scripts/all`, `btana.py` | Runs the variants with the call and the energy counters; the analysis |
+| `../step6_battery_lowpower/scripts/battery_lowpower_runs.sh`, `btana.py` | Runs the variants with the call and the energy counters; the analysis |
 
 ## Files
 

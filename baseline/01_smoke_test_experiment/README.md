@@ -12,10 +12,19 @@ These runs only check the pipeline; they are not used as results.
 
 | Script | Test | Time | Conditions |
 |---|---|---|---|
-| `scripts/s` | S1 | 3 min | any |
-| `scripts/t` | S2 (needs the 360p streams from `common/scripts/m`) | 3 min | any |
+| `scripts/smoke_test_mlvcs_540p.sh` | S1 | 3 min | any |
+| `scripts/smoke_test_mlvc_360p.sh` | S2 (needs the 360p streams from `common/scripts/make_baseline_streams.sh`) | 3 min | any |
 
-Run from `~/Downloads/d` as `./s` and `./t` (see [`../common/scripts/README.md`](../common/scripts/README.md) for installing).
+Run from `~/Downloads/d` as `./smoke_test_mlvcs_540p.sh` and `./smoke_test_mlvc_360p.sh` (see [`../common/scripts/README.md`](../common/scripts/README.md) for installing).
+
+### Script names
+
+The scripts were renamed from short names to descriptive ones after the runs; the code is unchanged apart from the names it calls and the log it writes. The console logs in `raw_data/` were recorded before the rename and keep the old names (`out_<old name>.txt`).
+
+| Old name | New name | Console log written now |
+|---|---|---|
+| `scripts/s` | `scripts/smoke_test_mlvcs_540p.sh` | `out_smoke_test_mlvcs_540p.txt` |
+| `scripts/t` | `scripts/smoke_test_mlvc_360p.sh` | `out_smoke_test_mlvc_360p.txt` |
 
 ## Files
 

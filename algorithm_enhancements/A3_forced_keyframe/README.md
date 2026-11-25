@@ -23,15 +23,23 @@
 
 ## How to run
 
-The scripts live in `~/Downloads/d/a3/`; they use baseline experiment 10's `q.py` and `ana.py` (`../4b/`), the measurement program source in `../a1/duplex_bench.cpp` (A1) and the Step 8 data in `data/`. Normal Mac, charger in, lid open; resumable.
+The scripts live in `~/Downloads/d/a3/`; they use baseline experiment 10's `quality_runner.py` and `quality_tables.py` (`../4b/`), the measurement program source in `../a1/duplex_bench.cpp` (A1) and the Step 8 data in `data/`. Normal Mac, charger in, lid open; resumable.
 
 | Script | What | Time |
 |---|---|---|
-| `scripts/all` | Rebuilds the measurement program if its source changed, finds the Step 8 masters in `~/Downloads`, the check, the 440 runs (2 passes), the analysis | ≈ 30 min |
+| `scripts/a3_runs.sh` | Rebuilds the measurement program if its source changed, finds the Step 8 masters in `~/Downloads`, the check, the 440 runs (2 passes), the analysis | ≈ 30 min |
 | `scripts/a3.py` | Stages the masters, works out the triggers per clip, the runs (`a3.py <masters folder> [check]`) | — |
 | `scripts/a3ana.py` | BD-rate per setting, clip group and policy; cost of a switch | 1 min |
 
 Output: `~/Downloads/duplexnvc-baseline/phase2/a3/`.
+
+### Script names
+
+The scripts were renamed from short names to descriptive ones after the runs; the code is unchanged apart from the names it calls and the log it writes. The console logs in `raw_data/` were recorded before the rename and keep the old names (`out_<old name>.txt`).
+
+| Old name | New name | Console log written now |
+|---|---|---|
+| `scripts/all` | `scripts/a3_runs.sh` | `out_a3_runs.txt` |
 
 ## Files
 

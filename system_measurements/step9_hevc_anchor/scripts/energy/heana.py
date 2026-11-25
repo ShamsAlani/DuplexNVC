@@ -47,17 +47,20 @@ def main():
     os.makedirs(RES, exist_ok=True)
     lines = []
     say = lambda s="": (print(s), lines.append(s))
-    idles = []
+    idles, inames = [], []
     for nm in ("start", "end"):
         o = f"{E}/idle_{nm}"
         if os.path.exists(f"{o}/ioe.csv"):
-            a, b = times(o); idles.append(power(f"{o}/ioe.csv", a + 5, b - 1))
+            a, b = times(o); pw = power(f"{o}/ioe.csv", a + 5, b - 1)
+            print(f"   idle_{nm}: grouped {sum(v for c, v in pw.items() if group(c)):.0f} mW, all channels {sum(pw.values()):.0f} mW; "
+                  + ", ".join(f"{k} {sum(v for c, v in pw.items() if group(c) == k):.0f}" for k in ("CPU", "GPU", "ANE", "DRAM", "media")))
+            if os.environ.get("IDLE", "mean") in ("mean", nm): idles.append(pw); inames.append(nm)
     if not idles:
         sys.exit("no idle recording")
     chans = sorted(set().union(*idles))
     idle = {c: st.mean(i.get(c, 0.0) for i in idles) for c in chans}
     say("STEP 9 (energy): paced 30 fps two-way call, energy per frame pair from the chip's counters (IOReport)")
-    say(f"idle power (mean of {len(idles)} recordings): total of grouped channels "
+    say(f"idle power ({'+'.join(inames)}): total of grouped channels "
         f"{sum(v for c, v in idle.items() if group(c)):.0f} mW")
     rows, per_ch = [], {}
     for c in CONDS:
@@ -67,7 +70,14 @@ def main():
             if not os.path.exists(f"{o}/ioe.csv") or not os.path.exists(f"{o}/t.txt"):
                 continue
             a, b = times(o)
+            bad = b - a > 75
+            if os.path.exists(f"{o}/run.txt"):
+                kv = dict(l.strip().split("=", 1) for l in open(f"{o}/run.txt") if "=" in l)
+                bad = bad or int(kv.get("encoder_dropped", "0") or 0) > 500
+            if bad:
+                say(f"   EXCLUDED {c} {os.path.basename(o)}: run took {b - a:.0f} s (the Mac stalled during the run)"); continue
             p = power(f"{o}/ioe.csv", b - 50, b - 1)
+            print(f"   {c} {os.path.basename(o)}: {sum(v for ch, v in p.items() if group(ch)):.0f} mW grouped")
             res.append({ch: (p.get(ch, 0.0) - idle.get(ch, 0.0)) / 30.0 for ch in set(p) | set(idle)})  # mW/30 = mJ/pair
         if not res:
             continue

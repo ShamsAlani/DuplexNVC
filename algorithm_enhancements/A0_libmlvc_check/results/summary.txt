@@ -1,0 +1,3 @@
+t1_forced_key_frames: frames 120, I 4, recovery 0, longest chain 54 | requested structure applied: 120/120 | decoded: 120/120 | decoder info = encoder info: 120/120 | NE decode deterministic: 120/120 | header QP = requested: 120/120 -> PASS
+t2_external_ltr: frames 120, I 1, recovery 5, longest chain 50 | requested structure applied: 120/120 | decoded: 120/120 | decoder info = encoder info: 120/120 | NE decode deterministic: 120/120 | header QP = requested: 120/120 -> PASS
+t3_per_frame_qp: frames 120, I 2, recovery 0, longest chain 63 | requested structure applied: 120/120 | decoded: 120/120 | decoder info = encoder info: 120/120 | NE decode deterministic: 120/120 | header QP = requested: 120/120 -> PASS

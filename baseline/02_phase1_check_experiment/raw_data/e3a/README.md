@@ -1,7 +1,7 @@
 # e3a/: E3a, Phase 1 re-check (MLVC-S 540p)
 
 **Purpose:** re-measure the Phase 1 configuration with the new program, which validates the program. It also measures T_turns and S, which Phase 1 had only estimated.
-**Scripts:** `scripts/e` (runs), then `scripts/r` (summary).
+**Scripts:** `scripts/phase1_check_runs.sh` (runs), then `scripts/phase1_check_summary.sh` (summary).
 **Logs:** `../logs/out_e.txt`, `out_r.txt`.
 **Settings:** MLVC-S, 960×540, QP 22, I-frame every 64 frames, NE/NE; quiet Mac.
 

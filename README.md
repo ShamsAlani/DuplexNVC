@@ -16,7 +16,7 @@ In a video call, every laptop does two jobs at once: it **encodes** its own came
 |---|---|
 | [`baseline/`](baseline/) | The Phase 2 **baseline**, in the twelve experiments of our submitted baseline report: smoke tests, Phase 1 check, timing of the core baseline B\*, correctness, quality, energy, processor, model conversion, placement, quality and energy per setting, correctness and drift of every encoder/decoder pair, and contention. Each experiment folder has its scripts, raw data, results and a README with what it shows and what we concluded |
 | [`system_measurements/`](system_measurements/) | **Our measurements after the baseline report** (MLVC as released): energy on battery and in Low Power Mode (Step 6), the scene analyzer's cost (Step 7) and the on-device HEVC anchor (Step 9), each with its README |
-| [`algorithm_enhancements/`](algorithm_enhancements/) | **Algorithm Enhancements (C5): our changes to how MLVC codes the video**, no retraining, no decoder change: A1 (more bits for key frames, with E4), A2 (drift bounds for a decoder on another processor, the basis of peer-agreed placement), A3 (a forced key frame when people join or leave); A0, A4, E3 and E6 next. Each mechanism has its own folder and README |
+| [`algorithm_enhancements/`](algorithm_enhancements/) | **Algorithm Enhancements (C5): our changes to how MLVC codes the video**, no retraining, no decoder change: A1 (more bits for key frames, with E4), A2 (drift bounds for a decoder on another processor, the basis of peer-agreed placement), A3 (a forced key frame when people join or leave), and A0 (a check that libmlvc's per-frame controls do what is asked); A4, E3 and E6 next. Each mechanism has its own folder and README |
 | [`lab_gpu_runs/`](lab_gpu_runs/) | **Lab GPU Runs: changes to the MLVC network**, fine-tuned on a lab GPU (control, piecewise-linear memory gates B1, B1 + input gate, I-frame dropout B2, a second control for training noise). The whole training pipeline, the input-gate change, complete training logs, the cost of training and the results so far, each folder with its own README |
 | [`controller_data/`](controller_data/) | **Step 8: controller data.** 11 stock multi-person clips (HEVC Class E, Pexels) and 6 video-call clips we recorded ourselves (people joining, leaving, stepping away, looking away, someone walking past), face labels and face-size groups, real events annotated manually, and a comparison of Apple Vision's face and body detectors (and their combinations) as scene-change triggers, on stock and call clips separately. Scripts, raw data, results, a video wall of the call clips and a README |
 | [`detection_recall/`](detection_recall/) | **Step 7: detection recall.** The smallest face the scene analyzer's face detector (Apple Vision) finds when it runs on the camera frame at the call resolution (360p, 540p, 720p) instead of the full-size original, by face size, on the Step 8 stock clips and our recorded call clips. Scripts, raw data, results, check images and a README |
@@ -88,7 +88,8 @@ Energy at 287 kbps from experiment 10 (re-measured at five QPs; B\* 63 mJ, 3 % b
 
 ### On-device HEVC anchor (Step 9, [`system_measurements/`](system_measurements/))
 
-- **The Mac's real-time hardware HEVC needs +69 % more bits than B\*** (coded PSNR-Y) and more than twice full MLVC 720p's; only on face LPIPS does it match MLVC-S 720p. Its energy is measured next.
+- **The Mac's real-time hardware HEVC needs +69 % more bits than B\*** (coded PSNR-Y) and more than twice full MLVC 720p's; only on face LPIPS does it match MLVC-S 720p.
+- **But it costs almost nothing to run:** a two-way call on the Mac's video blocks takes 1.6 mJ per frame pair at 360p and 2.6 mJ at 720p (50–80 mW), against 76.7 mJ for B\* (48×), 52.5 mJ for MLVC-S 540p (33×) and 739 mJ for MLVC-S 720p with its GPU encoder (284×), all measured with the chip's own energy counters.
 
 ### Energy on battery and in Low Power Mode, and the scene analyzer's cost (Steps 6 and 7, [`system_measurements/`](system_measurements/))
 
@@ -101,6 +102,7 @@ Energy at 287 kbps from experiment 10 (re-measured at five QPs; B\* 63 mJ, 3 % b
 - **A2, drift bounds:** LTR recovery bounds drift as well as an I-frame for far fewer bits: every 32 frames, MLVC-S pays +9.6 % (an I-frame every 32: +39–44 %) and the worst frame rises from 21 to 37–38 dB. This is the bound a sender uses when the other laptop decodes on a different processor (peer agreement).
 - **A1, key-frame bits:** **−8 on the I-frame is the best offset**: −1.2 % (B\*) and −2.6 % (MLVC-S 540p) on coded PSNR, about −6 % on face LPIPS. A lower QP on LTR frames never helps. **E4:** inside A2's bound the I-frame offset wins back about a fifth of the bound's cost (+9.7 % → +7.7 %).
 - **A3, forced key frames:** a key frame forced when people join or leave **does not pay** in MLVC: it costs 11–15 P-frames' worth of bits and the picture after the event is no better (+1.6 % with a perfect trigger, +29 % with a frame-difference trigger). Scene events should change the setting, not force key frames.
+- **A0, libmlvc check:** forced key frames, external LTR marking and recovery, and a different QP on every frame **do exactly what is asked on every frame**, and the decoder sees the same structure on the NE and the GPU. One rule to design around: recovering from an older LTR invalidates every newer one.
 
 ### Lab GPU Runs: changes to the MLVC network (in progress)
 
@@ -194,6 +196,7 @@ DuplexNVC/
 │   └── step9_hevc_anchor/             Step 9: the Mac's real-time hardware HEVC at MLVC's bitrates
 ├── algorithm_enhancements/                  Algorithm Enhancements (C5): how MLVC codes the video, A1–A4
 │   ├── README.md                      what C5 is, every enhancement, status and answers so far, how to run
+│   ├── A0_libmlvc_check/              A0: do forced key frames, external LTRs and per-frame QP do what is asked?
 │   ├── A1_keyframe_qp/                A1: more bits for key frames; E4: A1 inside A2's bound, on MLVC-S
 │   ├── A2_drift_bounds/               A2: I-frame period vs LTR recovery as drift bounds (ran in baseline 11)
 │   └── A3_forced_keyframe/            A3: a forced key frame when people join or leave
@@ -219,7 +222,7 @@ DuplexNVC/
 └── demo/                              demo video: MLVC-S encoding and decoding on the M4 Pro
 ```
 
-Each experiment folder holds `scripts/`, `raw_data/`, `results/` and a README.
+Each experiment folder holds `scripts/`, `raw_data/`, `results/` and a README. The scripts have descriptive names (for example `quiet_mode_on.sh`, `placement_runs.sh`); during the runs they had short names (`p`, `all`), which the console logs in `raw_data/` still carry. Every folder's README has its old → new table, and the full list is in [`baseline/common/scripts/README.md`](baseline/common/scripts/README.md#old-and-new-script-names).
 
 ## Reproducing
 
@@ -227,4 +230,4 @@ Full guide: [`baseline/REPRODUCE.md`](baseline/REPRODUCE.md) (summary in [`REPRO
 
 ## Next steps
 
-The baseline is complete (twelve experiments). After it, energy on battery and in Low Power Mode (Step 6), the scene analyzer's cost (Step 7) and the HEVC anchor's quality (Step 9) are measured ([`system_measurements/`](system_measurements/)), and of our Algorithm Enhancements, A1 with E4, A2 (for the 30 fps settings) and A3 ([`algorithm_enhancements/`](algorithm_enhancements/)). Still to be measured: the HEVC anchor's energy, A0 (a check of libmlvc's per-frame controls), A4, E1–E3 and E6, and the Lab GPU models on the Mac. Multi-person data is done (Step 8, [`controller_data/`](controller_data/)), including six video-call clips we recorded (faces catch every join and leave in them; a participant rule handles someone walking past), and so is the detector's recall at the call resolution (Step 7, [`detection_recall/`](detection_recall/): every face from 32 px at 360p is found). DuplexNVC itself — a controller that chooses placement, schedule, resolution and model from the content and the energy state — will then be measured against B\* with exactly this protocol.
+The baseline is complete (twelve experiments). After it, energy on battery and in Low Power Mode (Step 6), the scene analyzer's cost (Step 7) and the HEVC anchor's quality and energy (Step 9) are measured ([`system_measurements/`](system_measurements/)), and of our Algorithm Enhancements, A0 (libmlvc's per-frame controls checked), A1 with E4, A2 (for the 30 fps settings) and A3 ([`algorithm_enhancements/`](algorithm_enhancements/)). Still to be measured: A4, E1–E3 and E6, and the Lab GPU models on the Mac. Multi-person data is done (Step 8, [`controller_data/`](controller_data/)), including six video-call clips we recorded (faces catch every join and leave in them; a participant rule handles someone walking past), and so is the detector's recall at the call resolution (Step 7, [`detection_recall/`](detection_recall/): every face from 32 px at 360p is found). DuplexNVC itself — a controller that chooses placement, schedule, resolution and model from the content and the energy state — will then be measured against B\* with exactly this protocol.

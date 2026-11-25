@@ -18,16 +18,25 @@ The test is the same as on the M1 laptop of the cross-chip study (`crosschip/m1_
 
 ## How to run
 
-These scripts live in `~/Downloads/d/ct/` (one level below the other scripts; they read `../v`).
+These scripts live in `~/Downloads/d/ct/` (one level below the other scripts; they read `../settings.sh`).
 
 | Script | What | Time | Conditions |
 |---|---|---|---|
-| `scripts/all` | Builds memstress, the peak run, the 24 runs, then `sum`. **Resumable** | 55 min | **quiet mode**, `../p` first, `../u` afterwards |
-| `scripts/sum` | The contention curve (`contention_sum.py`) | 1 min | any |
-| `scripts/memstress.c` | The memory load (built by `all` into `$TOOLS/memstress`) | — | — |
+| `scripts/contention_runs.sh` | Builds memstress, the peak run, the 24 runs, then `contention_summary.sh`. **Resumable** | 55 min | **quiet mode**, `../quiet_mode_on.sh` first, `../quiet_mode_off.sh` afterwards |
+| `scripts/contention_summary.sh` | The contention curve (`contention_sum.py`) | 1 min | any |
+| `scripts/memstress.c` | The memory load (built by `contention_runs.sh` into `$TOOLS/memstress`) | — | — |
 | `scripts/contention_sum.py` | Medians per load from the run folders | — | — |
 
 `THREADS=n` and `MB=n` override the number of memstress threads and the buffer size. Results go to `~/Downloads/duplexnvc-baseline/phase2/ct/`.
+
+### Script names
+
+The scripts were renamed from short names to descriptive ones after the runs; the code is unchanged apart from the names it calls and the log it writes. The console logs in `raw_data/` were recorded before the rename and keep the old names (`out_<old name>.txt`).
+
+| Old name | New name | Console log written now |
+|---|---|---|
+| `scripts/all` | `scripts/contention_runs.sh` | `out_contention_runs.txt` |
+| `scripts/sum` | `scripts/contention_summary.sh` | `out_contention_summary.txt` |
 
 ## Files
 

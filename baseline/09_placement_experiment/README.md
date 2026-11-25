@@ -18,9 +18,19 @@ A setting is **feasible at 30 fps** if its median late or dropped share L is bel
 
 | Script | What | Time | Conditions |
 |---|---|---|---|
-| `scripts/all` | Parts A–C. **Resumable:** after any interruption run it again; finished runs are skipped | 21.4 h | Quiet mode (see [`../README.md`](../README.md#quiet-mode)), `./p` run first; asks for the password once (`powermetrics` needs `sudo`) |
-| `scripts/2r` | NE sanity vs the survey, multi-size, memory (`step2_sum.py`); called by `all` | 1 min | any |
-| `scripts/4r` | Table of feasible settings (`step4_sum.py`) | 1 min | any |
+| `scripts/placement_runs.sh` | Parts A–C. **Resumable:** after any interruption run it again; finished runs are skipped | 21.4 h | Quiet mode (see [`../README.md`](../README.md#quiet-mode)), `./quiet_mode_on.sh` run first; asks for the password once (`powermetrics` needs `sudo`) |
+| `scripts/conversion_summary.sh` | NE sanity vs the survey, multi-size, memory (`step2_sum.py`); called by `placement_runs.sh` | 1 min | any |
+| `scripts/placement_summary.sh` | Table of feasible settings (`step4_sum.py`) | 1 min | any |
+
+### Script names
+
+The scripts were renamed from short names to descriptive ones after the runs; the code is unchanged apart from the names it calls and the log it writes. The console logs in `raw_data/` were recorded before the rename and keep the old names (`out_<old name>.txt`).
+
+| Old name | New name | Console log written now |
+|---|---|---|
+| `scripts/all` | `scripts/placement_runs.sh` | `out_placement_runs.txt` |
+| `scripts/2r` | `scripts/conversion_summary.sh` | `out_conversion_summary.txt` |
+| `scripts/4r` | `scripts/placement_summary.sh` | `out_placement_summary.txt` |
 
 ## Files
 
@@ -28,6 +38,7 @@ A setting is **feasible at 30 fps** if its median late or dropped share L is bel
 |---|---|
 | `raw_data/logs/out_all.txt` | Full log: every run with time stamp and `requested=… resolved=…` (844 unit reports, 0 mismatches), the NE sanity and memory table, the CPU-fit decisions, the late share after each placement, and the final table |
 | `raw_data/logs/out_4r.txt` | Table of feasible settings, the 720p question, the feasibility count |
+| `raw_data/exp09_per_run_records_part1.zip`, `part2.zip` | Every run of X3 (`frames.csv`, `run.txt`, `power.txt`, logs, thermal state), in two parts |
 | `raw_data/README.md` | Layout of the per-run records and how to pack them |
 | `results/table_feasible.csv` | One row per setting × placement (38 rows, B\* included) |
 | `results/ne_sanity_memory.csv` | NE time per bundle vs survey M3 Pro; peak memory |

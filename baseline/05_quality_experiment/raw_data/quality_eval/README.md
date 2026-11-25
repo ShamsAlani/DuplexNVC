@@ -1,8 +1,8 @@
 # quality_eval/: E6, rate-distortion, display and face quality
 
-**Script:** `scripts/g`, which uses `scripts/rd.py`.
+**Script:** `scripts/quality_rd_faces.sh`, which uses `scripts/rd_points.py`.
 **Log:** `../logs/out_g.txt`.
-**Clips:** the 20 evaluation clips of `../split.json` (VCD s1, 640×360 raw YUV, 300 frames each). The 1080p MP4 releases serve as the display reference (downloaded by `scripts/f`).
+**Clips:** the 20 evaluation clips of `../split.json` (VCD s1, 640×360 raw YUV, 300 frames each). The 1080p MP4 releases serve as the display reference (downloaded by `scripts/make_1080p_references.sh`).
 
 **Method**, per clip and QP (16, 24, 32, 40):
 1. Encode with `libmlvc_example prepare` on the NE; decode with `mlvc decode` on the NE.

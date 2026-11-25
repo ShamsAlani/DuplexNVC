@@ -9,7 +9,7 @@ A2 ran inside baseline experiment 11 ([`baseline/11_correctness_drift_experiment
 - **Bounds** (`mlvc encode` options): I-frame every 32 (`i32`: `--iframe-period 32`) and every 16 (`i16`); LTR recovery every 32 (`l32`: `--ltr-period 16 --ltr-recovery-period 2`) and every 16 (`l16`: `--ltr-period 8 --ltr-recovery-period 2 --ltr-start-idx 0`); against the default structure (an I-frame every 64 frames).
 - **Settings:** full MLVC 360p (B\*), MLVC-S 540p and MLVC-S 720p (the two 30 fps settings on the energy–quality front), full MLVC 540p. The remaining three settings (full MLVC 720p, MLVC-S 1080p, full MLVC 1080p, which reach only 15 fps or none) run on later nights.
 - **Content and metrics:** the 20 evaluation clips at QP 16/24/32/40; every bitstream encoded on the NE, GPU and CPU and decoded on all three. **Cost** = BD-rate (coded PSNR-Y) of NE → NE with the bound against NE → NE with the default structure; **drift** = the worst frame over the 6 mismatched pairs (PSNR-Y of the decode against the decode on the encoder's processor).
-- **Scripts and raw data:** experiment 11's `scripts/` (`c.py`, `ana.py`, `PHASE=a2`) and `raw_data/r.csv` (the rows with structure `i32`, `i16`, `l32`, `l16`); the `l16` failure on MLVC-S and its fix are described there.
+- **Scripts and raw data:** experiment 11's `scripts/` (`drift_runner.py`, `drift_tables.py`, `PHASE=a2`) and `raw_data/r.csv` (the rows with structure `i32`, `i16`, `l32`, `l16`); the `l16` failure on MLVC-S and its fix are described there.
 
 ## Results
 

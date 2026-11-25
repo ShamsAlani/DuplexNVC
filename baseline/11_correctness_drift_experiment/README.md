@@ -24,17 +24,30 @@ MacBook Pro 14-inch M4 Pro, 24 GB, macOS 26.6.2 (25G83), libmlvc `eb5d60a`, norm
 
 ## How to run
 
-The scripts live in `~/Downloads/d/5/` (they read `../v`). Normal Mac use is fine; charger in, lid open; resumable.
+The scripts live in `~/Downloads/d/5/` (they read `../settings.sh`). Normal Mac use is fine; charger in, lid open; resumable.
 
 | Script | What | Time |
 |---|---|---|
-| `scripts/all` | Pre-flight, then `c.py` (up to 3 passes), then `ana.py`. `PHASE=main\|a2\|all`, `ONLY="<settings>"` | main ≈ 17 h for all 7 settings; A2 ≈ 10 h for the three 30 fps settings, ≈ 43 h for the other three |
-| `scripts/c.py` | One job = setting × structure × clip × QP: 3 encodes, 9 decodes, per-frame PSNR and drift | — |
-| `scripts/ana.py` | Coverage, determinism, drift by position, BD-rate per pair, A2 cost vs drift, figures (`S5OUT=<folder>` analyses another output folder) | 1 min |
-| `scripts/an` | `ana.py` on whatever is finished | 1 min |
-| `scripts/mp`, `scripts/m.py` | Multi-person check (finds the Step 8 masters under `~/Downloads`) | 1.4 h |
+| `scripts/drift_runs.sh` | Pre-flight, then `drift_runner.py` (up to 3 passes), then `drift_tables.py`. `PHASE=main\|a2\|all`, `ONLY="<settings>"` | main ≈ 17 h for all 7 settings; A2 ≈ 10 h for the three 30 fps settings, ≈ 43 h for the other three |
+| `scripts/drift_runner.py` | One job = setting × structure × clip × QP: 3 encodes, 9 decodes, per-frame PSNR and drift | — |
+| `scripts/drift_tables.py` | Coverage, determinism, drift by position, BD-rate per pair, A2 cost vs drift, figures (`S5OUT=<folder>` analyses another output folder) | 1 min |
+| `scripts/drift_analysis.sh` | `drift_tables.py` on whatever is finished | 1 min |
+| `scripts/multi_person_runs.sh`, `scripts/multi_person_runner.py` | Multi-person check (finds the Step 8 masters under `~/Downloads`) | 1.4 h |
 
 Output: `~/Downloads/duplexnvc-baseline/phase2/5/` and `phase2/5m/` (multi-person).
+
+### Script names
+
+The scripts were renamed from short names to descriptive ones after the runs; the code is unchanged apart from the names it calls and the log it writes. The console logs in `raw_data/` were recorded before the rename and keep the old names (`out_<old name>.txt`).
+
+| Old name | New name | Console log written now |
+|---|---|---|
+| `scripts/all` | `scripts/drift_runs.sh` | `out_drift_runs.txt` |
+| `scripts/an` | `scripts/drift_analysis.sh` | `out_drift_analysis.txt` |
+| `scripts/mp` | `scripts/multi_person_runs.sh` | `out_multi_person_runs.txt` |
+| `scripts/c.py` | `scripts/drift_runner.py` | — |
+| `scripts/m.py` | `scripts/multi_person_runner.py` | — |
+| `scripts/ana.py` | `scripts/drift_tables.py` | — |
 
 ## Files
 

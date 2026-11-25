@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """A1, round 2, and E4 (A1 combined with A2's drift bound), on the 20 evaluation clips at QP 16/24/26/32/40, with the
-method of experiment 10 (q.py). Offsets: QP on I-frames / on the other LTR-marked frames.
+method of experiment 10 (quality_runner.py). Offsets: QP on I-frames / on the other LTR-marked frames.
   B* (full MLVC 360p):  i8 -8/0, i10 -10/0          (round 1 stopped at -6 and was still gaining; reference = A1's o0)
   MLVC-S 540p (marks LTRs every 16 frames):  o0 0/0 (control: must equal experiment 10's bitstreams), i4 -4/0,
                                              l4 0/-4, b4 -4/-4, i8 -8/0
@@ -12,7 +12,7 @@ Output: ~/Downloads/duplexnvc-baseline/phase2/a1b/
 import csv, filecmp, json, os, sys, time
 D = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(D, "..", "4b"))
-import q
+import quality_runner as q
 
 BENCH_A1 = f"{q.WORK}/harness_a1/build/ninja-release/libmlvc_example"
 REC = ["--ltr-period", "16", "--ltr-recovery-period", "2"]

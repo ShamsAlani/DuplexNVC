@@ -7,7 +7,7 @@ usage: hvana.py   reads phase2/hv/q.csv and phase2/4b/q.csv, writes phase2/hv/re
 import csv, os, statistics as st, sys
 D = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(D, "..", "4b"))
-import ana
+import quality_tables as ana
 
 WORK = os.path.expanduser("~/Downloads/duplexnvc-baseline")
 OUT = f"{WORK}/phase2/hv"; RES = f"{OUT}/results"

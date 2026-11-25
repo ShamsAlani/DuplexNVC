@@ -11,8 +11,17 @@
 
 | Script | What | Time | Conditions |
 |---|---|---|---|
-| `scripts/2a` | Downloads the MLVC-S PSNR weights, builds the converter's test clips, converts the 7 bundles, traces each network | 30–45 min | Wi-Fi **on** (one download) |
-| `scripts/2b` | Camera and incoming streams per resolution, incoming at QP 26, decode check | 15 min, ≈ 7 GB | any |
+| `scripts/convert_models.sh` | Downloads the MLVC-S PSNR weights, builds the converter's test clips, converts the 7 bundles, traces each network | 30–45 min | Wi-Fi **on** (one download) |
+| `scripts/make_streams_per_setting.sh` | Camera and incoming streams per resolution, incoming at QP 26, decode check | 15 min, ≈ 7 GB | any |
+
+### Script names
+
+The scripts were renamed from short names to descriptive ones after the runs; the code is unchanged apart from the names it calls and the log it writes. The console logs in `raw_data/` were recorded before the rename and keep the old names (`out_<old name>.txt`).
+
+| Old name | New name | Console log written now |
+|---|---|---|
+| `scripts/2a` | `scripts/convert_models.sh` | `out_convert_models.txt` |
+| `scripts/2b` | `scripts/make_streams_per_setting.sh` | `out_make_streams_per_setting.txt` |
 
 ## Files
 

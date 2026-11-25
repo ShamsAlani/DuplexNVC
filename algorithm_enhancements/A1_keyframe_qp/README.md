@@ -29,18 +29,27 @@ B\*'s new offsets are compared with round 1's `o0`; MLVC-S's with its own `o0`; 
 
 ## How to run
 
-The scripts live in `~/Downloads/d/a1/` (they use baseline experiment 10's `q.py` and `ana.py` from `../4b/`). Normal Mac, charger in, lid open; resumable.
+The scripts live in `~/Downloads/d/a1/` (they use baseline experiment 10's `quality_runner.py` and `quality_tables.py` from `../4b/`). Normal Mac, charger in, lid open; resumable.
 
 | Script | What | Time |
 |---|---|---|
-| `scripts/all` | Builds `harness_a1` from `duplex_bench.cpp`, the checks, the 600 runs (2 passes), the analysis | ≈ 50 min |
+| `scripts/a1_round1_runs.sh` | Builds `harness_a1` from `duplex_bench.cpp`, the checks, the 600 runs (2 passes), the analysis | ≈ 50 min |
 | `scripts/a1.py` | The runs (`check` = first clip, QP 26, `o0` and `b4`) | — |
 | `scripts/a1ana.py` | Mean rate–distortion, BD-rate against `o0` (mean curves and per clip), share of the bits per frame role | 1 min |
 | `scripts/duplex_bench.cpp` | The measurement program with `--qp-i-offset`, `--qp-ltr-offset`, `--frame-log` (all modes), and since round 2 `--force-idr`, `--ltr-period`, `--ltr-recovery-period`, `--ltr-start-idx` | — |
-| `scripts/allb` | Round 2 and E4: check (MLVC-S `o0` identical to baseline experiment 10), the 1,000 runs (2 passes), the analysis | ≈ 75 min |
+| `scripts/a1_round2_runs.sh` | Round 2 and E4: check (MLVC-S `o0` identical to baseline experiment 10), the 1,000 runs (2 passes), the analysis | ≈ 75 min |
 | `scripts/a1b.py`, `scripts/a1bana.py` | Round 2 runs; BD-rate of every comparison (mean curves and per clip) | — |
 
-Output: `~/Downloads/duplexnvc-baseline/phase2/a1/` (round 1) and `phase2/a1b/` (round 2). Round 2 needs the program built by A3's `all` (it rebuilds `harness_a1` when `duplex_bench.cpp` changes).
+Output: `~/Downloads/duplexnvc-baseline/phase2/a1/` (round 1) and `phase2/a1b/` (round 2). Round 2 needs the program built by A3's `a3_runs.sh` (it rebuilds `harness_a1` when `duplex_bench.cpp` changes).
+
+### Script names
+
+The scripts were renamed from short names to descriptive ones after the runs; the code is unchanged apart from the names it calls and the log it writes. The console logs in `raw_data/` were recorded before the rename and keep the old names (`out_<old name>.txt`).
+
+| Old name | New name | Console log written now |
+|---|---|---|
+| `scripts/all` | `scripts/a1_round1_runs.sh` | `out_a1_round1_runs.txt` |
+| `scripts/allb` | `scripts/a1_round2_runs.sh` | `out_a1_round2_runs.txt` |
 
 ## Files
 

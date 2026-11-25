@@ -1,6 +1,6 @@
 # bl_energy/: E7, energy of B* on AC power
 
-**Script:** `scripts/w` (quiet Mac, `sudo` for powermetrics).
+**Script:** `scripts/energy_runs.sh` (quiet Mac, `sudo` for powermetrics).
 **Log:** `../logs/out_w.txt`.
 **Tool:** `sudo powermetrics --samplers cpu_power,gpu_power -i 100` (`-n 1200` for idle, `-n 800` per run). Samples were requested every 100 ms and arrived about every 125 ms. The `gpu_power` sampler also reports ANE (Neural Engine) power.
 
