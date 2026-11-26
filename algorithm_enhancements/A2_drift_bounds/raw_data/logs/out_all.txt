@@ -1,0 +1,1250 @@
+
+== Step 5 START  Mon Nov 23 16:17:43 +04 2026   PHASE=a2 ONLY=mlvc_720p mlvcs_1080p mlvc_1080p
+ProductName:		macOS ProductVersion:		26.6.2 BuildVersion:		25G83 
+libmlvc eb5d60a
+Now drawing from 'AC Power'
+== pre-flight
+   ok  /Users/shamsalani/Downloads/duplexnvc-baseline/libmlvc/install/mac-arm64-ninja-release/bin/mlvc
+   ok  /Users/shamsalani/Downloads/duplexnvc-baseline/.venv/bin/python3
+   ok  /Users/shamsalani/Downloads/duplexnvc-baseline/data/split.json
+   ok  /Users/shamsalani/Downloads/duplexnvc-baseline/bundles/mlvc
+   ok  /Users/shamsalani/Downloads/duplexnvc-baseline/bundles/mlvc_540p
+   ok  /Users/shamsalani/Downloads/duplexnvc-baseline/bundles/mlvc_720p
+   ok  /Users/shamsalani/Downloads/duplexnvc-baseline/bundles/mlvc_1080p
+   ok  /Users/shamsalani/Downloads/duplexnvc-baseline/bundles/mlvcs_540p
+   ok  /Users/shamsalani/Downloads/duplexnvc-baseline/bundles/mlvcs_720p
+   ok  /Users/shamsalani/Downloads/duplexnvc-baseline/bundles/mlvcs_1080p
+   evaluation MP4s present: 20 of 20
+   ok  ffmpeg
+   ok  mlvc encode has the LTR options
+   ok  python: numpy 2.5.4 scipy 1.18.1
+   free disk: 529 GB (need ~60)
+
+== pass 1  Mon Nov 23 16:17:43 +04 2026
+PHASE=a2  settings=mlvc_720p mlvcs_1080p mlvc_1080p
+960 jobs (setting x variant x clip x QP, 9 pairs each), 0 done, 960 to do
+[1/960] 23 16:19 mlvc_720p    i32  08ee5e qp16  NE>NE 43.7176 dB  worst drift 50.6 dB  all 9 ok  108 s  elapsed 0.0 h  left ~28.8 h
+[2/960] 23 16:21 mlvc_720p    i32  08ee5e qp24  NE>NE 42.1605 dB  worst drift 50.3 dB  all 9 ok  109 s  elapsed 0.1 h  left ~28.9 h
+Traceback (most recent call last):
+  File "/Users/shamsalani/Downloads/d/5/c.py", line 275, in <module>
+    main()
+    ~~~~^^
+  File "/Users/shamsalani/Downloads/d/5/c.py", line 238, in main
+    rows = job(s, v, clip, q, det)
+  File "/Users/shamsalani/Downloads/d/5/c.py", line 141, in job
+    [t.start() for t in th]; [t.join() for t in th]
+                              ~~~~~~^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/threading.py", line 1094, in join
+    self._handle.join(timeout)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^
+KeyboardInterrupt
+
+== Step 5 START  Tue Nov 24 17:57:33 +04 2026   PHASE=a2 ONLY=mlvc_720p mlvcs_1080p mlvc_1080p
+ProductName:		macOS ProductVersion:		26.6.2 BuildVersion:		25G83 
+libmlvc eb5d60a
+Now drawing from 'AC Power'
+== pre-flight
+   ok  /Users/shamsalani/Downloads/duplexnvc-baseline/libmlvc/install/mac-arm64-ninja-release/bin/mlvc
+   ok  /Users/shamsalani/Downloads/duplexnvc-baseline/.venv/bin/python3
+   ok  /Users/shamsalani/Downloads/duplexnvc-baseline/data/split.json
+   ok  /Users/shamsalani/Downloads/duplexnvc-baseline/bundles/mlvc
+   ok  /Users/shamsalani/Downloads/duplexnvc-baseline/bundles/mlvc_540p
+   ok  /Users/shamsalani/Downloads/duplexnvc-baseline/bundles/mlvc_720p
+   ok  /Users/shamsalani/Downloads/duplexnvc-baseline/bundles/mlvc_1080p
+   ok  /Users/shamsalani/Downloads/duplexnvc-baseline/bundles/mlvcs_540p
+   ok  /Users/shamsalani/Downloads/duplexnvc-baseline/bundles/mlvcs_720p
+   ok  /Users/shamsalani/Downloads/duplexnvc-baseline/bundles/mlvcs_1080p
+   evaluation MP4s present: 20 of 20
+   ok  ffmpeg
+   ok  mlvc encode has the LTR options
+   ok  python: numpy 2.5.4 scipy 1.18.1
+   free disk: 515 GB (need ~60)
+
+== pass 1  Tue Nov 24 17:57:33 +04 2026
+PHASE=a2  settings=mlvc_720p mlvcs_1080p mlvc_1080p
+960 jobs (setting x variant x clip x QP, 9 pairs each), 2 done, 958 to do
+[1/958] 24 17:59 mlvc_720p    i32  08ee5e qp32  NE>NE 39.2259 dB  worst drift 49.5 dB  all 9 ok  124 s  elapsed 0.0 h  left ~32.9 h
+[2/958] 24 18:01 mlvc_720p    i32  08ee5e qp40  NE>NE 35.0161 dB  worst drift 49.3 dB  all 9 ok  122 s  elapsed 0.1 h  left ~32.6 h
+[3/958] 24 18:03 mlvc_720p    i32  104c93 qp16  NE>NE 44.4678 dB  worst drift 42.9 dB  all 9 ok  124 s  elapsed 0.1 h  left ~32.7 h
+[4/958] 24 18:05 mlvc_720p    i32  104c93 qp24  NE>NE 42.5609 dB  worst drift 38.0 dB  all 9 ok  117 s  elapsed 0.1 h  left ~32.2 h
+[5/958] 24 18:07 mlvc_720p    i32  104c93 qp32  NE>NE 39.2375 dB  worst drift 41.4 dB  all 9 ok  115 s  elapsed 0.2 h  left ~31.8 h
+[6/958] 24 18:09 mlvc_720p    i32  104c93 qp40  NE>NE 34.9449 dB  worst drift 38.5 dB  all 9 ok  111 s  elapsed 0.2 h  left ~31.4 h
+[7/958] 24 18:11 mlvc_720p    i32  1e8830 qp16  NE>NE 37.9417 dB  worst drift 48.9 dB  all 9 ok  110 s  elapsed 0.2 h  left ~31.0 h
+[8/958] 24 18:13 mlvc_720p    i32  1e8830 qp24  NE>NE 36.8906 dB  worst drift 48.7 dB  all 9 ok  111 s  elapsed 0.3 h  left ~30.8 h
+[9/958] 24 18:14 mlvc_720p    i32  1e8830 qp32  NE>NE 34.6592 dB  worst drift 47.0 dB  all 9 ok  107 s  elapsed 0.3 h  left ~30.5 h
+[10/958] 24 18:16 mlvc_720p    i32  1e8830 qp40  NE>NE 30.8955 dB  worst drift 45.1 dB  all 9 ok  106 s  elapsed 0.3 h  left ~30.2 h
+[11/958] 24 18:18 mlvc_720p    i32  38a418 qp16  NE>NE 44.7958 dB  worst drift 49.5 dB  all 9 ok  106 s  elapsed 0.3 h  left ~29.9 h
+[12/958] 24 18:20 mlvc_720p    i32  38a418 qp24  NE>NE 43.089 dB  worst drift 49.4 dB  all 9 ok  111 s  elapsed 0.4 h  left ~29.8 h
+[13/958] 24 18:22 mlvc_720p    i32  38a418 qp32  NE>NE 40.027 dB  worst drift 48.6 dB  all 9 ok  108 s  elapsed 0.4 h  left ~29.7 h
+[14/958] 24 18:23 mlvc_720p    i32  38a418 qp40  NE>NE 35.9499 dB  worst drift 47.1 dB  all 9 ok  108 s  elapsed 0.4 h  left ~29.6 h
+[15/958] 24 18:25 mlvc_720p    i32  40fe4d qp16  NE>NE 40.9342 dB  worst drift 49.6 dB  all 9 ok  112 s  elapsed 0.5 h  left ~29.5 h
+[16/958] 24 18:27 mlvc_720p    i32  40fe4d qp24  NE>NE 39.2358 dB  worst drift 49.4 dB  all 9 ok  111 s  elapsed 0.5 h  left ~29.5 h
+[17/958] 24 18:29 mlvc_720p    i32  40fe4d qp32  NE>NE 36.6894 dB  worst drift 48.1 dB  all 9 ok  108 s  elapsed 0.5 h  left ~29.4 h
+[18/958] 24 18:31 mlvc_720p    i32  40fe4d qp40  NE>NE 33.1662 dB  worst drift 47.2 dB  all 9 ok  107 s  elapsed 0.6 h  left ~29.2 h
+[19/958] 24 18:33 mlvc_720p    i32  45bb89 qp16  NE>NE 43.7815 dB  worst drift 50.3 dB  all 9 ok  111 s  elapsed 0.6 h  left ~29.2 h
+[20/958] 24 18:34 mlvc_720p    i32  45bb89 qp24  NE>NE 42.1279 dB  worst drift 49.9 dB  all 9 ok  107 s  elapsed 0.6 h  left ~29.1 h
+[21/958] 24 18:36 mlvc_720p    i32  45bb89 qp32  NE>NE 39.1653 dB  worst drift 48.4 dB  all 9 ok  106 s  elapsed 0.6 h  left ~29.0 h
+[22/958] 24 18:38 mlvc_720p    i32  45bb89 qp40  NE>NE 35.5334 dB  worst drift 47.8 dB  all 9 ok  106 s  elapsed 0.7 h  left ~28.9 h
+[23/958] 24 18:40 mlvc_720p    i32  4d8ffe qp16  NE>NE 37.1732 dB  worst drift 48.6 dB  all 9 ok  111 s  elapsed 0.7 h  left ~28.9 h
+[24/958] 24 18:41 mlvc_720p    i32  4d8ffe qp24  NE>NE 35.5465 dB  worst drift 48.0 dB  all 9 ok  109 s  elapsed 0.7 h  left ~28.8 h
+[25/958] 24 18:43 mlvc_720p    i32  4d8ffe qp32  NE>NE 32.6867 dB  worst drift 46.0 dB  all 9 ok  108 s  elapsed 0.8 h  left ~28.8 h
+[26/958] 24 18:45 mlvc_720p    i32  4d8ffe qp40  NE>NE 28.7654 dB  worst drift 44.2 dB  all 9 ok  108 s  elapsed 0.8 h  left ~28.7 h
+[27/958] 24 18:47 mlvc_720p    i32  6aa9cf qp16  NE>NE 46.0216 dB  worst drift 49.1 dB  all 9 ok  112 s  elapsed 0.8 h  left ~28.7 h
+[28/958] 24 18:49 mlvc_720p    i32  6aa9cf qp24  NE>NE 44.4212 dB  worst drift 48.6 dB  all 9 ok  108 s  elapsed 0.9 h  left ~28.6 h
+[29/958] 24 18:51 mlvc_720p    i32  6aa9cf qp32  NE>NE 41.7009 dB  worst drift 45.8 dB  all 9 ok  110 s  elapsed 0.9 h  left ~28.6 h
+[30/958] 24 18:52 mlvc_720p    i32  6aa9cf qp40  NE>NE 38.1098 dB  worst drift 44.6 dB  all 9 ok  109 s  elapsed 0.9 h  left ~28.5 h
+[31/958] 24 18:54 mlvc_720p    i32  6eb39d qp16  NE>NE 43.6915 dB  worst drift 50.5 dB  all 9 ok  113 s  elapsed 1.0 h  left ~28.5 h
+[32/958] 24 18:56 mlvc_720p    i32  6eb39d qp24  NE>NE 41.3631 dB  worst drift 49.8 dB  all 9 ok  111 s  elapsed 1.0 h  left ~28.5 h
+[33/958] 24 18:58 mlvc_720p    i32  6eb39d qp32  NE>NE 37.9491 dB  worst drift 49.2 dB  all 9 ok  108 s  elapsed 1.0 h  left ~28.4 h
+[34/958] 24 19:00 mlvc_720p    i32  6eb39d qp40  NE>NE 33.9297 dB  worst drift 46.2 dB  all 9 ok  109 s  elapsed 1.0 h  left ~28.4 h
+[35/958] 24 19:02 mlvc_720p    i32  73f232 qp16  NE>NE 43.8728 dB  worst drift 49.8 dB  all 9 ok  113 s  elapsed 1.1 h  left ~28.4 h
+[36/958] 24 19:03 mlvc_720p    i32  73f232 qp24  NE>NE 41.8659 dB  worst drift 49.7 dB  all 9 ok  106 s  elapsed 1.1 h  left ~28.3 h
+[37/958] 24 19:05 mlvc_720p    i32  73f232 qp32  NE>NE 38.888 dB  worst drift 47.9 dB  all 9 ok  106 s  elapsed 1.1 h  left ~28.3 h
+[38/958] 24 19:07 mlvc_720p    i32  73f232 qp40  NE>NE 35.2987 dB  worst drift 45.2 dB  all 9 ok  106 s  elapsed 1.2 h  left ~28.2 h
+[39/958] 24 19:09 mlvc_720p    i32  99b38e qp16  NE>NE 46.3744 dB  worst drift 50.3 dB  all 9 ok  110 s  elapsed 1.2 h  left ~28.2 h
+[40/958] 24 19:11 mlvc_720p    i32  99b38e qp24  NE>NE 44.8824 dB  worst drift 49.4 dB  all 9 ok  110 s  elapsed 1.2 h  left ~28.1 h
+[41/958] 24 19:12 mlvc_720p    i32  99b38e qp32  NE>NE 41.9869 dB  worst drift 49.2 dB  all 9 ok  110 s  elapsed 1.3 h  left ~28.1 h
+[42/958] 24 19:14 mlvc_720p    i32  99b38e qp40  NE>NE 38.1118 dB  worst drift 46.2 dB  all 9 ok  106 s  elapsed 1.3 h  left ~28.0 h
+[43/958] 24 19:16 mlvc_720p    i32  a17620 qp16  NE>NE 45.5246 dB  worst drift 50.7 dB  all 9 ok  115 s  elapsed 1.3 h  left ~28.0 h
+[44/958] 24 19:18 mlvc_720p    i32  a17620 qp24  NE>NE 43.8468 dB  worst drift 50.6 dB  all 9 ok  117 s  elapsed 1.4 h  left ~28.0 h
+[45/958] 24 19:20 mlvc_720p    i32  a17620 qp32  NE>NE 40.8137 dB  worst drift 49.8 dB  all 9 ok  117 s  elapsed 1.4 h  left ~28.1 h
+[46/958] 24 19:22 mlvc_720p    i32  a17620 qp40  NE>NE 36.6975 dB  worst drift 48.4 dB  all 9 ok  123 s  elapsed 1.4 h  left ~28.1 h
+[47/958] 24 19:24 mlvc_720p    i32  b2d792 qp16  NE>NE 43.7931 dB  worst drift 47.8 dB  all 9 ok  117 s  elapsed 1.4 h  left ~28.1 h
+[48/958] 24 19:26 mlvc_720p    i32  b2d792 qp24  NE>NE 42.1604 dB  worst drift 45.0 dB  all 9 ok  112 s  elapsed 1.5 h  left ~28.1 h
+[49/958] 24 19:28 mlvc_720p    i32  b2d792 qp32  NE>NE 39.5185 dB  worst drift 41.1 dB  all 9 ok  116 s  elapsed 1.5 h  left ~28.1 h
+[50/958] 24 19:30 mlvc_720p    i32  b2d792 qp40  NE>NE 36.5324 dB  worst drift 42.5 dB  all 9 ok  116 s  elapsed 1.5 h  left ~28.1 h
+[51/958] 24 19:32 mlvc_720p    i32  b8893c qp16  NE>NE 43.9292 dB  worst drift 48.7 dB  all 9 ok  115 s  elapsed 1.6 h  left ~28.0 h
+[52/958] 24 19:34 mlvc_720p    i32  b8893c qp24  NE>NE 42.588 dB  worst drift 48.9 dB  all 9 ok  117 s  elapsed 1.6 h  left ~28.0 h
+[53/958] 24 19:36 mlvc_720p    i32  b8893c qp32  NE>NE 40.302 dB  worst drift 48.7 dB  all 9 ok  115 s  elapsed 1.6 h  left ~28.0 h
+[54/958] 24 19:37 mlvc_720p    i32  b8893c qp40  NE>NE 36.8912 dB  worst drift 47.4 dB  all 9 ok  113 s  elapsed 1.7 h  left ~28.0 h
+[55/958] 24 19:39 mlvc_720p    i32  b91038 qp16  NE>NE 43.7314 dB  worst drift 50.9 dB  all 9 ok  120 s  elapsed 1.7 h  left ~28.0 h
+[56/958] 24 19:41 mlvc_720p    i32  b91038 qp24  NE>NE 41.9827 dB  worst drift 50.9 dB  all 9 ok  120 s  elapsed 1.7 h  left ~28.0 h
+[57/958] 24 19:43 mlvc_720p    i32  b91038 qp32  NE>NE 38.7287 dB  worst drift 50.6 dB  all 9 ok  118 s  elapsed 1.8 h  left ~28.0 h
+[58/958] 24 19:45 mlvc_720p    i32  b91038 qp40  NE>NE 34.3441 dB  worst drift 50.1 dB  all 9 ok  117 s  elapsed 1.8 h  left ~28.0 h
+[59/958] 24 19:47 mlvc_720p    i32  c33648 qp16  NE>NE 43.125 dB  worst drift 49.5 dB  all 9 ok  122 s  elapsed 1.8 h  left ~28.0 h
+[60/958] 24 19:49 mlvc_720p    i32  c33648 qp24  NE>NE 41.4774 dB  worst drift 49.2 dB  all 9 ok  121 s  elapsed 1.9 h  left ~28.0 h
+[61/958] 24 19:51 mlvc_720p    i32  c33648 qp32  NE>NE 38.9088 dB  worst drift 49.0 dB  all 9 ok  119 s  elapsed 1.9 h  left ~28.0 h
+[62/958] 24 19:53 mlvc_720p    i32  c33648 qp40  NE>NE 35.5007 dB  worst drift 49.2 dB  all 9 ok  119 s  elapsed 1.9 h  left ~28.0 h
+[63/958] 24 19:55 mlvc_720p    i32  c52d75 qp16  NE>NE 41.2454 dB  worst drift 45.8 dB  all 9 ok  121 s  elapsed 2.0 h  left ~28.0 h
+[64/958] 24 19:57 mlvc_720p    i32  c52d75 qp24  NE>NE 39.7988 dB  worst drift 46.6 dB  all 9 ok  120 s  elapsed 2.0 h  left ~28.0 h
+[65/958] 24 19:59 mlvc_720p    i32  c52d75 qp32  NE>NE 37.2698 dB  worst drift 45.0 dB  all 9 ok  119 s  elapsed 2.0 h  left ~28.0 h
+[66/958] 24 20:01 mlvc_720p    i32  c52d75 qp40  NE>NE 33.7691 dB  worst drift 41.3 dB  all 9 ok  118 s  elapsed 2.1 h  left ~28.0 h
+[67/958] 24 20:03 mlvc_720p    i32  cd6bc1 qp16  NE>NE 41.2552 dB  worst drift 50.2 dB  all 9 ok  120 s  elapsed 2.1 h  left ~28.0 h
+[68/958] 24 20:05 mlvc_720p    i32  cd6bc1 qp24  NE>NE 39.6412 dB  worst drift 49.6 dB  all 9 ok  119 s  elapsed 2.1 h  left ~28.0 h
+[69/958] 24 20:07 mlvc_720p    i32  cd6bc1 qp32  NE>NE 37.158 dB  worst drift 47.2 dB  all 9 ok  117 s  elapsed 2.2 h  left ~28.0 h
+[70/958] 24 20:09 mlvc_720p    i32  cd6bc1 qp40  NE>NE 33.9464 dB  worst drift 45.6 dB  all 9 ok  116 s  elapsed 2.2 h  left ~27.9 h
+[71/958] 24 20:11 mlvc_720p    i32  db623c qp16  NE>NE 43.5343 dB  worst drift 50.2 dB  all 9 ok  116 s  elapsed 2.2 h  left ~27.9 h
+[72/958] 24 20:13 mlvc_720p    i32  db623c qp24  NE>NE 41.9885 dB  worst drift 50.1 dB  all 9 ok  107 s  elapsed 2.3 h  left ~27.9 h
+[73/958] 24 20:15 mlvc_720p    i32  db623c qp32  NE>NE 38.963 dB  worst drift 49.4 dB  all 9 ok  110 s  elapsed 2.3 h  left ~27.8 h
+[74/958] 24 20:17 mlvc_720p    i32  db623c qp40  NE>NE 34.7799 dB  worst drift 49.0 dB  all 9 ok  111 s  elapsed 2.3 h  left ~27.8 h
+[75/958] 24 20:18 mlvc_720p    i32  fda953 qp16  NE>NE 44.4003 dB  worst drift 48.3 dB  all 9 ok  111 s  elapsed 2.4 h  left ~27.7 h
+[76/958] 24 20:20 mlvc_720p    i32  fda953 qp24  NE>NE 42.1177 dB  worst drift 47.7 dB  all 9 ok  105 s  elapsed 2.4 h  left ~27.7 h
+[77/958] 24 20:22 mlvc_720p    i32  fda953 qp32  NE>NE 38.605 dB  worst drift 46.9 dB  all 9 ok  106 s  elapsed 2.4 h  left ~27.6 h
+[78/958] 24 20:24 mlvc_720p    i32  fda953 qp40  NE>NE 34.4435 dB  worst drift 45.2 dB  all 9 ok  112 s  elapsed 2.4 h  left ~27.6 h
+[79/958] 24 20:26 mlvc_720p    l32  08ee5e qp16  NE>NE 43.7367 dB  worst drift 50.6 dB  all 9 ok  114 s  elapsed 2.5 h  left ~27.6 h
+[80/958] 24 20:28 mlvc_720p    l32  08ee5e qp24  NE>NE 42.1797 dB  worst drift 50.3 dB  all 9 ok  111 s  elapsed 2.5 h  left ~27.5 h
+[81/958] 24 20:29 mlvc_720p    l32  08ee5e qp32  NE>NE 39.252 dB  worst drift 49.5 dB  all 9 ok  111 s  elapsed 2.5 h  left ~27.5 h
+[82/958] 24 20:31 mlvc_720p    l32  08ee5e qp40  NE>NE 35.0588 dB  worst drift 49.3 dB  all 9 ok  111 s  elapsed 2.6 h  left ~27.5 h
+[83/958] 24 20:33 mlvc_720p    l32  104c93 qp16  NE>NE 44.4631 dB  worst drift 42.9 dB  all 9 ok  113 s  elapsed 2.6 h  left ~27.4 h
+[84/958] 24 20:35 mlvc_720p    l32  104c93 qp24  NE>NE 42.5433 dB  worst drift 38.0 dB  all 9 ok  111 s  elapsed 2.6 h  left ~27.4 h
+[85/958] 24 20:37 mlvc_720p    l32  104c93 qp32  NE>NE 39.1975 dB  worst drift 41.4 dB  all 9 ok  111 s  elapsed 2.7 h  left ~27.4 h
+[86/958] 24 20:39 mlvc_720p    l32  104c93 qp40  NE>NE 34.8983 dB  worst drift 38.5 dB  all 9 ok  111 s  elapsed 2.7 h  left ~27.3 h
+[87/958] 24 20:41 mlvc_720p    l32  1e8830 qp16  NE>NE 37.9719 dB  worst drift 47.9 dB  all 9 ok  113 s  elapsed 2.7 h  left ~27.3 h
+[88/958] 24 20:42 mlvc_720p    l32  1e8830 qp24  NE>NE 36.9289 dB  worst drift 48.8 dB  all 9 ok  110 s  elapsed 2.8 h  left ~27.2 h
+[89/958] 24 20:44 mlvc_720p    l32  1e8830 qp32  NE>NE 34.7023 dB  worst drift 47.0 dB  all 9 ok  110 s  elapsed 2.8 h  left ~27.2 h
+[90/958] 24 20:46 mlvc_720p    l32  1e8830 qp40  NE>NE 30.9655 dB  worst drift 45.1 dB  all 9 ok  110 s  elapsed 2.8 h  left ~27.2 h
+[91/958] 24 20:48 mlvc_720p    l32  38a418 qp16  NE>NE 44.7945 dB  worst drift 49.4 dB  all 9 ok  112 s  elapsed 2.8 h  left ~27.1 h
+[92/958] 24 20:50 mlvc_720p    l32  38a418 qp24  NE>NE 43.0709 dB  worst drift 49.2 dB  all 9 ok  111 s  elapsed 2.9 h  left ~27.1 h
+[93/958] 24 20:52 mlvc_720p    l32  38a418 qp32  NE>NE 39.9847 dB  worst drift 48.5 dB  all 9 ok  111 s  elapsed 2.9 h  left ~27.1 h
+[94/958] 24 20:53 mlvc_720p    l32  38a418 qp40  NE>NE 35.9257 dB  worst drift 46.7 dB  all 9 ok  109 s  elapsed 2.9 h  left ~27.0 h
+Traceback (most recent call last):
+  File "/Users/shamsalani/Downloads/d/5/c.py", line 275, in <module>
+    main()
+    ~~~~^^
+  File "/Users/shamsalani/Downloads/d/5/c.py", line 238, in main
+    rows = job(s, v, clip, q, det)
+  File "/Users/shamsalani/Downloads/d/5/c.py", line 141, in job
+    [t.start() for t in th]; [t.join() for t in th]
+                              ~~~~~~^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/threading.py", line 1094, in join
+    self._handle.join(timeout)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^
+KeyboardInterrupt
+
+== Step 5 START  Wed Nov 25 01:50:38 +04 2026   PHASE=a2 ONLY=mlvc_720p mlvcs_1080p mlvc_1080p
+ProductName:		macOS ProductVersion:		26.6.2 BuildVersion:		25G83 
+libmlvc eb5d60a
+Now drawing from 'AC Power'
+== pre-flight
+   ok  /Users/shamsalani/Downloads/duplexnvc-baseline/libmlvc/install/mac-arm64-ninja-release/bin/mlvc
+   ok  /Users/shamsalani/Downloads/duplexnvc-baseline/.venv/bin/python3
+   ok  /Users/shamsalani/Downloads/duplexnvc-baseline/data/split.json
+   ok  /Users/shamsalani/Downloads/duplexnvc-baseline/bundles/mlvc
+   ok  /Users/shamsalani/Downloads/duplexnvc-baseline/bundles/mlvc_540p
+   ok  /Users/shamsalani/Downloads/duplexnvc-baseline/bundles/mlvc_720p
+   ok  /Users/shamsalani/Downloads/duplexnvc-baseline/bundles/mlvc_1080p
+   ok  /Users/shamsalani/Downloads/duplexnvc-baseline/bundles/mlvcs_540p
+   ok  /Users/shamsalani/Downloads/duplexnvc-baseline/bundles/mlvcs_720p
+   ok  /Users/shamsalani/Downloads/duplexnvc-baseline/bundles/mlvcs_1080p
+   evaluation MP4s present: 20 of 20
+   ok  ffmpeg
+   ok  mlvc encode has the LTR options
+   ok  python: numpy 2.5.4 scipy 1.18.1
+   free disk: 512 GB (need ~60)
+
+== pass 1  Wed Nov 25 01:50:38 +04 2026
+PHASE=a2  settings=mlvc_720p mlvcs_1080p mlvc_1080p
+960 jobs (setting x variant x clip x QP, 9 pairs each), 96 done, 864 to do
+[1/864] 25 01:52 mlvc_720p    l32  40fe4d qp16  NE>NE 40.9377 dB  worst drift 49.4 dB  all 9 ok  112 s  elapsed 0.0 h  left ~26.8 h
+[2/864] 25 01:54 mlvc_720p    l32  40fe4d qp24  NE>NE 39.239 dB  worst drift 48.3 dB  all 9 ok  109 s  elapsed 0.1 h  left ~26.4 h
+[3/864] 25 01:56 mlvc_720p    l32  40fe4d qp32  NE>NE 36.6687 dB  worst drift 48.1 dB  all 9 ok  109 s  elapsed 0.1 h  left ~26.3 h
+[4/864] 25 01:58 mlvc_720p    l32  40fe4d qp40  NE>NE 33.1281 dB  worst drift 45.6 dB  all 9 ok  114 s  elapsed 0.1 h  left ~26.5 h
+[5/864] 25 01:59 mlvc_720p    l32  45bb89 qp16  NE>NE 43.7963 dB  worst drift 50.3 dB  all 9 ok  113 s  elapsed 0.2 h  left ~26.6 h
+[6/864] 25 02:01 mlvc_720p    l32  45bb89 qp24  NE>NE 42.137 dB  worst drift 49.5 dB  all 9 ok  108 s  elapsed 0.2 h  left ~26.4 h
+[7/864] 25 02:03 mlvc_720p    l32  45bb89 qp32  NE>NE 39.1669 dB  worst drift 48.7 dB  all 9 ok  107 s  elapsed 0.2 h  left ~26.2 h
+[8/864] 25 02:05 mlvc_720p    l32  45bb89 qp40  NE>NE 35.5402 dB  worst drift 47.7 dB  all 9 ok  109 s  elapsed 0.2 h  left ~26.2 h
+[9/864] 25 02:07 mlvc_720p    l32  4d8ffe qp16  NE>NE 37.1437 dB  worst drift 48.3 dB  all 9 ok  112 s  elapsed 0.3 h  left ~26.2 h
+[10/864] 25 02:09 mlvc_720p    l32  4d8ffe qp24  NE>NE 35.4944 dB  worst drift 47.7 dB  all 9 ok  112 s  elapsed 0.3 h  left ~26.2 h
+[11/864] 25 02:10 mlvc_720p    l32  4d8ffe qp32  NE>NE 32.6195 dB  worst drift 44.1 dB  all 9 ok  107 s  elapsed 0.3 h  left ~26.1 h
+[12/864] 25 02:12 mlvc_720p    l32  4d8ffe qp40  NE>NE 28.7201 dB  worst drift 42.6 dB  all 9 ok  107 s  elapsed 0.4 h  left ~26.0 h
+[13/864] 25 02:14 mlvc_720p    l32  6aa9cf qp16  NE>NE 45.9902 dB  worst drift 48.6 dB  all 9 ok  111 s  elapsed 0.4 h  left ~26.0 h
+[14/864] 25 02:16 mlvc_720p    l32  6aa9cf qp24  NE>NE 44.3675 dB  worst drift 48.3 dB  all 9 ok  109 s  elapsed 0.4 h  left ~25.9 h
+[15/864] 25 02:18 mlvc_720p    l32  6aa9cf qp32  NE>NE 41.5971 dB  worst drift 45.5 dB  all 9 ok  106 s  elapsed 0.5 h  left ~25.8 h
+[16/864] 25 02:19 mlvc_720p    l32  6aa9cf qp40  NE>NE 37.9783 dB  worst drift 41.2 dB  all 9 ok  106 s  elapsed 0.5 h  left ~25.8 h
+[17/864] 25 02:21 mlvc_720p    l32  6eb39d qp16  NE>NE 43.6469 dB  worst drift 50.4 dB  all 9 ok  113 s  elapsed 0.5 h  left ~25.8 h
+[18/864] 25 02:23 mlvc_720p    l32  6eb39d qp24  NE>NE 41.3007 dB  worst drift 49.8 dB  all 9 ok  113 s  elapsed 0.5 h  left ~25.8 h
+[19/864] 25 02:25 mlvc_720p    l32  6eb39d qp32  NE>NE 37.8596 dB  worst drift 49.2 dB  all 9 ok  109 s  elapsed 0.6 h  left ~25.8 h
+[20/864] 25 02:27 mlvc_720p    l32  6eb39d qp40  NE>NE 33.7733 dB  worst drift 46.2 dB  all 9 ok  108 s  elapsed 0.6 h  left ~25.7 h
+[21/864] 25 02:29 mlvc_720p    l32  73f232 qp16  NE>NE 43.861 dB  worst drift 49.4 dB  all 9 ok  112 s  elapsed 0.6 h  left ~25.7 h
+[22/864] 25 02:30 mlvc_720p    l32  73f232 qp24  NE>NE 41.8475 dB  worst drift 49.1 dB  all 9 ok  111 s  elapsed 0.7 h  left ~25.7 h
+Traceback (most recent call last):
+  File "/Users/shamsalani/Downloads/d/5/c.py", line 275, in <module>
+    main()
+    ~~~~^^
+  File "/Users/shamsalani/Downloads/d/5/c.py", line 238, in main
+    rows = job(s, v, clip, q, det)
+  File "/Users/shamsalani/Downloads/d/5/c.py", line 110, in job
+    [t.start() for t in th]; [t.join() for t in th]
+                              ~~~~~~^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/threading.py", line 1094, in join
+    self._handle.join(timeout)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^
+KeyboardInterrupt
+
+== Step 5 START  Wed Nov 25 04:40:16 +04 2026   PHASE=a2 ONLY=all settings
+ProductName:		macOS ProductVersion:		26.6.2 BuildVersion:		25G83 
+libmlvc eb5d60a
+Now drawing from 'AC Power'
+== pre-flight
+   ok  /Users/shamsalani/Downloads/duplexnvc-baseline/libmlvc/install/mac-arm64-ninja-release/bin/mlvc
+   ok  /Users/shamsalani/Downloads/duplexnvc-baseline/.venv/bin/python3
+   ok  /Users/shamsalani/Downloads/duplexnvc-baseline/data/split.json
+   ok  /Users/shamsalani/Downloads/duplexnvc-baseline/bundles/mlvc
+   ok  /Users/shamsalani/Downloads/duplexnvc-baseline/bundles/mlvc_540p
+   ok  /Users/shamsalani/Downloads/duplexnvc-baseline/bundles/mlvc_720p
+   ok  /Users/shamsalani/Downloads/duplexnvc-baseline/bundles/mlvc_1080p
+   ok  /Users/shamsalani/Downloads/duplexnvc-baseline/bundles/mlvcs_540p
+   ok  /Users/shamsalani/Downloads/duplexnvc-baseline/bundles/mlvcs_720p
+   ok  /Users/shamsalani/Downloads/duplexnvc-baseline/bundles/mlvcs_1080p
+   evaluation MP4s present: 20 of 20
+   ok  ffmpeg
+   ok  mlvc encode has the LTR options
+   ok  python: numpy 2.5.4 scipy 1.18.1
+   free disk: 515 GB (need ~60)
+
+== pass 1  Wed Nov 25 04:40:17 +04 2026
+PHASE=a2  settings=mlvc_360p mlvcs_720p mlvcs_540p mlvc_540p mlvc_720p mlvcs_1080p mlvc_1080p
+2240 jobs (setting x variant x clip x QP, 9 pairs each), 1398 done, 842 to do
+[1/842] 25 04:42 mlvc_720p    l32  73f232 qp32  NE>NE 38.8483 dB  worst drift 47.3 dB  all 9 ok  115 s  elapsed 0.0 h  left ~26.8 h
+[2/842] 25 04:44 mlvc_720p    l32  73f232 qp40  NE>NE 35.2414 dB  worst drift 46.0 dB  all 9 ok  112 s  elapsed 0.1 h  left ~26.4 h
+[3/842] 25 04:45 mlvc_720p    l32  99b38e qp16  NE>NE 46.3524 dB  worst drift 50.3 dB  all 9 ok  110 s  elapsed 0.1 h  left ~26.2 h
+[4/842] 25 04:47 mlvc_720p    l32  99b38e qp24  NE>NE 44.848 dB  worst drift 49.4 dB  all 9 ok  107 s  elapsed 0.1 h  left ~25.9 h
+[5/842] 25 04:49 mlvc_720p    l32  99b38e qp32  NE>NE 41.9362 dB  worst drift 49.2 dB  all 9 ok  107 s  elapsed 0.2 h  left ~25.6 h
+[6/842] 25 04:51 mlvc_720p    l32  99b38e qp40  NE>NE 38.0506 dB  worst drift 46.2 dB  all 9 ok  107 s  elapsed 0.2 h  left ~25.5 h
+[7/842] 25 04:53 mlvc_720p    l32  a17620 qp16  NE>NE 45.5386 dB  worst drift 50.7 dB  all 9 ok  114 s  elapsed 0.2 h  left ~25.6 h
+[8/842] 25 04:54 mlvc_720p    l32  a17620 qp24  NE>NE 43.8506 dB  worst drift 50.5 dB  all 9 ok  108 s  elapsed 0.2 h  left ~25.5 h
+[9/842] 25 04:56 mlvc_720p    l32  a17620 qp32  NE>NE 40.8275 dB  worst drift 49.7 dB  all 9 ok  113 s  elapsed 0.3 h  left ~25.5 h
+[10/842] 25 04:58 mlvc_720p    l32  a17620 qp40  NE>NE 36.7433 dB  worst drift 48.4 dB  all 9 ok  114 s  elapsed 0.3 h  left ~25.6 h
+[11/842] 25 05:00 mlvc_720p    l32  b2d792 qp16  NE>NE 43.7449 dB  worst drift 47.8 dB  all 9 ok  114 s  elapsed 0.3 h  left ~25.6 h
+[12/842] 25 05:02 mlvc_720p    l32  b2d792 qp24  NE>NE 42.0873 dB  worst drift 45.0 dB  all 9 ok  110 s  elapsed 0.4 h  left ~25.6 h
+[13/842] 25 05:04 mlvc_720p    l32  b2d792 qp32  NE>NE 39.4001 dB  worst drift 41.1 dB  all 9 ok  107 s  elapsed 0.4 h  left ~25.5 h
+[14/842] 25 05:06 mlvc_720p    l32  b2d792 qp40  NE>NE 36.4046 dB  worst drift 42.5 dB  all 9 ok  108 s  elapsed 0.4 h  left ~25.4 h
+[15/842] 25 05:07 mlvc_720p    l32  b8893c qp16  NE>NE 43.9276 dB  worst drift 48.7 dB  all 9 ok  114 s  elapsed 0.5 h  left ~25.4 h
+[16/842] 25 05:09 mlvc_720p    l32  b8893c qp24  NE>NE 42.581 dB  worst drift 48.9 dB  all 9 ok  110 s  elapsed 0.5 h  left ~25.4 h
+[17/842] 25 05:11 mlvc_720p    l32  b8893c qp32  NE>NE 40.2972 dB  worst drift 48.7 dB  all 9 ok  107 s  elapsed 0.5 h  left ~25.3 h
+[18/842] 25 05:13 mlvc_720p    l32  b8893c qp40  NE>NE 36.8654 dB  worst drift 47.7 dB  all 9 ok  109 s  elapsed 0.6 h  left ~25.3 h
+[19/842] 25 05:15 mlvc_720p    l32  b91038 qp16  NE>NE 43.7241 dB  worst drift 51.1 dB  all 9 ok  111 s  elapsed 0.6 h  left ~25.2 h
+[20/842] 25 05:17 mlvc_720p    l32  b91038 qp24  NE>NE 41.9711 dB  worst drift 51.0 dB  all 9 ok  107 s  elapsed 0.6 h  left ~25.2 h
+[21/842] 25 05:18 mlvc_720p    l32  b91038 qp32  NE>NE 38.6991 dB  worst drift 50.6 dB  all 9 ok  106 s  elapsed 0.6 h  left ~25.1 h
+[22/842] 25 05:20 mlvc_720p    l32  b91038 qp40  NE>NE 34.3708 dB  worst drift 50.1 dB  all 9 ok  106 s  elapsed 0.7 h  left ~25.0 h
+[23/842] 25 05:22 mlvc_720p    l32  c33648 qp16  NE>NE 43.1138 dB  worst drift 49.5 dB  all 9 ok  110 s  elapsed 0.7 h  left ~25.0 h
+[24/842] 25 05:24 mlvc_720p    l32  c33648 qp24  NE>NE 41.4696 dB  worst drift 49.1 dB  all 9 ok  108 s  elapsed 0.7 h  left ~24.9 h
+[25/842] 25 05:25 mlvc_720p    l32  c33648 qp32  NE>NE 38.9032 dB  worst drift 49.0 dB  all 9 ok  106 s  elapsed 0.8 h  left ~24.9 h
+[26/842] 25 05:27 mlvc_720p    l32  c33648 qp40  NE>NE 35.5263 dB  worst drift 49.0 dB  all 9 ok  106 s  elapsed 0.8 h  left ~24.8 h
+[27/842] 25 05:29 mlvc_720p    l32  c52d75 qp16  NE>NE 41.2246 dB  worst drift 46.9 dB  all 9 ok  110 s  elapsed 0.8 h  left ~24.8 h
+[28/842] 25 05:31 mlvc_720p    l32  c52d75 qp24  NE>NE 39.7684 dB  worst drift 46.3 dB  all 9 ok  108 s  elapsed 0.9 h  left ~24.7 h
+[29/842] 25 05:33 mlvc_720p    l32  c52d75 qp32  NE>NE 37.2187 dB  worst drift 45.2 dB  all 9 ok  110 s  elapsed 0.9 h  left ~24.7 h
+[30/842] 25 05:34 mlvc_720p    l32  c52d75 qp40  NE>NE 33.7255 dB  worst drift 43.7 dB  all 9 ok  107 s  elapsed 0.9 h  left ~24.7 h
+[31/842] 25 05:36 mlvc_720p    l32  cd6bc1 qp16  NE>NE 41.2345 dB  worst drift 49.8 dB  all 9 ok  111 s  elapsed 0.9 h  left ~24.6 h
+[32/842] 25 05:38 mlvc_720p    l32  cd6bc1 qp24  NE>NE 39.6194 dB  worst drift 49.4 dB  all 9 ok  108 s  elapsed 1.0 h  left ~24.6 h
+[33/842] 25 05:40 mlvc_720p    l32  cd6bc1 qp32  NE>NE 37.1365 dB  worst drift 47.3 dB  all 9 ok  108 s  elapsed 1.0 h  left ~24.6 h
+[34/842] 25 05:42 mlvc_720p    l32  cd6bc1 qp40  NE>NE 33.9683 dB  worst drift 45.0 dB  all 9 ok  107 s  elapsed 1.0 h  left ~24.5 h
+[35/842] 25 05:44 mlvc_720p    l32  db623c qp16  NE>NE 43.564 dB  worst drift 50.1 dB  all 9 ok  110 s  elapsed 1.1 h  left ~24.5 h
+[36/842] 25 05:45 mlvc_720p    l32  db623c qp24  NE>NE 42.0231 dB  worst drift 49.9 dB  all 9 ok  107 s  elapsed 1.1 h  left ~24.4 h
+[37/842] 25 05:47 mlvc_720p    l32  db623c qp32  NE>NE 39.009 dB  worst drift 49.4 dB  all 9 ok  108 s  elapsed 1.1 h  left ~24.4 h
+[38/842] 25 05:49 mlvc_720p    l32  db623c qp40  NE>NE 34.8565 dB  worst drift 48.9 dB  all 9 ok  107 s  elapsed 1.2 h  left ~24.4 h
+[39/842] 25 05:51 mlvc_720p    l32  fda953 qp16  NE>NE 44.3545 dB  worst drift 48.3 dB  all 9 ok  112 s  elapsed 1.2 h  left ~24.4 h
+[40/842] 25 05:53 mlvc_720p    l32  fda953 qp24  NE>NE 42.0404 dB  worst drift 47.7 dB  all 9 ok  110 s  elapsed 1.2 h  left ~24.3 h
+[41/842] 25 05:54 mlvc_720p    l32  fda953 qp32  NE>NE 38.4307 dB  worst drift 46.9 dB  all 9 ok  106 s  elapsed 1.2 h  left ~24.3 h
+[42/842] 25 05:56 mlvc_720p    l32  fda953 qp40  NE>NE 34.19 dB  worst drift 45.2 dB  all 9 ok  105 s  elapsed 1.3 h  left ~24.2 h
+[43/842] 25 05:58 mlvc_720p    i16  08ee5e qp16  NE>NE 43.6684 dB  worst drift 51.7 dB  all 9 ok  109 s  elapsed 1.3 h  left ~24.2 h
+[44/842] 25 06:00 mlvc_720p    i16  08ee5e qp24  NE>NE 42.0814 dB  worst drift 51.4 dB  all 9 ok  112 s  elapsed 1.3 h  left ~24.2 h
+[45/842] 25 06:02 mlvc_720p    i16  08ee5e qp32  NE>NE 39.0213 dB  worst drift 50.9 dB  all 9 ok  110 s  elapsed 1.4 h  left ~24.2 h
+[46/842] 25 06:03 mlvc_720p    i16  08ee5e qp40  NE>NE 34.75 dB  worst drift 50.6 dB  all 9 ok  108 s  elapsed 1.4 h  left ~24.1 h
+[47/842] 25 06:05 mlvc_720p    i16  104c93 qp16  NE>NE 44.3281 dB  worst drift 48.4 dB  all 9 ok  112 s  elapsed 1.4 h  left ~24.1 h
+[48/842] 25 06:07 mlvc_720p    i16  104c93 qp24  NE>NE 42.4053 dB  worst drift 47.7 dB  all 9 ok  108 s  elapsed 1.5 h  left ~24.1 h
+[49/842] 25 06:09 mlvc_720p    i16  104c93 qp32  NE>NE 38.9983 dB  worst drift 47.2 dB  all 9 ok  108 s  elapsed 1.5 h  left ~24.0 h
+[50/842] 25 06:11 mlvc_720p    i16  104c93 qp40  NE>NE 34.703 dB  worst drift 45.2 dB  all 9 ok  108 s  elapsed 1.5 h  left ~24.0 h
+[51/842] 25 06:13 mlvc_720p    i16  1e8830 qp16  NE>NE 37.9046 dB  worst drift 50.2 dB  all 9 ok  112 s  elapsed 1.5 h  left ~24.0 h
+[52/842] 25 06:14 mlvc_720p    i16  1e8830 qp24  NE>NE 36.8161 dB  worst drift 49.1 dB  all 9 ok  107 s  elapsed 1.6 h  left ~23.9 h
+[53/842] 25 06:16 mlvc_720p    i16  1e8830 qp32  NE>NE 34.4386 dB  worst drift 49.1 dB  all 9 ok  107 s  elapsed 1.6 h  left ~23.9 h
+[54/842] 25 06:18 mlvc_720p    i16  1e8830 qp40  NE>NE 30.6004 dB  worst drift 48.1 dB  all 9 ok  107 s  elapsed 1.6 h  left ~23.9 h
+[55/842] 25 06:20 mlvc_720p    i16  38a418 qp16  NE>NE 44.6351 dB  worst drift 50.9 dB  all 9 ok  111 s  elapsed 1.7 h  left ~23.8 h
+[56/842] 25 06:22 mlvc_720p    i16  38a418 qp24  NE>NE 42.9096 dB  worst drift 50.5 dB  all 9 ok  109 s  elapsed 1.7 h  left ~23.8 h
+[57/842] 25 06:23 mlvc_720p    i16  38a418 qp32  NE>NE 39.7913 dB  worst drift 49.9 dB  all 9 ok  106 s  elapsed 1.7 h  left ~23.8 h
+[58/842] 25 06:25 mlvc_720p    i16  38a418 qp40  NE>NE 35.6835 dB  worst drift 49.5 dB  all 9 ok  107 s  elapsed 1.8 h  left ~23.7 h
+[59/842] 25 06:27 mlvc_720p    i16  40fe4d qp16  NE>NE 40.891 dB  worst drift 50.6 dB  all 9 ok  111 s  elapsed 1.8 h  left ~23.7 h
+[60/842] 25 06:29 mlvc_720p    i16  40fe4d qp24  NE>NE 39.2173 dB  worst drift 50.5 dB  all 9 ok  109 s  elapsed 1.8 h  left ~23.7 h
+[61/842] 25 06:31 mlvc_720p    i16  40fe4d qp32  NE>NE 36.6211 dB  worst drift 49.7 dB  all 9 ok  109 s  elapsed 1.8 h  left ~23.6 h
+[62/842] 25 06:32 mlvc_720p    i16  40fe4d qp40  NE>NE 32.9949 dB  worst drift 48.2 dB  all 9 ok  107 s  elapsed 1.9 h  left ~23.6 h
+[63/842] 25 06:34 mlvc_720p    i16  45bb89 qp16  NE>NE 43.69 dB  worst drift 51.5 dB  all 9 ok  111 s  elapsed 1.9 h  left ~23.6 h
+[64/842] 25 06:36 mlvc_720p    i16  45bb89 qp24  NE>NE 42.0638 dB  worst drift 51.3 dB  all 9 ok  110 s  elapsed 1.9 h  left ~23.6 h
+[65/842] 25 06:38 mlvc_720p    i16  45bb89 qp32  NE>NE 38.9613 dB  worst drift 49.7 dB  all 9 ok  107 s  elapsed 2.0 h  left ~23.5 h
+[66/842] 25 06:40 mlvc_720p    i16  45bb89 qp40  NE>NE 35.2637 dB  worst drift 49.4 dB  all 9 ok  106 s  elapsed 2.0 h  left ~23.5 h
+[67/842] 25 06:41 mlvc_720p    i16  4d8ffe qp16  NE>NE 37.1687 dB  worst drift 50.3 dB  all 9 ok  111 s  elapsed 2.0 h  left ~23.5 h
+[68/842] 25 06:43 mlvc_720p    i16  4d8ffe qp24  NE>NE 35.5827 dB  worst drift 50.1 dB  all 9 ok  109 s  elapsed 2.1 h  left ~23.4 h
+[69/842] 25 06:45 mlvc_720p    i16  4d8ffe qp32  NE>NE 32.6998 dB  worst drift 48.4 dB  all 9 ok  107 s  elapsed 2.1 h  left ~23.4 h
+[70/842] 25 06:47 mlvc_720p    i16  4d8ffe qp40  NE>NE 28.6787 dB  worst drift 47.4 dB  all 9 ok  106 s  elapsed 2.1 h  left ~23.4 h
+[71/842] 25 06:49 mlvc_720p    i16  6aa9cf qp16  NE>NE 45.9815 dB  worst drift 51.1 dB  all 9 ok  111 s  elapsed 2.1 h  left ~23.3 h
+[72/842] 25 06:50 mlvc_720p    i16  6aa9cf qp24  NE>NE 44.3607 dB  worst drift 51.1 dB  all 9 ok  107 s  elapsed 2.2 h  left ~23.3 h
+[73/842] 25 06:52 mlvc_720p    i16  6aa9cf qp32  NE>NE 41.5896 dB  worst drift 49.6 dB  all 9 ok  107 s  elapsed 2.2 h  left ~23.3 h
+[74/842] 25 06:54 mlvc_720p    i16  6aa9cf qp40  NE>NE 37.9943 dB  worst drift 48.5 dB  all 9 ok  107 s  elapsed 2.2 h  left ~23.2 h
+[75/842] 25 06:56 mlvc_720p    i16  6eb39d qp16  NE>NE 43.6954 dB  worst drift 51.4 dB  all 9 ok  111 s  elapsed 2.3 h  left ~23.2 h
+[76/842] 25 06:58 mlvc_720p    i16  6eb39d qp24  NE>NE 41.3704 dB  worst drift 51.5 dB  all 9 ok  109 s  elapsed 2.3 h  left ~23.2 h
+[77/842] 25 06:59 mlvc_720p    i16  6eb39d qp32  NE>NE 37.9576 dB  worst drift 51.0 dB  all 9 ok  106 s  elapsed 2.3 h  left ~23.1 h
+[78/842] 25 07:01 mlvc_720p    i16  6eb39d qp40  NE>NE 33.9766 dB  worst drift 49.9 dB  all 9 ok  107 s  elapsed 2.4 h  left ~23.1 h
+[79/842] 25 07:03 mlvc_720p    i16  73f232 qp16  NE>NE 43.7901 dB  worst drift 51.6 dB  all 9 ok  105 s  elapsed 2.4 h  left ~23.1 h
+[80/842] 25 07:05 mlvc_720p    i16  73f232 qp24  NE>NE 41.79 dB  worst drift 51.9 dB  all 9 ok  105 s  elapsed 2.4 h  left ~23.0 h
+[81/842] 25 07:06 mlvc_720p    i16  73f232 qp32  NE>NE 38.7818 dB  worst drift 50.5 dB  all 9 ok  104 s  elapsed 2.4 h  left ~23.0 h
+[82/842] 25 07:08 mlvc_720p    i16  73f232 qp40  NE>NE 35.1889 dB  worst drift 47.8 dB  all 9 ok  111 s  elapsed 2.5 h  left ~22.9 h
+[83/842] 25 07:10 mlvc_720p    i16  99b38e qp16  NE>NE 46.2875 dB  worst drift 51.7 dB  all 9 ok  112 s  elapsed 2.5 h  left ~22.9 h
+[84/842] 25 07:12 mlvc_720p    i16  99b38e qp24  NE>NE 44.7264 dB  worst drift 51.5 dB  all 9 ok  110 s  elapsed 2.5 h  left ~22.9 h
+[85/842] 25 07:14 mlvc_720p    i16  99b38e qp32  NE>NE 41.7236 dB  worst drift 50.6 dB  all 9 ok  110 s  elapsed 2.6 h  left ~22.9 h
+[86/842] 25 07:16 mlvc_720p    i16  99b38e qp40  NE>NE 37.831 dB  worst drift 50.6 dB  all 9 ok  110 s  elapsed 2.6 h  left ~22.8 h
+[87/842] 25 07:18 mlvc_720p    i16  a17620 qp16  NE>NE 45.3725 dB  worst drift 51.6 dB  all 9 ok  112 s  elapsed 2.6 h  left ~22.8 h
+[88/842] 25 07:19 mlvc_720p    i16  a17620 qp24  NE>NE 43.6399 dB  worst drift 51.5 dB  all 9 ok  110 s  elapsed 2.7 h  left ~22.8 h
+[89/842] 25 07:21 mlvc_720p    i16  a17620 qp32  NE>NE 40.5259 dB  worst drift 50.7 dB  all 9 ok  106 s  elapsed 2.7 h  left ~22.8 h
+[90/842] 25 07:23 mlvc_720p    i16  a17620 qp40  NE>NE 36.3416 dB  worst drift 50.4 dB  all 9 ok  106 s  elapsed 2.7 h  left ~22.7 h
+[91/842] 25 07:25 mlvc_720p    i16  b2d792 qp16  NE>NE 43.6901 dB  worst drift 50.1 dB  all 9 ok  111 s  elapsed 2.8 h  left ~22.7 h
+[92/842] 25 07:27 mlvc_720p    i16  b2d792 qp24  NE>NE 42.0266 dB  worst drift 49.7 dB  all 9 ok  109 s  elapsed 2.8 h  left ~22.7 h
+[93/842] 25 07:28 mlvc_720p    i16  b2d792 qp32  NE>NE 39.3463 dB  worst drift 48.5 dB  all 9 ok  107 s  elapsed 2.8 h  left ~22.6 h
+[94/842] 25 07:30 mlvc_720p    i16  b2d792 qp40  NE>NE 36.3179 dB  worst drift 48.9 dB  all 9 ok  108 s  elapsed 2.8 h  left ~22.6 h
+[95/842] 25 07:32 mlvc_720p    i16  b8893c qp16  NE>NE 43.8774 dB  worst drift 50.8 dB  all 9 ok  111 s  elapsed 2.9 h  left ~22.6 h
+[96/842] 25 07:34 mlvc_720p    i16  b8893c qp24  NE>NE 42.5263 dB  worst drift 50.7 dB  all 9 ok  109 s  elapsed 2.9 h  left ~22.5 h
+[97/842] 25 07:36 mlvc_720p    i16  b8893c qp32  NE>NE 40.1301 dB  worst drift 50.2 dB  all 9 ok  109 s  elapsed 2.9 h  left ~22.5 h
+[98/842] 25 07:37 mlvc_720p    i16  b8893c qp40  NE>NE 36.6959 dB  worst drift 49.8 dB  all 9 ok  106 s  elapsed 3.0 h  left ~22.5 h
+[99/842] 25 07:39 mlvc_720p    i16  b91038 qp16  NE>NE 43.5986 dB  worst drift 52.0 dB  all 9 ok  111 s  elapsed 3.0 h  left ~22.5 h
+[100/842] 25 07:41 mlvc_720p    i16  b91038 qp24  NE>NE 41.7934 dB  worst drift 51.8 dB  all 9 ok  107 s  elapsed 3.0 h  left ~22.4 h
+[101/842] 25 07:43 mlvc_720p    i16  b91038 qp32  NE>NE 38.4852 dB  worst drift 51.4 dB  all 9 ok  107 s  elapsed 3.1 h  left ~22.4 h
+[102/842] 25 07:45 mlvc_720p    i16  b91038 qp40  NE>NE 34.0442 dB  worst drift 51.3 dB  all 9 ok  109 s  elapsed 3.1 h  left ~22.4 h
+[103/842] 25 07:47 mlvc_720p    i16  c33648 qp16  NE>NE 43.0737 dB  worst drift 51.5 dB  all 9 ok  111 s  elapsed 3.1 h  left ~22.3 h
+[104/842] 25 07:48 mlvc_720p    i16  c33648 qp24  NE>NE 41.4062 dB  worst drift 51.2 dB  all 9 ok  106 s  elapsed 3.1 h  left ~22.3 h
+[105/842] 25 07:50 mlvc_720p    i16  c33648 qp32  NE>NE 38.7729 dB  worst drift 50.7 dB  all 9 ok  106 s  elapsed 3.2 h  left ~22.3 h
+[106/842] 25 07:52 mlvc_720p    i16  c33648 qp40  NE>NE 35.3034 dB  worst drift 50.9 dB  all 9 ok  109 s  elapsed 3.2 h  left ~22.2 h
+[107/842] 25 07:54 mlvc_720p    i16  c52d75 qp16  NE>NE 41.1567 dB  worst drift 47.9 dB  all 9 ok  111 s  elapsed 3.2 h  left ~22.2 h
+[108/842] 25 07:56 mlvc_720p    i16  c52d75 qp24  NE>NE 39.6528 dB  worst drift 49.5 dB  all 9 ok  110 s  elapsed 3.3 h  left ~22.2 h
+[109/842] 25 07:57 mlvc_720p    i16  c52d75 qp32  NE>NE 37.0661 dB  worst drift 48.1 dB  all 9 ok  106 s  elapsed 3.3 h  left ~22.1 h
+[110/842] 25 07:59 mlvc_720p    i16  c52d75 qp40  NE>NE 33.5408 dB  worst drift 47.7 dB  all 9 ok  107 s  elapsed 3.3 h  left ~22.1 h
+[111/842] 25 08:01 mlvc_720p    i16  cd6bc1 qp16  NE>NE 41.2294 dB  worst drift 51.5 dB  all 9 ok  112 s  elapsed 3.4 h  left ~22.1 h
+[112/842] 25 08:03 mlvc_720p    i16  cd6bc1 qp24  NE>NE 39.6206 dB  worst drift 51.3 dB  all 9 ok  107 s  elapsed 3.4 h  left ~22.1 h
+[113/842] 25 08:05 mlvc_720p    i16  cd6bc1 qp32  NE>NE 37.1062 dB  worst drift 50.1 dB  all 9 ok  107 s  elapsed 3.4 h  left ~22.0 h
+[114/842] 25 08:06 mlvc_720p    i16  cd6bc1 qp40  NE>NE 33.731 dB  worst drift 48.6 dB  all 9 ok  107 s  elapsed 3.4 h  left ~22.0 h
+[115/842] 25 08:08 mlvc_720p    i16  db623c qp16  NE>NE 43.3488 dB  worst drift 51.1 dB  all 9 ok  111 s  elapsed 3.5 h  left ~22.0 h
+[116/842] 25 08:10 mlvc_720p    i16  db623c qp24  NE>NE 41.7549 dB  worst drift 51.0 dB  all 9 ok  107 s  elapsed 3.5 h  left ~21.9 h
+[117/842] 25 08:12 mlvc_720p    i16  db623c qp32  NE>NE 38.6834 dB  worst drift 50.3 dB  all 9 ok  105 s  elapsed 3.5 h  left ~21.9 h
+[118/842] 25 08:13 mlvc_720p    i16  db623c qp40  NE>NE 34.4553 dB  worst drift 50.4 dB  all 9 ok  105 s  elapsed 3.6 h  left ~21.9 h
+[119/842] 25 08:15 mlvc_720p    i16  fda953 qp16  NE>NE 44.342 dB  worst drift 50.0 dB  all 9 ok  105 s  elapsed 3.6 h  left ~21.8 h
+[120/842] 25 08:17 mlvc_720p    i16  fda953 qp24  NE>NE 42.0221 dB  worst drift 49.6 dB  all 9 ok  113 s  elapsed 3.6 h  left ~21.8 h
+[121/842] 25 08:19 mlvc_720p    i16  fda953 qp32  NE>NE 38.458 dB  worst drift 48.6 dB  all 9 ok  109 s  elapsed 3.7 h  left ~21.8 h
+[122/842] 25 08:21 mlvc_720p    i16  fda953 qp40  NE>NE 34.2746 dB  worst drift 47.1 dB  all 9 ok  109 s  elapsed 3.7 h  left ~21.7 h
+[123/842] 25 08:23 mlvc_720p    l16  08ee5e qp16  NE>NE 43.7259 dB  worst drift 51.4 dB  all 9 ok  113 s  elapsed 3.7 h  left ~21.7 h
+[124/842] 25 08:24 mlvc_720p    l16  08ee5e qp24  NE>NE 42.2237 dB  worst drift 51.5 dB  all 9 ok  110 s  elapsed 3.7 h  left ~21.7 h
+[125/842] 25 08:26 mlvc_720p    l16  08ee5e qp32  NE>NE 39.2637 dB  worst drift 51.0 dB  all 9 ok  110 s  elapsed 3.8 h  left ~21.7 h
+[126/842] 25 08:28 mlvc_720p    l16  08ee5e qp40  NE>NE 35.0343 dB  worst drift 49.8 dB  all 9 ok  109 s  elapsed 3.8 h  left ~21.6 h
+[127/842] 25 08:30 mlvc_720p    l16  104c93 qp16  NE>NE 44.3668 dB  worst drift 48.3 dB  all 9 ok  111 s  elapsed 3.8 h  left ~21.6 h
+[128/842] 25 08:32 mlvc_720p    l16  104c93 qp24  NE>NE 42.4345 dB  worst drift 46.9 dB  all 9 ok  110 s  elapsed 3.9 h  left ~21.6 h
+[129/842] 25 08:34 mlvc_720p    l16  104c93 qp32  NE>NE 39.032 dB  worst drift 45.4 dB  all 9 ok  111 s  elapsed 3.9 h  left ~21.5 h
+[130/842] 25 08:35 mlvc_720p    l16  104c93 qp40  NE>NE 34.7261 dB  worst drift 44.0 dB  all 9 ok  107 s  elapsed 3.9 h  left ~21.5 h
+[131/842] 25 08:37 mlvc_720p    l16  1e8830 qp16  NE>NE 38.0168 dB  worst drift 49.9 dB  all 9 ok  111 s  elapsed 4.0 h  left ~21.5 h
+[132/842] 25 08:39 mlvc_720p    l16  1e8830 qp24  NE>NE 36.9919 dB  worst drift 49.5 dB  all 9 ok  108 s  elapsed 4.0 h  left ~21.4 h
+[133/842] 25 08:41 mlvc_720p    l16  1e8830 qp32  NE>NE 34.7031 dB  worst drift 47.1 dB  all 9 ok  107 s  elapsed 4.0 h  left ~21.4 h
+[134/842] 25 08:43 mlvc_720p    l16  1e8830 qp40  NE>NE 30.9943 dB  worst drift 47.2 dB  all 9 ok  110 s  elapsed 4.0 h  left ~21.4 h
+[135/842] 25 08:45 mlvc_720p    l16  38a418 qp16  NE>NE 44.6631 dB  worst drift 50.7 dB  all 9 ok  112 s  elapsed 4.1 h  left ~21.4 h
+[136/842] 25 08:46 mlvc_720p    l16  38a418 qp24  NE>NE 42.9146 dB  worst drift 50.1 dB  all 9 ok  108 s  elapsed 4.1 h  left ~21.3 h
+[137/842] 25 08:48 mlvc_720p    l16  38a418 qp32  NE>NE 39.7971 dB  worst drift 48.1 dB  all 9 ok  107 s  elapsed 4.1 h  left ~21.3 h
+[138/842] 25 08:50 mlvc_720p    l16  38a418 qp40  NE>NE 35.7439 dB  worst drift 48.3 dB  all 9 ok  107 s  elapsed 4.2 h  left ~21.3 h
+[139/842] 25 08:52 mlvc_720p    l16  40fe4d qp16  NE>NE 40.9122 dB  worst drift 50.6 dB  all 9 ok  112 s  elapsed 4.2 h  left ~21.2 h
+[140/842] 25 08:54 mlvc_720p    l16  40fe4d qp24  NE>NE 39.2503 dB  worst drift 50.4 dB  all 9 ok  109 s  elapsed 4.2 h  left ~21.2 h
+[141/842] 25 08:55 mlvc_720p    l16  40fe4d qp32  NE>NE 36.6738 dB  worst drift 49.6 dB  all 9 ok  106 s  elapsed 4.3 h  left ~21.2 h
+[142/842] 25 08:57 mlvc_720p    l16  40fe4d qp40  NE>NE 33.0883 dB  worst drift 48.1 dB  all 9 ok  107 s  elapsed 4.3 h  left ~21.1 h
+[143/842] 25 08:59 mlvc_720p    l16  45bb89 qp16  NE>NE 43.7716 dB  worst drift 51.2 dB  all 9 ok  112 s  elapsed 4.3 h  left ~21.1 h
+[144/842] 25 09:01 mlvc_720p    l16  45bb89 qp24  NE>NE 42.1835 dB  worst drift 51.1 dB  all 9 ok  108 s  elapsed 4.3 h  left ~21.1 h
+[145/842] 25 09:03 mlvc_720p    l16  45bb89 qp32  NE>NE 39.133 dB  worst drift 50.4 dB  all 9 ok  110 s  elapsed 4.4 h  left ~21.1 h
+[146/842] 25 09:04 mlvc_720p    l16  45bb89 qp40  NE>NE 35.4794 dB  worst drift 49.5 dB  all 9 ok  107 s  elapsed 4.4 h  left ~21.0 h
+[147/842] 25 09:06 mlvc_720p    l16  4d8ffe qp16  NE>NE 37.1301 dB  worst drift 50.1 dB  all 9 ok  111 s  elapsed 4.4 h  left ~21.0 h
+[148/842] 25 09:08 mlvc_720p    l16  4d8ffe qp24  NE>NE 35.4938 dB  worst drift 49.7 dB  all 9 ok  107 s  elapsed 4.5 h  left ~21.0 h
+[149/842] 25 09:10 mlvc_720p    l16  4d8ffe qp32  NE>NE 32.6157 dB  worst drift 48.0 dB  all 9 ok  108 s  elapsed 4.5 h  left ~20.9 h
+[150/842] 25 09:12 mlvc_720p    l16  4d8ffe qp40  NE>NE 28.704 dB  worst drift 46.3 dB  all 9 ok  110 s  elapsed 4.5 h  left ~20.9 h
+[151/842] 25 09:14 mlvc_720p    l16  6aa9cf qp16  NE>NE 45.8966 dB  worst drift 50.7 dB  all 9 ok  111 s  elapsed 4.6 h  left ~20.9 h
+[152/842] 25 09:15 mlvc_720p    l16  6aa9cf qp24  NE>NE 44.2284 dB  worst drift 50.7 dB  all 9 ok  107 s  elapsed 4.6 h  left ~20.8 h
+[153/842] 25 09:17 mlvc_720p    l16  6aa9cf qp32  NE>NE 41.3769 dB  worst drift 49.4 dB  all 9 ok  108 s  elapsed 4.6 h  left ~20.8 h
+[154/842] 25 09:19 mlvc_720p    l16  6aa9cf qp40  NE>NE 37.7455 dB  worst drift 47.5 dB  all 9 ok  107 s  elapsed 4.7 h  left ~20.8 h
+[155/842] 25 09:21 mlvc_720p    l16  6eb39d qp16  NE>NE 43.5556 dB  worst drift 51.2 dB  all 9 ok  105 s  elapsed 4.7 h  left ~20.7 h
+[156/842] 25 09:22 mlvc_720p    l16  6eb39d qp24  NE>NE 41.183 dB  worst drift 51.4 dB  all 9 ok  105 s  elapsed 4.7 h  left ~20.7 h
+[157/842] 25 09:24 mlvc_720p    l16  6eb39d qp32  NE>NE 37.6874 dB  worst drift 50.8 dB  all 9 ok  105 s  elapsed 4.7 h  left ~20.7 h
+[158/842] 25 09:26 mlvc_720p    l16  6eb39d qp40  NE>NE 33.5657 dB  worst drift 49.4 dB  all 9 ok  110 s  elapsed 4.8 h  left ~20.6 h
+[159/842] 25 09:28 mlvc_720p    l16  73f232 qp16  NE>NE 43.7917 dB  worst drift 51.6 dB  all 9 ok  112 s  elapsed 4.8 h  left ~20.6 h
+[160/842] 25 09:30 mlvc_720p    l16  73f232 qp24  NE>NE 41.7734 dB  worst drift 51.4 dB  all 9 ok  108 s  elapsed 4.8 h  left ~20.6 h
+[161/842] 25 09:31 mlvc_720p    l16  73f232 qp32  NE>NE 38.7467 dB  worst drift 49.3 dB  all 9 ok  107 s  elapsed 4.9 h  left ~20.6 h
+[162/842] 25 09:33 mlvc_720p    l16  73f232 qp40  NE>NE 35.1053 dB  worst drift 47.8 dB  all 9 ok  107 s  elapsed 4.9 h  left ~20.5 h
+[163/842] 25 09:35 mlvc_720p    l16  99b38e qp16  NE>NE 46.274 dB  worst drift 51.5 dB  all 9 ok  113 s  elapsed 4.9 h  left ~20.5 h
+[164/842] 25 09:37 mlvc_720p    l16  99b38e qp24  NE>NE 44.7159 dB  worst drift 51.5 dB  all 9 ok  111 s  elapsed 5.0 h  left ~20.5 h
+[165/842] 25 09:39 mlvc_720p    l16  99b38e qp32  NE>NE 41.7351 dB  worst drift 50.5 dB  all 9 ok  111 s  elapsed 5.0 h  left ~20.4 h
+[166/842] 25 09:41 mlvc_720p    l16  99b38e qp40  NE>NE 37.8493 dB  worst drift 50.1 dB  all 9 ok  110 s  elapsed 5.0 h  left ~20.4 h
+[167/842] 25 09:42 mlvc_720p    l16  a17620 qp16  NE>NE 45.4667 dB  worst drift 51.2 dB  all 9 ok  110 s  elapsed 5.0 h  left ~20.4 h
+[168/842] 25 09:44 mlvc_720p    l16  a17620 qp24  NE>NE 43.7671 dB  worst drift 50.6 dB  all 9 ok  109 s  elapsed 5.1 h  left ~20.4 h
+[169/842] 25 09:46 mlvc_720p    l16  a17620 qp32  NE>NE 40.7313 dB  worst drift 50.2 dB  all 9 ok  111 s  elapsed 5.1 h  left ~20.3 h
+[170/842] 25 09:48 mlvc_720p    l16  a17620 qp40  NE>NE 36.7096 dB  worst drift 49.7 dB  all 9 ok  107 s  elapsed 5.1 h  left ~20.3 h
+[171/842] 25 09:50 mlvc_720p    l16  b2d792 qp16  NE>NE 43.5827 dB  worst drift 49.9 dB  all 9 ok  111 s  elapsed 5.2 h  left ~20.3 h
+[172/842] 25 09:52 mlvc_720p    l16  b2d792 qp24  NE>NE 41.8598 dB  worst drift 49.2 dB  all 9 ok  109 s  elapsed 5.2 h  left ~20.2 h
+[173/842] 25 09:53 mlvc_720p    l16  b2d792 qp32  NE>NE 39.1075 dB  worst drift 48.0 dB  all 9 ok  107 s  elapsed 5.2 h  left ~20.2 h
+[174/842] 25 09:55 mlvc_720p    l16  b2d792 qp40  NE>NE 36.0838 dB  worst drift 47.7 dB  all 9 ok  108 s  elapsed 5.3 h  left ~20.2 h
+[175/842] 25 09:57 mlvc_720p    l16  b8893c qp16  NE>NE 43.895 dB  worst drift 50.4 dB  all 9 ok  109 s  elapsed 5.3 h  left ~20.1 h
+[176/842] 25 09:59 mlvc_720p    l16  b8893c qp24  NE>NE 42.5512 dB  worst drift 50.5 dB  all 9 ok  111 s  elapsed 5.3 h  left ~20.1 h
+[177/842] 25 10:01 mlvc_720p    l16  b8893c qp32  NE>NE 40.2303 dB  worst drift 49.9 dB  all 9 ok  108 s  elapsed 5.3 h  left ~20.1 h
+[178/842] 25 10:02 mlvc_720p    l16  b8893c qp40  NE>NE 36.8144 dB  worst drift 48.9 dB  all 9 ok  107 s  elapsed 5.4 h  left ~20.1 h
+[179/842] 25 10:04 mlvc_720p    l16  b91038 qp16  NE>NE 43.62 dB  worst drift 51.7 dB  all 9 ok  111 s  elapsed 5.4 h  left ~20.0 h
+[180/842] 25 10:06 mlvc_720p    l16  b91038 qp24  NE>NE 41.8486 dB  worst drift 51.3 dB  all 9 ok  108 s  elapsed 5.4 h  left ~20.0 h
+[181/842] 25 10:08 mlvc_720p    l16  b91038 qp32  NE>NE 38.5631 dB  worst drift 51.2 dB  all 9 ok  107 s  elapsed 5.5 h  left ~20.0 h
+[182/842] 25 10:10 mlvc_720p    l16  b91038 qp40  NE>NE 34.2819 dB  worst drift 51.1 dB  all 9 ok  108 s  elapsed 5.5 h  left ~19.9 h
+[183/842] 25 10:12 mlvc_720p    l16  c33648 qp16  NE>NE 43.0442 dB  worst drift 51.0 dB  all 9 ok  111 s  elapsed 5.5 h  left ~19.9 h
+[184/842] 25 10:13 mlvc_720p    l16  c33648 qp24  NE>NE 41.3849 dB  worst drift 51.1 dB  all 9 ok  107 s  elapsed 5.6 h  left ~19.9 h
+[185/842] 25 10:15 mlvc_720p    l16  c33648 qp32  NE>NE 38.8125 dB  worst drift 50.6 dB  all 9 ok  108 s  elapsed 5.6 h  left ~19.8 h
+[186/842] 25 10:17 mlvc_720p    l16  c33648 qp40  NE>NE 35.4426 dB  worst drift 50.6 dB  all 9 ok  108 s  elapsed 5.6 h  left ~19.8 h
+[187/842] 25 10:19 mlvc_720p    l16  c52d75 qp16  NE>NE 41.141 dB  worst drift 47.6 dB  all 9 ok  112 s  elapsed 5.6 h  left ~19.8 h
+[188/842] 25 10:21 mlvc_720p    l16  c52d75 qp24  NE>NE 39.653 dB  worst drift 47.8 dB  all 9 ok  109 s  elapsed 5.7 h  left ~19.8 h
+[189/842] 25 10:22 mlvc_720p    l16  c52d75 qp32  NE>NE 37.1169 dB  worst drift 46.4 dB  all 9 ok  107 s  elapsed 5.7 h  left ~19.7 h
+[190/842] 25 10:24 mlvc_720p    l16  c52d75 qp40  NE>NE 33.6804 dB  worst drift 46.6 dB  all 9 ok  107 s  elapsed 5.7 h  left ~19.7 h
+[191/842] 25 10:26 mlvc_720p    l16  cd6bc1 qp16  NE>NE 41.1695 dB  worst drift 50.6 dB  all 9 ok  112 s  elapsed 5.8 h  left ~19.7 h
+[192/842] 25 10:28 mlvc_720p    l16  cd6bc1 qp24  NE>NE 39.5929 dB  worst drift 49.0 dB  all 9 ok  107 s  elapsed 5.8 h  left ~19.6 h
+[193/842] 25 10:30 mlvc_720p    l16  cd6bc1 qp32  NE>NE 37.1569 dB  worst drift 47.0 dB  all 9 ok  105 s  elapsed 5.8 h  left ~19.6 h
+[194/842] 25 10:31 mlvc_720p    l16  cd6bc1 qp40  NE>NE 33.9386 dB  worst drift 47.3 dB  all 9 ok  105 s  elapsed 5.9 h  left ~19.6 h
+[195/842] 25 10:33 mlvc_720p    l16  db623c qp16  NE>NE 43.5128 dB  worst drift 50.8 dB  all 9 ok  111 s  elapsed 5.9 h  left ~19.5 h
+[196/842] 25 10:35 mlvc_720p    l16  db623c qp24  NE>NE 41.9917 dB  worst drift 50.8 dB  all 9 ok  109 s  elapsed 5.9 h  left ~19.5 h
+[197/842] 25 10:37 mlvc_720p    l16  db623c qp32  NE>NE 39.0205 dB  worst drift 50.1 dB  all 9 ok  107 s  elapsed 5.9 h  left ~19.5 h
+[198/842] 25 10:39 mlvc_720p    l16  db623c qp40  NE>NE 34.8695 dB  worst drift 49.8 dB  all 9 ok  108 s  elapsed 6.0 h  left ~19.4 h
+[199/842] 25 10:40 mlvc_720p    l16  fda953 qp16  NE>NE 44.2085 dB  worst drift 50.0 dB  all 9 ok  112 s  elapsed 6.0 h  left ~19.4 h
+[200/842] 25 10:42 mlvc_720p    l16  fda953 qp24  NE>NE 41.7946 dB  worst drift 49.6 dB  all 9 ok  107 s  elapsed 6.0 h  left ~19.4 h
+[201/842] 25 10:44 mlvc_720p    l16  fda953 qp32  NE>NE 38.0904 dB  worst drift 48.3 dB  all 9 ok  110 s  elapsed 6.1 h  left ~19.4 h
+[202/842] 25 10:46 mlvc_720p    l16  fda953 qp40  NE>NE 33.8819 dB  worst drift 46.5 dB  all 9 ok  110 s  elapsed 6.1 h  left ~19.3 h
+[203/842] 25 10:48 mlvcs_1080p  i32  08ee5e qp16  NE>NE 44.0033 dB  worst drift 50.8 dB  all 9 ok  128 s  elapsed 6.1 h  left ~21.0 h
+[204/842] 25 10:50 mlvcs_1080p  i32  08ee5e qp24  NE>NE 42.3756 dB  worst drift 51.1 dB  all 9 ok  122 s  elapsed 6.2 h  left ~20.7 h
+[205/842] 25 10:52 mlvcs_1080p  i32  08ee5e qp32  NE>NE 39.6443 dB  worst drift 50.6 dB  all 9 ok  120 s  elapsed 6.2 h  left ~20.5 h
+[206/842] 25 10:54 mlvcs_1080p  i32  08ee5e qp40  NE>NE 35.8542 dB  worst drift 49.2 dB  all 9 ok  121 s  elapsed 6.2 h  left ~20.4 h
+[207/842] 25 10:56 mlvcs_1080p  i32  104c93 qp16  NE>NE 44.7802 dB  worst drift 42.5 dB  all 9 ok  123 s  elapsed 6.3 h  left ~20.4 h
+[208/842] 25 10:58 mlvcs_1080p  i32  104c93 qp24  NE>NE 42.9419 dB  worst drift 38.7 dB  all 9 ok  115 s  elapsed 6.3 h  left ~20.3 h
+[209/842] 25 11:00 mlvcs_1080p  i32  104c93 qp32  NE>NE 39.6363 dB  worst drift 42.3 dB  all 9 ok  119 s  elapsed 6.3 h  left ~20.2 h
+[210/842] 25 11:02 mlvcs_1080p  i32  104c93 qp40  NE>NE 35.4255 dB  worst drift 36.4 dB  all 9 ok  120 s  elapsed 6.4 h  left ~20.2 h
+[211/842] 25 11:04 mlvcs_1080p  i32  1e8830 qp16  NE>NE 36.152 dB  worst drift 48.5 dB  all 9 ok  124 s  elapsed 6.4 h  left ~20.2 h
+[212/842] 25 11:06 mlvcs_1080p  i32  1e8830 qp24  NE>NE 35.5078 dB  worst drift 47.8 dB  all 9 ok  118 s  elapsed 6.4 h  left ~20.1 h
+[213/842] 25 11:08 mlvcs_1080p  i32  1e8830 qp32  NE>NE 33.8392 dB  worst drift 47.1 dB  all 9 ok  115 s  elapsed 6.5 h  left ~20.0 h
+[214/842] 25 11:10 mlvcs_1080p  i32  1e8830 qp40  NE>NE 30.8489 dB  worst drift 46.2 dB  all 9 ok  117 s  elapsed 6.5 h  left ~20.0 h
+[215/842] 25 11:12 mlvcs_1080p  i32  38a418 qp16  NE>NE 45.1151 dB  worst drift 50.3 dB  all 9 ok  124 s  elapsed 6.5 h  left ~20.0 h
+[216/842] 25 11:14 mlvcs_1080p  i32  38a418 qp24  NE>NE 43.3815 dB  worst drift 49.8 dB  all 9 ok  115 s  elapsed 6.6 h  left ~19.9 h
+[217/842] 25 11:16 mlvcs_1080p  i32  38a418 qp32  NE>NE 40.3878 dB  worst drift 48.1 dB  all 9 ok  116 s  elapsed 6.6 h  left ~19.9 h
+[218/842] 25 11:18 mlvcs_1080p  i32  38a418 qp40  NE>NE 36.5337 dB  worst drift 47.0 dB  all 9 ok  120 s  elapsed 6.6 h  left ~19.8 h
+[219/842] 25 11:20 mlvcs_1080p  i32  40fe4d qp16  NE>NE 41.5506 dB  worst drift 48.2 dB  all 9 ok  124 s  elapsed 6.7 h  left ~19.8 h
+[220/842] 25 11:22 mlvcs_1080p  i32  40fe4d qp24  NE>NE 39.81 dB  worst drift 48.0 dB  all 9 ok  118 s  elapsed 6.7 h  left ~19.8 h
+[221/842] 25 11:24 mlvcs_1080p  i32  40fe4d qp32  NE>NE 37.1831 dB  worst drift 48.5 dB  all 9 ok  117 s  elapsed 6.7 h  left ~19.8 h
+[222/842] 25 11:26 mlvcs_1080p  i32  40fe4d qp40  NE>NE 34.0351 dB  worst drift 47.9 dB  all 9 ok  117 s  elapsed 6.8 h  left ~19.7 h
+[223/842] 25 11:28 mlvcs_1080p  i32  45bb89 qp16  NE>NE 43.7162 dB  worst drift 49.4 dB  all 9 ok  124 s  elapsed 6.8 h  left ~19.7 h
+[224/842] 25 11:30 mlvcs_1080p  i32  45bb89 qp24  NE>NE 42.1173 dB  worst drift 47.1 dB  all 9 ok  117 s  elapsed 6.8 h  left ~19.7 h
+[225/842] 25 11:32 mlvcs_1080p  i32  45bb89 qp32  NE>NE 39.3523 dB  worst drift 48.0 dB  all 9 ok  117 s  elapsed 6.9 h  left ~19.6 h
+[226/842] 25 11:34 mlvcs_1080p  i32  45bb89 qp40  NE>NE 35.9509 dB  worst drift 44.4 dB  all 9 ok  118 s  elapsed 6.9 h  left ~19.6 h
+[227/842] 25 11:36 mlvcs_1080p  i32  4d8ffe qp16  NE>NE 37.542 dB  worst drift 47.5 dB  all 9 ok  125 s  elapsed 6.9 h  left ~19.6 h
+[228/842] 25 11:38 mlvcs_1080p  i32  4d8ffe qp24  NE>NE 36.275 dB  worst drift 46.7 dB  all 9 ok  113 s  elapsed 7.0 h  left ~19.5 h
+[229/842] 25 11:39 mlvcs_1080p  i32  4d8ffe qp32  NE>NE 33.4659 dB  worst drift 47.1 dB  all 9 ok  112 s  elapsed 7.0 h  left ~19.5 h
+[230/842] 25 11:41 mlvcs_1080p  i32  4d8ffe qp40  NE>NE 29.8977 dB  worst drift 46.0 dB  all 9 ok  112 s  elapsed 7.0 h  left ~19.4 h
+[231/842] 25 11:43 mlvcs_1080p  i32  6aa9cf qp16  NE>NE 46.3975 dB  worst drift 48.2 dB  all 9 ok  125 s  elapsed 7.1 h  left ~19.4 h
+[232/842] 25 11:45 mlvcs_1080p  i32  6aa9cf qp24  NE>NE 44.7655 dB  worst drift 48.4 dB  all 9 ok  118 s  elapsed 7.1 h  left ~19.4 h
+[233/842] 25 11:47 mlvcs_1080p  i32  6aa9cf qp32  NE>NE 42.087 dB  worst drift 47.7 dB  all 9 ok  120 s  elapsed 7.1 h  left ~19.3 h
+[234/842] 25 11:49 mlvcs_1080p  i32  6aa9cf qp40  NE>NE 38.5524 dB  worst drift 43.1 dB  all 9 ok  118 s  elapsed 7.2 h  left ~19.3 h
+[235/842] 25 11:51 mlvcs_1080p  i32  6eb39d qp16  NE>NE 44.4603 dB  worst drift 51.0 dB  all 9 ok  124 s  elapsed 7.2 h  left ~19.3 h
+[236/842] 25 11:53 mlvcs_1080p  i32  6eb39d qp24  NE>NE 42.1445 dB  worst drift 50.3 dB  all 9 ok  121 s  elapsed 7.2 h  left ~19.3 h
+[237/842] 25 11:55 mlvcs_1080p  i32  6eb39d qp32  NE>NE 38.6223 dB  worst drift 49.3 dB  all 9 ok  118 s  elapsed 7.3 h  left ~19.2 h
+[238/842] 25 11:57 mlvcs_1080p  i32  6eb39d qp40  NE>NE 34.5009 dB  worst drift 45.7 dB  all 9 ok  118 s  elapsed 7.3 h  left ~19.2 h
+[239/842] 25 11:59 mlvcs_1080p  i32  73f232 qp16  NE>NE 42.554 dB  worst drift 50.9 dB  all 9 ok  124 s  elapsed 7.3 h  left ~19.2 h
+[240/842] 25 12:01 mlvcs_1080p  i32  73f232 qp24  NE>NE 40.8509 dB  worst drift 50.5 dB  all 9 ok  118 s  elapsed 7.4 h  left ~19.2 h
+[241/842] 25 12:03 mlvcs_1080p  i32  73f232 qp32  NE>NE 38.2213 dB  worst drift 50.3 dB  all 9 ok  118 s  elapsed 7.4 h  left ~19.1 h
+[242/842] 25 12:05 mlvcs_1080p  i32  73f232 qp40  NE>NE 35.2126 dB  worst drift 47.5 dB  all 9 ok  118 s  elapsed 7.4 h  left ~19.1 h
+[243/842] 25 12:07 mlvcs_1080p  i32  99b38e qp16  NE>NE 46.7405 dB  worst drift 50.4 dB  all 9 ok  124 s  elapsed 7.5 h  left ~19.1 h
+[244/842] 25 12:09 mlvcs_1080p  i32  99b38e qp24  NE>NE 45.1889 dB  worst drift 50.1 dB  all 9 ok  120 s  elapsed 7.5 h  left ~19.0 h
+[245/842] 25 12:11 mlvcs_1080p  i32  99b38e qp32  NE>NE 42.3637 dB  worst drift 49.5 dB  all 9 ok  120 s  elapsed 7.5 h  left ~19.0 h
+[246/842] 25 12:13 mlvcs_1080p  i32  99b38e qp40  NE>NE 38.65 dB  worst drift 47.6 dB  all 9 ok  121 s  elapsed 7.6 h  left ~19.0 h
+[247/842] 25 12:16 mlvcs_1080p  i32  a17620 qp16  NE>NE 46.1477 dB  worst drift 50.9 dB  all 9 ok  125 s  elapsed 7.6 h  left ~19.0 h
+[248/842] 25 12:17 mlvcs_1080p  i32  a17620 qp24  NE>NE 44.4089 dB  worst drift 50.5 dB  all 9 ok  116 s  elapsed 7.6 h  left ~18.9 h
+[249/842] 25 12:19 mlvcs_1080p  i32  a17620 qp32  NE>NE 41.4135 dB  worst drift 49.9 dB  all 9 ok  115 s  elapsed 7.7 h  left ~18.9 h
+[250/842] 25 12:21 mlvcs_1080p  i32  a17620 qp40  NE>NE 37.629 dB  worst drift 48.0 dB  all 9 ok  115 s  elapsed 7.7 h  left ~18.9 h
+[251/842] 25 12:23 mlvcs_1080p  i32  b2d792 qp16  NE>NE 44.4322 dB  worst drift 46.5 dB  all 9 ok  122 s  elapsed 7.7 h  left ~18.8 h
+[252/842] 25 12:25 mlvcs_1080p  i32  b2d792 qp24  NE>NE 42.8593 dB  worst drift 45.6 dB  all 9 ok  121 s  elapsed 7.8 h  left ~18.8 h
+[253/842] 25 12:27 mlvcs_1080p  i32  b2d792 qp32  NE>NE 40.1876 dB  worst drift 45.9 dB  all 9 ok  119 s  elapsed 7.8 h  left ~18.8 h
+[254/842] 25 12:29 mlvcs_1080p  i32  b2d792 qp40  NE>NE 37.0485 dB  worst drift 45.5 dB  all 9 ok  118 s  elapsed 7.8 h  left ~18.7 h
+[255/842] 25 12:31 mlvcs_1080p  i32  b8893c qp16  NE>NE 44.5746 dB  worst drift 46.5 dB  all 9 ok  124 s  elapsed 7.9 h  left ~18.7 h
+[256/842] 25 12:33 mlvcs_1080p  i32  b8893c qp24  NE>NE 42.8215 dB  worst drift 48.6 dB  all 9 ok  115 s  elapsed 7.9 h  left ~18.7 h
+[257/842] 25 12:35 mlvcs_1080p  i32  b8893c qp32  NE>NE 40.5351 dB  worst drift 48.7 dB  all 9 ok  117 s  elapsed 7.9 h  left ~18.6 h
+[258/842] 25 12:37 mlvcs_1080p  i32  b8893c qp40  NE>NE 37.3837 dB  worst drift 47.0 dB  all 9 ok  122 s  elapsed 8.0 h  left ~18.6 h
+[259/842] 25 12:39 mlvcs_1080p  i32  b91038 qp16  NE>NE 44.3283 dB  worst drift 51.0 dB  all 9 ok  123 s  elapsed 8.0 h  left ~18.6 h
+[260/842] 25 12:41 mlvcs_1080p  i32  b91038 qp24  NE>NE 42.6427 dB  worst drift 50.6 dB  all 9 ok  120 s  elapsed 8.0 h  left ~18.6 h
+[261/842] 25 12:43 mlvcs_1080p  i32  b91038 qp32  NE>NE 39.5169 dB  worst drift 50.9 dB  all 9 ok  112 s  elapsed 8.1 h  left ~18.5 h
+[262/842] 25 12:45 mlvcs_1080p  i32  b91038 qp40  NE>NE 35.3447 dB  worst drift 49.8 dB  all 9 ok  112 s  elapsed 8.1 h  left ~18.5 h
+[263/842] 25 12:47 mlvcs_1080p  i32  c33648 qp16  NE>NE 43.2078 dB  worst drift 50.6 dB  all 9 ok  120 s  elapsed 8.1 h  left ~18.5 h
+[264/842] 25 12:49 mlvcs_1080p  i32  c33648 qp24  NE>NE 41.6367 dB  worst drift 49.8 dB  all 9 ok  117 s  elapsed 8.2 h  left ~18.4 h
+[265/842] 25 12:51 mlvcs_1080p  i32  c33648 qp32  NE>NE 39.1706 dB  worst drift 41.4 dB  all 9 ok  118 s  elapsed 8.2 h  left ~18.4 h
+[266/842] 25 12:53 mlvcs_1080p  i32  c33648 qp40  NE>NE 35.9748 dB  worst drift 42.5 dB  all 9 ok  117 s  elapsed 8.2 h  left ~18.4 h
+[267/842] 25 12:55 mlvcs_1080p  i32  c52d75 qp16  NE>NE 40.5888 dB  worst drift 46.3 dB  all 9 ok  123 s  elapsed 8.3 h  left ~18.3 h
+[268/842] 25 12:57 mlvcs_1080p  i32  c52d75 qp24  NE>NE 39.3739 dB  worst drift 46.1 dB  all 9 ok  119 s  elapsed 8.3 h  left ~18.3 h
+[269/842] 25 12:59 mlvcs_1080p  i32  c52d75 qp32  NE>NE 37.2911 dB  worst drift 45.7 dB  all 9 ok  115 s  elapsed 8.3 h  left ~18.3 h
+[270/842] 25 13:01 mlvcs_1080p  i32  c52d75 qp40  NE>NE 34.3649 dB  worst drift 45.0 dB  all 9 ok  117 s  elapsed 8.4 h  left ~18.2 h
+[271/842] 25 13:03 mlvcs_1080p  i32  cd6bc1 qp16  NE>NE 40.6286 dB  worst drift 51.3 dB  all 9 ok  124 s  elapsed 8.4 h  left ~18.2 h
+[272/842] 25 13:05 mlvcs_1080p  i32  cd6bc1 qp24  NE>NE 39.1492 dB  worst drift 51.2 dB  all 9 ok  118 s  elapsed 8.4 h  left ~18.2 h
+[273/842] 25 13:07 mlvcs_1080p  i32  cd6bc1 qp32  NE>NE 36.7824 dB  worst drift 50.7 dB  all 9 ok  119 s  elapsed 8.5 h  left ~18.1 h
+[274/842] 25 13:09 mlvcs_1080p  i32  cd6bc1 qp40  NE>NE 34.1694 dB  worst drift 47.3 dB  all 9 ok  118 s  elapsed 8.5 h  left ~18.1 h
+[275/842] 25 13:11 mlvcs_1080p  i32  db623c qp16  NE>NE 44.3072 dB  worst drift 49.4 dB  all 9 ok  123 s  elapsed 8.5 h  left ~18.1 h
+[276/842] 25 13:13 mlvcs_1080p  i32  db623c qp24  NE>NE 42.9068 dB  worst drift 49.9 dB  all 9 ok  119 s  elapsed 8.6 h  left ~18.1 h
+[277/842] 25 13:15 mlvcs_1080p  i32  db623c qp32  NE>NE 39.9247 dB  worst drift 49.5 dB  all 9 ok  119 s  elapsed 8.6 h  left ~18.0 h
+[278/842] 25 13:17 mlvcs_1080p  i32  db623c qp40  NE>NE 35.9374 dB  worst drift 48.4 dB  all 9 ok  118 s  elapsed 8.6 h  left ~18.0 h
+[279/842] 25 13:19 mlvcs_1080p  i32  fda953 qp16  NE>NE 45.4132 dB  worst drift 48.1 dB  all 9 ok  125 s  elapsed 8.7 h  left ~18.0 h
+[280/842] 25 13:21 mlvcs_1080p  i32  fda953 qp24  NE>NE 43.1449 dB  worst drift 47.3 dB  all 9 ok  116 s  elapsed 8.7 h  left ~17.9 h
+[281/842] 25 13:23 mlvcs_1080p  i32  fda953 qp32  NE>NE 39.4873 dB  worst drift 46.5 dB  all 9 ok  118 s  elapsed 8.7 h  left ~17.9 h
+[282/842] 25 13:25 mlvcs_1080p  i32  fda953 qp40  NE>NE 35.2844 dB  worst drift 45.4 dB  all 9 ok  118 s  elapsed 8.7 h  left ~17.9 h
+[283/842] 25 13:27 mlvcs_1080p  l32  08ee5e qp16  NE>NE 43.986 dB  worst drift 50.3 dB  all 9 ok  125 s  elapsed 8.8 h  left ~17.8 h
+[284/842] 25 13:29 mlvcs_1080p  l32  08ee5e qp24  NE>NE 42.3116 dB  worst drift 50.8 dB  all 9 ok  123 s  elapsed 8.8 h  left ~17.8 h
+[285/842] 25 13:31 mlvcs_1080p  l32  08ee5e qp32  NE>NE 39.6499 dB  worst drift 50.7 dB  all 9 ok  113 s  elapsed 8.8 h  left ~17.8 h
+[286/842] 25 13:33 mlvcs_1080p  l32  08ee5e qp40  NE>NE 35.8755 dB  worst drift 49.1 dB  all 9 ok  112 s  elapsed 8.9 h  left ~17.7 h
+[287/842] 25 13:35 mlvcs_1080p  l32  104c93 qp16  NE>NE 44.799 dB  worst drift 43.9 dB  all 9 ok  121 s  elapsed 8.9 h  left ~17.7 h
+[288/842] 25 13:36 mlvcs_1080p  l32  104c93 qp24  NE>NE 42.9258 dB  worst drift 38.7 dB  all 9 ok  112 s  elapsed 8.9 h  left ~17.7 h
+[289/842] 25 13:38 mlvcs_1080p  l32  104c93 qp32  NE>NE 39.602 dB  worst drift 39.3 dB  all 9 ok  112 s  elapsed 9.0 h  left ~17.6 h
+[290/842] 25 13:40 mlvcs_1080p  l32  104c93 qp40  NE>NE 35.3156 dB  worst drift 36.4 dB  all 9 ok  112 s  elapsed 9.0 h  left ~17.6 h
+[291/842] 25 13:42 mlvcs_1080p  l32  1e8830 qp16  NE>NE 36.271 dB  worst drift 47.5 dB  all 9 ok  121 s  elapsed 9.0 h  left ~17.6 h
+[292/842] 25 13:44 mlvcs_1080p  l32  1e8830 qp24  NE>NE 35.6021 dB  worst drift 47.8 dB  all 9 ok  115 s  elapsed 9.1 h  left ~17.5 h
+[293/842] 25 13:46 mlvcs_1080p  l32  1e8830 qp32  NE>NE 33.9164 dB  worst drift 47.6 dB  all 9 ok  112 s  elapsed 9.1 h  left ~17.5 h
+[294/842] 25 13:48 mlvcs_1080p  l32  1e8830 qp40  NE>NE 30.9131 dB  worst drift 45.9 dB  all 9 ok  112 s  elapsed 9.1 h  left ~17.5 h
+[295/842] 25 13:50 mlvcs_1080p  l32  38a418 qp16  NE>NE 45.1156 dB  worst drift 49.8 dB  all 9 ok  121 s  elapsed 9.2 h  left ~17.4 h
+[296/842] 25 13:52 mlvcs_1080p  l32  38a418 qp24  NE>NE 43.3749 dB  worst drift 49.7 dB  all 9 ok  115 s  elapsed 9.2 h  left ~17.4 h
+[297/842] 25 13:54 mlvcs_1080p  l32  38a418 qp32  NE>NE 40.378 dB  worst drift 48.5 dB  all 9 ok  116 s  elapsed 9.2 h  left ~17.4 h
+[298/842] 25 13:56 mlvcs_1080p  l32  38a418 qp40  NE>NE 36.489 dB  worst drift 46.5 dB  all 9 ok  114 s  elapsed 9.3 h  left ~17.3 h
+[299/842] 25 13:58 mlvcs_1080p  l32  40fe4d qp16  NE>NE 41.5656 dB  worst drift 47.0 dB  all 9 ok  121 s  elapsed 9.3 h  left ~17.3 h
+[300/842] 25 14:00 mlvcs_1080p  l32  40fe4d qp24  NE>NE 39.7638 dB  worst drift 46.6 dB  all 9 ok  113 s  elapsed 9.3 h  left ~17.3 h
+[301/842] 25 14:01 mlvcs_1080p  l32  40fe4d qp32  NE>NE 37.0907 dB  worst drift 48.1 dB  all 9 ok  112 s  elapsed 9.4 h  left ~17.2 h
+[302/842] 25 14:03 mlvcs_1080p  l32  40fe4d qp40  NE>NE 33.942 dB  worst drift 45.7 dB  all 9 ok  112 s  elapsed 9.4 h  left ~17.2 h
+[303/842] 25 14:05 mlvcs_1080p  l32  45bb89 qp16  NE>NE 43.7112 dB  worst drift 48.9 dB  all 9 ok  120 s  elapsed 9.4 h  left ~17.2 h
+[304/842] 25 14:07 mlvcs_1080p  l32  45bb89 qp24  NE>NE 42.0569 dB  worst drift 47.1 dB  all 9 ok  114 s  elapsed 9.5 h  left ~17.1 h
+[305/842] 25 14:09 mlvcs_1080p  l32  45bb89 qp32  NE>NE 39.3124 dB  worst drift 48.0 dB  all 9 ok  115 s  elapsed 9.5 h  left ~17.1 h
+[306/842] 25 14:11 mlvcs_1080p  l32  45bb89 qp40  NE>NE 35.9017 dB  worst drift 44.4 dB  all 9 ok  112 s  elapsed 9.5 h  left ~17.1 h
+[307/842] 25 14:13 mlvcs_1080p  l32  4d8ffe qp16  NE>NE 37.5803 dB  worst drift 46.8 dB  all 9 ok  121 s  elapsed 9.6 h  left ~17.0 h
+[308/842] 25 14:15 mlvcs_1080p  l32  4d8ffe qp24  NE>NE 36.2515 dB  worst drift 46.0 dB  all 9 ok  113 s  elapsed 9.6 h  left ~17.0 h
+[309/842] 25 14:17 mlvcs_1080p  l32  4d8ffe qp32  NE>NE 33.3508 dB  worst drift 47.1 dB  all 9 ok  114 s  elapsed 9.6 h  left ~17.0 h
+[310/842] 25 14:19 mlvcs_1080p  l32  4d8ffe qp40  NE>NE 29.7868 dB  worst drift 45.8 dB  all 9 ok  114 s  elapsed 9.6 h  left ~16.9 h
+[311/842] 25 14:21 mlvcs_1080p  l32  6aa9cf qp16  NE>NE 46.3765 dB  worst drift 47.4 dB  all 9 ok  120 s  elapsed 9.7 h  left ~16.9 h
+[312/842] 25 14:23 mlvcs_1080p  l32  6aa9cf qp24  NE>NE 44.7161 dB  worst drift 47.4 dB  all 9 ok  112 s  elapsed 9.7 h  left ~16.9 h
+[313/842] 25 14:24 mlvcs_1080p  l32  6aa9cf qp32  NE>NE 41.9806 dB  worst drift 46.9 dB  all 9 ok  117 s  elapsed 9.7 h  left ~16.8 h
+[314/842] 25 14:26 mlvcs_1080p  l32  6aa9cf qp40  NE>NE 38.3574 dB  worst drift 43.1 dB  all 9 ok  112 s  elapsed 9.8 h  left ~16.8 h
+[315/842] 25 14:29 mlvcs_1080p  l32  6eb39d qp16  NE>NE 44.4374 dB  worst drift 50.8 dB  all 9 ok  129 s  elapsed 9.8 h  left ~16.8 h
+[316/842] 25 14:31 mlvcs_1080p  l32  6eb39d qp24  NE>NE 42.0922 dB  worst drift 50.3 dB  all 9 ok  132 s  elapsed 9.8 h  left ~16.7 h
+[317/842] 25 14:33 mlvcs_1080p  l32  6eb39d qp32  NE>NE 38.5267 dB  worst drift 49.3 dB  all 9 ok  130 s  elapsed 9.9 h  left ~16.7 h
+[318/842] 25 14:35 mlvcs_1080p  l32  6eb39d qp40  NE>NE 34.3092 dB  worst drift 45.7 dB  all 9 ok  131 s  elapsed 9.9 h  left ~16.7 h
+[319/842] 25 14:37 mlvcs_1080p  l32  73f232 qp16  NE>NE 42.6152 dB  worst drift 50.4 dB  all 9 ok  137 s  elapsed 10.0 h  left ~16.7 h
+[320/842] 25 14:40 mlvcs_1080p  l32  73f232 qp24  NE>NE 40.8895 dB  worst drift 50.5 dB  all 9 ok  133 s  elapsed 10.0 h  left ~16.7 h
+[321/842] 25 14:42 mlvcs_1080p  l32  73f232 qp32  NE>NE 38.2215 dB  worst drift 50.1 dB  all 9 ok  134 s  elapsed 10.0 h  left ~16.6 h
+[322/842] 25 14:44 mlvcs_1080p  l32  73f232 qp40  NE>NE 35.1595 dB  worst drift 47.5 dB  all 9 ok  136 s  elapsed 10.1 h  left ~16.6 h
+[323/842] 25 14:46 mlvcs_1080p  l32  99b38e qp16  NE>NE 46.7252 dB  worst drift 50.3 dB  all 9 ok  140 s  elapsed 10.1 h  left ~16.6 h
+[324/842] 25 14:49 mlvcs_1080p  l32  99b38e qp24  NE>NE 45.1521 dB  worst drift 49.6 dB  all 9 ok  137 s  elapsed 10.1 h  left ~16.6 h
+[325/842] 25 14:51 mlvcs_1080p  l32  99b38e qp32  NE>NE 42.2515 dB  worst drift 49.4 dB  all 9 ok  135 s  elapsed 10.2 h  left ~16.6 h
+[326/842] 25 14:53 mlvcs_1080p  l32  99b38e qp40  NE>NE 38.4091 dB  worst drift 47.6 dB  all 9 ok  125 s  elapsed 10.2 h  left ~16.5 h
+[327/842] 25 14:55 mlvcs_1080p  l32  a17620 qp16  NE>NE 46.1644 dB  worst drift 50.4 dB  all 9 ok  129 s  elapsed 10.3 h  left ~16.5 h
+[328/842] 25 14:57 mlvcs_1080p  l32  a17620 qp24  NE>NE 44.3962 dB  worst drift 49.8 dB  all 9 ok  118 s  elapsed 10.3 h  left ~16.5 h
+[329/842] 25 14:59 mlvcs_1080p  l32  a17620 qp32  NE>NE 41.4234 dB  worst drift 49.6 dB  all 9 ok  123 s  elapsed 10.3 h  left ~16.5 h
+[330/842] 25 15:01 mlvcs_1080p  l32  a17620 qp40  NE>NE 37.6543 dB  worst drift 47.8 dB  all 9 ok  127 s  elapsed 10.4 h  left ~16.4 h
+[331/842] 25 15:04 mlvcs_1080p  l32  b2d792 qp16  NE>NE 44.4115 dB  worst drift 46.0 dB  all 9 ok  136 s  elapsed 10.4 h  left ~16.4 h
+[332/842] 25 15:06 mlvcs_1080p  l32  b2d792 qp24  NE>NE 42.7942 dB  worst drift 45.6 dB  all 9 ok  129 s  elapsed 10.4 h  left ~16.4 h
+[333/842] 25 15:08 mlvcs_1080p  l32  b2d792 qp32  NE>NE 40.0485 dB  worst drift 45.9 dB  all 9 ok  123 s  elapsed 10.5 h  left ~16.4 h
+[334/842] 25 15:10 mlvcs_1080p  l32  b2d792 qp40  NE>NE 36.8491 dB  worst drift 45.5 dB  all 9 ok  125 s  elapsed 10.5 h  left ~16.3 h
+[335/842] 25 15:12 mlvcs_1080p  l32  b8893c qp16  NE>NE 44.57 dB  worst drift 45.2 dB  all 9 ok  128 s  elapsed 10.5 h  left ~16.3 h
+[336/842] 25 15:14 mlvcs_1080p  l32  b8893c qp24  NE>NE 42.7727 dB  worst drift 47.6 dB  all 9 ok  125 s  elapsed 10.6 h  left ~16.3 h
+[337/842] 25 15:16 mlvcs_1080p  l32  b8893c qp32  NE>NE 40.4674 dB  worst drift 48.0 dB  all 9 ok  124 s  elapsed 10.6 h  left ~16.2 h
+[338/842] 25 15:18 mlvcs_1080p  l32  b8893c qp40  NE>NE 37.3188 dB  worst drift 46.1 dB  all 9 ok  124 s  elapsed 10.6 h  left ~16.2 h
+[339/842] 25 15:20 mlvcs_1080p  l32  b91038 qp16  NE>NE 44.3426 dB  worst drift 50.3 dB  all 9 ok  130 s  elapsed 10.7 h  left ~16.2 h
+[340/842] 25 15:22 mlvcs_1080p  l32  b91038 qp24  NE>NE 42.6341 dB  worst drift 50.0 dB  all 9 ok  126 s  elapsed 10.7 h  left ~16.2 h
+[341/842] 25 15:25 mlvcs_1080p  l32  b91038 qp32  NE>NE 39.5484 dB  worst drift 50.6 dB  all 9 ok  126 s  elapsed 10.7 h  left ~16.1 h
+[342/842] 25 15:27 mlvcs_1080p  l32  b91038 qp40  NE>NE 35.4179 dB  worst drift 48.7 dB  all 9 ok  126 s  elapsed 10.8 h  left ~16.1 h
+[343/842] 25 15:29 mlvcs_1080p  l32  c33648 qp16  NE>NE 43.222 dB  worst drift 50.1 dB  all 9 ok  121 s  elapsed 10.8 h  left ~16.1 h
+[344/842] 25 15:31 mlvcs_1080p  l32  c33648 qp24  NE>NE 41.6317 dB  worst drift 48.0 dB  all 9 ok  116 s  elapsed 10.8 h  left ~16.0 h
+[345/842] 25 15:32 mlvcs_1080p  l32  c33648 qp32  NE>NE 39.1621 dB  worst drift 38.6 dB  all 9 ok  112 s  elapsed 10.9 h  left ~16.0 h
+[346/842] 25 15:34 mlvcs_1080p  l32  c33648 qp40  NE>NE 35.973 dB  worst drift 37.5 dB  all 9 ok  116 s  elapsed 10.9 h  left ~16.0 h
+[347/842] 25 15:36 mlvcs_1080p  l32  c52d75 qp16  NE>NE 40.6013 dB  worst drift 42.5 dB  all 9 ok  121 s  elapsed 10.9 h  left ~15.9 h
+[348/842] 25 15:38 mlvcs_1080p  l32  c52d75 qp24  NE>NE 39.3629 dB  worst drift 43.4 dB  all 9 ok  112 s  elapsed 11.0 h  left ~15.9 h
+[349/842] 25 15:40 mlvcs_1080p  l32  c52d75 qp32  NE>NE 37.2453 dB  worst drift 36.5 dB  all 9 ok  112 s  elapsed 11.0 h  left ~15.9 h
+[350/842] 25 15:42 mlvcs_1080p  l32  c52d75 qp40  NE>NE 34.2667 dB  worst drift 40.2 dB  all 9 ok  115 s  elapsed 11.0 h  left ~15.8 h
+[351/842] 25 15:44 mlvcs_1080p  l32  cd6bc1 qp16  NE>NE 40.6048 dB  worst drift 50.5 dB  all 9 ok  120 s  elapsed 11.1 h  left ~15.8 h
+[352/842] 25 15:46 mlvcs_1080p  l32  cd6bc1 qp24  NE>NE 39.0692 dB  worst drift 50.7 dB  all 9 ok  115 s  elapsed 11.1 h  left ~15.8 h
+[353/842] 25 15:48 mlvcs_1080p  l32  cd6bc1 qp32  NE>NE 36.6664 dB  worst drift 49.0 dB  all 9 ok  112 s  elapsed 11.1 h  left ~15.7 h
+[354/842] 25 15:50 mlvcs_1080p  l32  cd6bc1 qp40  NE>NE 34.1006 dB  worst drift 47.3 dB  all 9 ok  114 s  elapsed 11.2 h  left ~15.7 h
+[355/842] 25 15:52 mlvcs_1080p  l32  db623c qp16  NE>NE 44.4352 dB  worst drift 49.4 dB  all 9 ok  121 s  elapsed 11.2 h  left ~15.7 h
+[356/842] 25 15:54 mlvcs_1080p  l32  db623c qp24  NE>NE 42.9919 dB  worst drift 49.9 dB  all 9 ok  114 s  elapsed 11.2 h  left ~15.6 h
+[357/842] 25 15:56 mlvcs_1080p  l32  db623c qp32  NE>NE 40.0124 dB  worst drift 49.4 dB  all 9 ok  114 s  elapsed 11.3 h  left ~15.6 h
+[358/842] 25 15:58 mlvcs_1080p  l32  db623c qp40  NE>NE 36.021 dB  worst drift 47.7 dB  all 9 ok  118 s  elapsed 11.3 h  left ~15.6 h
+[359/842] 25 16:00 mlvcs_1080p  l32  fda953 qp16  NE>NE 45.3863 dB  worst drift 47.6 dB  all 9 ok  120 s  elapsed 11.3 h  left ~15.5 h
+[360/842] 25 16:02 mlvcs_1080p  l32  fda953 qp24  NE>NE 43.0653 dB  worst drift 47.3 dB  all 9 ok  117 s  elapsed 11.4 h  left ~15.5 h
+[361/842] 25 16:03 mlvcs_1080p  l32  fda953 qp32  NE>NE 39.2389 dB  worst drift 46.4 dB  all 9 ok  112 s  elapsed 11.4 h  left ~15.5 h
+[362/842] 25 16:05 mlvcs_1080p  l32  fda953 qp40  NE>NE 34.8467 dB  worst drift 44.8 dB  all 9 ok  114 s  elapsed 11.4 h  left ~15.4 h
+[363/842] 25 16:07 mlvcs_1080p  i16  08ee5e qp16  NE>NE 43.9275 dB  worst drift 52.0 dB  all 9 ok  122 s  elapsed 11.5 h  left ~15.4 h
+[364/842] 25 16:09 mlvcs_1080p  i16  08ee5e qp24  NE>NE 42.4001 dB  worst drift 51.9 dB  all 9 ok  116 s  elapsed 11.5 h  left ~15.4 h
+[365/842] 25 16:11 mlvcs_1080p  i16  08ee5e qp32  NE>NE 39.6228 dB  worst drift 51.6 dB  all 9 ok  118 s  elapsed 11.5 h  left ~15.3 h
+[366/842] 25 16:13 mlvcs_1080p  i16  08ee5e qp40  NE>NE 35.7582 dB  worst drift 50.7 dB  all 9 ok  117 s  elapsed 11.6 h  left ~15.3 h
+[367/842] 25 16:15 mlvcs_1080p  i16  104c93 qp16  NE>NE 44.6258 dB  worst drift 50.1 dB  all 9 ok  120 s  elapsed 11.6 h  left ~15.3 h
+[368/842] 25 16:17 mlvcs_1080p  i16  104c93 qp24  NE>NE 42.8446 dB  worst drift 49.3 dB  all 9 ok  115 s  elapsed 11.6 h  left ~15.2 h
+[369/842] 25 16:19 mlvcs_1080p  i16  104c93 qp32  NE>NE 39.5479 dB  worst drift 49.0 dB  all 9 ok  113 s  elapsed 11.7 h  left ~15.2 h
+[370/842] 25 16:21 mlvcs_1080p  i16  104c93 qp40  NE>NE 35.3779 dB  worst drift 45.9 dB  all 9 ok  115 s  elapsed 11.7 h  left ~15.2 h
+[371/842] 25 16:23 mlvcs_1080p  i16  1e8830 qp16  NE>NE 35.8727 dB  worst drift 50.4 dB  all 9 ok  121 s  elapsed 11.7 h  left ~15.1 h
+[372/842] 25 16:25 mlvcs_1080p  i16  1e8830 qp24  NE>NE 35.273 dB  worst drift 50.2 dB  all 9 ok  112 s  elapsed 11.7 h  left ~15.1 h
+[373/842] 25 16:27 mlvcs_1080p  i16  1e8830 qp32  NE>NE 33.6706 dB  worst drift 49.8 dB  all 9 ok  114 s  elapsed 11.8 h  left ~15.1 h
+[374/842] 25 16:29 mlvcs_1080p  i16  1e8830 qp40  NE>NE 30.6735 dB  worst drift 48.6 dB  all 9 ok  122 s  elapsed 11.8 h  left ~15.0 h
+[375/842] 25 16:31 mlvcs_1080p  i16  38a418 qp16  NE>NE 44.9604 dB  worst drift 51.9 dB  all 9 ok  129 s  elapsed 11.9 h  left ~15.0 h
+[376/842] 25 16:33 mlvcs_1080p  i16  38a418 qp24  NE>NE 43.2696 dB  worst drift 51.4 dB  all 9 ok  124 s  elapsed 11.9 h  left ~15.0 h
+[377/842] 25 16:35 mlvcs_1080p  i16  38a418 qp32  NE>NE 40.2748 dB  worst drift 50.7 dB  all 9 ok  134 s  elapsed 11.9 h  left ~14.9 h
+[378/842] 25 16:37 mlvcs_1080p  i16  38a418 qp40  NE>NE 36.4257 dB  worst drift 48.4 dB  all 9 ok  133 s  elapsed 12.0 h  left ~14.9 h
+[379/842] 25 16:40 mlvcs_1080p  i16  40fe4d qp16  NE>NE 41.3995 dB  worst drift 51.0 dB  all 9 ok  137 s  elapsed 12.0 h  left ~14.9 h
+[380/842] 25 16:42 mlvcs_1080p  i16  40fe4d qp24  NE>NE 39.7774 dB  worst drift 51.0 dB  all 9 ok  132 s  elapsed 12.0 h  left ~14.9 h
+[381/842] 25 16:44 mlvcs_1080p  i16  40fe4d qp32  NE>NE 37.2407 dB  worst drift 50.9 dB  all 9 ok  112 s  elapsed 12.1 h  left ~14.8 h
+[382/842] 25 16:46 mlvcs_1080p  i16  40fe4d qp40  NE>NE 34.0164 dB  worst drift 49.2 dB  all 9 ok  112 s  elapsed 12.1 h  left ~14.8 h
+[383/842] 25 16:48 mlvcs_1080p  i16  45bb89 qp16  NE>NE 43.5717 dB  worst drift 51.5 dB  all 9 ok  120 s  elapsed 12.1 h  left ~14.8 h
+[384/842] 25 16:50 mlvcs_1080p  i16  45bb89 qp24  NE>NE 42.1049 dB  worst drift 50.7 dB  all 9 ok  120 s  elapsed 12.2 h  left ~14.7 h
+[385/842] 25 16:51 mlvcs_1080p  i16  45bb89 qp32  NE>NE 39.3615 dB  worst drift 51.2 dB  all 9 ok  112 s  elapsed 12.2 h  left ~14.7 h
+[386/842] 25 16:53 mlvcs_1080p  i16  45bb89 qp40  NE>NE 35.8855 dB  worst drift 49.1 dB  all 9 ok  112 s  elapsed 12.2 h  left ~14.7 h
+[387/842] 25 16:55 mlvcs_1080p  i16  4d8ffe qp16  NE>NE 37.2645 dB  worst drift 50.0 dB  all 9 ok  121 s  elapsed 12.3 h  left ~14.6 h
+[388/842] 25 16:57 mlvcs_1080p  i16  4d8ffe qp24  NE>NE 36.111 dB  worst drift 50.1 dB  all 9 ok  117 s  elapsed 12.3 h  left ~14.6 h
+[389/842] 25 16:59 mlvcs_1080p  i16  4d8ffe qp32  NE>NE 33.5294 dB  worst drift 49.9 dB  all 9 ok  113 s  elapsed 12.3 h  left ~14.6 h
+[390/842] 25 17:01 mlvcs_1080p  i16  4d8ffe qp40  NE>NE 29.989 dB  worst drift 48.6 dB  all 9 ok  114 s  elapsed 12.4 h  left ~14.5 h
+[391/842] 25 17:03 mlvcs_1080p  i16  6aa9cf qp16  NE>NE 46.3701 dB  worst drift 51.2 dB  all 9 ok  120 s  elapsed 12.4 h  left ~14.5 h
+[392/842] 25 17:05 mlvcs_1080p  i16  6aa9cf qp24  NE>NE 44.7592 dB  worst drift 51.0 dB  all 9 ok  114 s  elapsed 12.4 h  left ~14.5 h
+[393/842] 25 17:07 mlvcs_1080p  i16  6aa9cf qp32  NE>NE 42.1093 dB  worst drift 50.5 dB  all 9 ok  117 s  elapsed 12.5 h  left ~14.4 h
+[394/842] 25 17:09 mlvcs_1080p  i16  6aa9cf qp40  NE>NE 38.6294 dB  worst drift 47.1 dB  all 9 ok  123 s  elapsed 12.5 h  left ~14.4 h
+[395/842] 25 17:11 mlvcs_1080p  i16  6eb39d qp16  NE>NE 44.4376 dB  worst drift 52.4 dB  all 9 ok  123 s  elapsed 12.5 h  left ~14.4 h
+[396/842] 25 17:13 mlvcs_1080p  i16  6eb39d qp24  NE>NE 42.155 dB  worst drift 51.6 dB  all 9 ok  114 s  elapsed 12.6 h  left ~14.3 h
+[397/842] 25 17:15 mlvcs_1080p  i16  6eb39d qp32  NE>NE 38.6664 dB  worst drift 51.4 dB  all 9 ok  113 s  elapsed 12.6 h  left ~14.3 h
+[398/842] 25 17:17 mlvcs_1080p  i16  6eb39d qp40  NE>NE 34.6522 dB  worst drift 49.6 dB  all 9 ok  116 s  elapsed 12.6 h  left ~14.3 h
+[399/842] 25 17:19 mlvcs_1080p  i16  73f232 qp16  NE>NE 42.3401 dB  worst drift 52.5 dB  all 9 ok  120 s  elapsed 12.6 h  left ~14.2 h
+[400/842] 25 17:21 mlvcs_1080p  i16  73f232 qp24  NE>NE 40.7187 dB  worst drift 52.1 dB  all 9 ok  115 s  elapsed 12.7 h  left ~14.2 h
+[401/842] 25 17:23 mlvcs_1080p  i16  73f232 qp32  NE>NE 38.1938 dB  worst drift 52.0 dB  all 9 ok  116 s  elapsed 12.7 h  left ~14.2 h
+[402/842] 25 17:24 mlvcs_1080p  i16  73f232 qp40  NE>NE 35.2187 dB  worst drift 50.4 dB  all 9 ok  112 s  elapsed 12.7 h  left ~14.1 h
+[403/842] 25 17:26 mlvcs_1080p  i16  99b38e qp16  NE>NE 46.7008 dB  worst drift 52.1 dB  all 9 ok  121 s  elapsed 12.8 h  left ~14.1 h
+[404/842] 25 17:28 mlvcs_1080p  i16  99b38e qp24  NE>NE 45.1251 dB  worst drift 51.7 dB  all 9 ok  116 s  elapsed 12.8 h  left ~14.1 h
+[405/842] 25 17:30 mlvcs_1080p  i16  99b38e qp32  NE>NE 42.2942 dB  worst drift 50.9 dB  all 9 ok  117 s  elapsed 12.8 h  left ~14.0 h
+[406/842] 25 17:32 mlvcs_1080p  i16  99b38e qp40  NE>NE 38.6253 dB  worst drift 49.5 dB  all 9 ok  117 s  elapsed 12.9 h  left ~14.0 h
+[407/842] 25 17:34 mlvcs_1080p  i16  a17620 qp16  NE>NE 45.9894 dB  worst drift 52.2 dB  all 9 ok  120 s  elapsed 12.9 h  left ~14.0 h
+[408/842] 25 17:36 mlvcs_1080p  i16  a17620 qp24  NE>NE 44.3112 dB  worst drift 51.9 dB  all 9 ok  115 s  elapsed 12.9 h  left ~13.9 h
+[409/842] 25 17:38 mlvcs_1080p  i16  a17620 qp32  NE>NE 41.2831 dB  worst drift 51.5 dB  all 9 ok  119 s  elapsed 13.0 h  left ~13.9 h
+[410/842] 25 17:40 mlvcs_1080p  i16  a17620 qp40  NE>NE 37.4651 dB  worst drift 50.1 dB  all 9 ok  113 s  elapsed 13.0 h  left ~13.9 h
+[411/842] 25 17:42 mlvcs_1080p  i16  b2d792 qp16  NE>NE 44.3412 dB  worst drift 49.9 dB  all 9 ok  123 s  elapsed 13.0 h  left ~13.8 h
+[412/842] 25 17:44 mlvcs_1080p  i16  b2d792 qp24  NE>NE 42.7915 dB  worst drift 49.5 dB  all 9 ok  129 s  elapsed 13.1 h  left ~13.8 h
+[413/842] 25 17:46 mlvcs_1080p  i16  b2d792 qp32  NE>NE 40.1404 dB  worst drift 49.5 dB  all 9 ok  115 s  elapsed 13.1 h  left ~13.8 h
+[414/842] 25 17:48 mlvcs_1080p  i16  b2d792 qp40  NE>NE 37.0235 dB  worst drift 48.4 dB  all 9 ok  112 s  elapsed 13.1 h  left ~13.7 h
+[415/842] 25 17:50 mlvcs_1080p  i16  b8893c qp16  NE>NE 44.493 dB  worst drift 49.9 dB  all 9 ok  119 s  elapsed 13.2 h  left ~13.7 h
+[416/842] 25 17:52 mlvcs_1080p  i16  b8893c qp24  NE>NE 42.8269 dB  worst drift 50.3 dB  all 9 ok  112 s  elapsed 13.2 h  left ~13.7 h
+[417/842] 25 17:54 mlvcs_1080p  i16  b8893c qp32  NE>NE 40.5175 dB  worst drift 50.2 dB  all 9 ok  115 s  elapsed 13.2 h  left ~13.6 h
+[418/842] 25 17:56 mlvcs_1080p  i16  b8893c qp40  NE>NE 37.3213 dB  worst drift 49.2 dB  all 9 ok  113 s  elapsed 13.3 h  left ~13.6 h
+[419/842] 25 17:58 mlvcs_1080p  i16  b91038 qp16  NE>NE 44.1602 dB  worst drift 52.2 dB  all 9 ok  120 s  elapsed 13.3 h  left ~13.6 h
+[420/842] 25 18:00 mlvcs_1080p  i16  b91038 qp24  NE>NE 42.5559 dB  worst drift 52.0 dB  all 9 ok  114 s  elapsed 13.3 h  left ~13.5 h
+[421/842] 25 18:01 mlvcs_1080p  i16  b91038 qp32  NE>NE 39.4208 dB  worst drift 51.7 dB  all 9 ok  112 s  elapsed 13.4 h  left ~13.5 h
+[422/842] 25 18:03 mlvcs_1080p  i16  b91038 qp40  NE>NE 35.1841 dB  worst drift 50.9 dB  all 9 ok  115 s  elapsed 13.4 h  left ~13.5 h
+[423/842] 25 18:05 mlvcs_1080p  i16  c33648 qp16  NE>NE 43.1219 dB  worst drift 52.1 dB  all 9 ok  120 s  elapsed 13.4 h  left ~13.4 h
+[424/842] 25 18:07 mlvcs_1080p  i16  c33648 qp24  NE>NE 41.6155 dB  worst drift 52.0 dB  all 9 ok  114 s  elapsed 13.5 h  left ~13.4 h
+[425/842] 25 18:09 mlvcs_1080p  i16  c33648 qp32  NE>NE 39.2065 dB  worst drift 50.5 dB  all 9 ok  115 s  elapsed 13.5 h  left ~13.4 h
+[426/842] 25 18:11 mlvcs_1080p  i16  c33648 qp40  NE>NE 35.9806 dB  worst drift 49.5 dB  all 9 ok  112 s  elapsed 13.5 h  left ~13.3 h
+[427/842] 25 18:13 mlvcs_1080p  i16  c52d75 qp16  NE>NE 40.5101 dB  worst drift 48.9 dB  all 9 ok  120 s  elapsed 13.6 h  left ~13.3 h
+[428/842] 25 18:15 mlvcs_1080p  i16  c52d75 qp24  NE>NE 39.3119 dB  worst drift 50.2 dB  all 9 ok  112 s  elapsed 13.6 h  left ~13.3 h
+[429/842] 25 18:17 mlvcs_1080p  i16  c52d75 qp32  NE>NE 37.2246 dB  worst drift 49.9 dB  all 9 ok  112 s  elapsed 13.6 h  left ~13.2 h
+[430/842] 25 18:19 mlvcs_1080p  i16  c52d75 qp40  NE>NE 34.3097 dB  worst drift 48.9 dB  all 9 ok  114 s  elapsed 13.6 h  left ~13.2 h
+[431/842] 25 18:21 mlvcs_1080p  i16  cd6bc1 qp16  NE>NE 40.5138 dB  worst drift 52.2 dB  all 9 ok  121 s  elapsed 13.7 h  left ~13.2 h
+[432/842] 25 18:23 mlvcs_1080p  i16  cd6bc1 qp24  NE>NE 39.1693 dB  worst drift 52.4 dB  all 9 ok  115 s  elapsed 13.7 h  left ~13.1 h
+[433/842] 25 18:25 mlvcs_1080p  i16  cd6bc1 qp32  NE>NE 36.8996 dB  worst drift 51.8 dB  all 9 ok  117 s  elapsed 13.7 h  left ~13.1 h
+[434/842] 25 18:27 mlvcs_1080p  i16  cd6bc1 qp40  NE>NE 34.1331 dB  worst drift 50.5 dB  all 9 ok  117 s  elapsed 13.8 h  left ~13.1 h
+[435/842] 25 18:29 mlvcs_1080p  i16  db623c qp16  NE>NE 43.9314 dB  worst drift 51.2 dB  all 9 ok  120 s  elapsed 13.8 h  left ~13.0 h
+[436/842] 25 18:30 mlvcs_1080p  i16  db623c qp24  NE>NE 42.6165 dB  worst drift 51.1 dB  all 9 ok  112 s  elapsed 13.8 h  left ~13.0 h
+[437/842] 25 18:32 mlvcs_1080p  i16  db623c qp32  NE>NE 39.7103 dB  worst drift 50.5 dB  all 9 ok  112 s  elapsed 13.9 h  left ~13.0 h
+[438/842] 25 18:34 mlvcs_1080p  i16  db623c qp40  NE>NE 35.7221 dB  worst drift 49.5 dB  all 9 ok  112 s  elapsed 13.9 h  left ~12.9 h
+[439/842] 25 18:36 mlvcs_1080p  i16  fda953 qp16  NE>NE 45.3654 dB  worst drift 50.0 dB  all 9 ok  120 s  elapsed 13.9 h  left ~12.9 h
+[440/842] 25 18:38 mlvcs_1080p  i16  fda953 qp24  NE>NE 43.1108 dB  worst drift 48.9 dB  all 9 ok  115 s  elapsed 14.0 h  left ~12.9 h
+[441/842] 25 18:40 mlvcs_1080p  i16  fda953 qp32  NE>NE 39.4661 dB  worst drift 47.9 dB  all 9 ok  116 s  elapsed 14.0 h  left ~12.8 h
+[442/842] 25 18:42 mlvcs_1080p  i16  fda953 qp40  NE>NE 35.2923 dB  worst drift 47.5 dB  all 9 ok  115 s  elapsed 14.0 h  left ~12.8 h
+[443/842] 25 18:44 mlvcs_1080p  l16  08ee5e qp16  NE>NE 43.9485 dB  worst drift 51.9 dB  all 9 ok  122 s  elapsed 14.1 h  left ~12.8 h
+[444/842] 25 18:46 mlvcs_1080p  l16  08ee5e qp24  NE>NE 42.4297 dB  worst drift 51.8 dB  all 9 ok  117 s  elapsed 14.1 h  left ~12.7 h
+[445/842] 25 18:48 mlvcs_1080p  l16  08ee5e qp32  NE>NE 39.7861 dB  worst drift 51.6 dB  all 9 ok  117 s  elapsed 14.1 h  left ~12.7 h
+[446/842] 25 18:50 mlvcs_1080p  l16  08ee5e qp40  NE>NE 36.0268 dB  worst drift 50.8 dB  all 9 ok  117 s  elapsed 14.2 h  left ~12.7 h
+[447/842] 25 18:52 mlvcs_1080p  l16  104c93 qp16  NE>NE 44.6895 dB  worst drift 49.5 dB  all 9 ok  120 s  elapsed 14.2 h  left ~12.6 h
+[448/842] 25 18:54 mlvcs_1080p  l16  104c93 qp24  NE>NE 42.8715 dB  worst drift 48.5 dB  all 9 ok  116 s  elapsed 14.2 h  left ~12.6 h
+[449/842] 25 18:56 mlvcs_1080p  l16  104c93 qp32  NE>NE 39.5628 dB  worst drift 48.3 dB  all 9 ok  115 s  elapsed 14.3 h  left ~12.6 h
+[450/842] 25 18:58 mlvcs_1080p  l16  104c93 qp40  NE>NE 35.3471 dB  worst drift 47.7 dB  all 9 ok  112 s  elapsed 14.3 h  left ~12.5 h
+[451/842] 25 19:00 mlvcs_1080p  l16  1e8830 qp16  NE>NE 36.0762 dB  worst drift 49.8 dB  all 9 ok  121 s  elapsed 14.3 h  left ~12.5 h
+[452/842] 25 19:01 mlvcs_1080p  l16  1e8830 qp24  NE>NE 35.4722 dB  worst drift 49.9 dB  all 9 ok  113 s  elapsed 14.4 h  left ~12.5 h
+[453/842] 25 19:03 mlvcs_1080p  l16  1e8830 qp32  NE>NE 33.8699 dB  worst drift 49.5 dB  all 9 ok  112 s  elapsed 14.4 h  left ~12.4 h
+[454/842] 25 19:05 mlvcs_1080p  l16  1e8830 qp40  NE>NE 30.948 dB  worst drift 48.6 dB  all 9 ok  112 s  elapsed 14.4 h  left ~12.4 h
+[455/842] 25 19:07 mlvcs_1080p  l16  38a418 qp16  NE>NE 45.0061 dB  worst drift 51.6 dB  all 9 ok  119 s  elapsed 14.5 h  left ~12.4 h
+[456/842] 25 19:09 mlvcs_1080p  l16  38a418 qp24  NE>NE 43.2892 dB  worst drift 51.2 dB  all 9 ok  112 s  elapsed 14.5 h  left ~12.3 h
+[457/842] 25 19:11 mlvcs_1080p  l16  38a418 qp32  NE>NE 40.2846 dB  worst drift 50.5 dB  all 9 ok  116 s  elapsed 14.5 h  left ~12.3 h
+[458/842] 25 19:13 mlvcs_1080p  l16  38a418 qp40  NE>NE 36.4137 dB  worst drift 48.8 dB  all 9 ok  112 s  elapsed 14.6 h  left ~12.3 h
+[459/842] 25 19:15 mlvcs_1080p  l16  40fe4d qp16  NE>NE 41.435 dB  worst drift 50.6 dB  all 9 ok  122 s  elapsed 14.6 h  left ~12.2 h
+[460/842] 25 19:17 mlvcs_1080p  l16  40fe4d qp24  NE>NE 39.763 dB  worst drift 50.6 dB  all 9 ok  112 s  elapsed 14.6 h  left ~12.2 h
+[461/842] 25 19:19 mlvcs_1080p  l16  40fe4d qp32  NE>NE 37.2138 dB  worst drift 50.4 dB  all 9 ok  112 s  elapsed 14.6 h  left ~12.2 h
+[462/842] 25 19:20 mlvcs_1080p  l16  40fe4d qp40  NE>NE 34.0164 dB  worst drift 48.6 dB  all 9 ok  112 s  elapsed 14.7 h  left ~12.1 h
+[463/842] 25 19:22 mlvcs_1080p  l16  45bb89 qp16  NE>NE 43.6241 dB  worst drift 51.1 dB  all 9 ok  120 s  elapsed 14.7 h  left ~12.1 h
+[464/842] 25 19:24 mlvcs_1080p  l16  45bb89 qp24  NE>NE 42.1496 dB  worst drift 50.7 dB  all 9 ok  112 s  elapsed 14.7 h  left ~12.1 h
+[465/842] 25 19:26 mlvcs_1080p  l16  45bb89 qp32  NE>NE 39.4527 dB  worst drift 50.2 dB  all 9 ok  115 s  elapsed 14.8 h  left ~12.0 h
+[466/842] 25 19:28 mlvcs_1080p  l16  45bb89 qp40  NE>NE 36.0285 dB  worst drift 49.1 dB  all 9 ok  116 s  elapsed 14.8 h  left ~12.0 h
+[467/842] 25 19:30 mlvcs_1080p  l16  4d8ffe qp16  NE>NE 37.324 dB  worst drift 49.7 dB  all 9 ok  121 s  elapsed 14.8 h  left ~12.0 h
+[468/842] 25 19:32 mlvcs_1080p  l16  4d8ffe qp24  NE>NE 36.1261 dB  worst drift 49.5 dB  all 9 ok  113 s  elapsed 14.9 h  left ~11.9 h
+[469/842] 25 19:34 mlvcs_1080p  l16  4d8ffe qp32  NE>NE 33.4604 dB  worst drift 49.3 dB  all 9 ok  112 s  elapsed 14.9 h  left ~11.9 h
+[470/842] 25 19:36 mlvcs_1080p  l16  4d8ffe qp40  NE>NE 29.9085 dB  worst drift 48.6 dB  all 9 ok  113 s  elapsed 14.9 h  left ~11.9 h
+[471/842] 25 19:38 mlvcs_1080p  l16  6aa9cf qp16  NE>NE 46.3133 dB  worst drift 50.3 dB  all 9 ok  121 s  elapsed 15.0 h  left ~11.8 h
+[472/842] 25 19:40 mlvcs_1080p  l16  6aa9cf qp24  NE>NE 44.645 dB  worst drift 50.4 dB  all 9 ok  118 s  elapsed 15.0 h  left ~11.8 h
+[473/842] 25 19:42 mlvcs_1080p  l16  6aa9cf qp32  NE>NE 41.9029 dB  worst drift 49.7 dB  all 9 ok  116 s  elapsed 15.0 h  left ~11.8 h
+[474/842] 25 19:44 mlvcs_1080p  l16  6aa9cf qp40  NE>NE 38.3316 dB  worst drift 47.1 dB  all 9 ok  113 s  elapsed 15.1 h  left ~11.8 h
+[475/842] 25 19:46 mlvcs_1080p  l16  6eb39d qp16  NE>NE 44.362 dB  worst drift 51.9 dB  all 9 ok  120 s  elapsed 15.1 h  left ~11.7 h
+[476/842] 25 19:47 mlvcs_1080p  l16  6eb39d qp24  NE>NE 42.0098 dB  worst drift 51.5 dB  all 9 ok  112 s  elapsed 15.1 h  left ~11.7 h
+[477/842] 25 19:49 mlvcs_1080p  l16  6eb39d qp32  NE>NE 38.418 dB  worst drift 51.2 dB  all 9 ok  112 s  elapsed 15.2 h  left ~11.7 h
+[478/842] 25 19:51 mlvcs_1080p  l16  6eb39d qp40  NE>NE 34.2906 dB  worst drift 49.2 dB  all 9 ok  112 s  elapsed 15.2 h  left ~11.6 h
+[479/842] 25 19:53 mlvcs_1080p  l16  73f232 qp16  NE>NE 42.4112 dB  worst drift 52.4 dB  all 9 ok  120 s  elapsed 15.2 h  left ~11.6 h
+[480/842] 25 19:55 mlvcs_1080p  l16  73f232 qp24  NE>NE 40.7486 dB  worst drift 52.1 dB  all 9 ok  112 s  elapsed 15.3 h  left ~11.6 h
+[481/842] 25 19:57 mlvcs_1080p  l16  73f232 qp32  NE>NE 38.1716 dB  worst drift 51.1 dB  all 9 ok  114 s  elapsed 15.3 h  left ~11.5 h
+[482/842] 25 19:59 mlvcs_1080p  l16  73f232 qp40  NE>NE 35.1446 dB  worst drift 50.4 dB  all 9 ok  112 s  elapsed 15.3 h  left ~11.5 h
+[483/842] 25 20:01 mlvcs_1080p  l16  99b38e qp16  NE>NE 46.6675 dB  worst drift 52.1 dB  all 9 ok  120 s  elapsed 15.4 h  left ~11.5 h
+[484/842] 25 20:03 mlvcs_1080p  l16  99b38e qp24  NE>NE 45.0643 dB  worst drift 51.7 dB  all 9 ok  112 s  elapsed 15.4 h  left ~11.4 h
+[485/842] 25 20:05 mlvcs_1080p  l16  99b38e qp32  NE>NE 42.1791 dB  worst drift 50.9 dB  all 9 ok  118 s  elapsed 15.4 h  left ~11.4 h
+[486/842] 25 20:07 mlvcs_1080p  l16  99b38e qp40  NE>NE 38.3902 dB  worst drift 49.5 dB  all 9 ok  116 s  elapsed 15.4 h  left ~11.4 h
+[487/842] 25 20:09 mlvcs_1080p  l16  a17620 qp16  NE>NE 46.072 dB  worst drift 52.1 dB  all 9 ok  121 s  elapsed 15.5 h  left ~11.3 h
+[488/842] 25 20:11 mlvcs_1080p  l16  a17620 qp24  NE>NE 44.3692 dB  worst drift 51.6 dB  all 9 ok  112 s  elapsed 15.5 h  left ~11.3 h
+[489/842] 25 20:12 mlvcs_1080p  l16  a17620 qp32  NE>NE 41.4145 dB  worst drift 51.4 dB  all 9 ok  112 s  elapsed 15.5 h  left ~11.3 h
+[490/842] 25 20:14 mlvcs_1080p  l16  a17620 qp40  NE>NE 37.7264 dB  worst drift 49.8 dB  all 9 ok  112 s  elapsed 15.6 h  left ~11.2 h
+[491/842] 25 20:16 mlvcs_1080p  l16  b2d792 qp16  NE>NE 44.2761 dB  worst drift 49.6 dB  all 9 ok  120 s  elapsed 15.6 h  left ~11.2 h
+[492/842] 25 20:18 mlvcs_1080p  l16  b2d792 qp24  NE>NE 42.625 dB  worst drift 49.4 dB  all 9 ok  114 s  elapsed 15.6 h  left ~11.2 h
+[493/842] 25 20:20 mlvcs_1080p  l16  b2d792 qp32  NE>NE 39.8279 dB  worst drift 49.5 dB  all 9 ok  112 s  elapsed 15.7 h  left ~11.1 h
+[494/842] 25 20:22 mlvcs_1080p  l16  b2d792 qp40  NE>NE 36.6709 dB  worst drift 48.1 dB  all 9 ok  112 s  elapsed 15.7 h  left ~11.1 h
+[495/842] 25 20:24 mlvcs_1080p  l16  b8893c qp16  NE>NE 44.4925 dB  worst drift 49.4 dB  all 9 ok  120 s  elapsed 15.7 h  left ~11.1 h
+[496/842] 25 20:26 mlvcs_1080p  l16  b8893c qp24  NE>NE 42.7859 dB  worst drift 50.0 dB  all 9 ok  113 s  elapsed 15.8 h  left ~11.0 h
+[497/842] 25 20:28 mlvcs_1080p  l16  b8893c qp32  NE>NE 40.5155 dB  worst drift 50.1 dB  all 9 ok  115 s  elapsed 15.8 h  left ~11.0 h
+[498/842] 25 20:30 mlvcs_1080p  l16  b8893c qp40  NE>NE 37.3928 dB  worst drift 48.9 dB  all 9 ok  113 s  elapsed 15.8 h  left ~11.0 h
+[499/842] 25 20:32 mlvcs_1080p  l16  b91038 qp16  NE>NE 44.1897 dB  worst drift 51.9 dB  all 9 ok  120 s  elapsed 15.9 h  left ~10.9 h
+[500/842] 25 20:33 mlvcs_1080p  l16  b91038 qp24  NE>NE 42.5807 dB  worst drift 51.7 dB  all 9 ok  112 s  elapsed 15.9 h  left ~10.9 h
+[501/842] 25 20:35 mlvcs_1080p  l16  b91038 qp32  NE>NE 39.4636 dB  worst drift 51.6 dB  all 9 ok  112 s  elapsed 15.9 h  left ~10.9 h
+[502/842] 25 20:37 mlvcs_1080p  l16  b91038 qp40  NE>NE 35.3557 dB  worst drift 50.7 dB  all 9 ok  112 s  elapsed 16.0 h  left ~10.8 h
+[503/842] 25 20:39 mlvcs_1080p  l16  c33648 qp16  NE>NE 43.1135 dB  worst drift 51.9 dB  all 9 ok  120 s  elapsed 16.0 h  left ~10.8 h
+[504/842] 25 20:41 mlvcs_1080p  l16  c33648 qp24  NE>NE 41.5649 dB  worst drift 51.8 dB  all 9 ok  112 s  elapsed 16.0 h  left ~10.8 h
+[505/842] 25 20:43 mlvcs_1080p  l16  c33648 qp32  NE>NE 39.1912 dB  worst drift 50.5 dB  all 9 ok  115 s  elapsed 16.1 h  left ~10.7 h
+[506/842] 25 20:45 mlvcs_1080p  l16  c33648 qp40  NE>NE 36.057 dB  worst drift 49.5 dB  all 9 ok  113 s  elapsed 16.1 h  left ~10.7 h
+[507/842] 25 20:47 mlvcs_1080p  l16  c52d75 qp16  NE>NE 40.5214 dB  worst drift 45.7 dB  all 9 ok  121 s  elapsed 16.1 h  left ~10.7 h
+[508/842] 25 20:49 mlvcs_1080p  l16  c52d75 qp24  NE>NE 39.2855 dB  worst drift 48.0 dB  all 9 ok  114 s  elapsed 16.1 h  left ~10.6 h
+[509/842] 25 20:51 mlvcs_1080p  l16  c52d75 qp32  NE>NE 37.1541 dB  worst drift 48.7 dB  all 9 ok  114 s  elapsed 16.2 h  left ~10.6 h
+[510/842] 25 20:53 mlvcs_1080p  l16  c52d75 qp40  NE>NE 34.2761 dB  worst drift 48.1 dB  all 9 ok  117 s  elapsed 16.2 h  left ~10.6 h
+[511/842] 25 20:55 mlvcs_1080p  l16  cd6bc1 qp16  NE>NE 40.4903 dB  worst drift 52.0 dB  all 9 ok  120 s  elapsed 16.2 h  left ~10.5 h
+[512/842] 25 20:56 mlvcs_1080p  l16  cd6bc1 qp24  NE>NE 39.0874 dB  worst drift 52.0 dB  all 9 ok  112 s  elapsed 16.3 h  left ~10.5 h
+[513/842] 25 20:58 mlvcs_1080p  l16  cd6bc1 qp32  NE>NE 36.8566 dB  worst drift 51.5 dB  all 9 ok  112 s  elapsed 16.3 h  left ~10.5 h
+[514/842] 25 21:00 mlvcs_1080p  l16  cd6bc1 qp40  NE>NE 34.2297 dB  worst drift 50.5 dB  all 9 ok  112 s  elapsed 16.3 h  left ~10.4 h
+[515/842] 25 21:02 mlvcs_1080p  l16  db623c qp16  NE>NE 44.1728 dB  worst drift 51.1 dB  all 9 ok  120 s  elapsed 16.4 h  left ~10.4 h
+[516/842] 25 21:04 mlvcs_1080p  l16  db623c qp24  NE>NE 42.8475 dB  worst drift 51.0 dB  all 9 ok  114 s  elapsed 16.4 h  left ~10.4 h
+[517/842] 25 21:06 mlvcs_1080p  l16  db623c qp32  NE>NE 39.9434 dB  worst drift 50.1 dB  all 9 ok  112 s  elapsed 16.4 h  left ~10.3 h
+[518/842] 25 21:08 mlvcs_1080p  l16  db623c qp40  NE>NE 36.0623 dB  worst drift 49.5 dB  all 9 ok  122 s  elapsed 16.5 h  left ~10.3 h
+[519/842] 25 21:10 mlvcs_1080p  l16  fda953 qp16  NE>NE 45.2821 dB  worst drift 49.8 dB  all 9 ok  121 s  elapsed 16.5 h  left ~10.3 h
+[520/842] 25 21:12 mlvcs_1080p  l16  fda953 qp24  NE>NE 42.9248 dB  worst drift 48.9 dB  all 9 ok  114 s  elapsed 16.5 h  left ~10.2 h
+[521/842] 25 21:14 mlvcs_1080p  l16  fda953 qp32  NE>NE 39.0139 dB  worst drift 47.9 dB  all 9 ok  116 s  elapsed 16.6 h  left ~10.2 h
+[522/842] 25 21:16 mlvcs_1080p  l16  fda953 qp40  NE>NE 34.6419 dB  worst drift 47.5 dB  all 9 ok  114 s  elapsed 16.6 h  left ~10.2 h
+[523/842] 25 21:20 mlvc_1080p   i32  08ee5e qp16  NE>NE 44.0282 dB  worst drift 50.8 dB  all 9 ok  263 s  elapsed 16.7 h  left ~23.3 h
+[524/842] 25 21:24 mlvc_1080p   i32  08ee5e qp24  NE>NE 42.5638 dB  worst drift 50.7 dB  all 9 ok  257 s  elapsed 16.7 h  left ~22.9 h
+[525/842] 25 21:29 mlvc_1080p   i32  08ee5e qp32  NE>NE 40.205 dB  worst drift 50.5 dB  all 9 ok  258 s  elapsed 16.8 h  left ~22.8 h
+[526/842] 25 21:33 mlvc_1080p   i32  08ee5e qp40  NE>NE 36.6885 dB  worst drift 49.9 dB  all 9 ok  259 s  elapsed 16.9 h  left ~22.7 h
+[527/842] 25 21:37 mlvc_1080p   i32  104c93 qp16  NE>NE 45.1339 dB  worst drift 43.7 dB  all 9 ok  262 s  elapsed 17.0 h  left ~22.7 h
+[528/842] 25 21:42 mlvc_1080p   i32  104c93 qp24  NE>NE 43.4867 dB  worst drift 42.1 dB  all 9 ok  255 s  elapsed 17.0 h  left ~22.6 h
+[529/842] 25 21:46 mlvc_1080p   i32  104c93 qp32  NE>NE 40.6163 dB  worst drift 41.3 dB  all 9 ok  258 s  elapsed 17.1 h  left ~22.5 h
+[530/842] 25 21:50 mlvc_1080p   i32  104c93 qp40  NE>NE 36.7138 dB  worst drift 42.1 dB  all 9 ok  257 s  elapsed 17.2 h  left ~22.4 h
+[531/842] 25 21:55 mlvc_1080p   i32  1e8830 qp16  NE>NE 37.2457 dB  worst drift 49.0 dB  all 9 ok  262 s  elapsed 17.2 h  left ~22.4 h
+[532/842] 25 21:59 mlvc_1080p   i32  1e8830 qp24  NE>NE 36.176 dB  worst drift 47.6 dB  all 9 ok  256 s  elapsed 17.3 h  left ~22.3 h
+[533/842] 25 22:03 mlvc_1080p   i32  1e8830 qp32  NE>NE 34.4672 dB  worst drift 47.9 dB  all 9 ok  255 s  elapsed 17.4 h  left ~22.2 h
+[534/842] 25 22:07 mlvc_1080p   i32  1e8830 qp40  NE>NE 31.5981 dB  worst drift 46.4 dB  all 9 ok  257 s  elapsed 17.5 h  left ~22.1 h
+[535/842] 25 22:12 mlvc_1080p   i32  38a418 qp16  NE>NE 45.3826 dB  worst drift 50.1 dB  all 9 ok  258 s  elapsed 17.5 h  left ~22.0 h
+[536/842] 25 22:16 mlvc_1080p   i32  38a418 qp24  NE>NE 43.8685 dB  worst drift 49.3 dB  all 9 ok  254 s  elapsed 17.6 h  left ~21.9 h
+[537/842] 25 22:20 mlvc_1080p   i32  38a418 qp32  NE>NE 41.267 dB  worst drift 49.1 dB  all 9 ok  255 s  elapsed 17.7 h  left ~21.8 h
+[538/842] 25 22:24 mlvc_1080p   i32  38a418 qp40  NE>NE 37.7478 dB  worst drift 47.1 dB  all 9 ok  254 s  elapsed 17.7 h  left ~21.7 h
+[539/842] 25 22:29 mlvc_1080p   i32  40fe4d qp16  NE>NE 41.8982 dB  worst drift 50.1 dB  all 9 ok  261 s  elapsed 17.8 h  left ~21.7 h
+[540/842] 25 22:33 mlvc_1080p   i32  40fe4d qp24  NE>NE 39.9691 dB  worst drift 49.9 dB  all 9 ok  251 s  elapsed 17.9 h  left ~21.6 h
+[541/842] 25 22:37 mlvc_1080p   i32  40fe4d qp32  NE>NE 37.5381 dB  worst drift 48.7 dB  all 9 ok  258 s  elapsed 18.0 h  left ~21.5 h
+[542/842] 25 22:42 mlvc_1080p   i32  40fe4d qp40  NE>NE 34.7079 dB  worst drift 46.7 dB  all 9 ok  257 s  elapsed 18.0 h  left ~21.4 h
+[543/842] 25 22:46 mlvc_1080p   i32  45bb89 qp16  NE>NE 43.9735 dB  worst drift 50.5 dB  all 9 ok  261 s  elapsed 18.1 h  left ~21.4 h
+[544/842] 25 22:50 mlvc_1080p   i32  45bb89 qp24  NE>NE 42.4135 dB  worst drift 49.6 dB  all 9 ok  257 s  elapsed 18.2 h  left ~21.3 h
+[545/842] 25 22:54 mlvc_1080p   i32  45bb89 qp32  NE>NE 39.9887 dB  worst drift 49.9 dB  all 9 ok  257 s  elapsed 18.2 h  left ~21.2 h
+[546/842] 25 22:59 mlvc_1080p   i32  45bb89 qp40  NE>NE 36.7853 dB  worst drift 48.8 dB  all 9 ok  258 s  elapsed 18.3 h  left ~21.2 h
+[547/842] 25 23:03 mlvc_1080p   i32  4d8ffe qp16  NE>NE 38.6554 dB  worst drift 49.5 dB  all 9 ok  263 s  elapsed 18.4 h  left ~21.1 h
+[548/842] 25 23:07 mlvc_1080p   i32  4d8ffe qp24  NE>NE 36.8896 dB  worst drift 48.5 dB  all 9 ok  260 s  elapsed 18.5 h  left ~21.1 h
+[549/842] 25 23:12 mlvc_1080p   i32  4d8ffe qp32  NE>NE 34.1003 dB  worst drift 47.0 dB  all 9 ok  259 s  elapsed 18.5 h  left ~21.0 h
+[550/842] 25 23:16 mlvc_1080p   i32  4d8ffe qp40  NE>NE 30.5517 dB  worst drift 45.8 dB  all 9 ok  258 s  elapsed 18.6 h  left ~20.9 h
+[551/842] 25 23:20 mlvc_1080p   i32  6aa9cf qp16  NE>NE 46.5393 dB  worst drift 49.1 dB  all 9 ok  265 s  elapsed 18.7 h  left ~20.9 h
+[552/842] 25 23:25 mlvc_1080p   i32  6aa9cf qp24  NE>NE 45.0192 dB  worst drift 49.4 dB  all 9 ok  255 s  elapsed 18.7 h  left ~20.8 h
+[553/842] 25 23:29 mlvc_1080p   i32  6aa9cf qp32  NE>NE 42.6901 dB  worst drift 48.2 dB  all 9 ok  258 s  elapsed 18.8 h  left ~20.7 h
+[554/842] 25 23:33 mlvc_1080p   i32  6aa9cf qp40  NE>NE 39.5061 dB  worst drift 46.5 dB  all 9 ok  257 s  elapsed 18.9 h  left ~20.6 h
+[555/842] 25 23:38 mlvc_1080p   i32  6eb39d qp16  NE>NE 44.7761 dB  worst drift 50.8 dB  all 9 ok  263 s  elapsed 19.0 h  left ~20.6 h
+[556/842] 25 23:42 mlvc_1080p   i32  6eb39d qp24  NE>NE 42.5517 dB  worst drift 50.6 dB  all 9 ok  259 s  elapsed 19.0 h  left ~20.5 h
+[557/842] 25 23:46 mlvc_1080p   i32  6eb39d qp32  NE>NE 39.2589 dB  worst drift 50.1 dB  all 9 ok  259 s  elapsed 19.1 h  left ~20.4 h
+[558/842] 25 23:51 mlvc_1080p   i32  6eb39d qp40  NE>NE 35.2446 dB  worst drift 47.0 dB  all 9 ok  258 s  elapsed 19.2 h  left ~20.4 h
+[559/842] 25 23:55 mlvc_1080p   i32  73f232 qp16  NE>NE 43.4092 dB  worst drift 50.9 dB  all 9 ok  261 s  elapsed 19.3 h  left ~20.3 h
+[560/842] 25 23:59 mlvc_1080p   i32  73f232 qp24  NE>NE 41.3988 dB  worst drift 50.5 dB  all 9 ok  255 s  elapsed 19.3 h  left ~20.2 h
+[561/842] 26 00:04 mlvc_1080p   i32  73f232 qp32  NE>NE 38.6585 dB  worst drift 48.7 dB  all 9 ok  257 s  elapsed 19.4 h  left ~20.1 h
+[562/842] 26 00:08 mlvc_1080p   i32  73f232 qp40  NE>NE 35.77 dB  worst drift 48.1 dB  all 9 ok  257 s  elapsed 19.5 h  left ~20.1 h
+[563/842] 26 00:12 mlvc_1080p   i32  99b38e qp16  NE>NE 46.9262 dB  worst drift 48.4 dB  all 9 ok  261 s  elapsed 19.5 h  left ~20.0 h
+[564/842] 26 00:16 mlvc_1080p   i32  99b38e qp24  NE>NE 45.5977 dB  worst drift 49.9 dB  all 9 ok  260 s  elapsed 19.6 h  left ~19.9 h
+[565/842] 26 00:21 mlvc_1080p   i32  99b38e qp32  NE>NE 43.2346 dB  worst drift 49.1 dB  all 9 ok  260 s  elapsed 19.7 h  left ~19.9 h
+[566/842] 26 00:25 mlvc_1080p   i32  99b38e qp40  NE>NE 39.5356 dB  worst drift 48.2 dB  all 9 ok  261 s  elapsed 19.8 h  left ~19.8 h
+[567/842] 26 00:30 mlvc_1080p   i32  a17620 qp16  NE>NE 46.3425 dB  worst drift 50.7 dB  all 9 ok  264 s  elapsed 19.8 h  left ~19.7 h
+[568/842] 26 00:34 mlvc_1080p   i32  a17620 qp24  NE>NE 44.7979 dB  worst drift 50.6 dB  all 9 ok  250 s  elapsed 19.9 h  left ~19.7 h
+[569/842] 26 00:38 mlvc_1080p   i32  a17620 qp32  NE>NE 42.1813 dB  worst drift 49.7 dB  all 9 ok  258 s  elapsed 20.0 h  left ~19.6 h
+[570/842] 26 00:42 mlvc_1080p   i32  a17620 qp40  NE>NE 38.601 dB  worst drift 49.0 dB  all 9 ok  256 s  elapsed 20.0 h  left ~19.5 h
+[571/842] 26 00:47 mlvc_1080p   i32  b2d792 qp16  NE>NE 44.6854 dB  worst drift 48.0 dB  all 9 ok  263 s  elapsed 20.1 h  left ~19.4 h
+[572/842] 26 00:51 mlvc_1080p   i32  b2d792 qp24  NE>NE 43.1407 dB  worst drift 47.2 dB  all 9 ok  260 s  elapsed 20.2 h  left ~19.4 h
+[573/842] 26 00:55 mlvc_1080p   i32  b2d792 qp32  NE>NE 40.7246 dB  worst drift 45.2 dB  all 9 ok  259 s  elapsed 20.3 h  left ~19.3 h
+[574/842] 26 01:00 mlvc_1080p   i32  b2d792 qp40  NE>NE 37.7919 dB  worst drift 45.3 dB  all 9 ok  254 s  elapsed 20.3 h  left ~19.2 h
+[575/842] 26 01:04 mlvc_1080p   i32  b8893c qp16  NE>NE 44.6513 dB  worst drift 48.4 dB  all 9 ok  259 s  elapsed 20.4 h  left ~19.2 h
+[576/842] 26 01:08 mlvc_1080p   i32  b8893c qp24  NE>NE 43.0776 dB  worst drift 48.6 dB  all 9 ok  257 s  elapsed 20.5 h  left ~19.1 h
+[577/842] 26 01:12 mlvc_1080p   i32  b8893c qp32  NE>NE 41.1496 dB  worst drift 48.7 dB  all 9 ok  257 s  elapsed 20.5 h  left ~19.0 h
+[578/842] 26 01:17 mlvc_1080p   i32  b8893c qp40  NE>NE 38.3104 dB  worst drift 48.3 dB  all 9 ok  258 s  elapsed 20.6 h  left ~18.9 h
+[579/842] 26 01:21 mlvc_1080p   i32  b91038 qp16  NE>NE 44.5847 dB  worst drift 51.1 dB  all 9 ok  262 s  elapsed 20.7 h  left ~18.9 h
+[580/842] 26 01:25 mlvc_1080p   i32  b91038 qp24  NE>NE 42.9918 dB  worst drift 51.2 dB  all 9 ok  258 s  elapsed 20.8 h  left ~18.8 h
+[581/842] 26 01:30 mlvc_1080p   i32  b91038 qp32  NE>NE 40.2774 dB  worst drift 50.6 dB  all 9 ok  254 s  elapsed 20.8 h  left ~18.7 h
+[582/842] 26 01:34 mlvc_1080p   i32  b91038 qp40  NE>NE 36.3742 dB  worst drift 50.1 dB  all 9 ok  257 s  elapsed 20.9 h  left ~18.6 h
+[583/842] 26 01:38 mlvc_1080p   i32  c33648 qp16  NE>NE 43.5916 dB  worst drift 49.5 dB  all 9 ok  263 s  elapsed 21.0 h  left ~18.6 h
+[584/842] 26 01:43 mlvc_1080p   i32  c33648 qp24  NE>NE 41.8229 dB  worst drift 49.2 dB  all 9 ok  259 s  elapsed 21.0 h  left ~18.5 h
+[585/842] 26 01:47 mlvc_1080p   i32  c33648 qp32  NE>NE 39.5793 dB  worst drift 49.0 dB  all 9 ok  259 s  elapsed 21.1 h  left ~18.4 h
+[586/842] 26 01:51 mlvc_1080p   i32  c33648 qp40  NE>NE 36.7391 dB  worst drift 49.3 dB  all 9 ok  256 s  elapsed 21.2 h  left ~18.4 h
+[587/842] 26 01:56 mlvc_1080p   i32  c52d75 qp16  NE>NE 41.0884 dB  worst drift 48.4 dB  all 9 ok  261 s  elapsed 21.3 h  left ~18.3 h
+[588/842] 26 02:00 mlvc_1080p   i32  c52d75 qp24  NE>NE 39.6084 dB  worst drift 46.9 dB  all 9 ok  259 s  elapsed 21.3 h  left ~18.2 h
+[589/842] 26 02:04 mlvc_1080p   i32  c52d75 qp32  NE>NE 37.6407 dB  worst drift 46.2 dB  all 9 ok  259 s  elapsed 21.4 h  left ~18.2 h
+[590/842] 26 02:08 mlvc_1080p   i32  c52d75 qp40  NE>NE 34.7911 dB  worst drift 43.9 dB  all 9 ok  254 s  elapsed 21.5 h  left ~18.1 h
+[591/842] 26 02:13 mlvc_1080p   i32  cd6bc1 qp16  NE>NE 41.1723 dB  worst drift 50.7 dB  all 9 ok  263 s  elapsed 21.6 h  left ~18.0 h
+[592/842] 26 02:17 mlvc_1080p   i32  cd6bc1 qp24  NE>NE 39.4151 dB  worst drift 50.2 dB  all 9 ok  260 s  elapsed 21.6 h  left ~17.9 h
+[593/842] 26 02:21 mlvc_1080p   i32  cd6bc1 qp32  NE>NE 37.188 dB  worst drift 49.0 dB  all 9 ok  254 s  elapsed 21.7 h  left ~17.9 h
+[594/842] 26 02:26 mlvc_1080p   i32  cd6bc1 qp40  NE>NE 34.8298 dB  worst drift 46.9 dB  all 9 ok  259 s  elapsed 21.8 h  left ~17.8 h
+[595/842] 26 02:30 mlvc_1080p   i32  db623c qp16  NE>NE 44.9187 dB  worst drift 50.1 dB  all 9 ok  263 s  elapsed 21.8 h  left ~17.7 h
+[596/842] 26 02:34 mlvc_1080p   i32  db623c qp24  NE>NE 43.3446 dB  worst drift 50.1 dB  all 9 ok  256 s  elapsed 21.9 h  left ~17.7 h
+[597/842] 26 02:39 mlvc_1080p   i32  db623c qp32  NE>NE 40.5323 dB  worst drift 49.6 dB  all 9 ok  261 s  elapsed 22.0 h  left ~17.6 h
+[598/842] 26 02:43 mlvc_1080p   i32  db623c qp40  NE>NE 36.6664 dB  worst drift 49.1 dB  all 9 ok  254 s  elapsed 22.1 h  left ~17.5 h
+[599/842] 26 02:47 mlvc_1080p   i32  fda953 qp16  NE>NE 45.5469 dB  worst drift 48.5 dB  all 9 ok  264 s  elapsed 22.1 h  left ~17.4 h
+[600/842] 26 02:52 mlvc_1080p   i32  fda953 qp24  NE>NE 43.447 dB  worst drift 47.7 dB  all 9 ok  261 s  elapsed 22.2 h  left ~17.4 h
+[601/842] 26 02:56 mlvc_1080p   i32  fda953 qp32  NE>NE 40.2204 dB  worst drift 47.0 dB  all 9 ok  256 s  elapsed 22.3 h  left ~17.3 h
+[602/842] 26 03:00 mlvc_1080p   i32  fda953 qp40  NE>NE 36.2701 dB  worst drift 45.9 dB  all 9 ok  262 s  elapsed 22.3 h  left ~17.2 h
+[603/842] 26 03:05 mlvc_1080p   l32  08ee5e qp16  NE>NE 44.0152 dB  worst drift 50.6 dB  all 9 ok  262 s  elapsed 22.4 h  left ~17.2 h
+[604/842] 26 03:09 mlvc_1080p   l32  08ee5e qp24  NE>NE 42.5689 dB  worst drift 50.6 dB  all 9 ok  262 s  elapsed 22.5 h  left ~17.1 h
+[605/842] 26 03:13 mlvc_1080p   l32  08ee5e qp32  NE>NE 40.2379 dB  worst drift 50.3 dB  all 9 ok  256 s  elapsed 22.6 h  left ~17.0 h
+[606/842] 26 03:18 mlvc_1080p   l32  08ee5e qp40  NE>NE 36.7325 dB  worst drift 49.5 dB  all 9 ok  262 s  elapsed 22.6 h  left ~16.9 h
+[607/842] 26 03:22 mlvc_1080p   l32  104c93 qp16  NE>NE 45.1276 dB  worst drift 43.7 dB  all 9 ok  259 s  elapsed 22.7 h  left ~16.9 h
+[608/842] 26 03:26 mlvc_1080p   l32  104c93 qp24  NE>NE 43.4708 dB  worst drift 42.1 dB  all 9 ok  260 s  elapsed 22.8 h  left ~16.8 h
+[609/842] 26 03:31 mlvc_1080p   l32  104c93 qp32  NE>NE 40.5848 dB  worst drift 41.3 dB  all 9 ok  255 s  elapsed 22.8 h  left ~16.7 h
+[610/842] 26 03:35 mlvc_1080p   l32  104c93 qp40  NE>NE 36.6759 dB  worst drift 42.0 dB  all 9 ok  262 s  elapsed 22.9 h  left ~16.7 h
+[611/842] 26 03:39 mlvc_1080p   l32  1e8830 qp16  NE>NE 37.2604 dB  worst drift 48.8 dB  all 9 ok  260 s  elapsed 23.0 h  left ~16.6 h
+[612/842] 26 03:44 mlvc_1080p   l32  1e8830 qp24  NE>NE 36.1932 dB  worst drift 47.6 dB  all 9 ok  261 s  elapsed 23.1 h  left ~16.5 h
+[613/842] 26 03:48 mlvc_1080p   l32  1e8830 qp32  NE>NE 34.4978 dB  worst drift 47.8 dB  all 9 ok  254 s  elapsed 23.1 h  left ~16.4 h
+[614/842] 26 03:52 mlvc_1080p   l32  1e8830 qp40  NE>NE 31.6722 dB  worst drift 45.6 dB  all 9 ok  260 s  elapsed 23.2 h  left ~16.4 h
+[615/842] 26 03:57 mlvc_1080p   l32  38a418 qp16  NE>NE 45.3675 dB  worst drift 50.1 dB  all 9 ok  259 s  elapsed 23.3 h  left ~16.3 h
+[616/842] 26 04:01 mlvc_1080p   l32  38a418 qp24  NE>NE 43.8508 dB  worst drift 49.3 dB  all 9 ok  260 s  elapsed 23.4 h  left ~16.2 h
+[617/842] 26 04:05 mlvc_1080p   l32  38a418 qp32  NE>NE 41.2407 dB  worst drift 48.8 dB  all 9 ok  255 s  elapsed 23.4 h  left ~16.2 h
+[618/842] 26 04:09 mlvc_1080p   l32  38a418 qp40  NE>NE 37.7048 dB  worst drift 47.1 dB  all 9 ok  260 s  elapsed 23.5 h  left ~16.1 h
+[619/842] 26 04:14 mlvc_1080p   l32  40fe4d qp16  NE>NE 41.8844 dB  worst drift 50.1 dB  all 9 ok  260 s  elapsed 23.6 h  left ~16.0 h
+[620/842] 26 04:18 mlvc_1080p   l32  40fe4d qp24  NE>NE 39.948 dB  worst drift 49.6 dB  all 9 ok  262 s  elapsed 23.6 h  left ~15.9 h
+[621/842] 26 04:22 mlvc_1080p   l32  40fe4d qp32  NE>NE 37.5191 dB  worst drift 48.5 dB  all 9 ok  255 s  elapsed 23.7 h  left ~15.9 h
+[622/842] 26 04:27 mlvc_1080p   l32  40fe4d qp40  NE>NE 34.6792 dB  worst drift 46.7 dB  all 9 ok  260 s  elapsed 23.8 h  left ~15.8 h
+[623/842] 26 04:31 mlvc_1080p   l32  45bb89 qp16  NE>NE 43.9592 dB  worst drift 50.5 dB  all 9 ok  259 s  elapsed 23.9 h  left ~15.7 h
+[624/842] 26 04:35 mlvc_1080p   l32  45bb89 qp24  NE>NE 42.408 dB  worst drift 50.1 dB  all 9 ok  261 s  elapsed 23.9 h  left ~15.7 h
+[625/842] 26 04:40 mlvc_1080p   l32  45bb89 qp32  NE>NE 39.9939 dB  worst drift 49.8 dB  all 9 ok  254 s  elapsed 24.0 h  left ~15.6 h
+[626/842] 26 04:44 mlvc_1080p   l32  45bb89 qp40  NE>NE 36.8129 dB  worst drift 49.0 dB  all 9 ok  260 s  elapsed 24.1 h  left ~15.5 h
+[627/842] 26 04:48 mlvc_1080p   l32  4d8ffe qp16  NE>NE 38.6204 dB  worst drift 49.2 dB  all 9 ok  261 s  elapsed 24.1 h  left ~15.4 h
+[628/842] 26 04:53 mlvc_1080p   l32  4d8ffe qp24  NE>NE 36.8355 dB  worst drift 48.6 dB  all 9 ok  262 s  elapsed 24.2 h  left ~15.4 h
+[629/842] 26 04:57 mlvc_1080p   l32  4d8ffe qp32  NE>NE 34.0309 dB  worst drift 45.9 dB  all 9 ok  255 s  elapsed 24.3 h  left ~15.3 h
+[630/842] 26 05:01 mlvc_1080p   l32  4d8ffe qp40  NE>NE 30.4903 dB  worst drift 45.0 dB  all 9 ok  259 s  elapsed 24.4 h  left ~15.2 h
+[631/842] 26 05:06 mlvc_1080p   l32  6aa9cf qp16  NE>NE 46.5079 dB  worst drift 49.1 dB  all 9 ok  259 s  elapsed 24.4 h  left ~15.2 h
+[632/842] 26 05:10 mlvc_1080p   l32  6aa9cf qp24  NE>NE 44.9727 dB  worst drift 49.0 dB  all 9 ok  267 s  elapsed 24.5 h  left ~15.1 h
+[633/842] 26 05:14 mlvc_1080p   l32  6aa9cf qp32  NE>NE 42.6148 dB  worst drift 48.0 dB  all 9 ok  255 s  elapsed 24.6 h  left ~15.0 h
+[634/842] 26 05:19 mlvc_1080p   l32  6aa9cf qp40  NE>NE 39.3527 dB  worst drift 46.0 dB  all 9 ok  259 s  elapsed 24.6 h  left ~14.9 h
+[635/842] 26 05:23 mlvc_1080p   l32  6eb39d qp16  NE>NE 44.736 dB  worst drift 50.6 dB  all 9 ok  259 s  elapsed 24.7 h  left ~14.9 h
+[636/842] 26 05:27 mlvc_1080p   l32  6eb39d qp24  NE>NE 42.495 dB  worst drift 50.5 dB  all 9 ok  259 s  elapsed 24.8 h  left ~14.8 h
+[637/842] 26 05:31 mlvc_1080p   l32  6eb39d qp32  NE>NE 39.1797 dB  worst drift 50.0 dB  all 9 ok  257 s  elapsed 24.9 h  left ~14.7 h
+[638/842] 26 05:36 mlvc_1080p   l32  6eb39d qp40  NE>NE 35.1041 dB  worst drift 47.0 dB  all 9 ok  262 s  elapsed 24.9 h  left ~14.7 h
+[639/842] 26 05:40 mlvc_1080p   l32  73f232 qp16  NE>NE 43.3974 dB  worst drift 50.6 dB  all 9 ok  259 s  elapsed 25.0 h  left ~14.6 h
+[640/842] 26 05:44 mlvc_1080p   l32  73f232 qp24  NE>NE 41.3846 dB  worst drift 50.2 dB  all 9 ok  259 s  elapsed 25.1 h  left ~14.5 h
+[641/842] 26 05:49 mlvc_1080p   l32  73f232 qp32  NE>NE 38.6443 dB  worst drift 48.7 dB  all 9 ok  255 s  elapsed 25.1 h  left ~14.4 h
+[642/842] 26 05:53 mlvc_1080p   l32  73f232 qp40  NE>NE 35.7281 dB  worst drift 47.2 dB  all 9 ok  259 s  elapsed 25.2 h  left ~14.4 h
+[643/842] 26 05:57 mlvc_1080p   l32  99b38e qp16  NE>NE 46.9032 dB  worst drift 48.4 dB  all 9 ok  259 s  elapsed 25.3 h  left ~14.3 h
+[644/842] 26 06:02 mlvc_1080p   l32  99b38e qp24  NE>NE 45.5627 dB  worst drift 49.9 dB  all 9 ok  260 s  elapsed 25.4 h  left ~14.2 h
+[645/842] 26 06:06 mlvc_1080p   l32  99b38e qp32  NE>NE 43.1898 dB  worst drift 49.1 dB  all 9 ok  256 s  elapsed 25.4 h  left ~14.2 h
+[646/842] 26 06:10 mlvc_1080p   l32  99b38e qp40  NE>NE 39.4643 dB  worst drift 48.2 dB  all 9 ok  260 s  elapsed 25.5 h  left ~14.1 h
+[647/842] 26 06:15 mlvc_1080p   l32  a17620 qp16  NE>NE 46.3376 dB  worst drift 50.7 dB  all 9 ok  260 s  elapsed 25.6 h  left ~14.0 h
+[648/842] 26 06:19 mlvc_1080p   l32  a17620 qp24  NE>NE 44.7946 dB  worst drift 50.6 dB  all 9 ok  259 s  elapsed 25.7 h  left ~13.9 h
+[649/842] 26 06:23 mlvc_1080p   l32  a17620 qp32  NE>NE 42.201 dB  worst drift 49.7 dB  all 9 ok  254 s  elapsed 25.7 h  left ~13.9 h
+[650/842] 26 06:27 mlvc_1080p   l32  a17620 qp40  NE>NE 38.6657 dB  worst drift 48.4 dB  all 9 ok  259 s  elapsed 25.8 h  left ~13.8 h
+[651/842] 26 06:32 mlvc_1080p   l32  b2d792 qp16  NE>NE 44.6442 dB  worst drift 48.0 dB  all 9 ok  260 s  elapsed 25.9 h  left ~13.7 h
+[652/842] 26 06:36 mlvc_1080p   l32  b2d792 qp24  NE>NE 43.074 dB  worst drift 47.2 dB  all 9 ok  261 s  elapsed 25.9 h  left ~13.7 h
+[653/842] 26 06:40 mlvc_1080p   l32  b2d792 qp32  NE>NE 40.6165 dB  worst drift 45.2 dB  all 9 ok  256 s  elapsed 26.0 h  left ~13.6 h
+[654/842] 26 06:45 mlvc_1080p   l32  b2d792 qp40  NE>NE 37.6669 dB  worst drift 45.3 dB  all 9 ok  262 s  elapsed 26.1 h  left ~13.5 h
+[655/842] 26 06:49 mlvc_1080p   l32  b8893c qp16  NE>NE 44.6357 dB  worst drift 48.3 dB  all 9 ok  260 s  elapsed 26.2 h  left ~13.4 h
+[656/842] 26 06:53 mlvc_1080p   l32  b8893c qp24  NE>NE 43.0566 dB  worst drift 48.5 dB  all 9 ok  260 s  elapsed 26.2 h  left ~13.4 h
+[657/842] 26 06:58 mlvc_1080p   l32  b8893c qp32  NE>NE 41.1297 dB  worst drift 48.5 dB  all 9 ok  256 s  elapsed 26.3 h  left ~13.3 h
+[658/842] 26 07:02 mlvc_1080p   l32  b8893c qp40  NE>NE 38.296 dB  worst drift 48.3 dB  all 9 ok  259 s  elapsed 26.4 h  left ~13.2 h
+[659/842] 26 07:06 mlvc_1080p   l32  b91038 qp16  NE>NE 44.5686 dB  worst drift 51.2 dB  all 9 ok  260 s  elapsed 26.4 h  left ~13.1 h
+[660/842] 26 07:11 mlvc_1080p   l32  b91038 qp24  NE>NE 42.9824 dB  worst drift 51.2 dB  all 9 ok  259 s  elapsed 26.5 h  left ~13.1 h
+[661/842] 26 07:15 mlvc_1080p   l32  b91038 qp32  NE>NE 40.2711 dB  worst drift 50.7 dB  all 9 ok  255 s  elapsed 26.6 h  left ~13.0 h
+[662/842] 26 07:19 mlvc_1080p   l32  b91038 qp40  NE>NE 36.3864 dB  worst drift 50.1 dB  all 9 ok  260 s  elapsed 26.7 h  left ~12.9 h
+[663/842] 26 07:24 mlvc_1080p   l32  c33648 qp16  NE>NE 43.5738 dB  worst drift 49.3 dB  all 9 ok  261 s  elapsed 26.7 h  left ~12.9 h
+[664/842] 26 07:28 mlvc_1080p   l32  c33648 qp24  NE>NE 41.7975 dB  worst drift 49.0 dB  all 9 ok  258 s  elapsed 26.8 h  left ~12.8 h
+[665/842] 26 07:32 mlvc_1080p   l32  c33648 qp32  NE>NE 39.5652 dB  worst drift 48.8 dB  all 9 ok  254 s  elapsed 26.9 h  left ~12.7 h
+[666/842] 26 07:37 mlvc_1080p   l32  c33648 qp40  NE>NE 36.7593 dB  worst drift 49.1 dB  all 9 ok  261 s  elapsed 26.9 h  left ~12.6 h
+[667/842] 26 07:41 mlvc_1080p   l32  c52d75 qp16  NE>NE 41.0672 dB  worst drift 48.4 dB  all 9 ok  263 s  elapsed 27.0 h  left ~12.6 h
+[668/842] 26 07:45 mlvc_1080p   l32  c52d75 qp24  NE>NE 39.5808 dB  worst drift 47.6 dB  all 9 ok  259 s  elapsed 27.1 h  left ~12.5 h
+[669/842] 26 07:49 mlvc_1080p   l32  c52d75 qp32  NE>NE 37.5986 dB  worst drift 46.2 dB  all 9 ok  254 s  elapsed 27.2 h  left ~12.4 h
+[670/842] 26 07:54 mlvc_1080p   l32  c52d75 qp40  NE>NE 34.7289 dB  worst drift 43.6 dB  all 9 ok  259 s  elapsed 27.2 h  left ~12.4 h
+[671/842] 26 07:58 mlvc_1080p   l32  cd6bc1 qp16  NE>NE 41.1311 dB  worst drift 50.5 dB  all 9 ok  263 s  elapsed 27.3 h  left ~12.3 h
+[672/842] 26 08:02 mlvc_1080p   l32  cd6bc1 qp24  NE>NE 39.3761 dB  worst drift 50.0 dB  all 9 ok  261 s  elapsed 27.4 h  left ~12.2 h
+[673/842] 26 08:07 mlvc_1080p   l32  cd6bc1 qp32  NE>NE 37.1665 dB  worst drift 48.3 dB  all 9 ok  259 s  elapsed 27.4 h  left ~12.1 h
+[674/842] 26 08:11 mlvc_1080p   l32  cd6bc1 qp40  NE>NE 34.8357 dB  worst drift 46.9 dB  all 9 ok  259 s  elapsed 27.5 h  left ~12.1 h
+[675/842] 26 08:15 mlvc_1080p   l32  db623c qp16  NE>NE 44.9369 dB  worst drift 50.1 dB  all 9 ok  261 s  elapsed 27.6 h  left ~12.0 h
+[676/842] 26 08:20 mlvc_1080p   l32  db623c qp24  NE>NE 43.3659 dB  worst drift 50.1 dB  all 9 ok  257 s  elapsed 27.7 h  left ~11.9 h
+[677/842] 26 08:24 mlvc_1080p   l32  db623c qp32  NE>NE 40.5577 dB  worst drift 49.1 dB  all 9 ok  256 s  elapsed 27.7 h  left ~11.9 h
+[678/842] 26 08:28 mlvc_1080p   l32  db623c qp40  NE>NE 36.7134 dB  worst drift 49.1 dB  all 9 ok  257 s  elapsed 27.8 h  left ~11.8 h
+[679/842] 26 08:33 mlvc_1080p   l32  fda953 qp16  NE>NE 45.5221 dB  worst drift 48.5 dB  all 9 ok  264 s  elapsed 27.9 h  left ~11.7 h
+[680/842] 26 08:37 mlvc_1080p   l32  fda953 qp24  NE>NE 43.3841 dB  worst drift 47.7 dB  all 9 ok  261 s  elapsed 28.0 h  left ~11.6 h
+[681/842] 26 08:41 mlvc_1080p   l32  fda953 qp32  NE>NE 40.0802 dB  worst drift 47.0 dB  all 9 ok  255 s  elapsed 28.0 h  left ~11.6 h
+[682/842] 26 08:46 mlvc_1080p   l32  fda953 qp40  NE>NE 35.9915 dB  worst drift 45.9 dB  all 9 ok  260 s  elapsed 28.1 h  left ~11.5 h
+[683/842] 26 08:50 mlvc_1080p   i16  08ee5e qp16  NE>NE 44.0249 dB  worst drift 51.8 dB  all 9 ok  265 s  elapsed 28.2 h  left ~11.4 h
+[684/842] 26 08:54 mlvc_1080p   i16  08ee5e qp24  NE>NE 42.5654 dB  worst drift 51.7 dB  all 9 ok  256 s  elapsed 28.2 h  left ~11.4 h
+[685/842] 26 08:59 mlvc_1080p   i16  08ee5e qp32  NE>NE 40.1004 dB  worst drift 51.2 dB  all 9 ok  261 s  elapsed 28.3 h  left ~11.3 h
+[686/842] 26 09:03 mlvc_1080p   i16  08ee5e qp40  NE>NE 36.4368 dB  worst drift 50.6 dB  all 9 ok  256 s  elapsed 28.4 h  left ~11.2 h
+[687/842] 26 09:07 mlvc_1080p   i16  104c93 qp16  NE>NE 45.0542 dB  worst drift 49.5 dB  all 9 ok  264 s  elapsed 28.5 h  left ~11.1 h
+[688/842] 26 09:12 mlvc_1080p   i16  104c93 qp24  NE>NE 43.3901 dB  worst drift 49.3 dB  all 9 ok  256 s  elapsed 28.5 h  left ~11.1 h
+[689/842] 26 09:16 mlvc_1080p   i16  104c93 qp32  NE>NE 40.4377 dB  worst drift 48.7 dB  all 9 ok  262 s  elapsed 28.6 h  left ~11.0 h
+[690/842] 26 09:20 mlvc_1080p   i16  104c93 qp40  NE>NE 36.4727 dB  worst drift 46.0 dB  all 9 ok  254 s  elapsed 28.7 h  left ~10.9 h
+[691/842] 26 09:25 mlvc_1080p   i16  1e8830 qp16  NE>NE 37.287 dB  worst drift 50.4 dB  all 9 ok  265 s  elapsed 28.7 h  left ~10.9 h
+[692/842] 26 09:29 mlvc_1080p   i16  1e8830 qp24  NE>NE 36.2228 dB  worst drift 50.2 dB  all 9 ok  256 s  elapsed 28.8 h  left ~10.8 h
+[693/842] 26 09:33 mlvc_1080p   i16  1e8830 qp32  NE>NE 34.38 dB  worst drift 49.2 dB  all 9 ok  254 s  elapsed 28.9 h  left ~10.7 h
+[694/842] 26 09:37 mlvc_1080p   i16  1e8830 qp40  NE>NE 31.3378 dB  worst drift 48.8 dB  all 9 ok  256 s  elapsed 29.0 h  left ~10.6 h
+[695/842] 26 09:42 mlvc_1080p   i16  38a418 qp16  NE>NE 45.2935 dB  worst drift 51.1 dB  all 9 ok  264 s  elapsed 29.0 h  left ~10.6 h
+[696/842] 26 09:46 mlvc_1080p   i16  38a418 qp24  NE>NE 43.7553 dB  worst drift 50.7 dB  all 9 ok  255 s  elapsed 29.1 h  left ~10.5 h
+[697/842] 26 09:50 mlvc_1080p   i16  38a418 qp32  NE>NE 41.087 dB  worst drift 50.0 dB  all 9 ok  259 s  elapsed 29.2 h  left ~10.4 h
+[698/842] 26 09:55 mlvc_1080p   i16  38a418 qp40  NE>NE 37.5053 dB  worst drift 48.6 dB  all 9 ok  256 s  elapsed 29.2 h  left ~10.3 h
+[699/842] 26 09:59 mlvc_1080p   i16  40fe4d qp16  NE>NE 41.8552 dB  worst drift 51.3 dB  all 9 ok  263 s  elapsed 29.3 h  left ~10.3 h
+[700/842] 26 10:03 mlvc_1080p   i16  40fe4d qp24  NE>NE 39.9773 dB  worst drift 51.0 dB  all 9 ok  256 s  elapsed 29.4 h  left ~10.2 h
+[701/842] 26 10:08 mlvc_1080p   i16  40fe4d qp32  NE>NE 37.5346 dB  worst drift 50.4 dB  all 9 ok  260 s  elapsed 29.5 h  left ~10.1 h
+[702/842] 26 10:12 mlvc_1080p   i16  40fe4d qp40  NE>NE 34.5845 dB  worst drift 49.2 dB  all 9 ok  255 s  elapsed 29.5 h  left ~10.1 h
+[703/842] 26 10:16 mlvc_1080p   i16  45bb89 qp16  NE>NE 43.9487 dB  worst drift 51.8 dB  all 9 ok  262 s  elapsed 29.6 h  left ~10.0 h
+[704/842] 26 10:21 mlvc_1080p   i16  45bb89 qp24  NE>NE 42.3961 dB  worst drift 51.3 dB  all 9 ok  258 s  elapsed 29.7 h  left ~9.9 h
+[705/842] 26 10:25 mlvc_1080p   i16  45bb89 qp32  NE>NE 39.8894 dB  worst drift 51.1 dB  all 9 ok  257 s  elapsed 29.8 h  left ~9.8 h
+[706/842] 26 10:29 mlvc_1080p   i16  45bb89 qp40  NE>NE 36.5764 dB  worst drift 50.3 dB  all 9 ok  258 s  elapsed 29.8 h  left ~9.8 h
+[707/842] 26 10:33 mlvc_1080p   i16  4d8ffe qp16  NE>NE 38.6608 dB  worst drift 50.8 dB  all 9 ok  263 s  elapsed 29.9 h  left ~9.7 h
+[708/842] 26 10:38 mlvc_1080p   i16  4d8ffe qp24  NE>NE 36.9323 dB  worst drift 50.5 dB  all 9 ok  256 s  elapsed 30.0 h  left ~9.6 h
+[709/842] 26 10:42 mlvc_1080p   i16  4d8ffe qp32  NE>NE 34.1582 dB  worst drift 50.0 dB  all 9 ok  255 s  elapsed 30.0 h  left ~9.6 h
+[710/842] 26 10:46 mlvc_1080p   i16  4d8ffe qp40  NE>NE 30.5107 dB  worst drift 48.7 dB  all 9 ok  254 s  elapsed 30.1 h  left ~9.5 h
+[711/842] 26 10:51 mlvc_1080p   i16  6aa9cf qp16  NE>NE 46.5324 dB  worst drift 51.3 dB  all 9 ok  260 s  elapsed 30.2 h  left ~9.4 h
+[712/842] 26 10:55 mlvc_1080p   i16  6aa9cf qp24  NE>NE 45.0032 dB  worst drift 51.4 dB  all 9 ok  258 s  elapsed 30.3 h  left ~9.3 h
+[713/842] 26 10:59 mlvc_1080p   i16  6aa9cf qp32  NE>NE 42.6152 dB  worst drift 50.3 dB  all 9 ok  258 s  elapsed 30.3 h  left ~9.3 h
+[714/842] 26 11:03 mlvc_1080p   i16  6aa9cf qp40  NE>NE 39.4041 dB  worst drift 49.5 dB  all 9 ok  258 s  elapsed 30.4 h  left ~9.2 h
+[715/842] 26 11:08 mlvc_1080p   i16  6eb39d qp16  NE>NE 44.7965 dB  worst drift 52.0 dB  all 9 ok  263 s  elapsed 30.5 h  left ~9.1 h
+[716/842] 26 11:12 mlvc_1080p   i16  6eb39d qp24  NE>NE 42.5829 dB  worst drift 51.8 dB  all 9 ok  254 s  elapsed 30.5 h  left ~9.1 h
+[717/842] 26 11:16 mlvc_1080p   i16  6eb39d qp32  NE>NE 39.2827 dB  worst drift 51.2 dB  all 9 ok  260 s  elapsed 30.6 h  left ~9.0 h
+[718/842] 26 11:21 mlvc_1080p   i16  6eb39d qp40  NE>NE 35.3006 dB  worst drift 50.1 dB  all 9 ok  254 s  elapsed 30.7 h  left ~8.9 h
+[719/842] 26 11:25 mlvc_1080p   i16  73f232 qp16  NE>NE 43.3213 dB  worst drift 52.6 dB  all 9 ok  264 s  elapsed 30.8 h  left ~8.8 h
+[720/842] 26 11:29 mlvc_1080p   i16  73f232 qp24  NE>NE 41.3069 dB  worst drift 52.2 dB  all 9 ok  260 s  elapsed 30.8 h  left ~8.8 h
+[721/842] 26 11:34 mlvc_1080p   i16  73f232 qp32  NE>NE 38.5543 dB  worst drift 50.8 dB  all 9 ok  251 s  elapsed 30.9 h  left ~8.7 h
+[722/842] 26 11:38 mlvc_1080p   i16  73f232 qp40  NE>NE 35.6692 dB  worst drift 50.1 dB  all 9 ok  261 s  elapsed 31.0 h  left ~8.6 h
+[723/842] 26 11:42 mlvc_1080p   i16  99b38e qp16  NE>NE 46.9028 dB  worst drift 51.6 dB  all 9 ok  261 s  elapsed 31.0 h  left ~8.6 h
+[724/842] 26 11:47 mlvc_1080p   i16  99b38e qp24  NE>NE 45.5261 dB  worst drift 51.5 dB  all 9 ok  261 s  elapsed 31.1 h  left ~8.5 h
+[725/842] 26 11:51 mlvc_1080p   i16  99b38e qp32  NE>NE 43.0202 dB  worst drift 50.5 dB  all 9 ok  255 s  elapsed 31.2 h  left ~8.4 h
+[726/842] 26 11:55 mlvc_1080p   i16  99b38e qp40  NE>NE 39.2796 dB  worst drift 50.5 dB  all 9 ok  260 s  elapsed 31.3 h  left ~8.3 h
+[727/842] 26 12:00 mlvc_1080p   i16  a17620 qp16  NE>NE 46.2698 dB  worst drift 51.6 dB  all 9 ok  260 s  elapsed 31.3 h  left ~8.3 h
+[728/842] 26 12:04 mlvc_1080p   i16  a17620 qp24  NE>NE 44.6913 dB  worst drift 51.5 dB  all 9 ok  259 s  elapsed 31.4 h  left ~8.2 h
+[729/842] 26 12:08 mlvc_1080p   i16  a17620 qp32  NE>NE 41.9465 dB  worst drift 50.7 dB  all 9 ok  254 s  elapsed 31.5 h  left ~8.1 h
+[730/842] 26 12:12 mlvc_1080p   i16  a17620 qp40  NE>NE 38.2818 dB  worst drift 50.6 dB  all 9 ok  259 s  elapsed 31.5 h  left ~8.0 h
+[731/842] 26 12:17 mlvc_1080p   i16  b2d792 qp16  NE>NE 44.6489 dB  worst drift 50.3 dB  all 9 ok  259 s  elapsed 31.6 h  left ~8.0 h
+[732/842] 26 12:21 mlvc_1080p   i16  b2d792 qp24  NE>NE 43.0683 dB  worst drift 49.9 dB  all 9 ok  258 s  elapsed 31.7 h  left ~7.9 h
+[733/842] 26 12:25 mlvc_1080p   i16  b2d792 qp32  NE>NE 40.5865 dB  worst drift 49.3 dB  all 9 ok  259 s  elapsed 31.8 h  left ~7.8 h
+[734/842] 26 12:30 mlvc_1080p   i16  b2d792 qp40  NE>NE 37.6113 dB  worst drift 49.4 dB  all 9 ok  257 s  elapsed 31.8 h  left ~7.8 h
+[735/842] 26 12:34 mlvc_1080p   i16  b8893c qp16  NE>NE 44.6382 dB  worst drift 50.7 dB  all 9 ok  262 s  elapsed 31.9 h  left ~7.7 h
+[736/842] 26 12:38 mlvc_1080p   i16  b8893c qp24  NE>NE 43.0776 dB  worst drift 50.7 dB  all 9 ok  262 s  elapsed 32.0 h  left ~7.6 h
+[737/842] 26 12:43 mlvc_1080p   i16  b8893c qp32  NE>NE 41.0659 dB  worst drift 50.4 dB  all 9 ok  257 s  elapsed 32.0 h  left ~7.5 h
+[738/842] 26 12:47 mlvc_1080p   i16  b8893c qp40  NE>NE 38.1302 dB  worst drift 50.2 dB  all 9 ok  257 s  elapsed 32.1 h  left ~7.5 h
+[739/842] 26 12:51 mlvc_1080p   i16  b91038 qp16  NE>NE 44.5233 dB  worst drift 52.0 dB  all 9 ok  261 s  elapsed 32.2 h  left ~7.4 h
+[740/842] 26 12:56 mlvc_1080p   i16  b91038 qp24  NE>NE 42.9103 dB  worst drift 52.0 dB  all 9 ok  259 s  elapsed 32.3 h  left ~7.3 h
+[741/842] 26 13:00 mlvc_1080p   i16  b91038 qp32  NE>NE 40.0808 dB  worst drift 51.4 dB  all 9 ok  257 s  elapsed 32.3 h  left ~7.3 h
+[742/842] 26 13:04 mlvc_1080p   i16  b91038 qp40  NE>NE 36.0691 dB  worst drift 51.4 dB  all 9 ok  257 s  elapsed 32.4 h  left ~7.2 h
+[743/842] 26 13:08 mlvc_1080p   i16  c33648 qp16  NE>NE 43.5715 dB  worst drift 51.4 dB  all 9 ok  259 s  elapsed 32.5 h  left ~7.1 h
+[744/842] 26 13:13 mlvc_1080p   i16  c33648 qp24  NE>NE 41.8114 dB  worst drift 51.2 dB  all 9 ok  258 s  elapsed 32.5 h  left ~7.0 h
+[745/842] 26 13:17 mlvc_1080p   i16  c33648 qp32  NE>NE 39.5013 dB  worst drift 50.8 dB  all 9 ok  258 s  elapsed 32.6 h  left ~7.0 h
+[746/842] 26 13:21 mlvc_1080p   i16  c33648 qp40  NE>NE 36.5675 dB  worst drift 50.9 dB  all 9 ok  257 s  elapsed 32.7 h  left ~6.9 h
+[747/842] 26 13:26 mlvc_1080p   i16  c52d75 qp16  NE>NE 41.0678 dB  worst drift 50.5 dB  all 9 ok  258 s  elapsed 32.8 h  left ~6.8 h
+[748/842] 26 13:30 mlvc_1080p   i16  c52d75 qp24  NE>NE 39.5522 dB  worst drift 50.0 dB  all 9 ok  261 s  elapsed 32.8 h  left ~6.8 h
+[749/842] 26 13:34 mlvc_1080p   i16  c52d75 qp32  NE>NE 37.4984 dB  worst drift 48.2 dB  all 9 ok  254 s  elapsed 32.9 h  left ~6.7 h
+[750/842] 26 13:39 mlvc_1080p   i16  c52d75 qp40  NE>NE 34.6342 dB  worst drift 48.1 dB  all 9 ok  258 s  elapsed 33.0 h  left ~6.6 h
+[751/842] 26 13:43 mlvc_1080p   i16  cd6bc1 qp16  NE>NE 41.1291 dB  worst drift 51.9 dB  all 9 ok  259 s  elapsed 33.1 h  left ~6.5 h
+[752/842] 26 13:47 mlvc_1080p   i16  cd6bc1 qp24  NE>NE 39.4362 dB  worst drift 51.3 dB  all 9 ok  255 s  elapsed 33.1 h  left ~6.5 h
+[753/842] 26 13:51 mlvc_1080p   i16  cd6bc1 qp32  NE>NE 37.1986 dB  worst drift 50.6 dB  all 9 ok  256 s  elapsed 33.2 h  left ~6.4 h
+[754/842] 26 13:56 mlvc_1080p   i16  cd6bc1 qp40  NE>NE 34.6965 dB  worst drift 49.1 dB  all 9 ok  259 s  elapsed 33.3 h  left ~6.3 h
+[755/842] 26 14:00 mlvc_1080p   i16  db623c qp16  NE>NE 44.8215 dB  worst drift 51.2 dB  all 9 ok  261 s  elapsed 33.3 h  left ~6.2 h
+[756/842] 26 14:04 mlvc_1080p   i16  db623c qp24  NE>NE 43.1812 dB  worst drift 51.1 dB  all 9 ok  258 s  elapsed 33.4 h  left ~6.2 h
+[757/842] 26 14:09 mlvc_1080p   i16  db623c qp32  NE>NE 40.2867 dB  worst drift 50.4 dB  all 9 ok  259 s  elapsed 33.5 h  left ~6.1 h
+[758/842] 26 14:13 mlvc_1080p   i16  db623c qp40  NE>NE 36.3582 dB  worst drift 50.4 dB  all 9 ok  256 s  elapsed 33.6 h  left ~6.0 h
+[759/842] 26 14:17 mlvc_1080p   i16  fda953 qp16  NE>NE 45.5111 dB  worst drift 50.5 dB  all 9 ok  261 s  elapsed 33.6 h  left ~6.0 h
+[760/842] 26 14:22 mlvc_1080p   i16  fda953 qp24  NE>NE 43.3925 dB  worst drift 50.0 dB  all 9 ok  257 s  elapsed 33.7 h  left ~5.9 h
+[761/842] 26 14:26 mlvc_1080p   i16  fda953 qp32  NE>NE 40.1037 dB  worst drift 49.1 dB  all 9 ok  256 s  elapsed 33.8 h  left ~5.8 h
+[762/842] 26 14:30 mlvc_1080p   i16  fda953 qp40  NE>NE 36.1349 dB  worst drift 48.0 dB  all 9 ok  259 s  elapsed 33.8 h  left ~5.7 h
+[763/842] 26 14:35 mlvc_1080p   l16  08ee5e qp16  NE>NE 43.9779 dB  worst drift 51.7 dB  all 9 ok  265 s  elapsed 33.9 h  left ~5.7 h
+[764/842] 26 14:39 mlvc_1080p   l16  08ee5e qp24  NE>NE 42.5818 dB  worst drift 51.6 dB  all 9 ok  261 s  elapsed 34.0 h  left ~5.6 h
+[765/842] 26 14:43 mlvc_1080p   l16  08ee5e qp32  NE>NE 40.2939 dB  worst drift 51.1 dB  all 9 ok  257 s  elapsed 34.1 h  left ~5.5 h
+[766/842] 26 14:47 mlvc_1080p   l16  08ee5e qp40  NE>NE 36.7334 dB  worst drift 50.4 dB  all 9 ok  261 s  elapsed 34.1 h  left ~5.5 h
+[767/842] 26 14:52 mlvc_1080p   l16  104c93 qp16  NE>NE 45.0669 dB  worst drift 48.4 dB  all 9 ok  259 s  elapsed 34.2 h  left ~5.4 h
+[768/842] 26 14:56 mlvc_1080p   l16  104c93 qp24  NE>NE 43.4088 dB  worst drift 47.9 dB  all 9 ok  260 s  elapsed 34.3 h  left ~5.3 h
+[769/842] 26 15:00 mlvc_1080p   l16  104c93 qp32  NE>NE 40.4591 dB  worst drift 47.4 dB  all 9 ok  255 s  elapsed 34.3 h  left ~5.2 h
+[770/842] 26 15:05 mlvc_1080p   l16  104c93 qp40  NE>NE 36.5052 dB  worst drift 44.7 dB  all 9 ok  260 s  elapsed 34.4 h  left ~5.2 h
+[771/842] 26 15:09 mlvc_1080p   l16  1e8830 qp16  NE>NE 37.3188 dB  worst drift 50.1 dB  all 9 ok  260 s  elapsed 34.5 h  left ~5.1 h
+[772/842] 26 15:13 mlvc_1080p   l16  1e8830 qp24  NE>NE 36.2837 dB  worst drift 49.8 dB  all 9 ok  260 s  elapsed 34.6 h  left ~5.0 h
+[773/842] 26 15:18 mlvc_1080p   l16  1e8830 qp32  NE>NE 34.5586 dB  worst drift 48.8 dB  all 9 ok  256 s  elapsed 34.6 h  left ~5.0 h
+[774/842] 26 15:22 mlvc_1080p   l16  1e8830 qp40  NE>NE 31.6768 dB  worst drift 47.6 dB  all 9 ok  260 s  elapsed 34.7 h  left ~4.9 h
+[775/842] 26 15:26 mlvc_1080p   l16  38a418 qp16  NE>NE 45.282 dB  worst drift 51.0 dB  all 9 ok  260 s  elapsed 34.8 h  left ~4.8 h
+[776/842] 26 15:31 mlvc_1080p   l16  38a418 qp24  NE>NE 43.7465 dB  worst drift 50.7 dB  all 9 ok  255 s  elapsed 34.8 h  left ~4.7 h
+[777/842] 26 15:35 mlvc_1080p   l16  38a418 qp32  NE>NE 41.0921 dB  worst drift 49.8 dB  all 9 ok  257 s  elapsed 34.9 h  left ~4.7 h
+[778/842] 26 15:39 mlvc_1080p   l16  38a418 qp40  NE>NE 37.5024 dB  worst drift 47.9 dB  all 9 ok  260 s  elapsed 35.0 h  left ~4.6 h
+[779/842] 26 15:44 mlvc_1080p   l16  40fe4d qp16  NE>NE 41.8322 dB  worst drift 51.0 dB  all 9 ok  264 s  elapsed 35.1 h  left ~4.5 h
+[780/842] 26 15:48 mlvc_1080p   l16  40fe4d qp24  NE>NE 39.9301 dB  worst drift 49.5 dB  all 9 ok  259 s  elapsed 35.1 h  left ~4.5 h
+[781/842] 26 15:52 mlvc_1080p   l16  40fe4d qp32  NE>NE 37.5443 dB  worst drift 49.6 dB  all 9 ok  255 s  elapsed 35.2 h  left ~4.4 h
+[782/842] 26 15:56 mlvc_1080p   l16  40fe4d qp40  NE>NE 34.6319 dB  worst drift 48.5 dB  all 9 ok  254 s  elapsed 35.3 h  left ~4.3 h
+[783/842] 26 16:01 mlvc_1080p   l16  45bb89 qp16  NE>NE 43.9276 dB  worst drift 51.4 dB  all 9 ok  259 s  elapsed 35.3 h  left ~4.2 h
+[784/842] 26 16:05 mlvc_1080p   l16  45bb89 qp24  NE>NE 42.4353 dB  worst drift 51.4 dB  all 9 ok  255 s  elapsed 35.4 h  left ~4.2 h
+[785/842] 26 16:09 mlvc_1080p   l16  45bb89 qp32  NE>NE 40.0213 dB  worst drift 50.9 dB  all 9 ok  255 s  elapsed 35.5 h  left ~4.1 h
+[786/842] 26 16:13 mlvc_1080p   l16  45bb89 qp40  NE>NE 36.7634 dB  worst drift 49.8 dB  all 9 ok  254 s  elapsed 35.6 h  left ~4.0 h
+[787/842] 26 16:18 mlvc_1080p   l16  4d8ffe qp16  NE>NE 38.5871 dB  worst drift 50.6 dB  all 9 ok  261 s  elapsed 35.6 h  left ~4.0 h
+[788/842] 26 16:22 mlvc_1080p   l16  4d8ffe qp24  NE>NE 36.8209 dB  worst drift 50.2 dB  all 9 ok  257 s  elapsed 35.7 h  left ~3.9 h
+[789/842] 26 16:26 mlvc_1080p   l16  4d8ffe qp32  NE>NE 34.0418 dB  worst drift 48.9 dB  all 9 ok  260 s  elapsed 35.8 h  left ~3.8 h
+[790/842] 26 16:31 mlvc_1080p   l16  4d8ffe qp40  NE>NE 30.4631 dB  worst drift 47.8 dB  all 9 ok  260 s  elapsed 35.8 h  left ~3.7 h
+[791/842] 26 16:35 mlvc_1080p   l16  6aa9cf qp16  NE>NE 46.4466 dB  worst drift 50.9 dB  all 9 ok  260 s  elapsed 35.9 h  left ~3.7 h
+[792/842] 26 16:39 mlvc_1080p   l16  6aa9cf qp24  NE>NE 44.8874 dB  worst drift 50.9 dB  all 9 ok  263 s  elapsed 36.0 h  left ~3.6 h
+[793/842] 26 16:44 mlvc_1080p   l16  6aa9cf qp32  NE>NE 42.447 dB  worst drift 50.0 dB  all 9 ok  256 s  elapsed 36.1 h  left ~3.5 h
+[794/842] 26 16:48 mlvc_1080p   l16  6aa9cf qp40  NE>NE 39.1395 dB  worst drift 48.7 dB  all 9 ok  259 s  elapsed 36.1 h  left ~3.4 h
+[795/842] 26 16:52 mlvc_1080p   l16  6eb39d qp16  NE>NE 44.6709 dB  worst drift 51.8 dB  all 9 ok  260 s  elapsed 36.2 h  left ~3.4 h
+[796/842] 26 16:57 mlvc_1080p   l16  6eb39d qp24  NE>NE 42.4196 dB  worst drift 51.8 dB  all 9 ok  260 s  elapsed 36.3 h  left ~3.3 h
+[797/842] 26 17:01 mlvc_1080p   l16  6eb39d qp32  NE>NE 39.0509 dB  worst drift 51.1 dB  all 9 ok  256 s  elapsed 36.4 h  left ~3.2 h
+[798/842] 26 17:05 mlvc_1080p   l16  6eb39d qp40  NE>NE 34.9784 dB  worst drift 49.6 dB  all 9 ok  259 s  elapsed 36.4 h  left ~3.2 h
+[799/842] 26 17:10 mlvc_1080p   l16  73f232 qp16  NE>NE 43.3297 dB  worst drift 52.1 dB  all 9 ok  260 s  elapsed 36.5 h  left ~3.1 h
+[800/842] 26 17:14 mlvc_1080p   l16  73f232 qp24  NE>NE 41.3088 dB  worst drift 52.0 dB  all 9 ok  260 s  elapsed 36.6 h  left ~3.0 h
+[801/842] 26 17:18 mlvc_1080p   l16  73f232 qp32  NE>NE 38.5659 dB  worst drift 50.6 dB  all 9 ok  254 s  elapsed 36.6 h  left ~2.9 h
+[802/842] 26 17:22 mlvc_1080p   l16  73f232 qp40  NE>NE 35.6302 dB  worst drift 48.8 dB  all 9 ok  256 s  elapsed 36.7 h  left ~2.9 h
+[803/842] 26 17:27 mlvc_1080p   l16  99b38e qp16  NE>NE 46.8559 dB  worst drift 51.5 dB  all 9 ok  262 s  elapsed 36.8 h  left ~2.8 h
+[804/842] 26 17:31 mlvc_1080p   l16  99b38e qp24  NE>NE 45.4855 dB  worst drift 51.5 dB  all 9 ok  264 s  elapsed 36.9 h  left ~2.7 h
+[805/842] 26 17:36 mlvc_1080p   l16  99b38e qp32  NE>NE 43.0176 dB  worst drift 50.5 dB  all 9 ok  260 s  elapsed 36.9 h  left ~2.7 h
+[806/842] 26 17:40 mlvc_1080p   l16  99b38e qp40  NE>NE 39.2464 dB  worst drift 50.4 dB  all 9 ok  260 s  elapsed 37.0 h  left ~2.6 h
+[807/842] 26 17:44 mlvc_1080p   l16  a17620 qp16  NE>NE 46.291 dB  worst drift 51.2 dB  all 9 ok  263 s  elapsed 37.1 h  left ~2.5 h
+[808/842] 26 17:49 mlvc_1080p   l16  a17620 qp24  NE>NE 44.7552 dB  worst drift 50.9 dB  all 9 ok  260 s  elapsed 37.1 h  left ~2.4 h
+[809/842] 26 17:53 mlvc_1080p   l16  a17620 qp32  NE>NE 42.118 dB  worst drift 50.5 dB  all 9 ok  258 s  elapsed 37.2 h  left ~2.4 h
+[810/842] 26 17:57 mlvc_1080p   l16  a17620 qp40  NE>NE 38.5791 dB  worst drift 49.5 dB  all 9 ok  254 s  elapsed 37.3 h  left ~2.3 h
+[811/842] 26 18:01 mlvc_1080p   l16  b2d792 qp16  NE>NE 44.548 dB  worst drift 50.1 dB  all 9 ok  260 s  elapsed 37.4 h  left ~2.2 h
+[812/842] 26 18:06 mlvc_1080p   l16  b2d792 qp24  NE>NE 42.9034 dB  worst drift 49.6 dB  all 9 ok  259 s  elapsed 37.4 h  left ~2.2 h
+[813/842] 26 18:10 mlvc_1080p   l16  b2d792 qp32  NE>NE 40.3531 dB  worst drift 48.7 dB  all 9 ok  260 s  elapsed 37.5 h  left ~2.1 h
+[814/842] 26 18:14 mlvc_1080p   l16  b2d792 qp40  NE>NE 37.3723 dB  worst drift 48.5 dB  all 9 ok  260 s  elapsed 37.6 h  left ~2.0 h
+[815/842] 26 18:19 mlvc_1080p   l16  b8893c qp16  NE>NE 44.6016 dB  worst drift 50.3 dB  all 9 ok  260 s  elapsed 37.6 h  left ~1.9 h
+[816/842] 26 18:23 mlvc_1080p   l16  b8893c qp24  NE>NE 43.0464 dB  worst drift 50.4 dB  all 9 ok  259 s  elapsed 37.7 h  left ~1.9 h
+[817/842] 26 18:27 mlvc_1080p   l16  b8893c qp32  NE>NE 41.0934 dB  worst drift 50.0 dB  all 9 ok  255 s  elapsed 37.8 h  left ~1.8 h
+[818/842] 26 18:32 mlvc_1080p   l16  b8893c qp40  NE>NE 38.2324 dB  worst drift 49.6 dB  all 9 ok  260 s  elapsed 37.9 h  left ~1.7 h
+[819/842] 26 18:36 mlvc_1080p   l16  b91038 qp16  NE>NE 44.4969 dB  worst drift 51.8 dB  all 9 ok  261 s  elapsed 37.9 h  left ~1.7 h
+[820/842] 26 18:40 mlvc_1080p   l16  b91038 qp24  NE>NE 42.9303 dB  worst drift 51.7 dB  all 9 ok  260 s  elapsed 38.0 h  left ~1.6 h
+[821/842] 26 18:45 mlvc_1080p   l16  b91038 qp32  NE>NE 40.1842 dB  worst drift 51.1 dB  all 9 ok  256 s  elapsed 38.1 h  left ~1.5 h
+[822/842] 26 18:49 mlvc_1080p   l16  b91038 qp40  NE>NE 36.2753 dB  worst drift 51.0 dB  all 9 ok  259 s  elapsed 38.2 h  left ~1.4 h
+[823/842] 26 18:53 mlvc_1080p   l16  c33648 qp16  NE>NE 43.5079 dB  worst drift 51.1 dB  all 9 ok  259 s  elapsed 38.2 h  left ~1.4 h
+[824/842] 26 18:58 mlvc_1080p   l16  c33648 qp24  NE>NE 41.7347 dB  worst drift 50.9 dB  all 9 ok  260 s  elapsed 38.3 h  left ~1.3 h
+[825/842] 26 19:02 mlvc_1080p   l16  c33648 qp32  NE>NE 39.4882 dB  worst drift 50.5 dB  all 9 ok  255 s  elapsed 38.4 h  left ~1.2 h
+[826/842] 26 19:06 mlvc_1080p   l16  c33648 qp40  NE>NE 36.6602 dB  worst drift 50.7 dB  all 9 ok  262 s  elapsed 38.4 h  left ~1.1 h
+[827/842] 26 19:10 mlvc_1080p   l16  c52d75 qp16  NE>NE 41.0288 dB  worst drift 49.4 dB  all 9 ok  260 s  elapsed 38.5 h  left ~1.1 h
+[828/842] 26 19:15 mlvc_1080p   l16  c52d75 qp24  NE>NE 39.513 dB  worst drift 49.1 dB  all 9 ok  259 s  elapsed 38.6 h  left ~1.0 h
+[829/842] 26 19:19 mlvc_1080p   l16  c52d75 qp32  NE>NE 37.5011 dB  worst drift 48.1 dB  all 9 ok  254 s  elapsed 38.7 h  left ~0.9 h
+[830/842] 26 19:23 mlvc_1080p   l16  c52d75 qp40  NE>NE 34.6981 dB  worst drift 46.8 dB  all 9 ok  260 s  elapsed 38.7 h  left ~0.9 h
+[831/842] 26 19:28 mlvc_1080p   l16  cd6bc1 qp16  NE>NE 41.0115 dB  worst drift 51.5 dB  all 9 ok  259 s  elapsed 38.8 h  left ~0.8 h
+[832/842] 26 19:32 mlvc_1080p   l16  cd6bc1 qp24  NE>NE 39.3153 dB  worst drift 49.8 dB  all 9 ok  256 s  elapsed 38.9 h  left ~0.7 h
+[833/842] 26 19:36 mlvc_1080p   l16  cd6bc1 qp32  NE>NE 37.193 dB  worst drift 49.8 dB  all 9 ok  262 s  elapsed 38.9 h  left ~0.6 h
+[834/842] 26 19:41 mlvc_1080p   l16  cd6bc1 qp40  NE>NE 34.8101 dB  worst drift 48.3 dB  all 9 ok  258 s  elapsed 39.0 h  left ~0.6 h
+[835/842] 26 19:45 mlvc_1080p   l16  db623c qp16  NE>NE 44.9013 dB  worst drift 51.0 dB  all 9 ok  261 s  elapsed 39.1 h  left ~0.5 h
+[836/842] 26 19:49 mlvc_1080p   l16  db623c qp24  NE>NE 43.324 dB  worst drift 50.9 dB  all 9 ok  257 s  elapsed 39.2 h  left ~0.4 h
+[837/842] 26 19:54 mlvc_1080p   l16  db623c qp32  NE>NE 40.5399 dB  worst drift 50.2 dB  all 9 ok  256 s  elapsed 39.2 h  left ~0.4 h
+[838/842] 26 19:58 mlvc_1080p   l16  db623c qp40  NE>NE 36.7147 dB  worst drift 49.4 dB  all 9 ok  256 s  elapsed 39.3 h  left ~0.3 h
+[839/842] 26 20:02 mlvc_1080p   l16  fda953 qp16  NE>NE 45.4238 dB  worst drift 50.5 dB  all 9 ok  263 s  elapsed 39.4 h  left ~0.2 h
+[840/842] 26 20:06 mlvc_1080p   l16  fda953 qp24  NE>NE 43.2178 dB  worst drift 50.0 dB  all 9 ok  257 s  elapsed 39.4 h  left ~0.1 h
+[841/842] 26 20:11 mlvc_1080p   l16  fda953 qp32  NE>NE 39.7681 dB  worst drift 49.0 dB  all 9 ok  258 s  elapsed 39.5 h  left ~0.1 h
+[842/842] 26 20:15 mlvc_1080p   l16  fda953 qp40  NE>NE 35.6341 dB  worst drift 46.5 dB  all 9 ok  260 s  elapsed 39.6 h  left ~0.0 h
+== pass finished: 842 jobs attempted, 39.6 h
+== after pass 1  Thu Nov 26 20:15:34 +04 2026
+   jobs done 2240 of 2240
+
+== analysis  Thu Nov 26 20:15:34 +04 2026
+STEP 5 + A2: correctness of every encoder->decoder pair and drift bounds
+
+== coverage and failures (jobs = clip x QP; each job has 9 pairs)
+   Full MLVC 360p   main   80 jobs  no failures, no short decodes
+   Full MLVC 360p   i32    80 jobs  no failures, no short decodes
+   Full MLVC 360p   l32    80 jobs  no failures, no short decodes
+   Full MLVC 360p   i16    80 jobs  no failures, no short decodes
+   Full MLVC 360p   l16    80 jobs  no failures, no short decodes
+   MLVC-S 720p      main   80 jobs  no failures, no short decodes
+   MLVC-S 720p      i32    80 jobs  no failures, no short decodes
+   MLVC-S 720p      l32    80 jobs  no failures, no short decodes
+   MLVC-S 720p      i16    80 jobs  no failures, no short decodes
+   MLVC-S 720p      l16    80 jobs  no failures, no short decodes
+   MLVC-S 540p      main   80 jobs  no failures, no short decodes
+   MLVC-S 540p      i32    80 jobs  no failures, no short decodes
+   MLVC-S 540p      l32    80 jobs  no failures, no short decodes
+   MLVC-S 540p      i16    80 jobs  no failures, no short decodes
+   MLVC-S 540p      l16    80 jobs  no failures, no short decodes
+   Full MLVC 540p   main   80 jobs  no failures, no short decodes
+   Full MLVC 540p   i32    80 jobs  no failures, no short decodes
+   Full MLVC 540p   l32    80 jobs  no failures, no short decodes
+   Full MLVC 540p   i16    80 jobs  no failures, no short decodes
+   Full MLVC 540p   l16    80 jobs  no failures, no short decodes
+   Full MLVC 720p   main   80 jobs  no failures, no short decodes
+   Full MLVC 720p   i32    80 jobs  no failures, no short decodes
+   Full MLVC 720p   l32    80 jobs  no failures, no short decodes
+   Full MLVC 720p   i16    80 jobs  no failures, no short decodes
+   Full MLVC 720p   l16    80 jobs  no failures, no short decodes
+   MLVC-S 1080p     main   80 jobs  no failures, no short decodes
+   MLVC-S 1080p     i32    80 jobs  no failures, no short decodes
+   MLVC-S 1080p     l32    80 jobs  no failures, no short decodes
+   MLVC-S 1080p     i16    80 jobs  no failures, no short decodes
+   MLVC-S 1080p     l16    80 jobs  no failures, no short decodes
+   Full MLVC 1080p  main   80 jobs  no failures, no short decodes
+   Full MLVC 1080p  i32    80 jobs  no failures, no short decodes
+   Full MLVC 1080p  l32    80 jobs  no failures, no short decodes
+   Full MLVC 1080p  i16    80 jobs  no failures, no short decodes
+   Full MLVC 1080p  l16    80 jobs  no failures, no short decodes
+
+== determinism (main, first clip, 4 QPs): same bitstream decoded twice on the same processor
+   Full MLVC 360p   NE>NE 4/4, NE>GPU 4/4, NE>CPU 4/4, GPU>NE 4/4, GPU>GPU 4/4, GPU>CPU 4/4, CPU>NE 4/4, CPU>GPU 4/4, CPU>CPU 4/4   [NE encoder identical to exp. 10: 80/80]
+   MLVC-S 720p      NE>NE 4/4, NE>GPU 4/4, NE>CPU 4/4, GPU>NE 4/4, GPU>GPU 4/4, GPU>CPU 4/4, CPU>NE 4/4, CPU>GPU 4/4, CPU>CPU 4/4   [NE encoder identical to exp. 10: 80/80; GPU encoder identical to exp. 10: 80/80]
+   MLVC-S 540p      NE>NE 4/4, NE>GPU 4/4, NE>CPU 4/4, GPU>NE 4/4, GPU>GPU 4/4, GPU>CPU 4/4, CPU>NE 4/4, CPU>GPU 4/4, CPU>CPU 4/4   [NE encoder identical to exp. 10: 80/80]
+   Full MLVC 540p   NE>NE 4/4, NE>GPU 4/4, NE>CPU 4/4, GPU>NE 4/4, GPU>GPU 4/4, GPU>CPU 4/4, CPU>NE 4/4, CPU>GPU 4/4, CPU>CPU 4/4   [NE encoder identical to exp. 10: 80/80; GPU encoder identical to exp. 10: 80/80]
+   Full MLVC 720p   NE>NE 4/4, NE>GPU 4/4, NE>CPU 4/4, GPU>NE 4/4, GPU>GPU 4/4, GPU>CPU 4/4, CPU>NE 4/4, CPU>GPU 4/4, CPU>CPU 4/4   [NE encoder identical to exp. 10: 80/80]
+   MLVC-S 1080p     NE>NE 4/4, NE>GPU 4/4, NE>CPU 4/4, GPU>NE 4/4, GPU>GPU 4/4, GPU>CPU 4/4, CPU>NE 4/4, CPU>GPU 4/4, CPU>CPU 4/4   [NE encoder identical to exp. 10: 80/80]
+   Full MLVC 1080p  NE>NE 4/4, NE>GPU 4/4, NE>CPU 4/4, GPU>NE 4/4, GPU>GPU 4/4, GPU>CPU 4/4, CPU>NE 4/4, CPU>GPU 4/4, CPU>CPU 4/4   [NE encoder identical to exp. 10: 80/80]
+
+== drift = PSNR-Y of the decode against the decode on the encoder's own processor (main)
+   worst frame dB / mean dB (MSE-averaged) / bit-identical frames; then mean dB by frames after the I-frame
+                    pair      worst   mean  ident.  0  1-15  16-31  32-47  48-63
+   Full MLVC 360p   NE>GPU     30.0   50.1    0.0%   59.0   56.5   53.1   49.4   46.3
+   Full MLVC 360p   NE>CPU     29.8   47.5    0.0%   52.1   51.4   49.6   47.0   44.4
+   Full MLVC 360p   GPU>NE     29.7   49.8    0.0%   59.0   56.5   53.1   49.4   45.8
+   Full MLVC 360p   GPU>CPU    38.4   50.5    0.0%   52.2   51.9   51.2   50.1   48.9
+   Full MLVC 360p   CPU>NE     28.2   47.4    0.0%   52.1   51.4   49.7   47.0   44.1
+   Full MLVC 360p   CPU>GPU    35.6   50.4    0.0%   52.2   51.9   51.3   50.0   48.6
+   MLVC-S 720p      NE>GPU     29.4   51.6    0.0%   58.8   56.5   53.8   51.2   48.0
+   MLVC-S 720p      NE>CPU     21.3   46.2    0.0%   52.6   51.9   50.1   46.4   41.9
+   MLVC-S 720p      GPU>NE     34.2   51.9    0.0%   58.8   56.5   53.8   51.4   48.6
+   MLVC-S 720p      GPU>CPU    22.6   48.3    0.0%   52.8   52.5   51.6   48.8   44.3
+   MLVC-S 720p      CPU>NE     28.3   48.4    0.0%   52.6   51.9   50.1   48.0   45.5
+   MLVC-S 720p      CPU>GPU    34.3   50.5    0.0%   52.8   52.6   51.6   50.2   48.2
+   MLVC-S 540p      NE>GPU     29.7   51.4    0.0%   58.8   56.6   53.9   51.1   47.7
+   MLVC-S 540p      NE>CPU     26.3   47.9    0.0%   52.6   51.9   50.2   47.8   44.4
+   MLVC-S 540p      GPU>NE     25.9   51.3    0.0%   58.8   56.5   53.9   51.1   47.5
+   MLVC-S 540p      GPU>CPU    21.2   48.5    0.0%   52.8   52.5   51.7   49.3   44.3
+   MLVC-S 540p      CPU>NE     22.2   47.7    0.0%   52.6   51.9   50.2   47.6   44.2
+   MLVC-S 540p      CPU>GPU    32.3   50.5    0.0%   52.8   52.5   51.7   50.3   48.3
+   Full MLVC 540p   NE>GPU     31.9   50.4    0.0%   59.2   56.6   53.2   49.7   46.6
+   Full MLVC 540p   NE>CPU     31.6   47.8    0.0%   52.2   51.6   49.8   47.3   44.7
+   Full MLVC 540p   GPU>NE     32.3   50.7    0.0%   59.2   56.6   53.3   50.2   46.9
+   Full MLVC 540p   GPU>CPU    38.5   50.7    0.0%   52.3   52.1   51.4   50.3   49.1
+   Full MLVC 540p   CPU>NE     31.9   48.0    0.0%   52.2   51.6   49.9   47.6   45.0
+   Full MLVC 540p   CPU>GPU    35.5   50.7    0.0%   52.3   52.1   51.5   50.3   48.9
+   Full MLVC 720p   NE>GPU     32.2   50.9    0.0%   59.3   56.7   53.4   50.2   47.3
+   Full MLVC 720p   NE>CPU     29.5   48.0    0.0%   52.3   51.7   50.0   47.5   45.0
+   Full MLVC 720p   GPU>NE     35.4   51.4    0.0%   59.3   56.7   53.4   50.8   48.0
+   Full MLVC 720p   GPU>CPU    36.8   50.9    0.0%   52.5   52.3   51.6   50.6   49.4
+   Full MLVC 720p   CPU>NE     34.0   48.5    0.0%   52.3   51.7   50.1   48.0   45.6
+   Full MLVC 720p   CPU>GPU    35.6   50.9    0.0%   52.4   52.3   51.6   50.5   49.3
+   MLVC-S 1080p     NE>GPU     33.2   51.9    0.0%   58.8   56.5   53.8   51.4   48.7
+   MLVC-S 1080p     NE>CPU     28.5   47.9    0.0%   52.7   52.0   50.0   47.6   44.6
+   MLVC-S 1080p     GPU>NE     33.6   52.1    0.0%   58.8   56.5   53.8   51.6   48.9
+   MLVC-S 1080p     GPU>CPU    30.5   50.0    0.0%   52.9   52.6   51.6   49.7   47.2
+   MLVC-S 1080p     CPU>NE     29.7   48.5    0.0%   52.7   51.9   50.1   48.0   45.7
+   MLVC-S 1080p     CPU>GPU    36.6   50.6    0.0%   52.9   52.7   51.7   50.2   48.6
+   Full MLVC 1080p  NE>GPU     38.4   52.0    0.0%   59.4   56.7   53.6   51.2   48.9
+   Full MLVC 1080p  NE>CPU     35.6   48.9    0.0%   52.4   51.9   50.3   48.3   46.3
+   Full MLVC 1080p  GPU>NE     37.4   52.0    0.0%   59.5   56.7   53.6   51.3   48.9
+   Full MLVC 1080p  GPU>CPU    37.2   51.2    0.0%   52.6   52.4   51.9   50.9   49.7
+   Full MLVC 1080p  CPU>NE     35.6   48.9    0.0%   52.4   51.9   50.4   48.4   46.3
+   Full MLVC 1080p  CPU>GPU    35.9   51.2    0.0%   52.6   52.4   51.9   50.9   49.8
+
+== BD-rate (coded PSNR-Y) of each pair vs NE>NE of the same setting, main structure (H4: |change| < 1 point)
+                       NE>NE   NE>GPU   NE>CPU   GPU>NE  GPU>GPU  GPU>CPU   CPU>NE  CPU>GPU  CPU>CPU
+   Full MLVC 360p     +0.00%   +3.74%   +7.90%   +3.64%   -0.31%   +3.72%   +7.12%   +3.04%   +2.47%
+   MLVC-S 720p        +0.00%   +4.27%  +12.36%   +3.98%   -0.15%   +7.69%   +8.85%   +3.97%   +2.59%
+   MLVC-S 540p        +0.00%   +2.95%   +8.19%   +3.08%   -0.07%   +5.15%   +6.66%   +2.95%   +1.96%
+   Full MLVC 540p     +0.00%   +4.95%  +10.91%   +4.41%   -0.39%   +5.13%   +8.87%   +3.60%   +3.45%
+   Full MLVC 720p     +0.00%   +6.15%  +14.40%   +5.07%   -0.59%   +6.61%  +10.86%   +4.35%   +4.58%
+   MLVC-S 1080p       +0.00%   +5.60%  +17.55%   +5.46%   -0.14%   +9.47%  +12.14%   +4.86%   +3.69%
+   Full MLVC 1080p    +0.00%   +7.50%  +19.63%   +6.37%   -0.56%   +9.30%  +14.28%   +5.17%   +6.39%
+   H4 fails (|change| >= 1 point): Full MLVC 360p NE>GPU, Full MLVC 360p NE>CPU, Full MLVC 360p GPU>NE, Full MLVC 360p GPU>CPU, Full MLVC 360p CPU>NE, Full MLVC 360p CPU>GPU, Full MLVC 360p CPU>CPU, MLVC-S 720p NE>GPU, MLVC-S 720p NE>CPU, MLVC-S 720p GPU>NE, MLVC-S 720p GPU>CPU, MLVC-S 720p CPU>NE, MLVC-S 720p CPU>GPU, MLVC-S 720p CPU>CPU, MLVC-S 540p NE>GPU, MLVC-S 540p NE>CPU, MLVC-S 540p GPU>NE, MLVC-S 540p GPU>CPU, MLVC-S 540p CPU>NE, MLVC-S 540p CPU>GPU, MLVC-S 540p CPU>CPU, Full MLVC 540p NE>GPU, Full MLVC 540p NE>CPU, Full MLVC 540p GPU>NE, Full MLVC 540p GPU>CPU, Full MLVC 540p CPU>NE, Full MLVC 540p CPU>GPU, Full MLVC 540p CPU>CPU, Full MLVC 720p NE>GPU, Full MLVC 720p NE>CPU, Full MLVC 720p GPU>NE, Full MLVC 720p GPU>CPU, Full MLVC 720p CPU>NE, Full MLVC 720p CPU>GPU, Full MLVC 720p CPU>CPU, MLVC-S 1080p NE>GPU, MLVC-S 1080p NE>CPU, MLVC-S 1080p GPU>NE, MLVC-S 1080p GPU>CPU, MLVC-S 1080p CPU>NE, MLVC-S 1080p CPU>GPU, MLVC-S 1080p CPU>CPU, Full MLVC 1080p NE>GPU, Full MLVC 1080p NE>CPU, Full MLVC 1080p GPU>NE, Full MLVC 1080p GPU>CPU, Full MLVC 1080p CPU>NE, Full MLVC 1080p CPU>GPU, Full MLVC 1080p CPU>CPU
+
+== A2: drift bounds. Cost = BD-rate of NE>NE vs the main structure; worst drift over the 6 mismatched pairs;
+   worst mismatch BD-rate = largest BD-rate of a mismatched pair vs the main NE>NE
+   Full MLVC 360p   B* structure (I 64, LTR rec. 64) cost  +0.00 %  worst drift  28.2 dB (CPU>NE)  worst mismatch BD  +7.90 %
+   Full MLVC 360p   I-frame every 32                 cost +51.37 %  worst drift  37.4 dB (NE>CPU)  worst mismatch BD +57.93 %
+   Full MLVC 360p   LTR recovery every 32            cost +36.85 %  worst drift  36.9 dB (NE>CPU)  worst mismatch BD +43.08 %
+   Full MLVC 360p   I-frame every 16                 cost +149.77 %  worst drift  42.0 dB (NE>CPU)  worst mismatch BD +157.78 %
+   Full MLVC 360p   LTR recovery every 16            cost +78.84 %  worst drift  40.8 dB (CPU>NE)  worst mismatch BD +85.12 %
+   MLVC-S 720p      B* structure (I 64, LTR rec. 64) cost  +0.00 %  worst drift  21.3 dB (NE>CPU)  worst mismatch BD +12.36 %
+   MLVC-S 720p      I-frame every 32                 cost +39.12 %  worst drift  37.0 dB (GPU>CPU)  worst mismatch BD +47.87 %
+   MLVC-S 720p      LTR recovery every 32            cost  +9.53 %  worst drift  37.0 dB (GPU>CPU)  worst mismatch BD +17.13 %
+   MLVC-S 720p      I-frame every 16                 cost +114.65 %  worst drift  43.6 dB (NE>CPU)  worst mismatch BD +124.31 %
+   MLVC-S 720p      LTR recovery every 16            cost +61.98 %  worst drift  45.5 dB (NE>CPU)  worst mismatch BD +69.66 %
+   MLVC-S 540p      B* structure (I 64, LTR rec. 64) cost  +0.00 %  worst drift  21.2 dB (GPU>CPU)  worst mismatch BD  +8.19 %
+   MLVC-S 540p      I-frame every 32                 cost +44.07 %  worst drift  38.0 dB (CPU>NE)  worst mismatch BD +50.60 %
+   MLVC-S 540p      LTR recovery every 32            cost  +9.67 %  worst drift  38.0 dB (CPU>NE)  worst mismatch BD +15.16 %
+   MLVC-S 540p      I-frame every 16                 cost +130.76 %  worst drift  44.2 dB (GPU>CPU)  worst mismatch BD +138.17 %
+   MLVC-S 540p      LTR recovery every 16            cost +70.67 %  worst drift  45.3 dB (CPU>NE)  worst mismatch BD +76.54 %
+   Full MLVC 540p   B* structure (I 64, LTR rec. 64) cost  +0.00 %  worst drift  31.6 dB (NE>CPU)  worst mismatch BD +10.91 %
+   Full MLVC 540p   I-frame every 32                 cost +46.83 %  worst drift  39.3 dB (NE>CPU)  worst mismatch BD +55.86 %
+   Full MLVC 540p   LTR recovery every 32            cost +33.27 %  worst drift  39.3 dB (NE>CPU)  worst mismatch BD +41.86 %
+   Full MLVC 540p   I-frame every 16                 cost +135.02 %  worst drift  44.4 dB (NE>CPU)  worst mismatch BD +146.05 %
+   Full MLVC 540p   LTR recovery every 16            cost +71.63 %  worst drift  42.2 dB (CPU>NE)  worst mismatch BD +80.26 %
+   Full MLVC 720p   B* structure (I 64, LTR rec. 64) cost  +0.00 %  worst drift  29.5 dB (NE>CPU)  worst mismatch BD +14.40 %
+   Full MLVC 720p   I-frame every 32                 cost +42.64 %  worst drift  38.0 dB (NE>CPU)  worst mismatch BD +54.32 %
+   Full MLVC 720p   LTR recovery every 32            cost +30.62 %  worst drift  38.0 dB (NE>CPU)  worst mismatch BD +41.72 %
+   Full MLVC 720p   I-frame every 16                 cost +121.38 %  worst drift  45.2 dB (NE>CPU)  worst mismatch BD +135.52 %
+   Full MLVC 720p   LTR recovery every 16            cost +66.19 %  worst drift  44.0 dB (NE>CPU)  worst mismatch BD +77.49 %
+   MLVC-S 1080p     B* structure (I 64, LTR rec. 64) cost  +0.00 %  worst drift  28.5 dB (NE>CPU)  worst mismatch BD +17.55 %
+   MLVC-S 1080p     I-frame every 32                 cost +31.21 %  worst drift  36.4 dB (GPU>CPU)  worst mismatch BD +43.42 %
+   MLVC-S 1080p     LTR recovery every 32            cost  +8.72 %  worst drift  36.4 dB (GPU>CPU)  worst mismatch BD +19.95 %
+   MLVC-S 1080p     I-frame every 16                 cost +89.25 %  worst drift  45.9 dB (NE>CPU)  worst mismatch BD +102.19 %
+   MLVC-S 1080p     LTR recovery every 16            cost +47.73 %  worst drift  45.7 dB (CPU>NE)  worst mismatch BD +58.14 %
+   Full MLVC 1080p  B* structure (I 64, LTR rec. 64) cost  +0.00 %  worst drift  35.6 dB (CPU>NE)  worst mismatch BD +19.63 %
+   Full MLVC 1080p  I-frame every 32                 cost +33.75 %  worst drift  41.3 dB (NE>CPU)  worst mismatch BD +49.36 %
+   Full MLVC 1080p  LTR recovery every 32            cost +24.39 %  worst drift  41.3 dB (NE>CPU)  worst mismatch BD +39.32 %
+   Full MLVC 1080p  I-frame every 16                 cost +94.55 %  worst drift  46.0 dB (NE>CPU)  worst mismatch BD +111.67 %
+   Full MLVC 1080p  LTR recovery every 16            cost +53.20 %  worst drift  44.7 dB (NE>CPU)  worst mismatch BD +67.81 %
+
+== results in /Users/shamsalani/Downloads/duplexnvc-baseline/phase2/5/results
+
+== Step 5 END  Thu Nov 26 20:15:39 +04 2026

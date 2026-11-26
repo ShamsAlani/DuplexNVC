@@ -1,0 +1,33 @@
+== encode on npu
+libmlvc 0.1.0 (eb5d60a, HEAD)
+Platform: Apple Mac16,8, macOS 26.6
+  CPU: Apple M4 Pro (M4, arm64, fp16, dotprod)
+Creating manager...
+Manager: coreml/npu, model_cache, session_preload at-init
+  v0.1: 1920x1088, max_fps=120, max_temporal=2, max_ltr=8
+Encoder: v0.1, 1920x1080, iframe=16, temporal=1, ltr=(internal, start=8, period=16, slots=4, recovery=4)
+Encoding...
+Encoding completed.
+
+== encode on gpu
+libmlvc 0.1.0 (eb5d60a, HEAD)
+Platform: Apple Mac16,8, macOS 26.6
+  CPU: Apple M4 Pro (M4, arm64, fp16, dotprod)
+Creating manager...
+Manager: coreml/gpu, model_cache, session_preload at-init
+  v0.1: 1920x1088, max_fps=120, max_temporal=2, max_ltr=8
+Encoder: v0.1, 1920x1080, iframe=16, temporal=1, ltr=(internal, start=8, period=16, slots=4, recovery=4)
+Encoding...
+Encoding completed.
+
+== encode on cpu
+libmlvc 0.1.0 (eb5d60a, HEAD)
+Platform: Apple Mac16,8, macOS 26.6
+  CPU: Apple M4 Pro (M4, arm64, fp16, dotprod)
+Creating manager...
+Manager: coreml/cpu, model_cache, session_preload at-init
+  v0.1: 1920x1088, max_fps=120, max_temporal=2, max_ltr=8
+Encoder: v0.1, 1920x1080, iframe=16, temporal=1, ltr=(internal, start=8, period=16, slots=4, recovery=4)
+Encoding...
+Encoding completed.
+

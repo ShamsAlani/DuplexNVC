@@ -1,0 +1,37 @@
+== A2: drift bounds. Cost = BD-rate of NE>NE vs the main structure; worst drift over the 6 mismatched pairs;
+   worst mismatch BD-rate = largest BD-rate of a mismatched pair vs the main NE>NE
+   Full MLVC 360p   B* structure (I 64, LTR rec. 64) cost  +0.00 %  worst drift  28.2 dB (CPU>NE)  worst mismatch BD  +7.90 %
+   Full MLVC 360p   I-frame every 32                 cost +51.37 %  worst drift  37.4 dB (NE>CPU)  worst mismatch BD +57.93 %
+   Full MLVC 360p   LTR recovery every 32            cost +36.85 %  worst drift  36.9 dB (NE>CPU)  worst mismatch BD +43.08 %
+   Full MLVC 360p   I-frame every 16                 cost +149.77 %  worst drift  42.0 dB (NE>CPU)  worst mismatch BD +157.78 %
+   Full MLVC 360p   LTR recovery every 16            cost +78.84 %  worst drift  40.8 dB (CPU>NE)  worst mismatch BD +85.12 %
+   MLVC-S 720p      B* structure (I 64, LTR rec. 64) cost  +0.00 %  worst drift  21.3 dB (NE>CPU)  worst mismatch BD +12.36 %
+   MLVC-S 720p      I-frame every 32                 cost +39.12 %  worst drift  37.0 dB (GPU>CPU)  worst mismatch BD +47.87 %
+   MLVC-S 720p      LTR recovery every 32            cost  +9.53 %  worst drift  37.0 dB (GPU>CPU)  worst mismatch BD +17.13 %
+   MLVC-S 720p      I-frame every 16                 cost +114.65 %  worst drift  43.6 dB (NE>CPU)  worst mismatch BD +124.31 %
+   MLVC-S 720p      LTR recovery every 16            cost +61.98 %  worst drift  45.5 dB (NE>CPU)  worst mismatch BD +69.66 %
+   MLVC-S 540p      B* structure (I 64, LTR rec. 64) cost  +0.00 %  worst drift  21.2 dB (GPU>CPU)  worst mismatch BD  +8.19 %
+   MLVC-S 540p      I-frame every 32                 cost +44.07 %  worst drift  38.0 dB (CPU>NE)  worst mismatch BD +50.60 %
+   MLVC-S 540p      LTR recovery every 32            cost  +9.67 %  worst drift  38.0 dB (CPU>NE)  worst mismatch BD +15.16 %
+   MLVC-S 540p      I-frame every 16                 cost +130.76 %  worst drift  44.2 dB (GPU>CPU)  worst mismatch BD +138.17 %
+   MLVC-S 540p      LTR recovery every 16            cost +70.67 %  worst drift  45.3 dB (CPU>NE)  worst mismatch BD +76.54 %
+   Full MLVC 540p   B* structure (I 64, LTR rec. 64) cost  +0.00 %  worst drift  31.6 dB (NE>CPU)  worst mismatch BD +10.91 %
+   Full MLVC 540p   I-frame every 32                 cost +46.83 %  worst drift  39.3 dB (NE>CPU)  worst mismatch BD +55.86 %
+   Full MLVC 540p   LTR recovery every 32            cost +33.27 %  worst drift  39.3 dB (NE>CPU)  worst mismatch BD +41.86 %
+   Full MLVC 540p   I-frame every 16                 cost +135.02 %  worst drift  44.4 dB (NE>CPU)  worst mismatch BD +146.05 %
+   Full MLVC 540p   LTR recovery every 16            cost +71.63 %  worst drift  42.2 dB (CPU>NE)  worst mismatch BD +80.26 %
+   Full MLVC 720p   B* structure (I 64, LTR rec. 64) cost  +0.00 %  worst drift  29.5 dB (NE>CPU)  worst mismatch BD +14.40 %
+   Full MLVC 720p   I-frame every 32                 cost +42.64 %  worst drift  38.0 dB (NE>CPU)  worst mismatch BD +54.32 %
+   Full MLVC 720p   LTR recovery every 32            cost +30.62 %  worst drift  38.0 dB (NE>CPU)  worst mismatch BD +41.72 %
+   Full MLVC 720p   I-frame every 16                 cost +121.38 %  worst drift  45.2 dB (NE>CPU)  worst mismatch BD +135.52 %
+   Full MLVC 720p   LTR recovery every 16            cost +66.19 %  worst drift  44.0 dB (NE>CPU)  worst mismatch BD +77.49 %
+   MLVC-S 1080p     B* structure (I 64, LTR rec. 64) cost  +0.00 %  worst drift  28.5 dB (NE>CPU)  worst mismatch BD +17.55 %
+   MLVC-S 1080p     I-frame every 32                 cost +31.21 %  worst drift  36.4 dB (GPU>CPU)  worst mismatch BD +43.42 %
+   MLVC-S 1080p     LTR recovery every 32            cost  +8.72 %  worst drift  36.4 dB (GPU>CPU)  worst mismatch BD +19.95 %
+   MLVC-S 1080p     I-frame every 16                 cost +89.25 %  worst drift  45.9 dB (NE>CPU)  worst mismatch BD +102.19 %
+   MLVC-S 1080p     LTR recovery every 16            cost +47.73 %  worst drift  45.7 dB (CPU>NE)  worst mismatch BD +58.14 %
+   Full MLVC 1080p  B* structure (I 64, LTR rec. 64) cost  +0.00 %  worst drift  35.6 dB (CPU>NE)  worst mismatch BD +19.63 %
+   Full MLVC 1080p  I-frame every 32                 cost +33.75 %  worst drift  41.3 dB (NE>CPU)  worst mismatch BD +49.36 %
+   Full MLVC 1080p  LTR recovery every 32            cost +24.39 %  worst drift  41.3 dB (NE>CPU)  worst mismatch BD +39.32 %
+   Full MLVC 1080p  I-frame every 16                 cost +94.55 %  worst drift  46.0 dB (NE>CPU)  worst mismatch BD +111.67 %
+   Full MLVC 1080p  LTR recovery every 16            cost +53.20 %  worst drift  44.7 dB (NE>CPU)  worst mismatch BD +67.81 %
