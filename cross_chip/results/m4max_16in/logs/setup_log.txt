@@ -1,0 +1,251 @@
+== cc_setup  Sun Nov 22 16:26:16 +04 2026  Apple M4 Max
+
+[1] Command Line Tools
+   ok
+
+[2] Homebrew and tools (cmake, ninja, git-lfs, ffmpeg, python 3.12)
+Error: /opt/homebrew is not writable. You should change the
+ownership and permissions of /opt/homebrew back to your
+user account:
+  sudo chown -R warda /opt/homebrew
+Warning: The following taps are not trusted:
+  anomalyco/tap
+  gromgit/fuse
+  hashicorp/tap
+
+Homebrew is currently ignoring formulae, casks and commands
+from these taps because tap trust is required.
+Prefer trusting only the specific formulae, casks or commands you need.
+Trust installed formulae from these taps with:
+  brew trust --formula anomalyco/tap/opencode
+  brew trust --formula gromgit/fuse/ntfs-3g-mac
+  brew trust --formula hashicorp/tap/terraform
+Trust other specific casks and commands with:
+  brew trust --cask <user>/<tap>/<cask>
+  brew trust --command <user>/<tap>/<command>
+Whole-tap trust is broader and includes all current and future formulae,
+casks and commands from the listed taps. Trust whole taps with:
+  brew trust anomalyco/tap gromgit/fuse hashicorp/tap
+Untap them with:
+  brew untap anomalyco/tap gromgit/fuse hashicorp/tap
+For more information, see:
+  https://docs.brew.sh/Tap-Trust
+Error: The following directories are not writable by your user:
+  /opt/homebrew
+  /opt/homebrew/lib/python3.12/site-packages
+  /opt/homebrew/lib/python3.13/site-packages
+  /opt/homebrew/lib/python3.14/site-packages
+  /opt/homebrew/share/fish
+  /opt/homebrew/share/fish/vendor_completions.d
+  /opt/homebrew/share/pwsh
+  /opt/homebrew/share/pwsh/completions
+  /opt/homebrew/share/zsh
+  /opt/homebrew/share/zsh/site-functions
+  /opt/homebrew/var/homebrew/locks
+
+You should change the ownership of these directories to your user,
+and make sure that you have write permission.
+  sudo chown -R warda /opt/homebrew /opt/homebrew/lib/python3.12/site-packages /opt/homebrew/lib/python3.13/site-packages /opt/homebrew/lib/python3.14/site-packages /opt/homebrew/share/fish /opt/homebrew/share/fish/vendor_completions.d /opt/homebrew/share/pwsh /opt/homebrew/share/pwsh/completions /opt/homebrew/share/zsh /opt/homebrew/share/zsh/site-functions /opt/homebrew/var/homebrew/locks
+  chmod u+w /opt/homebrew /opt/homebrew/lib/python3.12/site-packages /opt/homebrew/lib/python3.13/site-packages /opt/homebrew/lib/python3.14/site-packages /opt/homebrew/share/fish /opt/homebrew/share/fish/vendor_completions.d /opt/homebrew/share/pwsh /opt/homebrew/share/pwsh/completions /opt/homebrew/share/zsh /opt/homebrew/share/zsh/site-functions /opt/homebrew/var/homebrew/locks
+   ok
+
+[3] Python environment (numpy only; no torch needed here)
+cross_chip/scripts/cc_setup: line 27: /opt/homebrew/bin/python3.12: No such file or directory
+cross_chip/scripts/cc_setup: line 28: /Users/warda/Downloads/duplexnvc-baseline/.venv/bin/pip: No such file or directory
+cross_chip/scripts/cc_setup: line 29: /Users/warda/Downloads/duplexnvc-baseline/.venv/bin/python3: No such file or directory
+
+[4] libmlvc at commit eb5d60a
+Cloning into 'libmlvc'...
+From https://github.com/microsoft/vcpkg
+ * branch              8128322a87623426aea726c44ea45ee7e77daaa8 -> FETCH_HEAD
+CMake Warning at CMakeLists.txt:39 (message):
+  pre-commit not found in PATH; git hooks not installed.  Install it with: uv
+  tool install pre-commit
+
+
+[74/75] Building CXX object test/CMakeFiles/gtest_libmlvc.dir/integration/test_bitexact.cpp.o
+[75/75] Linking CXX executable test/gtest_libmlvc
+   commit eb5d60a (must be eb5d60a)
+
+[5] measurement program (duplex_bench) and tools
+[39/40] Linking CXX executable libmlvc_example
+   fixed-version check (must be 13): 13
+   thermal_log ok
+   bwload ok
+
+[6] Shams's pack: bundles, incoming streams, source clips, reference MD5s
+
+STOPPED: ~/Downloads/cc_pack_shams.zip not found. Download it from the Drive folder into Downloads, then run again.
+== cc_setup  Fri Nov 27 01:52:21 +04 2026  Apple M4 Max
+
+[1] Command Line Tools
+   ok
+
+[2] Homebrew and tools (cmake, ninja, git-lfs, ffmpeg, python 3.12)
+Error: /opt/homebrew is not writable. You should change the
+ownership and permissions of /opt/homebrew back to your
+user account:
+  sudo chown -R warda /opt/homebrew
+==> Downloading Homebrew API data
+✔︎ JSON API packages.arm64_tahoe.jws.json
+Warning: The following taps are not trusted:
+  anomalyco/tap
+  gromgit/fuse
+  hashicorp/tap
+
+Homebrew is currently ignoring formulae, casks and commands
+from these taps because tap trust is required.
+Prefer trusting only the specific formulae, casks or commands you need.
+Trust installed formulae from these taps with:
+  brew trust --formula anomalyco/tap/opencode
+  brew trust --formula gromgit/fuse/ntfs-3g-mac
+  brew trust --formula hashicorp/tap/terraform
+Trust other specific casks and commands with:
+  brew trust --cask <user>/<tap>/<cask>
+  brew trust --command <user>/<tap>/<command>
+Whole-tap trust is broader and includes all current and future formulae,
+casks and commands from the listed taps. Trust whole taps with:
+  brew trust anomalyco/tap gromgit/fuse hashicorp/tap
+Untap them with:
+  brew untap anomalyco/tap gromgit/fuse hashicorp/tap
+For more information, see:
+  https://docs.brew.sh/Tap-Trust
+Error: The following directories are not writable by your user:
+  /opt/homebrew
+  /opt/homebrew/lib/python3.12/site-packages
+  /opt/homebrew/lib/python3.13/site-packages
+  /opt/homebrew/lib/python3.14/site-packages
+  /opt/homebrew/share/fish
+  /opt/homebrew/share/fish/vendor_completions.d
+  /opt/homebrew/share/pwsh
+  /opt/homebrew/share/pwsh/completions
+  /opt/homebrew/share/zsh
+  /opt/homebrew/share/zsh/site-functions
+  /opt/homebrew/var/homebrew/locks
+
+You should change the ownership of these directories to your user,
+and make sure that you have write permission.
+  sudo chown -R warda /opt/homebrew /opt/homebrew/lib/python3.12/site-packages /opt/homebrew/lib/python3.13/site-packages /opt/homebrew/lib/python3.14/site-packages /opt/homebrew/share/fish /opt/homebrew/share/fish/vendor_completions.d /opt/homebrew/share/pwsh /opt/homebrew/share/pwsh/completions /opt/homebrew/share/zsh /opt/homebrew/share/zsh/site-functions /opt/homebrew/var/homebrew/locks
+  chmod u+w /opt/homebrew /opt/homebrew/lib/python3.12/site-packages /opt/homebrew/lib/python3.13/site-packages /opt/homebrew/lib/python3.14/site-packages /opt/homebrew/share/fish /opt/homebrew/share/fish/vendor_completions.d /opt/homebrew/share/pwsh /opt/homebrew/share/pwsh/completions /opt/homebrew/share/zsh /opt/homebrew/share/zsh/site-functions /opt/homebrew/var/homebrew/locks
+   ok
+
+[3] Python environment (numpy only; no torch needed here)
+/Users/warda/DuplexNVC/cross_chip/scripts/cc_setup: line 27: /opt/homebrew/bin/python3.12: No such file or directory
+/Users/warda/DuplexNVC/cross_chip/scripts/cc_setup: line 28: /Users/warda/Downloads/duplexnvc-baseline/.venv/bin/pip: No such file or directory
+/Users/warda/DuplexNVC/cross_chip/scripts/cc_setup: line 29: /Users/warda/Downloads/duplexnvc-baseline/.venv/bin/python3: No such file or directory
+
+[4] libmlvc at commit eb5d60a
+   commit eb5d60a (must be eb5d60a)
+
+[5] measurement program (duplex_bench) and tools
+[2/3] Linking CXX executable libmlvc_example
+   fixed-version check (must be 13): 13
+   thermal_log ok
+   bwload ok
+
+[6] Shams's pack: bundles, incoming streams, source clips, reference MD5s
+   bundle mlvc
+   bundle mlvc-s
+   bundle mlvc_1080p
+   bundle mlvc_540p
+   bundle mlvc_720p
+   bundle mlvc_multi
+   bundle mlvcs_1080p
+   bundle mlvcs_540p
+   bundle mlvcs_720p
+   Shams's libmlvc commit: eb5d60a
+
+[7] raw camera and incoming streams (same clips as B*), checked against Shams's MD5s
+   streams identical to Shams's: 8, different: 0
+
+[8] smoke test: full MLVC 360p, encoder and decoder on the NE, 5 s
+   requested=npu resolved=npu
+/Users/warda/DuplexNVC/cross_chip/scripts/cc_setup: line 86: /Users/warda/Downloads/duplexnvc-baseline/.venv/bin/python3: No such file or directory
+
+== SETUP DONE. Next, the night run:  bash /Users/warda/DuplexNVC/cross_chip/scripts/cc_all
+== cc_setup  Fri Nov 27 02:00:16 +04 2026  Apple M4 Max
+
+[1] Command Line Tools
+   ok
+
+[2] Homebrew and tools (cmake, ninja, git-lfs, ffmpeg, python 3.12)
+Error: /opt/homebrew is not writable. You should change the
+ownership and permissions of /opt/homebrew back to your
+user account:
+  sudo chown -R warda /opt/homebrew
+==> Downloading Homebrew API data
+✔︎ JSON API packages.arm64_tahoe.jws.json
+Warning: The following taps are not trusted:
+  anomalyco/tap
+  gromgit/fuse
+  hashicorp/tap
+
+Homebrew is currently ignoring formulae, casks and commands
+from these taps because tap trust is required.
+Prefer trusting only the specific formulae, casks or commands you need.
+Trust installed formulae from these taps with:
+  brew trust --formula anomalyco/tap/opencode
+  brew trust --formula gromgit/fuse/ntfs-3g-mac
+  brew trust --formula hashicorp/tap/terraform
+Trust other specific casks and commands with:
+  brew trust --cask <user>/<tap>/<cask>
+  brew trust --command <user>/<tap>/<command>
+Whole-tap trust is broader and includes all current and future formulae,
+casks and commands from the listed taps. Trust whole taps with:
+  brew trust anomalyco/tap gromgit/fuse hashicorp/tap
+Untap them with:
+  brew untap anomalyco/tap gromgit/fuse hashicorp/tap
+For more information, see:
+  https://docs.brew.sh/Tap-Trust
+Error: The following directories are not writable by your user:
+  /opt/homebrew
+  /opt/homebrew/lib/python3.12/site-packages
+  /opt/homebrew/lib/python3.13/site-packages
+  /opt/homebrew/lib/python3.14/site-packages
+  /opt/homebrew/share/fish
+  /opt/homebrew/share/fish/vendor_completions.d
+  /opt/homebrew/share/pwsh
+  /opt/homebrew/share/pwsh/completions
+  /opt/homebrew/share/zsh
+  /opt/homebrew/share/zsh/site-functions
+  /opt/homebrew/var/homebrew/locks
+
+You should change the ownership of these directories to your user,
+and make sure that you have write permission.
+  sudo chown -R warda /opt/homebrew /opt/homebrew/lib/python3.12/site-packages /opt/homebrew/lib/python3.13/site-packages /opt/homebrew/lib/python3.14/site-packages /opt/homebrew/share/fish /opt/homebrew/share/fish/vendor_completions.d /opt/homebrew/share/pwsh /opt/homebrew/share/pwsh/completions /opt/homebrew/share/zsh /opt/homebrew/share/zsh/site-functions /opt/homebrew/var/homebrew/locks
+  chmod u+w /opt/homebrew /opt/homebrew/lib/python3.12/site-packages /opt/homebrew/lib/python3.13/site-packages /opt/homebrew/lib/python3.14/site-packages /opt/homebrew/share/fish /opt/homebrew/share/fish/vendor_completions.d /opt/homebrew/share/pwsh /opt/homebrew/share/pwsh/completions /opt/homebrew/share/zsh /opt/homebrew/share/zsh/site-functions /opt/homebrew/var/homebrew/locks
+   ok
+
+[3] Python environment (numpy only; no torch needed here)
+   numpy 2.5.5
+
+[4] libmlvc at commit eb5d60a
+   commit eb5d60a (must be eb5d60a)
+
+[5] measurement program (duplex_bench) and tools
+[2/3] Linking CXX executable libmlvc_example
+   fixed-version check (must be 13): 13
+   thermal_log ok
+   bwload ok
+
+[6] Shams's pack: bundles, incoming streams, source clips, reference MD5s
+   bundle mlvc
+   bundle mlvc-s
+   bundle mlvc_1080p
+   bundle mlvc_540p
+   bundle mlvc_720p
+   bundle mlvc_multi
+   bundle mlvcs_1080p
+   bundle mlvcs_540p
+   bundle mlvcs_720p
+   Shams's libmlvc commit: eb5d60a
+
+[7] raw camera and incoming streams (same clips as B*), checked against Shams's MD5s
+   streams identical to Shams's: 8, different: 0
+
+[8] smoke test: full MLVC 360p, encoder and decoder on the NE, 5 s
+   requested=npu resolved=npu
+  send: 30.2 fps | service mean 12.48 ms p95 18.60 p99 19.99 | latency p95 23.46 p99 24.41 | late+dropped 0.00% | infer 11.56 / call 12.48 ms | fails 0 | 70 kbps
+  recv: 30.1 fps | service mean 14.19 ms p95 18.79 p99 19.29 | latency p95 22.31 p99 23.26 | late+dropped 0.00% | infer 13.23 / call 14.18 ms | fails 0 | 288 kbps
+
+== SETUP DONE. Next, the night run:  bash /Users/warda/DuplexNVC/cross_chip/scripts/cc_all

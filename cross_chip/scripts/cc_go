@@ -1,0 +1,58 @@
+#!/bin/bash
+# EVERYTHING IN ONE COMMAND on a second Mac (Warda's M4 Pro, Mohammed's M1):
+#     bash ~/DuplexNVC/cross_chip/scripts/cc_go
+# You only act in the first few minutes (password, GitHub sign-in, one checklist). Then it runs alone:
+#   setup (Wi-Fi on) -> specs -> Wi-Fi and Bluetooth OFF -> all runs (~7 h) -> Wi-Fi back ON -> results pushed to GitHub
+# If it stops for any reason, run the same command again: it continues where it stopped.
+# Before starting: ~/Downloads/cc_pack_shams.zip from the Drive folder, Wi-Fi ON, charger in.
+export PATH="$HOME/bin:$PATH"   # gh may live in ~/bin on a borrowed Mac
+D=$(cd "$(dirname "$0")" && pwd); REPO=$(cd "$D/../.." && pwd)
+say () { echo; echo "=============== $*"; }
+stop () { echo; echo "STOPPED: $*"; echo "Fix it, then run the same command again."; exit 1; }
+
+say "1/7  Your Mac password (asked once; nothing is shown while you type)"
+sudo -v || stop "password not accepted."
+( while true; do sudo -n true 2>/dev/null; sleep 50; done ) & KEEP=$!
+trap 'kill $KEEP 2>/dev/null' EXIT
+
+say "2/7  Checking the pack from Shams and the internet"
+[ -d ~/Downloads/cc_pack_shams ] || [ -f ~/Downloads/cc_pack_shams.zip ] || stop "cc_pack_shams.zip is not in Downloads. Download it from the Drive folder first."
+WIFI=$(networksetup -listallhardwareports | awk '/Wi-Fi/{getline; print $2}')
+sudo networksetup -setairportpower "$WIFI" on
+for i in $(seq 1 24); do curl -s -m 5 -o /dev/null https://github.com && break; sleep 5; done
+curl -s -m 5 -o /dev/null https://github.com || stop "no internet. Connect to Wi-Fi."
+if [ ! -x /opt/homebrew/bin/brew ]; then
+  echo "   installing Homebrew (5-10 min)"
+  NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" || stop "Homebrew install failed."
+fi
+eval "$(/opt/homebrew/bin/brew shellenv)"
+# gh and blueutil are optional: on a borrowed Mac, Homebrew may belong to the owner (not writable), so never change it
+say "3/7  GitHub (optional: without it the results are zipped for Drive and pushed later from another Mac)"
+if command -v gh >/dev/null && gh auth status >/dev/null 2>&1; then gh auth setup-git; echo "   signed in: results will be pushed"
+else echo "   no GitHub sign-in here: results go into a zip in Downloads (upload it to Drive)"; fi
+
+say "4/7  Setup (20-40 min the first time, skips what is done)"
+bash "$D/cc_setup" || stop "setup did not finish (see the lines above)."
+bash "$D/cc_specs" > /dev/null && echo "   specs saved: $(ls -t ~/Downloads/specs_*.txt | head -1)"
+
+say "5/7  Quiet mode: do these now, then press Enter"
+echo "   [ ] charger plugged in (the runs refuse to start on battery)"
+echo "   [ ] System Settings > Displays: brightness at MAXIMUM, Automatically adjust brightness OFF, True Tone OFF"
+echo "   [ ] System Settings > Battery: Low Power Mode OFF, Energy Mode = Automatic (if shown)"
+echo "   [ ] quit every app except Terminal (Cmd+Q)"
+echo "   [ ] lid stays open; do not touch the Mac until it says FINISHED (${HOURS:-about 7 h})"
+echo "   Wi-Fi and Bluetooth are turned off for you, and Wi-Fi comes back on at the end."
+read -r -p "   Press Enter to start... " _
+
+say "6/7  Runs (${HOURS:-about 7 h}). Wi-Fi and Bluetooth off now."
+sudo networksetup -setairportpower "$WIFI" off
+command -v blueutil >/dev/null && blueutil -p 0 || echo "   turn Bluetooth off yourself (Control Centre) if it is on"
+bash "$D/cc_all" ${MODE:-all}; RC=$?
+echo "   turning Wi-Fi and Bluetooth back on"
+sudo networksetup -setairportpower "$WIFI" on; command -v blueutil >/dev/null && blueutil -p 1
+[ $RC -eq 0 ] || stop "the runs stopped early (see the lines above)."
+
+say "7/7  Sending the results to GitHub"
+for i in $(seq 1 36); do curl -s -m 5 -o /dev/null https://github.com && break; sleep 5; done
+bash "$D/cc_collect"
+say "FINISHED $(date). Upload ~/Downloads/cc_results_*.zip and ~/Downloads/cc_raw_*.zip to the Drive folder, then tell the group."

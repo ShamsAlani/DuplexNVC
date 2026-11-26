@@ -1,0 +1,50 @@
+== DuplexNVC machine specs   Fri Nov 27 02:42:37 +04 2026
+tag: m4max_16in
+
+-- machine
+   Model Name: MacBook Pro
+   Model Identifier: Mac16,5
+   Model Number: Z1FW00142AB/A
+   Chip: Apple M4 Max
+   Total Number of Cores: 16 (12 Performance and 4 Efficiency)
+   Memory: 64 GB
+   System Firmware Version: 13822.81.10
+   Screen size (from model identifier): 16in
+   GPU cores: 40
+   Metal Support: Metal 4
+   Display Type: Built-in Liquid Retina XDR Display
+   Resolution: 3456 x 2234 Retina
+
+-- processor
+   CPU performance cores: 12   efficiency cores: 4
+   L2 per P-cluster: 16 MB   L2 per E-cluster: 4 MB
+   Neural Engine (Apple's figure): 16-core, 38 TOPS
+
+-- memory
+   unified memory: 64 GB
+   Type: LPDDR5
+   Manufacturer: Micron
+   memory bandwidth (Apple's figure): 546 GB/s
+   memory bandwidth measured from the CPU (copy, read+write, 10 s): 346.3 GB/s
+
+-- software
+   ProductName:		macOS
+   ProductVersion:		26.3
+   BuildVersion:		25D125
+   Command Line Tools: 26.3.0.0.1.1771626560
+   libmlvc commit: eb5d60a
+   bundles: mlvc mlvc-s mlvc_1080p mlvc_540p mlvc_720p mlvc_multi mlvcs_1080p mlvcs_540p mlvcs_720p 
+
+-- power and heat (must match between the Macs before timed runs)
+   Now drawing from 'AC Power'
+    -InternalBattery-0 (id=7471203)	100%; charged; 0:00 remaining present: true
+   Energy Mode (powermode): 0 = Automatic    lowpowermode: n/a
+   charger Wattage = 60W
+   charger Adapter Name = 61W USB-C Power Adapter
+   battery Cycle Count: 469
+   battery Condition: Normal
+   battery Maximum Capacity: 81%
+   uptime: 4 days
+
+-- free disk
+   403Gi free of 1.8Ti

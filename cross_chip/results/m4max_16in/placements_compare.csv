@@ -1,0 +1,15 @@
+model,res,enc,dec,label,shams_label,same_label,S,shams_S,fps30_send,fps30_recv,shams_fps30_send,shams_fps30_recv,L_send_pct,L_recv_pct,shams_L_send_pct,shams_L_recv_pct,p99_send_ms,p99_recv_ms,shams_p99_send_ms,shams_p99_recv_ms,mJ_per_pair,shams_mJ_per_pair,mJ_this_over_shams,mJ_NE,mJ_GPU,mJ_CPU,paced_runs
+mlvc,360p,npu,npu,30 fps,30 fps,True,1.113,1.11,30.004,30.008,30.01,30.01,0.0,0.0,0.0,0.0,30.211,29.171,29.27,28.93,64.675,65.3,0.99,62.773,-0.027,1.897,3
+mlvc,360p,gpu,npu,not run,30 fps,False,,1.36,,,30.0,30.0,,,0.1,0.0,,,23.8,21.1,,253.4,,,,,
+mlvc,540p,npu,npu,not run,15 fps only,False,,1.1,,,30.0,30.0,,,6.0,1.2,,,35.2,33.9,,184.2,,,,,
+mlvc,540p,gpu,npu,not run,30 fps,False,,1.39,,,30.0,30.0,,,0.1,0.0,,,31.1,25.4,,635.1,,,,,
+mlvc,720p,npu,npu,not run,15 fps only,False,,1.08,,,24.2,26.4,,,100.0,100.0,,,74.4,11642.0,,404.8,,,,,
+mlvc,720p,gpu,npu,not run,15 fps only,False,,1.45,,,22.4,30.0,,,100.0,0.0,,,78.6,27.6,,1242.4,,,,,
+mlvc,1080p,npu,npu,not run,infeasible,False,,1.08,,,11.4,15.7,,,100.0,100.0,,,120.3,52759.1,,1562.9,,,,,
+mlvc,1080p,gpu,npu,not run,infeasible,False,,1.52,,,10.3,19.8,,,100.0,100.0,,,130.2,29737.0,,3779.8,,,,,
+mlvcs,540p,npu,npu,not run,30 fps,False,,1.15,,,30.0,30.0,,,0.0,0.0,,,26.9,26.1,,45.0,,,,,
+mlvcs,540p,gpu,npu,not run,30 fps,False,,1.37,,,30.0,30.0,,,0.0,0.0,,,22.3,19.8,,126.4,,,,,
+mlvcs,720p,npu,npu,not run,15 fps only,False,,1.12,,,30.0,30.0,,,3.3,0.5,,,34.5,32.7,,108.9,,,,,
+mlvcs,720p,gpu,npu,not run,30 fps,False,,1.5,,,30.0,30.0,,,0.1,0.0,,,25.8,24.3,,333.4,,,,,
+mlvcs,1080p,npu,npu,not run,15 fps only,False,,1.11,,,30.0,30.0,,,0.0,100.0,,,26.8,42.3,,291.6,,,,,
+mlvcs,1080p,gpu,npu,not run,15 fps only,False,,1.46,,,27.6,30.0,,,100.0,0.0,,,69.8,25.5,,991.0,,,,,
