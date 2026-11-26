@@ -6,8 +6,9 @@
 
 A2 ran inside baseline experiment 11 ([`baseline/11_correctness_drift_experiment`](../../baseline/11_correctness_drift_experiment/)), because it needs exactly the same 9 encoder → decoder pairs, on a MacBook Pro 14-inch M4 Pro, macOS 26.6.2, libmlvc `eb5d60a`, normal use (quality only):
 
-- **The four settings that reach 30 fps or are on the front:** 20 Nov 2026, 12:31 am – 11:00 pm and 21 Nov, 10:40 pm – 22 Nov, 8:01 am (+04).
-- **The other three** (full MLVC 720p, MLVC-S 1080p, full MLVC 1080p): 23 Nov, 4:17 pm – 26 Nov, 8:15 pm, as the Mac's overnight filler: 960 jobs, 43.3 h of runs, paused three times for other measurements and resumed where it stopped (nothing repeated). Every job decoded on all 9 pairs without a failure.
+- **In total 2,240 jobs and 58.5 h of runs**, in two parts (every job = one clip at one QP, decoded on all 9 pairs):
+  - full MLVC 360p (B\*) and 540p, MLVC-S 540p and 720p: 20 Nov 2026, 12:31 am – 11:00 pm and 21 Nov, 10:40 pm – 22 Nov, 8:01 am (+04); 1,280 jobs, 15.2 h (the `l16` failure on MLVC-S and its fix are described in experiment 11);
+  - full MLVC 720p and 1080p, MLVC-S 1080p: 23 Nov, 4:17 pm – 26 Nov, 8:15 pm, as the Mac's overnight filler, paused three times for other measurements and resumed where it stopped (nothing repeated); 960 jobs, 43.3 h. These jobs are slower (about 4.3 minutes each at full MLVC 1080p against about half a minute at 360p). Every job decoded on all 9 pairs without a failure.
 
 - **Bounds** (`mlvc encode` options): I-frame every 32 (`i32`: `--iframe-period 32`) and every 16 (`i16`); LTR recovery every 32 (`l32`: `--ltr-period 16 --ltr-recovery-period 2`) and every 16 (`l16`: `--ltr-period 8 --ltr-recovery-period 2 --ltr-start-idx 0`); against the default structure (an I-frame every 64 frames).
 - **Settings:** all seven: full MLVC 360p (B\*), MLVC-S 540p and MLVC-S 720p (the two 30 fps settings on the energy–quality front), full MLVC 540p, and full MLVC 720p, MLVC-S 1080p and full MLVC 1080p (which reach only 15 fps or none, measured for completeness).
