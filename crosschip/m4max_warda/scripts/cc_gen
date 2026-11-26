@@ -1,0 +1,6 @@
+#!/bin/bash
+# GENERATIONAL COMPARISON ONLY, one command (setup + about 40 min of runs + push):
+#     bash ~/DuplexNVC/crosschip/m4max_warda/scripts/cc_gen
+# Runs: B* (each network alone, turns, duplex x2; paced 30 fps x3 with energy) and the other 6 settings
+# (encoder and decoder alone on the NE). Same steps as cc_go: password, GitHub sign-in, one checklist, then hands off.
+MODE=gen HOURS="about 40 min" exec bash "$(cd "$(dirname "$0")" && pwd)/cc_go"

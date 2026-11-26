@@ -1,0 +1,78 @@
+#!/bin/bash
+# DuplexNVC cross-chip study: every machine spec we compare, on any Apple Silicon Mac.
+# Run on EVERY Mac in the study (Shams's M4 Pro, Warda's M4 Pro, Mohammed's M1):
+#     bash <repo>/crosschip/m4max_warda/scripts/cc_specs
+# No password, nothing installed, about 20 s (the last 10 s measure memory bandwidth).
+# Writes ~/Downloads/specs_<chip>_<size>.txt  (send this file to the group / put it in crosschip/m4max_warda/results/<tag>/).
+D=$(cd "$(dirname "$0")" && pwd)
+MID=$(sysctl -n hw.model)
+CHIP=$(sysctl -n machdep.cpu.brand_string)
+case $MID in
+  MacBookPro17,1) SIZE=13in;; MacBookPro18,1|MacBookPro18,2) SIZE=16in;; MacBookPro18,3|MacBookPro18,4) SIZE=14in;;
+  Mac14,7) SIZE=13in;; Mac14,5|Mac14,9) SIZE=14in;; Mac14,6|Mac14,10) SIZE=16in;;
+  Mac15,3|Mac15,6|Mac15,8|Mac15,10) SIZE=14in;; Mac15,7|Mac15,9|Mac15,11) SIZE=16in;;
+  Mac16,1|Mac16,6|Mac16,8) SIZE=14in;; Mac16,5|Mac16,7) SIZE=16in;;
+  *) SIZE=unknown;;
+esac
+TAG=$(echo "$CHIP" | sed 's/Apple //' | tr -d ' ' | tr 'A-Z' 'a-z')_$SIZE
+OUT=~/Downloads/specs_$TAG.txt
+# Apple's published figures (not measurable from software): memory bandwidth and Neural Engine
+case $CHIP in
+  "Apple M1") BW=68; NE="16-core, 11 TOPS";;        "Apple M1 Pro") BW=200; NE="16-core, 11 TOPS";;
+  "Apple M1 Max") BW=400; NE="16-core, 11 TOPS";;   "Apple M2") BW=100; NE="16-core, 15.8 TOPS";;
+  "Apple M2 Pro") BW=200; NE="16-core, 15.8 TOPS";; "Apple M2 Max") BW=400; NE="16-core, 15.8 TOPS";;
+  "Apple M3") BW=100; NE="16-core, 18 TOPS";;       "Apple M3 Pro") BW=150; NE="16-core, 18 TOPS";;
+  "Apple M3 Max") NE="16-core, 18 TOPS"
+     [ "$(system_profiler SPDisplaysDataType 2>/dev/null | awk '/Total Number of Cores/{print $NF; exit}')" = 40 ] && BW=400 || BW=300;;
+  "Apple M4") BW=120; NE="16-core, 38 TOPS";;       "Apple M4 Pro") BW=273; NE="16-core, 38 TOPS";;
+  "Apple M4 Max") NE="16-core, 38 TOPS"
+     [ "$(system_profiler SPDisplaysDataType 2>/dev/null | awk '/Total Number of Cores/{print $NF; exit}')" = 40 ] && BW=546 || BW=410;;
+  *) BW="?"; NE="?";;
+esac
+{
+echo "== DuplexNVC machine specs   $(date)"
+echo "tag: $TAG"
+echo
+echo "-- machine"
+system_profiler SPHardwareDataType 2>/dev/null | grep -E "Model Name|Model Identifier|Model Number|Chip|Total Number of Cores|Memory:|System Firmware" | sed 's/^ */   /'
+echo "   Screen size (from model identifier): $SIZE"
+system_profiler SPDisplaysDataType 2>/dev/null | grep -E "Total Number of Cores|Metal Support|Resolution|Display Type" | sed 's/^ */   /' | sed 's/Total Number of Cores/GPU cores/'
+echo
+echo "-- processor"
+echo "   CPU performance cores: $(sysctl -n hw.perflevel0.physicalcpu 2>/dev/null)   efficiency cores: $(sysctl -n hw.perflevel1.physicalcpu 2>/dev/null)"
+echo "   L2 per P-cluster: $(( $(sysctl -n hw.perflevel0.l2cachesize 2>/dev/null || echo 0) / 1048576 )) MB   L2 per E-cluster: $(( $(sysctl -n hw.perflevel1.l2cachesize 2>/dev/null || echo 0) / 1048576 )) MB"
+echo "   Neural Engine (Apple's figure): $NE"
+echo
+echo "-- memory"
+echo "   unified memory: $(( $(sysctl -n hw.memsize) / 1073741824 )) GB"
+system_profiler SPMemoryDataType 2>/dev/null | grep -E "Type:|Manufacturer:" | head -2 | sed 's/^ */   /'
+echo "   memory bandwidth (Apple's figure): $BW GB/s"
+if command -v clang >/dev/null; then
+  clang -O2 -o /tmp/cc_bwload "$D/bwload.c" -lpthread 2>/dev/null && \
+  echo "   memory bandwidth measured from the CPU (copy, read+write, 10 s): $(/tmp/cc_bwload $(( $(sysctl -n hw.ncpu) - 2 )) 10 0 | sed 's/.*achieved //')"
+else
+  echo "   memory bandwidth measured: skipped (no compiler: run  xcode-select --install)"
+fi
+echo
+echo "-- software"
+sw_vers | sed 's/^/   /'
+echo "   Command Line Tools: $(pkgutil --pkg-info=com.apple.pkg.CLTools_Executables 2>/dev/null | grep version | cut -d' ' -f2)"
+W=~/Downloads/duplexnvc-baseline
+echo "   libmlvc commit: $(cat $W/LIBMLVC_COMMIT.txt 2>/dev/null || git -C $W/libmlvc rev-parse --short HEAD 2>/dev/null || echo 'not set up')"
+echo "   bundles: $(ls $W/bundles 2>/dev/null | tr '\n' ' ')"
+echo
+echo "-- power and heat (must match between the Macs before timed runs)"
+pmset -g batt | head -2 | sed 's/^/   /'
+PM=$(pmset -g | awk '/ powermode /{print $2}'); LP=$(pmset -g | awk '/ lowpowermode /{print $2}')
+case $PM in 0) PMN="Automatic";; 1) PMN="Low Power";; 2) PMN="High Power";; *) PMN="not offered";; esac
+echo "   Energy Mode (powermode): ${PM:-n/a} = $PMN    lowpowermode: ${LP:-n/a}"
+pmset -g ac 2>/dev/null | grep -E "Wattage|Name" | sed 's/^ */   charger /'
+system_profiler SPPowerDataType 2>/dev/null | grep -E "Cycle Count|Condition|Maximum Capacity" | sed 's/^ */   battery /'
+pmset -g therm 2>/dev/null | grep -vE "^$|Note" | sed 's/^/   /'
+echo "   uptime: $(uptime | sed 's/.*up \([^,]*\),.*/\1/')"
+echo
+echo "-- free disk"
+df -h ~ | tail -1 | awk '{print "   " $4 " free of " $2}'
+} | tee "$OUT"
+echo
+echo "Saved: $OUT"

@@ -1,0 +1,35 @@
+#!/bin/bash
+# After cc_all: copy this Mac's results into the repo, zip the raw data for Drive, and push.  Wi-Fi on.
+#     bash ~/DuplexNVC/crosschip/m4max_warda/scripts/cc_collect
+# Repo:  crosschip/m4max_warda/results/<chip>_<size>/   (summary CSVs, summary.txt, specs, logs, thermal, decode results)
+#        crosschip/m4max_warda/results/all_macs.csv      (every Mac that has pushed, side by side, + Shams's baseline + M3 Pro paper)
+# Drive: ~/Downloads/cc_raw_<chip>_<size>.zip (every run: frames.csv, run.txt, power.txt, logs; no video)
+export PATH="$HOME/bin:$PATH"   # gh may live in ~/bin on a borrowed Mac
+D=$(cd "$(dirname "$0")" && pwd); REPO=$(cd "$D" && while [ ! -d baseline ] && [ "$PWD" != / ]; do cd ..; done; pwd)
+S="$REPO/baseline/common/scripts"; [ -f "$S/settings.sh" ] && . "$S/settings.sh" || . "$S/v"; CC="$WORK/crosschip"
+bash "$D/cc_specs" > /dev/null
+SPEC=$(ls -t ~/Downloads/specs_*.txt | head -1); TAG=$(basename "$SPEC" .txt); TAG=${TAG#specs_}
+OUT="$(dirname "$D")/results/$TAG"; mkdir -p "$OUT/logs"
+echo "== collecting $TAG"
+"$PY" "$D/cc_sum.py" "$CC" "$TOOLS" "$REPO" > /dev/null
+cp "$CC"/summary/* "$OUT/"; cp "$SPEC" "$OUT/specs.txt"
+cp "$CC"/out_cc_all.txt "$CC"/setup_log.txt "$OUT/logs/" 2>/dev/null
+[ -f "$CC/thermal.csv" ] && cp "$CC/thermal.csv" "$OUT/logs/"
+[ -f "$CC/contention/peak.txt" ] && cp "$CC/contention/peak.txt" "$OUT/logs/contention_peak.txt"
+for f in "$CC"/decode/*/result.txt; do [ -f "$f" ] && cp "$f" "$OUT/logs/decode_$(basename "$(dirname "$f")").txt"; done
+for f in "$CC"/ref/specs_*.txt; do  # Shams's specs (from her pack)
+  [ -f "$f" ] && t=$(basename "$f" .txt) && mkdir -p "$(dirname "$D")/results/${t#specs_}" && cp "$f" "$(dirname "$D")/results/${t#specs_}/specs.txt"
+done
+"$PY" "$D/cc_compare.py" "$REPO" "$(dirname "$D")/results"
+Z=~/Downloads/cc_raw_$TAG.zip; rm -f "$Z"
+(cd "$CC" && zip -r -q "$Z" . -x "*.nv12" "*.mlvc" "*.aus" "ref/*" "*/__pycache__/*")
+echo "raw data: $Z ($(du -h "$Z" | cut -f1)) -> upload it to the shared Drive folder"
+RZ=~/Downloads/cc_results_$TAG.zip; rm -f "$RZ"
+(cd "$(dirname "$D")" && zip -r -q "$RZ" . -x "*/__pycache__/*")
+echo "results + scripts: $RZ -> upload it to the shared Drive folder (anyone can push it from their own Mac)"
+if command -v gh >/dev/null && gh auth status >/dev/null 2>&1; then
+  cd "$REPO" && git pull -q origin main && git add "$(dirname "$D")" && git commit -q -m "Cross-chip results: $TAG" && git push -q origin main \
+    && echo "pushed: $(dirname "$D")/results/$TAG" || echo "push did not happen: the zip above has everything"
+else
+  echo "not pushed (no GitHub sign-in on this Mac): the zip above has everything"
+fi

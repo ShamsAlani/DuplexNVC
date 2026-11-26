@@ -1,0 +1,252 @@
+#!/bin/bash
+# DuplexNVC CROSS-CHIP STUDY: one command, unattended and RESUMABLE. Same protocol as Shams's reference M4 Pro.
+#
+#   bash ~/DuplexNVC/crosschip/m4max_warda/scripts/cc_all gen      GENERATIONAL COMPARISON ONLY, about 40 min (what cc_gen runs)
+#   bash ~/DuplexNVC/crosschip/m4max_warda/scripts/cc_all          everything, about 7 h (one night)
+#   bash ~/DuplexNVC/crosschip/m4max_warda/scripts/cc_all mon      plan Day 6: B* timing, energy, 7 settings  (~5.5 h)
+#   bash ~/DuplexNVC/crosschip/m4max_warda/scripts/cc_all tue      plan Day 7: decode check, contention        (~1.5 h)
+#
+# Before starting (quiet mode, as for every timed run in the baseline):
+#   charger in; Low Power Mode off; Energy Mode the SAME as Shams's (cc_specs shows it);
+#   Wi-Fi and Bluetooth off; brightness at maximum, automatic brightness and True Tone off;
+#   quit every app except Terminal; leave the Mac alone with the lid open.
+# It asks for your Mac password once at the start (powermetrics), then needs nothing.
+# Ctrl-C stops it at any time; run the same command again and it continues where it stopped.
+#
+# Parts (each skips runs already done):
+#   1 decode    Shams's bitstreams decoded here on NE (twice), GPU, CPU: identical to Shams's NE decode? drift?
+#               and B*'s incoming stream re-encoded here: same bitstream as Shams's? (determinism)
+#   2 bstar     B* (full MLVC 360p, NE-NE): baseline experiment 03 protocol exactly, 31 runs (= ./x)
+#   3 energy    B* energy: 120 s idle + 5 paced runs with powermetrics (= ./w)
+#   4 contention  memory-bandwidth load 0/25/50/75 % from the CPU while one network runs alone on the NE,
+#               full MLVC 360p and 720p, 2 rounds
+#   5 settings  the 7 model/resolution settings: each network alone on the NE (2 rounds), encoder alone on the GPU
+#               (2 rounds), and the two placements that won on Shams's Mac, NE-NE and GPU-NE: unpaced turns+duplex
+#               (NE-NE, 2 rounds), paced 30 fps 3 x 60 s with powermetrics, 15 fps 3 x 60 s if 30 fps fails
+#   6 summary   tables comparing this Mac with Shams's M4 Pro and the MLVC paper's M3 Pro
+D=$(cd "$(dirname "$0")" && pwd); REPO=$(cd "$D" && while [ ! -d baseline ] && [ "$PWD" != / ]; do cd ..; done; pwd)
+S="$REPO/baseline/common/scripts"; [ -f "$S/settings.sh" ] && . "$S/settings.sh" || . "$S/v"; [ -f "$S/settings_phase2.sh" ] && . "$S/settings_phase2.sh" || . "$S/s2cfg"
+CC="$WORK/crosschip"; mkdir -p "$CC"
+exec > >(tee -a "$CC/out_cc_all.txt") 2>&1
+REST=${REST:-60}
+case ${1:-all} in
+  gen) PARTS="gen"; REST=${REST_GEN:-30};;
+  all) PARTS="decode bstar energy contention settings";;
+  mon) PARTS="bstar energy settings";;
+  tue) PARTS="decode contention";;
+  summary) PARTS="";;
+  *) PARTS="$*";;
+esac
+echo; echo "== CROSS-CHIP START  $(date)   parts: ${PARTS:-summary only}   rest=${REST}s"
+echo "   $(sysctl -n machdep.cpu.brand_string), $(sysctl -n hw.model), $(( $(sysctl -n hw.memsize) / 1073741824 )) GB; $(sw_vers -productVersion) ($(sw_vers -buildVersion))"
+
+# ---------- checks ----------
+[ -x "$TOOLS/bwload" ] || clang -O2 -o "$TOOLS/bwload" "$D/bwload.c" -lpthread
+[ -x "$TOOLS/thermal_log" ] || swiftc -O "$TOOLS/thermal_log.swift" -o "$TOOLS/thermal_log" 2>/dev/null || swiftc -O "$REPO/baseline/common/code/thermal_log.swift" -o "$TOOLS/thermal_log"
+for f in "$BENCH" "$MLVC" "$PY" "$TOOLS/analyze_run.py" "$TOOLS/bwload" "$CAM" "$BINC/incoming.aus"; do
+  [ -e "$f" ] || { echo "MISSING $f  -> run cc_setup first"; exit 1; }
+done
+for s in $NEW; do cfg $s; [ -d "$(bund $s)" ] && [ -s "$(incf $s)" ] && [ -s "$(camf $s)" ] || { echo "MISSING bundle or stream for $s -> run cc_setup first"; exit 1; }; done
+if [ -n "$PARTS" ]; then
+  pmset -g batt | head -1 | grep -q "AC Power" || { echo "STOPPED: plug in the charger."; exit 1; }
+  [ "$(pmset -g | awk '/ lowpowermode /{print $2}')" = 1 ] && { echo "STOPPED: turn Low Power Mode off (System Settings > Battery)."; exit 1; }
+  WIFI=$(networksetup -listallhardwareports | awk '/Wi-Fi/{getline; print $2}')
+  networksetup -getairportpower "$WIFI" 2>/dev/null | grep -q "On" && { echo "STOPPED: turn Wi-Fi off (and Bluetooth), then run again."; exit 1; }
+  echo "   Energy Mode: $(pmset -g | awk '/ powermode /{print $2}') (0 = Automatic; must match Shams's)"
+  echo "   Reminder: brightness at maximum, automatic brightness and True Tone off, Bluetooth off, no other apps."
+  sudo -v || exit 1
+  ( while true; do sudo -n true 2>/dev/null; sleep 50; done ) & KEEP=$!
+  sudo mdutil -a -i off >/dev/null 2>&1 && echo "   Spotlight indexing paused"
+  pkill caffeinate 2>/dev/null; caffeinate -dimsu & CAF=$!
+  "$TOOLS/thermal_log" >> "$CC/thermal.csv" & THERM=$!
+  cleanup () { kill $KEEP $THERM $CAF 2>/dev/null; sudo mdutil -a -i on >/dev/null 2>&1; }
+  trap 'cleanup; echo "== stopped $(date). Run the same command again to continue."; exit 1' INT TERM
+fi
+T0=$(date +%s); n=0
+done_run () { [ -s "$1/frames.csv" ] && [ -s "$1/run.txt" ]; }
+rest () { sleep $REST; }
+bench () {  # bench <outdir> <setting> <mode> <enc_cu> <dec_cu> <fps> <seconds>   (same as baseline 09 'all')
+  local O=$1 s=$2 mode=$3 ec=$4 dc=$5 fps=$6 sec=$7; n=$((n+1))
+  if done_run "$O"; then echo "   skip (done) ${O#$CC/}"; return 1; fi
+  cfg $s; mkdir -p "$(dirname "$O")"; local extra=""; [ "$fps" = 15 ] && extra="--deadline-ms 66.7"
+  echo "[$n] $(date +%H:%M:%S) +$(( ($(date +%s)-T0)/60 ))min  ${O#$CC/}"
+  "$BENCH" $mode --input "$(camf $s)" --size $VSIZE --qp 26 --iframe-period 64 --bundles "$(bund $s)" --incoming "$(incf $s)" \
+     --enc-cu $ec --dec-cu $dc --fps $fps --seconds $sec --warmup-frames 64 $extra --out-dir "$O" 2> "$O.log"
+  pmset -g therm 2>/dev/null | grep -iE "speed_limit|warning" | tr -s ' \n' ' ' > "$O.therm"
+  grep -oE "requested=[a-z]+ resolved=[a-z]+|FAILED|rror[^.]*" "$O.log" | sort -u | tr '\n' ' '; echo
+  return 0
+}
+idle () {  # idle <dir>: 120 s idle power
+  [ -s "$1/power.txt" ] && return; mkdir -p "$1"; echo "   $(date +%H:%M:%S) idle power 120 s, do not touch the Mac"
+  sudo powermetrics --samplers cpu_power,gpu_power -i 100 -n 1200 -o "$1/power.txt" >/dev/null 2>&1
+}
+paced_pm () {  # paced_pm <outdir> <setting> <enc> <dec> <fps>: paced duplex run with powermetrics
+  local O=$1; if done_run "$O"; then n=$((n+1)); echo "   skip (done) ${O#$CC/}"; return 1; fi
+  mkdir -p "$O"; sudo powermetrics --samplers cpu_power,gpu_power -i 100 -n 700 -o "$O/power.txt" >/dev/null 2>&1 & local PM=$!
+  sleep 3; bench "$O" $2 duplex $3 $4 $5 60; wait $PM; return 0
+}
+late_any () {  # exit 0 if median late/dropped >= 1 % in either direction (same rule as baseline 09)
+  "$PY" - "$TOOLS" "$@" <<'PY'
+import sys, glob, statistics as st; sys.path.insert(0, sys.argv[1]); import analyze_run as A
+worst = 0
+for d in ("E", "D"):
+    v = []
+    for r in sorted(glob.glob(sys.argv[2])):
+        try:
+            m, fr = A.load(r); s = A.direction_summary(m, fr, d)
+            if s: v.append(s["late_or_dropped_pct"])
+        except Exception: pass
+    if v: worst = max(worst, st.median(v))
+print(f"   median late/dropped, worst direction: {worst:.2f} %"); sys.exit(0 if worst >= 1.0 else 1)
+PY
+}
+
+b1 () {  # b1 <run name> <bench args...>: a B* run into $R (baseline 03 style)
+  local O="$R/$1"; shift; n=$((n+1)); if done_run "$O"; then echo "   skip (done) $(basename "$O")"; return 1; fi
+  echo "[$n] $(date +%H:%M:%S) +$(( ($(date +%s)-T0)/60 ))min  $(basename "$O")"; "$BENCH" "$@" --out-dir "$O" 2> "$O.log"
+  grep -oE "requested=[a-z]+ resolved=[a-z]+|FAILED|rror[^.]*" "$O.log" | sort -u | tr '\n' ' '; echo; return 0; }
+
+# ---------- gen: the generational comparison only (about 40 min) ----------
+# B*: each network alone + turns + duplex (2 rounds) -> NE speed per network, sharing speedup S
+# B*: paced 30 fps x 3 with powermetrics + 120 s idle -> meets 30 fps?, slowest frames, energy per frame pair
+# 6 other settings: encoder and decoder alone on the NE (1 round) -> NE speed per resolution and model, vs M3 Pro and M4 Pro
+part_gen () {
+  echo; echo "== PART gen (generational comparison)  $(date)"
+  R="$CC/bl_bstar"; local E="$CC/bl_energy"; mkdir -p "$R" "$E"
+  for r in 1 2; do for m in alone-enc alone-dec turns duplex; do b1 T_${m}_r$r $m $BL --fps 0 --seconds 60 && rest; done; done
+  idle "$E/idle"
+  for r in 1 2 3; do
+    local O="$R/T_duplex30_r$r"
+    if done_run "$O"; then n=$((n+1)); echo "   skip (done) T_duplex30_r$r"
+    else
+      mkdir -p "$O"; sudo powermetrics --samplers cpu_power,gpu_power -i 100 -n 800 -o "$O/power.txt" >/dev/null 2>&1 & local PM=$!
+      sleep 5; b1 T_duplex30_r$r duplex $BL --fps 30 --seconds 60; wait $PM; rest
+    fi
+    ln -sfn "$O" "$E/W_r$r"
+  done
+  for s in $NEW; do for m in alone-enc alone-dec; do bench "$CC/settings/alone/$s/U_${m}_npu_r1" $s $m npu npu 0 60 && rest; done; done
+}
+
+# ---------- 1 decode: do two Macs decode (and encode) identically? ----------
+part_decode () {
+  echo; echo "== PART decode  $(date)"; local X="$CC/decode"; mkdir -p "$X"
+  fmd5 () { "$PY" - "$1" "$2" <<'PY'
+import hashlib, sys
+w, h = map(int, sys.argv[2].split("x")); fb = w * h * 3 // 2
+with open(sys.argv[1], "rb") as f:
+    i = 0
+    while True:
+        b = f.read(fb)
+        if len(b) < fb: break
+        print(i, hashlib.md5(b).hexdigest()); i += 1
+PY
+  }
+  one () {  # one <name> <stream.mlvc> <bundle> <WxH> <reference md5 file>
+    local nm=$1 in=$2 b=$3 sz=$4 ref=$5 O="$X/$1"
+    [ -s "$O/result.txt" ] && { echo "   skip (done) decode $nm"; return; }
+    mkdir -p "$O"; echo "   $(date +%H:%M:%S) decode $nm"
+    for cu in npu npu2 gpu cpu; do
+      "$MLVC" decode --model-bundles-dir "$b" --compute-unit ${cu%2} --input "$in" --output "$O/dec_$cu.nv12" > "$O/dec_$cu.log" 2>&1 \
+        && echo "decode $cu: ok" || echo "decode $cu: FAILED"
+    done > "$O/status.txt"
+    fmd5 "$O/dec_npu.nv12" $sz > "$O/md5_npu.txt"
+    {
+      cat "$O/status.txt"
+      cmp -s "$O/dec_npu.nv12" "$O/dec_npu2.nv12" && echo "NE decode deterministic on this Mac: yes" || echo "NE decode deterministic on this Mac: NO"
+      if [ -s "$ref" ]; then
+        echo "NE frames identical to Shams's NE decode: $(join <(sort "$O/md5_npu.txt") <(sort "$ref") | awk '$2==$3' | wc -l | tr -d ' ') of $(wc -l < "$ref" | tr -d ' ')"
+      fi
+      echo "-- drift NE vs GPU (this Mac)"; "$PY" "$TOOLS/quality_tools.py" drift "$O/dec_npu.nv12" "$O/dec_gpu.nv12" $sz --iframe-period 64
+      echo "-- drift NE vs CPU (this Mac)"; "$PY" "$TOOLS/quality_tools.py" drift "$O/dec_npu.nv12" "$O/dec_cpu.nv12" $sz --iframe-period 64
+    } > "$O/result.txt" 2>&1
+    grep -E "identical|deterministic|FAILED|bit-identical" "$O/result.txt" | sed 's/^/      /'
+    rm -f "$O"/dec_*.nv12
+  }
+  [ -s "$CC/ref/bstar_outgoing.mlvc" ] && one bstar_outgoing "$CC/ref/bstar_outgoing.mlvc" "$WORK/bundles/mlvc" 640x360 "$CC/ref/ref_md5/bstar_outgoing.txt"
+  for s in mlvc_360p $NEW; do cfg $s; one incoming_$s "$(dirname "$(incf $s)")/incoming.mlvc" "$(bund $s)" $VSIZE "$CC/ref/ref_md5/incoming_$s.txt"; done
+  local E="$X/encode_mlvc_360p"
+  if [ ! -s "$E/result.txt" ]; then
+    mkdir -p "$E"; echo "   $(date +%H:%M:%S) encode B*'s incoming stream on this Mac's NE (determinism across Macs)"
+    "$BENCH" prepare --input "$INCSRC" --size 640x360 --qp 26 --iframe-period 64 --bundles "$WORK/bundles/mlvc" --enc-cu npu --out-dir "$E" 2> "$E/prepare.log"
+    { cmp -s "$E/incoming.mlvc" "$BINC/incoming.mlvc" && echo "same bitstream as Shams's Mac: YES" || echo "same bitstream as Shams's Mac: NO ($(cmp "$E/incoming.mlvc" "$BINC/incoming.mlvc" | head -1))"
+      echo "bytes here $(stat -f %z "$E/incoming.mlvc"), Shams $(stat -f %z "$BINC/incoming.mlvc")"; } > "$E/result.txt"
+    sed 's/^/      /' "$E/result.txt"; rm -f "$E/incoming.aus"
+  else echo "   skip (done) encode determinism"; fi
+}
+
+# ---------- 2 bstar: experiment 03 protocol (same runs and order as ./x) ----------
+part_bstar () {
+  echo; echo "== PART bstar  $(date)"; R="$CC/bl_bstar"; mkdir -p "$R"
+  for r in 1 2 3 4 5; do for m in turns alone-enc alone-dec duplex; do b1 T_${m}_r$r $m $BL --fps 0 --seconds 60 && rest; done; done
+  for r in 1 2 3 4 5; do b1 T_duplex30_r$r duplex $BL --fps 30 --seconds 60 && rest; done
+  for r in 1 2 3; do b1 T_turns30_r$r turns $BL --fps 30 --seconds 60 && rest; done
+  for r in 1 2 3; do
+    [ -s "$R/T_cli_r$r.log" ] && grep -q "^|" "$R/T_cli_r$r.log" && { echo "   skip (done) T_cli_r$r"; continue; }
+    echo "   $(date +%H:%M:%S) libmlvc CLI cross-check $r"; mkdir -p "$R/T_cli_r$r"
+    "$MLVC" benchmark --model-bundles-dir "$WORK/bundles/mlvc" --num-encoders 1 --num-decoders 1 --input "$CAM:640x360" --qp 26 \
+      --iframe-period 64 --duration-seconds 60 --output-dir "$R/T_cli_r$r" > "$R/T_cli_r$r.log" 2>&1; rest
+  done
+}
+
+# ---------- 3 energy: experiment 06 protocol (= ./w) ----------
+part_energy () {
+  echo; echo "== PART energy  $(date)"; local E="$CC/bl_energy"; mkdir -p "$E"; idle "$E/idle"
+  for r in 1 2 3 4 5; do
+    local O="$E/W_r$r"; if done_run "$O"; then echo "   skip (done) W_r$r"; continue; fi
+    echo "   $(date +%H:%M:%S) B* duplex 30 fps + power, run $r/5"; mkdir -p "$O"
+    sudo powermetrics --samplers cpu_power,gpu_power -i 100 -n 800 -o "$O/power.txt" >/dev/null 2>&1 & local PM=$!
+    sleep 5; "$BENCH" duplex $BL --fps 30 --seconds 60 --out-dir "$O" 2> "$O.log"; wait $PM
+    "$PY" "$TOOLS/analyze_run.py" power "$O" --pm "$O/power.txt" --idle-pm "$E/idle/power.txt" --json "$O/energy.json" | tail -1
+    rest
+  done
+}
+
+# ---------- 4 contention: is memory bandwidth the limit on the NE? ----------
+part_contention () {
+  echo; echo "== PART contention  $(date)"; local C="$CC/contention"; mkdir -p "$C"
+  local TH=$(( $(sysctl -n hw.ncpu) - 2 ))   # leave two cores free for the benchmark's own CPU work
+  if [ ! -s "$C/peak.txt" ]; then
+    echo "   $(date +%H:%M:%S) measuring peak CPU copy bandwidth (20 s, $TH threads)"
+    "$TOOLS/bwload" $TH 20 0 | tee "$C/peak.txt"; sleep 30
+  fi
+  local PEAK=$(sed 's/.*achieved \([0-9.]*\).*/\1/' "$C/peak.txt"); echo "   peak $PEAK GB/s (100 %)"
+  for r in 1 2; do for s in mlvc_360p mlvc_720p; do for L in 0 25 50 75; do for m in alone-enc alone-dec; do
+    local O="$C/$s/L$L/U_${m}_npu_r$r"
+    if done_run "$O"; then n=$((n+1)); echo "   skip (done) ${O#$CC/}"; continue; fi
+    mkdir -p "$O"; local BW=0
+    if [ $L -gt 0 ]; then
+      local TGT=$(echo "$PEAK * $L / 100" | bc -l)
+      "$TOOLS/bwload" $TH 600 $TGT > "$O/load.txt" & BW=$!; sleep 3
+    fi
+    bench "$O" $s $m npu npu 0 60
+    if [ $BW != 0 ]; then kill $BW; wait $BW 2>/dev/null; echo "      load: $(sed 's/.*achieved //' "$O/load.txt")"; fi
+    rest
+  done; done; done; done
+}
+
+# ---------- 5 settings: the 7 model/resolution settings and the two winning placements ----------
+part_settings () {
+  echo; echo "== PART settings  $(date)"; local S="$CC/settings"; mkdir -p "$S"; idle "$S/idle"
+  PAIRS="mlvc_360p mlvc_540p mlvc_720p mlvc_1080p mlvcs_540p mlvcs_720p mlvcs_1080p"
+  echo "-- each network alone on the NE; encoder alone on the GPU"
+  for r in 1 2; do for s in $PAIRS; do
+    for m in alone-enc alone-dec; do bench "$S/alone/$s/U_${m}_npu_r$r" $s $m npu npu 0 60 && rest; done
+    bench "$S/alone/$s/U_alone-enc_gpu_r$r" $s alone-enc gpu npu 0 60 && rest
+  done; done
+  for s in $PAIRS; do for p in npu-npu gpu-npu; do
+    local ec=${p%-*} dc=${p#*-} P="$S/${s}_$p"
+    echo "-- $s  encoder $ec  decoder $dc"
+    if [ "$s-$p" = mlvc_360p-npu-npu ]; then echo "   = B*: measured in parts bstar and energy"; continue; fi
+    [ $p = npu-npu ] && for r in 1 2; do for m in turns duplex; do bench "$P/U_${m}_r$r" $s $m $ec $dc 0 60 && rest; done; done
+    for r in 1 2 3; do paced_pm "$P/P30_r$r" $s $ec $dc 30 && rest; done
+    if late_any "$P/P30_r*"; then
+      echo "   fails 30 fps -> 15 fps runs"; for r in 1 2 3; do bench "$P/P15_r$r" $s duplex $ec $dc 15 60 && rest; done
+    fi
+  done; done
+}
+
+for p in $PARTS; do part_$p; done
+[ -n "$PARTS" ] && cleanup
+echo; echo "== RUNS END  $(date)  ($(( ($(date +%s)-T0)/60 )) min)"
+"$PY" "$D/cc_sum.py" "$CC" "$TOOLS" "$REPO"
+echo; echo "Next: turn Wi-Fi on, then  bash $D/cc_collect   (copies the results into the repo and zips the raw data)"

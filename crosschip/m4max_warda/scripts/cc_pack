@@ -1,0 +1,54 @@
+#!/bin/bash
+# RUN ON SHAMS'S MAC ONCE (reference M4 Pro). About 10 min, any conditions, no password.
+#     bash <repo>/crosschip/m4max_warda/scripts/cc_pack
+# Packs what the other Macs need so they run EXACTLY the same models and bitstreams:
+#   - every Core ML bundle (no conversion on the other Macs: same weights, same model)
+#   - every incoming stream prepared on this Mac (QP 26, encoder on the NE)
+#   - B*'s outgoing stream from T_duplex30_r1
+#   - the four 1080p source clips (camera 0380a3 + 6587ae, incoming 6c9c96 + 9c02f6)
+#   - MD5 of every raw stream, so the other Macs can check their copies are identical
+#   - per-frame MD5 of this Mac's NE decode of every stream (reference for "do two Macs decode identically?")
+#   - this Mac's specs (cc_specs)
+# Output: ~/Downloads/cc_pack_shams.zip  -> put it in the shared Drive folder.
+D=$(cd "$(dirname "$0")" && pwd); REPO=$(cd "$D" && while [ ! -d baseline ] && [ "$PWD" != / ]; do cd ..; done; pwd)
+S="$REPO/baseline/common/scripts"; [ -f "$S/settings.sh" ] && . "$S/settings.sh" || . "$S/v"; [ -f "$S/settings_phase2.sh" ] && . "$S/settings_phase2.sh" || . "$S/s2cfg"
+P=~/Downloads/cc_pack_shams; rm -rf "$P" ~/Downloads/cc_pack_shams.zip; mkdir -p "$P"/{incoming,ref_md5,mp4,bstar}
+exec > >(tee "$P/pack_log.txt") 2>&1
+echo "== cross-chip pack from $(scutil --get ComputerName)  $(date)"
+bash "$D/cc_specs" >/dev/null; cp "$(ls -t ~/Downloads/specs_*.txt | head -1)" "$P/" 2>/dev/null
+cat "$WORK/LIBMLVC_COMMIT.txt" > "$P/LIBMLVC_COMMIT.txt" 2>/dev/null
+echo "-- bundles"; cp -R "$WORK/bundles" "$P/bundles"; du -sh "$P/bundles"; ls "$P/bundles"
+echo "-- incoming streams"
+for s in mlvc_360p $NEW; do
+  I=$(dirname "$(incf $s)"); mkdir -p "$P/incoming/$(basename "$I")"
+  cp "$I"/incoming.aus "$I"/incoming.mlvc "$I"/prepare.log "$P/incoming/$(basename "$I")/" 2>/dev/null && echo "   $(basename "$I")"
+done
+echo "-- B* outgoing stream"
+cp "$WORK/runs/bl_bstar/T_duplex30_r1/outgoing.mlvc" "$P/bstar/" 2>/dev/null && echo "   ok" || echo "   not found (skipped)"
+echo "-- 1080p source clips"
+for id in $CAMIDS $INCIDS; do cp "$MP4/${id}_1920x1080_30.mp4" "$P/mp4/" && echo "   $id"; done
+echo "-- MD5 of the raw streams"
+for f in "$CAM" "$INCSRC" "$NV"/cam_*.nv12 "$NV"/incsrc_*.nv12; do [ -s "$f" ] && echo "$(md5 -q "$f")  $(basename "$f")"; done | tee "$P/nv12_md5.txt"
+echo "-- NE decode of every stream, per-frame MD5 (this Mac = reference)"
+fmd5 () { "$PY" - "$1" "$2" <<'PY'
+import hashlib, sys
+w, h = map(int, sys.argv[2].split("x")); fb = w * h * 3 // 2
+with open(sys.argv[1], "rb") as f:
+    i = 0
+    while True:
+        b = f.read(fb)
+        if len(b) < fb: break
+        print(i, hashlib.md5(b).hexdigest()); i += 1
+PY
+}
+for s in mlvc_360p $NEW; do
+  cfg $s; I=$(dirname "$(incf $s)")
+  "$MLVC" decode --model-bundles-dir "$(bund $s)" --compute-unit npu --input "$I/incoming.mlvc" --output /tmp/cc_ref.nv12 > /dev/null 2>&1 || echo "   DECODE FAILED $s"
+  fmd5 /tmp/cc_ref.nv12 $VSIZE > "$P/ref_md5/incoming_$s.txt"; echo "   $s: $(wc -l < "$P/ref_md5/incoming_$s.txt") frames"
+done
+if [ -s "$P/bstar/outgoing.mlvc" ]; then
+  "$MLVC" decode --model-bundles-dir "$WORK/bundles/mlvc" --compute-unit npu --input "$P/bstar/outgoing.mlvc" --output /tmp/cc_ref.nv12 > /dev/null 2>&1
+  fmd5 /tmp/cc_ref.nv12 640x360 > "$P/ref_md5/bstar_outgoing.txt"; echo "   bstar_outgoing: $(wc -l < "$P/ref_md5/bstar_outgoing.txt") frames"
+fi
+rm -f /tmp/cc_ref.nv12
+cd ~/Downloads && zip -r -q cc_pack_shams.zip cc_pack_shams && echo "== wrote ~/Downloads/cc_pack_shams.zip ($(du -h cc_pack_shams.zip | cut -f1)). Put it in the shared Drive folder."
