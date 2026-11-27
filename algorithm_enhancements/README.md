@@ -14,32 +14,37 @@ Every enhancement is measured on the same MacBook Pro (M4 Pro) as the baseline, 
 | [`A1_keyframe_qp/`](A1_keyframe_qp/) | **A1:** more bits for key frames and LTR frames, **with E4** (A1 inside A2's bound, A1 on MLVC-S) | Does a lower QP on the frames every later frame depends on save bits? | Done (22 and 24 Nov) | **I-frames −8 saves 1.2 % (B\*) to 2.6 % (MLVC-S 540p)** on coded PSNR and ≈ 6 % on face LPIPS; a lower QP on LTR frames never helps; inside A2's bound the I-frame offset wins back a fifth of its cost |
 | [`A2_drift_bounds/`](A2_drift_bounds/) | **A2:** bounding drift for a decoder on another processor | Shorter I-frame period or LTR recovery: which bound limits drift for the fewest bits? | Done (20–22 Nov; the 15 fps settings 23–26 Nov) | **LTR recovery every 32 frames**: the same worst frame (36–41 dB) as an I-frame every 32, at all seven settings, for about a quarter of the bits on MLVC-S (+8.7–9.7 %) |
 | [`A3_forced_keyframe/`](A3_forced_keyframe/) | **A3:** a fresh key frame when people join or leave | Does a key frame forced at a content change save bits or improve the picture? | Done (24 Nov) | **No**: a forced I-frame costs 11–15 P-frames and the picture after the event is no better (+1.6 % with a perfect trigger, +29 % with frame difference) |
-| A4 | Content-adaptive long-term references | Mark a new LTR once the content settles, instead of on a schedule? | Next (A0 done) | — |
-| E3 | Recovery from packet loss | From the latest LTR, or wait for the next I-frame? | Next (A0 done) | — |
-| E6 | A1 and A2 on all 160 VCD clips | Are the gains real (95 % confidence intervals)? | Planned | — |
+| [`E3_A4_loss_recovery/`](E3_A4_loss_recovery/) | **E3:** recovery from packet loss; **A4:** content-adaptive long-term references | On a loss report: wait for the next I-frame, force one, or recover from an LTR? Mark LTRs when the content settles instead of every 16 frames? | Done (26 Nov) | **Recover from an LTR:** the quality of a forced I-frame (+3–5 dB over waiting at 1 % loss, +10–11 dB at 5 %) for 36–53 % of its extra bits; **A4 does not help** (< 0.2 dB either way), so MLVC's schedule stays |
+| [`E6_all_vcd_clips/`](E6_all_vcd_clips/) | **E6:** A2 on all VCD clips | Does A2's bound cost the same on the whole VCD set (95 % confidence intervals)? | 120 of 160 clips done (27 Nov); the 40 portrait clips next | **LTR recovery every 32 costs +9.3 % on MLVC-S 540p and +29.5 % on B\* over 120 clips** (20 evaluation clips: +9.7 % and +36.9 %); worst frame per clip 44.2 ± 1.1 → 48.1 ± 0.7 dB on MLVC-S 540p |
 
 ## What this means for the controller so far
 
 - **A2 is the central enhancement:** a decoder on another processor (or another laptop) needs a bound, and LTR recovery every 32 frames is the cheapest one on MLVC-S. At the start of a call the two laptops exchange their chip and decoder placement, and each sender uses the bound for that pairing (tested in the real calls, E2).
 - **A1 is a free addition:** −8 on every I-frame, also inside the bound.
 - **A3 is not used to save bits:** scene events change the setting (model, resolution, placement), and a key frame is forced only where the stream restarts anyway.
+- **Losses are answered with LTR recovery (E3),** the same mechanism as A2's bound: a forced I-frame only when the receiver holds no LTR. LTRs stay on MLVC's schedule (A4 brings nothing).
 
 ## How to run
 
 After the baseline setup ([`baseline/REPRODUCE.md`](../baseline/REPRODUCE.md) §1–2, which builds the tools and the evaluation clips that every enhancement reuses):
 
 ```bash
-mkdir -p ~/Downloads/d/{a0,a1,a3/data}
+mkdir -p ~/Downloads/d/{a0,a1,a3/data,e3,e6}
 cp <repo>/algorithm_enhancements/A0_libmlvc_check/scripts/* ~/Downloads/d/a0/
 cp <repo>/algorithm_enhancements/A1_keyframe_qp/scripts/* ~/Downloads/d/a1/
 cp <repo>/algorithm_enhancements/A3_forced_keyframe/scripts/* ~/Downloads/d/a3/
 cp <repo>/algorithm_enhancements/A3_forced_keyframe/raw_data/data/* ~/Downloads/d/a3/data/
-chmod +x ~/Downloads/d/{a0,a1,a3}/*.sh
+cp <repo>/algorithm_enhancements/E3_A4_loss_recovery/scripts/* ~/Downloads/d/e3/
+cp <repo>/algorithm_enhancements/E6_all_vcd_clips/scripts/* ~/Downloads/d/e6/
+chmod +x ~/Downloads/d/{a0,a1,a3,e3,e6}/*.sh
 cd ~/Downloads/d/a0 && ./a0_runs.sh       # A0 (1 min; 3 min more for the first build)
 cd ../a1 && ./a1_round1_runs.sh              # A1 round 1 (50 min)
 cd ../a3 && ./a3_runs.sh                     # A3 (30 min; builds the program with --force-idr that A1 round 2 needs)
 cd ../a1 && ./a1_round2_runs.sh              # A1 round 2 and E4 (75 min)
 # A2: baseline experiment 11's scripts with PHASE=a2 (cd ~/Downloads/d/5 && PHASE=a2 ./drift_runs.sh)
+#     ≈ 15 h for B*, full MLVC 540p and MLVC-S 540p and 720p; ≈ 43 h for full MLVC 720p and 1080p and MLVC-S 1080p
+cd ~/Downloads/d/e3 && ./e3a4_runs.sh          # E3 and A4 (1.5 h; needs A3's call clips)
+cd ../e6 && ./e6_download.sh && E6_PORTRAIT=rotate ./e6_runs.sh   # E6 (about 9 h)
 ```
 
 All of these measure quality or correctness only (no timing), so the Mac can be in normal use; charger in, lid open. Every script is resumable.

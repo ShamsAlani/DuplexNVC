@@ -1,0 +1,342 @@
+
+== E3 + A4 START  Thu 26 Nov 08:34 PM
+   ok  /Users/shamsalani/Downloads/duplexnvc-baseline/bundles/mlvc
+   ok  /Users/shamsalani/Downloads/duplexnvc-baseline/bundles/mlvcs_540p
+   ok  /Users/shamsalani/Downloads/duplexnvc-baseline/data/split.json
+   ok  /Users/shamsalani/Downloads/duplexnvc-baseline/libmlvc/examples/minimal-fetchcontent
+   ok  /Users/shamsalani/Downloads/duplexnvc-baseline/phase2/a3/m1080
+== building the e3a4 program in /Users/shamsalani/Downloads/duplexnvc-baseline/harness_e3a4  (08:34 PM)
+   using the Boost sources already downloaded: /Users/shamsalani/Downloads/duplexnvc-baseline/harness/build/ninja-release/_deps/boost-src
+   built
+== check: one clip, 120 frames, 4 combinations
+   /Users/shamsalani/Downloads/duplexnvc-baseline/harness_e3a4/build/ninja-release/libmlvc_example ... --check
+   none/wait/fixed: 170.986 kbps, shown 39.0943 dB, lost 0, frozen 0, events 0, I 2, R 0, marks 8
+   p5/idr/fixed: 549.772 kbps, shown 36.515 dB, lost 16, frozen 27, events 7, I 12, R 0, marks 16
+   burst/ltr/fixed: 171.624 kbps, shown 38.7288 dB, lost 6, frozen 6, events 1, I 2, R 2, marks 8, ERRORS 2/0
+   burst/ltr/adaptive: 198.68 kbps, shown 38.6951 dB, lost 6, frozen 6, events 1, I 2, R 2, marks 3, ERRORS 2/0
+   check exit 3 (FAILED: see /Users/shamsalani/Downloads/duplexnvc-baseline/phase2/e3a4/logs/check.log)
+== CHECK FAILED: the runs were not started (see /Users/shamsalani/Downloads/duplexnvc-baseline/phase2/e3a4/logs/check.log)
+
+== E3 + A4 START  Thu 26 Nov 09:09 PM
+   ok  /Users/shamsalani/Downloads/duplexnvc-baseline/bundles/mlvc
+   ok  /Users/shamsalani/Downloads/duplexnvc-baseline/bundles/mlvcs_540p
+   ok  /Users/shamsalani/Downloads/duplexnvc-baseline/data/split.json
+   ok  /Users/shamsalani/Downloads/duplexnvc-baseline/libmlvc/examples/minimal-fetchcontent
+   ok  /Users/shamsalani/Downloads/duplexnvc-baseline/phase2/a3/m1080
+== building the e3a4 program in /Users/shamsalani/Downloads/duplexnvc-baseline/harness_e3a4  (09:09 PM)
+   using the Boost sources already downloaded: /Users/shamsalani/Downloads/duplexnvc-baseline/harness/build/ninja-release/_deps/boost-src
+   built
+== check: one clip, 120 frames, 4 combinations
+   /Users/shamsalani/Downloads/duplexnvc-baseline/harness_e3a4/build/ninja-release/libmlvc_example ... --check
+   none/wait/fixed: 170.986 kbps, shown 39.0943 dB, lost 0, frozen 0, events 0, I 2, R 0, marks 8
+   p5/idr/fixed: 549.772 kbps, shown 36.515 dB, lost 16, frozen 27, events 7, I 12, R 0, marks 16
+   burst/ltr/fixed: 171.624 kbps, shown 38.7288 dB, lost 6, frozen 6, events 1, I 2, R 2, marks 8
+   burst/ltr/adaptive: 198.68 kbps, shown 38.6951 dB, lost 6, frozen 6, events 1, I 2, R 2, marks 3
+   check exit 0 (OK)
+
+== pass 1  09:09 PM
+124 runs (clip x setting x QP, 14 combinations each), 0 done, 124 to do
+[1/124] 26 09:10 PM mlvc_360p   vcd  08ee5e qp24  5% loss, dB shown: wait 29.17  idr 37.59  ltr 38.57  47 s  elapsed 0.0 h  left ~1.6 h
+[2/124] 26 09:11 PM mlvc_360p   vcd  08ee5e qp32  5% loss, dB shown: wait 28.19  idr 35.33  ltr 35.82  47 s  elapsed 0.0 h  left ~1.6 h
+[3/124] 26 09:12 PM mlvcs_540p  vcd  08ee5e qp24  5% loss, dB shown: wait 29.16  idr 37.58  ltr 38.43  40 s  elapsed 0.0 h  left ~1.5 h
+[4/124] 26 09:12 PM mlvcs_540p  vcd  08ee5e qp32  5% loss, dB shown: wait 28.35  idr 35.73  ltr 36.31  40 s  elapsed 0.0 h  left ~1.4 h
+[5/124] 26 09:13 PM mlvc_360p   vcd  104c93 qp24  5% loss, dB shown: wait 20.93  idr 36.19  ltr 37.11  47 s  elapsed 0.1 h  left ~1.5 h
+[6/124] 26 09:14 PM mlvc_360p   vcd  104c93 qp32  5% loss, dB shown: wait 21.56  idr 34.15  ltr 34.76  47 s  elapsed 0.1 h  left ~1.5 h
+[7/124] 26 09:15 PM mlvcs_540p  vcd  104c93 qp24  5% loss, dB shown: wait 19.32  idr 34.19  ltr 36.47  39 s  elapsed 0.1 h  left ~1.4 h
+[8/124] 26 09:15 PM mlvcs_540p  vcd  104c93 qp32  5% loss, dB shown: wait 21.50  idr 34.27  ltr 35.14  40 s  elapsed 0.1 h  left ~1.4 h
+[9/124] 26 09:16 PM mlvc_360p   vcd  1e8830 qp24  5% loss, dB shown: wait 22.54  idr 32.72  ltr 33.70  46 s  elapsed 0.1 h  left ~1.4 h
+[10/124] 26 09:17 PM mlvc_360p   vcd  1e8830 qp32  5% loss, dB shown: wait 21.92  idr 31.54  ltr 32.02  47 s  elapsed 0.1 h  left ~1.4 h
+[11/124] 26 09:17 PM mlvcs_540p  vcd  1e8830 qp24  5% loss, dB shown: wait 20.32  idr 27.84  ltr 30.65  43 s  elapsed 0.1 h  left ~1.4 h
+[12/124] 26 09:18 PM mlvcs_540p  vcd  1e8830 qp32  5% loss, dB shown: wait 21.75  idr 29.93  ltr 31.48  46 s  elapsed 0.1 h  left ~1.4 h
+[13/124] 26 09:19 PM mlvc_360p   vcd  38a418 qp24  5% loss, dB shown: wait 28.88  idr 38.13  ltr 39.32  51 s  elapsed 0.2 h  left ~1.4 h
+[14/124] 26 09:20 PM mlvc_360p   vcd  38a418 qp32  5% loss, dB shown: wait 30.71  idr 36.18  ltr 36.44  52 s  elapsed 0.2 h  left ~1.4 h
+[15/124] 26 09:21 PM mlvcs_540p  vcd  38a418 qp24  5% loss, dB shown: wait 27.46  idr 37.90  ltr 39.53  40 s  elapsed 0.2 h  left ~1.4 h
+[16/124] 26 09:21 PM mlvcs_540p  vcd  38a418 qp32  5% loss, dB shown: wait 30.93  idr 35.69  ltr 36.83  41 s  elapsed 0.2 h  left ~1.3 h
+[17/124] 26 09:22 PM mlvc_360p   vcd  40fe4d qp24  5% loss, dB shown: wait 21.94  idr 32.42  ltr 34.07  47 s  elapsed 0.2 h  left ~1.3 h
+[18/124] 26 09:23 PM mlvc_360p   vcd  40fe4d qp32  5% loss, dB shown: wait 23.69  idr 31.54  ltr 32.50  47 s  elapsed 0.2 h  left ~1.3 h
+[19/124] 26 09:24 PM mlvcs_540p  vcd  40fe4d qp24  5% loss, dB shown: wait 21.80  idr 30.05  ltr 32.38  38 s  elapsed 0.2 h  left ~1.3 h
+[20/124] 26 09:24 PM mlvcs_540p  vcd  40fe4d qp32  5% loss, dB shown: wait 21.59  idr 31.40  ltr 32.72  39 s  elapsed 0.2 h  left ~1.3 h
+[21/124] 26 09:25 PM mlvc_360p   vcd  45bb89 qp24  5% loss, dB shown: wait 31.86  idr 39.10  ltr 39.36  48 s  elapsed 0.3 h  left ~1.3 h
+[22/124] 26 09:26 PM mlvc_360p   vcd  45bb89 qp32  5% loss, dB shown: wait 30.13  idr 36.29  ltr 36.32  48 s  elapsed 0.3 h  left ~1.3 h
+[23/124] 26 09:26 PM mlvcs_540p  vcd  45bb89 qp24  5% loss, dB shown: wait 23.57  idr 38.20  ltr 39.04  40 s  elapsed 0.3 h  left ~1.2 h
+[24/124] 26 09:27 PM mlvcs_540p  vcd  45bb89 qp32  5% loss, dB shown: wait 30.32  idr 36.50  ltr 36.71  41 s  elapsed 0.3 h  left ~1.2 h
+[25/124] 26 09:28 PM mlvc_360p   vcd  4d8ffe qp24  5% loss, dB shown: wait 19.98  idr 28.67  ltr 30.09  46 s  elapsed 0.3 h  left ~1.2 h
+[26/124] 26 09:29 PM mlvc_360p   vcd  4d8ffe qp32  5% loss, dB shown: wait 23.66  idr 29.14  ltr 30.12  48 s  elapsed 0.3 h  left ~1.2 h
+[27/124] 26 09:29 PM mlvcs_540p  vcd  4d8ffe qp24  5% loss, dB shown: wait 19.34  idr 25.57  ltr 27.35  37 s  elapsed 0.3 h  left ~1.2 h
+[28/124] 26 09:30 PM mlvcs_540p  vcd  4d8ffe qp32  5% loss, dB shown: wait 19.49  idr 27.34  ltr 28.37  38 s  elapsed 0.3 h  left ~1.2 h
+[29/124] 26 09:31 PM mlvc_360p   vcd  6aa9cf qp24  5% loss, dB shown: wait 18.60  idr 39.36  ltr 40.13  47 s  elapsed 0.4 h  left ~1.2 h
+[30/124] 26 09:32 PM mlvc_360p   vcd  6aa9cf qp32  5% loss, dB shown: wait 19.80  idr 37.53  ltr 37.31  47 s  elapsed 0.4 h  left ~1.2 h
+[31/124] 26 09:32 PM mlvcs_540p  vcd  6aa9cf qp24  5% loss, dB shown: wait 15.52  idr 38.19  ltr 38.43  39 s  elapsed 0.4 h  left ~1.1 h
+[32/124] 26 09:33 PM mlvcs_540p  vcd  6aa9cf qp32  5% loss, dB shown: wait 17.44  idr 37.55  ltr 37.76  39 s  elapsed 0.4 h  left ~1.1 h
+[33/124] 26 09:34 PM mlvc_360p   vcd  6eb39d qp24  5% loss, dB shown: wait 22.06  idr 35.23  ltr 35.33  47 s  elapsed 0.4 h  left ~1.1 h
+[34/124] 26 09:35 PM mlvc_360p   vcd  6eb39d qp32  5% loss, dB shown: wait 22.76  idr 33.81  ltr 33.89  55 s  elapsed 0.4 h  left ~1.1 h
+[35/124] 26 09:35 PM mlvcs_540p  vcd  6eb39d qp24  5% loss, dB shown: wait 18.25  idr 34.36  ltr 34.68  46 s  elapsed 0.4 h  left ~1.1 h
+[36/124] 26 09:36 PM mlvcs_540p  vcd  6eb39d qp32  5% loss, dB shown: wait 20.16  idr 33.55  ltr 33.76  47 s  elapsed 0.4 h  left ~1.1 h
+[37/124] 26 09:37 PM mlvc_360p   vcd  73f232 qp24  5% loss, dB shown: wait 21.77  idr 33.34  ltr 36.78  53 s  elapsed 0.5 h  left ~1.1 h
+[38/124] 26 09:38 PM mlvc_360p   vcd  73f232 qp32  5% loss, dB shown: wait 21.24  idr 33.35  ltr 33.98  54 s  elapsed 0.5 h  left ~1.1 h
+[39/124] 26 09:39 PM mlvcs_540p  vcd  73f232 qp24  5% loss, dB shown: wait 21.39  idr 32.53  ltr 35.36  45 s  elapsed 0.5 h  left ~1.1 h
+[40/124] 26 09:39 PM mlvcs_540p  vcd  73f232 qp32  5% loss, dB shown: wait 21.50  idr 33.66  ltr 34.98  46 s  elapsed 0.5 h  left ~1.0 h
+[41/124] 26 09:40 PM mlvc_360p   vcd  99b38e qp24  5% loss, dB shown: wait 34.14  idr 42.35  ltr 42.14  56 s  elapsed 0.5 h  left ~1.0 h
+[42/124] 26 09:41 PM mlvc_360p   vcd  99b38e qp32  5% loss, dB shown: wait 32.99  idr 39.06  ltr 38.96  57 s  elapsed 0.5 h  left ~1.0 h
+[43/124] 26 09:42 PM mlvcs_540p  vcd  99b38e qp24  5% loss, dB shown: wait 28.76  idr 42.60  ltr 42.65  47 s  elapsed 0.5 h  left ~1.0 h
+[44/124] 26 09:43 PM mlvcs_540p  vcd  99b38e qp32  5% loss, dB shown: wait 33.16  idr 39.60  ltr 39.38  48 s  elapsed 0.6 h  left ~1.0 h
+[45/124] 26 09:44 PM mlvc_360p   vcd  a17620 qp24  5% loss, dB shown: wait 32.28  idr 40.27  ltr 40.40  55 s  elapsed 0.6 h  left ~1.0 h
+[46/124] 26 09:45 PM mlvc_360p   vcd  a17620 qp32  5% loss, dB shown: wait 33.05  idr 37.21  ltr 37.63  55 s  elapsed 0.6 h  left ~1.0 h
+[47/124] 26 09:45 PM mlvcs_540p  vcd  a17620 qp24  5% loss, dB shown: wait 32.05  idr 39.77  ltr 40.85  47 s  elapsed 0.6 h  left ~1.0 h
+[48/124] 26 09:46 PM mlvcs_540p  vcd  a17620 qp32  5% loss, dB shown: wait 31.20  idr 37.94  ltr 37.99  47 s  elapsed 0.6 h  left ~1.0 h
+[49/124] 26 09:47 PM mlvc_360p   vcd  b2d792 qp24  5% loss, dB shown: wait 29.13  idr 39.32  ltr 39.40  53 s  elapsed 0.6 h  left ~1.0 h
+[50/124] 26 09:48 PM mlvc_360p   vcd  b2d792 qp32  5% loss, dB shown: wait 28.24  idr 36.71  ltr 36.76  48 s  elapsed 0.6 h  left ~0.9 h
+[51/124] 26 09:49 PM mlvcs_540p  vcd  b2d792 qp24  5% loss, dB shown: wait 29.16  idr 37.73  ltr 39.08  40 s  elapsed 0.7 h  left ~0.9 h
+[52/124] 26 09:49 PM mlvcs_540p  vcd  b2d792 qp32  5% loss, dB shown: wait 28.33  idr 37.05  ltr 37.03  40 s  elapsed 0.7 h  left ~0.9 h
+[53/124] 26 09:50 PM mlvc_360p   vcd  b8893c qp24  5% loss, dB shown: wait 29.69  idr 39.85  ltr 40.38  46 s  elapsed 0.7 h  left ~0.9 h
+[54/124] 26 09:51 PM mlvc_360p   vcd  b8893c qp32  5% loss, dB shown: wait 29.26  idr 37.75  ltr 37.68  47 s  elapsed 0.7 h  left ~0.9 h
+[55/124] 26 09:51 PM mlvcs_540p  vcd  b8893c qp24  5% loss, dB shown: wait 29.32  idr 39.95  ltr 40.15  39 s  elapsed 0.7 h  left ~0.9 h
+[56/124] 26 09:52 PM mlvcs_540p  vcd  b8893c qp32  5% loss, dB shown: wait 28.69  idr 38.28  ltr 38.05  39 s  elapsed 0.7 h  left ~0.9 h
+[57/124] 26 09:53 PM mlvc_360p   vcd  b91038 qp24  5% loss, dB shown: wait 33.80  idr 37.65  ltr 38.50  48 s  elapsed 0.7 h  left ~0.9 h
+[58/124] 26 09:54 PM mlvc_360p   vcd  b91038 qp32  5% loss, dB shown: wait 32.82  idr 35.17  ltr 35.47  48 s  elapsed 0.7 h  left ~0.8 h
+[59/124] 26 09:54 PM mlvcs_540p  vcd  b91038 qp24  5% loss, dB shown: wait 33.89  idr 37.75  ltr 39.50  40 s  elapsed 0.7 h  left ~0.8 h
+[60/124] 26 09:55 PM mlvcs_540p  vcd  b91038 qp32  5% loss, dB shown: wait 32.62  idr 35.95  ltr 36.51  40 s  elapsed 0.8 h  left ~0.8 h
+[61/124] 26 09:56 PM mlvc_360p   vcd  c33648 qp24  5% loss, dB shown: wait 30.94  idr 38.16  ltr 38.44  46 s  elapsed 0.8 h  left ~0.8 h
+[62/124] 26 09:57 PM mlvc_360p   vcd  c33648 qp32  5% loss, dB shown: wait 29.95  idr 35.85  ltr 36.09  47 s  elapsed 0.8 h  left ~0.8 h
+[63/124] 26 09:57 PM mlvcs_540p  vcd  c33648 qp24  5% loss, dB shown: wait 30.90  idr 38.18  ltr 38.36  39 s  elapsed 0.8 h  left ~0.8 h
+[64/124] 26 09:58 PM mlvcs_540p  vcd  c33648 qp32  5% loss, dB shown: wait 30.21  idr 36.31  ltr 36.63  39 s  elapsed 0.8 h  left ~0.8 h
+[65/124] 26 09:59 PM mlvc_360p   vcd  c52d75 qp24  5% loss, dB shown: wait 21.49  idr 35.16  ltr 36.21  46 s  elapsed 0.8 h  left ~0.7 h
+[66/124] 26 09:59 PM mlvc_360p   vcd  c52d75 qp32  5% loss, dB shown: wait 22.42  idr 33.66  ltr 34.38  47 s  elapsed 0.8 h  left ~0.7 h
+[67/124] 26 10:00 PM mlvcs_540p  vcd  c52d75 qp24  5% loss, dB shown: wait 19.78  idr 34.30  ltr 34.59  39 s  elapsed 0.8 h  left ~0.7 h
+[68/124] 26 10:01 PM mlvcs_540p  vcd  c52d75 qp32  5% loss, dB shown: wait 20.83  idr 33.00  ltr 33.56  39 s  elapsed 0.9 h  left ~0.7 h
+[69/124] 26 10:02 PM mlvc_360p   vcd  cd6bc1 qp24  5% loss, dB shown: wait 20.59  idr 35.58  ltr 37.02  47 s  elapsed 0.9 h  left ~0.7 h
+[70/124] 26 10:02 PM mlvc_360p   vcd  cd6bc1 qp32  5% loss, dB shown: wait 25.12  idr 34.42  ltr 34.63  47 s  elapsed 0.9 h  left ~0.7 h
+[71/124] 26 10:03 PM mlvcs_540p  vcd  cd6bc1 qp24  5% loss, dB shown: wait 20.07  idr 34.80  ltr 36.84  39 s  elapsed 0.9 h  left ~0.7 h
+[72/124] 26 10:04 PM mlvcs_540p  vcd  cd6bc1 qp32  5% loss, dB shown: wait 19.95  idr 34.33  ltr 34.71  40 s  elapsed 0.9 h  left ~0.7 h
+[73/124] 26 10:04 PM mlvc_360p   vcd  db623c qp24  5% loss, dB shown: wait 33.17  idr 37.81  ltr 38.25  48 s  elapsed 0.9 h  left ~0.6 h
+[74/124] 26 10:05 PM mlvc_360p   vcd  db623c qp32  5% loss, dB shown: wait 34.00  idr 35.72  ltr 35.95  48 s  elapsed 0.9 h  left ~0.6 h
+[75/124] 26 10:06 PM mlvcs_540p  vcd  db623c qp24  5% loss, dB shown: wait 33.52  idr 37.37  ltr 38.72  40 s  elapsed 0.9 h  left ~0.6 h
+[76/124] 26 10:07 PM mlvcs_540p  vcd  db623c qp32  5% loss, dB shown: wait 32.60  idr 36.24  ltr 36.54  41 s  elapsed 1.0 h  left ~0.6 h
+[77/124] 26 10:07 PM mlvc_360p   vcd  fda953 qp24  5% loss, dB shown: wait 21.80  idr 36.79  ltr 36.91  46 s  elapsed 1.0 h  left ~0.6 h
+[78/124] 26 10:08 PM mlvc_360p   vcd  fda953 qp32  5% loss, dB shown: wait 21.47  idr 34.26  ltr 34.02  47 s  elapsed 1.0 h  left ~0.6 h
+[79/124] 26 10:09 PM mlvcs_540p  vcd  fda953 qp24  5% loss, dB shown: wait 21.84  idr 35.20  ltr 36.10  39 s  elapsed 1.0 h  left ~0.6 h
+[80/124] 26 10:09 PM mlvcs_540p  vcd  fda953 qp32  5% loss, dB shown: wait 21.51  idr 35.09  ltr 34.66  39 s  elapsed 1.0 h  left ~0.5 h
+[81/124] 26 10:10 PM mlvc_360p   call ce4peo qp24  5% loss, dB shown: wait 22.86  idr 32.12  ltr 34.42  47 s  elapsed 1.0 h  left ~0.5 h
+[82/124] 26 10:11 PM mlvc_360p   call ce4peo qp32  5% loss, dB shown: wait 25.77  idr 31.86  ltr 32.77  48 s  elapsed 1.0 h  left ~0.5 h
+[83/124] 26 10:12 PM mlvcs_540p  call ce4peo qp24  5% loss, dB shown: wait 22.24  idr 29.89  ltr 32.17  38 s  elapsed 1.0 h  left ~0.5 h
+[84/124] 26 10:12 PM mlvcs_540p  call ce4peo qp32  5% loss, dB shown: wait 23.72  idr 31.97  ltr 33.29  40 s  elapsed 1.0 h  left ~0.5 h
+[85/124] 26 10:13 PM mlvc_360p   call cejohn qp24  5% loss, dB shown: wait 31.09  idr 37.63  ltr 38.51  47 s  elapsed 1.1 h  left ~0.5 h
+[86/124] 26 10:14 PM mlvc_360p   call cejohn qp32  5% loss, dB shown: wait 29.96  idr 36.22  ltr 36.37  47 s  elapsed 1.1 h  left ~0.5 h
+[87/124] 26 10:15 PM mlvcs_540p  call cejohn qp24  5% loss, dB shown: wait 31.14  idr 37.22  ltr 38.34  40 s  elapsed 1.1 h  left ~0.5 h
+[88/124] 26 10:15 PM mlvcs_540p  call cejohn qp32  5% loss, dB shown: wait 29.74  idr 35.37  ltr 35.90  40 s  elapsed 1.1 h  left ~0.4 h
+[89/124] 26 10:16 PM mlvc_360p   call cekris qp24  5% loss, dB shown: wait 23.36  idr 36.84  ltr 36.89  48 s  elapsed 1.1 h  left ~0.4 h
+[90/124] 26 10:17 PM mlvc_360p   call cekris qp32  5% loss, dB shown: wait 25.18  idr 34.48  ltr 34.60  48 s  elapsed 1.1 h  left ~0.4 h
+[91/124] 26 10:17 PM mlvcs_540p  call cekris qp24  5% loss, dB shown: wait 21.84  idr 35.75  ltr 36.39  40 s  elapsed 1.1 h  left ~0.4 h
+[92/124] 26 10:18 PM mlvcs_540p  call cekris qp32  5% loss, dB shown: wait 23.22  idr 34.85  ltr 35.20  40 s  elapsed 1.1 h  left ~0.4 h
+[93/124] 26 10:19 PM mlvc_360p   call px2ent qp24  5% loss, dB shown: wait 32.69  idr 40.62  ltr 41.03  48 s  elapsed 1.2 h  left ~0.4 h
+[94/124] 26 10:20 PM mlvc_360p   call px2ent qp32  5% loss, dB shown: wait 31.23  idr 37.91  ltr 37.93  48 s  elapsed 1.2 h  left ~0.4 h
+[95/124] 26 10:20 PM mlvcs_540p  call px2ent qp24  5% loss, dB shown: wait 30.65  idr 41.08  ltr 41.08  40 s  elapsed 1.2 h  left ~0.4 h
+[96/124] 26 10:21 PM mlvcs_540p  call px2ent qp32  5% loss, dB shown: wait 31.37  idr 38.01  ltr 38.27  40 s  elapsed 1.2 h  left ~0.3 h
+[97/124] 26 10:22 PM mlvc_360p   call px4ppl qp24  5% loss, dB shown: wait 21.20  idr 34.43  ltr 34.41  47 s  elapsed 1.2 h  left ~0.3 h
+[98/124] 26 10:23 PM mlvc_360p   call px4ppl qp32  5% loss, dB shown: wait 22.25  idr 32.27  ltr 32.51  47 s  elapsed 1.2 h  left ~0.3 h
+[99/124] 26 10:23 PM mlvcs_540p  call px4ppl qp24  5% loss, dB shown: wait 18.91  idr 31.57  ltr 33.31  39 s  elapsed 1.2 h  left ~0.3 h
+[100/124] 26 10:24 PM mlvcs_540p  call px4ppl qp32  5% loss, dB shown: wait 19.59  idr 32.06  ltr 32.52  40 s  elapsed 1.2 h  left ~0.3 h
+[101/124] 26 10:25 PM mlvc_360p   call px5ppl qp24  5% loss, dB shown: wait 25.59  idr 37.42  ltr 37.59  47 s  elapsed 1.3 h  left ~0.3 h
+[102/124] 26 10:26 PM mlvc_360p   call px5ppl qp32  5% loss, dB shown: wait 25.00  idr 35.37  ltr 35.26  47 s  elapsed 1.3 h  left ~0.3 h
+[103/124] 26 10:26 PM mlvcs_540p  call px5ppl qp24  5% loss, dB shown: wait 24.14  idr 36.44  ltr 37.62  40 s  elapsed 1.3 h  left ~0.3 h
+[104/124] 26 10:27 PM mlvcs_540p  call px5ppl qp32  5% loss, dB shown: wait 24.90  idr 35.35  ltr 35.34  40 s  elapsed 1.3 h  left ~0.2 h
+[105/124] 26 10:28 PM mlvc_360p   call px7ppl qp24  5% loss, dB shown: wait 20.70  idr 33.47  ltr 35.15  46 s  elapsed 1.3 h  left ~0.2 h
+[106/124] 26 10:28 PM mlvc_360p   call px7ppl qp32  5% loss, dB shown: wait 23.91  idr 33.23  ltr 33.08  46 s  elapsed 1.3 h  left ~0.2 h
+[107/124] 26 10:29 PM mlvcs_540p  call px7ppl qp24  5% loss, dB shown: wait 19.57  idr 31.81  ltr 33.98  38 s  elapsed 1.3 h  left ~0.2 h
+[108/124] 26 10:30 PM mlvcs_540p  call px7ppl qp32  5% loss, dB shown: wait 23.16  idr 32.50  ltr 32.48  39 s  elapsed 1.3 h  left ~0.2 h
+   ffmpeg failed or short clip for pxcrwd 360p: 
+   SKIP mlvc_360p pxcrwd: input missing (/Users/shamsalani/Downloads/duplexnvc-baseline/phase2/a3/m1080/pxcrwd_1920x1080_30.mp4)
+   ffmpeg failed or short clip for pxcrwd 360p: 
+   SKIP mlvc_360p pxcrwd: input missing (/Users/shamsalani/Downloads/duplexnvc-baseline/phase2/a3/m1080/pxcrwd_1920x1080_30.mp4)
+   ffmpeg failed or short clip for pxcrwd 540p: 
+   SKIP mlvcs_540p pxcrwd: input missing (/Users/shamsalani/Downloads/duplexnvc-baseline/phase2/a3/m1080/pxcrwd_1920x1080_30.mp4)
+   ffmpeg failed or short clip for pxcrwd 540p: 
+   SKIP mlvcs_540p pxcrwd: input missing (/Users/shamsalani/Downloads/duplexnvc-baseline/phase2/a3/m1080/pxcrwd_1920x1080_30.mp4)
+   ffmpeg failed or short clip for pxdown 360p: 
+   SKIP mlvc_360p pxdown: input missing (/Users/shamsalani/Downloads/duplexnvc-baseline/phase2/a3/m1080/pxdown_1920x1080_30.mp4)
+   ffmpeg failed or short clip for pxdown 360p: 
+   SKIP mlvc_360p pxdown: input missing (/Users/shamsalani/Downloads/duplexnvc-baseline/phase2/a3/m1080/pxdown_1920x1080_30.mp4)
+   ffmpeg failed or short clip for pxdown 540p: 
+   SKIP mlvcs_540p pxdown: input missing (/Users/shamsalani/Downloads/duplexnvc-baseline/phase2/a3/m1080/pxdown_1920x1080_30.mp4)
+   ffmpeg failed or short clip for pxdown 540p: 
+   SKIP mlvcs_540p pxdown: input missing (/Users/shamsalani/Downloads/duplexnvc-baseline/phase2/a3/m1080/pxdown_1920x1080_30.mp4)
+[117/124] 26 10:31 PM mlvc_360p   call pxentr qp24  5% loss, dB shown: wait 25.32  idr 36.52  ltr 37.44  47 s  elapsed 1.4 h  left ~0.1 h
+[118/124] 26 10:31 PM mlvc_360p   call pxentr qp32  5% loss, dB shown: wait 26.33  idr 34.66  ltr 35.12  48 s  elapsed 1.4 h  left ~0.1 h
+[119/124] 26 10:32 PM mlvcs_540p  call pxentr qp24  5% loss, dB shown: wait 24.66  idr 36.36  ltr 36.76  39 s  elapsed 1.4 h  left ~0.1 h
+[120/124] 26 10:33 PM mlvcs_540p  call pxentr qp32  5% loss, dB shown: wait 26.04  idr 34.34  ltr 34.97  40 s  elapsed 1.4 h  left ~0.0 h
+   ffmpeg failed or short clip for pxleav 360p: 
+   SKIP mlvc_360p pxleav: input missing (/Users/shamsalani/Downloads/duplexnvc-baseline/phase2/a3/m1080/pxleav_1920x1080_30.mp4)
+   ffmpeg failed or short clip for pxleav 360p: 
+   SKIP mlvc_360p pxleav: input missing (/Users/shamsalani/Downloads/duplexnvc-baseline/phase2/a3/m1080/pxleav_1920x1080_30.mp4)
+   ffmpeg failed or short clip for pxleav 540p: 
+   SKIP mlvcs_540p pxleav: input missing (/Users/shamsalani/Downloads/duplexnvc-baseline/phase2/a3/m1080/pxleav_1920x1080_30.mp4)
+   ffmpeg failed or short clip for pxleav 540p: 
+   SKIP mlvcs_540p pxleav: input missing (/Users/shamsalani/Downloads/duplexnvc-baseline/phase2/a3/m1080/pxleav_1920x1080_30.mp4)
+== runs finished  26 Nov 10:33 PM
+
+== pass 2  10:33 PM
+124 runs (clip x setting x QP, 14 combinations each), 112 done, 12 to do
+   ffmpeg failed or short clip for pxcrwd 360p: 
+   SKIP mlvc_360p pxcrwd: input missing (/Users/shamsalani/Downloads/duplexnvc-baseline/phase2/a3/m1080/pxcrwd_1920x1080_30.mp4)
+   ffmpeg failed or short clip for pxcrwd 360p: 
+   SKIP mlvc_360p pxcrwd: input missing (/Users/shamsalani/Downloads/duplexnvc-baseline/phase2/a3/m1080/pxcrwd_1920x1080_30.mp4)
+   ffmpeg failed or short clip for pxcrwd 540p: 
+   SKIP mlvcs_540p pxcrwd: input missing (/Users/shamsalani/Downloads/duplexnvc-baseline/phase2/a3/m1080/pxcrwd_1920x1080_30.mp4)
+   ffmpeg failed or short clip for pxcrwd 540p: 
+   SKIP mlvcs_540p pxcrwd: input missing (/Users/shamsalani/Downloads/duplexnvc-baseline/phase2/a3/m1080/pxcrwd_1920x1080_30.mp4)
+   ffmpeg failed or short clip for pxdown 360p: 
+   SKIP mlvc_360p pxdown: input missing (/Users/shamsalani/Downloads/duplexnvc-baseline/phase2/a3/m1080/pxdown_1920x1080_30.mp4)
+   ffmpeg failed or short clip for pxdown 360p: 
+   SKIP mlvc_360p pxdown: input missing (/Users/shamsalani/Downloads/duplexnvc-baseline/phase2/a3/m1080/pxdown_1920x1080_30.mp4)
+   ffmpeg failed or short clip for pxdown 540p: 
+   SKIP mlvcs_540p pxdown: input missing (/Users/shamsalani/Downloads/duplexnvc-baseline/phase2/a3/m1080/pxdown_1920x1080_30.mp4)
+   ffmpeg failed or short clip for pxdown 540p: 
+   SKIP mlvcs_540p pxdown: input missing (/Users/shamsalani/Downloads/duplexnvc-baseline/phase2/a3/m1080/pxdown_1920x1080_30.mp4)
+   ffmpeg failed or short clip for pxleav 360p: 
+   SKIP mlvc_360p pxleav: input missing (/Users/shamsalani/Downloads/duplexnvc-baseline/phase2/a3/m1080/pxleav_1920x1080_30.mp4)
+   ffmpeg failed or short clip for pxleav 360p: 
+   SKIP mlvc_360p pxleav: input missing (/Users/shamsalani/Downloads/duplexnvc-baseline/phase2/a3/m1080/pxleav_1920x1080_30.mp4)
+   ffmpeg failed or short clip for pxleav 540p: 
+   SKIP mlvcs_540p pxleav: input missing (/Users/shamsalani/Downloads/duplexnvc-baseline/phase2/a3/m1080/pxleav_1920x1080_30.mp4)
+   ffmpeg failed or short clip for pxleav 540p: 
+   SKIP mlvcs_540p pxleav: input missing (/Users/shamsalani/Downloads/duplexnvc-baseline/phase2/a3/m1080/pxleav_1920x1080_30.mp4)
+== runs finished  26 Nov 10:33 PM
+
+== analysis  10:33 PM
+E3 + A4: 112 runs (clip x setting x QP), 1568 combinations; structure or decode errors: 0
+
+Per setting, clip group, loss pattern and arm (fixed marking unless noted):
+setting     group loss   arm   mark        kbps  shown dB  lost %  frozen %  events  freeze  longest  I/run  R/run  R bytes  I bytes
+mlvc_360p   call  burst  idr   fixed      149.0    37.083    2.67      2.71      20     6.5        9   7.62    0.0      nan   6214.0
+mlvc_360p   call  burst  ltr   adaptive   136.2    37.102    2.67      3.17      20     7.6        9    5.0    3.0   1182.0   6227.0
+mlvc_360p   call  burst  ltr   fixed      135.6    37.106    2.67      3.17      20     7.6        9    5.0    3.0   1093.0   6227.0
+mlvc_360p   call  burst  wait  fixed      129.6    35.472    2.67     13.88      20    33.3       60    5.0    0.0      nan   6227.0
+mlvc_360p   call  none   ltr   adaptive   129.7    37.388     0.0       0.0       0                0    5.0    0.0      nan   6227.0
+mlvc_360p   call  none   wait  fixed      129.6    37.388     0.0       0.0       0                0    5.0    0.0      nan   6227.0
+mlvc_360p   call  p1     idr   fixed      145.1    37.202    0.83      2.42      40     2.9        3   6.62    0.0      nan   6215.0
+mlvc_360p   call  p1     ltr   adaptive   139.2    37.153    0.94      2.69      45    2.87        3   5.19   2.62   1230.0   6228.0
+mlvc_360p   call  p1     ltr   fixed      140.8     37.15    0.94      2.69      45    2.87        3   5.19   2.62   1413.0   6228.0
+mlvc_360p   call  p1     wait  fixed      129.6     33.37    0.98     26.08      34   36.82       63    5.0    0.0      nan   6227.0
+mlvc_360p   call  p5     idr   fixed      323.1    35.316    8.75     18.29     292    3.01        7  23.56    0.0      nan   6290.0
+mlvc_360p   call  p5     ltr   adaptive   193.1    35.888    6.56     15.79     256    2.96       12   7.44  14.19   1303.0   6206.0
+mlvc_360p   call  p5     ltr   fixed      197.6    35.817    6.67      16.1     258     3.0       12   7.44   14.5   1433.0   6206.0
+mlvc_360p   call  p5     wait  fixed      129.6    25.778    5.67     72.06      76   45.51       64    5.0    0.0      nan   6227.0
+mlvc_360p   vcd   burst  idr   fixed      182.4     37.36    3.57      3.62      78    5.56        9   8.35    0.0      nan   7569.0
+mlvc_360p   vcd   burst  ltr   adaptive   168.3    37.379    3.57       4.1      78    6.31        9    5.6    3.5   2060.0   7593.0
+mlvc_360p   vcd   burst  ltr   fixed      163.5    37.385    3.57      4.13      78    6.36        9    5.6    3.5   1413.0   7593.0
+mlvc_360p   vcd   burst  wait  fixed      150.0    34.283    3.57     18.62      70   31.91       63    5.0    0.0      nan   7625.0
+mlvc_360p   vcd   none   ltr   adaptive   149.9    37.711     0.0       0.0       0                0    5.0    0.0      nan   7625.0
+mlvc_360p   vcd   none   wait  fixed      150.0    37.711     0.0       0.0       0                0    5.0    0.0      nan   7625.0
+mlvc_360p   vcd   p1     idr   fixed      189.8    37.442    1.34      3.42     141    2.91        4   7.45    0.0      nan   7631.0
+mlvc_360p   vcd   p1     ltr   adaptive   171.0    37.487    1.14      3.19     132     2.9        6   5.38    2.9   2536.0   7624.0
+mlvc_360p   vcd   p1     ltr   fixed      165.0    37.492    1.14      3.19     132     2.9        6   5.38    2.9   1610.0   7624.0
+mlvc_360p   vcd   p1     wait  fixed      150.0    34.166    1.12     24.27     102   28.55       63    5.0    0.0      nan   7625.0
+mlvc_360p   vcd   p5     idr   fixed      444.5    35.859    9.88     19.38     748    3.11       10  24.65    0.0      nan   7594.0
+mlvc_360p   vcd   p5     ltr   adaptive   269.1    36.354    7.42     17.27     649    3.19       15   7.12  15.82   2440.0   7669.0
+mlvc_360p   vcd   p5     ltr   fixed      255.7    36.421    7.22     16.81     638    3.16       15   7.17   15.3   2036.0   7672.0
+mlvc_360p   vcd   p5     wait  fixed      150.0    26.443    5.92     77.43     190   48.91      128    5.0    0.0      nan   7625.0
+mlvcs_540p  call  burst  idr   fixed      279.6    37.623    2.67      2.71      20     6.5        9   7.62    0.0      nan  10115.0
+mlvcs_540p  call  burst  ltr   adaptive   260.8    37.619    2.67      3.17      20     7.6        9    5.0    3.0   2495.0  10112.0
+mlvcs_540p  call  burst  ltr   fixed      259.9    37.624    2.67      3.17      20     7.6        9    5.0    3.0   2218.0  10112.0
+mlvcs_540p  call  burst  wait  fixed      247.8    35.959    2.67     13.88      20    33.3       60    5.0    0.0      nan  10112.0
+mlvcs_540p  call  none   ltr   adaptive   247.9    37.946     0.0       0.0       0                0    5.0    0.0      nan  10112.0
+mlvcs_540p  call  none   wait  fixed      247.8    37.946     0.0       0.0       0                0    5.0    0.0      nan  10112.0
+mlvcs_540p  call  p1     idr   fixed      289.0    37.621    1.15      3.23      51    3.04        4   7.38    0.0      nan  10124.0
+mlvcs_540p  call  p1     ltr   adaptive   274.7    37.541    1.33      3.62      63    2.76        6   5.56   3.44   2554.0  10109.0
+mlvcs_540p  call  p1     ltr   fixed      281.1    37.523    1.35      3.69      64    2.77        6   5.56    3.5   2971.0  10109.0
+mlvcs_540p  call  p1     wait  fixed      247.8    32.245    1.25     35.77      41   41.88       63    5.0    0.0      nan  10112.0
+mlvcs_540p  call  p5     idr   fixed      638.6     34.66   12.38     23.23     368    3.03       13  30.88    0.0      nan  10167.0
+mlvcs_540p  call  p5     ltr   adaptive   378.6    35.677    8.71     20.48     306    3.21       12   7.94  18.44   2620.0  10098.0
+mlvcs_540p  call  p5     ltr   fixed      411.4    35.478    9.06     21.71     320    3.26       12   7.88  19.69   3054.0  10104.0
+mlvcs_540p  call  p5     wait  fixed      247.8     24.68    6.73     77.42      76   48.89       64    5.0    0.0      nan  10112.0
+mlvcs_540p  vcd   burst  idr   fixed      338.3     37.94    3.57      3.62      78    5.56        9   8.35    0.0      nan  11382.0
+mlvcs_540p  vcd   burst  ltr   adaptive   321.4    37.959    3.57       4.1      78    6.31        9    5.6    3.5   3395.0  11420.0
+mlvcs_540p  vcd   burst  ltr   fixed      313.2    37.962    3.57      4.13      78    6.36        9    5.6    3.5   2524.0  11420.0
+mlvcs_540p  vcd   burst  wait  fixed      292.9    34.752    3.57     18.62      70   31.91       63    5.0    0.0      nan  11465.0
+mlvcs_540p  vcd   none   ltr   adaptive   292.7    38.313     0.0       0.0       0                0    5.0    0.0      nan  11465.0
+mlvcs_540p  vcd   none   wait  fixed      292.9    38.313     0.0       0.0       0                0    5.0    0.0      nan  11465.0
+mlvcs_540p  vcd   p1     idr   fixed      374.3    37.892    1.84      4.47     183    2.93        4   8.62    0.0      nan  11413.0
+mlvcs_540p  vcd   p1     ltr   adaptive   343.3    37.962    1.58      4.24     173    2.94        6   5.53    3.9   3650.0  11463.0
+mlvcs_540p  vcd   p1     ltr   fixed      331.8    37.971    1.56      4.17     172    2.91        6   5.53   3.83   2905.0  11463.0
+mlvcs_540p  vcd   p1     wait  fixed      292.9    33.382    1.47     31.82     118   32.36       63    5.0    0.0      nan  11465.0
+mlvcs_540p  vcd   p5     idr   fixed      830.8    35.337   14.43     25.25    1010     3.0       10   33.0    0.0      nan  11402.0
+mlvcs_540p  vcd   p5     ltr   adaptive   552.5    36.063   11.18     24.48     853    3.44       18   8.35   22.2   3875.0  11512.0
+mlvcs_540p  vcd   p5     ltr   fixed      525.6    36.207   10.63     23.32     808    3.46       18    8.0  21.18   3553.0  11496.0
+mlvcs_540p  vcd   p5     wait  fixed      292.9    25.189    7.33     81.75     194   50.57      107    5.0    0.0      nan  11465.0
+
+Paired differences over clip x QP (mean ± 95 % CI): shown PSNR-Y (dB), kbps, frozen frames per 300
+mlvc_360p   all   p1     ltr - wait                     n=56  dPSNR +3.455 ± 0.840   dkbps +13.85 ± 5.42   dfrozen -65.2 ± 11.7
+mlvc_360p   all   p1     idr - wait                     n=56  dPSNR +3.435 ± 0.834   dkbps +32.84 ± 15.29   dfrozen -64.9 ± 11.7
+mlvc_360p   all   p1     ltr - idr                      n=56  dPSNR +0.021 ± 0.055   dkbps -18.99 ± 11.53   dfrozen -0.3 ± 0.9
+mlvc_360p   all   p5     ltr - wait                     n=56  dPSNR +9.995 ± 1.019   dkbps +94.89 ± 34.03   dfrozen -177.9 ± 8.7
+mlvc_360p   all   p5     idr - wait                     n=56  dPSNR +9.451 ± 0.983   dkbps +265.63 ± 83.69   dfrozen -170.5 ± 9.2
+mlvc_360p   all   p5     ltr - idr                      n=56  dPSNR +0.545 ± 0.179   dkbps -170.74 ± 51.67   dfrozen -7.4 ± 2.9
+mlvc_360p   all   burst  ltr - wait                     n=56  dPSNR +2.682 ± 0.722   dkbps +11.34 ± 3.55   dfrozen -40.2 ± 8.8
+mlvc_360p   all   burst  idr - wait                     n=56  dPSNR +2.658 ± 0.723   dkbps +28.68 ± 7.01   dfrozen -41.7 ± 9.0
+mlvc_360p   all   burst  ltr - idr                      n=56  dPSNR +0.024 ± 0.011   dkbps -17.35 ± 4.74   dfrozen +1.5 ± 0.4
+mlvc_360p   all   p1     A4 adaptive - fixed (ltr arm)  n=56  dPSNR -0.002 ± 0.004   dkbps +3.85 ± 2.42   dfrozen +0.0 ± 0.0
+mlvc_360p   all   p5     A4 adaptive - fixed (ltr arm)  n=56  dPSNR -0.027 ± 0.042   dkbps +8.29 ± 13.02   dfrozen +0.7 ± 1.6
+mlvc_360p   all   burst  A4 adaptive - fixed (ltr arm)  n=56  dPSNR -0.005 ± 0.005   dkbps +3.62 ± 2.67   dfrozen -0.1 ± 0.1
+mlvc_360p   vcd   p1     ltr - wait                     n=40  dPSNR +3.326 ± 1.095   dkbps +14.94 ± 7.47   dfrozen -63.2 ± 14.4
+mlvc_360p   vcd   p1     idr - wait                     n=40  dPSNR +3.276 ± 1.079   dkbps +39.81 ± 21.18   dfrozen -62.5 ± 14.2
+mlvc_360p   vcd   p1     ltr - idr                      n=40  dPSNR +0.050 ± 0.075   dkbps -24.87 ± 15.89   dfrozen -0.7 ± 1.2
+mlvc_360p   vcd   p5     ltr - wait                     n=40  dPSNR +9.978 ± 1.353   dkbps +105.68 ± 45.22   dfrozen -181.9 ± 10.6
+mlvc_360p   vcd   p5     idr - wait                     n=40  dPSNR +9.416 ± 1.304   dkbps +294.49 ± 108.65   dfrozen -174.2 ± 11.5
+mlvc_360p   vcd   p5     ltr - idr                      n=40  dPSNR +0.562 ± 0.214   dkbps -188.81 ± 66.25   dfrozen -7.7 ± 3.4
+mlvc_360p   vcd   burst  ltr - wait                     n=40  dPSNR +3.102 ± 0.920   dkbps +13.49 ± 4.59   dfrozen -43.5 ± 9.9
+mlvc_360p   vcd   burst  idr - wait                     n=40  dPSNR +3.077 ± 0.923   dkbps +32.41 ± 8.44   dfrozen -45.0 ± 10.2
+mlvc_360p   vcd   burst  ltr - idr                      n=40  dPSNR +0.025 ± 0.013   dkbps -18.91 ± 5.64   dfrozen +1.6 ± 0.5
+mlvc_360p   vcd   p1     A4 adaptive - fixed (ltr arm)  n=40  dPSNR -0.005 ± 0.005   dkbps +6.03 ± 3.08   dfrozen +0.0 ± 0.0
+mlvc_360p   vcd   p5     A4 adaptive - fixed (ltr arm)  n=40  dPSNR -0.066 ± 0.051   dkbps +13.41 ± 18.14   dfrozen +1.4 ± 2.2
+mlvc_360p   vcd   burst  A4 adaptive - fixed (ltr arm)  n=40  dPSNR -0.006 ± 0.006   dkbps +4.83 ± 3.67   dfrozen -0.1 ± 0.1
+mlvc_360p   call  p1     ltr - wait                     n=16  dPSNR +3.780 ± 1.243   dkbps +11.13 ± 4.44   dfrozen -70.2 ± 22.0
+mlvc_360p   call  p1     idr - wait                     n=16  dPSNR +3.831 ± 1.275   dkbps +15.42 ± 5.14   dfrozen -71.0 ± 22.7
+mlvc_360p   call  p1     ltr - idr                      n=16  dPSNR -0.052 ± 0.041   dkbps -4.28 ± 3.90   dfrozen +0.8 ± 0.9
+mlvc_360p   call  p5     ltr - wait                     n=16  dPSNR +10.040 ± 1.364   dkbps +67.93 ± 41.83   dfrozen -167.9 ± 15.3
+mlvc_360p   call  p5     idr - wait                     n=16  dPSNR +9.538 ± 1.324   dkbps +193.50 ± 119.49   dfrozen -161.3 ± 14.9
+mlvc_360p   call  p5     ltr - idr                      n=16  dPSNR +0.501 ± 0.365   dkbps -125.57 ± 78.79   dfrozen -6.6 ± 5.7
+mlvc_360p   call  burst  ltr - wait                     n=16  dPSNR +1.634 ± 0.989   dkbps +5.94 ± 4.33   dfrozen -32.1 ± 19.6
+mlvc_360p   call  burst  idr - wait                     n=16  dPSNR +1.611 ± 0.984   dkbps +19.36 ± 12.79   dfrozen -33.5 ± 20.1
+mlvc_360p   call  burst  ltr - idr                      n=16  dPSNR +0.023 ± 0.019   dkbps -13.42 ± 9.49   dfrozen +1.4 ± 0.7
+mlvc_360p   call  p1     A4 adaptive - fixed (ltr arm)  n=16  dPSNR +0.003 ± 0.004   dkbps -1.57 ± 2.01   dfrozen +0.0 ± 0.0
+mlvc_360p   call  p5     A4 adaptive - fixed (ltr arm)  n=16  dPSNR +0.070 ± 0.054   dkbps -4.50 ± 3.94   dfrozen -0.9 ± 1.1
+mlvc_360p   call  burst  A4 adaptive - fixed (ltr arm)  n=16  dPSNR -0.003 ± 0.008   dkbps +0.60 ± 1.42   dfrozen +0.0 ± 0.0
+mlvcs_540p  all   p1     ltr - wait                     n=56  dPSNR +4.786 ± 0.976   dkbps +37.29 ± 13.04   dfrozen -86.8 ± 14.4
+mlvcs_540p  all   p1     idr - wait                     n=56  dPSNR +4.758 ± 0.968   dkbps +69.92 ± 25.39   dfrozen -86.5 ± 14.5
+mlvcs_540p  all   p1     ltr - idr                      n=56  dPSNR +0.029 ± 0.056   dkbps -32.63 ± 15.20   dfrozen -0.3 ± 0.8
+mlvcs_540p  all   p5     ltr - wait                     n=56  dPSNR +10.955 ± 1.067   dkbps +212.96 ± 68.87   dfrozen -173.0 ± 8.8
+mlvcs_540p  all   p5     idr - wait                     n=56  dPSNR +10.101 ± 1.069   dkbps +495.87 ± 138.17   dfrozen -167.5 ± 9.3
+mlvcs_540p  all   p5     ltr - idr                      n=56  dPSNR +0.854 ± 0.216   dkbps -282.91 ± 73.02   dfrozen -5.4 ± 2.8
+mlvcs_540p  all   burst  ltr - wait                     n=56  dPSNR +2.769 ± 0.738   dkbps +17.94 ± 4.94   dfrozen -40.2 ± 8.8
+mlvcs_540p  all   burst  idr - wait                     n=56  dPSNR +2.753 ± 0.739   dkbps +41.50 ± 9.84   dfrozen -41.7 ± 9.0
+mlvcs_540p  all   burst  ltr - idr                      n=56  dPSNR +0.016 ± 0.010   dkbps -23.57 ± 6.33   dfrozen +1.5 ± 0.4
+mlvcs_540p  all   p1     A4 adaptive - fixed (ltr arm)  n=56  dPSNR -0.001 ± 0.013   dkbps +6.42 ± 4.99   dfrozen +0.1 ± 0.3
+mlvcs_540p  all   p5     A4 adaptive - fixed (ltr arm)  n=56  dPSNR -0.045 ± 0.106   dkbps +9.86 ± 22.62   dfrozen +1.4 ± 2.5
+mlvcs_540p  all   burst  A4 adaptive - fixed (ltr arm)  n=56  dPSNR -0.003 ± 0.005   dkbps +6.13 ± 4.02   dfrozen -0.1 ± 0.1
+mlvcs_540p  vcd   p1     ltr - wait                     n=40  dPSNR +4.589 ± 1.186   dkbps +38.93 ± 17.57   dfrozen -83.0 ± 16.7
+mlvcs_540p  vcd   p1     idr - wait                     n=40  dPSNR +4.510 ± 1.166   dkbps +81.44 ± 34.59   dfrozen -82.0 ± 16.6
+mlvcs_540p  vcd   p1     ltr - idr                      n=40  dPSNR +0.079 ± 0.069   dkbps -42.51 ± 20.21   dfrozen -0.9 ± 1.0
+mlvcs_540p  vcd   p5     ltr - wait                     n=40  dPSNR +11.018 ± 1.412   dkbps +232.74 ± 91.01   dfrozen -175.3 ± 11.3
+mlvcs_540p  vcd   p5     idr - wait                     n=40  dPSNR +10.149 ± 1.425   dkbps +537.89 ± 180.23   dfrozen -169.5 ± 11.8
+mlvcs_540p  vcd   p5     ltr - idr                      n=40  dPSNR +0.869 ± 0.268   dkbps -305.16 ± 94.48   dfrozen -5.8 ± 3.5
+mlvcs_540p  vcd   burst  ltr - wait                     n=40  dPSNR +3.210 ± 0.940   dkbps +20.30 ± 6.15   dfrozen -43.5 ± 9.9
+mlvcs_540p  vcd   burst  idr - wait                     n=40  dPSNR +3.188 ± 0.943   dkbps +45.40 ± 11.63   dfrozen -45.0 ± 10.2
+mlvcs_540p  vcd   burst  ltr - idr                      n=40  dPSNR +0.022 ± 0.012   dkbps -25.10 ± 7.55   dfrozen +1.6 ± 0.5
+mlvcs_540p  vcd   p1     A4 adaptive - fixed (ltr arm)  n=40  dPSNR -0.009 ± 0.016   dkbps +11.52 ± 5.94   dfrozen +0.2 ± 0.3
+mlvcs_540p  vcd   p5     A4 adaptive - fixed (ltr arm)  n=40  dPSNR -0.143 ± 0.122   dkbps +26.90 ± 28.21   dfrozen +3.5 ± 3.1
+mlvcs_540p  vcd   burst  A4 adaptive - fixed (ltr arm)  n=40  dPSNR -0.003 ± 0.006   dkbps +8.22 ± 5.42   dfrozen -0.1 ± 0.1
+mlvcs_540p  call  p1     ltr - wait                     n=16  dPSNR +5.278 ± 1.891   dkbps +33.21 ± 15.28   dfrozen -96.2 ± 30.5
+mlvcs_540p  call  p1     idr - wait                     n=16  dPSNR +5.377 ± 1.906   dkbps +41.15 ± 19.26   dfrozen -97.6 ± 31.5
+mlvcs_540p  call  p1     ltr - idr                      n=16  dPSNR -0.098 ± 0.065   dkbps -7.94 ± 12.09   dfrozen +1.4 ± 1.5
+mlvcs_540p  call  p5     ltr - wait                     n=16  dPSNR +10.798 ± 1.461   dkbps +163.52 ± 89.59   dfrozen -167.1 ± 13.7
+mlvcs_540p  call  p5     idr - wait                     n=16  dPSNR +9.980 ± 1.392   dkbps +390.80 ± 194.97   dfrozen -162.6 ± 15.0
+mlvcs_540p  call  p5     ltr - idr                      n=16  dPSNR +0.817 ± 0.398   dkbps -227.28 ± 107.97   dfrozen -4.6 ± 5.1
+mlvcs_540p  call  burst  ltr - wait                     n=16  dPSNR +1.666 ± 1.002   dkbps +12.03 ± 8.14   dfrozen -32.1 ± 19.6
+mlvcs_540p  call  burst  idr - wait                     n=16  dPSNR +1.664 ± 1.007   dkbps +31.77 ± 19.74   dfrozen -33.5 ± 20.1
+mlvcs_540p  call  burst  ltr - idr                      n=16  dPSNR +0.001 ± 0.016   dkbps -19.73 ± 12.83   dfrozen +1.4 ± 0.7
+mlvcs_540p  call  p1     A4 adaptive - fixed (ltr arm)  n=16  dPSNR +0.018 ± 0.020   dkbps -6.30 ± 6.16   dfrozen -0.2 ± 0.4
+mlvcs_540p  call  p5     A4 adaptive - fixed (ltr arm)  n=16  dPSNR +0.200 ± 0.176   dkbps -32.72 ± 30.22   dfrozen -3.7 ± 3.6
+mlvcs_540p  call  burst  A4 adaptive - fixed (ltr arm)  n=16  dPSNR -0.005 ± 0.009   dkbps +0.92 ± 3.30   dfrozen +0.0 ± 0.0
+
+== written: /Users/shamsalani/Downloads/duplexnvc-baseline/phase2/e3a4/results/table.csv, paired.csv, summary.txt
+== E3 + A4 END  Thu 26 Nov 10:33 PM

@@ -1,0 +1,9 @@
+E6: A2's bound (LTR recovery every 32 frames) against the default structure, VCD clips; failed runs: 0
+MLVC-S 540p            th (talking head)                             n= 40  cost +9.49 % (mean curve); per clip +9.00 ± 1.01 % (median +8.75);  worst frame default 44.3 ± 1.9 dB (min 25.9), LTR-32 48.0 ± 1.2 dB (min 37.9)
+MLVC-S 540p            th-bb (talking head, blurred background)      n= 40  cost +10.18 % (mean curve); per clip +10.08 ± 1.34 % (median +9.22);  worst frame default 43.2 ± 2.0 dB (min 30.1), LTR-32 47.3 ± 1.3 dB (min 37.5)
+MLVC-S 540p            th-ob (talking head, other background)        n= 40  cost +7.90 % (mean curve); per clip +7.55 ± 0.92 % (median +7.46);  worst frame default 45.2 ± 2.0 dB (min 28.4), LTR-32 49.1 ± 1.3 dB (min 37.8)
+MLVC-S 540p            all groups                                    n=120  cost +9.29 % (mean curve); per clip +8.88 ± 0.65 % (median +8.42);  worst frame default 44.2 ± 1.1 dB (min 25.9), LTR-32 48.1 ± 0.7 dB (min 37.5)
+Full MLVC 360p (B*)    th (talking head)                             n= 40  cost +31.95 % (mean curve); per clip +31.61 ± 3.61 % (median +31.71);  worst frame default 39.4 ± 1.8 dB (min 25.8), LTR-32 46.5 ± 1.7 dB (min 31.4)
+Full MLVC 360p (B*)    th-bb (talking head, blurred background)      n= 40  cost +20.36 % (mean curve); per clip +20.83 ± 2.17 % (median +19.23);  worst frame default 41.2 ± 1.5 dB (min 32.5), LTR-32 48.8 ± 1.2 dB (min 39.7)
+Full MLVC 360p (B*)    th-ob (talking head, other background)        n= 40  cost +31.72 % (mean curve); per clip +33.41 ± 2.89 % (median +32.45);  worst frame default 41.6 ± 1.4 dB (min 31.9), LTR-32 48.9 ± 1.2 dB (min 37.7)
+Full MLVC 360p (B*)    all groups                                    n=120  cost +29.46 % (mean curve); per clip +28.62 ± 1.94 % (median +27.23);  worst frame default 40.7 ± 0.9 dB (min 25.8), LTR-32 48.1 ± 0.8 dB (min 31.4)
