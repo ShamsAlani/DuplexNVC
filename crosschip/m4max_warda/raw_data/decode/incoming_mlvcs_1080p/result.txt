@@ -1,0 +1,20 @@
+decode npu: ok
+decode npu2: ok
+decode gpu: ok
+decode cpu: ok
+NE decode deterministic on this Mac: yes
+NE frames identical to Shams's NE decode: 600 of 600
+-- drift NE vs GPU (this Mac)
+frames compared 600; bit-identical 0; Y-PSNR between decodes: mean 53.70 dB, min 44.58 dB
+  frames  0- 0 after an I-frame: mean  59.70 dB  min  59.51 dB
+  frames  1-15 after an I-frame: mean  56.98 dB  min  52.98 dB
+  frames 16-31 after an I-frame: mean  53.88 dB  min  48.16 dB
+  frames 32-47 after an I-frame: mean  52.22 dB  min  46.99 dB
+  frames 48-63 after an I-frame: mean  51.16 dB  min  44.58 dB
+-- drift NE vs CPU (this Mac)
+frames compared 600; bit-identical 0; Y-PSNR between decodes: mean 49.20 dB, min 36.98 dB
+  frames  0- 0 after an I-frame: mean  53.00 dB  min  52.58 dB
+  frames  1-15 after an I-frame: mean  51.96 dB  min  49.04 dB
+  frames 16-31 after an I-frame: mean  49.56 dB  min  44.19 dB
+  frames 32-47 after an I-frame: mean  47.94 dB  min  40.52 dB
+  frames 48-63 after an I-frame: mean  46.92 dB  min  36.98 dB

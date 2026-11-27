@@ -1,0 +1,10 @@
+stream,frames,NE_frames_identical_to_M4Pro_NE,NE_deterministic_on_M4Max,GPU_vs_NE_worst_frame_dB,CPU_vs_NE_worst_frame_dB
+B* outgoing (full MLVC 360p),1802,1802,yes,38.54,39.51
+incoming full MLVC 360p,600,600,yes,36.32,36.36
+incoming full MLVC 540p,600,600,yes,39.83,37.06
+incoming full MLVC 720p,600,600,yes,42.17,40.82
+incoming full MLVC 1080p,600,600,yes,44.26,42.90
+incoming MLVC-S 540p,600,600,yes,40.24,41.01
+incoming MLVC-S 720p,600,600,yes,44.13,41.47
+incoming MLVC-S 1080p,600,600,yes,44.58,36.98
+B* incoming re-encoded on the M4 Max NE,600,same bitstream as the M4 Pro (byte-identical),,,

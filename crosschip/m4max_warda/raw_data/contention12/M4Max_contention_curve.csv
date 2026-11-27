@@ -1,0 +1,5 @@
+load_pct,alone-enc_runs,alone-enc_call_ms_mean,alone-enc_infer_ms_mean,alone-enc_service_ms_p99,alone-enc_memstress_GB_s,duplex30_send_runs,duplex30_send_call_ms_mean,duplex30_send_latency_ms_p99,duplex30_send_late_or_dropped_pct,duplex30_send_memstress_GB_s,duplex30_recv_runs,duplex30_recv_call_ms_mean,duplex30_recv_latency_ms_p99,duplex30_recv_late_or_dropped_pct
+0,3,5.9,5.61,6.09,0.0,3,12.63,29.1,0.0,0.0,3,13.68,28.41,0.0
+25,3,6.01,5.71,6.29,227.51,3,8.1,22.93,0.0,214.42,3,9.07,23.5,0.0
+50,3,6.07,5.76,6.41,319.06,3,7.49,20.87,0.0,321.3,3,8.63,21.48,0.0
+75,3,6.14,5.81,6.85,336.74,3,7.44,21.33,0.06,341.55,3,8.31,21.52,0.06

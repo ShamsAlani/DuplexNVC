@@ -1,0 +1,1 @@
+threads 14 seconds 63.5 target 93.0 GB/s achieved 92.9 GB/s

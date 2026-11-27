@@ -1,0 +1,16 @@
+t0_epoch_ms=1795739033195.42
+mode=alone-dec
+size=1280x720
+qp=26
+iframe_period=64
+fps=0
+deadline_ms=33.333
+seconds=40
+enc_cu=gpu
+dec_cu=gpu
+warmup_frames=64
+bundles=/Users/warda/Downloads/duplexnvc-baseline/bundles/mlvcs_720p
+input=/Users/warda/Downloads/duplexnvc-baseline/data/nv12/cam_720p.nv12
+incoming=/Users/warda/Downloads/duplexnvc-baseline/data/incoming/mlvcs_720p-qp26/incoming.aus
+encoder_dropped=0
+decoder_failures=0

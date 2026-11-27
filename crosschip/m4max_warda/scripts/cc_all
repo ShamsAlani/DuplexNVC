@@ -31,6 +31,8 @@ exec > >(tee -a "$CC/out_cc_all.txt") 2>&1
 REST=${REST:-60}
 case ${1:-all} in
   gen) PARTS="gen"; REST=${REST_GEN:-30};;
+  units) PARTS="units"; REST=${REST_UNITS:-20};;
+  gpu) PARTS="gpu"; REST=${REST_GPU:-20};;
   all) PARTS="decode bstar energy contention settings";;
   mon) PARTS="bstar energy settings";;
   tue) PARTS="decode contention";;
@@ -70,8 +72,9 @@ bench () {  # bench <outdir> <setting> <mode> <enc_cu> <dec_cu> <fps> <seconds> 
   if done_run "$O"; then echo "   skip (done) ${O#$CC/}"; return 1; fi
   cfg $s; mkdir -p "$(dirname "$O")"; local extra=""; [ "$fps" = 15 ] && extra="--deadline-ms 66.7"
   echo "[$n] $(date +%H:%M:%S) +$(( ($(date +%s)-T0)/60 ))min  ${O#$CC/}"
+  local warm=64; [ "$ec" = cpu ] && [ "$dc" = cpu ] && warm=10   # baseline 09 uses 10 warm-up frames on the CPU
   "$BENCH" $mode --input "$(camf $s)" --size $VSIZE --qp 26 --iframe-period 64 --bundles "$(bund $s)" --incoming "$(incf $s)" \
-     --enc-cu $ec --dec-cu $dc --fps $fps --seconds $sec --warmup-frames 64 $extra --out-dir "$O" 2> "$O.log"
+     --enc-cu $ec --dec-cu $dc --fps $fps --seconds $sec --warmup-frames $warm $extra --out-dir "$O" 2> "$O.log"
   pmset -g therm 2>/dev/null | grep -iE "speed_limit|warning" | tr -s ' \n' ' ' > "$O.therm"
   grep -oE "requested=[a-z]+ resolved=[a-z]+|FAILED|rror[^.]*" "$O.log" | sort -u | tr '\n' ' '; echo
   return 0
@@ -125,6 +128,30 @@ part_gen () {
     ln -sfn "$O" "$E/W_r$r"
   done
   for s in $NEW; do for m in alone-enc alone-dec; do bench "$CC/settings/alone/$s/U_${m}_npu_r1" $s $m npu npu 0 60 && rest; done; done
+}
+
+# ---------- units: each network alone on the GPU and on the CPU, all 7 settings (about 30 min) ----------
+# Same as baseline 09 Part A for the GPU and CPU rows of alone_per_unit.csv; 1 round of 40 s runs.
+part_units () {
+  echo; echo "== PART units (GPU and CPU alone)  $(date)"
+  for u in gpu cpu; do for s in mlvc_360p $NEW; do for m in alone-enc alone-dec; do
+    bench "$CC/settings/alone/$s/U_${m}_${u}_r1" $s $m $u $u 0 40 && rest
+  done; done; done
+}
+
+# ---------- gpu: the GPU across chips (about 25 min) ----------
+# 1) each network alone on the GPU, all 7 settings (1 round, 40 s) -> against the M4 Pro's GPU (alone_per_unit.csv)
+# 2) encoder on the GPU, decoder on the NE, paced 30 fps x3 with powermetrics, for the two settings where this placement
+#    reached only 15 fps on the M4 Pro (full MLVC 720p, MLVC-S 1080p): does a bigger GPU make them 30 fps?
+part_gpu () {
+  echo; echo "== PART gpu  $(date)"; local S="$CC/settings"; mkdir -p "$S"
+  for s in mlvc_360p $NEW; do for m in alone-enc alone-dec; do
+    bench "$S/alone/$s/U_${m}_gpu_r1" $s $m gpu gpu 0 40 && rest
+  done; done
+  idle "$S/idle"
+  for s in mlvc_720p mlvcs_1080p; do
+    for r in 1 2 3; do paced_pm "$S/${s}_gpu-npu/P30_r$r" $s gpu npu 30 && rest; done
+  done
 }
 
 # ---------- 1 decode: do two Macs decode (and encode) identically? ----------
@@ -201,27 +228,30 @@ part_energy () {
   done
 }
 
-# ---------- 4 contention: is memory bandwidth the limit on the NE? ----------
+# ---------- 4 contention: baseline experiment 12, exactly (same script as Shams's M4 Pro and Mohammed's M1) ----------
+# memstress (baseline/12_contention_experiment/scripts/memstress.c) loads memory at 0/25/50/75 % duty, one thread per
+# performance core, 256 MB buffers, while (a) the encoder alone runs unpaced on the NE and (b) the B* call runs paced at
+# 30 fps. 3 interleaved rounds x 4 loads x 2 = 24 runs of 60 s + 60 s rest (~55 min), plus a 10 s peak run.
 part_contention () {
-  echo; echo "== PART contention  $(date)"; local C="$CC/contention"; mkdir -p "$C"
-  local TH=$(( $(sysctl -n hw.ncpu) - 2 ))   # leave two cores free for the benchmark's own CPU work
-  if [ ! -s "$C/peak.txt" ]; then
-    echo "   $(date +%H:%M:%S) measuring peak CPU copy bandwidth (20 s, $TH threads)"
-    "$TOOLS/bwload" $TH 20 0 | tee "$C/peak.txt"; sleep 30
-  fi
-  local PEAK=$(sed 's/.*achieved \([0-9.]*\).*/\1/' "$C/peak.txt"); echo "   peak $PEAK GB/s (100 %)"
-  for r in 1 2; do for s in mlvc_360p mlvc_720p; do for L in 0 25 50 75; do for m in alone-enc alone-dec; do
-    local O="$C/$s/L$L/U_${m}_npu_r$r"
-    if done_run "$O"; then n=$((n+1)); echo "   skip (done) ${O#$CC/}"; continue; fi
-    mkdir -p "$O"; local BW=0
-    if [ $L -gt 0 ]; then
-      local TGT=$(echo "$PEAK * $L / 100" | bc -l)
-      "$TOOLS/bwload" $TH 600 $TGT > "$O/load.txt" & BW=$!; sleep 3
-    fi
-    bench "$O" $s $m npu npu 0 60
-    if [ $BW != 0 ]; then kill $BW; wait $BW 2>/dev/null; echo "      load: $(sed 's/.*achieved //' "$O/load.txt")"; fi
-    rest
-  done; done; done; done
+  echo; echo "== PART contention (experiment 12 protocol)  $(date)"
+  local C="$CC/contention12" X="$REPO/baseline/12_contention_experiment/scripts" TAG=M4Max
+  local TH=$(sysctl -n hw.perflevel0.physicalcpu) MB=256; mkdir -p "$C"
+  cc -O2 -o "$TOOLS/memstress" "$X/memstress.c" -lpthread || return 1
+  echo "   memstress: $TH threads (performance cores), ${MB} MB buffers"
+  [ -s "$C/${TAG}_memstress_peak.txt" ] || { "$TOOLS/memstress" 100 10 $TH $MB | tee "$C/${TAG}_memstress_peak.txt"; sleep 20; }
+  for r in 1 2 3; do for load in 0 25 50 75; do for kind in alone-enc duplex30; do
+    local O="$C/${TAG}_load${load}_${kind}_r$r"; n=$((n+1))
+    if [ -s "$O/frames.csv" ] && [ -s "$O/memstress.txt" ]; then echo "   skip (done) $(basename "$O")"; continue; fi
+    echo "[$n] $(date +%H:%M:%S) +$(( ($(date +%s)-T0)/60 ))min  $(basename "$O")"; mkdir -p "$O"
+    "$TOOLS/memstress" $load 75 $TH $MB > "$O/memstress.txt" & local MS=$!; sleep 5
+    if [ $kind = alone-enc ]; then "$BENCH" alone-enc $BL --fps 0 --seconds 60 --out-dir "$O" 2> "$O.log"
+    else "$BENCH" duplex $BL --fps 30 --seconds 60 --out-dir "$O" 2> "$O.log"; fi
+    pmset -g therm 2>/dev/null | grep -iE "speed_limit|warning" | tr -s ' \n' ' ' > "$O.therm"
+    wait $MS; echo "      $(cat "$O/memstress.txt")"
+    grep -oE "requested=[a-z]+ resolved=[a-z]+|FAILED|rror[^.]*" "$O.log" | sort -u | tr '\n' ' '; echo
+    sleep 60
+  done; done; done
+  "$PY" "$X/contention_sum.py" "$C" $TAG "$TOOLS"
 }
 
 # ---------- 5 settings: the 7 model/resolution settings and the two winning placements ----------

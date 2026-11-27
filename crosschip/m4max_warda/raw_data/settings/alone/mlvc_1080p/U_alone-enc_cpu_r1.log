@@ -1,0 +1,29 @@
+2026-11-27 04:34:30.153 [T#18241738][ INFO][manager.cpp:216]: Initializing MlvcManager from bundles dir: compute_unit=cpu, enable_model_cache=1, session_preload_mode=at-init, versions=[v0.1]
+2026-11-27 04:34:30.153 [T#18241738][ INFO][platform_info.cpp:644]: Build: libmlvc 0.1.0 (eb5d60a, HEAD)
+2026-11-27 04:34:30.153 [T#18241738][ INFO][platform_info.cpp:646]: Platform: OS=macOS 26.3, HW=Apple Mac16,5
+2026-11-27 04:34:30.153 [T#18241738][ INFO][platform_info.cpp:654]: Platform: CPU=Apple M4 Max (Apple M4, arm64), FP16=yes, DotProd=yes
+2026-11-27 04:34:30.153 [T#18241738][ INFO][platform_info.cpp:666]: Platform: enumeration time: 0.0 ms
+2026-11-27 04:34:30.153 [T#18241738][ WARN][manager.cpp:423]: MLVC is primarily designed for NPU inference. Running on CPU may result in degraded performance or unexpected behavior.
+2026-11-27 04:34:30.154 [T#18241738][ INFO][engine.mm:630]: CoreML initialized: compute_unit=cpu, os_ver=26, os_build=25D125, env_hash=3d9782e4
+2026-11-27 04:34:30.154 [T#18241738][ INFO][bundle.cpp:160]: Discovering model bundles...
+2026-11-27 04:34:30.154 [T#18241738][ INFO][bundle.cpp:211]: Found model bundle: dmc61sbr_reglu-psnr_v1-coreml-apple-v0.1.tar
+2026-11-27 04:34:30.171 [T#18241738][ INFO][manager.cpp:519]: Loading model bundle 1/1 (40.6 MB)...
+2026-11-27 04:34:30.173 [T#18241738][ INFO][bundle.cpp:680]: Preparing model cache for bundle v0.1...
+2026-11-27 04:34:30.173 [T#18241738][ INFO][bundle.cpp:711]: Preloading inference sessions for bundle v0.1...
+2026-11-27 04:34:30.173 [T#18241738][ INFO][bundle.cpp:838]: Creating inference session for model 1920x1088, part=MLVCEncoder, registry_id=dmc61sbr_reglu-psnr_v1-coreml-apple-v0.1 func=MLVCEncoder_1920x1088
+2026-11-27 04:34:30.577 [T#18241738][ INFO][bundle.cpp:838]: Creating inference session for model 1920x1088, part=MLVCDecoder, registry_id=dmc61sbr_reglu-psnr_v1-coreml-apple-v0.1 func=MLVCDecoder_1920x1088
+2026-11-27 04:34:30.929 [T#18241738][ INFO][bundle.cpp:732]: Preloaded 2 inference sessions
+2026-11-27 04:34:30.929 [T#18241738][ INFO][bundle.cpp:608]: Loaded bundle: v0.1, dmc61sbr_reglu-psnr_v1, coreml, apple, ts: 2026-11-12T20:37:14.826448+00:00, registry: 1, models: 1
+2026-11-27 04:34:30.929 [T#18241738][ INFO][manager.cpp:545]: Loading model bundle 1/1 completed
+2026-11-27 04:34:30.930 [T#18241738][ INFO][manager.cpp:571]: MLVC Manager initialized with 1 bundle(s)
+manager: requested=cpu resolved=cpu
+model v0.1 default iframe_period=64 -> using 64
+2026-11-27 04:34:30.930 [T#18241738][ INFO][codec.cpp:469]: [Enc#0] Configuring encoder: version=v0.1, size=1920x1080, iframe_period=64, num_temporal_layers=1, ltr_mode=internal, ltr_start_idx=0, ltr_period=0, ltr_num_slots=4, ltr_recovery_period=0
+2026-11-27 04:34:30.934 [T#18241738][ INFO][codec.cpp:534]: [Enc#0] Configured encoder in 3.39 ms
+encoder first-frame (init) ms: 177.932
+2026-11-27 04:34:52.781 [T#18241796][ INFO][codec.cpp:136]: [Enc#0] Encoder frames: 128/128 (128/0), fps: 5.9, kbps: 75.5 (1.00/0.00), idr: 0/2 (forced/total), ltr_recoveries: 0/0 (forced/total)
+2026-11-27 04:34:52.781 [T#18241796][ INFO][codec.cpp:143]: [Enc#0] Encoder total: 169.06/7.67/160.32/223.68 (n=128), reconfigure: 3.39/0.00 (n=1), preprocess: 0.45/0.13, inference: 166.36/7.60, scale_decoder: 0.29/0.02, entropy_coding: 1.86/0.05, interval: 170.65/22.67 (mean/std/min/max)
+done: 239 frame records in /Users/warda/Downloads/duplexnvc-baseline/crosschip/settings/alone/mlvc_1080p/U_alone-enc_cpu_r1
+2026-11-27 04:35:11.440 [T#18241738][ INFO][core.cpp:112]: ~Encoder core: preprocess: 0.45/0.10 (n=239), inference: 165.90/6.61 (n=239), scale_decoder: 0.29/0.02 (n=239), entropy_coding: 1.87/0.05 (n=239) (mean/std)
+2026-11-27 04:35:11.440 [T#18241738][ INFO][codec.cpp:199]: [Enc#0] ~Encoder frames: 239/239 (239/0), fps: 5.9, kbps: 76.2 (1.00/0.00), idr: 0/4 (forced/total), ltr_recoveries: 0/0 (forced/total)
+2026-11-27 04:35:11.440 [T#18241738][ INFO][codec.cpp:206]: [Enc#0] ~Encoder total: 168.60/6.66/160.32/223.68 (n=239), reconfigure: 3.39/0.00 (n=1), preprocess: 0.45/0.10, inference: 165.90/6.61, scale_decoder: 0.29/0.02, entropy_coding: 1.87/0.05, interval: 169.45/16.98 (mean/std/min/max)

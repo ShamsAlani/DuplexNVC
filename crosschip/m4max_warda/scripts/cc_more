@@ -1,0 +1,21 @@
+#!/bin/bash
+# The remaining M4 Max steps of the plan, in one command. Parts (any order, any subset):
+#   decode      (core path, ~20 min) Shams's bitstreams decoded here on NE x2, GPU, CPU: identical to her NE decode? + same bitstream when encoding here? (determinism check)
+#   contention  (~55 min) baseline experiment 12 exactly (same as Shams's M4 Pro and Mohammed's M1): memory load 0/25/50/75 %
+#               while the encoder runs alone on the NE and while the B* call runs at 30 fps, 3 rounds
+#   units       (~30 min) each network alone on the GPU and on the CPU, all 7 settings
+#   gpu         (~25 min) GPU only: each network alone on the GPU (7 settings) + encoder-GPU/decoder-NE at 30 fps where the M4 Pro managed only 15 fps
+#     bash ~/DuplexNVC_push/crosschip/m4max_warda/scripts/cc_more decode contention units
+# Same quiet mode as cc_gen. Asks for the password and one checklist, then runs alone; prints the comparison with
+# Shams's M4 Pro (baseline 09, alone_per_unit.csv) at the end. Nothing is pushed.
+export PATH="$HOME/bin:$PATH"
+D=$(cd "$(dirname "$0")" && pwd)
+sudo -v || exit 1
+( while true; do sudo -n true 2>/dev/null; sleep 50; done ) & KEEP=$!; trap 'kill $KEEP 2>/dev/null' EXIT
+echo "Checklist: charger in, brightness maximum, automatic brightness and True Tone off, Bluetooth off, every app except Terminal quit."
+read -r -p "Press Enter to start (Wi-Fi turns off now and back on at the end)... " _
+WIFI=$(networksetup -listallhardwareports | awk '/Wi-Fi/{getline; print $2}')
+sudo networksetup -setairportpower "$WIFI" off
+REST=${REST:-30} bash "$D/cc_all" ${*:-decode contention units}
+sudo networksetup -setairportpower "$WIFI" on
+echo; echo "== FINISHED $(date). Copy everything above from '== CROSS-CHIP SUMMARY' and paste it in the chat."

@@ -119,3 +119,531 @@ requested=npu resolved=npu
 -> /Users/warda/Downloads/duplexnvc-baseline/crosschip/summary/ (bstar_compare, alone_compare, placements_compare, contention, decode .csv + summary.txt)
 
 Next: turn Wi-Fi on, then  bash /Users/warda/DuplexNVC/cross_chip/scripts/cc_collect   (copies the results into the repo and zips the raw data)
+
+== CROSS-CHIP START  Fri Nov 27 03:07:18 +04 2026   parts: decode contention units   rest=30s
+   Apple M4 Max, Mac16,5, 64 GB; 26.3 (25D125)
+   Energy Mode: 0 (0 = Automatic; must match Shams's)
+   Reminder: brightness at maximum, automatic brightness and True Tone off, Bluetooth off, no other apps.
+   Spotlight indexing paused
+
+== PART decode  Fri Nov 27 03:07:21 +04 2026
+   03:07:21 decode bstar_outgoing
+      NE decode deterministic on this Mac: yes
+      NE frames identical to Shams's NE decode: 1802 of 1802
+      frames compared 1802; bit-identical 0; Y-PSNR between decodes: mean 52.15 dB, min 38.54 dB
+      frames compared 1802; bit-identical 0; Y-PSNR between decodes: mean 48.78 dB, min 39.51 dB
+   03:08:51 decode incoming_mlvc_360p
+      NE decode deterministic on this Mac: yes
+      NE frames identical to Shams's NE decode: 600 of 600
+      frames compared 600; bit-identical 0; Y-PSNR between decodes: mean 51.32 dB, min 36.32 dB
+      frames compared 600; bit-identical 0; Y-PSNR between decodes: mean 47.86 dB, min 36.36 dB
+   03:09:17 decode incoming_mlvc_540p
+      NE decode deterministic on this Mac: yes
+      NE frames identical to Shams's NE decode: 600 of 600
+      frames compared 600; bit-identical 0; Y-PSNR between decodes: mean 51.74 dB, min 39.83 dB
+      frames compared 600; bit-identical 0; Y-PSNR between decodes: mean 48.40 dB, min 37.06 dB
+   03:10:27 decode incoming_mlvc_720p
+      NE decode deterministic on this Mac: yes
+      NE frames identical to Shams's NE decode: 600 of 600
+      frames compared 600; bit-identical 0; Y-PSNR between decodes: mean 52.60 dB, min 42.17 dB
+      frames compared 600; bit-identical 0; Y-PSNR between decodes: mean 49.30 dB, min 40.82 dB
+   03:12:24 decode incoming_mlvc_1080p
+      NE decode deterministic on this Mac: yes
+      NE frames identical to Shams's NE decode: 600 of 600
+      frames compared 600; bit-identical 0; Y-PSNR between decodes: mean 53.07 dB, min 44.26 dB
+      frames compared 600; bit-identical 0; Y-PSNR between decodes: mean 49.80 dB, min 42.90 dB
+   03:16:49 decode incoming_mlvcs_540p
+      NE decode deterministic on this Mac: yes
+      NE frames identical to Shams's NE decode: 600 of 600
+      frames compared 600; bit-identical 0; Y-PSNR between decodes: mean 53.15 dB, min 40.24 dB
+      frames compared 600; bit-identical 0; Y-PSNR between decodes: mean 49.09 dB, min 41.01 dB
+   03:17:26 decode incoming_mlvcs_720p
+      NE decode deterministic on this Mac: yes
+      NE frames identical to Shams's NE decode: 600 of 600
+      frames compared 600; bit-identical 0; Y-PSNR between decodes: mean 53.50 dB, min 44.13 dB
+      frames compared 600; bit-identical 0; Y-PSNR between decodes: mean 49.19 dB, min 41.47 dB
+   03:18:22 decode incoming_mlvcs_1080p
+      NE decode deterministic on this Mac: yes
+      NE frames identical to Shams's NE decode: 600 of 600
+      frames compared 600; bit-identical 0; Y-PSNR between decodes: mean 53.70 dB, min 44.58 dB
+      frames compared 600; bit-identical 0; Y-PSNR between decodes: mean 49.20 dB, min 36.98 dB
+   03:20:28 encode B*'s incoming stream on this Mac's NE (determinism across Macs)
+      same bitstream as Shams's Mac: YES
+      bytes here 711657, Shams 711657
+
+== PART contention  Fri Nov 27 03:20:32 +04 2026
+   03:20:32 measuring peak CPU copy bandwidth (20 s, 14 threads)
+threads 14 seconds 20.1 target 0.0 GB/s achieved 372.1 GB/s
+   peak 372.1 GB/s (100 %)
+[1] 03:21:22 +14min  contention/mlvc_360p/L0/U_alone-enc_npu_r1
+requested=npu resolved=npu 
+[2] 03:22:53 +15min  contention/mlvc_360p/L0/U_alone-dec_npu_r1
+requested=npu resolved=npu 
+[3] 03:24:26 +17min  contention/mlvc_360p/L25/U_alone-enc_npu_r1
+requested=npu resolved=npu 
+      load: 92.9 GB/s
+[4] 03:26:00 +18min  contention/mlvc_360p/L25/U_alone-dec_npu_r1
+requested=npu resolved=npu 
+      load: 92.9 GB/s
+[5] 03:27:33 +20min  contention/mlvc_360p/L50/U_alone-enc_npu_r1
+requested=npu resolved=npu 
+      load: 185.8 GB/s
+[6] 03:29:07 +21min  contention/mlvc_360p/L50/U_alone-dec_npu_r1
+requested=npu resolved=npu 
+      load: 185.8 GB/s
+[7] 03:30:40 +23min  contention/mlvc_360p/L75/U_alone-enc_npu_r1
+requested=npu resolved=npu 
+      load: 278.6 GB/s
+[8] 03:32:14 +24min  contention/mlvc_360p/L75/U_alone-dec_npu_r1
+requested=npu resolved=npu 
+      load: 278.6 GB/s
+[9] 03:33:44 +26min  contention/mlvc_720p/L0/U_alone-enc_npu_r1
+requested=npu resolved=npu 
+[10] 03:35:15 +27min  contention/mlvc_720p/L0/U_alone-dec_npu_r1
+requested=npu resolved=npu 
+[11] 03:36:48 +29min  contention/mlvc_720p/L25/U_alone-enc_npu_r1
+requested=npu resolved=npu 
+      load: 92.9 GB/s
+[12] 03:38:22 +31min  contention/mlvc_720p/L25/U_alone-dec_npu_r1
+requested=npu resolved=npu 
+      load: 92.9 GB/s
+[13] 03:39:56 +32min  contention/mlvc_720p/L50/U_alone-enc_npu_r1
+requested=npu resolved=npu 
+      load: 185.8 GB/s
+[14] 03:41:30 +34min  contention/mlvc_720p/L50/U_alone-dec_npu_r1
+requested=npu resolved=npu 
+      load: 185.8 GB/s
+[15] 03:43:03 +35min  contention/mlvc_720p/L75/U_alone-enc_npu_r1
+requested=npu resolved=npu 
+      load: 278.6 GB/s
+[16] 03:44:37 +37min  contention/mlvc_720p/L75/U_alone-dec_npu_r1
+requested=npu resolved=npu 
+      load: 278.6 GB/s
+[17] 03:46:07 +38min  contention/mlvc_360p/L0/U_alone-enc_npu_r2
+requested=npu resolved=npu 
+[18] 03:47:38 +40min  contention/mlvc_360p/L0/U_alone-dec_npu_r2
+requested=npu resolved=npu 
+[19] 03:49:11 +41min  contention/mlvc_360p/L25/U_alone-enc_npu_r2
+requested=npu resolved=npu 
+      load: 92.9 GB/s
+[20] 03:50:45 +43min  contention/mlvc_360p/L25/U_alone-dec_npu_r2
+requested=npu resolved=npu 
+      load: 92.9 GB/s
+[21] 03:52:18 +44min  contention/mlvc_360p/L50/U_alone-enc_npu_r2
+requested=npu resolved=npu 
+      load: 185.8 GB/s
+[22] 03:53:52 +46min  contention/mlvc_360p/L50/U_alone-dec_npu_r2
+requested=npu resolved=npu 
+      load: 185.7 GB/s
+[23] 03:55:26 +48min  contention/mlvc_360p/L75/U_alone-enc_npu_r2
+requested=npu resolved=npu 
+      load: 278.6 GB/s
+[24] 03:56:59 +49min  contention/mlvc_360p/L75/U_alone-dec_npu_r2
+requested=npu resolved=npu 
+      load: 278.6 GB/s
+[25] 03:58:30 +51min  contention/mlvc_720p/L0/U_alone-enc_npu_r2
+requested=npu resolved=npu 
+[26] 04:00:00 +52min  contention/mlvc_720p/L0/U_alone-dec_npu_r2
+requested=npu resolved=npu 
+[27] 04:01:34 +54min  contention/mlvc_720p/L25/U_alone-enc_npu_r2
+requested=npu resolved=npu 
+      load: 92.9 GB/s
+[28] 04:03:08 +55min  contention/mlvc_720p/L25/U_alone-dec_npu_r2
+requested=npu resolved=npu 
+      load: 92.9 GB/s
+[29] 04:04:41 +57min  contention/mlvc_720p/L50/U_alone-enc_npu_r2
+requested=npu resolved=npu 
+      load: 185.8 GB/s
+[30] 04:06:15 +58min  contention/mlvc_720p/L50/U_alone-dec_npu_r2
+requested=npu resolved=npu 
+      load: 185.8 GB/s
+[31] 04:07:49 +60min  contention/mlvc_720p/L75/U_alone-enc_npu_r2
+requested=npu resolved=npu 
+      load: 278.6 GB/s
+[32] 04:09:23 +62min  contention/mlvc_720p/L75/U_alone-dec_npu_r2
+requested=npu resolved=npu 
+      load: 278.6 GB/s
+
+== PART units (GPU and CPU alone)  Fri Nov 27 04:10:53 +04 2026
+[33] 04:10:53 +63min  settings/alone/mlvc_360p/U_alone-enc_gpu_r1
+requested=gpu resolved=gpu 
+[34] 04:12:04 +64min  settings/alone/mlvc_360p/U_alone-dec_gpu_r1
+requested=gpu resolved=gpu 
+[35] 04:13:15 +65min  settings/alone/mlvc_540p/U_alone-enc_gpu_r1
+requested=gpu resolved=gpu 
+[36] 04:14:26 +67min  settings/alone/mlvc_540p/U_alone-dec_gpu_r1
+requested=gpu resolved=gpu 
+[37] 04:15:36 +68min  settings/alone/mlvc_720p/U_alone-enc_gpu_r1
+requested=gpu resolved=gpu 
+[38] 04:16:47 +69min  settings/alone/mlvc_720p/U_alone-dec_gpu_r1
+requested=gpu resolved=gpu 
+[39] 04:17:58 +70min  settings/alone/mlvc_1080p/U_alone-enc_gpu_r1
+requested=gpu resolved=gpu 
+[40] 04:19:09 +71min  settings/alone/mlvc_1080p/U_alone-dec_gpu_r1
+requested=gpu resolved=gpu 
+[41] 04:20:20 +72min  settings/alone/mlvcs_540p/U_alone-enc_gpu_r1
+requested=gpu resolved=gpu 
+[42] 04:21:31 +74min  settings/alone/mlvcs_540p/U_alone-dec_gpu_r1
+requested=gpu resolved=gpu 
+[43] 04:22:41 +75min  settings/alone/mlvcs_720p/U_alone-enc_gpu_r1
+requested=gpu resolved=gpu 
+[44] 04:23:52 +76min  settings/alone/mlvcs_720p/U_alone-dec_gpu_r1
+requested=gpu resolved=gpu 
+[45] 04:25:03 +77min  settings/alone/mlvcs_1080p/U_alone-enc_gpu_r1
+requested=gpu resolved=gpu 
+[46] 04:26:14 +78min  settings/alone/mlvcs_1080p/U_alone-dec_gpu_r1
+requested=gpu resolved=gpu 
+[47] 04:27:25 +80min  settings/alone/mlvc_360p/U_alone-enc_cpu_r1
+requested=cpu resolved=cpu 
+[48] 04:28:35 +81min  settings/alone/mlvc_360p/U_alone-dec_cpu_r1
+requested=cpu resolved=cpu 
+[49] 04:29:46 +82min  settings/alone/mlvc_540p/U_alone-enc_cpu_r1
+requested=cpu resolved=cpu 
+[50] 04:30:57 +83min  settings/alone/mlvc_540p/U_alone-dec_cpu_r1
+requested=cpu resolved=cpu 
+[51] 04:32:07 +84min  settings/alone/mlvc_720p/U_alone-enc_cpu_r1
+requested=cpu resolved=cpu 
+[52] 04:33:18 +85min  settings/alone/mlvc_720p/U_alone-dec_cpu_r1
+requested=cpu resolved=cpu 
+[53] 04:34:29 +87min  settings/alone/mlvc_1080p/U_alone-enc_cpu_r1
+requested=cpu resolved=cpu 
+[54] 04:35:41 +88min  settings/alone/mlvc_1080p/U_alone-dec_cpu_r1
+requested=cpu resolved=cpu 
+[55] 04:36:52 +89min  settings/alone/mlvcs_540p/U_alone-enc_cpu_r1
+requested=cpu resolved=cpu 
+[56] 04:38:03 +90min  settings/alone/mlvcs_540p/U_alone-dec_cpu_r1
+requested=cpu resolved=cpu 
+[57] 04:39:13 +91min  settings/alone/mlvcs_720p/U_alone-enc_cpu_r1
+requested=cpu resolved=cpu 
+[58] 04:40:24 +93min  settings/alone/mlvcs_720p/U_alone-dec_cpu_r1
+requested=cpu resolved=cpu 
+[59] 04:41:35 +94min  settings/alone/mlvcs_1080p/U_alone-enc_cpu_r1
+requested=cpu resolved=cpu 
+[60] 04:42:46 +95min  settings/alone/mlvcs_1080p/U_alone-dec_cpu_r1
+requested=cpu resolved=cpu 
+
+== RUNS END  Fri Nov 27 04:43:57 +04 2026  (96 min)
+== CROSS-CHIP SUMMARY   /Users/warda/Downloads/duplexnvc-baseline/crosschip
+   this Mac: tag: m4max_16in
+
+== B* (full MLVC 360p, NE-NE, 30 fps)              this Mac   Shams M4 Pro   this/Shams
+   t_enc_call                                 5.90         5.86      1.006
+   t_dec_call                                 5.96         5.94      1.003
+   t_enc_net                                  5.61         5.57      1.007
+   t_dec_net                                  5.68         5.66      1.003
+   T_turns                                   11.86        11.81      1.005
+   T_shared                                  10.66        10.68      0.999
+   S                                          1.11         1.11      1.002
+   S_max                                      1.99         1.99      1.000
+   kappa_enc_call                             1.81         1.82      0.993
+   kappa_dec_call                             1.79         1.80      0.994
+   send_fps                                  30.00        30.01      1.000
+   send_late_or_dropped_pct                   0.00         0.00          -
+   send_mean_call_ms                         11.91        12.44      0.958
+   send_due_to_done_p99_ms                   30.21        29.27      1.032
+   send_kbps                                120.46       120.46      1.000
+   receive_fps                               30.01        30.01      1.000
+   receive_late_or_dropped_pct                0.00         0.00          -
+   receive_mean_call_ms                      12.92        13.32      0.970
+   receive_due_to_done_p99_ms                29.17        28.93      1.008
+   receive_kbps                             287.08       287.08      1.000
+   energy_mJ_per_pair_neural_engine          62.77        63.42      0.990
+   energy_mJ_per_pair_cpu                     1.90         1.90      0.999
+   energy_mJ_per_pair_gpu                    -0.03         0.00          -
+   energy_mJ_per_pair_total                  64.68        65.32      0.990
+
+== Each network alone (ms per frame)   NE enc/dec here | Shams | here/Shams | M3 Pro | here/M3 || GPU enc here | Shams | here/Shams
+   mlvc_360p      5.90/  5.96 |   5.86/  5.94 | 1.005 |  7.72/ 8.14 | 0.748 ||   8.50 |  13.33 | 0.638
+   mlvc_540p     11.86/ 12.02 |  11.83/ 11.82 | 1.010 | 15.22/16.05 | 0.764 ||  15.23 |  25.84 | 0.590
+   mlvc_720p     22.38/ 22.63 |  22.23/ 22.17 | 1.014 | 29.59/30.21 | 0.753 ||  27.19 |  43.22 | 0.629
+   mlvc_1080p    46.96/ 49.06 |  46.36/ 47.56 | 1.022 | 64.10/65.79 | 0.739 ||  54.90 |  93.73 | 0.586
+   mlvcs_540p     4.91/  5.01 |   4.83/  4.92 | 1.017 |  6.58/ 7.27 | 0.716 ||   6.48 |  10.34 | 0.626
+   mlvcs_720p     8.41/  8.72 |   8.25/  8.48 | 1.023 | 11.93/13.61 | 0.670 ||   9.80 |  16.60 | 0.590
+   mlvcs_1080p   18.18/ 18.58 |  18.01/ 18.42 | 1.009 | 25.32/28.90 | 0.678 ||  20.02 |  35.06 | 0.571
+
+== Each network alone on the GPU and the CPU (ms per frame)   enc/dec here | Shams M4 Pro | here/Shams
+   gpu  mlvc_360p       8.50/   8.11 |   13.33/  13.18 | 0.627
+   gpu  mlvc_540p      15.23/  15.18 |   25.84/  26.21 | 0.584
+   gpu  mlvc_720p      27.19/  25.71 |   43.22/  44.07 | 0.606
+   gpu  mlvc_1080p     54.90/  54.89 |   93.73/  97.13 | 0.575
+   gpu  mlvcs_540p      6.48/   6.51 |   10.34/  10.68 | 0.618
+   gpu  mlvcs_720p      9.80/  10.14 |   16.60/  17.49 | 0.585
+   gpu  mlvcs_1080p    20.02/  21.16 |   35.06/  37.36 | 0.569
+   cpu  mlvc_360p      19.96/  20.33 |   19.78/  20.74 | 0.994
+   cpu  mlvc_540p      46.08/  46.35 |   47.40/  47.70 | 0.972
+   cpu  mlvc_720p      74.11/  74.66 |   76.10/  75.80 | 0.979
+   cpu  mlvc_1080p    168.42/ 170.47 |  173.00/ 174.50 | 0.975
+   cpu  mlvcs_540p     19.72/  20.95 |   19.73/  21.31 | 0.991
+   cpu  mlvcs_720p     32.81/  33.49 |   32.90/  33.70 | 0.995
+   cpu  mlvcs_1080p    68.73/  71.72 |   71.60/  74.30 | 0.963
+
+== Placements at 30 fps            label here (Shams)          | S here/Shams | late % s/r here | p99 ms s/r here | mJ/pair here, Shams, ratio
+   mlvc  360p  npu-npu  30 fps      (30 fps     ) | 1.11/1.11 |   0.0/  0.0 |   30.2/  29.2 |    64.7    65.3  0.99
+   mlvc  360p  gpu-npu  not run     (30 fps     ) |    -/1.36 |     -/    - |      -/     - |       -   253.4     -
+   mlvc  540p  npu-npu  not run     (15 fps only) |    -/1.10 |     -/    - |      -/     - |       -   184.2     -
+   mlvc  540p  gpu-npu  not run     (30 fps     ) |    -/1.39 |     -/    - |      -/     - |       -   635.1     -
+   mlvc  720p  npu-npu  not run     (15 fps only) |    -/1.08 |     -/    - |      -/     - |       -   404.8     -
+   mlvc  720p  gpu-npu  not run     (15 fps only) |    -/1.45 |     -/    - |      -/     - |       -  1242.4     -
+   mlvc  1080p npu-npu  not run     (infeasible ) |    -/1.08 |     -/    - |      -/     - |       -  1562.9     -
+   mlvc  1080p gpu-npu  not run     (infeasible ) |    -/1.52 |     -/    - |      -/     - |       -  3779.8     -
+   mlvcs 540p  npu-npu  not run     (30 fps     ) |    -/1.15 |     -/    - |      -/     - |       -    45.0     -
+   mlvcs 540p  gpu-npu  not run     (30 fps     ) |    -/1.37 |     -/    - |      -/     - |       -   126.4     -
+   mlvcs 720p  npu-npu  not run     (15 fps only) |    -/1.12 |     -/    - |      -/     - |       -   108.9     -
+   mlvcs 720p  gpu-npu  not run     (30 fps     ) |    -/1.50 |     -/    - |      -/     - |       -   333.4     -
+   mlvcs 1080p npu-npu  not run     (15 fps only) |    -/1.11 |     -/    - |      -/     - |       -   291.6     -
+   mlvcs 1080p gpu-npu  not run     (15 fps only) |    -/1.46 |     -/    - |      -/     - |       -   991.0     -
+   best 30 fps placement here: mlvc_360p npu-npu
+
+== Contention: one network alone on the NE while the CPU loads memory (peak CPU copy bandwidth 372.1 GB/s = 100 %)
+   mlvc_360p  alone-enc load  0 % (   0.0 GB/s):   5.90 ms  x1.000 vs no load
+   mlvc_360p  alone-enc load 25 % (  92.9 GB/s):   5.99 ms  x1.015 vs no load
+   mlvc_360p  alone-enc load 50 % ( 185.8 GB/s):   6.07 ms  x1.029 vs no load
+   mlvc_360p  alone-enc load 75 % ( 278.6 GB/s):   6.07 ms  x1.029 vs no load
+   mlvc_360p  alone-dec load  0 % (   0.0 GB/s):   5.96 ms  x1.000 vs no load
+   mlvc_360p  alone-dec load 25 % (  92.9 GB/s):   6.07 ms  x1.018 vs no load
+   mlvc_360p  alone-dec load 50 % ( 185.8 GB/s):   6.16 ms  x1.033 vs no load
+   mlvc_360p  alone-dec load 75 % ( 278.6 GB/s):   6.62 ms  x1.110 vs no load
+   mlvc_720p  alone-enc load  0 % (   0.0 GB/s):  22.39 ms  x1.000 vs no load
+   mlvc_720p  alone-enc load 25 % (  92.9 GB/s):  22.64 ms  x1.011 vs no load
+   mlvc_720p  alone-enc load 50 % ( 185.8 GB/s):  23.05 ms  x1.029 vs no load
+   mlvc_720p  alone-enc load 75 % ( 278.6 GB/s):  23.00 ms  x1.027 vs no load
+   mlvc_720p  alone-dec load  0 % (   0.0 GB/s):  22.65 ms  x1.000 vs no load
+   mlvc_720p  alone-dec load 25 % (  92.9 GB/s):  22.96 ms  x1.014 vs no load
+   mlvc_720p  alone-dec load 50 % ( 185.8 GB/s):  23.41 ms  x1.034 vs no load
+   mlvc_720p  alone-dec load 75 % ( 278.6 GB/s):  26.16 ms  x1.155 vs no load
+   reading: slowdown near 1.00 -> the NE itself is the limit; slowdown growing with load -> memory bandwidth is the limit
+
+== Decode across Macs (Shams's bitstreams decoded here)
+   bstar_outgoing           ne_identical_to_shams=1802 of 1802  ne_deterministic_here=yes  gpu_vs_ne_min_psnr=38.54  cpu_vs_ne_min_psnr=39.51
+   encode_mlvc_360p         same_bitstream_as_shams=YES
+   incoming_mlvc_1080p      ne_identical_to_shams=600 of 600  ne_deterministic_here=yes  gpu_vs_ne_min_psnr=44.26  cpu_vs_ne_min_psnr=42.90
+   incoming_mlvc_360p       ne_identical_to_shams=600 of 600  ne_deterministic_here=yes  gpu_vs_ne_min_psnr=36.32  cpu_vs_ne_min_psnr=36.36
+   incoming_mlvc_540p       ne_identical_to_shams=600 of 600  ne_deterministic_here=yes  gpu_vs_ne_min_psnr=39.83  cpu_vs_ne_min_psnr=37.06
+   incoming_mlvc_720p       ne_identical_to_shams=600 of 600  ne_deterministic_here=yes  gpu_vs_ne_min_psnr=42.17  cpu_vs_ne_min_psnr=40.82
+   incoming_mlvcs_1080p     ne_identical_to_shams=600 of 600  ne_deterministic_here=yes  gpu_vs_ne_min_psnr=44.58  cpu_vs_ne_min_psnr=36.98
+   incoming_mlvcs_540p      ne_identical_to_shams=600 of 600  ne_deterministic_here=yes  gpu_vs_ne_min_psnr=40.24  cpu_vs_ne_min_psnr=41.01
+   incoming_mlvcs_720p      ne_identical_to_shams=600 of 600  ne_deterministic_here=yes  gpu_vs_ne_min_psnr=44.13  cpu_vs_ne_min_psnr=41.47
+
+== Thermal state during the runs (seconds): {'nominal': 8232}
+
+-> /Users/warda/Downloads/duplexnvc-baseline/crosschip/summary/ (bstar_compare, alone_compare, placements_compare, contention, decode .csv + summary.txt)
+
+Next: turn Wi-Fi on, then  bash /Users/warda/DuplexNVC_push/crosschip/m4max_warda/scripts/cc_collect   (copies the results into the repo and zips the raw data)
+
+== CROSS-CHIP START  Fri Nov 27 04:51:46 +04 2026   parts: contention gpu   rest=30s
+   Apple M4 Max, Mac16,5, 64 GB; 26.3 (25D125)
+   Energy Mode: 0 (0 = Automatic; must match Shams's)
+   Reminder: brightness at maximum, automatic brightness and True Tone off, Bluetooth off, no other apps.
+   Spotlight indexing paused
+
+== PART contention (experiment 12 protocol)  Fri Nov 27 04:51:47 +04 2026
+   memstress: 12 threads (performance cores), 256 MB buffers
+memstress duty=100 threads=12 seconds=10.0 bytes_copied=1503565709312 GB_s=299.52
+[1] 04:52:17 +0min  M4Max_load0_alone-enc_r1
+      memstress duty=0 threads=12 seconds=75.0 bytes_copied=0 GB_s=0.00
+requested=npu resolved=npu 
+[2] 04:54:33 +2min  M4Max_load0_duplex30_r1
+      memstress duty=0 threads=12 seconds=75.1 bytes_copied=0 GB_s=0.00
+requested=npu resolved=npu 
+[3] 04:56:48 +5min  M4Max_load25_alone-enc_r1
+      memstress duty=25 threads=12 seconds=75.1 bytes_copied=8589951369216 GB_s=228.80
+requested=npu resolved=npu 
+[4] 04:59:03 +7min  M4Max_load25_duplex30_r1
+      memstress duty=25 threads=12 seconds=75.0 bytes_copied=8093471604736 GB_s=215.74
+requested=npu resolved=npu 
+[5] 05:01:18 +9min  M4Max_load50_alone-enc_r1
+      memstress duty=50 threads=12 seconds=75.1 bytes_copied=12001640185856 GB_s=319.57
+requested=npu resolved=npu 
+[6] 05:03:33 +11min  M4Max_load50_duplex30_r1
+      memstress duty=50 threads=12 seconds=75.1 bytes_copied=12064974176256 GB_s=321.30
+requested=npu resolved=npu 
+[7] 05:05:49 +14min  M4Max_load75_alone-enc_r1
+      memstress duty=75 threads=12 seconds=75.1 bytes_copied=12640919224320 GB_s=336.83
+requested=npu resolved=npu 
+[8] 05:08:04 +16min  M4Max_load75_duplex30_r1
+      memstress duty=75 threads=12 seconds=75.0 bytes_copied=12831969771520 GB_s=342.02
+requested=npu resolved=npu 
+[9] 05:10:19 +18min  M4Max_load0_alone-enc_r2
+      memstress duty=0 threads=12 seconds=75.1 bytes_copied=0 GB_s=0.00
+requested=npu resolved=npu 
+[10] 05:12:34 +20min  M4Max_load0_duplex30_r2
+      memstress duty=0 threads=12 seconds=75.0 bytes_copied=0 GB_s=0.00
+requested=npu resolved=npu 
+[11] 05:14:50 +23min  M4Max_load25_alone-enc_r2
+      memstress duty=25 threads=12 seconds=75.1 bytes_copied=8468383662080 GB_s=225.57
+requested=npu resolved=npu 
+[12] 05:17:05 +25min  M4Max_load25_duplex30_r2
+      memstress duty=25 threads=12 seconds=75.1 bytes_copied=8047392980992 GB_s=214.40
+requested=npu resolved=npu 
+[13] 05:19:20 +27min  M4Max_load50_alone-enc_r2
+      memstress duty=50 threads=12 seconds=75.1 bytes_copied=11982866481152 GB_s=319.06
+requested=npu resolved=npu 
+[14] 05:21:35 +29min  M4Max_load50_duplex30_r2
+      memstress duty=50 threads=12 seconds=75.0 bytes_copied=12027107999744 GB_s=320.54
+requested=npu resolved=npu 
+[15] 05:23:50 +32min  M4Max_load75_alone-enc_r2
+      memstress duty=75 threads=12 seconds=75.1 bytes_copied=12561185505280 GB_s=334.59
+requested=npu resolved=npu 
+[16] 05:26:06 +34min  M4Max_load75_duplex30_r2
+      memstress duty=75 threads=12 seconds=75.1 bytes_copied=12804178313216 GB_s=341.01
+requested=npu resolved=npu 
+[17] 05:28:21 +36min  M4Max_load0_alone-enc_r3
+      memstress duty=0 threads=12 seconds=75.1 bytes_copied=0 GB_s=0.00
+requested=npu resolved=npu 
+[18] 05:30:36 +38min  M4Max_load0_duplex30_r3
+      memstress duty=0 threads=12 seconds=75.1 bytes_copied=0 GB_s=0.00
+requested=npu resolved=npu 
+[19] 05:32:51 +41min  M4Max_load25_alone-enc_r3
+      memstress duty=25 threads=12 seconds=75.1 bytes_copied=8544392839168 GB_s=227.51
+requested=npu resolved=npu 
+[20] 05:35:07 +43min  M4Max_load25_duplex30_r3
+      memstress duty=25 threads=12 seconds=75.1 bytes_copied=8047913074688 GB_s=214.42
+requested=npu resolved=npu 
+[21] 05:37:22 +45min  M4Max_load50_alone-enc_r3
+      memstress duty=50 threads=12 seconds=75.1 bytes_copied=11951384035328 GB_s=318.23
+requested=npu resolved=npu 
+[22] 05:39:37 +47min  M4Max_load50_duplex30_r3
+      memstress duty=50 threads=12 seconds=75.0 bytes_copied=12107579916288 GB_s=322.72
+requested=npu resolved=npu 
+[23] 05:41:52 +50min  M4Max_load75_alone-enc_r3
+      memstress duty=75 threads=12 seconds=75.0 bytes_copied=12635558903808 GB_s=336.74
+requested=npu resolved=npu 
+[24] 05:44:08 +52min  M4Max_load75_duplex30_r3
+      memstress duty=75 threads=12 seconds=75.1 bytes_copied=12818824822784 GB_s=341.55
+requested=npu resolved=npu 
+== M4Max contention curve -> /Users/warda/Downloads/duplexnvc-baseline/crosschip/contention12/M4Max_contention_curve.csv   (memstress alone at 100 %: 299.52 GB/s)
+   load   GB/s |  enc alone call ms  net ms     p99 | B* send call p99 due-done  late% | B* recv call     p99  late%
+     0%    0.0 |                5.9    5.61    6.09 |        12.63         29.1    0.0 |        13.68   28.41    0.0
+    25% 227.51 |               6.01    5.71    6.29 |          8.1        22.93    0.0 |         9.07    23.5    0.0
+    50% 319.06 |               6.07    5.76    6.41 |         7.49        20.87    0.0 |         8.63   21.48    0.0
+    75% 336.74 |               6.14    5.81    6.85 |         7.44        21.33   0.06 |         8.31   21.52   0.06
+
+  encoder alone on the NE: 5.9 ms at 0 % -> 6.14 ms at 75 % (+4.1 %). Within 5 %: the NE itself, not memory speed, is the limit.
+
+== PART gpu  Fri Nov 27 05:46:23 +04 2026
+   skip (done) settings/alone/mlvc_360p/U_alone-enc_gpu_r1
+   skip (done) settings/alone/mlvc_360p/U_alone-dec_gpu_r1
+   skip (done) settings/alone/mlvc_540p/U_alone-enc_gpu_r1
+   skip (done) settings/alone/mlvc_540p/U_alone-dec_gpu_r1
+   skip (done) settings/alone/mlvc_720p/U_alone-enc_gpu_r1
+   skip (done) settings/alone/mlvc_720p/U_alone-dec_gpu_r1
+   skip (done) settings/alone/mlvc_1080p/U_alone-enc_gpu_r1
+   skip (done) settings/alone/mlvc_1080p/U_alone-dec_gpu_r1
+   skip (done) settings/alone/mlvcs_540p/U_alone-enc_gpu_r1
+   skip (done) settings/alone/mlvcs_540p/U_alone-dec_gpu_r1
+   skip (done) settings/alone/mlvcs_720p/U_alone-enc_gpu_r1
+   skip (done) settings/alone/mlvcs_720p/U_alone-dec_gpu_r1
+   skip (done) settings/alone/mlvcs_1080p/U_alone-enc_gpu_r1
+   skip (done) settings/alone/mlvcs_1080p/U_alone-dec_gpu_r1
+   05:46:23 idle power 120 s, do not touch the Mac
+[39] 05:48:58 +57min  settings/mlvc_720p_gpu-npu/P30_r1
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[40] 05:50:54 +59min  settings/mlvc_720p_gpu-npu/P30_r2
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[41] 05:52:51 +61min  settings/mlvc_720p_gpu-npu/P30_r3
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[42] 05:54:48 +63min  settings/mlvcs_1080p_gpu-npu/P30_r1
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[43] 05:56:44 +64min  settings/mlvcs_1080p_gpu-npu/P30_r2
+requested=gpu resolved=gpu requested=npu resolved=npu 
+[44] 05:58:41 +66min  settings/mlvcs_1080p_gpu-npu/P30_r3
+requested=gpu resolved=gpu requested=npu resolved=npu 
+
+== RUNS END  Fri Nov 27 06:00:36 +04 2026  (68 min)
+== CROSS-CHIP SUMMARY   /Users/warda/Downloads/duplexnvc-baseline/crosschip
+   this Mac: tag: m4max_16in
+
+== B* (full MLVC 360p, NE-NE, 30 fps)              this Mac   Shams M4 Pro   this/Shams
+   t_enc_call                                 5.90         5.86      1.006
+   t_dec_call                                 5.96         5.94      1.003
+   t_enc_net                                  5.61         5.57      1.007
+   t_dec_net                                  5.68         5.66      1.003
+   T_turns                                   11.86        11.81      1.005
+   T_shared                                  10.66        10.68      0.999
+   S                                          1.11         1.11      1.002
+   S_max                                      1.99         1.99      1.000
+   kappa_enc_call                             1.81         1.82      0.993
+   kappa_dec_call                             1.79         1.80      0.994
+   send_fps                                  30.00        30.01      1.000
+   send_late_or_dropped_pct                   0.00         0.00          -
+   send_mean_call_ms                         11.91        12.44      0.958
+   send_due_to_done_p99_ms                   30.21        29.27      1.032
+   send_kbps                                120.46       120.46      1.000
+   receive_fps                               30.01        30.01      1.000
+   receive_late_or_dropped_pct                0.00         0.00          -
+   receive_mean_call_ms                      12.92        13.32      0.970
+   receive_due_to_done_p99_ms                29.17        28.93      1.008
+   receive_kbps                             287.08       287.08      1.000
+   energy_mJ_per_pair_neural_engine          62.77        63.42      0.990
+   energy_mJ_per_pair_cpu                     1.90         1.90      0.999
+   energy_mJ_per_pair_gpu                    -0.03         0.00          -
+   energy_mJ_per_pair_total                  64.68        65.32      0.990
+
+== Each network alone (ms per frame)   NE enc/dec here | Shams | here/Shams | M3 Pro | here/M3 || GPU enc here | Shams | here/Shams
+   mlvc_360p      5.90/  5.96 |   5.86/  5.94 | 1.005 |  7.72/ 8.14 | 0.748 ||   8.50 |  13.33 | 0.638
+   mlvc_540p     11.86/ 12.02 |  11.83/ 11.82 | 1.010 | 15.22/16.05 | 0.764 ||  15.23 |  25.84 | 0.590
+   mlvc_720p     22.38/ 22.63 |  22.23/ 22.17 | 1.014 | 29.59/30.21 | 0.753 ||  27.19 |  43.22 | 0.629
+   mlvc_1080p    46.96/ 49.06 |  46.36/ 47.56 | 1.022 | 64.10/65.79 | 0.739 ||  54.90 |  93.73 | 0.586
+   mlvcs_540p     4.91/  5.01 |   4.83/  4.92 | 1.017 |  6.58/ 7.27 | 0.716 ||   6.48 |  10.34 | 0.626
+   mlvcs_720p     8.41/  8.72 |   8.25/  8.48 | 1.023 | 11.93/13.61 | 0.670 ||   9.80 |  16.60 | 0.590
+   mlvcs_1080p   18.18/ 18.58 |  18.01/ 18.42 | 1.009 | 25.32/28.90 | 0.678 ||  20.02 |  35.06 | 0.571
+
+== Each network alone on the GPU and the CPU (ms per frame)   enc/dec here | Shams M4 Pro | here/Shams
+   gpu  mlvc_360p       8.50/   8.11 |   13.33/  13.18 | 0.627
+   gpu  mlvc_540p      15.23/  15.18 |   25.84/  26.21 | 0.584
+   gpu  mlvc_720p      27.19/  25.71 |   43.22/  44.07 | 0.606
+   gpu  mlvc_1080p     54.90/  54.89 |   93.73/  97.13 | 0.575
+   gpu  mlvcs_540p      6.48/   6.51 |   10.34/  10.68 | 0.618
+   gpu  mlvcs_720p      9.80/  10.14 |   16.60/  17.49 | 0.585
+   gpu  mlvcs_1080p    20.02/  21.16 |   35.06/  37.36 | 0.569
+   cpu  mlvc_360p      19.96/  20.33 |   19.78/  20.74 | 0.994
+   cpu  mlvc_540p      46.08/  46.35 |   47.40/  47.70 | 0.972
+   cpu  mlvc_720p      74.11/  74.66 |   76.10/  75.80 | 0.979
+   cpu  mlvc_1080p    168.42/ 170.47 |  173.00/ 174.50 | 0.975
+   cpu  mlvcs_540p     19.72/  20.95 |   19.73/  21.31 | 0.991
+   cpu  mlvcs_720p     32.81/  33.49 |   32.90/  33.70 | 0.995
+   cpu  mlvcs_1080p    68.73/  71.72 |   71.60/  74.30 | 0.963
+
+== Placements at 30 fps            label here (Shams)          | S here/Shams | late % s/r here | p99 ms s/r here | mJ/pair here, Shams, ratio
+   mlvc  360p  npu-npu  30 fps      (30 fps     ) | 1.11/1.11 |   0.0/  0.0 |   30.2/  29.2 |    64.7    65.3  0.99
+   mlvc  360p  gpu-npu  not run     (30 fps     ) |    -/1.36 |     -/    - |      -/     - |       -   253.4     -
+   mlvc  540p  npu-npu  not run     (15 fps only) |    -/1.10 |     -/    - |      -/     - |       -   184.2     -
+   mlvc  540p  gpu-npu  not run     (30 fps     ) |    -/1.39 |     -/    - |      -/     - |       -   635.1     -
+   mlvc  720p  npu-npu  not run     (15 fps only) |    -/1.08 |     -/    - |      -/     - |       -   404.8     -
+   mlvc  720p  gpu-npu  30 fps      (15 fps only) |    -/1.45 |   0.1/  0.3 |   29.9/  32.3 |  1145.5  1242.4  0.92
+   mlvc  1080p npu-npu  not run     (infeasible ) |    -/1.08 |     -/    - |      -/     - |       -  1562.9     -
+   mlvc  1080p gpu-npu  not run     (infeasible ) |    -/1.52 |     -/    - |      -/     - |       -  3779.8     -
+   mlvcs 540p  npu-npu  not run     (30 fps     ) |    -/1.15 |     -/    - |      -/     - |       -    45.0     -
+   mlvcs 540p  gpu-npu  not run     (30 fps     ) |    -/1.37 |     -/    - |      -/     - |       -   126.4     -
+   mlvcs 720p  npu-npu  not run     (15 fps only) |    -/1.12 |     -/    - |      -/     - |       -   108.9     -
+   mlvcs 720p  gpu-npu  not run     (30 fps     ) |    -/1.50 |     -/    - |      -/     - |       -   333.4     -
+   mlvcs 1080p npu-npu  not run     (15 fps only) |    -/1.11 |     -/    - |      -/     - |       -   291.6     -
+   mlvcs 1080p gpu-npu  30 fps      (15 fps only) |    -/1.46 |   0.0/  0.5 |   27.4/  32.3 |   869.4   991.0  0.88
+   best 30 fps placement here: mlvc_360p npu-npu, mlvc_720p gpu-npu, mlvcs_1080p gpu-npu
+
+== Contention (experiment 12 protocol; peak here: memstress duty=100 threads=12 seconds=10.0 bytes_copied=1503565709312 GB_s=299.52)
+   load | memstress GB/s M4Max / M4Pro / M1 | encoder alone ms M4Max / M4Pro / M1 | B* send call ms M4Max / M4Pro / M1 | B* send late % M4Max / M4Pro / M1
+     0% |      0      0      0 |   5.90   5.86   9.49 |  12.63  12.64  17.55 |   0.0   0.0   4.0
+    25% |    228    136     25 |   6.01   6.00  10.12 |   8.10   8.25  11.34 |   0.0   0.0   0.0
+    50% |    319    205     45 |   6.07   6.05  10.84 |   7.49   7.62  13.97 |   0.0   0.0   0.0
+    75% |    337    217     46 |   6.14   6.12  11.27 |   7.44   7.37  15.14 |   0.1   0.0   0.0
+   M4Max: encoder alone 5.90 -> 6.14 ms at 75 % load (+4.1 %)
+   M4Pro: encoder alone 5.86 -> 6.12 ms at 75 % load (+4.4 %)
+   M1: encoder alone 9.49 -> 11.27 ms at 75 % load (+18.8 %)
+
+== Decode across Macs (Shams's bitstreams decoded here)
+   bstar_outgoing           ne_identical_to_shams=1802 of 1802  ne_deterministic_here=yes  gpu_vs_ne_min_psnr=38.54  cpu_vs_ne_min_psnr=39.51
+   encode_mlvc_360p         same_bitstream_as_shams=YES
+   incoming_mlvc_1080p      ne_identical_to_shams=600 of 600  ne_deterministic_here=yes  gpu_vs_ne_min_psnr=44.26  cpu_vs_ne_min_psnr=42.90
+   incoming_mlvc_360p       ne_identical_to_shams=600 of 600  ne_deterministic_here=yes  gpu_vs_ne_min_psnr=36.32  cpu_vs_ne_min_psnr=36.36
+   incoming_mlvc_540p       ne_identical_to_shams=600 of 600  ne_deterministic_here=yes  gpu_vs_ne_min_psnr=39.83  cpu_vs_ne_min_psnr=37.06
+   incoming_mlvc_720p       ne_identical_to_shams=600 of 600  ne_deterministic_here=yes  gpu_vs_ne_min_psnr=42.17  cpu_vs_ne_min_psnr=40.82
+   incoming_mlvcs_1080p     ne_identical_to_shams=600 of 600  ne_deterministic_here=yes  gpu_vs_ne_min_psnr=44.58  cpu_vs_ne_min_psnr=36.98
+   incoming_mlvcs_540p      ne_identical_to_shams=600 of 600  ne_deterministic_here=yes  gpu_vs_ne_min_psnr=40.24  cpu_vs_ne_min_psnr=41.01
+   incoming_mlvcs_720p      ne_identical_to_shams=600 of 600  ne_deterministic_here=yes  gpu_vs_ne_min_psnr=44.13  cpu_vs_ne_min_psnr=41.47
+
+== Thermal state during the runs (seconds): {'nominal': 12334}
+
+-> /Users/warda/Downloads/duplexnvc-baseline/crosschip/summary/ (bstar_compare, alone_compare, placements_compare, contention, decode .csv + summary.txt)
+
+Next: turn Wi-Fi on, then  bash /Users/warda/DuplexNVC_push/crosschip/m4max_warda/scripts/cc_collect   (copies the results into the repo and zips the raw data)

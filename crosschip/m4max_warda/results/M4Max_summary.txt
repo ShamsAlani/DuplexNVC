@@ -28,12 +28,55 @@
    energy_mJ_per_pair_total                  64.68        65.32      0.990
 
 == Each network alone (ms per frame)   NE enc/dec here | Shams | here/Shams | M3 Pro | here/M3 || GPU enc here | Shams | here/Shams
-   mlvc_360p      5.90/  5.96 |   5.86/  5.94 | 1.005 |  7.72/ 8.14 | 0.748 ||      - |  13.33 |     -
-   mlvc_540p     11.86/ 12.02 |  11.83/ 11.82 | 1.010 | 15.22/16.05 | 0.764 ||      - |  25.84 |     -
-   mlvc_720p     22.38/ 22.63 |  22.23/ 22.17 | 1.014 | 29.59/30.21 | 0.753 ||      - |  43.22 |     -
-   mlvc_1080p    46.96/ 49.06 |  46.36/ 47.56 | 1.022 | 64.10/65.79 | 0.739 ||      - |  93.73 |     -
-   mlvcs_540p     4.91/  5.01 |   4.83/  4.92 | 1.017 |  6.58/ 7.27 | 0.716 ||      - |  10.34 |     -
-   mlvcs_720p     8.41/  8.72 |   8.25/  8.48 | 1.023 | 11.93/13.61 | 0.670 ||      - |  16.60 |     -
-   mlvcs_1080p   18.18/ 18.58 |  18.01/ 18.42 | 1.009 | 25.32/28.90 | 0.678 ||      - |  35.06 |     -
+   mlvc_360p      5.90/  5.96 |   5.86/  5.94 | 1.005 |  7.72/ 8.14 | 0.748 ||   8.50 |  13.33 | 0.638
+   mlvc_540p     11.86/ 12.02 |  11.83/ 11.82 | 1.010 | 15.22/16.05 | 0.764 ||  15.23 |  25.84 | 0.590
+   mlvc_720p     22.38/ 22.63 |  22.23/ 22.17 | 1.014 | 29.59/30.21 | 0.753 ||  27.19 |  43.22 | 0.629
+   mlvc_1080p    46.96/ 49.06 |  46.36/ 47.56 | 1.022 | 64.10/65.79 | 0.739 ||  54.90 |  93.73 | 0.586
+   mlvcs_540p     4.91/  5.01 |   4.83/  4.92 | 1.017 |  6.58/ 7.27 | 0.716 ||   6.48 |  10.34 | 0.626
+   mlvcs_720p     8.41/  8.72 |   8.25/  8.48 | 1.023 | 11.93/13.61 | 0.670 ||   9.80 |  16.60 | 0.590
+   mlvcs_1080p   18.18/ 18.58 |  18.01/ 18.42 | 1.009 | 25.32/28.90 | 0.678 ||  20.02 |  35.06 | 0.571
 
-== Thermal state during the runs (seconds): {'nominal': 2470}
+== Each network alone on the GPU and the CPU (ms per frame)   enc/dec here | Shams M4 Pro | here/Shams
+   gpu  mlvc_360p       8.50/   8.11 |   13.33/  13.18 | 0.627
+   gpu  mlvc_540p      15.23/  15.18 |   25.84/  26.21 | 0.584
+   gpu  mlvc_720p      27.19/  25.71 |   43.22/  44.07 | 0.606
+   gpu  mlvc_1080p     54.90/  54.89 |   93.73/  97.13 | 0.575
+   gpu  mlvcs_540p      6.48/   6.51 |   10.34/  10.68 | 0.618
+   gpu  mlvcs_720p      9.80/  10.14 |   16.60/  17.49 | 0.585
+   gpu  mlvcs_1080p    20.02/  21.16 |   35.06/  37.36 | 0.569
+   cpu  mlvc_360p      19.96/  20.33 |   19.78/  20.74 | 0.994
+   cpu  mlvc_540p      46.08/  46.35 |   47.40/  47.70 | 0.972
+   cpu  mlvc_720p      74.11/  74.66 |   76.10/  75.80 | 0.979
+   cpu  mlvc_1080p    168.42/ 170.47 |  173.00/ 174.50 | 0.975
+   cpu  mlvcs_540p     19.72/  20.95 |   19.73/  21.31 | 0.991
+   cpu  mlvcs_720p     32.81/  33.49 |   32.90/  33.70 | 0.995
+   cpu  mlvcs_1080p    68.73/  71.72 |   71.60/  74.30 | 0.963
+
+== Placements at 30 fps            label here (Shams)          | S here/Shams | late % s/r here | p99 ms s/r here | mJ/pair here, Shams, ratio
+   mlvc  360p  npu-npu  30 fps      (30 fps     ) | 1.11/1.11 |   0.0/  0.0 |   30.2/  29.2 |    64.7    65.3  0.99
+   mlvc  720p  gpu-npu  30 fps      (15 fps only) |    -/1.45 |   0.1/  0.3 |   29.9/  32.3 |  1145.5  1242.4  0.92
+   mlvcs 1080p gpu-npu  30 fps      (15 fps only) |    -/1.46 |   0.0/  0.5 |   27.4/  32.3 |   869.4   991.0  0.88
+   best 30 fps placement here: mlvc_360p npu-npu, mlvc_720p gpu-npu, mlvcs_1080p gpu-npu
+
+== Contention (experiment 12 protocol; peak here: memstress duty=100 threads=12 seconds=10.0 bytes_copied=1503565709312 GB_s=299.52)
+   load | memstress GB/s M4Max / M4Pro / M1 | encoder alone ms M4Max / M4Pro / M1 | B* send call ms M4Max / M4Pro / M1 | B* send late % M4Max / M4Pro / M1
+     0% |      0      0      0 |   5.90   5.86   9.49 |  12.63  12.64  17.55 |   0.0   0.0   4.0
+    25% |    228    136     25 |   6.01   6.00  10.12 |   8.10   8.25  11.34 |   0.0   0.0   0.0
+    50% |    319    205     45 |   6.07   6.05  10.84 |   7.49   7.62  13.97 |   0.0   0.0   0.0
+    75% |    337    217     46 |   6.14   6.12  11.27 |   7.44   7.37  15.14 |   0.1   0.0   0.0
+   M4Max: encoder alone 5.90 -> 6.14 ms at 75 % load (+4.1 %)
+   M4Pro: encoder alone 5.86 -> 6.12 ms at 75 % load (+4.4 %)
+   M1: encoder alone 9.49 -> 11.27 ms at 75 % load (+18.8 %)
+
+== Decode across Macs (Shams's bitstreams decoded here)
+   bstar_outgoing           ne_identical_to_shams=1802 of 1802  ne_deterministic_here=yes  gpu_vs_ne_min_psnr=38.54  cpu_vs_ne_min_psnr=39.51
+   encode_mlvc_360p         same_bitstream_as_shams=YES
+   incoming_mlvc_1080p      ne_identical_to_shams=600 of 600  ne_deterministic_here=yes  gpu_vs_ne_min_psnr=44.26  cpu_vs_ne_min_psnr=42.90
+   incoming_mlvc_360p       ne_identical_to_shams=600 of 600  ne_deterministic_here=yes  gpu_vs_ne_min_psnr=36.32  cpu_vs_ne_min_psnr=36.36
+   incoming_mlvc_540p       ne_identical_to_shams=600 of 600  ne_deterministic_here=yes  gpu_vs_ne_min_psnr=39.83  cpu_vs_ne_min_psnr=37.06
+   incoming_mlvc_720p       ne_identical_to_shams=600 of 600  ne_deterministic_here=yes  gpu_vs_ne_min_psnr=42.17  cpu_vs_ne_min_psnr=40.82
+   incoming_mlvcs_1080p     ne_identical_to_shams=600 of 600  ne_deterministic_here=yes  gpu_vs_ne_min_psnr=44.58  cpu_vs_ne_min_psnr=36.98
+   incoming_mlvcs_540p      ne_identical_to_shams=600 of 600  ne_deterministic_here=yes  gpu_vs_ne_min_psnr=40.24  cpu_vs_ne_min_psnr=41.01
+   incoming_mlvcs_720p      ne_identical_to_shams=600 of 600  ne_deterministic_here=yes  gpu_vs_ne_min_psnr=44.13  cpu_vs_ne_min_psnr=41.47
+
+== Thermal state during the runs (seconds): {'nominal': 12334}

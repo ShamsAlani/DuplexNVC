@@ -1,0 +1,16 @@
+t0_epoch_ms=1795744489197.36
+mode=duplex
+size=1920x1080
+qp=26
+iframe_period=64
+fps=30
+deadline_ms=33.3333333333333
+seconds=60
+enc_cu=gpu
+dec_cu=npu
+warmup_frames=64
+bundles=/Users/warda/Downloads/duplexnvc-baseline/bundles/mlvcs_1080p
+input=/Users/warda/Downloads/duplexnvc-baseline/data/nv12/cam_1080p.nv12
+incoming=/Users/warda/Downloads/duplexnvc-baseline/data/incoming/mlvcs_1080p-qp26/incoming.aus
+encoder_dropped=0
+decoder_failures=0

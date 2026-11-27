@@ -1,0 +1,16 @@
+t0_epoch_ms=1795739883650.05
+mode=alone-dec
+size=960x540
+qp=26
+iframe_period=64
+fps=0
+deadline_ms=33.333
+seconds=40
+enc_cu=cpu
+dec_cu=cpu
+warmup_frames=10
+bundles=/Users/warda/Downloads/duplexnvc-baseline/bundles/mlvcs_540p
+input=/Users/warda/Downloads/duplexnvc-baseline/data/nv12/cam_540p.nv12
+incoming=/Users/warda/Downloads/duplexnvc-baseline/data/incoming/mlvcs_540p-qp26/incoming.aus
+encoder_dropped=0
+decoder_failures=0

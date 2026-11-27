@@ -182,6 +182,23 @@ for r in rows:
         f" {fmt(r['this_over_shams'],5,3)} | {fmt(r['M3_enc_ms'],5)}/{fmt(r['M3_dec_ms'],5)} | {fmt(r['this_over_M3'],5,3)} ||"
         f" {fmt(r['enc_GPU_ms'],6)} | {fmt(r['shams_enc_GPU_ms'],6)} | {fmt(r['gpu_this_over_shams'],5,3)}")
 
+# ---------- each network alone on the GPU and the CPU ----------
+rows = []
+for u in ("gpu", "cpu"):
+    for s in PAIRS:
+        e = med([(summ(r, "E") or {}).get("call_ms_mean") for r in runs(f"{S}/alone/{s}/U_alone-enc_{u}_r*")])
+        d = med([(summ(r, "D") or {}).get("call_ms_mean") for r in runs(f"{S}/alone/{s}/U_alone-dec_{u}_r*")])
+        if e is None and d is None: continue
+        ru = refunit.get((s, u), {}); se, sd = num(ru.get("enc_ms")), num(ru.get("dec_ms"))
+        ne = refunit.get((s, "npu"), {})
+        rows.append(dict(setting=s, unit=u, enc_ms=e, dec_ms=d, shams_enc_ms=se, shams_dec_ms=sd,
+                         this_over_shams=ratio((e or 0) + (d or 0), (se or 0) + (sd or 0)) if e and d and se and sd else None))
+if rows:
+    write("units_compare.csv", rows)
+    say("\n== Each network alone on the GPU and the CPU (ms per frame)   enc/dec here | Shams M4 Pro | here/Shams")
+    for r in rows:
+        say(f"   {r['unit']}  {r['setting']:12s} {fmt(r['enc_ms'],7)}/{fmt(r['dec_ms'],7)} | {fmt(r['shams_enc_ms'],7)}/{fmt(r['shams_dec_ms'],7)} | {fmt(r['this_over_shams'],5,3)}")
+
 # ---------- placements ----------
 reft = {(r["model"], r["res"], r["enc"], r["dec"]): r for r in read_csv(f"{BL}/09_placement_experiment/results/table_feasible.csv")}
 idle_pm = os.path.join(S, "idle", "power.txt")
@@ -225,32 +242,32 @@ for r in rows:
         if k not in best or r["mJ_per_pair"] < best[k]["mJ_per_pair"]: best[k] = r
 say("   best 30 fps placement here: " + ", ".join(f"{k} {v['enc']}-{v['dec']}" for k, v in best.items()))
 
-# ---------- contention ----------
-C = os.path.join(CC, "contention")
-rows = []
-if os.path.isdir(C):
-    peak = re.search(r"achieved ([\d.]+)", open(f"{C}/peak.txt").read()).group(1) if os.path.exists(f"{C}/peak.txt") else None
-    say(f"\n== Contention: one network alone on the NE while the CPU loads memory (peak CPU copy bandwidth {peak} GB/s = 100 %)")
-    for s in ("mlvc_360p", "mlvc_720p"):
-        for net in ("alone-enc", "alone-dec"):
-            d = "E" if net == "alone-enc" else "D"; base = None
-            for L in (0, 25, 50, 75):
-                rr = runs(f"{C}/{s}/L{L}/U_{net}_npu_r*")
-                call = med([(summ(r, d) or {}).get("call_ms_mean") for r in rr])
-                netms = med([(summ(r, d) or {}).get("infer_ms_mean") for r in rr])
-                bw = []
-                for r in rr:
-                    f = os.path.join(r, "load.txt")
-                    if os.path.exists(f):
-                        m = re.search(r"achieved ([\d.]+)", open(f).read())
-                        if m: bw.append(float(m.group(1)))
-                if L == 0: base = call
-                rows.append(dict(setting=s, network=net, load_pct=L, load_GBps=med(bw) if bw else 0.0, call_ms=call, network_ms=netms,
-                                 slowdown=ratio(call, base), runs=len(rr)))
-                say(f"   {s:10s} {net:9s} load {L:2d} % ({fmt(med(bw) if bw else 0.0,6,1)} GB/s): {fmt(call,6)} ms"
-                    f"  x{fmt(ratio(call, base),5,3)} vs no load")
-    write("contention.csv", rows)
-    say("   reading: slowdown near 1.00 -> the NE itself is the limit; slowdown growing with load -> memory bandwidth is the limit")
+# ---------- contention (baseline experiment 12 protocol) ----------
+C12 = os.path.join(CC, "contention12", "M4Max_contention_curve.csv")
+if os.path.exists(C12):
+    here = {r["load_pct"]: r for r in read_csv(C12)}
+    m4p = {r["load_pct"]: r for r in read_csv(f"{BL}/12_contention_experiment/results/M4_contention_curve.csv")}
+    m1 = {r["load_pct"]: r for r in read_csv(f"{REPO}/crosschip/m1_mohammed/04_m1_contention/results/M1_contention_curve.csv")}
+    pk = open(os.path.join(CC, "contention12", "M4Max_memstress_peak.txt")).read().strip() if os.path.exists(os.path.join(CC, "contention12", "M4Max_memstress_peak.txt")) else ""
+    say(f"\n== Contention (experiment 12 protocol; peak here: {pk})")
+    say("   load | memstress GB/s M4Max / M4Pro / M1 | encoder alone ms M4Max / M4Pro / M1 | B* send call ms M4Max / M4Pro / M1 | B* send late % M4Max / M4Pro / M1")
+    rows = []
+    for L in ("0", "25", "50", "75"):
+        g = lambda d, k: num(d.get(L, {}).get(k))
+        row = dict(load_pct=int(L))
+        for nm, d in (("M4Max", here), ("M4Pro", m4p), ("M1", m1)):
+            row[f"{nm}_GB_s"] = g(d, "alone-enc_memstress_GB_s"); row[f"{nm}_enc_alone_ms"] = g(d, "alone-enc_call_ms_mean")
+            row[f"{nm}_Bstar_send_call_ms"] = g(d, "duplex30_send_call_ms_mean"); row[f"{nm}_Bstar_send_late_pct"] = g(d, "duplex30_send_late_or_dropped_pct")
+            row[f"{nm}_Bstar_recv_call_ms"] = g(d, "duplex30_recv_call_ms_mean")
+        rows.append(row)
+        say(f"   {L:>3s}% | {fmt(row['M4Max_GB_s'],6,0)} {fmt(row['M4Pro_GB_s'],6,0)} {fmt(row['M1_GB_s'],6,0)} |"
+            f" {fmt(row['M4Max_enc_alone_ms'],6)} {fmt(row['M4Pro_enc_alone_ms'],6)} {fmt(row['M1_enc_alone_ms'],6)} |"
+            f" {fmt(row['M4Max_Bstar_send_call_ms'],6)} {fmt(row['M4Pro_Bstar_send_call_ms'],6)} {fmt(row['M1_Bstar_send_call_ms'],6)} |"
+            f" {fmt(row['M4Max_Bstar_send_late_pct'],5,1)} {fmt(row['M4Pro_Bstar_send_late_pct'],5,1)} {fmt(row['M1_Bstar_send_late_pct'],5,1)}")
+    for nm in ("M4Max", "M4Pro", "M1"):
+        a0, a75 = rows[0][f"{nm}_enc_alone_ms"], rows[3][f"{nm}_enc_alone_ms"]
+        if a0 and a75: say(f"   {nm}: encoder alone {a0:.2f} -> {a75:.2f} ms at 75 % load ({100*(a75-a0)/a0:+.1f} %)")
+    write("contention_3chips.csv", rows)
 
 # ---------- decode ----------
 X = os.path.join(CC, "decode")

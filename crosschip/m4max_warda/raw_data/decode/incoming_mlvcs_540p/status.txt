@@ -1,0 +1,4 @@
+decode npu: ok
+decode npu2: ok
+decode gpu: ok
+decode cpu: ok
