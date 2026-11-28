@@ -1,0 +1,13 @@
+clip,method,frame,seconds,participants_before,participants_after,real
+rcleav,"faces only, 1 s rule (Step 8)",110,3.7,1,0,yes
+rcleav,seat rule,110,3.7,1,0,yes
+rc2to1,"faces only, 1 s rule (Step 8)",190,6.3,2,1,yes
+rc2to1,seat rule,200,6.7,2,1,yes
+rcbck1,"faces only, 1 s rule (Step 8)",140,4.7,2,1,yes
+rcbck1,seat rule,150,5.0,2,1,yes
+rcbck2,"faces only, 1 s rule (Step 8)",160,5.3,1,2,yes
+rcbck2,seat rule,190,6.3,1,2,yes
+rcjoin,"faces only, 1 s rule (Step 8)",150,5.0,1,2,yes
+rcjoin,seat rule,170,5.7,1,2,yes
+rcwalk,"faces only, 1 s rule (Step 8)",120,4.0,1,2,no
+rcwalk,"faces only, 1 s rule (Step 8)",180,6.0,2,1,no

@@ -2,7 +2,7 @@
 
 ![Our recorded call clips, all playing at once: green = a face counted as a participant; "not a participant" = someone walking past, not counted](showcase/call_clips_wall.webp)
 
-*Our recorded call clips with the face detector working live: green box = a face counted as a participant, "not a participant" = someone walking past behind (`rcwalk`), left out by the participant rule and not counted; white note = the real event. MacBook camera at call distance, 30 fps; faces from Apple Vision every 1/3 s. Lightened slightly for display; the masters and all data are untouched. Full-size MP4: `call_clips_wall.mp4` in the Drive folder [Our recorded call clips](https://drive.google.com/drive/folders/1nSD9B0X19jTrVycgy_M4HNL-9fU2dn3_?usp=drive_link).*
+*Our recorded call clips with the face detector working live: green box = a face counted as a participant, "not a participant" = someone walking past behind (`rcwalk`), left out by the first participant rule (≥ 30 % of the largest face, or in view 2 s) and not counted; white note = the real event. The participant rule is now the seat rule ([`../controller/`](../controller/README.md)); its results are [below](#the-seat-rule-replaces-it). MacBook camera at call distance, 30 fps; faces from Apple Vision every 1/3 s. Lightened slightly for display; the masters and all data are untouched. Full-size MP4: `call_clips_wall.mp4` in the Drive folder [Our recorded call clips](https://drive.google.com/drive/folders/1nSD9B0X19jTrVycgy_M4HNL-9fU2dn3_?usp=drive_link).*
 
 **Owner:** Warda · **Machine:** Warda's M1. Step 8 does not depend on the chip, and all face labels come from this one Mac.
 
@@ -88,11 +88,15 @@ Software versions are in `machine.txt` (ffmpeg 9.0.2, Python 3.12.16, NumPy 2.5.
 | `results/fusion_summary.csv` | Five ways to combine faces and bodies: real events caught, automatic events, not real, median delay |
 | `results/fusion_events.csv` | One row per real event: the frame where each method caught it |
 | `results/calls_vs_stock.csv` | Every method (faces, bodies, or, and, max) scored separately on the stock clips and on our call clips |
-| `results/participant_rule.csv` | Faces with and without the participant rule, on both sets |
+| `results/seat_rule.csv` | **The seat rule** (the participant rule of [`../controller/`](../controller/README.md)) on our call clips, with faces only for comparison: events caught, not real, delays |
+| `results/seat_rule_events.csv` | Every automatic event, faces only and seat rule: when, participants before and after, real or not |
+| `results/seat_rule_seats.csv` | Seat rule: participants and the furthest participant's face height and size group at every labelled frame |
+| `results/participant_rule.csv` | The first participant rule (≥ 30 % of the largest face, or in view 2 s), on both sets |
 | `results/participant_rule_events.csv` | Every automatic face event with and without the rule: when, from how many faces to how many, real or not |
 | `showcase/call_clips_wall.webp` | Our call clips playing at once, with the faces counted as participants (green) and the person walking past labelled "not a participant"; the full-size MP4 is in the Drive folder of our recordings |
 | `scripts/rc_sheets.py`, `scripts/s8_rc_add` | One frame every 0.5 s of each recording (to read the event times); add the call clips and rerun everything |
-| `scripts/s8_calls.py`, `scripts/s8_wall.py` | Stock vs call clips and the participant rule; the video wall |
+| `scripts/participant_rule.py` | The seat rule as written in [`../controller/`](../controller/README.md), run on our call clips (`python3 scripts/participant_rule.py`) |
+| `scripts/s8_calls.py`, `scripts/s8_wall.py` | Stock vs call clips and the first participant rule; the video wall |
 | `machine.txt` | Hardware, macOS, ffmpeg and Python of the labelling Mac |
 
 ## Recorded call clips (6 recordings, 7 windows, run on 23 Nov 2026)
@@ -235,6 +239,17 @@ The delay is from the start of the real event to the labelled frame where the co
 
 The rule removes both false events in `rcwalk` and changes nothing else on either set. The 30 % and the 2 s were chosen by looking at these clips, which contain one passer-by, so the rule has to be confirmed on new recordings (for example someone walking past closer to the camera). Size alone already removes the passer-by here; the 2 s condition is what keeps a small participant who stays. (Requiring every join to last 2 s instead also removes the passer-by, but loses real entries in the stock clips: 1 of 10 caught.)
 
+### The seat rule replaces it
+
+The participant rule is now the **seat rule** of [`../controller/README.md`](../controller/README.md#1-participant-rule-detection). The 30 % size limit would drop a participant sitting further back, the very person who should set the resolution, so the rule uses motion instead of size: a face gets a **seat** once it holds still for 1 s, keeps it while it stays within 1 face height of that spot, and loses it after 2/3 s away. `scripts/participant_rule.py` runs the rule exactly as written on our call clips (28 Nov 2026):
+
+| Our call clips (7) | Caught | Events | Not real | Median delay (each) |
+|---|---|---|---|---|
+| Faces only, 1 s rule | 5 of 5 | 7 | 2 (`rcwalk`) | 0.7 s (0.2, 0.5, 0.7, 0.8, 1.8) |
+| **Seat rule** | **5 of 5** | **5** | **0** | **1.2 s** (0.5, 0.7, 1.2, 1.2, 2.8) |
+
+The person walking past never holds still, so never gets a seat; talking in profile for 9 s (`rclook`) keeps the seat. Every join and leave is caught, about 0.5 s later than with faces alone, the cost of waiting for a face to settle. The furthest participant follows the rule: in `rcbck1` the person further back leaves and the smallest face goes from 118 to 139.5 px at 360p (64–127 → ≥ 128 px), in `rcbck2` they come back (105.5 px), and in `rcjoin` the newcomer sits closer, so the furthest participant does not change (122.5 px). At call distance faces are 105–140 px at 360p, close to the 128 px group boundary.
+
 ## Conclusion
 
 1. **Every face-size group is covered** by this step and the baseline together: the new clips give the small groups (246 faces under 32 px in 9 clips, 236 in 32–63 px in 7 clips), which the baseline lacks; the baseline's talking heads give the large ones. This supports the controller rule "a face of this size needs at least this resolution".
@@ -242,4 +257,4 @@ The rule removes both false events in `rcwalk` and changes nothing else on eithe
 3. **A face-count trigger alone is late and blind to faces turned away.** Of 11 automatic events, 4 are real, arriving 0–5.3 s after the first person enters; the distant entry and both leaving clips produce no face event at all. **The body detector does not fix this on its own:** it counts people far better when faces are away, but as a trigger it is as noisy as faces (4 of 10 real events caught, 9 false). Combined, the larger of the face and body counts is the best single trigger (4 of 10 caught, 7 not real, against 8 and 9 for each alone). The controller should use faces for face size (the resolution rule), the combined count for how many people are present and when that changes, and a frame-difference trigger as the backup for scenes whose count never settles (a crowd), with persistence (a change must last 1 s) on all of them.
 4. **Clips for the next steps:** `px4ppl`, `pxentr`, `px2ent` and `pxcrwd` for entries; `pxleav` and `pxdown` for leaving; `ce4peo`, `cejohn`, `cekris`, `px5ppl` and `px7ppl` as controls, where nothing should trigger.
 5. **In real call scenes the face detector is enough.** On our recorded call clips, faces catch every join and leave (5 of 5), 0.2–1.8 s after it starts, with 2 events that are not real against 8 on the stock clips. A head turned away is still found at call distance (`rclook`: no event). The body detector, which helped on the film-like stock clips, is worse in calls (4 of 5, 9 not real): bodies of people sitting close to the camera are cut off by the frame and flicker. So in call mode the controller should count people with faces and keep bodies only as a backup for scenes where faces are turned away or far.
-6. **Someone walking past behind is the remaining weakness, and it is rare in calls.** A participant rule using both face size and time in view (at least 30 % of the largest face, or in view for 2 s) removes both passer-by events and costs nothing on either set; it has to be confirmed on new recordings, since the thresholds were chosen on these clips.
+6. **Someone walking past behind no longer counts.** The seat rule ([`../controller/`](../controller/README.md)) counts a face only once it has settled in one place, so the passer-by never joins: on our call clips it catches every join and leave with no false event, about 0.5 s later than faces alone. Its thresholds were chosen on clips with one passer-by and have to be confirmed on new recordings (someone walking past slowly, or close to the camera).

@@ -1,0 +1,3 @@
+method,clips,caught,real,automatic,not_real,median_delay_s,delays_s
+"faces only, 1 s rule (Step 8)",7,5,5,7,2,0.7,0.2 0.5 0.7 0.8 1.8
+seat rule,7,5,5,5,0,1.2,0.5 0.7 1.2 1.2 2.8
