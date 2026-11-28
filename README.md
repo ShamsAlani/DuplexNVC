@@ -20,6 +20,7 @@ In a video call, every laptop does two jobs at once: it **encodes** its own came
 | [`lab_gpu_runs/`](lab_gpu_runs/) | **Lab GPU Runs: changes to the MLVC network**, fine-tuned on a lab GPU (control, piecewise-linear memory gates B1, B1 + input gate, I-frame dropout B2, a second control for training noise). The whole training pipeline, the input-gate change, complete training logs, the cost of training and the results so far, each folder with its own README |
 | [`controller_data/`](controller_data/) | **Step 8: controller data.** 11 stock multi-person clips (HEVC Class E, Pexels) and 6 video-call clips we recorded ourselves (people joining, leaving, stepping away, looking away, someone walking past), face labels and face-size groups, real events annotated manually, and a comparison of Apple Vision's face and body detectors (and their combinations) as scene-change triggers, on stock and call clips separately. Scripts, raw data, results, a video wall of the call clips and a README |
 | [`detection_recall/`](detection_recall/) | **Step 7: detection recall.** The smallest face the scene analyzer's face detector (Apple Vision) finds when it runs on the camera frame at the call resolution (360p, 540p, 720p) instead of the full-size original, by face size, on the Step 8 stock clips and our recorded call clips. Scripts, raw data, results, check images and a README |
+| [`crosschip/`](crosschip/) | **Cross-chip study (C3).** The baseline's key measurements repeated on other Apple Silicon chips and set beside the M4 Pro and the MLVC paper's M3 Pro: Mohammed's M1 (timing, decode drift, contention, energy, and the E2 call program) and Warda's M4 Max (timing, energy, each network on the NE, GPU and CPU at all 7 settings, GPU-encoder 30 fps calls, contention and decoding across chips). One folder and README per chip |
 | [`reports/`](reports/) | Literature review, survey and Phase 2 baseline report (PDF) |
 | [`demo/`](demo/) | Demo video: MLVC-S encoding and decoding a talking-head clip, original and decoded side by side |
 | [`REPRODUCE.md`](REPRODUCE.md) | How to rerun everything and rebuild every result |
@@ -83,7 +84,7 @@ Energy at 287 kbps from experiment 10 (re-measured at five QPs; B\* 63 mJ, 3 % b
 
 ### Contention: memory load against the Neural Engine (B\*, 0–75 % memory load; experiment 12)
 
-- **Memory bandwidth does not limit the NE:** with 217 GB/s of competing traffic the encoder slows by only 4.4 % (the same test on an M1: 18.8 %).
+- **Memory bandwidth does not limit the NE:** with 217 GB/s of competing traffic the encoder slows by only 4.4 % (the same test on an M1: 18.8 %; on an M4 Max, 4.1 % at 337 GB/s).
 - **A background memory load makes paced calls faster:** 12.6 → 7.4 ms per frame. In the idle gaps of a paced call the chip lowers its clocks; keeping memory busy keeps them up (energy cost not yet measured).
 
 ### On-device HEVC anchor (Step 9, [`system_measurements/`](system_measurements/))
@@ -143,6 +144,21 @@ Details: [`controller_data/`](controller_data/).
 
 Details: [`detection_recall/`](detection_recall/).
 
+### Cross-chip study (C3): M1, M3 Pro, M4 Pro and M4 Max
+
+| Question | Answer |
+|---|---|
+| Does a newer Neural Engine run MLVC faster? | **Yes.** B\*'s networks take about 9.6 ms on the M1, 7.9 ms on the M3 Pro (MLVC paper) and 5.9 ms on the M4: the M1 is 1.62× and the M3 Pro 1.34× slower than the M4. On the M1, B\* misses 30 fps (7.1 % late sends); taking turns, or a light background load that keeps the clocks up, brings it to 0 % |
+| Does a bigger chip of the same generation? | **Not on the NE.** The M4 Max, with 2× the M4 Pro's memory bandwidth and GPU cores, runs every network within 2.3 % of the M4 Pro at all 7 settings, with the same sharing, the same 30 fps margin and the same energy (64.7 vs 65.3 mJ per frame pair) |
+| Is the poor sharing a property of the chip? | **No, of the NE design:** S = 1.11 of an ideal 1.99 on the M1, the M4 Pro and the M4 Max alike |
+| Does memory limit the NE? | **Only on the M1.** At 75 % memory load the encoder slows by 18.8 % on the M1 (46 GB/s), 4.4 % on the M4 Pro (217 GB/s) and 4.1 % on the M4 Max (337 GB/s) |
+| Where does the bigger chip matter? | **On the GPU.** The M4 Max's GPU (40 cores against 20) runs every network 1.6–1.75× faster, so full MLVC 720p and MLVC-S 1080p with the encoder on the GPU become **30 fps calls** (15 fps only on the M4 Pro), at 869–1,146 mJ per frame pair (13–18× B\*). The CPU is the same on both |
+| Energy per frame pair (B\*) | M1 **121.2 mJ** (1.86×), M4 Pro **65.3 mJ**, M4 Max **64.7 mJ** |
+| Does a call between two chips drift? | **No, when both decode on the NE.** The M1 and the M4 Max decode every M4 Pro frame bit-identically, and all three encoders produce byte-identical bitstreams. GPU and CPU decoding drift the same way on every chip (worst frame 38.5 dB) |
+| What it means for the controller | One table of NE times per chip generation; the GPU's size only for GPU placements; the other laptop's chip is not a drift input for NE–NE placements |
+
+Details: [`crosschip/`](crosschip/) ([`m1_mohammed/`](crosschip/m1_mohammed/), [`m4max_warda/`](crosschip/m4max_warda/)).
+
 ## Platform
 
 | | |
@@ -155,6 +171,7 @@ Details: [`detection_recall/`](detection_recall/).
 | Power | `powermetrics` (`cpu_power`, `gpu_power`; NE included), idle subtracted |
 | Analysis | Python 3 (NumPy, OpenCV, `lpips`), Swift (Core ML `MLComputePlan`, Vision) |
 | Steps 7 and 8 (face and body detection) | MacBook Pro 13-inch, Apple M1, macOS 15.5 (face and body detection do not depend on the chip; every label and every Step 7 detection from the same Mac) |
+| Cross-chip study | MacBook Air, Apple M1, 8 GB, macOS 27.2.1 (Mohammed); MacBook Pro 16-inch, Apple M4 Max (16-core CPU, 40-core GPU, 16-core NE), 64 GB, macOS 26.3 (Warda). Same `libmlvc` commit and the same full MLVC Core ML bundle size on every chip; the M4 Max ran the M4 Pro's own bundles and bitstreams |
 | Data | VCD video-conferencing dataset, scenario `s1`; Step 8: HEVC Class E (Xiph, public domain) and Pexels multi-person clips, and 6 video-call clips we recorded with a MacBook camera (everyone in them agreed) |
 
 ## Quiet mode
@@ -222,6 +239,10 @@ DuplexNVC/
 │   ├── scripts/                       s7_recall.py, s7_run
 │   ├── raw_data/                      face boxes at 360p/540p/720p/1080p, machine
 │   └── results/                       recall by size, recall curve, smallest face, per clip, extra boxes, check images
+├── crosschip/                         cross-chip study (C3): the baseline's key measurements on other chips
+│   ├── README.md                      chips, owners, status and headline per chip
+│   ├── m1_mohammed/                   M1: setup, timing, decode drift, contention, energy, E2 call program
+│   └── m4max_warda/                   M4 Max: timing, energy, NE/GPU/CPU per setting, GPU 30 fps calls, contention, decoding
 ├── reports/                           literature review, survey and Phase 2 baseline report (PDF)
 └── demo/                              demo video: MLVC-S encoding and decoding on the M4 Pro
 ```
@@ -234,4 +255,4 @@ Full guide: [`baseline/REPRODUCE.md`](baseline/REPRODUCE.md) (summary in [`REPRO
 
 ## Next steps
 
-The baseline is complete (twelve experiments). After it, energy on battery and in Low Power Mode (Step 6), the scene analyzer's cost (Step 7) and the HEVC anchor's quality and energy (Step 9) are measured ([`system_measurements/`](system_measurements/)), and of our Algorithm Enhancements, A0 (libmlvc's per-frame controls checked), A1 with E4, A2, A3, E3 with A4, and E6 on 120 of the 160 VCD clips ([`algorithm_enhancements/`](algorithm_enhancements/)). Still to be measured: E1 and E2, the rest of E6, and the Lab GPU models on the Mac. Multi-person data is done (Step 8, [`controller_data/`](controller_data/)), including six video-call clips we recorded (faces catch every join and leave in them; a participant rule handles someone walking past), and so is the detector's recall at the call resolution (Step 7, [`detection_recall/`](detection_recall/): every face from 32 px at 360p is found). DuplexNVC itself — a controller that chooses placement, schedule, resolution and model from the content and the energy state — will then be measured against B\* with exactly this protocol.
+The baseline is complete (twelve experiments). After it, energy on battery and in Low Power Mode (Step 6), the scene analyzer's cost (Step 7) and the HEVC anchor's quality and energy (Step 9) are measured ([`system_measurements/`](system_measurements/)), and of our Algorithm Enhancements, A0 (libmlvc's per-frame controls checked), A1 with E4, A2, A3, E3 with A4, and E6 on 120 of the 160 VCD clips ([`algorithm_enhancements/`](algorithm_enhancements/)). The cross-chip study is done on the M1 and the M4 Max ([`crosschip/`](crosschip/)): the NE generation sets MLVC's speed, a bigger chip of the same generation changes only what the GPU can do, and calls between chips do not drift on the NE. Still to be measured: E1 and E2 (the real call between laptops; its program is built and tested in [`crosschip/m1_mohammed/`](crosschip/m1_mohammed/)), the rest of E6, and the Lab GPU models on the Mac. Multi-person data is done (Step 8, [`controller_data/`](controller_data/)), including six video-call clips we recorded (faces catch every join and leave in them; a participant rule handles someone walking past), and so is the detector's recall at the call resolution (Step 7, [`detection_recall/`](detection_recall/): every face from 32 px at 360p is found). DuplexNVC itself — a controller that chooses placement, schedule, resolution and model from the content and the energy state — will then be measured against B\* with exactly this protocol.
