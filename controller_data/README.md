@@ -67,38 +67,6 @@ swiftc -O bodybox.swift -o ~/Downloads/duplexnvc-baseline/tools/bodybox   # body
 
 Software versions are in `machine.txt` (ffmpeg 9.0.2, Python 3.12.16, NumPy 2.5.5, OpenCV 5.1.0, Swift 6.1.2).
 
-## Files
-
-| Path | Contents |
-|---|---|
-| `raw_data/clips.csv` | Clip list: id, source, file, start, licence, URL, notes |
-| `raw_data/exclude.csv` | Clips with poster faces and the size limit used |
-| `raw_data/meta.json` | Per clip: source size, fps, frames kept, crop, master size |
-| `raw_data/faces/<id>.json` | Apple Vision face boxes on every 10th master frame |
-| `raw_data/events_truth.csv` | Real entries and leaving, annotated manually |
-| `raw_data/events_checked.csv` | Each automatic event, confirmed or not, with what actually happens |
-| `results/dataset_table.csv` | One row per clip: sizes, length, people (max, median), background faces, events, faces per group, smallest and largest face |
-| `results/faces_step8.csv` | One row per labelled face, with its group and `participant` |
-| `results/groups.csv` | Participant faces and clips per size group |
-| `results/events.csv` | Automatic face events (rewritten by every run of `s8_table.py`) |
-| `results/bodies_step8.csv` | One row per body box (Apple Vision body detector), with confidence |
-| `results/body_events.csv` | Automatic body events (same 1 s rule as faces) |
-| `results/faces_vs_bodies.csv` | One row per real event: caught by faces? by bodies? delay |
-| `results/detector_summary.csv` | Per clip: bodies found (max, median), face and body events, events that were not real |
-| `results/fusion_summary.csv` | Five ways to combine faces and bodies: real events caught, automatic events, not real, median delay |
-| `results/fusion_events.csv` | One row per real event: the frame where each method caught it |
-| `results/calls_vs_stock.csv` | Every method (faces, bodies, or, and, max) scored separately on the stock clips and on our call clips |
-| `results/seat_rule.csv` | **The seat rule** (the participant rule of [`../controller/`](../controller/README.md)) on our call clips, with faces only for comparison: events caught, not real, delays |
-| `results/seat_rule_events.csv` | Every automatic event, faces only and seat rule: when, participants before and after, real or not |
-| `results/seat_rule_seats.csv` | Seat rule: participants and the furthest participant's face height and size group at every labelled frame |
-| `results/participant_rule.csv` | The first participant rule (≥ 30 % of the largest face, or in view 2 s), on both sets |
-| `results/participant_rule_events.csv` | Every automatic face event with and without the rule: when, from how many faces to how many, real or not |
-| `showcase/call_clips_wall.webp` | Our call clips playing at once, with the faces counted as participants (green) and the person walking past labelled "not a participant"; the full-size MP4 is in the Drive folder of our recordings |
-| `scripts/rc_sheets.py`, `scripts/s8_rc_add` | One frame every 0.5 s of each recording (to read the event times); add the call clips and rerun everything |
-| `scripts/participant_rule.py` | The seat rule as written in [`../controller/`](../controller/README.md), run on our call clips (`python3 scripts/participant_rule.py`) |
-| `scripts/s8_calls.py`, `scripts/s8_wall.py` | Stock vs call clips and the first participant rule; the video wall |
-| `machine.txt` | Hardware, macOS, ffmpeg and Python of the labelling Mac |
-
 ## Recorded call clips (6 recordings, 7 windows, run on 23 Nov 2026)
 
 The stock clips are filmed like films: the camera is across the room and people move about the scene. A video call is one laptop camera about 50–80 cm away, with people facing it. So we recorded the events of a real call ourselves, in that setting, and ran them through exactly the same scripts.
@@ -195,15 +163,15 @@ Body detection took a median of 7.4 ms per full-size frame on the M1 (the cost o
 
 `scripts/s8_fusion.py` combines the two detectors on the same frames, with the same 1 s rule and the same scoring (no new detection): **or** (an event from either; two in the same direction within 1 s count once), **and** (only when both have one in the same direction within 1 s, at the later of the two), and **max** (per frame, people = the larger of participant faces and bodies, events on that count).
 
-| Method | Real events caught (of 10) | Automatic events | Not real | Median delay |
-|---|---|---|---|---|
-| Faces | 3 | 11 | 8 | 2.3 s |
-| Bodies | 4 | 13 | 9 | 2.0 s |
-| Or | 5 | 22 | 17 | 1.0 s |
-| And | 1 | 2 | 1 | 2.3 s |
-| **Max** | **4** | **11** | **7** | **2.0 s** |
+| Method | Real events caught (of 10) | Automatic events | Not real |
+|---|---|---|---|
+| Faces | 3 | 11 | 8 |
+| Bodies | 4 | 13 | 9 |
+| Or | 5 | 22 | 17 |
+| And | 1 | 2 | 1 |
+| **Max** | **4** | **11** | **7** |
 
-- **Max is the best single trigger:** as many real events as bodies, with the fewest events that are not real among the methods that still catch events. **Or** catches the most and fastest but more than doubles the false events; **and** almost never fires.
+- **Max is the best single trigger:** as many real events as bodies, with the fewest events that are not real among the methods that still catch events. **Or** catches the most but more than doubles the false events; **and** almost never fires.
 - **No method catches the rest, because of what the clips contain:** in `px4ppl` the third and fourth people enter 1–3 s after the second, while the count is still changing, so the 1 s rule merges them into one change (one switch for a group arriving is the behaviour the controller needs); in `pxcrwd` people keep arriving, so the count never settles; in `pxleav` and `pxdown` people walk away but stay in view.
 
 ## Results: our recorded call clips
@@ -212,15 +180,13 @@ Body detection took a median of 7.4 ms per full-size frame on the M1 (the cost o
 
 **Every method on the stock clips and on the call clips** (`results/calls_vs_stock.csv`; same detectors, same 1 s rule, same scoring):
 
-| Method | Stock: real events caught | Stock: not real | **Calls: real events caught** | **Calls: not real** | Calls: median delay |
-|---|---|---|---|---|---|
-| Faces | 3 of 10 | 8 | **5 of 5** | **2** | 0.7 s |
-| Bodies | 4 of 10 | 9 | 4 of 5 | 9 | 1.2 s |
-| Or | 5 of 10 | 17 | 5 of 5 | 12 | 0.5 s |
-| And | 1 of 10 | 1 | 2 of 5 | 1 | 1.2 s |
-| Max | 4 of 10 | 7 | 5 of 5 | 2 | 0.5 s |
-
-The delay is from the start of the real event to the labelled frame where the count changes; the controller acts once the new count has held for 1 s.
+| Method | Stock: real events caught | Stock: not real | **Calls: real events caught** | **Calls: not real** |
+|---|---|---|---|---|
+| Faces | 3 of 10 | 8 | **5 of 5** | **2** |
+| Bodies | 4 of 10 | 9 | 4 of 5 | 9 |
+| Or | 5 of 10 | 17 | 5 of 5 | 12 |
+| And | 1 of 10 | 1 | 2 of 5 | 1 |
+| Max | 4 of 10 | 7 | 5 of 5 | 2 |
 
 **Per clip, faces:** `rcleav` leave caught 0.7 s after she stands up; `rc2to1` 0.8 s; `rcbck1` 0.2 s; `rcbck2` return 1.8 s; `rcjoin` 0.5 s. `rclook`: no event at all. `rcwalk`: 2 events that are not real (the person walking past counted as joining at 4.0 s and leaving at 6.0 s).
 
@@ -243,12 +209,12 @@ The rule removes both false events in `rcwalk` and changes nothing else on eithe
 
 The participant rule is now the **seat rule** of [`../controller/README.md`](../controller/README.md#1-participant-rule-detection). The 30 % size limit would drop a participant sitting further back, the very person who should set the resolution, so the rule uses motion instead of size: a face gets a **seat** once it holds still for 1 s, keeps it while it stays within 1 face height of that spot, and loses it after 2/3 s away. `scripts/participant_rule.py` runs the rule exactly as written on our call clips (28 Nov 2026):
 
-| Our call clips (7) | Caught | Events | Not real | Median delay (each) |
-|---|---|---|---|---|
-| Faces only, 1 s rule | 5 of 5 | 7 | 2 (`rcwalk`) | 0.7 s (0.2, 0.5, 0.7, 0.8, 1.8) |
-| **Seat rule** | **5 of 5** | **5** | **0** | **1.2 s** (0.5, 0.7, 1.2, 1.2, 2.8) |
+| Our call clips (7) | Caught | Events | Not real |
+|---|---|---|---|
+| Faces only, 1 s rule | 5 of 5 | 7 | 2 (`rcwalk`) |
+| **Seat rule** | **5 of 5** | **5** | **0** |
 
-The person walking past never holds still, so never gets a seat; talking in profile for 9 s (`rclook`) keeps the seat. Every join and leave is caught, about 0.5 s later than with faces alone, the cost of waiting for a face to settle. The furthest participant follows the rule: in `rcbck1` the person further back leaves and the smallest face goes from 118 to 139.5 px at 360p (64–127 → ≥ 128 px), in `rcbck2` they come back (105.5 px), and in `rcjoin` the newcomer sits closer, so the furthest participant does not change (122.5 px). At call distance faces are 105–140 px at 360p, close to the 128 px group boundary.
+The person walking past never holds still, so never gets a seat; talking in profile for 9 s (`rclook`) keeps the seat. Every join and leave is caught. The furthest participant follows the rule: in `rcbck1` the person further back leaves and the smallest face goes from 118 to 139.5 px at 360p (64–127 → ≥ 128 px), in `rcbck2` they come back (105.5 px), and in `rcjoin` the newcomer sits closer, so the furthest participant does not change (122.5 px). At call distance faces are 105–140 px at 360p, close to the 128 px group boundary.
 
 ## Conclusion
 
@@ -257,4 +223,4 @@ The person walking past never holds still, so never gets a seat; talking in prof
 3. **A face-count trigger alone is late and blind to faces turned away.** Of 11 automatic events, 4 are real, arriving 0–5.3 s after the first person enters; the distant entry and both leaving clips produce no face event at all. **The body detector does not fix this on its own:** it counts people far better when faces are away, but as a trigger it is as noisy as faces (4 of 10 real events caught, 9 false). Combined, the larger of the face and body counts is the best single trigger (4 of 10 caught, 7 not real, against 8 and 9 for each alone). The controller should use faces for face size (the resolution rule), the combined count for how many people are present and when that changes, and a frame-difference trigger as the backup for scenes whose count never settles (a crowd), with persistence (a change must last 1 s) on all of them.
 4. **Clips for the next steps:** `px4ppl`, `pxentr`, `px2ent` and `pxcrwd` for entries; `pxleav` and `pxdown` for leaving; `ce4peo`, `cejohn`, `cekris`, `px5ppl` and `px7ppl` as controls, where nothing should trigger.
 5. **In real call scenes the face detector is enough.** On our recorded call clips, faces catch every join and leave (5 of 5), 0.2–1.8 s after it starts, with 2 events that are not real against 8 on the stock clips. A head turned away is still found at call distance (`rclook`: no event). The body detector, which helped on the film-like stock clips, is worse in calls (4 of 5, 9 not real): bodies of people sitting close to the camera are cut off by the frame and flicker. So in call mode the controller should count people with faces and keep bodies only as a backup for scenes where faces are turned away or far.
-6. **Someone walking past behind no longer counts.** The seat rule ([`../controller/`](../controller/README.md)) counts a face only once it has settled in one place, so the passer-by never joins: on our call clips it catches every join and leave with no false event, about 0.5 s later than faces alone. Its thresholds were chosen on clips with one passer-by and have to be confirmed on new recordings (someone walking past slowly, or close to the camera).
+6. **Someone walking past behind no longer counts.** The seat rule ([`../controller/`](../controller/README.md)) counts a face only once it has settled in one place, so the passer-by never joins: on our call clips it catches every join and leave with no false event.

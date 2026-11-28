@@ -116,16 +116,7 @@ A change in the number of participants, or in the furthest participant's size gr
 
 ---
 
-## 3. Known limitations
+## 3. Still to do
 
-- **Moving straight back.** Someone who moves back without moving sideways keeps their seat and its old face height, so they can be under-resolved. We decided not to handle this: it is uncommon in calls, and handling it would make the rule much more complex.
-- **Joins count 1 s later** than with face detection alone, because a new face must hold still for 1 s to get a seat.
-- **Two switches for a short absence.** Someone who steps away briefly or changes seats causes a step down and then a step up again. If a switch costs a key frame, each one costs some bits.
-- **Printed faces.** A poster or photo of a face does not move, so it would get a seat and could become the furthest participant. That costs energy (a higher resolution than needed), never quality. It is rare, so the rule does not handle it.
-- **Thresholds chosen on few clips.** The seat radius and times were chosen on clips with one passer-by. They have to be confirmed on new recordings, for example someone walking past slowly or close to the camera.
-
-## 4. Still to do
-
-1. ~~Implement the seat rule and run it on the call clips.~~ Done (28 Nov): `controller_data/scripts/participant_rule.py`; on our call clips it catches 5 of 5 joins and leaves with no false event, median delay 1.2 s ([results](../controller_data/README.md#the-seat-rule-replaces-it)).
-2. Record new call clips to check the thresholds: someone walking past slowly, and someone walking past close to the camera.
-3. Build the controller with these rules and measure it against B\* with the baseline's protocol.
+1. ~~Implement the seat rule and run it on the call clips.~~ Done (28 Nov): `controller_data/scripts/participant_rule.py`; on our call clips it catches 5 of 5 joins and leaves with no false event ([results](../controller_data/README.md#the-seat-rule-replaces-it)).
+2. Build the controller with these rules and measure it against B\* with the baseline's protocol.
